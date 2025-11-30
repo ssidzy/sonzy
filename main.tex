@@ -12,6 +12,11 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{tocloft}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{anyfontsize}
+
+% TikZ libraries for title page
+\usetikzlibrary{calc, fadings, decorations.pathmorphing, patterns, shapes.geometric}
 
 % ====================================================================
 % CONFIGURATION - Document Title
@@ -22,73 +27,111 @@
 \newcommand{\sectionname}{Complete Electronics Course}
 % ====================================================================
 
-% Color definitions - Professional minimal palette
-\definecolor{headercolor}{RGB}{33,33,33}         % Dark Gray - Main header
-\definecolor{accentcolor}{RGB}{41,128,185}       % Professional Blue - Accents
-\definecolor{lightgray}{RGB}{245,245,245}        % Light Gray - Subtle backgrounds
-\definecolor{boxborder}{RGB}{189,195,199}        % Medium Gray - Box borders
+% Color definitions - Fun yet professional palette
+\definecolor{headercolor}{RGB}{44,62,80}         % Midnight blue - Main header
+\definecolor{accentcolor}{RGB}{52,152,219}       % Bright blue - Accents
+\definecolor{tldrcolor}{RGB}{46,204,113}         % Fresh green - TL;DR
+\definecolor{examplecolor}{RGB}{241,196,15}      % Warm yellow - Examples
+\definecolor{lightgray}{RGB}{236,240,241}        % Soft gray - Backgrounds
+\definecolor{boxborder}{RGB}{149,165,166}        % Subtle gray - Borders
 
-% Custom box styles - Minimal professional design
+% Additional colors for circuit diagram
+\definecolor{mghblue}{RGB}{0, 51, 102}           % Deep professional blue
+\definecolor{mghred}{RGB}{204, 0, 0}             % Accent red
+\definecolor{mghgold}{RGB}{255, 184, 28}         % Gold accent
+\definecolor{electronicsblue}{RGB}{0, 123, 255}  % Electronics blue
+\definecolor{circuitgreen}{RGB}{40, 167, 69}     % Circuit board green
+\definecolor{silveryellow}{RGB}{255, 193, 7}     % Silicon/semiconductor yellow
+
+% Custom box styles - Fun yet professional design
 \tcbuselibrary{skins,breakable}
 \newtcolorbox{tldrbox}{
-    colback=lightgray,
-    colframe=accentcolor,
-    fonttitle=\bfseries\large\color{accentcolor},
-    title=1. TL;DR (The Gist),
+    colback=white,
+    colframe=tldrcolor,
+    colbacktitle=tldrcolor!10,
+    coltitle=tldrcolor!80!black,
+    fonttitle=\bfseries\large,
+    title=TL;DR (The Gist),
     breakable,
-    sharp corners,
-    boxrule=1pt,
-    left=10pt,
-    right=10pt,
-    top=8pt,
-    bottom=8pt
+    enhanced,
+    rounded corners,
+    boxrule=2pt,
+    left=12pt,
+    right=12pt,
+    top=10pt,
+    bottom=10pt,
+    toptitle=8pt,
+    bottomtitle=8pt,
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtcolorbox{detailbox}{
     colback=white,
-    colframe=boxborder,
-    fonttitle=\bfseries\large\color{headercolor},
-    title=2. Detailed Explanation,
+    colframe=accentcolor,
+    colbacktitle=accentcolor!10,
+    coltitle=accentcolor!80!black,
+    fonttitle=\bfseries\large,
+    title=Detailed Explanation,
     breakable,
-    sharp corners,
-    boxrule=0.5pt,
-    left=10pt,
-    right=10pt,
-    top=8pt,
-    bottom=8pt
+    enhanced,
+    rounded corners,
+    boxrule=2pt,
+    left=12pt,
+    right=12pt,
+    top=10pt,
+    bottom=10pt,
+    toptitle=8pt,
+    bottomtitle=8pt,
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtcolorbox{examplebox}{
-    colback=lightgray,
-    colframe=accentcolor,
-    fonttitle=\bfseries\large\color{accentcolor},
-    title=3. Practical Example \& Numerical,
+    colback=white,
+    colframe=examplecolor,
+    colbacktitle=examplecolor!15,
+    coltitle=examplecolor!90!black,
+    fonttitle=\bfseries\large,
+    title=Practical Example \& Numerical,
     breakable,
-    sharp corners,
-    boxrule=1pt,
-    left=10pt,
-    right=10pt,
-    top=8pt,
-    bottom=8pt
+    enhanced,
+    rounded corners,
+    boxrule=2pt,
+    left=12pt,
+    right=12pt,
+    top=10pt,
+    bottom=10pt,
+    toptitle=8pt,
+    bottomtitle=8pt,
+    before skip=12pt,
+    after skip=12pt
 }
 
 \newtcolorbox{keypointsbox}{
     colback=white,
-    colframe=boxborder,
-    fonttitle=\bfseries\large\color{headercolor},
-    title=4. Key Points (Interview Focus),
+    colframe=headercolor,
+    colbacktitle=headercolor!10,
+    coltitle=headercolor,
+    fonttitle=\bfseries\large,
+    title=Key Points (Interview Focus),
     breakable,
-    sharp corners,
-    boxrule=0.5pt,
-    left=10pt,
-    right=10pt,
-    top=8pt,
-    bottom=8pt
+    enhanced,
+    rounded corners,
+    boxrule=2pt,
+    left=12pt,
+    right=12pt,
+    top=10pt,
+    bottom=10pt,
+    toptitle=8pt,
+    bottomtitle=8pt,
+    before skip=12pt,
+    after skip=12pt
 }
 
 % Section formatting
 \titleformat{\section}
-  {\normalfont\Huge\bfseries\color{accentcolor}}
+  {\normalfont\fontsize{18}{22}\selectfont\bfseries\color{accentcolor}}
   {\thesection}{1em}{}
   
 \titleformat{\subsection}
@@ -98,8 +141,8 @@
 % Remove page numbers
 \pagestyle{empty}
 
-% Compact lists
-\setlist{nosep, leftmargin=15pt, itemsep=2pt}
+% Compact lists with better spacing
+\setlist{nosep, leftmargin=18pt, itemsep=3pt, parsep=2pt}
 
 % Table of Contents formatting
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -116,50 +159,193 @@
 \begin{document}
 
 % ====================================================================
-% TITLE PAGE
+% TITLE PAGE - Professional Cover Design
 % ====================================================================
-\begin{titlepage}
-    \centering
-    \vspace*{2cm}
+\begin{tikzpicture}[remember picture, overlay]
     
-    % Title
-    {\Huge\bfseries\color{headercolor} ANALOG HARDWARE\\[0.3cm] DESIGN CHEAT SHEET\par}
-    \vspace{0.3cm}
+    % BACKGROUND - Gradient background
+    \shade[top color=white, bottom color=lightgray] 
+    (current page.south west) rectangle (current page.north east);
     
-    % Author
-    {\Large\color{accentcolor}\authorname\par}
-    \vspace{1cm}
+    % TOP SECTION - Gradient colored header
+    \shade[top color=headercolor, bottom color=accentcolor!80!headercolor] 
+    (current page.north west) rectangle ($(current page.north east)+(0,-8.5)$);
     
-    % Decorative line
-    {\color{accentcolor}\rule{0.8\textwidth}{1.5pt}\par}
-    \vspace{1.5cm}
+    % Diagonal accent stripe with gradient
+    \shade[left color=accentcolor!60, right color=accentcolor!20, opacity=0.25] 
+    ($(current page.north west)+(0,-3)$) -- 
+    ($(current page.north east)+(0,-5)$) -- 
+    ($(current page.north east)+(0,-8.5)$) -- 
+    ($(current page.north west)+(0,-6.5)$) -- cycle;
     
-    % Description box
-    \begin{tcolorbox}[
-        colback=lightgray,
-        colframe=boxborder,
-        width=0.8\textwidth,
-        sharp corners,
-        boxrule=0.5pt
-    ]
-    \centering
-    \large
-    \textbf{Comprehensive One-Page Study Guide}\\[0.3cm]
-    \normalsize
-    Covering fundamental concepts, formulas, examples,\\
-    and interview-focused key points
-    \end{tcolorbox}
+    % EDITION LABEL (Top right corner)
+    \node[anchor=north east, fill=tldrcolor, text=white, font=\sffamily\bfseries, 
+    inner sep=8pt, minimum width=3.5cm] 
+    at ($(current page.north east)+(0,-0.5)$) {
+        \Large FIRST EDITION
+    };
     
-    \vfill
+    % MAIN TITLE SECTION
+    \node[anchor=north west, text width=17cm, align=left, inner sep=0pt] 
+    at ($(current page.north west)+(1.5,-1)$) {
+        \color{white}\fontsize{38}{42}\selectfont\bfseries
+        ANALOG\\[0.1cm]
+        \fontsize{38}{42}\selectfont\bfseries
+        HARDWARE\ \ DESIGN\\[0.1cm]
+        \fontsize{38}{42}\selectfont\bfseries
+        CHEAT\ \ SHEET
+    };
     
-    % Bottom information
-    {\large\color{headercolor}
-    Electronics Engineering Reference Series\\[0.2cm]
-    \normalsize
-    \today
-    \par}
+    % Subtitle line
+    \node[anchor=north west, text width=16cm, align=left] 
+    at ($(current page.north west)+(1.5,-6.5)$) {
+        \color{white}\fontsize{15}{18}\selectfont\sffamily\textbf{Electronics Engineering Reference Series}
+    };
     
-\end{titlepage}
+    % MIDDLE SECTION - Enhanced Complex Analog Circuit with Gradients
+    \begin{scope}[shift={($(current page.center)+(0,2)$)}, scale=0.9]
+        
+        % Circuit background with gradient
+        \shade[top color=accentcolor!5, bottom color=accentcolor!2, rounded corners=8pt] 
+            (-5.2,-3.2) rectangle (5.2,3.2);
+        
+        % Main circuit boundary with gradient
+        \shade[draw=accentcolor!40, line width=2pt, top color=white, bottom color=accentcolor!8, rounded corners=6pt] 
+            (-5,-3) rectangle (5,3);
+        
+        % ===== LEFT SIDE: POWER SUPPLY AND INPUT STAGE =====
+        
+        % Voltage regulator circuit with gradient
+        \node[draw=electronicsblue, fill=white, line width=1.5pt, minimum width=1.2cm, minimum height=0.8cm, rounded corners=4pt] (reg) at (-3.5,2) {7805};
+        \draw[electronicsblue, line width=1.5pt] (reg.west) -- ++(-0.8,0) node[left] {$12V$};
+        \draw[circuitgreen, line width=1.5pt] (reg.east) -- ++(0.8,0) node[right] {$5V$};
+        \draw[gray, line width=1.5pt] (reg.south) -- ++(0,-0.5) node[below] {GND};
+        
+        % Input capacitor
+        \draw[mghred, line width=1.5pt] (-4.5,2.5) -- (-4.5,1.5);
+        \draw[mghred, line width=1.5pt] (-4.3,2.5) -- (-4.3,1.5);
+        \node[anchor=east, fill=white, inner sep=1pt, rounded corners=2pt] at (-4.7,2) {\small $10\mu F$};
+        
+        % Output capacitor
+        \draw[mghred, line width=1.5pt] (-2.2,2.5) -- (-2.2,1.5);
+        \draw[mghred, line width=1.5pt] (-2.0,2.5) -- (-2.0,1.5);
+        \node[anchor=west, fill=white, inner sep=1pt, rounded corners=2pt] at (-1.8,2) {\small $1\mu F$};
+        
+        % ===== CENTER: ACTIVE FILTER STAGE =====
+        
+        % Op-amp for active filter with enhanced gradient
+        \node[draw=electronicsblue, fill=white, line width=2pt, minimum width=1.5cm, minimum height=1cm, rounded corners=4pt] (opamp1) at (0,1) {};
+        \draw[electronicsblue, line width=1.5pt] (opamp1.west) ++(0,0.2) -- ++(-1,0) node[left] {$V_{in}$};
+        \draw[electronicsblue, line width=1.5pt] (opamp1.west) ++(0,-0.2) -- ++(-0.5,0) -- ++(0,-0.8) -- ++(-0.5,0);
+        \draw[electronicsblue, line width=1.5pt] (opamp1.east) -- ++(1,0) node[right] {$V_{out1}$};
+        
+        % Feedback components for filter
+        \draw[silveryellow, line width=1.5pt] (opamp1.west) ++(-0.7,-0.2) -- ++(0,-0.6) -- ++(1.4,0) -- ++(0,1.0);
+        \node[anchor=center, fill=white, inner sep=1pt, rounded corners=2pt] at (0,0.2) {\small $R_f$};
+        
+        \draw[mghgold, line width=1.5pt] (opamp1.west) ++(-0.5,-1) -- ++(0,0.6);
+        \draw[mghgold, line width=1.5pt] (opamp1.west) ++(-0.3,-1) -- ++(0,0.6);
+        \node[anchor=center, fill=white, inner sep=1pt, rounded corners=2pt] at (-0.1,-0.7) {\small $C_f$};
+        
+        % ===== RIGHT SIDE: AMPLIFIER STAGE =====
+        
+        % Second op-amp for amplification
+        \node[draw=electronicsblue, fill=white, line width=2pt, minimum width=1.5cm, minimum height=1cm, rounded corners=4pt] (opamp2) at (3,0) {};
+        \draw[electronicsblue, line width=1.5pt] (opamp2.west) -- ++(-0.8,0) node[left] {};
+        \draw[electronicsblue, line width=1.5pt] (opamp2.east) -- ++(1.2,0) node[right] {$V_{out}$};
+        
+        % Gain setting resistors
+        \draw[silveryellow, line width=1.5pt] (opamp2.west) ++(-0.8,0) -- ++(-0.6,0) -- ++(0,-1) -- ++(1.4,0);
+        \node[anchor=center, fill=white, inner sep=1pt, rounded corners=2pt] at (2.2,-0.5) {\small $R_2$};
+        
+        \draw[silveryellow, line width=1.5pt] (opamp2.west) ++(-1.4,-1) -- ++(0,0.6);
+        \node[anchor=center, fill=white, inner sep=1pt, rounded corners=2pt] at (1.8,-0.7) {\small $R_1$};
+        
+        % ===== BOTTOM: TRANSISTOR STAGE =====
+        
+        % BJT Transistor
+        \draw[circuitgreen, line width=1.5pt] (0,-2) -- (0.5,-1.7) -- (0.5,-2.3) -- cycle;
+        \draw[circuitgreen, line width=1.5pt] (0.5,-2) -- (1.2,-2);
+        \node[anchor=center, fill=white, inner sep=1pt, rounded corners=2pt] at (0.25,-2.4) {\small $Q_1$};
+        
+        % Transistor biasing
+        \draw[silveryellow, line width=1.5pt] (-1,-2) -- (0,-2);
+        \draw[silveryellow, line width=1.5pt] (0.5,-1.7) -- (0.5,-1) -- (-0.5,-1) -- (-0.5,-1.5);
+        \draw[silveryellow, line width=1.5pt] (0.5,-2.3) -- (0.5,-2.8) -- (1.5,-2.8) -- (1.5,-1.5);
+        
+        % Coupling capacitors
+        \draw[mghgold, line width=1.5pt] (-1.5,-2) -- (-1.2,-2);
+        \draw[mghgold, line width=1.5pt] (-1.1,-2) -- (-0.8,-2);
+        \node[anchor=center, fill=white, inner sep=1pt, rounded corners=2pt] at (-1.3,-2.3) {\small $C_c$};
+        
+        % ===== CONNECTIONS AND POWER RAILS =====
+        
+        % Power rails
+        \draw[red, line width=1.2pt, dashed] (-4.5,3.2) -- (4.5,3.2) node[right] {$V_{CC} (+12V)$};
+        \draw[black, line width=1.2pt, dashed] (-4.5,-3.2) -- (4.5,-3.2) node[right] {GND};
+        
+        % Interconnections
+        \draw[electronicsblue, line width=1.2pt, -latex] (opamp1.east) ++(0.5,0) -- (opamp2.west) ++(-0.4,0);
+        \draw[electronicsblue, line width=1.2pt, -latex] (opamp2.east) ++(0.6,0) -- (3.8,-1) -- (1.7,-1);
+        
+        % Ground symbols
+        \foreach \x in {-3.5, -0.5, 2.5} {
+            \draw[black, line width=1.2pt] (\x,-3.2) -- (\x,-3) -- (\x-0.2,-3.1) -- (\x+0.2,-3.1) -- cycle;
+        }
+        
+    \end{scope}
+    
+    % STUDY GUIDE banner
+    \shade[top color=white, bottom color=lightgray] 
+    ($(current page.west)+(0,-2)$) rectangle ($(current page.east)+(0,-5.5)$);
+    
+    \node[fill=headercolor, minimum width=\paperwidth, minimum height=0.3cm] 
+    at ($(current page.west)+(0.5\paperwidth,-2)$) {};
+    
+    \node[fill=headercolor, minimum width=\paperwidth, minimum height=0.3cm] 
+    at ($(current page.west)+(0.5\paperwidth,-5.5)$) {};
+    
+    \node[text width=18cm, align=center] at ($(current page.center)+(0,-3.8)$) {
+        \color{headercolor}\sffamily\fontsize{11}{14}\selectfont
+        \textbf{\color{accentcolor}\large COMPREHENSIVE STUDY GUIDE}\\[0.2cm]
+        \fontsize{10}{12}\selectfont
+        Covering fundamental concepts, formulas, examples,\\
+        and interview-focused key points
+    };
+    
+    % BOTTOM SECTION - Gradient author info
+    \shade[top color=headercolor, bottom color=accentcolor!90!headercolor] 
+    (current page.south west) rectangle ($(current page.south east)+(0,3.5)$);
+    
+    % Accent stripe
+    \shade[left color=examplecolor, right color=tldrcolor] 
+    (current page.south west) rectangle ($(current page.south east)+(0,0.3)$);
+    
+    % Author name
+    \node[anchor=west, text width=10cm] 
+    at ($(current page.south west)+(1.5,2)$) {
+        \color{white}\fontsize{20}{24}\selectfont\bfseries\sffamily
+        \authorname
+    };
+    
+    % Corner decorative elements
+    \shade[top color=tldrcolor, bottom color=examplecolor] 
+    ($(current page.north west)$) rectangle ($(current page.north west)+(0.4,-0.4)$);
+    \shade[top color=tldrcolor, bottom color=examplecolor] 
+    ($(current page.north east)$) rectangle ($(current page.north east)+(-0.4,-0.4)$);
+    
+    % Electronics equations subtle background
+    \node[anchor=north east, text width=6cm, align=right, opacity=0.15] 
+    at ($(current page.north east)+(-1,-9)$) {
+        \color{white}\fontsize{30}{36}\selectfont
+        $V = IR$\\[0.2cm]
+        $A_v = 1 + \frac{R_f}{R_1}$\\[0.2cm]
+        $f_c = \frac{1}{2\pi R_f C_f}$
+    };
+    
+\end{tikzpicture}
+
+\newpage
 
 % Reset geometry for content page
 \newgeometry{margin=0.4in}
@@ -190,7 +376,9 @@
 % Suppress section numbering
 \setcounter{secnumdepth}{0}
 
-\vspace{0.25cm}
+% Better spacing between sections
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
 
 % ====================================================================
 % INCLUDE SECTION CONTENT HERE

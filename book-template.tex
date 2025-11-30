@@ -1,0 +1,199 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- PACKAGES ---
+\usepackage[margin=0pt]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{helvet}  % Helvetica for sans-serif
+\usepackage{mathptmx}  % Times for serif
+\usepackage{anyfontsize}
+\renewcommand{\familydefault}{\sfdefault}  % Sans-serif as default
+
+% --- TIKZ LIBRARIES ---
+\usetikzlibrary{calc, fadings, decorations.pathmorphing, patterns, shapes.geometric, shadows.blur}
+
+% --- COLOR PALETTE ---
+\definecolor{mghblue}{RGB}{0, 51, 102}        % Deep professional blue
+\definecolor{mghred}{RGB}{204, 0, 0}          % Accent red
+\definecolor{mghgold}{RGB}{255, 184, 28}      % Gold accent
+\definecolor{lightgray}{RGB}{245, 245, 245}   % Soft background
+\definecolor{darkgray}{RGB}{80, 80, 80}       % Text gray
+\definecolor{electronicsblue}{RGB}{0, 123, 255}  % Electronics blue
+\definecolor{circuitgreen}{RGB}{40, 167, 69}     % Circuit board green
+\definecolor{silveryellow}{RGB}{255, 193, 7}     % Silicon/semiconductor yellow
+
+% --- DOCUMENT START ---
+\begin{document}
+	\pagestyle{empty}
+	
+	% ====================================================================
+	% ANALOG HARDWARE DESIGN CHEAT SHEET COVER
+	% ====================================================================
+	\begin{tikzpicture}[remember picture, overlay]
+		
+		% BACKGROUND - Gradient background
+		\shade[top color=white, bottom color=lightgray] 
+		(current page.south west) rectangle (current page.north east);
+		
+		% TOP SECTION - Gradient colored header
+		\shade[top color=mghblue, bottom color=electronicsblue!80!mghblue] 
+		(current page.north west) rectangle ($(current page.north east)+(0,-8.5)$);
+		
+		% Diagonal accent stripe with gradient
+		\shade[left color=electronicsblue!60, right color=electronicsblue!20, opacity=0.25] 
+		($(current page.north west)+(0,-3)$) -- 
+		($(current page.north east)+(0,-5)$) -- 
+		($(current page.north east)+(0,-8.5)$) -- 
+		($(current page.north west)+(0,-6.5)$) -- cycle;
+		
+		% Subtle circuit pattern representing electronics
+		\begin{scope}[shift={($(current page.north)+(0,-5)$)}]
+			\foreach \i in {1,...,15} {
+				\draw[white, opacity=0.1, line width=0.8pt] 
+				plot[domain=-10:10, samples=60] (\x, {0.3*mod(\x*20+\i*25,3) + 0.2*sin(\x*15+\i*10)});
+			}
+		\end{scope}
+		
+		% EDITION LABEL (Top right corner) with shadow - FIXED
+		\node[anchor=north east, fill=mghred, text=white, font=\sffamily\bfseries, 
+		inner sep=8pt, minimum width=3.5cm, 
+		blur shadow={shadow blur steps=5, shadow xshift=2pt, shadow yshift=-2pt, shadow opacity=60}] 
+		at ($(current page.north east)+(0,-0.5)$) {
+			\Large FIRST EDITION
+		};
+		
+		
+		% MAIN TITLE SECTION - Adjusted spacing
+		\node[anchor=north west, text width=17cm, align=left, inner sep=0pt] 
+		at ($(current page.north west)+(1.5,-1.5)$) {
+			\color{white}\fontsize{42}{50}\selectfont\bfseries\sffamily
+			ANALOG HARDWARE\\[0.1cm]
+			\fontsize{42}{50}\selectfont\bfseries
+			DESIGN CHEAT SHEET
+		};
+		
+		
+		% Subtitle line - Adjusted position
+		\node[anchor=north west, text width=16cm, align=left] 
+		at ($(current page.north west)+(1.5,-6.2)$) {
+			\color{white}\fontsize{15}{18}\selectfont\sffamily\textbf{Electronics Engineering Reference Series}
+		};
+		
+		
+		% MIDDLE SECTION - Circuit diagram visualization
+		\begin{scope}[shift={($(current page.center)+(0,1)$)}]
+			% Op-amp symbol - FIXED shadow
+			\node[draw=electronicsblue, fill=white, line width=2pt, minimum width=2cm, minimum height=1.2cm, 
+			blur shadow={shadow blur steps=5, shadow opacity=40},
+			rotate=0] (opamp) at (0,0) {};
+			
+			% Op-amp terminals
+			\draw[electronicsblue, line width=2pt] (opamp.west) ++(0,0.3) -- ++(-0.5,0) node[left] {$V_+$};
+			\draw[electronicsblue, line width=2pt] (opamp.west) ++(0,-0.3) -- ++(-0.5,0) node[left] {$V_-$};
+			\draw[electronicsblue, line width=2pt] (opamp.east) -- ++(0.5,0) node[right] {$V_{out}$};
+			
+			% Power supplies
+			\draw[circuitgreen, line width=2pt] (opamp.north) -- ++(0,0.5) node[above] {$+V_{CC}$};
+			\draw[circuitgreen, line width=2pt] (opamp.south) -- ++(0,-0.5) node[below] {$-V_{CC}$};
+			
+			% Resistors and capacitors around op-amp
+			\draw[mghred, line width=1.5pt] ($(opamp.west)+(-1,-1)$) -- ++(0.6,0) -- ++(0,0.4) -- ++(0.6,0);
+			\node[anchor=center, fill=white, inner sep=1pt] at ($(opamp.west)+(-0.7,-0.8)$) {\small $R_f$};
+			
+			\draw[silveryellow, line width=1.5pt] ($(opamp.west)+(-1,1)$) -- ++(0.6,0) -- ++(0,-0.4) -- ++(0.6,0);
+			\node[anchor=center, fill=white, inner sep=1pt] at ($(opamp.west)+(-0.7,0.8)$) {\small $R_1$};
+			
+			% Capacitor
+			\draw[mghgold, line width=1.5pt] ($(opamp.east)+(0.5,1)$) -- ++(0,-0.6);
+			\draw[mghgold, line width=1.5pt] ($(opamp.east)+(0.7,1)$) -- ++(0,-0.6);
+			\node[anchor=center, fill=white, inner sep=1pt] at ($(opamp.east)+(0.6,0.7)$) {\small $C$};
+			
+		\end{scope}
+		
+		% Signal waveform visualization
+		\begin{scope}[shift={($(current page.south west)+(3,-0.5)$)}]
+			% Input sine wave
+			\draw[electronicsblue, line width=2pt, opacity=0.8] 
+			plot[domain=0:8, samples=100] (\x, {1.2*sin(\x*80)});
+			\node[anchor=east, electronicsblue] at (0,0) {Input};
+			
+			% Output amplified wave
+			\draw[mghred, line width=2pt, opacity=0.8] 
+			plot[domain=0:8, samples=100] (\x+9, {1.8*sin(\x*80)});
+			\node[anchor=west, mghred] at (17,0) {Output};
+			
+			% Amplifier symbol between waves - FIXED shadow
+			\node[draw=circuitgreen, fill=white, line width=1.5pt, minimum size=0.8cm, 
+			blur shadow={shadow blur steps=5, shadow opacity=30}] 
+			at (8.5,0) {\Large $\triangleright$};
+		\end{scope}
+		
+		% STUDY GUIDE banner with gradient and shadow - FIXED
+		\shade[top color=white, bottom color=lightgray] 
+		($(current page.west)+(0,-2)$) rectangle ($(current page.east)+(0,-5.5)$);
+		
+		\node[fill=mghblue, line width=3pt, minimum width=\paperwidth, minimum height=0.3cm,
+		blur shadow={shadow blur steps=5, shadow yshift=-2pt, shadow opacity=40}] 
+		at ($(current page.west)+(0.5\paperwidth,-2)$) {};
+		
+		\node[fill=mghblue, line width=3pt, minimum width=\paperwidth, minimum height=0.3cm,
+		blur shadow={shadow blur steps=5, shadow yshift=2pt, shadow opacity=40}] 
+		at ($(current page.west)+(0.5\paperwidth,-5.5)$) {};
+		
+		\node[anchor=west, text width=18cm] at ($(current page.west)+(1.5,-3.8)$) {
+			\color{darkgray}\sffamily\fontsize{11}{14}\selectfont
+			\textbf{\color{mghblue}\large COMPREHENSIVE ONE-PAGE STUDY GUIDE}\\[0.2cm]
+			\fontsize{10}{12}\selectfont
+			Covering fundamental concepts, formulas, examples,\\
+			and interview-focused key points
+		};
+		
+		% BOTTOM SECTION - Gradient author info
+		\shade[top color=mghblue, bottom color=electronicsblue!90!mghblue] 
+		(current page.south west) rectangle ($(current page.south east)+(0,3.5)$);
+		
+		% Accent stripe with gradient
+		\shade[left color=mghgold, right color=silveryellow] 
+		(current page.south west) rectangle ($(current page.south east)+(0,0.3)$);
+		
+		% Author name with shadow - FIXED
+		\node[anchor=west, text width=10cm, 
+		blur shadow={shadow blur steps=5, shadow xshift=2pt, shadow yshift=2pt, shadow opacity=50}] 
+		at ($(current page.south west)+(1.5,2)$) {
+			\color{white}\fontsize{20}{24}\selectfont\bfseries\sffamily
+			SONALI B SABAWAT
+		};
+		
+		% Corner decorative elements with gradient
+		\shade[top color=mghgold, bottom color=silveryellow] 
+		($(current page.north west)$) rectangle ($(current page.north west)+(0.4,-0.4)$);
+		\shade[top color=mghgold, bottom color=silveryellow] 
+		($(current page.north east)$) rectangle ($(current page.north east)+(-0.4,-0.4)$);
+		
+		% Electronics equations subtle background
+		\node[anchor=north east, text width=6cm, align=right, opacity=0.15] 
+		at ($(current page.north east)+(-1,-9)$) {
+			\color{white}\fontsize{30}{36}\selectfont
+			$V = IR$\\[0.2cm]
+			$A_v = \frac{V_{out}}{V_{in}}$\\[0.2cm]
+			$f_c = \frac{1}{2\pi RC}$
+		};
+		
+		% Additional circuit elements in background for depth
+		\begin{scope}[opacity=0.05, shift={($(current page.center)+(3,-2)$)}]
+			% Transistor symbols
+			\foreach \x/\y in {1/1, -2/2, 2/-1} {
+				\draw[electronicsblue, line width=1pt] (\x,\y) -- (\x+0.5,\y+0.3) -- (\x+0.5,\y-0.3) -- cycle;
+				\draw[electronicsblue, line width=1pt] (\x+0.5,\y) -- (\x+1,\y);
+			}
+			
+			% Capacitor symbols
+			\foreach \x/\y in {-1/0, 0/-2, 1.5/1.5} {
+				\draw[circuitgreen, line width=1pt] (\x,\y) -- (\x+0.3,\y);
+				\draw[circuitgreen, line width=1pt] (\x+0.6,\y) -- (\x+0.9,\y);
+			}
+		\end{scope}
+		
+	\end{tikzpicture}
+	
+\end{document}
