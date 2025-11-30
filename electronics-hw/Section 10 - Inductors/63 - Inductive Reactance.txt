@@ -1,0 +1,85 @@
+In the previous course, we have seen that inductors introduce a phase shift of 90 degrees between voltage
+
+and current.
+
+Now then we deal with AC signals.
+
+It's not only the resistor that will limit the current flow, but the inductor as well.
+
+So how can an inductor limit the current flow?
+
+Well, this is where inductive reactance comes into play.
+
+Any doctor resists a changing current as a result of Laszlo, the degree to which the doctor impedes
+
+the flow of current is due to its inductive reactants.
+
+We have already talked about capacity reactance, right where this inductive reactance is very similar
+
+to capacity reactors in the sense that bouffe will limit the current flow in the circuit.
+
+And both are measured in omes.
+
+However, they increase and decrease in the opposite way, meaning that for high frequencies the capacity
+
+reactance is low while the inactive reactance is high.
+
+The formula for calculating the inactive reactants is this one.
+
+So innovative reactors is equal to two times F, where F is the frequency of the signal passing through
+
+it times inductance, which is the reluctance of the inductor measured in Herries, you can see, according
+
+to this formula, how inductive those changes to the frequency of the signal input into it, it has
+
+a direct relationship with the frequency of that signal passing through it.
+
+So the higher the frequency of the signal, the higher the value of the reactors, the lower the frequency
+
+of the signal, the lower the value of the reactors.
+
+It changes in the exact opposite way compared to capacity reactors.
+
+So based on this graph, we can see that the high frequency signal is inductors offer a lot of resistance
+
+so that high frequency signals are essentially blocked from passing through an inductor.
+
+The frequency of the signal passing through an end of the decreases.
+
+The inductor offers less and less resistance so that lower frequency signals can pass through easier.
+
+We can't preserve the effect of very low and very high frequencies on the reactors of a pure AC nocturnes
+
+as follows.
+
+Where the frequency is zero hertz, which is simply a DC voltage, so this is what it is passing through
+
+an inductor, the inductive reactors is essentially zero.
+
+Sunit Inductor acts like a piece of wire.
+
+However, if the frequency of the signal would be infinite, the inductor would oppose any current flow
+
+in the circuit, since its resistance would be infinite.
+
+Now, using the INDUCTIVELY formula, we will now go through an example to show how the formula is used
+
+to compute actually doctor impedance values.
+
+So let's say we have a circuit referring doctor of 30 million, very different AC current of 10 kilohertz
+
+frequency, what we the directors of the doctor, be for the circuit.
+
+So working it out and using this formula, we compute the value of an inductive reactants to be duppy
+
+times 10 kilohertz times 30 miliary, which will be around one thousand eight hundred eighty five owns.
+
+This value means that any doctor of 30 militari before that includes a single passing through it.
+
+We have an impedance or a distance of one thousand eight hundred eighty five ohms.
+
+For one kilohertz signal, the inactive reactors will be just one hundred eighty eight ohms in the next
+
+course, let's see how this endarterectomy effects the current flow in anesthesia.
+
+Could see you there.

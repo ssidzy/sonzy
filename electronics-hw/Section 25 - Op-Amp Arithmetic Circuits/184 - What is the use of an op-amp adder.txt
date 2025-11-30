@@ -1,0 +1,41 @@
+So what can we use something amplifiers for either inverting or an unyielding that if the input resistance's
+
+of an amplifier are connected to potential meters, for example, the individual input signals can be
+
+mixed together by varying amounts, for example, measuring temperature.
+
+You could add a negative offset voltage to make the output voltage or display read zero at the freezing
+
+point, or produce an audio mixer for adding or mixing together individual waveforms which are sounds
+
+from different source channels like Walker's instruments, etc., before sending them combined to an
+
+audio amplifier.
+
+Another useful application of a summing amplifier is a weighted some digital to analog converter if
+
+the input resistors are in of the something amplifier double in value for each input.
+
+So for example, one km km, four km, eight km, 16 kms, etc. then a digital logic voltage, either
+
+a logic level zero or a logic level one on these inputs will produce an output which is the weighted
+
+some of the digital inputs.
+
+Of course, this is a simple example in this digital to analog converter something amplifier Sevket.
+
+The number of individual bits that make up the input data world and it is example for bits, will ultimately
+
+determine the output step voltage as a percentage of the fullscale analog output voltage.
+
+And also the accuracy of these foskett output depends on what these levels of the input bits being consistently
+
+zero four zero consistently firewall's for one, as well as the accuracy of the resistance values used
+
+for the input resistors.
+
+Fortunately, to overcome these errors, at least on our part, commercially available digital to analog
+
+and analog to digital devices are readily available with highly accurate resistor letter networks already
+
+built in.

@@ -1,0 +1,147 @@
+The recent bridge was originally developed by Charles Stone to measure unknown resistance values and
+
+as a means of calibrating, measuring instruments with meters and meters, etc. by the use of a long
+
+resistive slide wire.
+
+Although today digital millimeters provide the simplest way to measure resistance, the Wistow bridge
+
+can still be used to measure very low values of resistance is down in the millions range.
+
+How to measure very low resistance.
+
+He's using a little bit.
+
+Well, in this course we will find it out on.
+
+The list of resecured can be used in a number of applications, and today with modern operation amplifiers,
+
+we can use that we still reserve to interface various transducer sensors to these amplifier circuits.
+
+So storage is an example of what is dividers with two voltage dividers in parallel.
+
+The bridge is the difference between the two voltage dividers.
+
+Many people tend to overcomplicate a circuit for no reason, but actually this is very easy to understand.
+
+As we said before, we still reach has many applications in electronics, including finding the resistors
+
+of a resistor.
+
+But how to do that?
+
+We have four resistors here and the world meter in between.
+
+Actually, there is one resistor among the four that has a resistance that we don't know.
+
+And you want to find it out.
+
+So let's suppose that R2 is the resistor that we want to measure and the other three resistances are
+
+known.
+
+Why are they known?
+
+Because you decide upon the value of these resistances in order to measure the resistance of R2.
+
+The result which needs compulsory one variable resistor, which in our case these are for the variable
+
+resistor are four is adjusted until the volt meter reads zero volts.
+
+At this point we say that the bridge is balanced.
+
+So again, we play with this variable resistor until the volt meter reads zero volts.
+
+As you can see, there are two voltage dividers in parallel.
+
+And then the difference in what is between the two is zero.
+
+We say that the bridge is balanced.
+
+The last piece of the puzzle that you must know is that when the Wheatstone bridge is balanced, there
+
+are one divided by R2 is equal to our three, divided by our four.
+
+So based on this simple equation, if we know the value of three of the resistors in ballast based on
+
+a circuit, we can calculate the value of the fourth resistor.
+
+Right.
+
+So remember, if a wisdom is balanced, then the voltmeter will have a zero rating.
+
+Now, I have a question to you.
+
+If the supply voltage.
+
+Yes, of balance based on bridges doubled.
+
+Will the bridge still be balanced?
+
+If you said yes, congratulations.
+
+So although the voltage on the voltage divider is doubled, the other will also be doubled.
+
+So the difference will still be zero and the bridge will be balanced.
+
+All right, let's do an exercise together.
+
+Let's assume that the Western Bridge is already balanced.
+
+If R1 is equal to 220 ohms or two is five hundred and fifty ohms and our four is one thousand ohms,
+
+then what is the value of our three if the bridge is already balanced, which means the volt meter reads
+
+zero would then by plugging the values in this equation, we can find out very easily the value of our
+
+three.
+
+Right.
+
+So by doing the math are three will be equal to 400 ohms grade.
+
+Now let's try to simulate a Western reading our simulator.
+
+All right, so this shows a Western reach, a circuit that can be used to measure resistance right here.
+
+The bridge is already balanced, so there is no current flowing in.
+
+The central wire sees its balance.
+
+The ratio between 200 and 100 is equal to the ratio between 400 and 200.
+
+Right.
+
+If I change, no matter which value to a different one, notice that the current started to flow, which
+
+means that the bridge is not balanced anymore, in this case, this equation is not applicable anymore.
+
+Why?
+
+Because the bridge is not balanced.
+
+So now there's a current flowing here.
+
+Why?
+
+Because there is a potential difference between these two points, again, typically one of the resistances
+
+is unknown and the other resistances are adjusted until the bridge is balanced, the unknown resistance
+
+can be then calculated from the others.
+
+While FEMA's application of Western Bridge, besides measuring the value of resistor, is the Western
+
+Bridge light detector.
+
+So we have four registers here, two registers having constant values, one adjustable.
+
+And here we have an ADR photocell, which is a component that has a resistance that changes with the
+
+light intensity that follows up on it because we don't learn about operation amplifiers.
+
+Explaining how this works is quite difficult.
+
+But don't worry, because once we understand how this magical component operates, we will come back
+
+here and you will understand for sure how this works for.

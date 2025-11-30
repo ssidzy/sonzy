@@ -1,0 +1,381 @@
+All right.
+
+So in the last course, we have talked about the sacred right, even though the circuit is amplifying
+
+in voltage since it's an amateur follower, it's very good to use in cases where current amplification
+
+is required.
+
+The problem of the circuit, though, was that the active device, which is the transistor, is in conduction
+
+all the time, especially when there is no input signal present.
+
+This never turning off feature of this amplifier causes a reduction of power efficiency, which means
+
+nothing else, but a lot of power is wasted for nothing.
+
+You might wondering what's the point of talking about the circuit anyway when all you wanted is to discuss
+
+about different types of amplifier?
+
+Well, we see the KSB amplifier is similar to this one in the sense that both amplify only in current,
+
+but it got a huge advantage that the efficiency has increased to more than 60 percent.
+
+So this is a circuit that you call us Glasby amplifier, the circuit also goes by the name Push-Pull
+
+amplifier.
+
+And you also understand why people call this push and pull.
+
+But I guess it's not that hard to realize just by looking at the circuit.
+
+Why is it go like that?
+
+So a portable amplifier is a type of power amplifier.
+
+It contains a pair of active devices, such as a complementary pair of transistors.
+
+Here, one transistor supplies the power to the load from the positive power supply, and the other
+
+one sings the current from the low to the ground.
+
+Without further ado, let's see how the circuit works.
+
+The imports know comes from a signal generator that outputs an easy signal or firewalls, and the output
+
+voltage is less than five words with one diode drop.
+
+What an amplifier, right?
+
+Hold on and you will see.
+
+Why is it so useful?
+
+So during the first positive cycle of the signal, the two bases will become positive, right?
+
+Then the positive half cycle reaches 0.7 volts.
+
+The ambient resistor will start conducting, while the PMP transistor will be reversed by Earth.
+
+Then be on transistor will turn on, allowing the positive half cycle to pass through.
+
+But of course, the voltage of the positive cycle will be one dialed up less because of the base and
+
+meter voltage drop.
+
+As you can see, during the positive half cycle, the PMP transistor doesn't have any chance to turn
+
+on because let's say if the base voltage of the NPF resistor is three volts, then it will be 2.3 volts.
+
+But the emitter of the AMPS resistor is also diameter of the PMP transistor, and thus we already know
+
+the condition for the PMP transistor to turn on is that the emitter has to be 0.7 watts higher than
+
+its base, so there's no chance for this poor PMP transistor to turn on.
+
+But no worries because the negative high cycle comes during the negative cycle of the signal.
+
+Both bases go to negative.
+
+So now the base emitter junction of the PMP transistor is forward biased.
+
+Why the NBN transistor is in cutoff mode.
+
+All right.
+
+So again, why does this PM be transistor turned on?
+
+Exactly.
+
+They put signal goes up and down to negative.
+
+But let's examine it in more detail.
+
+From the point when the positive ha cycle goes down towards the negative highs, I could imagine they
+
+would signal that zero was right now.
+
+And if the impossible is a zero volts, both transistors are turned off, right?
+
+So the meter voltage of the pump transistor, as well as the emitter of the NPN transistor will sit
+
+at zero was because it is connected to ground through the load.
+
+The input signal starts going lower than zero volts.
+
+It almost reaches minus 0.7 volts, and then meter is still a zero volts.
+
+The moment the input signal is equal or lower than the minus 0.01 volts, the base will be lower with
+
+one diode drop, then the emitter, so the PMP transistor will start turning on.
+
+All right.
+
+I hope you understand how the circuit boards right now, even though the circuit doesn't provide voltage
+
+amplification and output, current is 100 times higher than the input.
+
+Current output current is equal to bita of the transistor, which is 100 times the base current.
+
+So if we thought the simulator during the positive high cycle of the input signal and we check the current
+
+on the base and the current on the emitter, we will see that indeed the output current is 100 times
+
+greater than the input current.
+
+Overall, Glasby amplifier is much more efficient than Simple Class say, because here if we remove
+
+the input signal, both transistors will be in cutoff mode so they won't conduct any current whatsoever.
+
+One drawback of this push pull amplifier is the crossover distortion.
+
+You might have noticed that there are little glitches here.
+
+In other words, the output is distorted whenever it crosses ground.
+
+Basically, this happens because during the positive cycle, from zero until zero point seven, would
+
+that be an transistor is not conducting?
+
+So the output doesn't know that the input signal has increased from zero to 0.7 watts, right only by
+
+now, when the input reaches the zero point zero, what's the output?
+
+We start increasing its voltage.
+
+The same problem applies for the PMP transistor.
+
+So how can we resolve this issue?
+
+That while solution is to keep both transistors in conduction, even if there is no input signal present?
+
+And this is where a class A B comes into play.
+
+Plus, maybe, as the name implies, is a combination of Class A and Class B Class A B amplifier output
+
+stage combines the advantage of the class amplifier and the Class B amplifier while minimizing the problems
+
+of low efficiency and distortion associated with them.
+
+Now, even without input signal, both transistors will conduct a small amount of current.
+
+Let's check without the input signal.
+
+There's a 197 millionth passing through the transistor.
+
+This means that the transistor dissipates a constant power of two watts that's already way better than
+
+the 35 watts of power dissipation that we have seen in the previous course.
+
+These costs and participation is achieved by pre biasing the two transistors in the amplifiers output
+
+stage and just for your information, small plastic transistor packages like the popularity or 90 to
+
+dissipate a few hundred milliwatts.
+
+The metal cases like the 80 or 18 and the OR can dissipate more power like several hundred milliwatts
+
+plastic parts.
+
+These are packages like the three or 220, and Tio two hundred forty seven dissipates well over 100
+
+watts, approaching the dissipation of all metal deal three.
+
+So how does this work with work anyway?
+
+The two complementary transistors are biased in order to minimize the crossover distortion so that they
+
+are always in conduction and due to this voltage, divide their network.
+
+I want to ask you what is the voltage difference between this point and at this point, the what is
+
+the difference between these two points is twenty volts.
+
+Since this point is a Tamworth's and this is at minus 10 watts.
+
+So there is a voltage drop starting from this resistor.
+
+Another voltage drop.
+
+Another one until it reaches the minus 10 wards.
+
+Since Doppler voltage divider is the same as the bottom voltage divider, the voltage in the middle
+
+is zero.
+
+So we can even connect the ground here because it won't change anything.
+
+The resistor values are chosen such that these resistance is equal to this one.
+
+And also, these two resistances must be equal.
+
+Then the properly designed the voltage between the two bases would be equal to two times bass and meter
+
+voltage.
+
+These what is drop will bring both transistors about the cutoff state.
+
+They will therefore both conduct simultaneously a portion of the input signal.
+
+If there is a what is a drop of 0.7 volts across this resistor, and since this terminal is at round,
+
+it means that the base of the NPRM transistor is higher with zero point zero volts than the emitter,
+
+which, after all, is connected to ground as well through the load resistor.
+
+We all know that if the base is higher than the emitter with 0.7 volts, the transistor will turn on.
+
+On the opposite side, though what is drop across this resistance is the same seeing as it has the same
+
+value and also the same current is passing through it.
+
+Now from ground, until this point, there's a 0.7 voltage difference, which in turn means that the
+
+meter, which is also the ground, is higher of 0.7 volts than the base of the PMPA transistor, which
+
+is enough to turn the transistor on.
+
+Now, of course, you can play with the value of these resistances, and you don't need to have a voltage
+
+difference between the two bases as high as 1.4 voids.
+
+It can be lower, and the lower you go, the more efficient the circuit gets.
+
+Because if the wattage difference between the two bases is lower than 1.4 volts, the transistor will
+
+conduct less current.
+
+And so the quiescent clatter and the meter current is less, which in turn means lower participation
+
+on the active devices.
+
+But this comes at the expense of greater crossover distortion.
+
+So it's a compromise between Chris and out of current and the crossover distortion.
+
+We forgot to mention one important disadvantage of the circuit, and you might have already guessed
+
+it, the few complimentary transistors need to be identical, even though this is npm and the other
+
+one is PMP.
+
+The ethical characteristics for both of them must be identical.
+
+So the main reason why this configuration cannot be used for Class A B amplifiers is that the set of
+
+values of the resistors will only work for a particular Push-Pull configuration.
+
+Moreover, the set of values needs to be chosen very carefully, especially if the complementary transistors
+
+are different.
+
+This method is very similar to the voltage divider network.
+
+The only difference is that an adjustable resistance or potential meter is placed between the two networks.
+
+The advantage of this solution is to closely match the biasing of the two complementary transistors
+
+with a controllable resistance, even if the transistors have different electrical properties.
+
+So again, the advantage of this adjustable biasing arrangement is that the basic amplifier circuit
+
+does not require to use of complementary transistors.
+
+We've closely matched electrical critics or at the exact resistor ratio within the voltage divider network,
+
+as the potential meter can be adjusted to compensate.
+
+So this is the solution to the problem of having slightly different electrical critics sticks of the
+
+two active devices.
+
+But there's another problem which is probably even worse than this one.
+
+Let's go back to the previous circuit for the ease of understanding the problem.
+
+This problem is caused by the thermal runaway, so thermal runaway occurs in situations where an increase
+
+in temperature changes the conditions in a way that causes a further increase in temperature, often
+
+leading to a destructive result.
+
+It is a kind of uncontrolled positive feedback.
+
+Thermal runaway occurs because of the semiconductor temperature increases due to surface heating, as
+
+well as potential ambient temperature increase the current through the transistor increases as well.
+
+So again, as the temperature of the transistor increases, the quieter current decreases as well,
+
+and the higher electric current means that the transistor will warm up even more so.
+
+Both transistors due to thermal runaway will enter into a vicious cycle, which will lead to destructive
+
+results.
+
+So how can we resolve this problem?
+
+One way to compensate for any temperature related variation in the base emitter voltage is to use a
+
+pair of normal forward by a diodes within the amplifiers biasing arrangement.
+
+As you can see, a small constant current flows through the series circuit of R1, D1, D2 or two producing
+
+voltage drops, which are symmetrical either side of the input.
+
+We have no input signal voltage applied.
+
+The point between the two diodes is zero woods as current flows through the chain.
+
+There is a forward biased voltage drop of approximately 0.7 watts across the diodes, which is applied
+
+to the base emitter junction of the switching transistors.
+
+So again, the voltage drop across the diodes biases the base of the NBN transistor to about 0.7 worlds
+
+and the base of the PMPA transistor to about minus 0.7 watts, does the two silicon diodes provide a
+
+constant voltage drop of approximately 1.4 volts between the two bases, biasing them about cutoff?
+
+The trick starts from here in real world, these two diodes are positioned right next to these two transistors,
+
+and most of the time these transistors are mounted on a heatsink.
+
+These studios are usually mounted on the same heatsink as the output transistors.
+
+Therefore, when the due transistors heat up, so will the two diodes.
+
+So again, the diodes in the transistors are very close to each other, and also because they are on
+
+the same heating as the transistor is heating up.
+
+The diode will be affected, too, heating it up as well.
+
+And why is this good for us anyway?
+
+Well, the temperature coefficients of the transistor itself is positive, meaning that the transistor
+
+is heating up.
+
+The base emitter voltage is increasing, leading to more current flow through the circuit.
+
+On the other hand, the temperature coefficients of diode is negative, meaning that the diode is hitting
+
+up.
+
+The forward voltage drop across its terminal is decreasing.
+
+The base emitter voltage will decrease due somehow counterbalancing the positive temperature coefficient
+
+of the transistor with the negative one.
+
+In practice, diode biasing is easily accomplished in modern day integrated circuit amplifiers, as
+
+both the diode and the transistor are fabricated onto the same chip, such as in the popular alarm 386
+
+audio power amplifier.
+
+This means that they both have identical characteristics, curves over a wide temperature change, providing
+
+thermal stabilization of the case and current.

@@ -1,0 +1,171 @@
+All right, so one popular use of a capacitor area world is for coupling and decoupling.
+
+If you have learned something so far that might be that capacitor blog DC and they allow AC signals
+
+to pass through this property of the capacitor is useful in situations where we want to copper or link
+
+together only the AC signal from one circuit to another.
+
+The capacitor blocks the DC signal from entering the second element and as a result only passes the
+
+AC signal it is emitted seems to abstract.
+
+Well, let's take a real world example.
+
+So, as I said, Coplin capacitors are useful in many types of circuits where AC signals are the desired
+
+signals to be output, while these signals are just used for providing power to certain components in
+
+the circuit but should not appear in the output.
+
+For example, a capacitor normally is used in an audio circuit such as the microphone circuit.
+
+This symbol is used in electronics as a DC power source.
+
+In this case is a five words power supply.
+
+Then we have a transistor in series, a microphone and a capacitor.
+
+So this power is used to give power to the microphone, which needs DC power to operate.
+
+The 10 km resistor is used to limit the current flowing through the microphone, but notice that this
+
+DC voltage is also connected to the rest of the circuit.
+
+So this signals must be present in the circuit for powering purposes.
+
+However, when a user talks into the microphone, the speech is an easy signal, right?
+
+And this signal is the only signal.
+
+In the end, we want passed out where we pass the AC signals from the microphone onto the output device,
+
+say speakers to be played or a computer to be recorded.
+
+We don't want to pass the DC signal.
+
+Remember that this signal was only to power parts of the circuit, which in this case is the microphone.
+
+So we don't want it showing up on the output recording or the output.
+
+We only want the AC speech signal.
+
+So to make sure all the AC passes while the DC signal is blocked, we place a Coplin capacitor this
+
+liquid in a more professional way.
+
+We can say that this capacitor filters out the DC noise that might be coupled along with the audio signal.
+
+Also, notice something interesting here.
+
+Instead of using a non polarized capacitor, this capacitor is a polarized one indicated by this plus
+
+sign here.
+
+The positive leg of the polarized capacitor should always be connected towards the higher positive voltage,
+
+in this case towards the microphone output pin, because this is the direction from which the analogue
+
+signal as well as the DC voltage comes.
+
+So now you might ask, why do we need to use a polarized capacitor where we could just use a non polarized
+
+capacitor and spare a headache from thinking which leg towards which direction?
+
+I should point that that's a valid question.
+
+However, remember that the reason why electrolytic capacitors exist in the first place is because they
+
+can offer higher capacitors than their non polarized counterparts.
+
+Early on, it was discovered that the oxides of certain metals like, for example, aluminum and tantalum
+
+in particular made good electrics and could be made very thin through a chemical process, orders of
+
+magnitude thinner than other dielectric such as waxed or oiled paper and plastic film.
+
+Therefore, the Athletica pastor was invited to provide high capacitors in a reasonable volume.
+
+Unfortunately, the chemical process requires that the voltage across the capacitor must have only a
+
+single polarity.
+
+So these capacitors are polarized.
+
+Now, the other question you might ask is that why do we need to use such a high capacity in this liquid?
+
+Can't we just put a long polarized capacitor before lower capacitance?
+
+After all, they do the same thing.
+
+Yes, that's right.
+
+They do do the same thing.
+
+But how they do that same thing is important.
+
+So the reason why we use a microwave capacitor is because of its reactors that offers them the audio
+
+signal passes through it.
+
+So probably you knew already what humans can hear.
+
+Sounds starting from 20 hertz up to 20 kilohertz.
+
+In a good case, the audio signal coming from the microphone will be in this range as well.
+
+So in these 20 hertz and 20 kilohertz range, as a result, we have to choose a capacitor that offers
+
+low reactors for these range of frequencies.
+
+Now, let's calculate the reactors with a capacitor when the signal is one kilohertz.
+
+Well, the reactors of the capacitor will be 159 ohms.
+
+The upper limit would be 20 kilohertz.
+
+So the reactors in this case would be around eight ohms.
+
+Just as a tip.
+
+I usually just type in Google capacity reactors calculator and I just insert the capacitors value and
+
+the frequency and it gives me right away the capacitance.
+
+All right, we have found out that for one kilohertz signal, the reactors of the capacitor is 159 ohm
+
+and 420 kilohertz, we get eight ohms.
+
+These reactors is.
+
+The good enough as it won't attenuate the signal if you were using a non polarized capacitor before
+
+lower capacitance, say, 100 hertz.
+
+Indeed, the copying effect will happen so this won't pass through it.
+
+Only the AC, but this AC signal will be attenuated because if you do the reactance calculation for
+
+the 100 alpha capacitor, the reactors that it offers will be too high for the specified frequencies.
+
+It's like placing a big fat resistor in series, which will decrease heavily the coral floor, or in
+
+other words, it will lower the overall power that this circuit will output toward the next circuit.
+
+And that's why if you don't want to decrease the output power of the circuit, make sure you use a capacitor
+
+big enough so that its reactors is low for all the frequencies from 20 hertz up to 20 kilohertz.
+
+Alright, one more thing.
+
+This liquid can be connected to an amplifier stage, for example, that will amplify the Speaker's speech
+
+and that amplified speech will be able to drive a bigger, loud speaker.
+
+Seems like a pretty realistic scenario, isn't it?
+
+In the future we will understand how transistors work, which will be the second active component that
+
+we talk about through the courses, and you will learn how you can amplify analog signals of all types.
+
+

@@ -1,0 +1,163 @@
+Hello.
+
+Have you ever wondered how is it possible to move an entire easy signal upward or downward without changing
+
+its shape at all in its course?
+
+We will talk about the we record that Klemperer that does exactly this.
+
+So Kemper's, which are of three types, positive Klemperer's negative Klemperer's and biased Klemperer's.
+
+Let's take the first one, which is the positive.
+
+Klemperer the positive.
+
+Klemperer is made up of a wealthy source capacitor diode and a low resistor in this area with the diode
+
+is connected in parallel with the output load.
+
+So the positive Klemperer passes the input signal to the output load where the diode is a reverse bias
+
+and blocks the input signal when the dye is forward biased.
+
+All right.
+
+So let's take a closer look at how the circuit works in more detail.
+
+During the negative half cycle of the input AC signal, the diode is forward, biased and hence no signal
+
+appears the output right in the forward bias condition.
+
+The diode allows electric current through it, and these Coraki flow to the capacitor and charges it
+
+to the peak value of the input voltage.
+
+It's very important for you to understand that this capacitor will be charged in inverse polarity with
+
+the input voltage.
+
+So as input current or voltage decreases after attaining its maximum value, the capacitor holds the
+
+charge onto the diode remains forward.
+
+So during the positive cycle of the input AC signal, the diodes reverse bias and hence the signal appears
+
+at the output in reverse bias condition.
+
+The diode does not allow electric current through it, right?
+
+So the input current directly flows towards the output.
+
+All right.
+
+So then the positive half cycled against the diode is in the non conducting state and the charge stored
+
+in a capacitor is discharged.
+
+Therefore, the voltage appeared at the output is equal to the sum of the voltage stored in a capacitor
+
+and the input voltage which have the same polarity with each other.
+
+As a result, the signal is shifted upwards.
+
+Now the big topic amplitude of the input signal is at UVM.
+
+Similarly, the P2P capital of the output signal is also Tubiana.
+
+Therefore, the total swing of the output is the same as the total swing of the input.
+
+And the basic difference between the Clipper and Klemperer is that the Klemperer removes the unwanted
+
+portion of the input signal, whereas the Klemperer moves the input signal upwards or downwards.
+
+And now let's test the circuit in the simulator.
+
+All right, so we have a 200 hertz AC 130 source, a five Microfit capacitor, along with a diode and
+
+a five km resistor.
+
+So during the first positive half cycle, the diode is reverse biased and the capacitor does not get
+
+charged at the peak value.
+
+But during the negative half cycle, the diode gets a forward biased and the capacitor is charged at
+
+its peak value of the input AC signal.
+
+And finally, the output voltage is the sum of the input voltage and the maximum voltage to which the
+
+capacitor gets charged.
+
+Hence the output gets shifted by VM level and this shifting solidly depends upon the charge stored in
+
+the capacitor.
+
+Correct.
+
+Now, how do you think we can shift the level downwards exactly by reversing the position of the diet
+
+now during the positive half cycle of the input signal, the diet is forward, biased and has no signal
+
+appears at the output in forward bias condition.
+
+The diet allows electric current through it.
+
+Right.
+
+These current will flow to the capacitor and charges it to the peak value of the input voltage in inverse
+
+polarity as input current or voltage decreases after attaining its maximum value, the capacitor holds
+
+the charge until the diode remains forward.
+
+Biased during the negative half cycle of the input AC signal, the diodes reverse biased and hence the
+
+signal appears at the output in reverse bias condition.
+
+The diode does not allow electric current through it, so the input current directly flows towards the
+
+output.
+
+When the negative half cycle begins, the diode is in the non conducting state and the charge stored
+
+in the capacitor is discharged.
+
+In other words, released and therefore the voltage appeared at.
+
+The output is equal to the sum of the voltage stored in a capacitor and the input voltage.
+
+We each have the same polarity of each other and as a result the signal is shifted downwards.
+
+All right, now, during the first positive half cycle, the diet is forward, biased and the capacitor
+
+gets charged, the peak value, which is Vienne, and during the negative half cycle, the diet gets
+
+reversed, biased and acts as an open secret.
+
+So the output for this becomes the sum between the input voltage and the voltage to which the capacitor
+
+gets charged.
+
+This type of policy that we are going to talk about is the biased one, what do you think it does?
+
+Well, sometimes an additional shift of this level is needed, and in such cases, Byas Clambers, I
+
+used the working principle of the biased Klemperer's is almost similar to the unbiased Klemperer's.
+
+The only difference is an extra element called DC Battery, which is introduced in by scampers.
+
+And this is so similar to the Cleveland secret.
+
+I hope you don't get confused clippings if it has a resistor here instead of a capacitor.
+
+So if you connect the bias voltage with positive Klemperer's, then it just gets added with output voltage
+
+and it will shift to a more positive level as the bias voltage.
+
+And if you connect to the bias voltage with negative Klemperer, then it just gets added with output
+
+voltage and it shifts to a more negative level as the bias voltage bias voltage can be of any value.
+
+But remember that it should not be greater than or equal to the input voltage, because in that case,
+
+either you will not get any output or the clipping may get reversed.

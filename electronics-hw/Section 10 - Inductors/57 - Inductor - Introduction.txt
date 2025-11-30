@@ -1,0 +1,137 @@
+What passive component that always remains obscure is the inductor, these are the core like structures
+
+that you find the most powerful turning circuits and it is because of its properties your transformers
+
+work.
+
+The reason why many people do not understand inductors is that they not only alter electric field,
+
+but also the magnetic field around it in this area.
+
+Let us understand the basics of an inductor and demystified so that we will know how and when to use
+
+one in our applications.
+
+So what is an indicator that, you know, there is perhaps the simplest of all electronic components
+
+constructed, much like a resistor, a symbol length of wire that is called up.
+
+However, here, resistless is not a prop. we are looking for.
+
+It is something that happens because of the shape of the wire, a call.
+
+It creates a magnetic field when a karate's pass through it.
+
+This induced magnetic field gives this bit of wire some interesting ethical properties, especially
+
+inductance, which gives these parts their name.
+
+Like many other electronic components, the symbol for inductor is a simplified pictogram of what it
+
+actually looks like.
+
+The lines near the symbol represent the core material, something we will discuss later on, inductor,
+
+as already mentioned, is just a coil of wire.
+
+Before we go into anything else.
+
+Let's ask the question, why a coil?
+
+As we already know, any current carrying conductor generates a magnetic field in the following fashion.
+
+However, if you plug in the value of the current, the formulas, then you will realize that the magnetic
+
+field produced is tiny, almost negligible, unless the currents are impossibly high in order of mega
+
+amps.
+
+So in order to increase the magnetic field created by a specific length of wire, we wrap it into the
+
+form of a coin.
+
+This increases the magnetic field like so.
+
+This ship is also called a solenoid, when a voltage is applied across the terminals of another, the
+
+current flowing creates a magnetic field.
+
+This magnetic field again creates and induced current in the doctor, according to Lance.
+
+The currents do not cancel each other out.
+
+Rather, the induce current actively tries to oppose the incoming current due to the voltage across
+
+the inductor.
+
+And the overall result of this battle is that the current through and inductor cannot change rapidly.
+
+Let's start by looking at the difference between the current waveform, between the two circuits in
+
+both circuits, we can find a simple five Oddisee power supply along with a switch resistor.
+
+And the difference is that here we do not have any doctor and here we have.
+
+And by the way, this is a schematic symbol of an inductor, OK?
+
+Now, first, let's examine how the current looks like within the First Circuit.
+
+So if I close a switch, you can notice that the current instantly rose to 50 millions.
+
+But why 50 minutes?
+
+Because the current is defined by the voltage of the battery and the value of the resistor.
+
+So five volts divided by 100 is, which is the equation of Ohm's Law.
+
+We get a current of 50 millions.
+
+All right.
+
+Nothing fancy here.
+
+Let's move on to the next circuit.
+
+Let's see what this graph here showed us.
+
+Let's close the switch.
+
+And look here, what is happening here?
+
+Well, the coroner didn't instantly rise to 50 millions.
+
+It needed some time until it reached the peak value of, again, 50 Williams, 49, but is the same.
+
+So what can we deduce from this graph where we can deduce that the inductor is opposing the sudden change
+
+of current so it cannot keep up with a sudden change of current?
+
+And we can even say that its initial resistance is high at the beginning.
+
+But as time passes, its resistance is decreasing to zero.
+
+Advisee decreasing to zero, because if the doctor would have any resistance different than zero, the
+
+current would be 50 milligrams, but less.
+
+Right.
+
+We would have to resistance's and more resistance means less current.
+
+But now the current is the same as here.
+
+So this is a clear indication that after a certain time, the resistance of the inductor drops to zero.
+
+We have seen from the simulation that inductors are pretty much useless in this selkowitz, since there's
+
+a constant current flowing and the inductor acts like a bit of wire, they find most of their uses in
+
+86.
+
+It's just like a basters that have capacity reactance and doctors have what's called inductive reactance.
+
+These properties of inductors makes them very useful in AC selkowitz.
+
+However, before we go into that, let's see what are the different types of inductors that exist out
+
+there.

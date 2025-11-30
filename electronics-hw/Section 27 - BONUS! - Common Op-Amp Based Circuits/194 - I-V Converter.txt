@@ -1,0 +1,223 @@
+We usually think of an amplifier as something that receives an input voltage and produces a higher amplitude
+
+opportunities.
+
+However, an important variation on these basic amplification scheme involves conversion from current
+
+to voltage.
+
+So how can we convert current wattage?
+
+And what does this mean?
+
+Well, in this course, we will find it out.
+
+The current to wattage amplifier can be described as having again, because the output amplitude is
+
+equal to the input amplitude multiplied by a number chosen by the designer, but it's a different type
+
+of game because the output signal and in particular have different units and therefore cannot be directly
+
+compared with.
+
+I'm sorry if I'm confusing you.
+
+Trust me, it's very easy.
+
+Why am I saying this?
+
+Because a current worth gentrifier reminds us that the circuit is performing the same basic function
+
+as a resistor.
+
+We know from Ohm's Law that voltage is equal to current times resistance and in fact an ordinary resistor
+
+can be used as a carrot to wordage converter.
+
+If you correcto resistor to a current source, the resistor will generate a voltage that is equal to
+
+the current multiplied by the gain where the gillion here is nothing else but the resistance of the
+
+transistor.
+
+What is occurring in the first place where we already talked about this?
+
+But briefly, Corales also circuit.
+
+It maintains a constant current flow, regardless of the voltage developed across its terminals.
+
+As this voltage is determined by the circuit elements.
+
+That is an ideal constant source continually provides a specified amount of current, regardless of
+
+the impedance that it is driving.
+
+And such an ideal source could easily supply an infinite amount of energy.
+
+So just as a voltage source may be created, for example, US five or ten volts, etc., a coral source
+
+will also have a current rating, for example, a three emperors or a 15 members, etc..
+
+Now IdeaCast and current sources are represented in a similar manner to what is sources.
+
+But this time the current source symbol is that of a circle with an arrow inside to indicate the direction
+
+of flow of the current.
+
+The direction of the current will correspond to the polarity of the corresponding voltage flowing out
+
+from the positive terminal.
+
+And the letter I is used to indicate that this element is nothing else but our current source.
+
+Well, I think the best way to explain the current source is to show you what it does here in the simulator.
+
+So it is Elkwood.
+
+As you can see, we have a resource and a simple resistive load that is a very basic silkies.
+
+Right.
+
+Current flows out of the current source.
+
+It goes through the load and it goes back since it's a closed loop circuit.
+
+We know that the resistor in general is used to set or limit the current flow in the circuit.
+
+Right.
+
+And here in the circuit, no matter what the resistance of the load is.
+
+It will not effect the current flowing in this year.
+
+So if this is a radical resource and it is ideal because it the simulator is considered as ideal, the
+
+current in a circuit will always be Tamilians, regardless of the resistance of the load.
+
+So if the current source is set to output a current of millions, then no matter how much the resistance
+
+is, there will be always Tamilians flowing in the circuit.
+
+So how can a coral source maintain a constant coral, regardless of the load that it's driving?
+
+Very easy in order to maintain a constant current in the circuit, the current source, which is a circuit
+
+after all.
+
+But here in the simulator, you can just use a coral source out of the box.
+
+The coral source will play with the output voltage.
+
+So it will increase or decrease depending on the load resistance that is driving in order to maintain
+
+a constant current.
+
+All right.
+
+I'm sorry if I spend too much explaining this.
+
+I just wanted to make it clear again, because we will use coral sauce in a minute.
+
+Oh, I almost forgot to show you that a simple resistor can be used towards cold water.
+
+So if we set the value of the resistor to, let's say, one kilo, the current flowing through this
+
+resistor in millions will be converted to voltage.
+
+So if Ted Williams is flowing through the register that the output voltage will be 10 volts if the current
+
+flowing through the resistor is, let's say, 20 Myriam's.
+
+The output voltage will be 20 words, so I hope you get the point.
+
+Now, let's go back to our current to watch commander.
+
+So this conveys the most basic form of the open current toward the mother at this point, you might
+
+be wondering why we need an option for clarity to what is conversion if the task can be accomplished
+
+by a single register.
+
+First, we have to remember two important techniques that we use to simplify the analyses of negative
+
+feedback about sacred rule.
+
+Number one, no current flows into the options inputs and rule number two, the voltage at the nanny
+
+voting input is equal to the voltage.
+
+Other averting a potential now sees no current enters the inverting input terminal.
+
+All of the input current flows through the feedback resistor RF on its way to the output node.
+
+Next, the non-emergency terminal is connected to ground, as you can see, and therefore we can assume
+
+that the inverting input terminal is also at the ground.
+
+Next sees one side of the feedback resistor is a virtual ground and the other side is connected to the
+
+output terminal.
+
+All we need is a home floor to tell us that the magnitude of the output voltage is equal to the input
+
+current times, the feedback resistance.
+
+So the input to output relationship of the opposite is expressed as follows.
+
+The output voltage is equal to minus the input current times, the resistance of the feedback resistor
+
+where the negative side in this equation is an important detail.
+
+If current is flowing into the circuit, the voltage across the feedback register will have polarity
+
+as shown here.
+
+So the right hand terminal of the register is at a lower potential than the left hand terminal and sees
+
+the left hand terminal is a neutral ground.
+
+The output voltage will be negative.
+
+Great only to see this in action.
+
+All right, so in this circuitous, you can see we have a current source, which, again, is a device
+
+that provides whatever voltage is required to keep a constant amount of current flowing in the circuit.
+
+If the current source sets the current due to millions, then the 08 will convert these two mediums
+
+into two worlds, well, minus two what in this case.
+
+But if we change the polarity of the current source.
+
+Notice that the output voltage is positive dubois', so how do we calculate the output voltage?
+
+Well, using this formula, the output voltage is simply equal to minus the feed, the resistance times,
+
+the input current.
+
+Since we know both the input current and the feedback resistance, we get the output voltage very easily.
+
+We know that the ratio of output and input of a circuit is called US gain.
+
+Right.
+
+And in this case, the gain of the current to voltage converter is not else but the feedback resistance.
+
+All right.
+
+Now you might ask, where would we use the current voltage converter?
+
+Well, these circuits can be found in sensors that have a current response that is more linear than
+
+the voltage response.
+
+This is the case before the diodes, for example, where it is not uncommon for the current response
+
+to have a better than one percent non-linearity over a wide range of light input.
+
+But again, since the current response of the photo diode is more linear than the voltage response,
+
+the current that the photo diode generates is converted to a blockage which gets processed by another
+
+DataQuick.

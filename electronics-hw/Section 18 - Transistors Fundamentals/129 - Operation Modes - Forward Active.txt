@@ -1,0 +1,255 @@
+Until now, we have seen how a transistor works in the cutoff and saturation mode when a transistor
+
+is used as a switch in a circuit.
+
+It's most likely that it will work in the saturation and cut off mode.
+
+The real deal of transistors comes when they work in the active mode, which is a powerful mode that
+
+turns the transistor into an amplifier.
+
+This means that besides the switching functionality that we have seen during the previous courses,
+
+transistors can also be used as amplifiers.
+
+But what do they amplify though?
+
+Well, AC signals in most cases.
+
+However, to understand how a transistor can amplify small AC signals, first we have to understand
+
+the relationship between the voltages and currents in the transistor working in the active mode.
+
+Now, to place the transistor in the active mode, the collector voltage must be greater than the base
+
+voltage and the base voltage must be greater than the ammeter voltage.
+
+I also have to mention that this condition by itself is not enough to place the transistor in active
+
+mode.
+
+The base voltage must be higher than the emitter voltage indeed.
+
+But if it's not higher than the emitter voltage with at least the threshold voltage of about 0.6 volts,
+
+the transistor won't turn on.
+
+So the base emitter voltage needs to be around 0.6 volts to place the transistor in active mode.
+
+One important characteristic of a transistor that you must absolutely know about regardless of the operation
+
+mode, is called the amplification factor.
+
+Every bipolar junction transistor, regardless if it's working in saturation, cutoff or active mode,
+
+has an amplification factor also called current gain and has the Greek symbol of beta, which is a constant
+
+number that can be found in the transistor data sheet.
+
+Now, why do we care about this amplification factor?
+
+Because you see, when the transistor works in the active mode, the electric current is not equal to
+
+the power supply voltage on the collector.
+
+Divided by the collector resistance as it was in the case of saturation in the active mode.
+
+The collector current is equal to beta times.
+
+The base current.
+
+The actual value of beta varies by transistor.
+
+It's usually around 100, but can range from 50 to 200, even 2000, depending on which transistor you
+
+are using and how much current is running through it.
+
+If your transistor had a beta of 100, for example, that would mean an input.
+
+Current of one milliamps into the base could produce a 100 milliamps current through the collector.
+
+Now what about the emitter current in active mode, the collector and base currents go into the device
+
+and the emitter current comes out to relate the emitter current to the collector current.
+
+We have another constant value which is called Alpha.
+
+Alpha is the common base current gain.
+
+It relates to the current.
+
+As such, the electric current is equal to alpha times, the emitter current.
+
+Alpha is usually very close to but less than one.
+
+This means that the collector current is very close to but less than the emitter current in active mode
+
+and you can use beta to calculate alpha or vice versa.
+
+So beta is equal to alpha divided by one minus alpha, for which alpha is equal to beta divided by beta
+
+plus one.
+
+So if beta is 100, for example, that means alpha is 0.99.
+
+So if the collector current is 100 milliamps, for example, then the emitter current is 101 milliamps.
+
+The circle that you see here is called a Common Ammeter amplifier, which is used to amplify small AC
+
+signals.
+
+More specifically, the small AC signal is fed into the base of the transistor and the amplified AC
+
+signal is taken out from the collector.
+
+We can notice that the input AC signal is 500 millivolts, and after amplification the AC signal has
+
+a voltage of five volts.
+
+This means that this particular circuit amplifies AC signals by a factor of ten.
+
+And the reason why I brought this circuit up is to only show you that transistors working in active
+
+mode are built specifically for this purpose to amplify AC signals.
+
+However, a more detailed analysis on how to construct a circuit like this will be done in another course.
+
+For now, let me remove the input AC signal and the output components that come with it.
+
+And let's just examine the circuit from a DC standpoint.
+
+First and foremost, if we hover the mouse over the transistor, the simulator is telling us that the
+
+transistor currently works in the active mode.
+
+If you recall, the condition that has to be satisfied for this operation mode is that the collector
+
+voltage must be higher than the base voltage and the base voltage must be higher than the ammeter voltage.
+
+If we look here, the collector voltage reference to ground is 10.2 volts and the base voltage is 1.5
+
+volts.
+
+So the first condition is mad.
+
+The second condition is for the base voltage to be higher than the ammeter voltage.
+
+And just as a tip, if you know the base voltage, you can deduce how much is the voltage on the emitter
+
+by simply subtracting the base voltage with this base emitter diode job, which is usually called the
+
+threshold voltage, right?
+
+So 1.5 volts minus about 0.6 volts gives us an emitter voltage of 982 millivolts.
+
+If we think logically the emitter voltage cannot be at zero volts as it was in the case for saturation,
+
+because the emitter is not connected to ground directly, but it's connected through this resistor.
+
+And if current is passing through a resistor, there needs to be a voltage drop across it.
+
+So the second condition is met as well.
+
+Now let's try to calculate some voltages and currents in the circuit without the help of the simulator.
+
+First, let's figure out how to calculate the base voltage.
+
+Well, that's quite easy, as we can see right away.
+
+The base terminal of this transistor is connected to a voltage divider circuit.
+
+This voltage divided circuit is formed by these two resistors, and the output of the voltage divider
+
+can be found using this equation.
+
+If we plug the values in, we get an output voltage of about 1.5 watts.
+
+So 1.5 watts will be present on the base terminal.
+
+If 1.5 volts is the voltage on the base, the emitted voltage will be one diode drop less.
+
+So 1.5 volts minus the threshold voltage of about 0.6 volts, which gives us a voltage of 982 millivolts.
+
+If 982 millivolts is dropped across this resistor, then we can go ahead and find out the ammeter current
+
+which is calculated using simply Ohm's Law.
+
+982 millivolts divided by one kilogram gives us a current of 982 micro amps.
+
+Knowing the emitter current, we can go ahead and calculate the base current.
+
+But how would you calculate the base current?
+
+There are two ways to calculate that, but I will show you the one that is easier for you.
+
+So here it goes.
+
+When the transistor works in the active mode, the electric current is equal to beta times.
+
+The base current.
+
+We will see what's the beta of this transistor in a second.
+
+And we also know that the electric current is equal to alpha times emitter current, where alpha is
+
+equal to beta divided by beta plus one.
+
+So we can rewrite the second equation as a function of beta.
+
+So the electric current is equal to beta divided by beta plus one times the emitter current.
+
+Now, based on the first equation, the electric current is equal to beta times, the base current.
+
+This is what the textbook says when the transistor is in active mode.
+
+So let's replace the collective current from the second equation as beta times based current.
+
+The new equation will be then beta times based current is equal to beta divided by beta plus one times
+
+emitter current.
+
+And from this equation, the base current is equal to emitter current divided by beta plus one.
+
+And now let's ask the big question what's the beta of this transistor?
+
+As I mentioned, beta is the amplification factor that varies from transistor to transistor, and it
+
+can range from 50 up to 2000.
+
+But usually for common bipolar transistors, the beta is 100.
+
+If we double click on the transistor, the first thing that will show up is the beta.
+
+And here you can actually modify this value to whatever value you want.
+
+But I will leave it as default, which is 100.
+
+Knowing this value and plugging it into this equation, the base current becomes 982 milliamps divided
+
+by 101, which is equal to 9.7 micrograms.
+
+And indeed 9.7 micro amps is flowing into the base from this point on, calculating how much current
+
+is flowing through the collector is a piece of cake collector.
+
+Current is equal to beta times the base current, which only means that with a current gain of 100.
+
+The collector current will be 100 times higher than the base current.
+
+So 9.7 micro amps, actually 9.729 times 100 gives us a collector current of 972 microns.
+
+Now notice something interesting here.
+
+Even if I slightly change the value of this collector resistance, the collector current won't change
+
+a bit.
+
+And why is that?
+
+Because if the transistor is biased to work in the active mode, it will force the collector current
+
+to be always beta times the base current.
+
+It will force it by changing this collector emitter resistance.
+
+I was talking about in a way to keep the collector current constant.

@@ -1,0 +1,820 @@
+\section{Section 16: Radio and Signal Modulation}
+
+% Topic 1: Radio Fundamentals and Communication Principles
+\subsection{Radio Fundamentals and Communication Principles}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{Communication channel:} Medium through which information travels (air, wire, fiber). Pattern (speech, Morse code, electrical signal) travels through channel, gets decoded at receiver. Radio: Voice $\rightarrow$ transmitter encodes $\rightarrow$ EM waves through air $\rightarrow$ receiver decodes $\rightarrow$ audio output.
+
+\textbf{Radio waves:} Electromagnetic radiation at radio frequencies (few Hz to 300~GHz). Same phenomenon as visible light, but lower frequency. Wavelength $\lambda = \frac{c}{f}$ where $c = 3 \times 10^8$~m/s (speed of light). Lower frequency = longer wavelength = better penetration through obstacles. Example: AM radio (540--1600~kHz) penetrates buildings better than FM (88--108~MHz).
+
+\textbf{Radio propagation:} Depends on frequency band. \textbf{VHF/UHF} (30~MHz--3~GHz): Line-of-sight propagation, travels straight, needs satellites for over-horizon. \textbf{Shortwave} (3--30~MHz): Ionosphere reflection (sky wave), bounces Earth-ionosphere-Earth, enables long-distance. \textbf{Lower frequencies:} Ground wave curves around Earth's surface.
+
+\textbf{Transmitter blocks:} Power supply $\rightarrow$ Oscillator (generates carrier wave at fixed $f_c$) $\rightarrow$ Modulator (encodes information into carrier) $\rightarrow$ Amplifier (boosts power) $\rightarrow$ Antenna (converts to EM waves). \textbf{Receiver blocks:} Antenna (captures EM waves) $\rightarrow$ RF amplifier $\rightarrow$ Tuner (selects desired frequency using LC resonance $f_0 = \frac{1}{2\pi\sqrt{LC}}$) $\rightarrow$ Detector (extracts information from carrier) $\rightarrow$ Audio amplifier $\rightarrow$ Speaker.
+
+\textbf{Repeaters:} Fixed radio on hilltop receives signal from one user, retransmits to another user blocked by obstacle. Extends communication range beyond line-of-sight. Common in walkie-talkie systems, ham radio, cellular networks.
+
+\textbf{Key equations:} Wavelength: $\lambda = \frac{c}{f}$; Resonance: $f_0 = \frac{1}{2\pi\sqrt{LC}}$; Frequency range: AM 540--1600~kHz, FM 88--108~MHz
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. Communication Channel Basics:}
+
+Communication requires pattern transmission through a medium, with encoding and decoding at endpoints.
+
+\textbf{Communication Model:}
+\begin{itemize}
+    \item \textbf{Sender:} Person/device wants to convey information
+    \item \textbf{Pattern:} Information encoded (speech, Morse code, electrical signal, data packets)
+    \item \textbf{Channel:} Medium for transmission (air for sound/radio, wire for phone, fiber for internet)
+    \item \textbf{Decoder:} Interprets pattern at receiver (human ear, radio circuit, modem)
+    \item \textbf{Receiver:} Acts on decoded information
+\end{itemize}
+
+\textbf{Radio Communication Path:}
+\begin{itemize}
+    \item Speaker talks into microphone (analog sound pressure waves)
+    \item Transmitter encodes voice into electromagnetic pattern
+    \item Antenna launches EM waves into atmosphere (channel)
+    \item Receiver antenna captures EM waves
+    \item Detector decodes pattern back to electrical audio signal
+    \item Speaker converts electrical signal to sound (receiver understands)
+\end{itemize}
+
+\textbf{Modern Radio Applications:}
+\begin{itemize}
+    \item Audio broadcasting: AM/FM radio (1930s--present)
+    \item Video broadcasting: TV (audio + video combined)
+    \item Telephony: Cell phones extend phone network wirelessly
+    \item Data: Wi-Fi replaces network cables, cellular data for internet
+    \item Navigation: GPS, radar systems
+    \item Short-range: Bluetooth, wireless chargers (electromagnetic induction)
+\end{itemize}
+
+\textbf{2. Radio Waves (Electromagnetic Radiation):}
+
+Radio waves are electromagnetic radiation at specific frequency range, same physics as visible light.
+
+\textbf{Wave Properties:}
+\begin{itemize}
+    \item \textbf{Crest:} High point (molecules compressed, high energy)
+    \item \textbf{Trough:} Low point (molecules spread, low energy)
+    \item \textbf{Frequency:} Number of waves per second (cycles/second, Hz)
+    \item Named after Heinrich Hertz (first to build device creating/detecting radio waves)
+    \item \textbf{Speed:} All EM radiation travels at speed of light $c = 3 \times 10^8$~m/s (186,282 miles/s)
+    \item \textbf{Wavelength:} $\lambda = \frac{c}{f}$ (distance light travels in one cycle)
+\end{itemize}
+
+\textbf{EM Spectrum:}
+\begin{itemize}
+    \item \textbf{Radio:} Few Hz to 300~GHz (longest wavelengths in common use)
+    \item \textbf{Infrared:} Above radio, heat radiation
+    \item \textbf{Visible light:} 405--790~THz (red to violet), what we see
+    \item \textbf{Ultraviolet:} Above visible, causes sunburn
+    \item \textbf{X-rays:} Medical imaging, high energy
+    \item \textbf{Gamma rays:} Highest energy, nuclear reactions
+    \item Key insight: Light IS radio, just at higher frequency (THz vs MHz/GHz)
+\end{itemize}
+
+\textbf{Wavelength vs Penetration:}
+\begin{itemize}
+    \item \textbf{Lower frequency} (longer wavelength): Better penetration through walls, water, obstacles
+    \item \textbf{Higher frequency} (shorter wavelength): Less penetration, blocked by obstacles
+    \item Visible light: Cannot penetrate walls (very short wavelength, ~400--700~nm)
+    \item AM radio (longer $\lambda$): Penetrates buildings, travels far
+    \item FM radio (shorter $\lambda$): Better quality, less penetration, line-of-sight
+    \item Submarines: Use extremely low frequency (3--30~Hz) for deep water penetration
+    \item Lower f $\rightarrow$ lower energy $\rightarrow$ less interaction with matter $\rightarrow$ passes through
+\end{itemize}
+
+\textbf{Frequency Calculation Example:}
+\begin{itemize}
+    \item Station broadcasts at 680~kHz (KNBR San Francisco, since 1922)
+    \item Wavelength: $\lambda = \frac{3 \times 10^8}{680 \times 10^3} = 441$~m
+    \item Another example: 100~kHz $\rightarrow$ $\lambda = 3$~km (very long wave)
+    \item Higher frequency $\rightarrow$ shorter wavelength $\rightarrow$ smaller antenna possible
+\end{itemize}
+
+\textbf{3. Radio Propagation (Frequency-Dependent):}
+
+How radio waves travel depends critically on wavelength and frequency band.
+
+\textbf{Frequency Bands (Summary):}
+\begin{itemize}
+    \item \textbf{ELF} (Extremely Low Frequency): 3--30~Hz, submarine communication
+    \item \textbf{VLF} (Very Low Frequency): 3--30~kHz, navigation beacons
+    \item \textbf{LF} (Low Frequency): 30--300~kHz, AM broadcast lower end
+    \item \textbf{MF} (Medium Frequency): 300~kHz--3~MHz, AM broadcast
+    \item \textbf{HF} (High Frequency/Shortwave): 3--30~MHz, long-distance, ionosphere bounce
+    \item \textbf{VHF} (Very High Frequency): 30--300~MHz, FM, TV, aircraft
+    \item \textbf{UHF} (Ultra High Frequency): 300~MHz--3~GHz, TV, cell phones, Wi-Fi
+\end{itemize}
+
+\textbf{VHF/UHF Propagation (Line-of-Sight):}
+\begin{itemize}
+    \item Travels in straight line (like light rays)
+    \item Cannot curve around Earth (limited by horizon)
+    \item For long-distance: Use satellites (receive signal, retransmit in another line-of-sight path)
+    \item Applications: FM radio (88--108~MHz), aircraft communications, TV broadcast
+    \item Range limited by transmitter height and receiver height
+    \item Formula for horizon distance: $d_{km} = 3.57\sqrt{h_m}$ (h in meters)
+\end{itemize}
+
+\textbf{Shortwave Propagation (Sky Wave):}
+\begin{itemize}
+    \item Frequency: 3--30~MHz (HF band)
+    \item Bounces off ionosphere (charged layer 50--600~km altitude)
+    \item Reflection: Wave hits ionosphere $\rightarrow$ reflects back to Earth $\rightarrow$ bounces again $\rightarrow$ continues
+    \item Enables worldwide communication without satellites
+    \item Used in 1940s--1950s for international broadcasts
+    \item Amateur radio (ham radio) still uses this method
+    \item Time-dependent: Ionosphere conditions vary day/night, season
+\end{itemize}
+
+\textbf{Lower Frequency Propagation (Ground Wave):}
+\begin{itemize}
+    \item Frequencies: 300~kHz--3~MHz (LF/MF bands)
+    \item Curves around Earth's surface (follows curvature)
+    \item Longer wavelength $\rightarrow$ better diffraction around obstacles
+    \item AM broadcast uses this (540--1600~kHz)
+    \item Range: Hundreds of km for medium power
+\end{itemize}
+
+\textbf{4. Radio Transmitter (Block Diagram):}
+
+Generates modulated carrier wave, amplifies, radiates into space.
+
+\textbf{Power Supply:}
+\begin{itemize}
+    \item Provides DC voltage/current for all stages
+    \item Must be stable, low noise (noise affects signal quality)
+    \item Typical voltages: 5--50~V depending on power level
+\end{itemize}
+
+\textbf{Oscillator (Carrier Generation):}
+\begin{itemize}
+    \item Creates AC sine wave at fixed frequency $f_c$ (carrier frequency)
+    \item Carrier wave: High frequency, no information content (blank carrier)
+    \item Example: Broadcast at 99.6~MHz $\rightarrow$ oscillator generates 99.6~MHz sine wave
+    \item Must be stable (crystal oscillator or PLL for precision)
+    \item Frequency stability critical: Drift causes tuning problems
+\end{itemize}
+
+\textbf{Modulator (Information Encoding):}
+\begin{itemize}
+    \item Takes two inputs: Carrier wave (from oscillator), message signal (audio, data)
+    \item Encodes message into carrier by changing parameter (amplitude, frequency, or phase)
+    \item \textbf{Amplitude Modulation (AM):} Varies carrier amplitude with message voltage
+    \item \textbf{Frequency Modulation (FM):} Varies carrier frequency with message voltage
+    \item \textbf{Phase Modulation (PM):} Varies carrier phase with message voltage
+    \item Modulated signal contains carrier + information
+\end{itemize}
+
+\textbf{Amplifier (Power Boost):}
+\begin{itemize}
+    \item Amplifies modulated signal to high power level
+    \item Transmitter power: mW (walkie-talkie) to MW (broadcast station)
+    \item Higher power $\rightarrow$ longer range, but more cost, interference
+    \item Class C amplifier common (efficient but nonlinear, OK for FM)
+    \item Class A/AB for AM (must preserve amplitude linearity)
+\end{itemize}
+
+\textbf{Antenna (Electrical to EM Conversion):}
+\begin{itemize}
+    \item Converts electrical signal to electromagnetic waves
+    \item Radiates EM energy into space
+    \item Antenna length related to wavelength: $L \approx \frac{\lambda}{4}$ or $\frac{\lambda}{2}$ for resonance
+    \item Higher frequency $\rightarrow$ shorter wavelength $\rightarrow$ smaller antenna
+    \item Example: FM 100~MHz ($\lambda = 3$~m) needs ~75~cm antenna
+    \item AM 1~MHz ($\lambda = 300$~m) needs much larger antenna or loading coil
+\end{itemize}
+
+\textbf{5. Radio Receiver (Block Diagram):}
+
+Captures EM waves, selects desired frequency, extracts information, outputs audio.
+
+\textbf{Antenna (EM to Electrical Conversion):}
+\begin{itemize}
+    \item Wire exposed to EM waves induces small AC current (µV range)
+    \item Captures ALL frequencies present (hundreds of stations + noise)
+    \item Output: Very weak signal, needs amplification
+\end{itemize}
+
+\textbf{RF Amplifier (Front-End Amplifier):}
+\begin{itemize}
+    \item Amplifies weak antenna signal before further processing
+    \item Low noise design critical (don't amplify noise more than signal)
+    \item Improves sensitivity (ability to hear weak stations)
+    \item Typical gain: 20--40~dB
+\end{itemize}
+
+\textbf{Tuner (Frequency Selection):}
+\begin{itemize}
+    \item \textbf{Function:} Selects ONE frequency from mix of all stations
+    \item \textbf{Circuit:} LC tank (inductor + capacitor in parallel or series)
+    \item \textbf{Resonance:} $f_0 = \frac{1}{2\pi\sqrt{LC}}$ (filters frequencies above/below $f_0$)
+    \item \textbf{Variable tuning:} Adjust L or C to change $f_0$ (knob rotates variable capacitor)
+    \item \textbf{Bandwidth:} Narrow enough to separate stations, wide enough to pass modulation
+    \item \textbf{Q factor:} $Q = \frac{f_0}{BW}$ determines selectivity (high Q = narrow, selective)
+    \item Acts as band-pass filter centered at desired station frequency
+\end{itemize}
+
+\textbf{Detector (Demodulation):}
+\begin{itemize}
+    \item Extracts information from modulated carrier
+    \item \textbf{AM detection:} Diode + capacitor (envelope detector)
+    \item Diode rectifies (removes negative half), capacitor smooths to recover audio envelope
+    \item Removes high-frequency carrier, leaves low-frequency message
+    \item Output: Audio signal (human voice, music, 20~Hz--20~kHz range)
+\end{itemize}
+
+\textbf{Audio Amplifier:}
+\begin{itemize}
+    \item Boosts weak audio signal from detector to speaker level
+    \item Typical gain: 30--60~dB (1000$\times$ to 1,000,000$\times$ power)
+    \item Class AB for efficiency and quality
+    \item Drives speaker (8~$\Omega$ typical)
+\end{itemize}
+
+\textbf{Speaker:}
+\begin{itemize}
+    \item Converts electrical audio signal to sound pressure waves
+    \item Electromagnet moves cone, pushes air, creates sound
+    \item Power: mW (earphone) to W (room speaker) to kW (concert PA)
+\end{itemize}
+
+\textbf{6. Repeaters (Range Extension):}
+
+Fixed station receives signal, retransmits to extend range beyond line-of-sight.
+
+\textbf{Simplex vs Repeater Communication:}
+\begin{itemize}
+    \item \textbf{Simplex:} Direct radio-to-radio, line-of-sight only (walkie-talkies)
+    \item \textbf{Repeater:} Fixed station on hilltop/building receives, retransmits
+    \item Overcomes obstacles (mountains, buildings) blocking direct path
+\end{itemize}
+
+\textbf{Repeater Operation:}
+\begin{itemize}
+    \item User A transmits on frequency $f_1$ (input frequency)
+    \item Repeater receives $f_1$, immediately retransmits on $f_2$ (output frequency)
+    \item User B receives $f_2$ (on other side of mountain)
+    \item Offset: $f_2 = f_1 \pm \Delta f$ (e.g., $\pm$600~kHz for ham 2m band)
+    \item Duplexer allows simultaneous receive and transmit (different frequencies)
+    \item Placement: High location (mountain, tall building, tower) for maximum coverage
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Amateur radio (ham repeaters on VHF/UHF)
+    \item Commercial two-way radio (police, fire, taxi)
+    \item Cellular: Cell tower is sophisticated repeater (base station)
+    \item Public safety: Wide-area emergency communication
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Wavelength Calculation for AM Station}
+
+\textbf{Given:} Station broadcasts at 680~kHz (KNBR San Francisco)
+
+\textbf{Calculate wavelength:}
+\begin{itemize}
+    \item Formula: $\lambda = \frac{c}{f}$ where $c = 3 \times 10^8$~m/s
+    \item $\lambda = \frac{3 \times 10^8}{680 \times 10^3} = \frac{3 \times 10^8}{6.8 \times 10^5}$
+    \item $\lambda = 441.2$~m (very long wavelength!)
+    \item For comparison: FM 100~MHz $\rightarrow$ $\lambda = 3$~m (147$\times$ shorter)
+\end{itemize}
+
+\textbf{Antenna implications:}
+\begin{itemize}
+    \item Quarter-wave antenna: $L = \frac{\lambda}{4} = \frac{441}{4} = 110$~m (361 feet!)
+    \item Impractical for portable radio $\rightarrow$ use ferrite rod antenna or loading coil
+    \item FM quarter-wave: $L = \frac{3}{4} = 0.75$~m (30 inches, practical)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Tuner Design (LC Resonant Circuit)}
+
+\textbf{Requirement:} Tune to FM station at 99.6~MHz
+
+\textbf{Design approach:}
+\begin{itemize}
+    \item Resonance formula: $f_0 = \frac{1}{2\pi\sqrt{LC}}$
+    \item Choose C = 10~pF (small capacitor, typical for VHF)
+    \item Solve for L: $L = \frac{1}{(2\pi f_0)^2 C}$
+    \item $L = \frac{1}{(2\pi \times 99.6 \times 10^6)^2 \times 10 \times 10^{-12}}$
+    \item $L = \frac{1}{3.91 \times 10^{17} \times 10^{-11}} = \frac{1}{3.91 \times 10^6}$
+    \item $L = 0.256$~µH = 256~nH
+\end{itemize}
+
+\textbf{Verification:}
+\begin{itemize}
+    \item $f_0 = \frac{1}{2\pi\sqrt{256 \times 10^{-9} \times 10 \times 10^{-12}}}$
+    \item $f_0 = \frac{1}{2\pi\sqrt{2.56 \times 10^{-18}}} = \frac{1}{2\pi \times 1.6 \times 10^{-9}}$
+    \item $f_0 = \frac{10^9}{10.05} = 99.5$~MHz $\checkmark$ (close to target)
+\end{itemize}
+
+\textbf{Tuning range:}
+\begin{itemize}
+    \item To cover FM band (88--108~MHz), use variable capacitor
+    \item Range: 8--13~pF for 88~MHz, 10~pF for 99.6~MHz, 7~pF for 108~MHz
+    \item Variable capacitor (tuning capacitor) adjusted by rotating knob
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Line-of-Sight Distance Calculation}
+
+\textbf{Given:} VHF transmitter antenna height 100~m, receiver antenna height 4~m
+
+\textbf{Calculate maximum range:}
+\begin{itemize}
+    \item Horizon distance formula: $d_{km} = 3.57\sqrt{h_m}$
+    \item Transmitter horizon: $d_t = 3.57\sqrt{100} = 3.57 \times 10 = 35.7$~km
+    \item Receiver horizon: $d_r = 3.57\sqrt{4} = 3.57 \times 2 = 7.14$~km
+    \item Total range: $d_{total} = d_t + d_r = 35.7 + 7.14 = 42.84$~km
+\end{itemize}
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item VHF/UHF limited by Earth's curvature (line-of-sight)
+    \item Higher antenna $\rightarrow$ longer range
+    \item Cell towers: 30--50~m height, range 2--10~km (urban obstacles reduce range)
+    \item TV broadcast: 300--600~m tower, range 80--150~km
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Repeater Frequency Offset}
+
+\textbf{Scenario:} Ham radio 2-meter band (144--148~MHz), standard offset +600~kHz
+
+\textbf{User transmits on 146.52~MHz (input):}
+\begin{itemize}
+    \item Repeater receives on $f_{in} = 146.52$~MHz
+    \item Repeater transmits on $f_{out} = 146.52 + 0.6 = 147.12$~MHz
+    \item Other users receive on 147.12~MHz
+    \item Offset allows simultaneous receive and transmit (duplexer separates)
+\end{itemize}
+
+\textbf{Why offset needed:}
+\begin{itemize}
+    \item Same frequency $\rightarrow$ transmitter overwhelms receiver (desensitization)
+    \item Offset (600~kHz) allows filters to separate
+    \item Duplexer: High-Q cavity filters (narrow band-pass at each frequency)
+    \item Typical isolation: 80--100~dB between receive and transmit
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Wavelength-Frequency Relationship:} $\lambda = \frac{c}{f}$. Lower frequency = longer wavelength = better obstacle penetration. AM (540--1600~kHz, $\lambda$~200--550~m) penetrates buildings. FM (88--108~MHz, $\lambda$~2.8--3.4~m) line-of-sight, better quality. Antenna size proportional to wavelength
+    
+    \item \textbf{Radio IS Light:} Radio waves and visible light are same phenomenon (EM radiation), differ only in frequency. Radio: Hz--GHz. Visible: 405--790~THz. Higher frequency = higher energy, less penetration. Light blocked by walls (short $\lambda$~400--700~nm), radio passes through (long $\lambda$)
+    
+    \item \textbf{Propagation Modes:} VHF/UHF (30~MHz--3~GHz) line-of-sight, straight like light, need satellites for over-horizon. Shortwave (3--30~MHz) ionosphere reflection, bounces Earth-sky-Earth, worldwide range. Lower freq (LF/MF) ground wave, curves around Earth
+    
+    \item \textbf{Transmitter Chain:} Oscillator generates carrier at $f_c$ $\rightarrow$ Modulator encodes message (AM/FM/PM) $\rightarrow$ Amplifier boosts power $\rightarrow$ Antenna radiates EM waves. Carrier wave is "blank" high-frequency sine wave. Message modulates carrier parameter (amplitude, frequency, or phase)
+    
+    \item \textbf{Receiver Chain:} Antenna captures EM waves (all frequencies) $\rightarrow$ RF amp boosts weak signal $\rightarrow$ Tuner selects desired frequency (LC resonance $f_0 = \frac{1}{2\pi\sqrt{LC}}$) $\rightarrow$ Detector extracts message from carrier $\rightarrow$ Audio amp drives speaker. Tuner is band-pass filter, adjustable by varying C or L
+    
+    \item \textbf{Repeater Function:} Fixed high-location station receives on $f_1$, retransmits on $f_2 = f_1 \pm \Delta f$. Extends range beyond line-of-sight by overcoming obstacles (mountains, buildings). Duplexer separates receive/transmit. Used in ham radio, cellular (base stations), public safety
+    
+    \item \textbf{Q: Why modulate instead of transmitting audio directly?} A: Three reasons. (1) Channel separation: All audio is 20~Hz--20~kHz, impossible to select one station without modulation. Carrier frequencies differ (88.1, 88.3~MHz...), easy to filter. (2) Antenna size: Audio at 1~kHz needs huge antenna ($\lambda$~300~km). Modulating onto 100~MHz carrier allows small antenna ($\lambda$~3~m). (3) Propagation: High frequency travels better (line-of-sight, ionosphere bounce). Low frequency audio cannot propagate efficiently
+    
+    \item \textbf{Q: How does tuner select one station from hundreds?} A: LC resonant circuit acts as band-pass filter. At resonance $f_0 = \frac{1}{2\pi\sqrt{LC}}$, impedance peaks (parallel LC) or minimizes (series LC), allowing only $f_0$ to pass. Variable capacitor adjusts $f_0$ to desired station. Q factor determines selectivity: $Q = \frac{f_0}{BW}$. High Q (>50) narrow bandwidth, sharp tuning. Low Q (<10) wide bandwidth, adjacent stations interfere
+    
+    \item \textbf{Q: Why FM better quality than AM?} A: FM modulates frequency, immune to amplitude noise (lightning, interference add amplitude variation, not frequency). AM modulates amplitude, noise directly corrupts signal. FM bandwidth 200~kHz (vs AM 10~kHz) allows higher fidelity audio, stereo. FM in VHF (88--108~MHz) has less atmospheric noise than AM in MF (540--1600~kHz). Trade-off: FM needs line-of-sight, limited range. AM travels farther (ground wave, sky wave)
+\end{itemize}
+\end{keypointsbox}
+
+\newpage
+
+% Topic 2: Modulation Techniques
+\subsection{Modulation Techniques}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{Purpose of modulation:} Encodes low-frequency message onto high-frequency carrier. \textbf{Reasons:} (1) Channel separation: Each station uses different carrier frequency, enables tuning to select one. (2) Antenna size: High-frequency carrier allows small antenna ($L \propto \frac{1}{f}$). (3) Propagation: High frequency travels better through air. Without modulation, all audio (20~Hz--20~kHz) would overlap, impossible to separate stations.
+
+\textbf{AM (Amplitude Modulation):} Varies carrier amplitude with message voltage, keeping frequency constant. Modulated signal: Envelope follows message. \textbf{AM detection:} Diode rectifies (removes negative half) + capacitor smooths to recover audio envelope. \textbf{Advantages:} Simple circuits, cheap receivers, easy demodulation. \textbf{Disadvantages:} Noise-prone (noise affects amplitude), inefficient power usage, low audio quality. Frequency range: 540--1600~kHz, 10~kHz bandwidth per channel, mono audio.
+
+\textbf{FM (Frequency Modulation):} Varies carrier frequency with message voltage, keeping amplitude constant. Message peak $\rightarrow$ frequency increases; message trough $\rightarrow$ frequency decreases. \textbf{Advantages:} Noise-immune (amplitude limiters remove noise), high fidelity, stereo capable. \textbf{Disadvantages:} More complex circuits, line-of-sight propagation only. Frequency range: 88--108~MHz, 200~kHz bandwidth per channel (20$\times$ AM), stereo audio.
+
+\textbf{Digital modulation (carrier analog, data digital):} \textbf{ASK} (Amplitude Shift Keying): Binary 1 = full amplitude, 0 = zero amplitude. \textbf{FSK} (Frequency Shift Keying): Binary 1 = frequency $f_1$, 0 = frequency $f_2$. \textbf{PSK} (Phase Shift Keying): Binary 1 = phase 0°, 0 = phase 180°. \textbf{QAM} (Quadrature Amplitude Modulation): Combines AM and PM, high data rate, complex. Used in Wi-Fi, cellular data, cable modems.
+
+\textbf{Pulse modulation (carrier digital):} Carrier is pulse train instead of continuous wave. \textbf{PAM} (Pulse Amplitude Modulation): Pulse height varies with message. \textbf{PWM} (Pulse Width Modulation): Pulse width varies with message, used in motor control, LED dimming. \textbf{PCM} (Pulse Code Modulation): Analog signal sampled, quantized to digital codes, used in ADC, digital audio (CD, MP3), satellite communication.
+
+\textbf{Key concepts:} Modulation enables channel separation and efficient transmission; AM simple but noisy; FM high quality but complex; Digital modulation for data
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. Purpose of Modulation (Why Needed):}
+
+Modulation is essential for practical radio communication, not optional.
+
+\textbf{Analogy 1 (Paper and Stone):}
+\begin{itemize}
+    \item Throw paper across river: Impossible (too light, no mass)
+    \item Wrap paper around stone, throw stone: Reaches other side
+    \item Message signal = paper (lightweight, low frequency, low energy)
+    \item Carrier signal = stone (heavy, high frequency, high energy)
+    \item Modulation = wrapping message onto carrier
+\end{itemize}
+
+\textbf{Analogy 2 (Lunchbox):}
+\begin{itemize}
+    \item Carrying food to school: Use lunchbox, not hands
+    \item Food = message (what you consume)
+    \item Lunchbox = carrier (transport mechanism, discarded after use)
+    \item At school: Eat food, throw away box
+    \item At receiver: Extract message, discard carrier
+\end{itemize}
+
+\textbf{Reason 1: Channel Separation (Critical):}
+\begin{itemize}
+    \item Human hearing: 20~Hz--20~kHz (all audio in this range)
+    \item Without modulation: Every station transmits 20~Hz--20~kHz
+    \item Receiver tuned to 20~Hz--20~kHz: Hears ALL stations simultaneously (chaos!)
+    \item Cannot distinguish between stations $\rightarrow$ useless
+    \item \textbf{Solution:} Each station modulates onto different carrier frequency
+    \item Station A: Carrier 88.1~MHz, Station B: 88.3~MHz, Station C: 88.5~MHz, etc.
+    \item Receiver tunes to 88.1~MHz: Filters out 88.3, 88.5, etc. $\rightarrow$ hears only Station A
+    \item Demodulation extracts 20~Hz--20~kHz audio from 88.1~MHz carrier
+    \item \textbf{Key insight:} Different carriers allow band-pass filtering to select desired station
+\end{itemize}
+
+\textbf{Reason 2: Antenna Size:}
+\begin{itemize}
+    \item Efficient antenna length: $L \approx \frac{\lambda}{4}$ or $\frac{\lambda}{2}$
+    \item Wavelength: $\lambda = \frac{c}{f}$ (inversely proportional to frequency)
+    \item Audio 1~kHz: $\lambda = \frac{3 \times 10^8}{10^3} = 300$~km $\rightarrow$ antenna 75~km long! (impractical)
+    \item FM 100~MHz: $\lambda = 3$~m $\rightarrow$ antenna 75~cm long (practical handheld)
+    \item Higher carrier frequency $\rightarrow$ shorter wavelength $\rightarrow$ smaller antenna
+    \item \textbf{Example:} Cell phone 900~MHz $\rightarrow$ $\lambda$~33~cm $\rightarrow$ antenna 8~cm (fits in phone)
+\end{itemize}
+
+\textbf{Reason 3: Propagation Efficiency:}
+\begin{itemize}
+    \item Low frequency (audio): Poor propagation through air, absorbed by ground
+    \item High frequency (carrier): Better propagation (line-of-sight, ionosphere bounce)
+    \item Carrier "carries" low-frequency message efficiently through atmosphere
+    \item Different frequencies propagate differently (ground wave, sky wave, line-of-sight)
+\end{itemize}
+
+\textbf{Modulation Definition:}
+\begin{itemize}
+    \item \textbf{Modulation:} Changing parameter of carrier signal (amplitude, frequency, or phase) in proportion to message signal voltage
+    \item \textbf{Three parameters:} Amplitude, frequency, phase (only these three)
+    \item Keep other parameters constant while varying one
+    \item \textbf{Carrier wave:} High-frequency sine wave, contains NO information (blank carrier)
+    \item \textbf{Message signal:} Low-frequency information (audio, data) to be transmitted
+    \item \textbf{Modulated signal:} Carrier with message encoded (ready for transmission)
+\end{itemize}
+
+\textbf{2. Amplitude Modulation (AM):}
+
+First widespread modulation technique (1900s--1940s), simple but noise-prone.
+
+\textbf{AM Principle:}
+\begin{itemize}
+    \item Carrier amplitude varies with message voltage
+    \item Message peak (positive voltage) $\rightarrow$ carrier amplitude increases
+    \item Message trough (negative voltage) $\rightarrow$ carrier amplitude decreases
+    \item Carrier frequency remains constant (no frequency change)
+    \item \textbf{Envelope:} Outline connecting peaks of modulated wave follows message shape
+    \item Envelope = 100\% representation of message signal
+\end{itemize}
+
+\textbf{AM Waveform Components:}
+\begin{itemize}
+    \item \textbf{Message signal:} Low frequency (20~Hz--5~kHz for voice), audio waveform
+    \item \textbf{Carrier wave:} High frequency (540--1600~kHz for AM broadcast), constant amplitude sine wave
+    \item \textbf{Modulated signal:} Carrier amplitude varies, creating envelope that follows message
+    \item Upper envelope + lower envelope both contain message (redundant)
+\end{itemize}
+
+\textbf{AM Advantages:}
+\begin{itemize}
+    \item \textbf{Simple implementation:} Modulator is just multiplier circuit (mixer)
+    \item \textbf{Cheap receivers:} Diode detector (no transistors/ICs needed)
+    \item \textbf{Widespread compatibility:} Billions of AM radios manufactured (legacy)
+    \item \textbf{Long-range:} MF band (540--1600~kHz) ground wave and sky wave propagation
+\end{itemize}
+
+\textbf{AM Disadvantages:}
+\begin{itemize}
+    \item \textbf{Noise susceptibility:} Lightning, electrical noise adds amplitude variation $\rightarrow$ corrupts signal
+    \item \textbf{Power inefficiency:} Carrier contains no info but consumes 2/3 of power
+    \item Sidebands (actual info) only 1/3 of total power
+    \item \textbf{Low fidelity:} Bandwidth limited to 10~kHz (5~kHz audio each side of carrier)
+    \item \textbf{Mono only:} Insufficient bandwidth for stereo
+    \item \textbf{Interference:} Atmospheric noise in MF band degrades quality
+\end{itemize}
+
+\textbf{AM Frequency Allocation:}
+\begin{itemize}
+    \item AM broadcast band: 540--1600~kHz (MF band)
+    \item Channel spacing: 10~kHz (9~kHz in some countries)
+    \item Audio bandwidth: 5~kHz each side of carrier (total 10~kHz occupied)
+    \item Example: Station at 680~kHz occupies 675--685~kHz
+    \item Narrow bandwidth limits audio quality (treble cut off at 5~kHz)
+\end{itemize}
+
+\textbf{3. AM Detection (Demodulation):}
+
+Simple diode-capacitor circuit extracts audio from modulated wave.
+
+\textbf{Detection Process:}
+\begin{itemize}
+    \item \textbf{Input:} Modulated AM signal (envelope contains message)
+    \item \textbf{Problem:} Message appears twice (positive and negative envelope)
+    \item Negative envelope = inverted copy of message (due to AC carrier oscillation)
+    \item \textbf{Step 1:} Diode rectifies (removes negative half of carrier)
+    \item Diode conducts on positive carrier peaks, blocks negative carrier peaks
+    \item \textbf{Result:} Only positive envelope remains (half-wave rectification)
+    \item \textbf{Step 2:} Capacitor smooths rectified signal
+    \item Capacitor charges to peak voltage, discharges slowly between peaks
+    \item Connects peak voltages together $\rightarrow$ recovers audio envelope
+    \item \textbf{Output:} Audio signal (20~Hz--5~kHz), ready for amplification
+\end{itemize}
+
+\textbf{Component Selection:}
+\begin{itemize}
+    \item \textbf{Diode:} Germanium (low $V_f \approx 0.3$~V) better than silicon for weak signals
+    \item \textbf{Capacitor:} Value sets time constant $\tau = RC$
+    \item Too small C: Doesn't smooth, carrier frequency leaks through
+    \item Too large C: Oversmooths, loses high-frequency audio (treble)
+    \item Typical: 100~pF--1~nF for AM detection (compromise between smoothing and response)
+    \item Load resistor: 10--100~k$\Omega$ (provides discharge path for capacitor)
+\end{itemize}
+
+\textbf{4. Frequency Modulation (FM):}
+
+Varies carrier frequency instead of amplitude, superior noise immunity.
+
+\textbf{FM Principle:}
+\begin{itemize}
+    \item Carrier frequency varies with message voltage
+    \item Message peak (positive voltage) $\rightarrow$ carrier frequency increases
+    \item Message trough (negative voltage) $\rightarrow$ carrier frequency decreases
+    \item Carrier amplitude remains constant (no amplitude change)
+    \item \textbf{Frequency deviation:} Amount carrier frequency shifts from center ($\pm$75~kHz for FM broadcast)
+\end{itemize}
+
+\textbf{FM Advantages:}
+\begin{itemize}
+    \item \textbf{Noise immunity:} Noise affects amplitude, not frequency
+    \item Amplitude limiters in receiver clip amplitude variations (remove noise)
+    \item Cannot use limiters in AM (would destroy message)
+    \item \textbf{High fidelity:} Wide bandwidth (200~kHz) allows full audio (20~Hz--15~kHz)
+    \item \textbf{Stereo capable:} Bandwidth sufficient for stereo channels (L+R, L-R)
+    \item \textbf{VHF band:} 88--108~MHz less atmospheric noise than AM's MF band
+\end{itemize}
+
+\textbf{FM Disadvantages:}
+\begin{itemize}
+    \item \textbf{Line-of-sight only:} VHF propagation limited by horizon
+    \item Range shorter than AM (no sky wave at VHF)
+    \item \textbf{Complex circuits:} FM modulation and detection more complicated than AM
+    \item Requires PLL, VCO, discriminator circuits
+    \item \textbf{Higher cost:} More sophisticated components
+\end{itemize}
+
+\textbf{FM Frequency Allocation:}
+\begin{itemize}
+    \item FM broadcast band: 88--108~MHz (VHF band)
+    \item Channel spacing: 200~kHz (20$\times$ wider than AM)
+    \item Frequency deviation: $\pm$75~kHz for audio (stereo requires $\pm$75~kHz total)
+    \item Guard bands prevent adjacent channel interference
+    \item Example: Station at 99.6~MHz occupies 99.5--99.7~MHz
+\end{itemize}
+
+\textbf{5. Digital Modulation (Analog Carrier, Digital Data):}
+
+Transmit binary data (1s and 0s) using analog carrier wave.
+
+\textbf{ASK (Amplitude Shift Keying):}
+\begin{itemize}
+    \item Binary 1: Carrier at full amplitude
+    \item Binary 0: Carrier at zero amplitude (or reduced amplitude)
+    \item \textbf{Example:} Binary 1011 $\rightarrow$ carrier ON-OFF-ON-ON
+    \item Simple implementation: Modulator is electronic switch
+    \item Used in: RFID tags, simple data links
+    \item Disadvantage: Noise affects amplitude $\rightarrow$ error-prone
+\end{itemize}
+
+\textbf{FSK (Frequency Shift Keying):}
+\begin{itemize}
+    \item Binary 1: Carrier at frequency $f_1$
+    \item Binary 0: Carrier at frequency $f_2$ (typically $f_2 < f_1$)
+    \item \textbf{Example:} Binary 1011 $\rightarrow$ $f_1$-$f_2$-$f_1$-$f_1$
+    \item Implementation: VCO switched between two frequencies
+    \item Used in: Modems (1200 baud), caller ID, radio telemetry
+    \item Advantage: More noise-immune than ASK
+\end{itemize}
+
+\textbf{PSK (Phase Shift Keying):}
+\begin{itemize}
+    \item Binary 1: Carrier phase 0° (or unchanged)
+    \item Binary 0: Carrier phase 180° (inverted)
+    \item \textbf{Example:} Binary 1011 $\rightarrow$ 0°-180°-0°-0°
+    \item Implementation: Phase inverter circuit
+    \item Used in: Satellite communication, GPS
+    \item Variants: QPSK (4 phases for 2 bits), 8-PSK (8 phases for 3 bits)
+\end{itemize}
+
+\textbf{QAM (Quadrature Amplitude Modulation):}
+\begin{itemize}
+    \item Combines amplitude and phase modulation
+    \item Multiple amplitude levels $\times$ multiple phases $\rightarrow$ many symbols
+    \item \textbf{Example:} 16-QAM (4 amplitudes $\times$ 4 phases = 16 symbols, 4 bits per symbol)
+    \item 64-QAM, 256-QAM common in Wi-Fi, cable modems
+    \item High data rate but complex, sensitive to noise
+\end{itemize}
+
+\textbf{Advantages of Digital Modulation:}
+\begin{itemize}
+    \item \textbf{High bandwidth efficiency:} More bits per Hz than analog
+    \item \textbf{Error correction:} Can add redundancy (FEC codes)
+    \item \textbf{Multiplexing:} Time-division allows multiple users on one channel
+    \item \textbf{Encryption:} Digital data easily encrypted for security
+\end{itemize}
+
+\textbf{6. Pulse Modulation (Digital Carrier):}
+
+Carrier is pulse train (discontinuous) instead of continuous sine wave.
+
+\textbf{PAM (Pulse Amplitude Modulation):}
+\begin{itemize}
+    \item Pulse height varies with message signal amplitude
+    \item Message sampled at intervals, pulse amplitude = sample value
+    \item Fusion of analog and digital: Amplitude analog, timing digital
+    \item Used in: Ethernet, photo biology, LCD drivers
+    \item Precursor to PCM (next step is quantization)
+\end{itemize}
+
+\textbf{PWM (Pulse Width Modulation):}
+\begin{itemize}
+    \item Pulse width (duration) varies with message amplitude
+    \item Pulse amplitude constant, only width changes
+    \item Higher message voltage $\rightarrow$ wider pulse
+    \item Used in: Motor speed control, LED dimming (duty cycle), audio amplifiers (Class D)
+    \item Efficient: Switch ON/OFF (low power dissipation)
+\end{itemize}
+
+\textbf{PCM (Pulse Code Modulation):}
+\begin{itemize}
+    \item Analog signal sampled, quantized to discrete levels, encoded as binary
+    \item \textbf{Steps:} Sampling (time discretization) $\rightarrow$ Quantization (amplitude discretization) $\rightarrow$ Encoding (binary representation)
+    \item \textbf{Example:} 8-bit PCM $\rightarrow$ 256 amplitude levels (0--255)
+    \item Used in: Digital audio (CD 16-bit 44.1~kHz), telephony, ADC, satellite communication
+    \item Advantage: Immune to noise (regenerate binary signal), easy processing
+    \item Disadvantage: High bandwidth (need many bits per sample)
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: AM Station Bandwidth}
+
+\textbf{Given:} AM station at 680~kHz, audio range 20~Hz--5~kHz
+
+\textbf{Calculate occupied bandwidth:}
+\begin{itemize}
+    \item Carrier frequency: $f_c = 680$~kHz
+    \item Modulation creates two sidebands:
+    \item \textbf{Upper sideband (USB):} $f_c + f_{audio}$ = 680~kHz to 685~kHz
+    \item \textbf{Lower sideband (LSB):} $f_c - f_{audio}$ = 675~kHz to 680~kHz
+    \item Total bandwidth: $BW = 2 \times f_{max} = 2 \times 5 = 10$~kHz
+    \item Occupied spectrum: 675--685~kHz
+\end{itemize}
+
+\textbf{Why 10~kHz channel spacing:}
+\begin{itemize}
+    \item Each station needs 10~kHz ($\pm$5~kHz from carrier)
+    \item Adjacent station at 690~kHz occupies 685--695~kHz
+    \item No overlap: 680~kHz station ends at 685, 690~kHz starts at 685 $\checkmark$
+    \item Guard band minimal (adjacent edges touch)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: FM Frequency Deviation}
+
+\textbf{Given:} FM station 99.6~MHz, max deviation $\pm$75~kHz
+
+\textbf{Calculate instantaneous frequency range:}
+\begin{itemize}
+    \item Center (carrier) frequency: $f_c = 99.6$~MHz
+    \item Message peak (+1~V): $f_{max} = 99.6 + 0.075 = 99.675$~MHz
+    \item Message trough ($-1$~V): $f_{min} = 99.6 - 0.075 = 99.525$~MHz
+    \item Frequency swings: 99.525--99.675~MHz (150~kHz swing)
+    \item No message (silence): Carrier at exactly 99.6~MHz
+\end{itemize}
+
+\textbf{FM bandwidth (Carson's rule):}
+\begin{itemize}
+    \item $BW_{FM} \approx 2(\Delta f + f_{max})$ where $\Delta f$ = deviation, $f_{max}$ = max audio
+    \item $BW_{FM} = 2(75 + 15) = 2 \times 90 = 180$~kHz
+    \item Allocated channel: 200~kHz (conservative, includes guard bands)
+    \item Significantly wider than AM (200~kHz vs 10~kHz = 20$\times$ wider)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: ASK Data Rate}
+
+\textbf{Given:} ASK modulation, bit duration 1~ms (millisecond per bit)
+
+\textbf{Calculate data rate:}
+\begin{itemize}
+    \item Bit rate: $R_b = \frac{1}{T_{bit}} = \frac{1}{1 \times 10^{-3}} = 1000$~bits/second = 1~kbps
+    \item Baud rate: 1000~symbols/second (1 bit per symbol in ASK)
+    \item Binary sequence 1011: Takes $4 \times 1 = 4$~ms to transmit
+\end{itemize}
+
+\textbf{Bandwidth required:}
+\begin{itemize}
+    \item Minimum bandwidth (Nyquist): $BW = \frac{R_b}{2} = \frac{1000}{2} = 500$~Hz
+    \item Practical bandwidth: $BW \approx R_b = 1$~kHz (includes filtering, roll-off)
+    \item Carrier frequency must be $\gg$ 1~kHz (typically 100$\times$ minimum)
+    \item Example: 100~kHz carrier for 1~kbps ASK
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: PWM Duty Cycle}
+
+\textbf{Requirement:} Dim LED to 60\% brightness using PWM
+
+\textbf{Design:}
+\begin{itemize}
+    \item PWM frequency: 1~kHz (above flicker fusion ~100~Hz)
+    \item Period: $T = \frac{1}{f} = \frac{1}{1000} = 1$~ms
+    \item Duty cycle: 60\% (ON time 60\%, OFF time 40\%)
+    \item ON time: $T_{ON} = 0.6 \times 1 = 0.6$~ms
+    \item OFF time: $T_{OFF} = 0.4 \times 1 = 0.4$~ms
+\end{itemize}
+
+\textbf{Average power:}
+\begin{itemize}
+    \item LED forward voltage: $V_f = 2$~V, current $I_f = 20$~mA
+    \item Peak power (ON): $P_{ON} = 2 \times 0.02 = 0.04$~W = 40~mW
+    \item Average power: $P_{avg} = P_{ON} \times D = 40 \times 0.6 = 24$~mW
+    \item Brightness proportional to average current: 60\% of full brightness $\checkmark$
+\end{itemize}
+
+\textbf{Efficiency:}
+\begin{itemize}
+    \item Switch dissipation: Near zero (ideal switch)
+    \item Resistor dissipation: Only during ON time, but no resistor needed with current source
+    \item PWM efficiency: ~95--98\% (vs linear dimming ~60\%)
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Why Modulation Essential:} Three critical reasons. (1) Channel separation: All audio is 20~Hz--20~kHz, modulating onto different carriers (88.1, 88.3~MHz...) allows filtering to select one station. (2) Antenna size: Audio 1~kHz needs 75~km antenna ($\lambda$=300~km), FM 100~MHz needs 75~cm ($\lambda$=3~m). (3) Propagation: High-frequency carrier propagates efficiently, low-frequency audio does not
+    
+    \item \textbf{AM vs FM Comparison:} AM varies amplitude (frequency constant), simple but noise-prone, 540--1600~kHz, 10~kHz BW, mono, long range (ground/sky wave), cheap receivers. FM varies frequency (amplitude constant), noise-immune (limiters remove amplitude noise), 88--108~MHz, 200~kHz BW, stereo, line-of-sight only, complex circuits. FM quality superior, AM range superior
+    
+    \item \textbf{AM Detection Process:} Diode rectifies modulated signal (removes negative carrier half) $\rightarrow$ only positive envelope remains $\rightarrow$ capacitor smooths (connects peaks) $\rightarrow$ recovers audio. Capacitor value critical: Too small leaks carrier, too large loses treble. Germanium diode better than silicon (lower $V_f$) for weak signals. Output is audio 20~Hz--5~kHz ready for amplification
+    
+    \item \textbf{Digital Modulation Types:} ASK (amplitude shift keying): 1=full amplitude, 0=zero, simple but noise-prone. FSK (frequency shift keying): 1=$f_1$, 0=$f_2$, better noise immunity. PSK (phase shift keying): 1=0°, 0=180°, used in satellites/GPS. QAM (quadrature AM): Combines amplitude + phase, high data rate (16-QAM, 64-QAM), used in Wi-Fi, cable modems
+    
+    \item \textbf{Pulse Modulation:} Carrier is pulse train. PAM (pulse amplitude modulation): Pulse height varies with message, used in Ethernet. PWM (pulse width modulation): Pulse width varies, constant amplitude, efficient, used in motor control, LED dimming. PCM (pulse code modulation): Analog sampled + quantized + encoded as binary, immune to noise, used in digital audio (CD), telephony, ADC
+    
+    \item \textbf{FM Bandwidth:} Carson's rule: $BW_{FM} \approx 2(\Delta f + f_{max})$ where $\Delta f$ is deviation ($\pm$75~kHz), $f_{max}$ is max audio (15~kHz). Result: 180~kHz minimum, 200~kHz allocated. 20$\times$ wider than AM (10~kHz), but allows stereo and high fidelity. Trade-off: Bandwidth for quality
+    
+    \item \textbf{Q: Why FM immune to noise but AM isn't?} A: Noise (lightning, interference) adds amplitude variation to signal. AM encodes info in amplitude, so noise directly corrupts message. FM encodes info in frequency, amplitude irrelevant. FM receiver uses amplitude limiters (clip signal to constant amplitude), removing noise without affecting message. Cannot use limiters in AM (would destroy message). FM also benefits from higher frequency band (VHF 88--108~MHz) having less atmospheric noise than AM's MF band (540--1600~kHz)
+    
+    \item \textbf{Q: How does PWM control LED brightness?} A: LED brightness proportional to average current. PWM switches LED ON/OFF rapidly (>100~Hz, above flicker fusion). Duty cycle sets average: 60\% ON $\rightarrow$ 60\% brightness. Full voltage when ON (2~V, 20~mA), zero when OFF. Average current $I_{avg} = I_{peak} \times D$. Efficient: Switch dissipates minimal power (ON=low drop, OFF=no current). Linear dimming uses resistor, wastes power as heat
+    
+    \item \textbf{Q: What determines AM channel spacing?} A: Bandwidth of modulated signal. AM modulation creates upper sideband (USB) $f_c + f_{audio}$ and lower sideband (LSB) $f_c - f_{audio}$. Audio 20~Hz--5~kHz $\rightarrow$ sidebands extend $\pm$5~kHz $\rightarrow$ total BW = 10~kHz. Channel spacing = 10~kHz to prevent adjacent channel overlap. Station at 680~kHz occupies 675--685~kHz, next station at 690~kHz starts at 685~kHz (guard band minimal)
+\end{itemize}
+\end{keypointsbox}

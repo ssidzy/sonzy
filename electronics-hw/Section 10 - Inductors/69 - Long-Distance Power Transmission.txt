@@ -1,0 +1,149 @@
+Hello and welcome back.
+
+So in the previous course, we talked about the path that the electricity takes from the power plant
+
+that generates diversity all the way to your house.
+
+The power plant and the house are situated very far from each other.
+
+And in order to transport the city over this long distance, George Westinghouse developed a device
+
+called the Transformer.
+
+The transformer allows the electricity to be efficiently transmitted over long distances.
+
+This made it possible to supply electricity to homes and businesses located far from the electric generating
+
+plant.
+
+So the electricity produced by a generating plant travels along cables to Wal-Mart, which changes electricity
+
+from low voltage to high voltage.
+
+And you mentioned in the previous cause that electricity can be moved long distances more efficiently
+
+using high voltage.
+
+But why is that?
+
+Well, in this course, we'll find it out on.
+
+As you can see, this image transmission lines are used to carry electricity to a substation.
+
+Substations have transformers that change the high voltage electricity into lower voltage electricity
+
+from the substation, distribution lines to homes, offices and factories, which require low voltage
+
+electricity.
+
+As the electricity flows down the metal wire, the electrons that carry its energy jigger through the
+
+metal structure, bashing and crashing about and generally wasting energy like a Raleigh schoolchildren
+
+running down a corridor.
+
+And that's why wires get hot when electricity flows through them.
+
+Something that's very useful in the poster is right.
+
+It turns out that the higher the voltage electricity you use and the lower the current, the less energy
+
+is wasted in this way.
+
+So early power transmission networks should be efficient, safe and at the same time economical.
+
+Keeping this in mind, power is transmitted at high voltage for the following reasons.
+
+The first one is to reduce power losses.
+
+The second one is to reduce power transmission costs and third, to improve the efficiency of power
+
+transmission.
+
+So power losses in transmission towers is proportional to the current flowing through it.
+
+The transmission lines are normally made of copper, aluminum or its alloys.
+
+The resistance of transmission lines itself contribute the most to the power loss.
+
+The power loss in the light due to resistance is called copper loss or ice grade or loss.
+
+As you can see from this equation, the lesson, the current lesson will be the power loss has during
+
+power transmission.
+
+The voltage is stepped up to reduce current for transmitting the same amount of power to distance.
+
+The power loss will be more widely transmitted at a lower voltage.
+
+So why don't we take an example?
+
+Let us calculate power.
+
+Less than 100 kilowatts of power is transmitted to one kilometer at a different voltage levels.
+
+For instance, let us assume that the conductor offers a resistance of one ohm to the flow of current.
+
+All right, so the first case is when it is transmitted at 1000 volts, the current through the conductor
+
+is equal to power, divided by voltage, which is equal to 100 kilowatts, divided by 1000 volts.
+
+So we will get a current of 100 dampers.
+
+The copper lost in the conductor is a squared or which is equal to 100 or the power of two times one,
+
+which is equal to ten thousand watts or ten kilowatts.
+
+All right.
+
+So the next case is when it is transmitted at 10000 volts, the current through the conductor is equal
+
+to again power divided by voltage, which will be equal to 100 kilowatts, divided by 10000 volts this
+
+time.
+
+And we will get the current of 10 amperes.
+
+The copper lines in the conductor is equal again to a squared or which will be equal to ten of the power
+
+of two times one, which will be equal to 100 watts or zero point one kilowatts.
+
+It can be noted that the power loss ten thousand words is much lesser than at one thousand words hands
+
+for delivering the same amount of power from the power station to the load.
+
+The station power loss is much less when it is transmitted at higher voltage.
+
+All right, here we have an example of a long distance power transmission showing the value of using
+
+high voltages, the generator at left generates 120 words.
+
+And here we have a transformer with a ratio of one to 1000, which means that if I stop the simulator,
+
+we can notice that the output voltages 1000 times higher than the input voltage.
+
+This transformer steps up the voltage, but greatly reduces the current rate.
+
+We talked about this in the previous course.
+
+So the resistance of the transmission lines is stimulated by these two 500 ohms resistors.
+
+A transformer with a ratio of one to zero point zero zero one brings the voltage down to the original
+
+value.
+
+The graph on the lower that shows that the power transmitted to the load for comparison, the same set
+
+up without transformers is shown at the bottom.
+
+The input voltage is again 120 miles and the resistance of the wires are 510 and 500 ohms respectively.
+
+Just like here on the top, the resistors losses are much higher and the transmitted power which is
+
+shown at the lower right, is much lower.
+
+So although both circuits had the same power sources, the same load as well, we can notice that by
+
+stepping up the voltage and stepping down, we managed to carry much more power from the source.
+
+The load which result that the circuit on top is far more efficient than the circuit on the bottom.

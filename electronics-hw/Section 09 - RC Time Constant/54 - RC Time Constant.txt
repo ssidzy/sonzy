@@ -1,0 +1,95 @@
+Hello, and welcome back to New Chapter.
+
+We started with the most basic passive component, which is resistor.
+
+And after that, we started about capacitors, right?
+
+And we combine thoroughly with some practical examples.
+
+But now it's time to take this to a step further and see what can we do when we combine these two basic
+
+components together?
+
+So let's get started.
+
+Familiar.
+
+You should probably get.
+
+And do you remember about the sacred?
+
+Of course you do.
+
+So when I hear the speech, there will be a current flowing in this path.
+
+But this current will flow only until the capacity start up and the voltage across the capacitor will
+
+be equal to the voltage of the battery.
+
+Let me stop the simulator so that our voltage of coronagraph will stop moving.
+
+Now, when we charge a capacitor with a voltage level, it's not surprising to find that it takes on
+
+time for the capacitor to adjust to the new level.
+
+Exactly how much time it takes to adjust is defined not only by the size of the capacitor, but also
+
+by this resistance in the circuit.
+
+The RC time constant, which is measured in seconds, is a measure that helps us to figure out how long
+
+it will take a capacitor to charge to a certain voltage level.
+
+The RC constant will also have some handy uses in filtering that we will see later on.
+
+So calculating the ATA time constant is very straightforward.
+
+Just multiply the capacitance which is inherited by the resistance, which is in ohms.
+
+Remember to take care of your powers of time because, for example, a micro-parties 10 on the power
+
+of minus six ferrer's y peak of errors is 10 of the power of minus nine.
+
+If we multiply 200 microgrids with 100, we will get zero point zero two seconds.
+
+Does this mean that the capacitor needs zero point zero two seconds to charge from zero volts onto five-year-olds?
+
+Well, not really, but we were going to be very wrong either.
+
+If you say so, here's an artistic grid getting charged re for travel to DC source assuming the capacitor
+
+started with zero, would its rise of voltage over time will look something like this?
+
+The key point here are to note that after one rc, the capacitor, we have reached about 63 percent
+
+of the input voltage, and after five passes, the capacitor will be very close to the input voltage.
+
+So in the previous circuit, our RC time constant was zero point zero two seconds, right?
+
+So multiplying zero point zero two v five, we get the time needed for the capacitor to fully charge.
+
+Cool.
+
+Right now, if you change the DC 10 Volts power source to ground, then the capacitor will discharge,
+
+right?
+
+And here again, the discharge time would be determined by the RC time constant.
+
+The RC car for discharging looks like this, and the key points on the discharge curve are at one rc,
+
+where the voltage is about a third of the original and at five rc where the voltage across the capacitor
+
+is nearly zero.
+
+Here's an exercise for you.
+
+We have this article here, and it says to find out the RC time constant, the time constant, as we
+
+know, is equal to our times C.
+
+So 47 kms times, one thousand micro ferret is equal to 47 seconds.
+
+This means that in 47 seconds, the capacitor will be charged 63 percent of the input voltage, and
+
+it will take five time constants to fully charge.

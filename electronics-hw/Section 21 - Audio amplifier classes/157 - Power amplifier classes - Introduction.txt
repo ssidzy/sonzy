@@ -1,0 +1,185 @@
+In electronics, amplifier is the most commonly used circuit device with huge application possibilities.
+
+It's very important for you to know that in audio related electronics, pre-amplifier and power amplifiers
+
+are two different types of amplifier systems, which are used for sound amplification related purposes.
+
+But other than these application specific purpose, there are huge differences in various types of amplifiers,
+
+mainly in power amplifiers.
+
+So here we will explore different classes of amplifiers along with their advantages and disadvantages.
+
+Before we discuss about the different types of power amplifiers, let's understand that the difference
+
+between a pre-amplifier and the power amplifier.
+
+I already mentioned that a professional audio amplifier device can have several stages between the input
+
+signal and the speaker.
+
+It can go through a lot of processing OK, and there can be more than two stages of this image represents.
+
+But fundamentally, all audio amplifiers have these two stages, and any other stage is just secondary.
+
+Now, let's imagine that this diagram represents the basic internal architecture of a guitar amplifier.
+
+The pre-amplifier contains the circuitry that is primarily responsible for shaping the guitar sound
+
+and delivering it to the power amplifier in an optimal form.
+
+Almost all of the controllers on the front panel of the guitar amplifier live, for example, gain bass,
+
+mid treble volume, etc. are controlling the circuitry within the pre-amplifier, so the power amplifier
+
+receives the signal from the pre-amplifier.
+
+It then outputs a much larger version of the signal, with voltage high enough to drive a speaker.
+
+The speaker is nothing else but a transducer system that turns electrical energy from the power amplifier
+
+into audio.
+
+But sound no guitar amplifiers built with the pre-amplifier, power amplifier and speaker or in the
+
+same wooden box are called combo amplifiers.
+
+Combo amplifiers are the most popular style of a guitar amplifier due to their convenience and portability.
+
+Now, let's take another example.
+
+Imagine this is the internal architecture of a basic audio amplifier device.
+
+So this time it's not a guitar amplifier, but it's an amplifier with signals provided by a microphone.
+
+In this case, the pre-amplifier boasts a weaker signal to low level, while the amplifier boosts level
+
+a signal so that it can be sent to a speaker's.
+
+For example, a microphone outputs a very big signal that needs to be boosted to the same level as other
+
+signals by a pre-amplifier before it can be processed by other device, like a mixer, receiver or amplifier.
+
+Once it is on the same level, it can be processed with other input signals and send through the power
+
+amplifier to a set of speakers.
+
+Technically speaking, the pre-amplifier provides significant voltage gain and small current gain,
+
+which makes a pre-amplifier good for recording applications a power every fire must follow in order
+
+for current to be amplified enough to power the loudspeaker.
+
+Now you are probably wondering why you need two separate devices for this.
+
+Can't you just use an integrated unit that includes both pre-amplifier and power amplifier?
+
+Yes, you can.
+
+But the reason the pre-amplifier is generally kept separated is to keep it away from the noise generated
+
+by the large power transistors in a power amplifier.
+
+A pre-amplifier uses little electricity like a power amplifier, uses a lot and generates a lot of heat
+
+as well.
+
+All right.
+
+This was just a little explanations about the difference between the pre-amplifier of power amplifier.
+
+But what we are going to talk more and what we are interested in is to understand the different types
+
+of classes of a power amplifier.
+
+If you ever glanced at the specifications sheet for an amplifier, one of the things you may have noticed
+
+is the amplifiers class typically denoted by a letter or two.
+
+The most common amplifier class is used in consumer home audio today are Class A, B, A, B, C and
+
+D, but this is not shown here.
+
+These glasses Ireland simply grading systems, but descriptions of the amplifiers topology like, for
+
+example, how they function at the core level, while each amplifier class comes with its own set of
+
+strengths and weaknesses.
+
+Their job remains the same to amplify the waveform sent to it by a pre-amplifier without introducing
+
+distortion, or at least as little as possible distortion.
+
+So what does all of these classes mean?
+
+Power amplifier circuits are classified as A, B, A, B and C for analog designs and Class D for switching
+
+designs.
+
+We are going to be discussing how amplifiers conduct through waveforms, so a basic diagram of a sign
+
+may be shown here.
+
+The image of a conduction angle derives from amplifying a sinusoidal signal.
+
+So if the device is always on the conduction angle in 360 degree, if it is on the for only half of
+
+the cycle, the angle is 180 degree.
+
+So the angle of flow is closely related to the amplifier power efficiency.
+
+Hmm.
+
+OK.
+
+But what exactly is this power efficiency?
+
+The efficiency of a system in electronics and critical engineering is defined as useful power output
+
+divided by the total electrical power consumed expressed in percent.
+
+This is normally specified at full load the nominal input voltage.
+
+So power efficiency in case of amplifiers is the amount of the actual power delivered to the speaker
+
+divided by the electrical power drawn from the mains supply socket.
+
+It can be defined using the following equation where efficiency is equal to the useful power output
+
+divided by the total power input.
+
+So if an amplifier with 50 percent efficiency is required to provide the 50 watt power to a speaker,
+
+it will draw 100 watt from the wall.
+
+The other 50 percent gets wasted as heat and other losses if an 80 percent efficient amplifier is used.
+
+It will draw 56 watt to supply the same speaker, meaning that it has fewer losses and uses less power
+
+from the agreed to provide the same output power.
+
+In case you're wondering, which class of amplifier has the highest or the lowest efficiency?
+
+Here's a graph for you where the vertical axis represents the efficiency of the particular amplifier,
+
+and the horizontal axis shows the distortion introduced in the audio signal.
+
+So Class eight amplifiers are the most linear design with the least amount of distortion, but at the
+
+expense of very low efficiency.
+
+On the other side of the spectrum, the efficiency of Class D amplifiers can be about 90 percent, but
+
+at the expense of linearity and distortion.
+
+All right.
+
+All right.
+
+But what exactly is this conduction angle that we were talking about?
+
+Because as we mentioned before, the angle of flow is closely related to the amplifier power efficiency
+
+in order to understand better these conduction angles.
+
+Let's take the first class of power amplifiers, which is nothing else but Class A.

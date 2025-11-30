@@ -1,0 +1,127 @@
+Welcome the guys in this video, I tried to explain how radio propagation works and how critical the
+
+wavelength of the radio wave is, where you want to send information from one part of the world to another.
+
+Now the range or frequency of this particular graph that is presented here could be between one point
+
+twenty four times ten of the power of 20 hertz.
+
+This is the higher end, namely gamma rays, and the lower end, which is the frequency used by submarines,
+
+is between three and throw hertz.
+
+So let's just take two three hertz.
+
+What's interesting and logical is that the frequency spectrum is divided into bands, as shown here.
+
+This is a table taken from Wikipedia.
+
+And if you look closely, the first column is the band the name.
+
+The second is the abbreviation, or you can call it the symbol of the band.
+
+The third one is the frequency and wavelength.
+
+And lastly, example uses the first band, which is called extremely low frequency are the electromagnetic
+
+waves that have a frequency between three and 30 hertz and are used for communication with submarines.
+
+Now you can pause the video and take a look at this table in more detail.
+
+Just read it.
+
+True because it's good to know, although not not critical, what you are most interested in in this
+
+video is the very high frequency band and the ultra high frequency band.
+
+The very high frequency band lies between 30 and 300 megahertz, and these frequencies are mostly used
+
+for FM aircraft to aircraft.
+
+Television broadcast, land, mobile and maritime, mobile communications, amateur radio and finally,
+
+weather radio.
+
+So how do these electromagnetic waves propagate on Earth?
+
+As we already know, a communication, whether it's a FM radio, television, broadcast aircraft, two
+
+aircraft, so on.
+
+There has to be a transmitter, the one that sends these electromagnetic waves that contain information
+
+out into the space.
+
+And there must be a receiver that will get the information decoded and it will do something with it.
+
+It's useful to think about radio waves, to think about light waves, light travels in rays and the
+
+radio waves do the same thing.
+
+It is called radio propagation when white light goes into a priest.
+
+It is separated by a wavelength into red, orange, yellow, green, blue and violet in the same way.
+
+Radio waves are going to propagate differently, depending on their wavelength.
+
+And as we already know, radio wavelengths are much bigger than light wavelengths.
+
+Now, let's have a look at the propagation of radio waves travelling in order to communicate if users
+
+who are in different parts of the world using in radio terms.
+
+Part of the very high frequency spectrum radio that is in the very high frequency band travels in a
+
+straight line.
+
+In other words, the rays travel using the line of sight.
+
+If two users on the opposite side of the world want to communicate, the radio wave cannot use the light
+
+of sight propagation because it travels in a straight line and will not go around the curve of the Earth.
+
+So the solution for contacting somebody who's over the curved horizon is to put a satellite up, and
+
+the satellite will receive the signal from the radio color and then transmit it in another straight
+
+line.
+
+Line of sight to the person receiving it at the other end.
+
+So this is one method that is being applied in today's world to transmit information for a while, part
+
+of the world to another.
+
+And the ultra high frequency band, which would be the frequencies between 300 and 3000 megahertz,
+
+operate in exactly the same way in longer wavelengths of radio.
+
+However, the propagation is different, for example, in lower shortwave, which is around 300 kilohertz
+
+to three megahertz.
+
+The radio propagation, or radio wave, can actually curve itself around the horizon or the curvature
+
+of the Earth.
+
+In higher shortwave, which is what people in the 40s and 50s used to listen to when they wanted to
+
+hear international broadcasts, the properties are different again.
+
+The radio propagation is going to do an interesting exercise.
+
+First, it bounces off a top layer of the atmosphere called the ionosphere.
+
+Then it bounces back to the Earth.
+
+This is called reflection.
+
+It then bounces up again.
+
+Today, you're not sphere and continues bouncing back again until it reaches the radio receiver.
+
+This is called a sky wave, which works around three to 30 megahertz.
+
+So you could see in this video, radio propagation, like other radio properties, can depend critically
+
+on radio wavelength.

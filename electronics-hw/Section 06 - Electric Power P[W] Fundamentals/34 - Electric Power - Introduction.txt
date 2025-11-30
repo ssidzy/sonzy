@@ -1,0 +1,85 @@
+All right.
+
+So why do we care about power?
+
+Well, you see, power is the measurement of energy transfer over time.
+
+And unfortunately, energy costs money.
+
+Batteries aren't free, and neither is the stuff coming out of your electrical outlet.
+
+So power measures how fast the pennies are draining out of your wallet.
+
+Also, energy is, well, energy.
+
+It comes in many potential harmful forms like heat, radiation, sound nuclear, etcetera.
+
+And more power means more energy.
+
+So it's important to have an idea of what kind of power you are working with when playing with electronics.
+
+Fortunately, in playing with Arduinos, lighting up LEDs and spinning small motors, losing track of
+
+how much power you are using only means smoking a resistor or melting an ice.
+
+Now you see there are many types of power, like, for example, physical, social, super power, love.
+
+But in this tutorial, we will be focusing on electric power.
+
+So what is electric power?
+
+Well, in general physics terms, power is defined as the rate at which energy is transferred or transformed.
+
+So first, what is energy and how is it transferred?
+
+Well, it's hard to state simply, but energy is basically the ability of something to move something
+
+else.
+
+There are many forms of energy, like, for example, mechanical, electrical, chemical, electromagnetic
+
+thermal and many others.
+
+Energy can never be created or destroyed, only transferred to another form.
+
+A lot of what we are doing in electronics is converting different forms of energy to and from electric
+
+energy.
+
+So, for example, lighting LEDs turns electric energy into electromagnetic energy.
+
+Spinning motors turns electric energy into mechanical energy.
+
+Buzzing buzzers makes sound energy powering a circuit of a nine volt alkaline battery.
+
+Turn chemical energy into electrical energy.
+
+So you see, all of these are forms of energy transfers.
+
+So electric energy in particular begins as electric potential energy, what we lovingly refer to as
+
+voltage.
+
+When electrons flow through that potential energy, it turns into electric energy.
+
+And in most useful circuits, that electric energy transforms into some other form of energy.
+
+Electric power is measured by combining both how much electric energy is transferred and how fast that
+
+transfer happens.
+
+Now each component in a circuit either consumes or produces electric energy.
+
+A consumer transforms electric energy into another form.
+
+Like, for example, when an LED lights up.
+
+Electric energy is transformed into electromagnetic form.
+
+In this case, the lightbulb consumes power.
+
+Electric power is produced when energy is transferred to electric from some other form.
+
+For example, a battery supplying power to a circuit is an example of a power producer.
+
+

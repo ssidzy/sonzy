@@ -1,0 +1,257 @@
+Now, let me ask you a question.
+
+Have you ever wondered what's going to happen if we combine the hypothesis if a law passed Fewster?
+
+The result is what we call us then filter.
+
+Why would we do something like this?
+
+Well, if we don't know the frequency response of a high pass filter and then filter and if you combine
+
+these two graphs.
+
+OK.
+
+And from this, we get an interesting frequency response like this one.
+
+Feast your eyes up on this speaker and tell me what you see.
+
+What I see is that a band pass filter passes a certain band of frequencies between a lower and upper
+
+cut frequency while attenuating others.
+
+There are a few things to point out about this figure.
+
+First, the bandwidth is the frequencies that the filter passes.
+
+It is equal to age minus F.L. and is dependent on the design of the filter.
+
+So F agent F are the high cutoff frequency and the low cutoff frequency, respectively.
+
+Second, this filter has two minus three decimal points or cutoff frequencies.
+
+Next.
+
+Notice the labels on top of the picture.
+
+This filter has reduced our bands and a single piece band.
+
+And finally, the slope is a synonym for the Roloff that we have talked about earlier.
+
+So in order to make a band pass filter, basically all we need to do is to put a Lopez filter in series
+
+with a high pass filter.
+
+All right.
+
+All right.
+
+But how to calculate the minus three decimal point of the band pass filter.
+
+As I mentioned, it has to minus three decibel points.
+
+So you first need to calculate the minus three decibel for the high pass filter and then for the Lopez
+
+filter.
+
+For example, if we need to make a filter that passes frequencies from 10 kilohertz to 50 kilohertz,
+
+we can just put a 10 kilohertz high pass and fifty kilohertz Lopez filter together.
+
+Actually, now that I think about it, there's an equation that you should know which is related to
+
+the center frequency.
+
+If someone asked you to calculate at the center frequency of best filter, you can't just use this equation
+
+where F.L. is the lower minus three decibel cutoff frequency point and FH is the upper minus three decibel
+
+cutoff frequency point.
+
+As you can see from this graph to this center frequency, the output signal is at its maximum.
+
+So remember that the center frequency is equal to the geometric mean of the lower and upper cut of.
+
+All right, we've seen how to build a backbeats filter by combining a high passive if Lopez filter.
+
+There's nothing wrong with the circuit and many people use this type of that that's filtering their
+
+circuits.
+
+But but there are some exceptions where the circuit is not efficient in order to understand what I mean.
+
+Let's take an example and let's say that I want to pass all the frequencies that are between 160 eight
+
+hertz and one kilohertz, which would normally go to a calculator.
+
+We enter the low frequency and at the high frequency and voila, we have the desired values.
+
+All right.
+
+Since I'm more of a skeptical person, I don't believe in these values.
+
+So let's check if these values are indeed correct.
+
+We are back with our simulator and we use this feature of it where we can actually see the frequency
+
+response of the filter.
+
+I already built the circuit and now let's try to find the minus three decibel.
+
+I mean, the lower minus three decibel cutoff frequency point.
+
+All right, it's here.
+
+And as you can see, it's around 17 hertz when in fact, it should have been one hundred sixty eight
+
+hertz.
+
+Well, that said, let's see the calculators.
+
+Kevin does.
+
+We have the upper minus three decibel cutoff point to.
+
+All right, well, the upper minus three decibel cutoff frequency, it's correct, it's around one kilohertz
+
+as it should be.
+
+So we can put the conclusion that the calculator does halflings cam does yaye.
+
+Actually, the problem is that with the calculator, it's we have this band pass filter circuit sees
+
+the best band of our desired filter is very, very narrow.
+
+This is actually the Clouzot's frequency response that we can get if this type of band pass filter.
+
+If we cover one of our eyes and we accept this freighter as it is and we actually build a circuit in
+
+real world, we will start crying and we'll put our hair cursing our things.
+
+Why?
+
+Because the output current will be so low that you won't be able to actually drive anything after this
+
+filter.
+
+Why?
+
+Because there's a huge resistor in series with the signal which will lower our current to a point that
+
+this filter is actually unusable.
+
+If you know basic slow theory, you know that current is equal to voltage divided by resistance.
+
+So you can do the math.
+
+You might ask yourself.
+
+All right, all right, hold on.
+
+What if we lower this resistance to an acceptable value, like two hundred oops, sorry, two hundred
+
+and then tweak the value of the capacitor to send back the minus three decibel cutoff frequency point.
+
+Now, as you can see, the upper frequency point is actually too high.
+
+And to decrease these back to one kilohertz as it was before, we actually have to increase the value
+
+of the capacitor.
+
+So let me change this to three hundred and then a third.
+
+And what happened?
+
+The upper cutoff frequency indeed decreased, but with the expense of decreasing the gain of the whole
+
+band to minus 12 decibels.
+
+This means that all the signals with the frequency we find the pass band will be attenuated by minus
+
+12 decibel.
+
+And if we increase the value of the capacitor, the band attenuation will increase further.
+
+Obviously, this type of bentham's filter is not a viable option for our current desire.
+
+So what can we do in these situations like this?
+
+Well, not much, unless you heard about RLC band.
+
+That's Futter.
+
+An oppressive and battlefield filter consists of a register anene doctor and a capacitor using this
+
+configuration, we can actually achieve our goals.
+
+The first minus three decimal point Ezard, one hundred sixty eight hertz, which is correct, and the
+
+next minus three decimal point is at one kilohertz, which is correct, too.
+
+So using an RNC filter, we can actually create a very narrow parse band.
+
+And the reason of that is because of the parallel resonance between the inductor and a capacitor.
+
+When the inductor and the capacitor are placed in parallel or in series, they have a resonant frequency.
+
+These resonant frequencies represented by the following equation where F is the resonant frequency,
+
+L is the inductance in Harris and C is the capacitance in Farad's knowing this equation.
+
+The resonant frequency of these as the pair is four hundred thirteen hertz and notice that this frequency
+
+is actually situated right in the middle of the peak.
+
+All right.
+
+But what is actually the resonance frequency of Sepehr?
+
+Well I won't go into physics and stuff right now.
+
+I advise you to read on the Internet about it, but I can show you something interesting about it.
+
+This example shows what is parallel resonance.
+
+The three circuits have the inductor register and capacitor in parallel.
+
+Notice the value of the components are the same, only the input frequency differs.
+
+Each circuit got a graph which is showing the current flowing in the circuit, and in this case, the
+
+media circuit is being driven at resinous, which causes the current there to be lower than in the other
+
+two cases.
+
+And the reason why the current is the lowest is because when the input frequency matches the resonance
+
+frequency of the AC pair, the importance of the circuit is the highest.
+
+I hope you know what impedance is if not imagining impedance as a resistance that varies with the frequency.
+
+So both are measured in ohms, but impedance is actually varying with the frequency.
+
+All right.
+
+So because there is another frequency, the impedance is the highest, the current is the lowest.
+
+This might confuse you a little bit because we just seen previously that the resonant frequency of the
+
+RNC band Pass Filter is actually situated in the middle of the band.
+
+It makes it easier to understand if we actually look at the circuit as a voltage divider.
+
+Guys, I hope you know about voltage dividers, impedance and other basic stuff.
+
+As I mentioned, this is an extension of my beginner course.
+
+So if things might seem complicated to you, please check out that course and then come back here.
+
+All right.
+
+So the resonance frequency, the importance of the SC pair is the highest, which in turn makes the
+
+output voltage the highest.
+
+And this is why there is another frequency is always situated in the middle of the path that.
+
+Fucking.

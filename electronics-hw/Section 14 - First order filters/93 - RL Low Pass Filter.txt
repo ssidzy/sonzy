@@ -1,0 +1,119 @@
+All right, so the previous course we saw that using a resistor and a capacitor, we managed to build
+
+a Lopez filter.
+
+And the reason why it's called the Lopez filter is because it passes low frequency signals and high
+
+frequency signals are attenuated.
+
+To be more specific, the cutoff frequency of this filter is around four hundred twenty five hertz.
+
+So it means that frequency is below 425 hertz, are passed through without attenuation and frequency
+
+is about 425 hertz are attenuated, at least in an ideal world.
+
+This is what would happen.
+
+However, in real world, when the frequency of the signal reaches 425 hertz, the output signal will
+
+be equal to around zero point seven times the peak voltage of the inputs signal.
+
+And the signal gets further and further from four hundred twenty five hertz that inflation becomes greater
+
+and greater.
+
+Another way of building a Lopez filter is by using an inductor instead of a capacitor, and the position
+
+of the two components are switched.
+
+Now, the reactive element, which is the inductor, is in series with the signal while the resistor
+
+in parallel.
+
+So this circuit is called a slow pass or filter.
+
+Now, why does the circuit behaves like a Lopez filter?
+
+How it works is based on the principle of inductive reactants.
+
+We already talked about inductive reactants, right?
+
+Basically, it's the resistance of the inductor which changes based on the frequency of the signal passing
+
+through the inductor.
+
+Unlike a resistor, which is a nonreactive device, an inductor offers deferring impedance values to
+
+signallers of differing frequencies, just as capacitors do.
+
+However, unlike capacitors, inductors offer very high resistance to high frequency signals and offers
+
+lower resistance to low frequency signals.
+
+So it's the opposite of a capacitor.
+
+Therefore, the placement of the resistors are switched in our C and our air filter circuits the graph
+
+that shows the amplitude versus frequency.
+
+The same, however, the equation of the cut off frequency is different.
+
+Since we don't have a capacitor anymore.
+
+The cut off frequency of this filter can be calculated using this equation where F is the frequency
+
+or is the resistance of the register and L is the inductance of the inductor.
+
+Again, the cut off frequency is that frequency at which the output voltage equals around 70 percent
+
+of the input voltage about the frequency.
+
+The output voltage is lower than 70 percent of the input and vice versa.
+
+In the next course we will learn where D minus three decimal comes from.
+
+But for now, just remember that at minus three Decebal, the output voltage is equal to around zero
+
+point seven times the input voltage.
+
+Now let's go over a practical example of building an RL Lopez filter.
+
+The circuit that we are going to build consists of 470 millenary and other, along with a 10 kilogram
+
+resistor.
+
+So the formula to find the cut off frequency points of an aura circuit is this one.
+
+And by doing the math with the values shown here, we get the frequency of three point thirty nine kilohertz.
+
+This means that all frequencies about three point thirty nine kilohertz are attenuated.
+
+And as you get further from the three point thirty nine kilohertz region, the attenuation becomes greater
+
+and greater frequencies below three point thirty nine kilohertz are passed through without attenuation.
+
+So again, you can check this on an oscilloscope to see that very low frequency signals are passed through
+
+to output.
+
+An attenuated y high frequency signals undergo attenuation to see how a Lopez Obrador works in a circuit.
+
+Let's go to our simulator and here we are.
+
+So our signal generator will output a five words signal starting from 20 hertz and will go up to three
+
+kilohertz.
+
+Then we have 265 millenary doctor and a one kilogram resistor with this setup.
+
+If you do the math, the cutoff frequencies.
+
+Six hundred hertz.
+
+So if I start the simulator, notice that as long as the frequency is below 600 hertz, there's no any
+
+attenuation of the output.
+
+At the frequency of 600 hertz, the output is around 70 percent of the input, and as we move further
+
+and further, the attenuation becomes greater and greater.

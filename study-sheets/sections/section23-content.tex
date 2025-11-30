@@ -1,0 +1,664 @@
+\section{Section 23 -- Linear Power Supply Design}
+
+This section covers the design of linear (regulated) power supplies, from understanding the fundamental building blocks to implementing complete adjustable voltage/current sources. We examine common design mistakes, learn proper regulation techniques using discrete components, and explore both single-rail and dual-rail (split) power supply configurations.
+
+%--------------------------------------------------------------
+\subsection{Power Supply Fundamentals and Architecture}
+%--------------------------------------------------------------
+
+%--- Topic 167: Power Supplies Introduction ---
+\subsubsection{Power Supply Introduction and Block Diagram}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A linear power supply converts AC mains voltage to clean, regulated DC through four main stages: step-down transformer (voltage reduction), rectifier (AC to pulsating DC), filter (smoothing to clean DC), and voltage regulator (maintaining constant output despite load/input variations). Linear supplies are characterized by continuous conduction, simplicity, and low noise compared to switching supplies.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Power Supply Classifications:}
+
+Power supplies can be categorized by functional features:
+\begin{itemize}
+    \item \textbf{Regulated:} Maintains constant output voltage/current despite variations in input voltage or load current. Essential for sensitive electronics.
+    \item \textbf{Unregulated:} Output voltage varies significantly with input changes or load variations. Generally not suitable for precision applications.
+    \item \textbf{Adjustable:} Output voltage/current can be programmed via mechanical controls (potentiometers) or control inputs.
+    \item \textbf{Isolated:} Output is electrically independent of input, typically achieved with transformers. Provides safety barrier preventing dangerous voltages from passing through. Critical for switching supplies where grounds are separated.
+\end{itemize}
+
+\textbf{Linear vs. Switching Power Supplies:}
+
+\textit{Linear Power Supply:} Uses continuous conduction through transistors operating in their active region. The regulator acts as a variable resistor, dissipating excess power as heat. Advantages include simplicity, low noise, excellent regulation. Disadvantages are lower efficiency (typically 30-60\%) and larger size/weight due to 50/60Hz transformer.
+
+\textit{Switching Mode Power Supply (SMPS):} Converts AC to DC via rectifier, then chops DC into high-frequency AC (tens to hundreds of kHz) using switching circuits. High-frequency transformer is much smaller (transformer size inversely proportional to frequency). Requires PWM driver controlling switching block. Advantages: high efficiency (70-95\%), small size, light weight, low heat dissipation. Disadvantages: complex circuitry, electrical noise generation, higher component count.
+
+\textbf{Four Main Blocks of Linear Power Supply:}
+
+1. \textit{Step-Down Transformer:} Reduces AC mains (e.g., 220V) to required lower voltage level. Turns ratio adjusted to obtain desired secondary voltage. For ideal transformer: $P_{primary} = P_{secondary}$, so $V_1 I_1 = V_2 I_2$. Step-down voltage transformation increases current proportionally.
+
+2. \textit{Rectifier:} Converts AC to unidirectional pulsating DC. Half-wave rectifier uses one diode (inefficient, high ripple). Full-wave bridge rectifier uses four diodes, conducts on both AC half-cycles, providing better DC utilization and lower ripple. Output is pulsating DC with voltage drops from conducting diodes (typically $\approx 1.4$V for two diodes in bridge).
+
+3. \textit{Filter:} Smooths pulsating DC to cleaner DC with minimal ripple. Capacitor filter most common for small supplies. Capacitor charges to peak voltage, then discharges slowly through load during AC dips. Large capacitance provides better smoothing. Other filters: LC filter, $\pi$-filter (CLC), choke input filter for higher current applications.
+
+4. \textit{Voltage Regulator:} Maintains constant output despite input voltage variations, load current changes, or temperature drift. Can be implemented with discrete components (transistors, Zener diodes) or integrated circuits (LM317 adjustable, 78xx fixed positive, 79xx fixed negative series). This is the most complex block to design properly.
+
+\textbf{Power Flow in Transformer:}
+
+Transformer action analogous to mechanical gears: primary side like large gear (high torque/voltage, low speed/current), secondary side like small gear (low torque/voltage, high speed/current). Step-down transformer reduces voltage but increases current to maintain power balance (minus losses).
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Transformer Current Relationship:}
+
+Consider a step-down transformer: primary 220V AC with 0.5A fuse, secondary outputs 53V AC.
+
+For ideal transformer (no losses):
+\[
+P_{primary} = P_{secondary} \implies V_1 I_1 = V_2 I_2
+\]
+\[
+220 \text{V} \times 0.5\text{A} = 53\text{V} \times I_2 \implies I_2 = \frac{110}{53} \approx 2.08\text{A}
+\]
+
+If secondary load draws more than 2.08A, primary current exceeds 0.5A fuse rating, causing fuse to blow and protect circuit.
+
+\textbf{IC Voltage Regulators:}
+
+Common fixed regulators use simple naming convention:
+\begin{itemize}
+    \item 78xx series: Positive voltage, where xx = output voltage (7805 = +5V, 7812 = +12V)
+    \item 79xx series: Negative voltage, where xx = output voltage (7912 = -12V, 7905 = -5V)
+\end{itemize}
+
+For adjustable output, LM317 (positive) or LM337 (negative) provide voltage programming via external resistor network.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Linear power supplies comprise four essential blocks: transformer, rectifier, filter, and regulator
+    \item Regulated supplies maintain constant output; unregulated supplies exhibit significant voltage variation with load
+    \item Transformer power relationship: $P_{in} = P_{out}$ (ideal), so step-down voltage transformation increases current
+    \item Full-wave bridge rectifier superior to half-wave: better DC utilization, lower ripple, higher efficiency
+    \item Capacitor filter: charges to peak, discharges through load, larger capacitance = better smoothing
+    \item Switching supplies achieve higher efficiency and smaller size via high-frequency operation, but add complexity and noise
+    \item Isolation (transformer-based) provides safety barrier, essential for many applications
+    \item IC regulators (78xx, 79xx, LM317) simplify design but discrete designs teach fundamental regulation principles
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topic 168: How NOT to design a power supply ---
+\subsubsection{Common Power Supply Design Mistakes}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Naive power supply designs using simple voltage dividers or Zener diodes alone suffer from poor load regulation (output voltage drops significantly when load current increases), excessive power dissipation in series components, and inability to provide adequate current. These designs illustrate why proper active regulation with transistors is necessary for functional power supplies.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Design Mistake 1: Resistive Voltage Divider}
+
+Attempting to create 10V output from 50V DC source using voltage divider (e.g., 4k$\Omega$ and 1k$\Omega$ resistors) fails when load is connected. Load resistance appears in parallel with bottom divider resistor, changing the division ratio.
+
+For unloaded divider: $V_{out} = V_{in} \frac{R_2}{R_1 + R_2} = 50 \frac{1k}{5k} = 10$V.
+
+With 1k$\Omega$ load connected, equivalent resistance: $R_{eq} = R_2 \parallel R_{load} = \frac{1k \times 1k}{1k + 1k} = 500\Omega$.
+
+New output: $V_{out} = 50 \frac{500}{4000 + 500} \approx 5.6$V. Output voltage collapses with load.
+
+\textbf{Design Mistake 2: Zener Diode Only}
+
+Using Zener diode with series current-limiting resistor improves regulation. Zener operated in reverse breakdown maintains constant voltage across its terminals. Series resistor (e.g., 500$\Omega$) limits current to safe level.
+
+\textit{Advantages:} Output voltage stable at Zener breakdown voltage ($V_Z$) even with moderate load variations. Much better than resistive divider.
+
+\textit{Critical Problems:}
+\begin{itemize}
+    \item \textbf{Low current capability:} If load draws too much current, Zener current drops below minimum Zener current ($I_{Z,min}$), losing regulation. Voltage collapses (e.g., with 100$\Omega$ load drawing 100mA, regulation fails).
+    \item \textbf{High power dissipation:} Under no-load or high-impedance load conditions, all circuit current flows through Zener, causing maximum power dissipation: $P_Z = V_Z \times I_Z$. Can easily exceed Zener power rating, destroying device.
+    \item \textbf{Series resistor compromise:} Small resistance allows adequate load current but causes excessive Zener dissipation at no-load. Large resistance protects Zener but limits available load current. No good compromise exists.
+    \item \textbf{Electrical noise:} Zener diodes can generate electrical noise on DC output as breakdown mechanism stabilizes voltage. Large capacitor across Zener (e.g., 100$\mu$F) helps filter noise.
+\end{itemize}
+
+\textbf{Series Resistor Trade-off:}
+
+Series resistor value must balance conflicting requirements:
+\begin{itemize}
+    \item Too high: Reduces load current capability, output voltage drops under load
+    \item Too low: Excessive Zener current at no-load, high power dissipation (e.g., 3W requiring power resistor), potential Zener destruction
+\end{itemize}
+
+For 10V Zener with 1k$\Omega$ load (10mA), if series resistor is 500$\Omega$: current from 50V source = $(50-10)/500 = 80$mA. Under load, 10mA goes to load, 70mA through Zener. Power in Zener: $10 \times 0.07 = 0.7$W. Power in resistor: $(50-10) \times 0.08 = 3.2$W. Very inefficient.
+
+\textbf{Need for Active Regulation:}
+
+These passive designs demonstrate why active regulation using transistors is essential. Transistors provide:
+\begin{itemize}
+    \item Current amplification (high load current from small control current)
+    \item Low power dissipation in reference element (Zener)
+    \item Better load regulation (output voltage stable across wide load current range)
+    \item Efficient power delivery to load
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Voltage Divider Failure Calculation:}
+
+50V source, voltage divider 4k$\Omega$ + 1k$\Omega$, desired 10V output.
+
+\textit{No load:} $V_{out} = 50 \times \frac{1000}{5000} = 10$V. $\checkmark$
+
+\textit{With 1k$\Omega$ load:}
+\[
+R_{parallel} = \frac{1k \times 1k}{1k + 1k} = 500\Omega
+\]
+\[
+V_{out} = 50 \times \frac{500}{4000 + 500} = 50 \times 0.111 = 5.56\text{V}
+\]
+
+Output dropped 44\% from desired value. Unacceptable for any real application.
+
+\textbf{Zener Regulation Limits:}
+
+10V Zener with 500$\Omega$ series resistor, 50V input.
+
+\textit{No load condition:}
+\[
+I_{total} = \frac{50 - 10}{500} = 80\text{mA (all through Zener)}
+\]
+\[
+P_{Zener} = 10 \times 0.08 = 0.8\text{W}
+\]
+
+\textit{With 100$\Omega$ load:} Load requires $10/100 = 100$mA. But total circuit current only 80mA. Impossible to supply. Zener current goes to zero, regulation lost, output voltage collapses to $\approx 8.3$V.
+
+Zener alone cannot provide adequate current for low-resistance loads.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Resistive voltage dividers fail as power supplies: output voltage varies drastically with load resistance
+    \item Load resistance in parallel with divider bottom resistor changes division ratio, collapsing output voltage
+    \item Zener-only regulation provides voltage reference but cannot deliver significant current
+    \item Zener requires series current-limiting resistor, creating power dissipation trade-off
+    \item Small series resistor: excessive Zener dissipation at no-load; large series resistor: insufficient load current
+    \item Zener power dissipation highest at no-load (all current through Zener), can exceed ratings
+    \item Minimum Zener current ($I_{Z,min}$) must be maintained for regulation; heavy loads drop Zener current below minimum
+    \item Zener diodes can generate electrical noise; add large capacitor across Zener for filtering
+    \item These failures motivate need for active regulation using transistors (current gain, efficient power delivery)
+\end{itemize}
+\end{keypointsbox}
+
+
+%--------------------------------------------------------------
+\subsection{Transistor-Based Voltage Regulation}
+%--------------------------------------------------------------
+
+%--- Topic 169: Emitter Follower using Darlington Pair ---
+\subsubsection{Emitter Follower Regulation with Darlington Configuration}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Adding an NPN transistor (emitter follower configuration) to Zener reference solves power dissipation problem: Zener provides voltage reference with minimal current, transistor amplifies current for load. Darlington pair (two transistors cascaded) further increases current gain ($\beta_{total} = \beta_1 \times \beta_2$), enabling high output current with minimal base current. This approach allows high series resistance (protecting Zener) while maintaining excellent load current capability.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Single Transistor Emitter Follower:}
+
+Circuit configuration: Zener diode connected to transistor base, transistor emitter connected to load, series resistor limits Zener current. Transistor operates as emitter follower (common collector configuration).
+
+\textit{Operating Principle:}
+\begin{itemize}
+    \item Zener provides stable voltage reference $V_Z$ at transistor base
+    \item Transistor emitter voltage: $V_{out} = V_Z - V_{BE}$ (one diode drop lower, typically 0.7V)
+    \item Load current flows through collector-emitter, $I_C \approx \beta \times I_B$
+    \item Base current very small due to current gain, leaving most series resistor current for Zener
+\end{itemize}
+
+\textit{Advantages over Zener-only:}
+\begin{itemize}
+    \item High input impedance at base reduces base current to microamps
+    \item Series resistor can be large (protecting Zener) without compromising load current
+    \item Zener power dissipation dramatically reduced (e.g., from 700mW to 40mW)
+    \item Load current capability increased by factor of $\beta$ (e.g., 100$\times$ improvement)
+\end{itemize}
+
+\textit{Limitations:}
+\begin{itemize}
+    \item Output voltage fixed at $V_Z - 0.7$V (one diode drop loss)
+    \item Minimum output voltage limited to $\approx 0.7$V (cannot reach near-zero)
+    \item For very low load resistance, single transistor may have insufficient current gain
+\end{itemize}
+
+\textbf{Darlington Pair Configuration:}
+
+Two transistors cascaded: Q1 collector connected to Q2 collector, Q1 emitter connected to Q2 base. Acts as single transistor with greatly increased gain.
+
+\textit{Current Gain:}
+\[
+\beta_{total} = \beta_1 \times \beta_2
+\]
+
+For two transistors each with $\beta = 100$: $\beta_{total} = 10,000$. Extremely high current amplification.
+
+\textit{Voltage Relationships:}
+
+Output voltage two diode drops below Zener reference:
+\[
+V_{out} = V_Z - V_{BE1} - V_{BE2} \approx V_Z - 1.4\text{V}
+\]
+
+To compensate, increase Zener voltage by 1.4V. For 10V desired output, use 11.4V Zener.
+
+\textit{Input Impedance:}
+
+Emitter follower input impedance: $Z_{in} \approx \beta (r_e + R_{load})$. For Darlington: $Z_{in} \approx \beta_1 \beta_2 (r_e + R_{load})$. Extremely high, meaning negligible base current drawn from Zener reference.
+
+\textit{Benefits for Power Supply:}
+\begin{itemize}
+    \item Base current reduced to $I_C / \beta_{total}$, e.g., 1A load with $\beta_{total} = 1000$ requires only 1mA base current
+    \item Ample current remains for Zener, ensuring operation above $I_{Z,min}$ even under heavy load
+    \item First transistor (Q1) must be power transistor handling high collector current
+    \item Second transistor (Q2) can be small signal type (minimal current)
+    \item Heat sink required for Q1 due to power dissipation: $P = V_{CE} \times I_C$
+\end{itemize}
+
+\textbf{Noise Filtering:}
+
+Capacitor (e.g., 100$\mu$F) across Zener diode filters electrical noise generated during breakdown operation. Zener noise can appear as ripple on DC output; capacitor smooths this to clean DC.
+
+\textbf{Design Considerations:}
+
+\textit{Series Resistor Sizing:} Total current through series resistor = Zener current + base current. With Darlington, base current negligible, so $I_{series} \approx I_Z$. Choose $R_{series}$ to provide 5-10mA Zener current at minimum input voltage.
+
+\textit{Current Limitations:} Despite high gain, output current ultimately limited by:
+\begin{itemize}
+    \item Power transistor maximum collector current rating
+    \item Power dissipation in transistor: $P = (V_{in} - V_{out}) \times I_{out}$
+    \item Heat sinking capability for power transistor
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Darlington Pair Current Amplification:}
+
+Design for 10V output, 1A maximum load current. Use 11.4V Zener (compensate for two $V_{BE}$ drops), Darlington pair with $\beta_1 = \beta_2 = 100$.
+
+Total current gain: $\beta_{total} = 100 \times 100 = 10,000$.
+
+For 1A load current:
+\[
+I_{base} = \frac{I_C}{\beta_{total}} = \frac{1\text{A}}{10,000} = 0.1\text{mA} = 100\mu\text{A}
+\]
+
+With 10mA Zener current (ensuring good regulation), series resistor current: $10\text{mA} + 0.1\text{mA} \approx 10\text{mA}$.
+
+For 50V input:
+\[
+R_{series} = \frac{V_{in} - V_Z}{I_{series}} = \frac{50 - 11.4}{0.01} = 3.86\text{k}\Omega \approx 3.9\text{k}\Omega
+\]
+
+Power in series resistor:
+\[
+P_R = I^2 R = (0.01)^2 \times 3900 = 0.39\text{W} \text{ (use 0.5W or 1W resistor)}
+\]
+
+Zener power: $P_Z = 11.4 \times 0.01 = 0.114$W (much less than before).
+
+\textbf{Output Voltage Calculation:}
+
+With 11.4V Zener, output voltage:
+\[
+V_{out} = V_Z - V_{BE1} - V_{BE2} = 11.4 - 0.7 - 0.7 = 10.0\text{V}
+\]
+
+At 10$\Omega$ load: $I_{load} = 10/10 = 1$A. Circuit successfully delivers 1A at 10V.
+
+For single transistor ($\beta = 100$) at same load: base current would be $1/100 = 10$mA. With only 10mA total from series resistor, Zener would be starved. Darlington solves this problem.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Emitter follower (common collector) configuration: Zener at base, load at emitter, provides current gain
+    \item Single transistor: output $V_Z - V_{BE}$, current gain $\beta$, reduces Zener dissipation dramatically
+    \item Darlington pair: two transistors cascaded, total gain $\beta_{total} = \beta_1 \times \beta_2$ (typically 1,000-10,000)
+    \item Darlington output voltage: $V_Z - 2 V_{BE} \approx V_Z - 1.4$V, compensate by increasing Zener voltage
+    \item Extremely high input impedance reduces base current to microamps, even for ampere-level loads
+    \item Series resistor can be large (3-10k$\Omega$), protecting Zener while maintaining load current capability
+    \item First transistor must be power type (handles high $I_C$), second can be small signal
+    \item Heat sink essential for power transistor: dissipation $P = (V_{in} - V_{out}) I_{out}$
+    \item Capacitor across Zener (100$\mu$F) filters noise for clean DC output
+    \item Limitation: output voltage not adjustable, fixed by Zener value minus diode drops
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topics 170-171: Transistor Based Power Supply (1.3V - 50V) Parts I & II ---
+\subsubsection{Fully Adjustable Transistor Power Supply (1.3V - 50V, 10A)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A complete adjustable linear power supply uses feedback control: potentiometer samples output voltage, Darlington pair compares to setpoint and controls pass transistors. Circuit topology: parallel power transistors (Q4, Q5) driven by control transistor (Q3), with feedback network (Q1, Q2 Darlington) pulling Q3 base low when output exceeds setpoint. Enables wide voltage range (1.3-50V) and high current (up to 10A) with voltage adjustment via single potentiometer.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Architecture:}
+
+\textit{Input Stage:} AC mains (220V) $\rightarrow$ fuse (0.5A) $\rightarrow$ step-down transformer (220V:53V) $\rightarrow$ bridge rectifier (4 diodes) $\rightarrow$ large filter capacitor (C1, e.g., 10,000$\mu$F) $\rightarrow$ clean 52V DC.
+
+Fuse rating calculation: Transformer power balance $P_1 = P_2$, so $220 \times 0.5 = 53 \times I_2$, giving $I_2 \approx 2.08$A secondary current maximum. Higher secondary current would require higher primary current, blowing fuse.
+
+\textit{Power Stage:} Two NPN power transistors (Q4, Q5) in parallel provide high output current capability. Parallel connection: emitters tied together to output, collectors tied to supply rail, bases driven together by control transistor Q3.
+
+\textit{Control Stage:} NPN transistor Q3 drives Q4/Q5 bases. Q3 collector connects to supply rail through diode D1, Q3 base receives control signal from feedback network. Diode D1 ensures Q3 operates in forward-active mode ($V_C > V_B > V_E$) by creating voltage drop.
+
+\textit{Feedback Network:} Darlington pair (Q1, Q2) samples output voltage via potentiometer (R\_pot). When output voltage increases, voltage at Q2 base increases, turning Q2-Q1 on harder, pulling Q3 base toward ground. Lower Q3 base voltage reduces Q3 collector current, reducing Q4/Q5 base drive, lowering output voltage. This negative feedback stabilizes output.
+
+\textbf{Detailed Operating Principle:}
+
+\textit{Voltage Adjustment Mechanism:}
+
+Potentiometer forms voltage divider across output: $V_{Q2,base} = V_{out} \frac{R_2}{R_1 + R_2}$ where R1 and R2 are potentiometer segments.
+
+\begin{itemize}
+    \item \textbf{Maximum output (50V):} Potentiometer set so Q2 base at minimum voltage ($\approx 250$mV), Q1-Q2 barely conducting, Q3 base high (near supply rail minus D1 drop), Q3 drives Q4-Q5 hard, maximum output.
+    \item \textbf{Minimum output (1.3V):} Potentiometer rotated so Q2 base at 1.3V, Q1-Q2 conduct heavily, pulling Q3 base near ground, Q3 barely conducts, Q4-Q5 barely on, 1.3V output.
+\end{itemize}
+
+Minimum voltage limit (1.3V) determined by Q3 operating requirements: if Q3 emitter (following output) drops below $\approx 1.3$V, Q3 base-emitter junction insufficiently forward biased, Q3 turns off, feedback loop broken.
+
+\textit{Current Flow Path:}
+
+Supply (52V) $\rightarrow$ D1 $\rightarrow$ Q3 collector/base junction $\rightarrow$ Q3 emitter $\rightarrow$ Q4/Q5 bases $\rightarrow$ Q4/Q5 emitters $\rightarrow$ output load $\rightarrow$ ground. Current divides: portion through R1-R2 to limit Q3 current, majority through Q4-Q5 to load.
+
+\textit{Power Transistor Balancing:}
+
+Transistors Q4 and Q5 never perfectly matched even if same part number. Without balancing, one transistor may conduct more current, leading to uneven heating and potential thermal runaway.
+
+Small resistors (R4, R5, e.g., 0.1-0.5$\Omega$, 5W) in series with each emitter balance current. If Q4 tries to conduct more current, larger voltage drop across R4 reduces Q4 $V_{BE}$, throttling Q4 current. Self-balancing action distributes current evenly.
+
+Resistor values kept very low to minimize voltage drop (wasted voltage reducing maximum output capability). Power rating must handle: $P = I^2 R$, e.g., 5A through 0.2$\Omega$ gives $P = 25 \times 0.2 = 5$W.
+
+\textbf{Component Functions:}
+
+\textit{R1, R2 (series with Q3 collector):} Limits current through Q3. Prevents excessive Q3 collector current when Q3 fully on. Typical values 100-470$\Omega$.
+
+\textit{D1 (in Q3 collector path):} Creates 0.7V drop ensuring $V_{C,Q3} > V_{B,Q3}$ for forward-active operation. Without D1, Q3 may saturate, losing linear control.
+
+\textit{C2 (across output):} Large capacitor (1000-10,000$\mu$F) smooths output voltage during rapid load current changes. If load suddenly demands high current, capacitor supplies energy while feedback loop adjusts. Without C2, output voltage may exhibit transient spikes/dips.
+
+\textit{R\_discharge (parallel with C2):} When power supply unplugged and no load connected, C2 remains charged to last set voltage (potentially 50V). R\_discharge (e.g., 330$\Omega$, 5W) slowly discharges C2, preventing dangerous voltage at output terminals. Time constant: $\tau = RC$, e.g., $330 \times 0.01 = 3.3$s for 10,000$\mu$F. Voltage decays to safe level in $\approx 5\tau = 16.5$s.
+
+Without R\_discharge: connecting new load rated for 10V to output still charged at 50V would destroy load.
+
+\textbf{Current Limiting and Protection:}
+
+Circuit shown does not include current limiting. Real power supplies add current sense resistor in output path and comparator/transistor to limit maximum current. Without limiting, short circuit or overload can destroy pass transistors.
+
+Maximum current determined by:
+\begin{itemize}
+    \item Transformer secondary current capability (limited by primary fuse)
+    \item Q4/Q5 maximum collector current ratings (check datasheet)
+    \item Heat dissipation capability of transistors/heat sinks
+\end{itemize}
+
+For 10A output capability, Q4 and Q5 must each handle 5A continuous (with balancing). Power dissipation in each transistor:
+\[
+P_{Q4} = (V_{in} - V_{out}) \times I_{Q4}
+\]
+
+Worst case: $V_{in} = 52$V, $V_{out} = 1.3$V, $I_{Q4} = 5$A: $P = 50.7 \times 5 = 253.5$W per transistor! Requires substantial heat sinking or forced air cooling. At higher output voltages, dissipation lower.
+
+\textbf{Feedback Loop Stability:}
+
+Negative feedback system can oscillate if loop gain too high or phase margin insufficient. C2 provides frequency compensation, reducing high-frequency gain and stabilizing loop. Value chosen empirically for stable operation across load range.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Voltage Adjustment Calculation:}
+
+Potentiometer total resistance 10k$\Omega$, output voltage 50V.
+
+For maximum output (Q2 base at 250mV to keep Q1-Q2 barely on):
+\[
+V_{Q2,base} = V_{out} \frac{R_2}{R_1 + R_2} = 50 \times \frac{50}{10000} = 0.25\text{V}
+\]
+
+This means potentiometer set with $R_1 = 9.95$k$\Omega$, $R_2 = 50\Omega$.
+
+For minimum output (Q2 base at 1.3V for full conduction):
+\[
+1.3 = V_{out} \frac{R_2}{10k} \implies V_{out} = \frac{1.3 \times 10k}{R_2}
+\]
+
+When output is 1.3V and potentiometer adjusted so $R_2 = 10$k$\Omega$ (fully rotated), feedback maintains 1.3V output.
+
+\textbf{Current Distribution in Parallel Transistors:}
+
+Q4 and Q5 each with $\beta = 100$, Q3 providing base drive.
+
+For 10A total output current (5A per transistor ideally):
+\[
+I_{B,Q4} = I_{B,Q5} = \frac{5\text{A}}{100} = 50\text{mA each}
+\]
+
+Total base current from Q3: 100mA. If Q3 has $\beta = 100$:
+\[
+I_{B,Q3} = \frac{100\text{mA}}{100} = 1\text{mA}
+\]
+
+Very small control current from feedback network controls high output current via cascaded gain.
+
+\textbf{Power Dissipation Example:}
+
+Output set to 10V, load draws 5A (2.5A per transistor), input 52V.
+
+Voltage drop per transistor: $V_{CE} = 52 - 10 = 42$V.
+
+Power per transistor:
+\[
+P = V_{CE} \times I_C = 42 \times 2.5 = 105\text{W}
+\]
+
+Total dissipation in both transistors: 210W! Linear regulation inherently inefficient at large voltage differences. Requires large heat sinks or active cooling.
+
+Efficiency:
+\[
+\eta = \frac{P_{out}}{P_{in}} = \frac{10 \times 5}{52 \times 5} = \frac{50}{260} = 19.2\%
+\]
+
+Majority of input power wasted as heat. Switching supplies achieve 80-95\% efficiency in same scenario.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Fully adjustable supply uses negative feedback: output sampled by potentiometer, compared via Darlington pair
+    \item Feedback controls pass transistors (Q4, Q5) via driver (Q3), stabilizing output voltage
+    \item Input stage: fuse $\rightarrow$ transformer $\rightarrow$ bridge rectifier $\rightarrow$ filter capacitor produces clean DC rail
+    \item Fuse rating limits maximum output current via transformer power balance: $V_1 I_1 = V_2 I_2$
+    \item Parallel power transistors (Q4, Q5) increase current capability, require emitter resistors for current balancing
+    \item Balancing resistors (R4, R5) small value (0.1-0.5$\Omega$), high power (5W), equalize transistor currents
+    \item Diode D1 in Q3 collector ensures forward-active operation, prevents saturation
+    \item Output capacitor C2 (large value) stabilizes voltage during transient load changes, provides frequency compensation
+    \item Discharge resistor prevents C2 remaining charged when power removed, safety feature
+    \item Minimum output voltage (1.3V) limited by Q3 operating requirements, cannot reach near-zero
+    \item Power dissipation worst at low output voltage, high current: $P = (V_{in} - V_{out}) I_{out}$
+    \item Requires substantial heat sinking for power transistors, especially at low output voltages
+    \item Linear regulation efficiency poor for large input-output voltage differences: $\eta = V_{out}/V_{in}$
+    \item Circuit as shown lacks current limiting; real designs add current sense and limit circuitry
+\end{itemize}
+\end{keypointsbox}
+
+
+%--------------------------------------------------------------
+\subsection{Split (Dual) Power Supply Design}
+%--------------------------------------------------------------
+
+%--- Topic 172: Split Power Supply Design (+12V & -12V) ---
+\subsubsection{Dual-Rail Power Supply (+12V / -12V)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Split (dual) power supplies provide both positive and negative voltage rails with common ground, essential for circuits like op-amps requiring bipolar operation. Achieved using center-tapped transformer (two equal secondary windings with grounded center tap), two separate rectifier/filter stages, and positive/negative voltage regulators (78xx and 79xx series). Single transformer produces both rails simultaneously.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Center-Tapped Transformer:}
+
+Center-tapped transformer has primary winding and secondary with three terminals: two outer terminals and center tap.
+
+\textit{Voltage Relationship:} If total secondary voltage (across outer terminals) is $V_{total}$, then voltage from each outer tap to center = $V_{total}/2$, and these two voltages are 180° out of phase (opposite polarity).
+
+Example: 24V center-tapped secondary measures 24V across outer taps, +12V AC from top tap to center, -12V AC from bottom tap to center (referenced to center tap at any instant).
+
+\textit{Physical Construction:} Primary typically has two wire leads, secondary has three wire leads where middle lead is center tap. Total turns on secondary split equally: if 240 turns total, 120 turns from top-to-center, 120 turns from center-to-bottom.
+
+\textit{Advantage:} Single transformer provides both positive and negative AC voltages for dual supply. Eliminates need for two separate transformers.
+
+\textbf{Dual Rectification and Filtering:}
+
+Each secondary half connected to separate full-bridge rectifier. Top secondary half $\rightarrow$ rectifier 1 $\rightarrow$ positive DC. Bottom secondary half $\rightarrow$ rectifier 2 $\rightarrow$ negative DC. Center tap connected to ground.
+
+\textit{Rectifier Configuration:} Two options:
+\begin{itemize}
+    \item Two full-bridge rectifiers (4 diodes each, 8 diodes total): each half of secondary feeds bridge independently
+    \item Single center-tap rectifier (2 diodes total): simpler but gives half-wave rectification on each rail, higher ripple
+\end{itemize}
+
+Full-bridge approach (shown in typical $\pm$12V supply): 4 diodes for +12V rail, 4 diodes for -12V rail.
+
+\textit{Filter Capacitors:} Large electrolytic capacitors (e.g., 2200$\mu$F, 25V rating) smooth rectified voltage on each rail.
+
+Connection: Positive capacitor between +DC and ground (positive terminal to +DC). Negative capacitor between ground and -DC (positive terminal to ground, negative terminal to -DC).
+
+Both capacitors charge to approximately peak secondary voltage minus diode drops: $V_{cap} \approx V_{rms} \times \sqrt{2} - 1.4$V.
+
+For 12V AC RMS secondary half: $V_{cap} \approx 12 \times 1.414 - 1.4 \approx 15.6$V. After filtering, unregulated $\pm$16V DC approximately.
+
+\textbf{Voltage Regulation:}
+
+Unregulated DC varies with mains voltage and load current. Linear regulators maintain constant output.
+
+\textit{78xx Series (Positive Regulators):}
+\begin{itemize}
+    \item Three-terminal IC: input, ground, output
+    \item Naming: 78xx where xx = output voltage (7812 = +12V, 7805 = +5V, 7815 = +15V)
+    \item Requires input voltage $\geq$ output + 2-3V for dropout specification
+    \item Example: 7812 requires $\geq 14-15$V input for +12V regulated output
+\end{itemize}
+
+\textit{79xx Series (Negative Regulators):}
+\begin{itemize}
+    \item Three-terminal IC: input, ground, output (ground is common reference)
+    \item Naming: 79xx where xx = output voltage (7912 = -12V, 7905 = -5V)
+    \item Input voltage must be more negative than output by 2-3V
+    \item Example: 7912 requires $\leq -14$V input for -12V regulated output
+\end{itemize}
+
+\textit{Regulation Action:} Both ICs maintain constant output voltage despite:
+\begin{itemize}
+    \item Input voltage variations (mains fluctuations)
+    \item Load current changes (voltage divider effect in unregulated supply)
+    \item Temperature changes (internal compensation)
+\end{itemize}
+
+\textbf{Applications Requiring Dual Supplies:}
+
+\textit{Operational Amplifiers:} Op-amps must amplify both positive and negative portions of AC signals. With single positive supply, output cannot swing below ground, clipping negative half of signal. Dual supply allows output to swing positive (toward +rail) and negative (toward -rail), preserving entire signal waveform.
+
+\textit{DC Motor Reversing:} Motor connected between +12V and -12V terminals (not ground). Applying +12V to one terminal, -12V to other gives 24V across motor in one polarity (clockwise rotation). Reversing connections gives opposite polarity, reversing motor direction (counterclockwise). Used in robotics, toys, bidirectional actuation.
+
+\textit{Audio Circuits:} Audio signals are AC (bipolar). Dual supplies allow biasing signal at ground (0V) and amplifying positive/negative excursions symmetrically without coupling capacitors.
+
+\textbf{Safety and Grounding:}
+
+Center tap of transformer grounded establishes 0V reference. Both +12V and -12V measured with respect to this ground. Critical for safety: ground connection often bonded to chassis/earth for shock protection.
+
+Without proper grounding, floating supply can develop dangerous voltages relative to earth ground, creating shock hazard.
+
+\textbf{Power Ratings:}
+
+Diode ratings: Each diode must handle peak secondary current plus safety margin. For 2A output capability, use diodes rated $\geq 6$A, 400V (provides safety factor and handles surge currents during capacitor charging).
+
+Capacitor ratings: Voltage rating must exceed peak rectified voltage. For $\pm$12V supply with $\approx 16$V unregulated, use capacitors rated $\geq 25$V for safety margin.
+
+Regulator IC ratings: 78xx/79xx series typically handle 1-1.5A continuous. For higher currents, use paralleling techniques or higher-current regulators (e.g., LM338 for 5A).
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Center-Tapped Transformer Voltage Calculation:}
+
+Transformer: 220V AC primary, 24V AC center-tapped secondary.
+
+Voltage across outer taps: 24V AC RMS.
+
+Voltage from top tap to center: $24/2 = 12$V AC RMS.
+
+Voltage from bottom tap to center: $24/2 = 12$V AC RMS.
+
+At any instant, if top tap is +12V relative to center, bottom tap is -12V relative to center (180° phase difference).
+
+After rectification and filtering: approximately $12 \times \sqrt{2} - 1.4 = 15.6$V DC on each rail.
+
+\textbf{Dual Supply Output Calculation:}
+
+Unregulated rails: +16V and -16V DC (after capacitor filter).
+
+Regulators: 7812 (+12V) and 7912 (-12V).
+
+Regulated outputs:
+\begin{itemize}
+    \item Positive rail: +12V DC relative to ground
+    \item Negative rail: -12V DC relative to ground
+    \item Voltage between positive and negative rails: $12 - (-12) = 24$V DC
+\end{itemize}
+
+Op-amp powered from $\pm$12V supply can output signals ranging from approximately -11V to +11V (within rail limits), preserving bipolar waveforms.
+
+\textbf{Motor Voltage Differential:}
+
+DC motor rated 12V, connected between +12V and -12V terminals (bypassing ground).
+
+Voltage across motor: $V_{+} - V_{-} = 12 - (-12) = 24$V DC.
+
+Motor sees 24V, rotates clockwise (assuming polarity).
+
+Reversing connections: motor positive to -12V rail, motor negative to +12V rail.
+
+New voltage: $-12 - 12 = -24$V DC, motor rotates counterclockwise.
+
+Caution: Motor must be rated for 24V operation, or use lower voltage dual supply (e.g., $\pm$6V for 12V motor).
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Dual (split) power supply provides positive and negative voltage rails with common ground
+    \item Center-tapped transformer produces two equal AC voltages 180° out of phase from single secondary
+    \item Voltage from each outer tap to center tap = (total secondary voltage) / 2
+    \item Two separate rectifier/filter stages process each secondary half independently
+    \item Filter capacitors: positive cap between +DC and ground, negative cap between ground and -DC
+    \item 78xx series ICs regulate positive voltages (7805 = +5V, 7812 = +12V, 7815 = +15V)
+    \item 79xx series ICs regulate negative voltages (7905 = -5V, 7912 = -12V, 7915 = -15V)
+    \item Voltage regulators maintain constant output despite input variations, load changes, temperature drift
+    \item Op-amps require dual supplies to amplify bipolar signals without clipping negative excursions
+    \item DC motors can reverse direction using dual supplies (swap terminal connections to reverse polarity)
+    \item Center tap grounded for safety, establishes 0V reference for both positive and negative rails
+    \item Diode current rating must include safety margin for surge currents during capacitor charging
+    \item Capacitor voltage rating must exceed peak rectified voltage: $V_{peak} \approx V_{rms} \times 1.414 - 1.4$
+    \item For higher output currents, use paralleled regulators or higher-current regulator ICs (LM338, etc.)
+\end{itemize}
+\end{keypointsbox}

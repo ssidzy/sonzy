@@ -1,0 +1,185 @@
+All right.
+
+In this course, let's focus on kickoffs, current law, kickoffs.
+
+Current law states that the current flowing into a node or junction, you name it must be equal to the
+
+current flowing out of it.
+
+And this is a consequence of chart conservation.
+
+As stated earlier, a junction or node is a connection of three or more wires.
+
+Current is the flow of charge and charge is conserved.
+
+As a result, whatever charge flows into the junction must flow out.
+
+Although it is an oversimplification, an analogy can be made with water pipes connected in a plumbing
+
+junction.
+
+If the wires were replaced by water pipes and the water was assumed to be incompressible, the volume
+
+of water flowing into the junction must be equal to the volume of water flowing out of the junction.
+
+Kick of current law is really easy to apply in our 20 circuits, and the best way to show it to you
+
+is by us working through a couple of exercises in our precious simulator.
+
+We have this circuit which consists of a battery and three resistors.
+
+The value of the components is less important for this exercise.
+
+And my first question to you is how many nodes does the circuit have?
+
+The answer is, do we have one note here?
+
+And one more here.
+
+Remember, a node is a connection of three or more wires.
+
+Now, let's try to apply current law on this node here.
+
+First, notice that the current running through R one is 4.1 million.
+
+The current running through our two is 2.6 million.
+
+And this current flowing here is 1.5 milliamps.
+
+You don't have to remember these values is just that.
+
+It's important to realize that three different currents are flowing in this circuit.
+
+Due to this, let's label them as i1 i two and I three.
+
+I'm going to start from here and I will call this current US I1.
+
+I'm making the text a little bit smaller.
+
+Okay, let's call the next one.
+
+I do.
+
+All right.
+
+Finally we have.
+
+I treat.
+
+Perfect.
+
+Now, what can we say about these currents with regard to this node?
+
+Well, I one, as you can see, is entering the node.
+
+yi2 and I three are leaving the node.
+
+Kickoffs current law says that the sum of currents entering a node is equal to the sum of currents leaving
+
+the node.
+
+Well, in that case, I one is the only one entering the node.
+
+So we can say that i1 is equal to I two plus i three.
+
+Is this true, though?
+
+I one was 4.1 milliamps.
+
+So 4.1 milliamps is equal to 2.6 milliamps plus.
+
+1.5 milliamps, which is indeed correct.
+
+Now, we could apply the same law on the second note here, but it's not necessary since the equation
+
+will be the same.
+
+Try to do it on your own and see if the equation is different.
+
+All right.
+
+Now let's do another exercise in this circuit.
+
+We can notice right away that we have two nodes one here and one here.
+
+Applying Jericho's current law on the first thought is enough sees if we were to write it for the second
+
+node would result in the same equation is just at the position of the currents would differ.
+
+Now I already labeled the currents.
+
+So let's write out of the equation.
+
+I1 is the only one entering the node while I too I three and I4 are leaving the node so we can write
+
+down that I1 is equal to i2 plus i3 plus I4.
+
+Awesome.
+
+It's not that hard, is it?
+
+So let's recap.
+
+Kickoffs.
+
+Current law says that the currents entering the node are equal to the currents leaving the node since
+
+charge is conserved and not lost magically.
+
+In a node we have four nodes while here.
+
+While here.
+
+And two here for this exercise, we will write down the equation for these two notes.
+
+For this note.
+
+I one is entering the node and the rest are leaving the node.
+
+So i1 is equal to I two plus I three plus I.
+
+For what about the next node?
+
+I hope you won't make the same mistake as many people do, thinking that the current after a resistor
+
+is different from the current before the resistor.
+
+No, we had the same current on either side of the resistor.
+
+And this is one of the mindset shifts.
+
+A beginner has to go through their learning electronics.
+
+So as you can see, I do and I three are entering the node while I five and I six are leaving the node.
+
+Hence I do.
+
+Plus I three is equal to I five.
+
+Plus I six.
+
+All right.
+
+So by using Ohm's Law and kickoffs, current law, we are almost ready to analyze just about any DC
+
+circuit.
+
+So kickoffs law helps us understand how current and voltage work within a circuit.
+
+All right, what about voltage?
+
+What if we need to find out the voltage drop across these 200 or more resistor?
+
+We know that I1 is equal to a two plus i3.
+
+Right?
+
+But using only this equation and Ohm's Law, there's no way we can find out how much voltage is drop
+
+across this resistor.
+
+For this, we need to use the second law of kickoff, which is called kickoffs.
+
+What is law?
+
+See you next course.

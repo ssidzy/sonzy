@@ -1,0 +1,297 @@
+Welcome back.
+
+In the previous chorus, we've seen that the main difference between the pastor and the doctor is that
+
+pastor opposes the change in wordage.
+
+What any doctor opposes the changing current.
+
+Furthermore, a pastor stores energy in the form of an electric field while in other stores energy in
+
+the form of magnetic field.
+
+All right.
+
+But my question to you is the following DC or AC current is required to generate these magnetic fields
+
+around a doctor, or maybe both will generate it.
+
+And what happens when there is another doctor close to the doctor that is generating the magnetic field?
+
+In this course?
+
+We will answer to these questions and build some circuits for a better understanding.
+
+So let's get started on.
+
+All right.
+
+Have you ever wondered where the electricity comes from and how is it distributed so that we can increase
+
+it in your house?
+
+Let's have a quick look at the power transmission process.
+
+So electricity is generated at power plants and moves through a Kabulov system sometimes called US grid
+
+of electricity in power stations.
+
+Large spinning turbines generate electricity powered by wind, coal, natural gas or water.
+
+When it is generated at the power station, electrical energy will typically be anywhere between 11
+
+and 33 kilowatts before it is sent to distribution centers.
+
+We are transmission lines.
+
+It is set up using a transformer to a voltage level that can be anywhere between 100 and 700 kilowatts
+
+or more, depending on the distance that it needs to be transmitted.
+
+The longer the distance, the higher the voltage level.
+
+The reason electrical power is stepped up to these voltage levels is to make it more efficient by reducing
+
+the eye squared or losses that take place where power is transmitted.
+
+When voltage is stepped up, the current reduces relative to the voltage so that power remains constant
+
+is reducing these eyes squared our losses.
+
+By the way, in the next course we will do an experiment with long distance power transmission.
+
+So we understand clearly why we have to increase the voltage to such high levels.
+
+So again, the electrical current is said to transformers, which increase the voltage so the power
+
+can be pushed over long distances.
+
+The electrical charge is then carried by transmission lines held up by large towers which stretch across
+
+huge distances.
+
+Then Ertugrul Power reaches a receiving station, the voltages stepped back down at what is typically
+
+between 33 and 66 kilowatts saw from the transmission lines, the city reaches a substation where the
+
+voltage is lowered so it can be sent on a smaller power lines.
+
+The electricity is then sent to distribution lines to your neighborhood.
+
+Smaller transformers, lower the voltage again so that the power is safe to use in our homes.
+
+The electricity connects to your house, where it passes through a meter, which measures the amount
+
+of electricity you use.
+
+Finally, the ability to travel through wires inside the walls to the outlet which is in your house
+
+ready to power your devices.
+
+So you might wonder, why am I explaining this to you?
+
+Because in this course we talk about these transformers, which can increase or decrease the voltage.
+
+So how does a transformer work?
+
+I would be very direct with you.
+
+A transformer is made of two inductors that are wired across a core.
+
+As you can see in this image.
+
+If you look at the electrical symbol of the transformer, you will see two inductors that are face to
+
+face, very close to each other and they do not touch a transformer is based on a very simple fact,
+
+about 50.
+
+When a fluctuating electric current flows through a wire or in doctor, same thing, it generates a
+
+magnetic field, the strength of the magnetism is directly related to the size of the earth, the current.
+
+Then a magnetic field fluctuates around a piece of wire, it generates an electric current in the wire.
+
+So if you put a second coil of wire next to the first one cent, a fluctuating electric current into
+
+the first coil, we will create an electric current in the second wire.
+
+The current in the first coil is usually called the primary current and the current in the second wire
+
+is the secondary current.
+
+What we have done here is that we've passed electric current to empty space for one wire to another.
+
+Interesting, isn't it?
+
+This is called electromagnetic induction because the current in the first quarter causes or induces
+
+a current in the second coil.
+
+We can't make electrical energy pass more efficiently from one coil to the other by wrapping them around.
+
+The soft ironbar sometimes called the core to make a call a wire.
+
+We simply call the wire around the two loops e for the second coil has the same number of turns as the
+
+first coil.
+
+The current in the second coil will be we're actually the same size as the one in the first coil.
+
+But if we have more or fewer turns in a second quarter, we can make the secondary current and voltage
+
+bigger or smaller than the primary current voltage.
+
+One important thing to note here is that this trick works only if this electric current is fluctuating
+
+its own weight.
+
+In other words, you have to use a type of constantly reversing electricity, which is called us how
+
+alternating current transformers do not work with the current, where a steady current constantly flows
+
+in the same direction.
+
+We will also check this in the simulator soon.
+
+All right, so let's talk about the first type of transformer, which is step down transformer, if
+
+the first coil has more turns than the second coil, the secondary voltage is smaller than the primary
+
+voltage.
+
+This is called the step down transformer.
+
+If the second coil has half as many turns as the first coil, the secondary voltage will be half the
+
+size of the primary voltage.
+
+If the second coil has one tenth as many turns, it has one tenth the voltage.
+
+In general, secondary voltage divided by the primary voltage is equal to the number of 30 secondary,
+
+which is divided by the number of 13 primary using this equation.
+
+And you can basically calculate the number of turns needed for your desired output voltage.
+
+However, the current is transformed the opposite way increase in size in a step down transformer.
+
+What I mean by that, the secondary current divided by the primary quadrant is equal to the number of
+
+turns in primary divided by the number of the secondary.
+
+So transformer with one hundred calls in the primary and the ten coils in the secondary, we reduce
+
+the voltage by a factor of ten, but multiply the current by a factor of ten.
+
+At the same time, the power in an electric current is equal to the current times the voltage.
+
+So this is very important aspect to remember and understand.
+
+The power of the secondary is theoretically the same as the power and the primary.
+
+Why?
+
+Because transformer is not the magical component that can generate more power than the input.
+
+If the voltage on the secondary is higher than on the primary, it means that the current of the secondary
+
+has to be lower than on the primary so that the power remains equal on both sides.
+
+In reality, there is some loss of power between the primary and secondary because some of the magnetic
+
+flux leaks out of the core.
+
+Some energy is lost because the core heats up and so on.
+
+The other type of transformer is a step up transformer, reversing the situation.
+
+We can't make a step up transformer that boosts a low voltage into a high one this time.
+
+We have more on the secondary core.
+
+Then on the primary, it's still true that secondary voltage divided by primary voltage is equal to
+
+the number of thirty secondary divided by number of 13 primary and secondary Corot divided by primary
+
+current is equal to the number of thirty primary divided by number of thirteen secondary in a step up
+
+transformer.
+
+We use mortars in a secondary down in the primary to get the bigger secondary voltage and the smaller
+
+secondary current.
+
+Considering both step down and step up transformers.
+
+You can see it's a general rule that the coil with the motors has the highest voltage, while the core
+
+with the few Westerners has the highest car.
+
+And the third type of transformer is called isolation transformer.
+
+An isolation transformer has the same number of terms in the primary as a secondary.
+
+So the voltage on the secondary is the same as on the primary.
+
+Well, this is not a really useful transformer, you might say, isn't it?
+
+But the strong, they are used for purposes like breaking the circuit into a primary and secondary.
+
+So they are current and always can get through.
+
+It can prevent capacitors build up by high frequency noise.
+
+It also prevents unconditional ground connection between the primary and the secondary and use prevents
+
+high voltage discharge.
+
+It can provide galvanic insulation to the electrical system.
+
+Any transformer which is used to transfer signals or power is isolation because the primary secondary
+
+is not connected by conductors.
+
+Instead of that, it is done by induction.
+
+Now let's try to simulate a step down, a step up and an isolation transformer in the simulator or at.
+
+This shows a simple, transformative liquid, as you mentioned, a transformer is a device used to transfer
+
+physical energy from one side to another using decoys that are copper deductively.
+
+This transformer has a ratio of one to one, which means that the primary and the secondary had the
+
+same number of turns of wire.
+
+Hence the voltage on the secondary will be the same as on the primary, isn't it?
+
+Now, if we want to make a step down transformer, then the first court needs to have more terms than
+
+the second coil.
+
+For example, if we want to step down the voltage from d'Amboise to fireballs, then the ratio has to
+
+be one to zero by five.
+
+Since the ratio now is one to zero point five, DARPA's voltage is half of the input voltage, if we
+
+want to double the input voltage from 10 to 20 volts, then the ratio has to be one to two.
+
+All right.
+
+So the voltage is 20 volt and the current is around 20 millions.
+
+Why?
+
+Because twenty volts divided by one km, which in this case represents the load, is equal to 20 minutes.
+
+So now what happens if there's a DC voltage source instead of an AC?
+
+As you can see, the 10 world DC current is not able to induce any current to the secondary way because
+
+the magnetic field on the primary is only generated when a fluctuating electric current flows through
+
+the cord.
+
+So the easy current will never induce any current or voltage on the secondary because it doesn't fluctuate.

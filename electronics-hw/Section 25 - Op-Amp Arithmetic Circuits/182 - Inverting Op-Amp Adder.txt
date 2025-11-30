@@ -1,0 +1,145 @@
+Carlos Watson invented the first album in 1967, and he originally conceived them to do mathematical
+
+operations in analog computers, does the operation part of their name?
+
+We know that they are powerful amplifiers, but they can also be used for mathematical operation in
+
+is worse.
+
+Let's find out how to add two or more voltages or singers together using an ANOP.
+
+And the name of the circuit is called us something BlueFire or just up and other.
+
+So as we know, an iPad app is an amplifier, but an op ed can also perform some something operation,
+
+we can design specifically to combine a number of inputs in us and to produce a single output as a weighted
+
+sum of input signals.
+
+So basically, assuming amplifier is an open secret that can combine numbers of input signal to a single
+
+output, that is the way it is.
+
+Some of the applied inputs, the something amplifier is a one variation of inverting amplifier inverting
+
+amplifiers.
+
+We know there's only one voltage signal applied to the inverting input as shown here, and the simple
+
+converting amplifier can easily be modified to something amplifier if we connect several inputs terminals
+
+in parallel to the existing import terminals as shown here.
+
+As we can see here, and number of import terminals are connected in parallel here in the circuit,
+
+the non-voting terminal of the open space ground, it has potential at the terminal zero.
+
+Right.
+
+And as the up is considered ideal up, the potential of the emerging terminal is also zero.
+
+So the aggregate potential at node one is also zero.
+
+What's the name of this node?
+
+We are on the ground, right?
+
+So the electrical potential at the node one is zero from the liquid, it is also clear that the current
+
+eye is the sum of currents of import terminals.
+
+So this current here is equal to the sum of all the input currents.
+
+This is just basic work of law which says that the current entering a node is equal to the currents,
+
+leaving a node now using Onslow.
+
+How can we determine i1, for example, where current equals to voltage divided by resistance?
+
+Right.
+
+Since the right terminal of our one is a ground, so it's zero.
+
+Would the current flowing in this path is simply equal to we one minus zero or divided by our one?
+
+So if we know this, let's replace all the current in this equation with this formula and let's get
+
+rid of that zero and our equation becomes more clear.
+
+But why am I showing you this?
+
+Well, you will see it in a minute.
+
+So this current eye, which is the total current coming from all the inputs, will not flow into the
+
+open, right?
+
+It just can't because the OP amp has a very high input impedance.
+
+Instead, the current will flow through the feedback resistor RF.
+
+If we write the current equation down, the current AI is equal to zero minus the voltage on the right
+
+side of RF, which is the output voltage all divided by RF.
+
+So this is equal to minus without divided by RF.
+
+But why is it zero minus we out?
+
+Because voltage is always an electrical potential between two points.
+
+We usually measure the voltages in a circuit reference to ground.
+
+Right?
+
+Well, if you get your multimeter and put the RET probe on the right side of the RF and that air probe
+
+on the left side, which is the ground, you will get a negative voltage as long as the input voltage
+
+is positive because this is an inverting amplifier.
+
+But I'm sure you know this by now.
+
+So by using this equation and this one, we can calculate the output voltage.
+
+It might look scary at the first glance, but trust me, it isn't.
+
+So this equation indicates that the output voltage is the weighted sum of numbers of input voltages.
+
+Why don't we do a simple example?
+
+Let's try to calculate the output voltage when we have three input voltages.
+
+So we have three input DC voltages, each one being of two words.
+
+And all the resistors are Tokino.
+
+So this is an eather, right?
+
+And by using this equation, the output voltages, two words plus three words plus two words, which
+
+is six words.
+
+But since this is an inverting amplifier, after all the output voltages minus six void's easy.
+
+That's it.
+
+All right, so in the previous example, the inputs were all D.C. Now we have a five words AC input
+
+with a frequency of 200 hertz and a two words square with input signal before frequency of 20 hertz.
+
+So based on rule number two, the apparent attempts to keep it inverting input are the same voltage
+
+as the non-working input, which is tied to ground.
+
+So both input signals are driving one km resistors whose other end is at the ground.
+
+The current across the third resistor, which is the feedback resistor, is the sum of the two currents.
+
+So the voltage drop must be equal to the sum of the two voltage drops, which is the negative, some
+
+of the input voltages.
+
+As a result, five words plus two words equal to seven words, so the output voltage is overall a five
+
+words AC signal.

@@ -1,0 +1,189 @@
+All right, welcome back.
+
+In is course, let's see why differential amplifiers are so important in electronics, especially when
+
+it comes to data transmission.
+
+What data are we talking about?
+
+Well, let's see how the USB product works.
+
+So you Hasbi is widely used, as you know, it is used to connect devices together and to transfer data
+
+from one point or another and back.
+
+So the USB is a cereal box it uses for wires, do for power, firewalls and ground and for differential
+
+data signals labeled as the plus and the minus.
+
+Now we won't go into detail specifications about the syllabus that would go beyond the scope of this
+
+lecture.
+
+So the data from one point to another is transmitted through the plus and minus Penha.
+
+But what is the plus and minus why one is labeled as plus and the other one as minus.
+
+That's because you USB uses a method called differential signaling.
+
+What is differential signaling?
+
+That differential signaling is a method for actually transmitting information using two complementary
+
+signals.
+
+The technique sends the same electrical signal as a differential pair of signals, each in its own conductor.
+
+The pair of conductors can be wires typically twisted together or traces on a circuit board.
+
+So the job of these two wires is to transfer information data from point A to point B..
+
+This means that you Hasbi is half duplex, meaning that at any given time, one end of the cable is
+
+the sender and the other one is the receiver.
+
+So how does these data wires work?
+
+First, let's understand why USV uses two wires instead of one.
+
+Well, after all, if both wires carry the same information simultaneously, why couldn't they just
+
+send the data through one data wire and pair one wire?
+
+So this USV here hypothetically uses just a single data wire, as well as a ground wire and a power
+
+wire.
+
+The data wire carries a varying voltage like, for example, varying I mean, compared to the ground
+
+and the voltage is interpreted as the value of the signal.
+
+So the problem with a single and is signaling I mean, one problem with this single and the signaling
+
+is electromagnetic interference.
+
+The interference adds noise to the voltage on the data wire.
+
+There are many forms of electromagnetic interference, EMI, that can affect circuits and prevent them
+
+from working in the way that was intended.
+
+This EMI or radio frequency interference, as it is sometimes called, can arise in a number of ways,
+
+although in an ideal world you should not be present.
+
+So EMI, which comes from electromagnetic interference, can arise in many ways and from a number of
+
+sources.
+
+The different types of EMI can be categorized in a number of ways.
+
+Well, one way of categorizing the type of EMI is, by the way, it was created.
+
+So the first one is man made EMI.
+
+This type of EMI generally arises from other electronic circuits, although some EMI can arise from
+
+switching or large corones, et cetera, and the other one is naturally occurring.
+
+EMI, where this type of EMI can arise from many sources like cosmic noise as well as lightning and
+
+other atmospheric types of noise or contribute.
+
+So in short, EMI is nothing else, just an unwanted noise, you know, flowing around and Ted Koppel
+
+into our transmission line.
+
+So this unwanted noise will be added on top of our data, which is obviously something that we don't
+
+want because it will corrupt our data.
+
+So if we just use one wire to carry information and if noise gets into our data line, then we can do
+
+nothing about it.
+
+Probably we could use some some filters at the end of the transmission line.
+
+But how do we know beforehand the frequency of the noise?
+
+We don't know.
+
+Right.
+
+So some clever engineers came up with a solution called differential signaling.
+
+Here's how it works.
+
+You got two choices that both carry the same signal, one of which is considered the positive signal
+
+and the other trace is considered the negative signal.
+
+Each wire has its own separate signal, except one wire is set up to always show the exact opposite
+
+signal of its companion wire.
+
+The signals are balanced in that they have equal amplitude.
+
+Now, why is it so useful?
+
+Because we can connect this differential pair into an open up so the receiver has a differential amplifier
+
+that receives the signal as the difference in voltage it sees on the two wires.
+
+So what happens now?
+
+The differential amplifier has a gain of one.
+
+OK, so all the resistors are equal.
+
+The output voltage is the difference between the two inputs.
+
+Right?
+
+So the difference between high and low logic levels is therefore we s minus minus wires, which is equal
+
+to tubists.
+
+So the output is twice the input voltage grid.
+
+So our data, which in our case was just a logic one has been transmitted successfully and it has been
+
+even amplified by two.
+
+So far, so good.
+
+The interesting thing here is that, as I have mentioned in the beginning, these two cables are twisted
+
+pairs, but twisted pair cabling is a type of wiring in which two conductors of a single circuit are
+
+twisted together for the purpose of improving electromagnetic compatibility when magnetic interference
+
+is induced into this twisted pair.
+
+The noise induced on both wires will be equal in phase and amplitude.
+
+So this is very important for you to understand where the noise coming from somewhere, I don't know
+
+from where.
+
+Probably from a switching power supply, which is close to the two data lines.
+
+So this noise will be induced into the twisted pair we have seen in the previous course.
+
+What happens with signals that are equal in frequency phase and amplitude.
+
+Right.
+
+They are subtracted away.
+
+So again, the output signal is there.
+
+The difference between the plus and the minus.
+
+The inside here is that interference will usually affect both wires, the plus and minus in the same
+
+way.
+
+And so by subtracting the two noisy wires, we can cancel out noise, leaving only the desired information
+
+to pass through.

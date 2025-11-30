@@ -1,0 +1,303 @@
+All right, guys, in the previous course, we talked about coupling capacitors, as the name implies,
+
+if Kopper's or linked together two circuits, allowing only the AC signal to pass through while the
+
+DC signal is blocked.
+
+In this course, we will learn about the coupling capacitor, which is also called as bipeds capacitor.
+
+However, there's a slightly difference between a bipeds capacitor and a decoupling capacitor, even
+
+though they are connected in the same way.
+
+Don't worry, it's very easy to understand the difference between the two.
+
+While coupling capacitors are used to pass through the AC component while blocking the DC component,
+
+a decoupling capacitor removes the AC component making for a more pure DC component.
+
+The copying capacitors are useful in many types of circuits where noise needs to be cleaned up in a
+
+DC power source.
+
+In a perfect world, the power you get from a DC power source such as a DC power supply would be a perfect
+
+DC signal containing no noise on it.
+
+However, in a real world, few DC signals, especially from power supplies, come out in this way.
+
+The DC signal from power supplies often have noise and look like this.
+
+So basically the signal is usually imperfect.
+
+Then, coming from a power source, there are all types of interferences.
+
+WI AC signals come into play, superimpose on the DC signal and make the signal noisy.
+
+What we want to do is decouple the noise, which is the easy signal from the DC signal allowing for
+
+a much cleaner DC signal in order to place a capacitor in a circuit for decoupling.
+
+The capacitor is connected in parallel with the power supply.
+
+This is a very simplified circuit just demonstrating the coupling capacitors.
+
+So it's really simple.
+
+The DC power supply gives power to this load.
+
+This load can be anything but let's assume that it's an integrated circuit that requires DC power to
+
+operate.
+
+How does this the copper capacitor work, you might ask?
+
+And how does it cleans up the DC power source?
+
+We already mentioned that nothing in electronics is ideal and these signals can have some AC noise superimposed
+
+on them that might cause some problems for the working behavior of the integrated circuit.
+
+So let's assume that this DC power source outputs a noisy DC signal which will looks like this using
+
+a decoupling capacitor as shown here.
+
+This will remove this AC noise that is present on top of the DC signal so the integrated circuit will
+
+receive an almost perfect clean DC signal.
+
+How is it possible?
+
+Well, this is because of the reactors of the capacitor.
+
+A capacitor, as we know, has almost infinite reactors to discuss.
+
+In other words, it has almost infinite resistance, so it doesn't allow these signals to pass through
+
+them.
+
+So one terminal of the decoupling capacitor is connected to the positive side of the circuit and the
+
+other terminal is connected to the ground in a more professional way.
+
+We can say that as a decoupling or bypass capacitor offers near infinite reactors to these signals,
+
+the busy signals won't get shunted to ground.
+
+However, the capacitors allow AC signals to pass through since they will have much less reactants right,
+
+so they can pass through the decoupling capacitor and get shunted to ground.
+
+These capacitors provide a low impedance path for high frequency signals, which represents the noise
+
+on the power supply.
+
+As a result, cleaning up the DC signal.
+
+And this is how the coupling capacitor, the Kopper's AC signals from DC signals.
+
+Now let's take a more realistic example where we power.
+
+And I see from a source that can be five to three point three words.
+
+Whatever D I see, if you are curious, is an ultra low power three axes accelerometer that will be
+
+connected to another circuit using these pins.
+
+However, notice what happens on the other side of the circuit.
+
+We have three decoupling capacitors in parallel which will work together to filter out the tiny voltage
+
+ripples or AC noise.
+
+However you want to say that might be harmful for the delicate.
+
+I see.
+
+Now, the question you might ask is why do we have three capacitors instead of just one?
+
+This is a slightly different scenario than the previous example.
+
+Here we are talking about different values of capacitors for bypassing and decoupling.
+
+Now they are very good technical reasons why you would actually want to.
+
+With multiple capacitors in parallel for decoupling, in particular, different values and different
+
+types of capacitors, but before we ask for that, we have to actually understand what is bypassing.
+
+Now, in an ideal world, you would not actually need bypassing, it would be completely pointless because
+
+let's take a look at the cheap like this, OK?
+
+It does whatever this guy happens to do.
+
+We've got a battery or a power supply here.
+
+It doesn't really matter.
+
+And we've got a load.
+
+So it's consuming power.
+
+And this chip does various switching things like this.
+
+And that's what I'm showing here with these two Masterfoods in there.
+
+No, I don't want to explain how muscles work because that would go away beyond the scope of the lecture.
+
+The point here is that these see does some internal switching as it drives the output being high and
+
+low rapidly.
+
+It doesn't really matter.
+
+Now, let's assume that we had five worlds supply.
+
+Let's go.
+
+Old school.
+
+That is three point three words, rubbish.
+
+And these five words.
+
+In an ideal circuit, you are going to get five words directly on the pin of this chip here because
+
+there is no internal resistance in the power supply, there's no internal resistance in the battery.
+
+Whatever you happen to be using, there is no resistance on the PCB traces that you are using.
+
+There is no inductance.
+
+There's nothing.
+
+It's just an ideal world and our ideal chip.
+
+And in this world, you would not need any bipeds capacitor.
+
+Unfortunately, we don't live in an ideal world.
+
+In a real world, unfortunately, everything has a resistance.
+
+Everything has inductance, everything has capacitance.
+
+All these parasitic elements take your power supply, for example.
+
+You can get the perfect power supply.
+
+It's going to have some equivalent series resistance with it.
+
+And your PCB trace is going to have also some resistance.
+
+There's going to have inductors.
+
+Every piece of wire has inductance no matter how small.
+
+So what's going to happen if we have no bipeds capacitor on our victim of our chip?
+
+Well, our firewalls, if the chip is doing nothing and it's just static, OK, yes.
+
+We will get a straight five words on there.
+
+However, the chip switching is doing stuff.
+
+There's lots of capacitors inside.
+
+The chip capacitance takes switching currents and things like this.
+
+So you get all these pulses of current.
+
+So once the chip starts working and doing stuff like switching currents high and low, the input power
+
+waveform might jump up and down like this depending on the switching inside this chip.
+
+And we've got our load as well.
+
+Our load is powered through the OFCCP in through these Masterfoods that actually drive the load, whether
+
+or not sinking current or saucing current.
+
+So that's going to contribute as well to in distorting the input signal.
+
+And hey, depending on the value of these traces here, you can actually get significant deep's and
+
+can drop below the operating voltage of the chip and start causing strange, weird things.
+
+This is sort of like a gross generalization, but this is what sort of things can happen if you've got
+
+no local by passing on your chip.
+
+I want to note that one of the big problem is not so much the resistance of the treacy's.
+
+It's more to do with the inductors of the treacy's, especially the higher frequency your chip got.
+
+Even in that high frequency can be a megahertz or so.
+
+Look at an old computer board from the 1970s.
+
+You know, you got hundreds of chips on them and they've all got a bypass capacitor next to each particular
+
+chip.
+
+Because of all the inductors is of all the power treacy's going there.
+
+And remember, we won't go into details, but remember, an inductor actually resist changing current.
+
+So if your chip or your load suddenly decides it needs to switch, your daughter goes, oh, no, I
+
+can't change that quickly.
+
+I just can't do it.
+
+So you are going to get these huge dips and problems and all sorts of stuff so all becomes very nasty.
+
+And your firewalls apply for your chip is not the solid power supply you are expecting.
+
+So that's why we add in a bypass capacitor and here it is right up as close as possible to the pin of
+
+the chip, because why does it have to be as close as possible?
+
+Because you are trying to avoid the inductors in the line and every trace has inductor.
+
+So the further away you put the bypass capacitor from the chip, the greater the inductance and causes
+
+all sorts of problems.
+
+Then your chip starts to switch at high frequencies.
+
+So the goal of then you are bypassing is to try and produce a low impedance low in the.
+
+The supply element, remember, capacitors, store charge, so they charge up and then then your chip
+
+switches suddenly and it requires a high amount of current.
+
+It comes from the capacitor instead of way, way back on the other side of your PCB, depending on how
+
+far your DC power source is located, which has all these long inductance is in series and all sorts
+
+of stuff that comes directly from the local capacitor.
+
+So it minimizes the amount of inductance and resistance in series of it so that the bipeds capacitor
+
+can supply the growth of current that your chip suddenly needs without being affected by the rest of
+
+your PCB layout and all the other paralytics.
+
+So to recap, in a way, bypass capacitors act as a very small local power supply for ISIS if the power
+
+supply temporarily drops its voltage, which is actually pretty common, especially when the circuit
+
+is powering, is constantly switching its load requirements, a decoupling capacitor can briefly supply
+
+power at the correct voltage.
+
+This is why these capacitors are also called bypass capacitors.
+
+They can temporarily act as a power source, bypassing the power supply.
+
+Now that we understand this, hopefully let's go back to our circuit and see why we usually place multiple
+
+bypass capacitors of different values and types, but since the court's got too long, we will demystify
+
+this in the next course.

@@ -1,0 +1,117 @@
+And welcome back.
+
+Now let's build a simple circuit with a diode in this circuit.
+
+We have a traveler's battery long before a 330 or resistor and a diode since we have a closed circuit,
+
+the resistor and diode share the same current.
+
+So the flow of current through the resistor and through the diode is the same.
+
+The task is to find out the voltage across a diode and the current flowing in the circuit.
+
+So how do we find out the current that flows here?
+
+Let's recall Ohm's Law, which says that current is equal to voltage divided by resistance.
+
+Some would say that the current in the circuit is equal to twelve words divided by 330 ohms.
+
+This would be true if the entire werewolf's is dropped across the resistor.
+
+So if we place a meter across the register.
+
+We will notice that instead of 12 words, eleven point three words is dropped across the register.
+
+This is because, as we have already mentioned a couple of times, diets have a forward voltage drop
+
+across them when they are biased.
+
+So they cannot not current rhythm.
+
+These forward voltage drop is not something that you set.
+
+It is given in the data set of the particular diet that you are using.
+
+This diet that we have here has by default a forward voltage of zero point seven words.
+
+So around zero Poisonwood.
+
+Of course, that can be a little less or higher needs to be dropped across it in order to conduct current
+
+and to work in the forward based operating region so we could use, again, a voltmeter and place it
+
+across a diode.
+
+But instead, if you just hover over the diode down on the right corner, it says that the voltage drop
+
+across it is around six hundred thirty one millivolts.
+
+So if 631 millivolts is dropped across a diode, then it means that the remaining voltage, which is
+
+eleven point three hundred sixty eight volts, is dropped across the resistor.
+
+If you remember kickoffs, what is law?
+
+The law says that the total voltage, which is to levels, is equal to the sum of all the voltage drops
+
+within the same loop.
+
+So the voltage drop across the resistor plus the voltage drop across a diode must be equal to twelve
+
+watts.
+
+And of course, the sum of the two of what it drops is equal to two volts.
+
+Now that we know the voltage drop across the register, we can use almost low to calculate the current
+
+flow.
+
+So the current will be equal to eleven point three hundred sixty eight volts, divided by three hundred
+
+thirty ohms, which gives us a current of thirty four point forty five million's.
+
+Great.
+
+Now, one more thing I want to clarify here is that if the default forward voltage of this diode is
+
+zero point seven, which is why only 631 millivolts is dropped across it and not zero point seven or
+
+seven hundred million watts, that's because the current flowing in the circuit is lower than necessary.
+
+You see, even though the voltage provided by the DC source is far higher than the forward voltage drop
+
+of the diode, if the current that is limited by this resistor is lower than a certain amount, the
+
+voltage drop across the diode will be lower than the forward voltage drop.
+
+So if I lower the resistors value to, let's say 110, then of course a more current will flow in the
+
+circuit and now the forward voltage drop has increased to almost 700 million watts.
+
+So why is that?
+
+If we take a look at the latest of these 140 140 diode in the forward current versus forward voltage
+
+graph.
+
+We can see here that the higher the forward voltage, the higher the forward current.
+
+So, for example, when the voltage drop across a diode is around zero point eight volts, the current
+
+flowing through the diode will be 10 Myriam's.
+
+If the current is limited to just one millionth because of resistor in series with the dial, for example,
+
+the forward voltage drop across the diode will be around zero point five void's.
+
+Now, the main takeaway is that the forward voltage drop across a diode can be controlled to a certain
+
+degree, of course, by the current flowing through the diode, usually in a real circuit.
+
+It's not a diode that will limit the current flow in the circuit, but the resistor.
+
+So make sure that enough current is flowing through the diode so that it can work properly in the forward
+
+operating region.
+
+But be careful, the current must not exceed the maximum forbert current allowed.

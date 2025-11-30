@@ -1,0 +1,207 @@
+Hello and welcome back in this course, we did a study about differential amplifiers because it's important
+
+to know how to amplify signals and getting rid of noise in the same time, noise introducing signals
+
+is always a source of problem.
+
+When designing circuits and annoying, how to get rid of them is important.
+
+Differential amplifiers are important in applications in which weak signals are contaminated by pickup
+
+and other mysterious noise.
+
+Examples include digital and radio frequency signals transferred over twisted pair cables, audio signals,
+
+local area network signals and numerous other applications.
+
+Differentially amplifiers are universally used in operation amplifiers or the operation.
+
+Operational amplifiers are differential amplifiers because of their input configuration.
+
+So when the first word the signal is connected to the input terminal and another voltage simulates connected
+
+onto the opposite input terminal, then the resultant output voltage is proportional to the difference
+
+between the two input voltage signals of V1 and beat you.
+
+We didn't learn about operation amplifiers yet, but I just wanted to show you that the differential
+
+amplifiers are the main building block of an operational amplifier.
+
+All right.
+
+So the open fire, which amplifies the difference between the two input signals, is called as differential.
+
+That fire before we understand how the circuit works.
+
+Let's pack this circuit into a block diagram.
+
+All right.
+
+So this is the block diagram of a differential amplifier here.
+
+We want to invite you are the two input signals of the differential amplifier and V0 zero is a single
+
+ended output of differential amplifier.
+
+In an ideal differential amplifier, the output voltage zero is proportional to the difference between
+
+the two input shortages, which means that the higher the difference between the two inputs, the higher
+
+the output voltage.
+
+As the name implies, the circuit amplifies the difference between the two input signal.
+
+The equation is very easy.
+
+The output voltage is equal to differential gain times we want, minus we do.
+
+You might ask yourself what is the purpose of amplifying the difference between two voltages?
+
+It doesn't make any sense.
+
+Well, it does make sense because otherwise we wouldn't talk about the circuit.
+
+To understand why we use differential amplifiers, it is required to be familiar with how the signals
+
+are transmitted over the wires.
+
+We have no choice but to use the symbol of an operation amplifier.
+
+But just look at it as the block diagram that we have seen before, which has two inputs and one output.
+
+Now, let's imagine that these two wires are Ethernet cable carrying digital data from one point to
+
+another.
+
+This source can be a router, and the destination is your Ethernet card, which resides inside of your
+
+computer in order to carry the information from the router to your Ethernet card.
+
+A twisted pair cable is used just for your information.
+
+A twisted pair is made up of two isolated copper wires that are simply twisted together.
+
+When we talk about twisted pair, you have to remember that both copper wires carry the same information.
+
+The only difference is that the information in one wired is transferred with the opposite phase.
+
+As the image shows here, the information that we are sending and for the ease of understanding is just
+
+one person.
+
+As you can see, both copper wires carried the same information, but one of them is out of phase with
+
+180 degree.
+
+Now, when the two parties get into the different certifier, does he agree to amplify the differences
+
+in wattage between the two and the resultant signal looks like this?
+
+So that both loyalties will be differential game times.
+
+We are miners.
+
+Since this has opposite polarity, the voltage is negative, so the output voltage will be differential
+
+gain times we want minus minus we do, which will be differential gain times.
+
+We 1+ we do.
+
+This is great.
+
+Nothing fancy have happened.
+
+We did nothing good but amplify the information consisting of one pulse.
+
+The trick is here.
+
+See, as the cable from the outer to the computer is long due to electromagnetic induction.
+
+A lot of noise is generated in the wires and cable.
+
+This is obviously a bad thing.
+
+The noise is big enough can disturb our information, which will cause misinterpretation of the information.
+
+However, the good thing is that the noise that is generated on the two wires must have the same fees.
+
+No matter how hard you try.
+
+It's not possible to introduce noise into the twisted pair so that the phase of the of one noise in
+
+one wire is opposite to the noise or on the other wire.
+
+Both wires inside of a twisted pair are very close to each other, so the noise that is introduced must
+
+be the same, right?
+
+And now let's recall the purpose of the differential amplifier, the depression amplifier amplifies
+
+the difference between the two input signals.
+
+Since the noise generated is identical on both lines, the output voltage will be differential gain
+
+times we want, minus we do.
+
+But this time we want minus v2 will be equal to zero.
+
+This means that if we were to combine just like in real life, the input plus with the noise added on
+
+top of it, the signal would consist of only the interest of the information without any noise added
+
+to it.
+
+So thanks to the differential amplifier, we managed to transfer the information over long distance
+
+to amplify the signal and in the same time, getting rid of any noise generated on the cable.
+
+How cool is that?
+
+One more thing I want to tell you, and it's very important for you to understand.
+
+So then both inputs change voltages together.
+
+That's a common mode.
+
+People change for the mentally.
+
+The term coma mode implies that the signal of the two input terminals offer a differential amplifier
+
+is identical in both magnitude and phase.
+
+On the other hand, a differential change like here is called normal mode, or sometimes differential
+
+mode.
+
+A good amplifier has a good common mode rejection ratio, and the common mode rejection ratio of a differential
+
+amplifier is a metric used to quantify the ability of the device to reject common mode signals like,
+
+for example, dues that appear simultaneously and in phase on both inputs.
+
+Common mode ejection ratio is measured in decibels for an ideal operation amplifier.
+
+This value is infinite, but for a practical operation amplifiers the value of common mode rejection
+
+ratio used to be in the range of 80 to 100 decibels.
+
+So common more rejection ratio is a measure of how good the differential amplifier is getting rid of
+
+the noise induced immobilize, both having the same magnitude and fees.
+
+If you are curious, the common mode ejection ratio is defined as 20 times log base.
+
+Turn of 80 divided by AC 80 is the differential gain, whereas AC is called a common mode gain of the
+
+amplifier.
+
+So basically, we are talking about two different gains here.
+
+The financial gain is the gain of the amplifier when a differential input is applied.
+
+Like, for example, an input one is out of phase with input two and the Commonwealth gain is the gain
+
+of the amplifier.
+
+Remove the inputs supplied are equal.

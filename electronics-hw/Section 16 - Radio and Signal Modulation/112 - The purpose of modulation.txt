@@ -1,0 +1,153 @@
+Finally, we have reached the stage to talk in more detail about signal modulation, as we already know,
+
+the radio transmitter uses some sort of technique to encode information into a carrier wave, which
+
+will be that amplified and just mated via an antenna.
+
+But why exactly do we use modulation and why do we need the carrier wave in the first place?
+
+Couldn't we just transmit the information directly without the help of a carrier wave?
+
+After all, the information itself is also an easy signal.
+
+So theoretically, we could just amplify and send it right.
+
+Why, then, do we bother to use modulation at all to ask for this question?
+
+Consider your own the bank of one side of the river, and I will give you a paper and tell you to throw
+
+it to the other side of the bank.
+
+Is it possible to throw the paper which doesn't have suitable mass to the other side of the river?
+
+The answer is no.
+
+So in order to make the paper reach the other side of the river, I will use a stone with the paper
+
+and throw it, and now it will reach the other side in communication.
+
+The message signal will be of low frequency, which is like paper lightweight and in order to make it
+
+heavy, a carrier signal, which is stone, is used to send data from the transmission station to the
+
+receiving station.
+
+Another example would be Consider you have a food and you have to take it to school for lunch.
+
+Will you carry the food with your hand?
+
+No, right?
+
+You will use a carrier box and you will eat the food, not the carrier box.
+
+This is why modulation and the modulation is required in communications systems.
+
+Modulation by a dictionary definition, it says that changing any of the parameters of carrier signal,
+
+such as amplitude frequency or phase of the signal before respect to the input voltage of the message
+
+signal at that particular instance of time, and keeping the other parameters constant is called modulation.
+
+So encoding information into a carrier wave is done by altering either the amplitude, the frequency
+
+or the phase of the carrier wave.
+
+There are also other techniques used and more complicated ones, but for now, let's just stick to the
+
+fundamentals.
+
+So without modulation, communication through long distances like we have today would be impossible.
+
+And why is that?
+
+That's because the information that we want to send, which could be our voice talking into a microphone,
+
+has low frequency and low energy.
+
+Well, on the other hand, the carrier wave has a high frequency and high energy.
+
+So we are placing our information on top of this carrier wave to carry the information from the transmitter
+
+to the receiver.
+
+Actually, this might not even be the main reason why we use modulation, even though it's very important.
+
+Let's imagine a scenario where we don't use modulation at all and all the transmitters in the world
+
+transmit just the information itself, meaning just the audio signal every human that can hear only
+
+frequencies between 10 hertz and approximately 20 kilohertz.
+
+This means that each and every transmitter in your city would broadcast audio signal between this frequency.
+
+Now, tell me, how would you be able to select which radio station or which radio channel you want
+
+to listen to your radio receiver?
+
+First has to be set using the tuner to receive frequencies between 10 and 20 kilohertz.
+
+And what would happen is that you will most probably hear all the radio channels at the same time.
+
+How awesome is that?
+
+Unfortunately, this would not work.
+
+You cannot listen to all the radio channels at the same time, right?
+
+What you would hear is a radio channel overlapping with another one and then another one and another
+
+one creating a chaos.
+
+Even though all the radio channels transmit audio signals, we need a way to differentiate them and
+
+to select only one from the multitude of radio channels.
+
+So to avoid this mixing of signals, we need to use modulation.
+
+You'll see each transmitter in your city agrees, broadcast at a particular frequency determined by
+
+the frequency of the carrier wave for each transmitter in your city.
+
+The frequency of the carrier wave will differ, which makes it much easier to select only the radio
+
+channel you want to listen to.
+
+Let's say if you know that a radio channel transmits at the frequency of 88, not seven kilohertz,
+
+you would set your radio to filter out everything above and below this frequency, which as we know,
+
+can be done you.
+
+Go Band Pass filter.
+
+Now your radio receiver will then modulate this 88 dot seven kilohertz signal, meaning it will get
+
+rid of the carrier wave and what you will hear is the audio signal before frequencies ranging from ten
+
+hertz up to 20 kilohertz.
+
+There are also other reasons why these motivation like, for example, the antenna eyes.
+
+What's really interesting is that the higher the frequency you want to broadcast, the smaller your
+
+antenna can be.
+
+If you would like to broadcast only the information itself, which has a low frequency, you might end
+
+up having an antenna of several meters.
+
+Alternatively, if you modulated the signal with a high frequency carrier wave, your antenna size can
+
+shrink down to just a few centimeters.
+
+So the main idea is that the length of the antenna is inversely proportional to the frequency and directly
+
+proportional to the wavelength.
+
+And the higher the frequency and the shorter the wavelength, the shorter the antenna can be made.
+
+Awesome.
+
+So if you have any questions, drop a comment below.
+
+And now let's discuss in more detail how amplitude modulation works.

@@ -1,0 +1,287 @@
+Hello and welcome to another course.
+
+So resistors, inductors and capacitors are all elements that are linear and passive in nature, passive
+
+components are ones that consumes energy rather than producing it.
+
+And the linear elements are Duse, which have a linear relationship between voltage and current.
+
+There are a number of ways of connecting these elements across voltage supply, but the most common
+
+method is to connect these elements either in series or in parallel.
+
+So a series RACC consists of a resistance, a capacitance and an inductance connected in a series across
+
+an alternating power supply.
+
+I know you might look at a circuit while asking yourself, is a circuit even using real life?
+
+The answer is yes.
+
+Otherwise we will complicate our self explaining how this works.
+
+The three of these series Oracy Circuit has applications in radio and communication engineering.
+
+They can be used to select a certain narrow range of frequencies from the total spectrum of an ambient
+
+radio waves, for example, and an FM radio with analog tuners use an audience to tune a radio frequency.
+
+Duse, for we have seen that the three basic Passi components of resistance inductor that capacitors
+
+have very different Fahy's relationships to each other.
+
+They're connected to a sinusoidal alternative supply.
+
+So in a pure Omec resistor, the word is waveforms are in phase with the current.
+
+In a pure inductance, the voltage waveform leads the current by 90 degree, and in a pure capacitance,
+
+the voltage waveform lags the current by 90 degree.
+
+This phase difference depends upon the reactive value of the components being used and hopefully by
+
+now we know that reactance is zero.
+
+If the circuit element is relisted positive, if the circuit element is inductive and the negative if
+
+it is a capacitive.
+
+Duse giving the resulting expediencies as follows.
+
+The experiences of each component can be found on this column, while the resisters and reactance here,
+
+as you can see, the resisters doesn't have reactance is right, while inductors incapacities doesn't
+
+have resistance's, whether truth is they do have some resistance, but it's very little and sometimes
+
+enough to actually create some problems.
+
+But anyway, instead of analyzing each passive element separately, we can combine all three together
+
+into a series or work with.
+
+Our main purpose is actually to find out the total impedance of the circuit.
+
+I mean, we need to find the equation that can be used to calculate the total impedance of the circuit.
+
+If we know how to find out the total impedance, then we can find out the current flowing in the circuit
+
+as well as the voltage drop across each component or so.
+
+To find out the total impedance.
+
+Actually, we need to know the reactors of the doctor and capacitor.
+
+In this table, you can see that the impetus of the resistance is the resistance itself sees the resistance
+
+doesn't change with the change of frequency.
+
+On the other hand, in Dr. Reactance is Onaga Times el wire capacity reactance is Onaga Times.
+
+So what is this Onaga actually?
+
+Well, in physics, angular frequency is a scalar measure of rotation rate.
+
+Basically, it refers to the angular displacement per unit times like for example, in rotation or the
+
+rate of change of the phase of sinusoidal waveform, like, for example, in oscillations and waves
+
+or the rate of change of the argument of the same function.
+
+The term angular frequency vector is sometimes used as a synonym for the vector quantity.
+
+Angular velocity, while we have to remember, is that one revolution is equal to two P radius has Onaga
+
+is equal to two P divided by the period.
+
+And which is measured in seconds and we know that the period is equal to one over frequency, hence
+
+the angular frequency which is measured in radians per second, is equal to Tupi F..
+
+This means that the inductive reference is too powerful and capacity reactance is one over Tupi FC perfect.
+
+Now, when AC voltage is applied through the RACC circuit, the resulting current EI flows through the
+
+circuit and use the voltage across each element will be current times.
+
+Resistance is the voltage across the resistance are and is in phase with the current high current times.
+
+Inductive reactance is the voltage across the inductance and it leads the current eye by an angle of
+
+90 degrees.
+
+Current times capacity reactance is the voltage across capacitor C and it lacks the current eye by an
+
+angle of 90 degree.
+
+Since the inductive and capacity reactance is Excel and Axi are a function of supply frequency.
+
+The response of a series RSA circuit will therefore vary with frequency f that the individual voltage
+
+drops across each circuit element of our LNC element will be out of phase with each other.
+
+For the series as circuit, this can be shown as the following, the amplitude of the source voltage
+
+across all three components in a series RSA circuit is made up of the three individual component voltages.
+
+We are real and we see with the current common to all the three components, the vector diagrams.
+
+We are therefore had the current vector us dereference with the three voltage vectors being plotted.
+
+With respect to this reference as shown here, this is actually very important for you to understand
+
+that this diagram means that we cannot simply add together.
+
+We are we are lucky to find the supply voltage, which is.
+
+Yes, because the all the three voltage vectors point in different directions with regards to the current
+
+vector.
+
+And therefore we will have to find the supply voltage we s as the Fazer, some of the three component
+
+voltages combine together rectally.
+
+All right, so this shows the Fazer diagram of the RNC series circuit.
+
+You might wonder how to draw a diagram like this.
+
+Actually, it's very easy.
+
+First, take the current eye as a reference, then the voltage across the inductor l that is v l is
+
+drawn and leads the current eye by a 90 degree angle.
+
+Then the voltage across the capacitor C that is, we see is drawn, lagging the current eye by a 90
+
+degree angle because in capacitive load the current leads the voltage by an angle of 90 degree then
+
+that you vector v l and we see our opposite to each other.
+
+Based on these Fazer diagram, the supply voltage is equal to the square root of we are squared plus
+
+we L minus VXI or A squared by replacing these voltages, we can simplify this equation by taking the
+
+current eye outside of the square root.
+
+Now the current from this equation is equal to the power supply voltage divided by this long square
+
+root.
+
+Right.
+
+We know that the current that is flowing in the circuit can be found out.
+
+If we know the total impedance, right.
+
+These current would be equal to the power supply.
+
+What is divided by the total impedance?
+
+As a result, we got right down to the total impedance is equal to the square root of R squared plus
+
+minus X, C or squared.
+
+So this is a total opposition offer to the flow of current by RACC liquid, and it is known as the impedance
+
+of the circuit.
+
+Great.
+
+So now we know how to calculate the total impedance of a series or circuit, and hopefully by now we
+
+also know how to draw a phaser diagram.
+
+Now, let's do this more exercise and then I will show you something interesting in a simulator, a
+
+series or a circuit containing a resistance of two alarms, an inductors of zero point 15 Henry and
+
+a capacitor of 100 Micro Farad's are connected in a series across a 100 volts 50 hertz supply.
+
+So let's try to find out the total circuit impedance and the circuits current.
+
+Let's start by calculating the inductive reactors, the reactors is equal to two people, so it's equal
+
+to forty seven point thirteen ohms.
+
+On the other hand, the capacity reactance is equal to one over to PFC, which gives us a capacitance
+
+sorry, a capacity reactance of thirty one point eighty three ohms.
+
+Now that we know the resistance and both frequencies, we can find out the total impedance.
+
+Right.
+
+So this is the equation that we will use.
+
+And by replacing the values, we get a total impedance of nineteen point four ohms.
+
+But note that this is the impedance when the input signal has a frequency of 50 hertz, right?
+
+If the frequency of the input signal changes, the total impedance will change to now.
+
+The current that will flow in the circuit can be calculated by dividing the power supply voltage with
+
+the total impedance which will result in a current of five point fourteen amps.
+
+Now that we know the current, you can also go ahead and find the what is drop's across each component.
+
+All right.
+
+Now let's move ahead and see an RACC liquid in action.
+
+But this time we will use a slightly different configuration.
+
+So what do we have here?
+
+We have a D.C. power supply powering an RACC circuit.
+
+Don't take this resistor in conservation since it's here just to limit the current vendors, which is
+
+closed.
+
+What do you think will happen if we close this switch that I see?
+
+All right.
+
+Well, a current started to flow in this path, charging up the capacitor and also charging up the inductor.
+
+The interesting thing here is to see what happens if we cut the power supply.
+
+Well, the magnetic field in a doctor is built by the current, which gets provided by the discharging
+
+capacitor.
+
+Similarly, the capacitor is charged by the current, produced by collapsing magnetic field of inductor.
+
+And this process continues on and on, causing electrical energy to oscillate between the magnetic field
+
+and the electric field.
+
+In some cases, a certain frequency known as the resonant frequency, the inductive reactants of the
+
+circuit becomes equal to capacity reactants, which causes the electrical energy to oscillate between
+
+the electrical field of the capacitor and the magnetic field of the inductor.
+
+This entire reform harmonic oscillator for current.
+
+All right.
+
+As you can see, this resistance here is quite small, isn't it?
+
+But what happens if we increase this value?
+
+This record is called as critically down circuit.
+
+Now the value of the resistor is five hundred and sixteen ohms instead of 10 as before, let's charge
+
+up the reactive component.
+
+And then let's see those oscillations in action, but where are those other nations?
+
+It turns out the value of the resistor is selected so that it will stop oscillating as quickly as possible
+
+in order to circuit the presence of resistor causes these oscillations to die out over a period of time.
+
+And it is called us the damping effect of resistor.

@@ -1,0 +1,988 @@
+\section{Section 25 -- Op-Amp Arithmetic Circuits}
+
+This section explores operational amplifier circuits configured to perform mathematical operations in analog hardware: addition (summing amplifiers), subtraction (differential amplifiers), integration, and differentiation. These circuits formed the foundation of analog computers and remain essential for signal processing, sensor conditioning, waveform generation, and data conversion applications. Understanding arithmetic op-amp circuits enables design of mixers, averagers, D/A converters, signal conditioners, and mathematical function generators.
+
+%--------------------------------------------------------------
+\subsection{Summing Amplifiers}
+%--------------------------------------------------------------
+
+%--- Topic 182: Inverting Op-Amp Adder ---
+\subsubsection{Inverting Summing Amplifier}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Inverting summing amplifier combines multiple input signals into single inverted output. Multiple input resistors ($R_1$, $R_2$, $R_3$, ...) connect to inverting input (virtual ground node), feedback resistor $R_f$ provides gain control. Output voltage is weighted sum of all inputs with inversion: $V_{out} = -(R_f/R_1) V_1 - (R_f/R_2) V_2 - \cdots$. Equal input resistors produce simple sum with gain determined by $R_f$. Applications: audio mixing, D/A conversion, signal combining.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Historical Context:}
+
+Operational amplifiers originally developed (Carlos Swartzel, 1940s-1960s era) for analog computers performing mathematical operations in hardware before digital computers became practical. Addition, subtraction, integration, differentiation implemented using op-amp circuits with passive components. Named "operational" amplifier for this operational/mathematical capability.
+
+\textbf{Circuit Configuration:}
+
+Multiple input voltages ($V_1$, $V_2$, $V_3$, ..., $V_n$) applied through individual resistors ($R_1$, $R_2$, $R_3$, ..., $R_n$) to common inverting input node. Non-inverting input grounded. Feedback resistor $R_f$ connects output to inverting input. All inputs share virtual ground summing junction.
+
+\textit{Topology:}
+\begin{itemize}
+    \item Each input through its own resistor to summing junction (virtual ground)
+    \item Non-inverting input tied to ground (0V)
+    \item Feedback resistor $R_f$ from output to summing junction
+    \item Summing junction is virtual ground (0V potential, Rule 2)
+\end{itemize}
+
+\textbf{Operation Analysis Using Golden Rules:}
+
+From Rule 2: Non-inverting input at ground (0V), so inverting input (summing junction) also at 0V (virtual ground).
+
+Each input resistor sees voltage drop equal to input voltage:
+\[
+I_1 = \frac{V_1 - 0}{R_1} = \frac{V_1}{R_1}, \quad I_2 = \frac{V_2}{R_2}, \quad I_3 = \frac{V_3}{R_3}, \text{ etc.}
+\]
+
+From Kirchhoff's current law at summing junction (currents in = currents out):
+\[
+I_1 + I_2 + I_3 + \cdots + I_n = I_f
+\]
+
+From Rule 1: No current flows into op-amp input. All input currents sum and flow through feedback resistor $R_f$.
+
+Current through $R_f$ (from summing junction at 0V to output):
+\[
+I_f = \frac{0 - V_{out}}{R_f} = -\frac{V_{out}}{R_f}
+\]
+
+(Negative because current flows from virtual ground toward negative output voltage when inputs positive.)
+
+Combining:
+\[
+\frac{V_1}{R_1} + \frac{V_2}{R_2} + \frac{V_3}{R_3} + \cdots = -\frac{V_{out}}{R_f}
+\]
+
+Solving for output voltage:
+\[
+\boxed{V_{out} = -\left( \frac{R_f}{R_1} V_1 + \frac{R_f}{R_2} V_2 + \frac{R_f}{R_3} V_3 + \cdots \right)}
+\]
+
+Negative sign indicates inversion (inverting amplifier configuration).
+
+\textbf{Weighted Summing:}
+
+Each input has independent gain (weight) determined by ratio $R_f/R_i$. Different input resistors create weighted sum.
+
+\textit{Example: Different weights}
+
+$R_f = 10$k$\Omega$, $R_1 = 10$k$\Omega$, $R_2 = 5$k$\Omega$, $R_3 = 2$k$\Omega$.
+
+Weights: $R_f/R_1 = 1$, $R_f/R_2 = 2$, $R_f/R_3 = 5$.
+
+Output: $V_{out} = -(1 \times V_1 + 2 \times V_2 + 5 \times V_3)$.
+
+Input 2 has twice the influence of input 1, input 3 has five times the influence.
+
+\textbf{Equal Resistor Case:}
+
+If all input resistors equal ($R_1 = R_2 = R_3 = \cdots = R_{in}$):
+\[
+V_{out} = -\frac{R_f}{R_{in}} (V_1 + V_2 + V_3 + \cdots)
+\]
+
+Simple sum of inputs with overall gain $R_f/R_{in}$.
+
+For unity-gain sum ($R_f = R_{in}$):
+\[
+V_{out} = -(V_1 + V_2 + V_3 + \cdots)
+\]
+
+Output equals negative of algebraic sum of inputs.
+
+\textbf{AC Signal Summing:}
+
+Op-amp is DC-coupled, works equally well with DC and AC signals. Multiple AC waveforms combined into composite signal.
+
+Example: 5V AC (200Hz) + 2V square wave (20Hz) with equal resistors produces output combining both waveforms with inversion. Useful for audio mixing, signal synthesis, modulation.
+
+\textbf{Input Impedance:}
+
+Unlike non-inverting amplifier, each input sees impedance approximately equal to its input resistor (connected to virtual ground). Not extremely high impedance. Source must drive $R_{in}$ resistance.
+
+For high-impedance sources, add buffer (voltage follower) before each input.
+
+\textbf{Virtual Ground Summing Junction:}
+
+Critical concept: Summing junction physically at 0V (virtual ground) but electrically isolated from actual ground (no current path to ground). All input currents converge at this node, sum algebraically, flow through feedback path. Op-amp output adjusts to maintain 0V at summing junction (Rule 2).
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Three-Input Summing Amplifier:}
+
+Inputs: $V_1 = 2$V DC, $V_2 = 3$V DC, $V_3 = 1$V DC.
+
+All resistors equal: $R_1 = R_2 = R_3 = R_f = 10$k$\Omega$.
+
+Currents:
+\[
+I_1 = \frac{2}{10k} = 0.2\text{mA}, \quad I_2 = \frac{3}{10k} = 0.3\text{mA}, \quad I_3 = \frac{1}{10k} = 0.1\text{mA}
+\]
+
+Total current into summing junction: $I_{total} = 0.2 + 0.3 + 0.1 = 0.6$mA.
+
+This current flows through $R_f$, creating voltage drop:
+\[
+V_{drop} = 0.6\text{mA} \times 10k = 6\text{V}
+\]
+
+Since summing junction at 0V and current flows toward output: $V_{out} = -6$V.
+
+Verification using formula:
+\[
+V_{out} = -\frac{10k}{10k}(2 + 3 + 1) = -1 \times 6 = -6\text{V}
+\]
+
+\textbf{Weighted Sum Example:}
+
+Design 3-bit digital-to-analog converter (DAC) with $V_{ref} = 5$V.
+
+Binary weights: MSB (most significant bit) has weight 4, middle bit weight 2, LSB (least significant bit) weight 1.
+
+Choose: $R_f = 10$k$\Omega$. For weights 4:2:1, use $R_{MSB} = 10k/4 = 2.5$k$\Omega$, $R_{mid} = 10k/2 = 5$k$\Omega$, $R_{LSB} = 10k/1 = 10$k$\Omega$.
+
+Binary input 101 (5 in decimal): MSB = 5V, middle = 0V, LSB = 5V.
+
+Output:
+\[
+V_{out} = -\left( \frac{10k}{2.5k} \times 5 + \frac{10k}{5k} \times 0 + \frac{10k}{10k} \times 5 \right)
+\]
+\[
+= -(4 \times 5 + 2 \times 0 + 1 \times 5) = -(20 + 0 + 5) = -25\text{V}
+\]
+
+For binary 000: $V_{out} = 0$V. For binary 111: $V_{out} = -(20 + 10 + 5) = -35$V.
+
+Output range 0 to -35V for 3-bit input 0-7. Add inverting amplifier stage to remove negative sign if needed.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Inverting summing amplifier combines multiple inputs into single inverted output
+    \item Circuit: multiple input resistors to common summing junction (virtual ground), feedback resistor sets gain
+    \item Output formula: $V_{out} = -\sum (R_f/R_i) V_i$, each input independently weighted
+    \item Equal input resistors: $V_{out} = -(R_f/R_{in})(V_1 + V_2 + \cdots)$, simple sum with overall gain
+    \item Summing junction is virtual ground: 0V potential, no current to ground, all currents sum through $R_f$
+    \item Works with DC and AC signals, useful for audio mixing, signal combining, waveform synthesis
+    \item Input impedance approximately $R_{in}$ (not high), source must drive input resistor
+    \item Applications: audio mixers, D/A converters, analog computers, multi-source signal combiners
+    \item Weighted summing by choosing different input resistor values creates programmable gains per input
+    \item Negative sign from inverting configuration; add second inverter for non-inverted sum if needed
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topics 183-184: Non-Inverting Op-Amp Adder and Applications ---
+\subsubsection{Non-Inverting Summing Amplifier and Applications}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Non-inverting summing amplifier produces positive sum of input voltages. Input resistors ($R_1$, $R_2$, ...) connect inputs to common node, voltage divider averaging inputs applied to non-inverting input. Feedback resistor network ($R_a$, $R_b$) sets gain. For $n$ equal-value inputs and gain = $n$, output equals positive sum: $V_{out} = V_1 + V_2 + \cdots$. Higher input impedance than inverting version. Applications: audio mixing, averaging circuits, offset addition, sensor combining, multi-channel data acquisition.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration and Advantage:}
+
+Non-inverting summing amplifier based on non-inverting amplifier topology. Input resistors form voltage divider network, averaged voltage applied to non-inverting input. Feedback network ($R_a$ ground to inverting input, $R_b$ inverting input to output) sets gain.
+
+\textit{Key Advantage:} Much higher input impedance than inverting summing amplifier. Inputs not connected to virtual ground, less loading on sources. No current flows into non-inverting input (Rule 1), minimal loading.
+
+Input impedance approximately equal to input resistor values (for sources) but op-amp input stage presents very high impedance, so overall much less source loading.
+
+\textbf{Analysis for Two Equal Inputs:}
+
+Two inputs $V_1$ and $V_2$, equal input resistors $R_1 = R_2 = R$.
+
+Voltage divider at non-inverting input:
+\[
+V_+ = \frac{V_1 + V_2}{2}
+\]
+
+(Average of two inputs if resistors equal.)
+
+Non-inverting amplifier gain:
+\[
+A_v = 1 + \frac{R_b}{R_a}
+\]
+
+Output voltage:
+\[
+V_{out} = A_v \times V_+ = \left(1 + \frac{R_b}{R_a}\right) \frac{V_1 + V_2}{2}
+\]
+
+For output to equal exact sum ($V_1 + V_2$), set gain = 2:
+\[
+1 + \frac{R_b}{R_a} = 2 \implies \frac{R_b}{R_a} = 1 \implies R_b = R_a
+\]
+
+With $R_a = R_b$:
+\[
+V_{out} = 2 \times \frac{V_1 + V_2}{2} = V_1 + V_2
+\]
+
+Perfect non-inverted sum.
+
+\textbf{General $n$-Input Case:}
+
+For $n$ inputs with equal input resistors, voltage at non-inverting input:
+\[
+V_+ = \frac{V_1 + V_2 + \cdots + V_n}{n}
+\]
+
+(Average of all inputs.)
+
+To make output equal sum of all inputs:
+\[
+V_{out} = V_1 + V_2 + \cdots + V_n
+\]
+
+Requires:
+\[
+A_v \times \frac{V_1 + V_2 + \cdots + V_n}{n} = V_1 + V_2 + \cdots + V_n
+\]
+
+Therefore: $A_v = n$.
+
+Gain relationship: $1 + R_b/R_a = n$, so $R_b/R_a = n - 1$, giving $R_b = (n-1) R_a$.
+
+\textit{Examples:}
+\begin{itemize}
+    \item 2 inputs: gain = 2, $R_b = R_a$
+    \item 3 inputs: gain = 3, $R_b = 2 R_a$
+    \item 4 inputs: gain = 4, $R_b = 3 R_a$
+\end{itemize}
+
+\textbf{Unity-Gain Buffer Case:}
+
+If feedback removed ($R_b = 0$, direct connection output to inverting input, $R_a = \infty$ or omitted), circuit becomes unity-gain buffer.
+
+Gain = 1. Output:
+\[
+V_{out} = 1 \times \frac{V_1 + V_2 + \cdots + V_n}{n} = \text{average of inputs}
+\]
+
+Useful for averaging multiple voltage sources or sensor readings.
+
+\textbf{Design Complexity:}
+
+More complex than inverting summing amplifier. Requires careful resistor selection, especially for unequal input weights. With equal inputs and proper gain setting, achieves straightforward positive sum.
+
+Advantage: Higher input impedance outweighs complexity in high-impedance source applications.
+
+\textbf{Applications:}
+
+\textit{Audio Mixing:} Combining multiple audio channels without loading sources. Potentiometers on input resistors enable individual channel volume control. Output in-phase with inputs (no inversion). Used in mixing consoles, multi-microphone setups.
+
+\textit{Offset Addition:} Adding negative offset voltage to sensor output to zero reading at specific point. Example: Temperature sensor outputs 0-5V (0°C to 100°C). Add negative offset to make output 0V at freezing point (0°C).
+
+\textit{Digital-to-Analog Conversion:} Weighted resistor DAC using non-inverting configuration. Binary-weighted input resistors (doubling sequence: R, 2R, 4R, 8R, ...) create digital-to-analog conversion. Accuracy depends on resistor precision and consistent logic level voltages.
+
+Challenges: Resistor tolerance errors accumulate, logic level variations cause inaccuracies. Commercial DAC ICs use precision internal resistor networks (laser-trimmed) for superior accuracy.
+
+\textit{Signal Averaging:} Multiple sensor readings averaged to reduce noise. Unity-gain buffer configuration produces average voltage. Improves signal-to-noise ratio by $\sqrt{n}$ for $n$ uncorrelated noise sources.
+
+\textit{Multi-Source Combining:} Combining signals from different sources (instruments, sensors, generators) into composite waveform for analysis, processing, transmission.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Two-Input Non-Inverting Summer:}
+
+Inputs: $V_1 = 3$V, $V_2 = 2$V. Equal input resistors $R_1 = R_2 = 10$k$\Omega$.
+
+Voltage at non-inverting input:
+\[
+V_+ = \frac{3 + 2}{2} = 2.5\text{V}
+\]
+
+For output = $V_1 + V_2 = 5$V, need gain = 2.
+
+Set $R_a = R_b = 10$k$\Omega$ (gain = $1 + 10k/10k = 2$).
+
+Output:
+\[
+V_{out} = 2 \times 2.5 = 5\text{V}
+\]
+
+Correct sum achieved.
+
+\textbf{Three-Input Averaging Circuit:}
+
+Three sensor voltages: $V_1 = 4$V, $V_2 = 5$V, $V_3 = 3$V. Equal input resistors $R = 10$k$\Omega$.
+
+Unity-gain buffer (output connected directly to inverting input):
+
+Voltage at non-inverting input:
+\[
+V_+ = \frac{4 + 5 + 3}{3} = 4\text{V}
+\]
+
+Output (gain = 1):
+\[
+V_{out} = 1 \times 4 = 4\text{V}
+\]
+
+Average of three sensors = 4V. Useful for noise reduction, redundant sensor averaging.
+
+\textbf{Audio Mixer Design:}
+
+Four audio channels, each 0-1V peak. Want output = sum of all channels (0-4V peak).
+
+Equal input resistors $R_{in} = 10$k$\Omega$ for all channels.
+
+Voltage at non-inverting input (four channels all at 1V peak):
+\[
+V_+ = \frac{1 + 1 + 1 + 1}{4} = 1\text{V}
+\]
+
+Need gain = 4 for output = 4V.
+
+Gain = $1 + R_b/R_a = 4$, so $R_b = 3 R_a$.
+
+Choose $R_a = 10$k$\Omega$, $R_b = 30$k$\Omega$.
+
+Output (all channels at 1V):
+\[
+V_{out} = 4 \times 1 = 4\text{V}
+\]
+
+With individual channels varying, output = sum of all channel voltages, in-phase (no inversion).
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Non-inverting summing amplifier: input resistors form voltage divider to non-inverting input
+    \item Output is non-inverted sum: $V_{out} = V_1 + V_2 + \cdots$ (with proper gain setting)
+    \item For $n$ equal inputs, set gain = $n$ to achieve exact sum: $R_b = (n-1) R_a$
+    \item Higher input impedance than inverting summer, less source loading
+    \item Unity-gain configuration produces average of inputs: $V_{out} = (V_1 + V_2 + \cdots)/n$
+    \item More complex resistor selection compared to inverting summer, especially for weighted sums
+    \item Applications: audio mixing (in-phase sum), offset addition, signal averaging, multi-sensor combining
+    \item DAC implementation possible with weighted resistors but commercial ICs more accurate
+    \item Potentiometers on input resistors enable individual channel gain control (mixer application)
+    \item Averaging reduces noise by factor $\sqrt{n}$ for $n$ independent noise sources
+\end{itemize}
+\end{keypointsbox}
+
+
+%--------------------------------------------------------------
+\subsection{Differential Amplifier}
+%--------------------------------------------------------------
+
+%--- Topics 185-186: Differential Amplifier and Applications ---
+\subsubsection{Differential Amplifier and Common-Mode Rejection}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Differential amplifier outputs difference between two inputs: $V_{out} = A_d (V_2 - V_1)$ where $A_d$ is differential gain. For equal resistors ($R_1 = R_2$, $R_3 = R_4$), unity differential gain: $V_{out} = V_2 - V_1$. For adjustable gain with symmetry: $R_1 = R_2$ and $R_3 = R_4$, giving $V_{out} = (R_3/R_1)(V_2 - V_1)$. Rejects common-mode signals (noise appearing equally on both inputs). Essential for differential signaling (USB, Ethernet), noise rejection, sensor interfacing, instrumentation.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration:}
+
+Input $V_1$ applied through resistor $R_1$ to inverting input. Input $V_2$ applied to voltage divider ($R_2$ and $R_4$), junction connected to non-inverting input. Feedback resistor $R_3$ from output to inverting input.
+
+Symmetric design: $R_1 = R_2$ (input resistors equal), $R_3 = R_4$ (feedback/divider resistors equal).
+
+\textbf{Unity-Gain Differential Amplifier:}
+
+All resistors equal: $R_1 = R_2 = R_3 = R_4 = R$.
+
+\textit{Analysis:}
+
+Voltage at non-inverting input (voltage divider $R_2$ and $R_4$):
+\[
+V_+ = V_2 \frac{R_4}{R_2 + R_4} = V_2 \frac{R}{R + R} = \frac{V_2}{2}
+\]
+
+From Rule 2: $V_- = V_+$ (both inputs at same voltage in linear operation).
+
+So: $V_- = V_2/2$.
+
+Inverting input is junction of $R_1$ (from $V_1$) and $R_3$ (from $V_{out}$). Using virtual ground principle and current balance:
+
+Current through $R_1$: $I_1 = (V_1 - V_-)/R_1 = (V_1 - V_2/2)/R$.
+
+Current through $R_3$: $I_3 = (V_- - V_{out})/R_3 = (V_2/2 - V_{out})/R$.
+
+From Rule 1: $I_1 = I_3$ (no current into op-amp input).
+
+Equating:
+\[
+\frac{V_1 - V_2/2}{R} = \frac{V_2/2 - V_{out}}{R}
+\]
+
+Simplifying:
+\[
+V_1 - \frac{V_2}{2} = \frac{V_2}{2} - V_{out}
+\]
+\[
+V_{out} = \frac{V_2}{2} - V_1 + \frac{V_2}{2} = V_2 - V_1
+\]
+
+Unity-gain differential output:
+\[
+\boxed{V_{out} = V_2 - V_1}
+\]
+
+Output equals difference between two inputs. If $V_2 > V_1$: positive output. If $V_1 > V_2$: negative output.
+
+\textbf{Adjustable-Gain Differential Amplifier:}
+
+For differential gain $A_d \neq 1$, maintain symmetry: $R_1 = R_2$ and $R_3 = R_4$, but allow $R_3/R_1 \neq 1$.
+
+General formula with symmetry:
+\[
+\boxed{V_{out} = \frac{R_3}{R_1} (V_2 - V_1)}
+\]
+
+Differential gain: $A_d = R_3/R_1$.
+
+Example: $R_1 = R_2 = 10$k$\Omega$, $R_3 = R_4 = 30$k$\Omega$.
+
+Gain: $A_d = 30k/10k = 3$.
+
+For $V_2 = 8$V, $V_1 = 5$V: $V_{out} = 3 \times (8 - 5) = 9$V.
+
+\textbf{Common-Mode Rejection:}
+
+\textit{Common-Mode Signal:} Signal appearing equally on both inputs (same voltage, same phase). Example: 60Hz noise induced on both signal wires from power line interference.
+
+\textit{Differential-Mode Signal:} Desired signal appearing as difference between inputs. Example: $V_2 = +1$V, $V_1 = -1$V (differential = 2V).
+
+Differential amplifier amplifies differential-mode signal, rejects (cancels) common-mode signal.
+
+Example: $V_1 = 60$Hz + desired signal, $V_2 = 60$Hz + desired signal (noise equal on both).
+
+Output: $V_{out} = (V_2 - V_1) = (\text{desired}_2 - \text{desired}_1)$. 60Hz cancels (common to both).
+
+Common-Mode Rejection Ratio (CMRR): Measure of differential amplifier's ability to reject common-mode signals. High CMRR = excellent common-mode rejection.
+
+\textbf{Input Impedance Issue and Buffer Solution:}
+
+Standard differential amplifier has moderate input impedance (approximately $R_1$ and $R_2$ values). For high-impedance sources, input loading can be problematic.
+
+\textit{Solution:} Add unity-gain buffers (voltage followers) to each input. Buffer outputs drive differential amplifier. Extremely high input impedance presented to sources ($V_1$ and $V_2$), buffers provide current to drive differential amplifier resistors.
+
+Buffered differential amplifier: Superior input characteristics, prevents source loading, maintains differential and common-mode rejection properties.
+
+\textbf{Applications - Differential Signaling:}
+
+\textit{USB (Universal Serial Bus):} Uses differential signaling on D+ and D- data lines. Same digital data transmitted as complementary signals (one inverted relative to other). Receiver uses differential amplifier to extract data: $V_{out} = V_{D+} - V_{D-}$. Electromagnetic interference (EMI) induced equally on both twisted-pair wires, canceled at receiver. Robust data transmission even in noisy environments.
+
+\textit{Ethernet:} Twisted-pair Ethernet (10BASE-T, 100BASE-TX, 1000BASE-T) uses differential signaling. Each pair carries complementary signals, differential receiver extracts data while rejecting common-mode noise.
+
+\textit{Other Differential Interfaces:} RS-422, RS-485 (industrial communications), HDMI, DisplayPort (video), CAN bus (automotive), I²S (audio).
+
+\textbf{Twisted Pair and EMI Rejection:}
+
+Twisted pair cabling: Two wires twisted together. When EMI couples into cable, induced voltage approximately equal on both wires (due to proximity and twisting). Differential receiver subtracts wires: EMI cancels, desired signal (which is differential) passes through.
+
+Twisting ensures both wires exposed to same electromagnetic environment, maximizing common-mode EMI coupling and thus maximizing rejection.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Unity-Gain Differential Amplifier:}
+
+All resistors 10k$\Omega$. Inputs: $V_1 = 5$V, $V_2 = 8$V.
+
+Output: $V_{out} = V_2 - V_1 = 8 - 5 = 3$V.
+
+Inputs: $V_1 = 3$V, $V_2 = 1$V.
+
+Output: $V_{out} = 1 - 3 = -2$V (negative because $V_1 > V_2$).
+
+\textbf{Gain = 3 Differential Amplifier:}
+
+$R_1 = R_2 = 10$k$\Omega$, $R_3 = R_4 = 30$k$\Omega$. Gain = $30k/10k = 3$.
+
+Inputs: $V_1 = 2$V, $V_2 = 3$V.
+
+Difference: $V_2 - V_1 = 1$V.
+
+Output: $V_{out} = 3 \times 1 = 3$V.
+
+\textbf{Common-Mode Rejection Demonstration:}
+
+Unity-gain differential amplifier. Both inputs have 60Hz noise (5V peak) plus differential signal.
+
+$V_1 = 60$Hz (5V peak) + 2V DC = varies 2V $\pm$ 5V.
+
+$V_2 = 60$Hz (5V peak) + 4V DC = varies 4V $\pm$ 5V.
+
+Common-mode component: 60Hz noise (equal on both).
+
+Differential component: $4 - 2 = 2$V DC.
+
+Output: $V_{out} = V_2 - V_1 = (60\text{Hz} + 4) - (60\text{Hz} + 2) = 2$V DC.
+
+60Hz completely canceled (common-mode rejection). Only differential signal (2V DC difference) appears at output.
+
+\textbf{Differential Signaling Application:}
+
+USB data transmission: Logic HIGH = D+ at 3.3V, D- at 0V (difference = +3.3V). Logic LOW = D+ at 0V, D- at 3.3V (difference = -3.3V).
+
+EMI noise (e.g., 1V peak, 100kHz) couples equally into both D+ and D-:
+
+D+ = signal + 1V noise, D- = signal + 1V noise.
+
+Differential receiver: $V_{out} = V_{D+} - V_{D-} = (\text{signal} + \text{noise}) - (\text{signal} + \text{noise}) = \text{signal}$ (differential component only).
+
+Noise canceled, clean data recovered. Without differential signaling, 1V noise on single-ended signal would corrupt data.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Differential amplifier outputs difference between two inputs: $V_{out} = A_d(V_2 - V_1)$
+    \item Unity gain (all resistors equal): $V_{out} = V_2 - V_1$
+    \item Adjustable gain with symmetry ($R_1 = R_2$, $R_3 = R_4$): $V_{out} = (R_3/R_1)(V_2 - V_1)$
+    \item Common-mode signals (equal on both inputs) canceled, differential signals amplified
+    \item High Common-Mode Rejection Ratio (CMRR) essential for noise immunity
+    \item Input impedance moderate ($\approx R_1$, $R_2$); add buffers for high-impedance sources
+    \item Applications: differential signaling (USB, Ethernet, RS-485), sensor interfacing, noise rejection
+    \item Twisted-pair cables maximize common-mode EMI coupling for better rejection
+    \item Differential signaling robust in noisy environments (industrial, automotive, long-distance communications)
+    \item Symmetry critical: $R_1 = R_2$ and $R_3 = R_4$ ensures proper common-mode rejection and gain accuracy
+\end{itemize}
+\end{keypointsbox}
+
+
+%--------------------------------------------------------------
+\subsection{Calculus Operations: Integration and Differentiation}
+%--------------------------------------------------------------
+
+%--- Topics 187-188: Op-Amp Integrator ---
+\subsubsection{Op-Amp Integrator Circuit}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Op-amp integrator performs mathematical integration: output voltage proportional to integral (accumulated sum) of input voltage over time. Circuit: input resistor $R$ to inverting input, feedback capacitor $C$ (replacing feedback resistor). Output: $V_{out}(t) = -\frac{1}{RC} \int V_{in}(t) \, dt$. Constant input produces linear ramp output. Square wave input produces triangular wave output. Sine wave input produces cosine wave (90° phase shift). Applications: waveform generation (triangle from square), analog computers, ADCs, signal averaging, timing circuits.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration:}
+
+Input resistor $R$ connects input voltage to inverting input (virtual ground). Feedback capacitor $C$ connects output to inverting input (replaces feedback resistor in standard inverting amplifier). Non-inverting input grounded.
+
+Key difference from standard inverting amplifier: Capacitor in feedback path instead of resistor.
+
+\textbf{Operation and Integration Principle:}
+
+Inverting input at virtual ground (0V, Rule 2). Input voltage $V_{in}$ across resistor $R$ creates current:
+\[
+I_{in} = \frac{V_{in}}{R}
+\]
+
+From Rule 1: No current into op-amp input. All current through $R$ flows into capacitor $C$.
+
+Capacitor current-voltage relationship:
+\[
+I_C = C \frac{dV_C}{dt}
+\]
+
+Where $V_C$ is voltage across capacitor. Since one side of capacitor at virtual ground (0V), other side (output) has:
+\[
+V_C = 0 - V_{out} = -V_{out}
+\]
+
+Therefore:
+\[
+I_C = -C \frac{dV_{out}}{dt}
+\]
+
+Equating capacitor current to input current:
+\[
+\frac{V_{in}}{R} = -C \frac{dV_{out}}{dt}
+\]
+
+Rearranging:
+\[
+\frac{dV_{out}}{dt} = -\frac{1}{RC} V_{in}
+\]
+
+Integrating both sides with respect to time:
+\[
+\boxed{V_{out}(t) = -\frac{1}{RC} \int_0^t V_{in}(\tau) \, d\tau + V_{out}(0)}
+\]
+
+Where $V_{out}(0)$ is initial output voltage (capacitor initial charge).
+
+Output voltage proportional to integral of input voltage. Negative sign from inverting configuration.
+
+\textbf{Time Constant and Integration Rate:}
+
+Time constant $\tau = RC$ determines integration rate. Larger $RC$: slower integration (gentler ramp). Smaller $RC$: faster integration (steeper ramp).
+
+For constant input voltage $V_{in} = V_0$:
+\[
+V_{out}(t) = -\frac{1}{RC} V_0 t + V_{out}(0)
+\]
+
+Linear ramp with slope $-V_0/(RC)$.
+
+\textbf{Waveform Transformations:}
+
+\textit{Step Input $\rightarrow$ Ramp Output:}
+
+Constant DC input (step function) produces linearly increasing/decreasing ramp output. Output rises until op-amp saturates at supply rail.
+
+Example: $V_{in} = +1$V (constant), $R = 10$k$\Omega$, $C = 1\mu$F, $\tau = RC = 10$ms.
+
+Output: $V_{out}(t) = -\frac{1}{0.01} \times 1 \times t = -100t$ (volts). Ramps at -100V/s until hitting negative rail.
+
+\textit{Square Wave Input $\rightarrow$ Triangular Wave Output:}
+
+Square wave alternates between positive and negative constant values. During positive phase, output ramps negatively (integrating positive constant). During negative phase, output ramps positively (integrating negative constant). Result: triangular waveform.
+
+Frequency relationship: Triangle frequency = square wave frequency. Useful for waveform generation.
+
+\textit{Sine Wave Input $\rightarrow$ Cosine Wave Output:}
+
+Mathematical relationship: $\int \sin(\omega t) \, dt = -\frac{1}{\omega} \cos(\omega t) + \text{const}$.
+
+Integrator produces cosine wave from sine wave input, 90° phase shift. Output amplitude scaled by $1/(\omega RC)$. At higher frequencies, output amplitude decreases (integrator acts as low-pass filter).
+
+\textbf{Saturation and Reset:}
+
+With DC or low-frequency input, integrator output eventually saturates at supply rail (cannot integrate indefinitely). Capacitor charges fully, output stuck at rail.
+
+\textit{Reset Mechanism:} Parallel resistor across capacitor or switch to discharge capacitor between integration cycles. Common in ADCs and timing circuits.
+
+\textbf{Low-Pass Filter Behavior:}
+
+For AC signals, integrator behaves as active low-pass filter. Gain decreases with frequency: $A_v(\omega) = -\frac{1}{j \omega RC}$.
+
+Magnitude: $|A_v| = 1/(\omega RC)$, inversely proportional to frequency.
+
+Cutoff frequency (corner frequency):
+\[
+f_c = \frac{1}{2\pi RC}
+\]
+
+Below $f_c$: integration behavior dominant. Above $f_c$: attenuation increases at 20dB/decade. Passes low frequencies, attenuates high frequencies.
+
+\textbf{Applications:}
+
+\textit{Waveform Generation:} Converting square wave (from oscillator, microcontroller PWM) to triangle wave. Used in function generators, synthesizers, test equipment.
+
+\textit{Analog Computers:} Solving differential equations in analog hardware. Integration fundamental operation. Historical use in analog computers (aerospace, simulation).
+
+\textit{Analog-to-Digital Converters (ADCs):} Dual-slope ADC uses integrator. Input voltage integrated for fixed time, then reference voltage integrated until integrator returns to zero. Time ratio gives digital representation.
+
+\textit{Signal Averaging:} Integrating signal over time period and dividing by time gives average value. Noise averaging, DC component extraction.
+
+\textit{Sensor Signal Conditioning:} Some sensors (e.g., accelerometers measuring acceleration) require integration to obtain velocity or displacement.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Constant Input Integration:}
+
+$V_{in} = 2$V (constant), $R = 100$k$\Omega$, $C = 10\mu$F.
+
+Time constant: $RC = 100k \times 10\mu = 1$s.
+
+Input current: $I = 2/100k = 20\mu$A.
+
+Output voltage (starting from $V_{out}(0) = 0$):
+\[
+V_{out}(t) = -\frac{1}{1} \times 2 \times t = -2t \text{ (volts)}
+\]
+
+At $t = 1$s: $V_{out} = -2$V. At $t = 5$s: $V_{out} = -10$V.
+
+Linear ramp at -2V/s. Continues until hitting negative supply rail (e.g., -15V at $t = 7.5$s).
+
+\textbf{Square Wave to Triangle Wave:}
+
+Input: 1kHz square wave, $\pm 1$V amplitude. $R = 10$k$\Omega$, $C = 0.1\mu$F, $RC = 1$ms.
+
+Square wave period: $T = 1$ms (1kHz).
+
+During positive half-cycle (+1V, 0.5ms):
+\[
+\Delta V_{out} = -\frac{1}{1\text{ms}} \times 1 \times 0.5\text{ms} = -0.5\text{V}
+\]
+
+Output ramps down 0.5V.
+
+During negative half-cycle (-1V, 0.5ms):
+\[
+\Delta V_{out} = -\frac{1}{1\text{ms}} \times (-1) \times 0.5\text{ms} = +0.5\text{V}
+\]
+
+Output ramps up 0.5V.
+
+Result: Triangular wave, 1kHz, $\pm 0.5$V amplitude (peak-to-peak = 1V), 90° phase-shifted relative to square wave.
+
+\textbf{Sine Wave Integration:}
+
+Input: $V_{in}(t) = \sin(2\pi \times 100t)$ (100Hz sine wave, 1V amplitude).
+
+$R = 10$k$\Omega$, $C = 1\mu$F, $RC = 10$ms.
+
+Angular frequency: $\omega = 2\pi \times 100 = 628.3$ rad/s.
+
+Output:
+\[
+V_{out}(t) = -\frac{1}{RC} \int \sin(\omega t) \, dt = -\frac{1}{10\text{ms}} \times \left( -\frac{1}{628.3} \cos(\omega t) \right)
+\]
+\[
+= \frac{100}{628.3} \cos(2\pi \times 100t) = 0.159 \cos(2\pi \times 100t)
+\]
+
+Cosine wave (90° phase shift), 100Hz, amplitude 0.159V (reduced by factor $1/(\omega RC) = 1/(628.3 \times 0.01) \approx 0.159$).
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Op-amp integrator: input resistor $R$, feedback capacitor $C$, performs mathematical integration
+    \item Output formula: $V_{out}(t) = -(1/RC) \int V_{in}(t) \, dt$, proportional to integral of input
+    \item Time constant $RC$ sets integration rate: larger $RC$ = slower integration
+    \item Constant input produces linear ramp output: $V_{out} = -(V_{in}/RC) \times t$
+    \item Square wave input $\rightarrow$ triangular wave output (waveform generation application)
+    \item Sine wave input $\rightarrow$ cosine wave output (90° phase shift, amplitude scaled by $1/\omega RC$)
+    \item Behaves as low-pass filter for AC signals: cutoff frequency $f_c = 1/(2\pi RC)$
+    \item Output saturates at supply rail for DC/low-frequency inputs; requires reset mechanism
+    \item Applications: triangle wave generation, analog computers, ADCs, signal averaging, sensor conditioning
+    \item Initial capacitor voltage sets integration constant ($V_{out}(0)$), affects DC offset
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topic 189: Op-Amp Differentiator ---
+\subsubsection{Op-Amp Differentiator Circuit}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Op-amp differentiator computes mathematical derivative (rate of change) of input voltage. Circuit: input capacitor $C$ to inverting input, feedback resistor $R$. Output: $V_{out}(t) = -RC \, dV_{in}/dt$, proportional to rate of input voltage change. Triangular wave input produces square wave output. Sine wave input produces cosine wave (90° lead, opposite phase shift from integrator). Tends toward instability at high frequencies; often requires frequency compensation. Applications: edge detection, rate-of-change measurement, frequency emphasis (high-pass filter), waveform shaping.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration:}
+
+Input capacitor $C$ connects input voltage to inverting input (virtual ground). Feedback resistor $R$ connects output to inverting input. Non-inverting input grounded.
+
+Key difference from integrator: Capacitor at input, resistor in feedback (opposite positions).
+
+\textbf{Operation and Differentiation Principle:}
+
+\textit{Capacitance Reactance Concept:}
+
+Capacitor opposes voltage changes by creating current. Greater capacitance = greater opposition to voltage change, larger charge/discharge current for given rate of change.
+
+Capacitor current-voltage relationship:
+\[
+I_C = C \frac{dV_C}{dt}
+\]
+
+Current proportional to rate of voltage change across capacitor ($dV/dt$).
+
+\textit{Circuit Analysis:}
+
+Inverting input at virtual ground (0V). Voltage across input capacitor:
+\[
+V_C = V_{in} - 0 = V_{in}
+\]
+
+Current through capacitor:
+\[
+I_C = C \frac{dV_{in}}{dt}
+\]
+
+From Rule 1: No current into op-amp. All capacitor current flows through feedback resistor $R$.
+
+Voltage across $R$ (from virtual ground to output):
+\[
+V_R = I_C \times R = R C \frac{dV_{in}}{dt}
+\]
+
+Since virtual ground at 0V and current flows from 0V toward output:
+\[
+V_{out} = 0 - V_R = -R C \frac{dV_{in}}{dt}
+\]
+
+Differentiator output:
+\[
+\boxed{V_{out}(t) = -RC \frac{dV_{in}(t)}{dt}}
+\]
+
+Output proportional to derivative (rate of change) of input. Negative sign from inverting configuration.
+
+\textbf{Waveform Transformations:}
+
+\textit{Ramp (Triangular) Input $\rightarrow$ Square Wave Output:}
+
+Linear ramp has constant slope: $dV/dt = \text{constant}$. Differentiator produces constant output (square wave level).
+
+Positive slope $\rightarrow$ negative constant output. Negative slope $\rightarrow$ positive constant output. Result: Square wave from triangular input.
+
+\textit{Square Wave Input $\rightarrow$ Spike Output:}
+
+Square wave has instantaneous transitions (ideally infinite $dV/dt$ at edges). Differentiator produces sharp spikes at rising and falling edges.
+
+Rising edge (positive $dV/dt$) $\rightarrow$ negative spike. Falling edge (negative $dV/dt$) $\rightarrow$ positive spike. Between transitions (constant voltage, $dV/dt = 0$) $\rightarrow$ zero output.
+
+Practical circuits: Spikes have finite width determined by edge slew rate and circuit bandwidth.
+
+\textit{Sine Wave Input $\rightarrow$ Cosine Wave Output (Phase Lead):}
+
+Mathematical relationship: $d(\sin \omega t)/dt = \omega \cos(\omega t)$.
+
+Differentiator produces cosine from sine input, 90° phase lead (opposite of integrator's 90° lag). Output amplitude scaled by $\omega RC$: higher frequencies amplified more.
+
+\textbf{High-Pass Filter Behavior:}
+
+For AC signals, differentiator behaves as active high-pass filter. Gain increases with frequency: $A_v(\omega) = -j \omega RC$.
+
+Magnitude: $|A_v| = \omega RC$, directly proportional to frequency.
+
+Low frequencies attenuated, high frequencies amplified. Gain increases at +20dB/decade above corner frequency.
+
+Corner frequency:
+\[
+f_c = \frac{1}{2\pi RC}
+\]
+
+\textbf{Stability Issues and Compensation:}
+
+Differentiator inherently prone to instability, especially at high frequencies. Combination of capacitive input and high-frequency gain increase can cause oscillation.
+
+Noise amplification: High-frequency noise amplified more than signal (due to $\omega RC$ gain). Differentiator can become noisy oscillator.
+
+\textit{Frequency Compensation:}
+
+Add small capacitor $C_f$ in parallel with feedback resistor $R$. Creates low-pass filter in feedback path, limits high-frequency gain.
+
+Alternatively: Add small resistor $R_s$ in series with input capacitor. Limits high-frequency gain, improves stability. Differentiator becomes band-pass filter (high-pass from differentiator action, low-pass from compensation).
+
+Properly compensated differentiator maintains differentiation at frequencies of interest while preventing high-frequency instability.
+
+\textbf{Comparison: Integrator vs. Differentiator:}
+
+\begin{itemize}
+    \item Integrator: Capacitor in feedback, resistor at input. Computes integral. Low-pass behavior. Generally stable.
+    \item Differentiator: Capacitor at input, resistor in feedback. Computes derivative. High-pass behavior. Prone to instability.
+    \item Phase: Integrator gives -90° (lag), differentiator gives +90° (lead) for sine waves
+    \item Inverse operations: Integration and differentiation are mathematical inverses
+\end{itemize}
+
+\textbf{Applications:}
+
+\textit{Edge Detection:} Detecting rapid voltage changes (edges) in signals. Pulse detection, event timing, zero-crossing detection.
+
+\textit{Rate-of-Change Measurement:} Measuring how fast signal changes. Velocity from position sensor, acceleration from velocity.
+
+\textit{Frequency Emphasis:} Emphasizing high-frequency components in signal. Audio applications (treble boost), noise enhancement for certain detection schemes.
+
+\textit{Waveform Shaping:} Converting triangular wave to square wave (opposite of integrator). Function generators, signal synthesizers.
+
+\textit{High-Pass Filtering:} Active high-pass filter with gain. Pre-emphasis in communication systems, AC coupling with gain.
+
+Limited use compared to integrator due to noise and stability concerns. Often replaced by digital differentiation in modern systems.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Triangular Wave to Square Wave:}
+
+Input: 1kHz triangular wave, 1V peak-to-peak, symmetric around 0V.
+
+Triangle wave equation (approximation): $V_{in}(t)$ ramps from -0.5V to +0.5V in 0.5ms (rising), then +0.5V to -0.5V in 0.5ms (falling).
+
+$C = 0.1\mu$F, $R = 10$k$\Omega$, $RC = 1$ms.
+
+Rising edge slope: $dV/dt = (0.5 - (-0.5))/0.0005 = 2000$ V/s.
+
+Output during rising edge:
+\[
+V_{out} = -RC \frac{dV}{dt} = -0.001 \times 2000 = -2\text{V}
+\]
+
+Falling edge slope: $dV/dt = (-0.5 - 0.5)/0.0005 = -2000$ V/s.
+
+Output during falling edge:
+\[
+V_{out} = -0.001 \times (-2000) = +2\text{V}
+\]
+
+Result: Square wave, $\pm 2$V, 1kHz, inverted phase relative to triangle wave.
+
+\textbf{Sine Wave Differentiation:}
+
+Input: $V_{in}(t) = \sin(2\pi \times 100t)$ (100Hz, 1V amplitude).
+
+$C = 1\mu$F, $R = 10$k$\Omega$, $RC = 10$ms.
+
+Angular frequency: $\omega = 2\pi \times 100 = 628.3$ rad/s.
+
+Derivative: $dV_{in}/dt = \omega \cos(\omega t) = 628.3 \cos(2\pi \times 100t)$.
+
+Output:
+\[
+V_{out}(t) = -RC \frac{dV_{in}}{dt} = -0.01 \times 628.3 \cos(2\pi \times 100t)
+\]
+\[
+= -6.28 \cos(2\pi \times 100t)
+\]
+
+Cosine wave (90° phase lead relative to input sine), 100Hz, 6.28V amplitude (amplified by factor $\omega RC = 6.28$).
+
+Higher frequencies would be amplified even more, demonstrating high-pass nature and potential noise/stability issues.
+
+\textbf{Square Wave Edge Detection:}
+
+Input: 1kHz square wave, 0 to 5V transitions.
+
+Rising edge: Voltage jumps from 0V to 5V. Ideally instantaneous, but practical slew rate limited (e.g., 10V/$\mu$s).
+
+$C = 0.01\mu$F, $R = 10$k$\Omega$.
+
+During rising edge ($dV/dt = 10$ V/$\mu$s = $10 \times 10^6$ V/s):
+\[
+V_{out} = -RC \frac{dV}{dt} = -0.0001 \times 10^7 = -1000\text{V (theoretical)}
+\]
+
+Actual output saturates at negative rail (e.g., -15V). Short negative spike.
+
+Between edges (constant voltage, $dV/dt = 0$): $V_{out} = 0$V.
+
+Falling edge: Positive spike (symmetrical).
+
+Result: Sharp spikes at each edge, zero between edges. Edge detection achieved.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Op-amp differentiator: input capacitor $C$, feedback resistor $R$, computes derivative
+    \item Output formula: $V_{out}(t) = -RC \, dV_{in}/dt$, proportional to rate of input voltage change
+    \item Capacitor current proportional to $dV/dt$: $I_C = C \, dV_{in}/dt$
+    \item Triangular wave input $\rightarrow$ square wave output (opposite of integrator)
+    \item Square wave input $\rightarrow$ spike output at edges (edge detection)
+    \item Sine wave input $\rightarrow$ cosine wave output (90° phase lead, amplitude $\times \omega RC$)
+    \item Behaves as high-pass filter: gain increases with frequency, amplifies noise
+    \item Prone to instability and oscillation at high frequencies
+    \item Compensation required: small capacitor across $R$ or small resistor in series with $C$
+    \item Applications: edge detection, rate measurement, frequency emphasis, waveform shaping, high-pass filtering
+    \item Less commonly used than integrator due to noise amplification and stability issues
+    \item Inverse of integrator: $d(\int f \, dt)/dt = f$ (differentiation undoes integration)
+\end{itemize}
+\end{keypointsbox}

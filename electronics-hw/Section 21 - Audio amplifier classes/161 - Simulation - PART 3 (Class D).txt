@@ -1,0 +1,195 @@
+An interesting solution to this whole business of participation and distortion in Class A billionaire
+
+power amplifiers is to abandon the idea of a linear stage entirely and use instead of switching scheme.
+
+So imagine that the push pull follower transistors are replaced with a pair of transistor switches,
+
+weave one on and the other off at any time so that the output is switched completely to plus the 15
+
+volts or two minus 50 models at an instant.
+
+Imagine also that these speeches are operated at a high frequency, say, at least 10 times the highest
+
+audio frequency and that they are relative timing is controlled by a technique that we'll see later.
+
+In other, of course, such that the average output voltage is equal to the desired analogue output.
+
+And finally, we add them as low pass filter to kill the high switching signal, leaving only the desired
+
+low frequency analog output intact.
+
+OK, it probably is hard to imagine all the things that I said, so let's just move directly to the
+
+circuit.
+
+All right.
+
+So this is Class D or switching amplifier.
+
+It has the advantage of very high efficiency because the switching transistors are either off, meaning
+
+that there is no current that is passing through it or is hateration, meaning that the connector emitter
+
+voltage is nearly zero.
+
+So the power dissipated in the switching transistors, which is nothing else but the product between
+
+the connector emit a voltage and the connector current is always small.
+
+Efficiencies of 90 95 percent are possible.
+
+And because of this, the amplifier does not generate a lot of heat and does not require a big heatsink
+
+like in your class AB amplifier do, right.
+
+There's also no worry about thermal runaway.
+
+The downsides are the problems of emission of high frequency noise.
+
+Switching feed through to the output and the difficulty of achieving excellent linearity.
+
+Plus, the amplifiers are nearly universally in inexpensive audio equipment, and they are increasingly
+
+finding their way into high end audio equipment.
+
+The input signal is converted into a specific modulated, which is a rectangular signal using a comparator.
+
+This basically means that the input is encoded into the duty cycle of the rectangular pulses.
+
+These rectangular signal is amplified, and then a Lopez filter will convert the rectangular pulses
+
+back to the original analog signal.
+
+Of course, amplified.
+
+There are other methods for converting the signal into policies such as Delta Sigma modulation.
+
+But for this project, we will use, we will be using PVM, as you can see in this plot that I attached.
+
+You can see how we transform sinusoidal signal, which is the input into a rectangular signal by comparing
+
+it to a triangular signal.
+
+But the positive peak of the sine wave the duty cycle of the rectangular pulse is 100 percent was the
+
+negative peak.
+
+It is zero percent.
+
+Natural frequency of the triangle signal is much higher in in on the order of hundreds of kilohertz
+
+so that we can later extract our original signal.
+
+Unfortunately, as you might know, a real filter not an ideal one does not have a perfect brick wall
+
+transition from band to band.
+
+So we want the triangle signal to have a frequency at least 10 times higher than 20 kilohertz, which
+
+is the upper human hearing limit, right?
+
+As you might know us, well, the theory is one aspect, and practice is another.
+
+If you want to put the circuit into practice, really stumble upon some problems.
+
+The first issue is the rise and fall time of the devices in the power stage.
+
+And the second issue is the fact that we are using an and more transistor for the high side driver.
+
+And what do I mean by this?
+
+Because the switching of the moths is not done instantaneously, but it's more like going up and down
+
+the hill.
+
+The transistors on time will overlap.
+
+Creating a low impedance connection between the positive and negative power supplier is these causes
+
+a high current plus to pass through our MOSFET, which can obviously lead to failure to prevent this.
+
+We need to insert some dead time between the signals that drive the high and low side MOSFET.
+
+While way to achieve this is to use a specialized mos for driver from the international rectifier,
+
+such as the Air two, one, one or else, and the specialized ices provide a boosted gate voltage needed
+
+for the high side and Mos.
+
+Don't worry if you don't understand why we use these ices.
+
+The purpose of this course is only to make you familiarized with this Class D amplifier and later in
+
+the future.
+
+We will come back to this with more knowledge.
+
+Looking at the circuitry, different eyes for the filtering stage.
+
+On the other hand, one of the best ways to do this is to use a border war filter disciple.
+
+Filters have a very flat response to the band, and it means there's the signal that we want to achieve
+
+will not be attenuated too much.
+
+Alright, so in order for us to understand how the circuit works in more detail, we need a good set
+
+of knowledge about how this operational amplifier works.
+
+They were first used in analog computers to perform mathematical operations, and they are essentially
+
+a differential amplifier with very high gain.
+
+These characteristics can be exploited, of course, with the help of a few external components to perform
+
+the mathematical operations required for another computer, namely multiplication, a summation and,
+
+most importantly, integration.
+
+So basically, you can do all sorts of calculations using this operational amplifier and hence its name.
+
+It wasn't until they become available as low cost integrated circuits that it became practically.
+
+To use them for general purpose applications.
+
+It is configuration without any external components used, these operational amplifier works as a competitor,
+
+and the Operation Amplifier competitor compares basically one another.
+
+What is Level V, another analog voltage level and produces an output signal based on this voltage comparison?
+
+So in other words, the Operation Amplifier Voltage compare to compare the magnitudes of the wattage
+
+inputs and determines which is the largest of the two and the output magnitude of the comparator is
+
+set by the power supply of the operation amplifier.
+
+And in this simulator is not present for the ease of understanding.
+
+But in real world, this device has to has two more pins, one for the positive power supply and the
+
+other one for a negative power supply.
+
+OK.
+
+The other set of knowledge that you need to have is to understand why we use efforts in place of transistors,
+
+even though the output of the comparator is a digital representation of the input audio signal.
+
+It doesn't have the power to drive the load, which when we talk about audio amplifiers, the load is
+
+nothing but a speaker, right?
+
+So the task of this switching circuit is to provide enough power gain, which is essential for any amplifier.
+
+The switching circuit is generally designed by using most parts, and their symbol differs a little
+
+bit from the normal poor transistors that Evo are used to, right?
+
+But don't worry, because in the next course intended for intermediate people, we will explore plenty
+
+of circuits using MOSFET and operation amplifiers so that you will have a very good set of knowledge
+
+in electronics and you won't be afraid of looking at, you know, circuits while trying to unravel the
+
+mystery behind them.

@@ -1,0 +1,143 @@
+All right, guys, so as I have mentioned previously, what we are going to focus on for the moment
+
+is the metal oxide semiconductor field effect transistor, a.k.a. MOSFET.
+
+The concept of the mosfet has been known for many years, but they only became important in mid to late
+
+60s, one of the major problems experienced with the early development of mosfet was associated in developing
+
+the insulating oxide layers.
+
+The problems were only overcome as a semiconductor materials and processing technology improved.
+
+As a result, in the late 60s Mostapha, technology became more widespread.
+
+Nowadays, Moskva technology is one of the most widely used semiconductor techniques, having become
+
+one of the principal elements in integrated circuit technology.
+
+There is a variety of different circuits, symbols used for Mulford's in view of the different variety
+
+of standards used along with the different types of mosfet.
+
+A host of different Moskva thick with symbols can be seen here.
+
+So the secret symbol for the basic mosfet shown here on the left indicates that the device has a bug
+
+substrate.
+
+This is indicated by the arrow on the central area of the substrate.
+
+On the right hand side, we have the Depeche Mode mosfet that are generally indicated as shown here.
+
+Now you will also see another type of enhancement mode, which is the enhancement Norburg Semin.
+
+But let's not complicate ourself with that for the moment.
+
+So in order to understand the differences between the two types, we have to understand that the reason
+
+why they work slightly differently is because of how they are built.
+
+We will to see how they work in a minute.
+
+But first, let's see the difference in their structure.
+
+So the first mosfet structure is often and channel assessment mode, while the second one is often and
+
+channel depletion mode.
+
+As you might have noticed, most folks have also three legs, just like the people are ones, but they
+
+are terminal is named differently.
+
+We have a source which would be similar to the ammeter.
+
+We have a gate, which is the equivalent of base, and we had the train, which is similar to the connector.
+
+Finally, we can talk about a major difference between Masterfoods and deployers one, and that is there's
+
+almost no current flowing on the gate terminal.
+
+So there's no current flowing in or out of the gate as opposed to the people are one which as we know,
+
+there's always currents flowing on the base, right?
+
+Collector current is equal to base.
+
+Current time is better.
+
+And this is a reason why people are transistors are currently controlled and not voltage controlled.
+
+Very important fact to remember.
+
+So I will say it again, people transistors are current controlled.
+
+And the reason of it is because the current flowing on the base will determine the current flowing from
+
+the collector to the emitter.
+
+Of course, there has to be a usually around zero point seven words between the base and emitter to
+
+bias the transistor.
+
+But after that we play with the current in culture so that we can safely assume that there's almost
+
+no current at all that flows on the gate of the Masterfoods.
+
+And that's because if we take a look on how they are built, there's a thin oxide layer that separates
+
+the gate terminal from the rest.
+
+The gate is physically isolated from the channel by an auxiliary.
+
+As a result, we cannot say any more that Masterfoods, our current controlled since there's no current
+
+flow on the gate.
+
+Right.
+
+But then how can we control the amount of current flow from treinta source who might ask that?
+
+It's very easy with what it.
+
+So the voltage applied to the gate controls the conductivity of the channel.
+
+As a result of the electric field induced capacity across the insulating dielectric layer.
+
+So again sees the current floor is controlled by the voltage applied on the gate.
+
+We can say that Masterfoods, as opposed to bipolar, was our voltage controlled devices.
+
+Very important fact to remember.
+
+In the next course, we will see how that works using the simulator, but now let's think a little bit.
+
+If there is no current flowing on the gate terminal, what does that mean?
+
+It means that the input evidence of mosfet are much, much greater than people are ones, which is the
+
+other electrical component that has high input impedance.
+
+The UPS, right performance options uses Masterfoods internally to increase the overall input impedance
+
+so that almost a zero current flows inside of the pump.
+
+The high input, the impedance ensures that it draws very little current.
+
+So if you didn't know until now, amplifiers such as the upper arms, their task is to convert a low
+
+energy, voltage driven signal into a higher voltage are possible.
+
+Loyn and circuits can be dangerous because of the high current draw that they produce.
+
+And as a result of amps, avoid this by having a very high input impedance.
+
+So I guess the main takeaway from this course is that mosfet are voltage control devices in the next
+
+course, we'll see exactly what I mean by that.
+
+Then we have learned that there's no current flow on the gate since there's a thin oxide layer between
+
+the gate terminal and the rest of it.
+
+And as a result, the input impedance of the mousepad is very much higher than older people are once.

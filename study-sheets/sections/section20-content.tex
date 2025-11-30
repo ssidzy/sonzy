@@ -1,0 +1,873 @@
+\section{Section 20 -- Transistor Circuits}
+
+\subsection{Current Source Fundamentals}
+
+\subsubsection{Current Source - Introduction}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A current source is a circuit element that maintains constant current flow regardless of the voltage developed across its terminals or the impedance it drives. Unlike voltage sources, ideal current sources have infinite internal resistance to ensure 100\% power efficiency to the load.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Ideal vs. Real Current Sources}
+
+An ideal current source provides constant current with 100\% efficiency, meaning if it's rated at 12 mA, the load receives the entire 12 mA without loss. The key difference between voltage and current sources lies in their internal resistance:
+\begin{itemize}
+    \item \textbf{Voltage Source:} Zero internal resistance (series connection)
+    \item \textbf{Current Source:} Infinite internal resistance (parallel connection)
+\end{itemize}
+
+\textbf{Why Infinite Internal Resistance?}
+
+The internal impedance of a current source can be represented as a resistance in parallel with it. To supply 100\% of power to the load, the source must have much higher resistance than the load. Current always takes the path of least resistance, so when the source has infinite resistance, current will flow out and take the lower resistance path through the load.
+
+\textbf{Current Division Analysis}
+
+For a real current source with finite internal resistance $R_{int}$, the current through the load $R_L$ is calculated using current division:
+
+$$I_L = I_{source} \times \frac{R_{int}}{R_{int} + R_L}$$
+
+For example, with a 100 mA source, $R_{int} = 10$ k$\Omega$, and $R_L = 8~\Omega$:
+
+$$I_L = 100 \text{ mA} \times \frac{10000}{10000 + 8} = 99.9992 \text{ mA}$$
+
+This is 99.99\% efficient, but not perfect. If $R_{int}$ were lower, efficiency would decrease significantly.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Current Source Comparison}
+
+\textbf{Voltage Source Circuit:}
+\begin{itemize}
+    \item 5 V source with 200 $\Omega$ total resistance: $I = 5/200 = 25$ mA
+    \item Change load to 5 k$\Omega$: $I = 5/5000 = 1$ mA (current changes!)
+\end{itemize}
+
+\textbf{Current Source Circuit:}
+\begin{itemize}
+    \item 10 mA current source with multiple loads
+    \item Switching between different resistor values
+    \item Current remains constant at 10 mA regardless of load resistance
+    \item Voltage across load adjusts to maintain constant current
+\end{itemize}
+
+This demonstrates the fundamental advantage: current sources maintain constant current delivery independent of load variations.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Current source maintains constant current regardless of load impedance
+    \item Ideal current source has infinite internal resistance for 100\% efficiency
+    \item Symbol: circle with arrow indicating current direction
+    \item Current takes the path of least resistance
+    \item Real current sources: high (but finite) internal resistance
+    \item Output current remains steady despite load resistance fluctuations
+\end{itemize}
+\end{keypointsbox}
+
+\subsubsection{How to Design a Current Source}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A practical current source can be designed using a resistor with high supply voltage, or more effectively using a transistor configuration where emitter current $I_E = (V_{base} - 0.6)/R_E$. Adding a Zener diode stabilizes against supply voltage fluctuations, and using two transistors cancels the $V_{BE}$ offset.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Simple Resistor Current Source}
+
+The most basic current source is a resistor connected to a high voltage supply. If the supply voltage $V_{supply}$ is much higher than the load voltage $V_{load}$:
+
+$$I \approx \frac{V_{supply}}{R}$$
+
+This works when $R_{load} \ll R$. For example, with $V_{supply} = 5$ V and $R = 10$ k$\Omega$, desired current is 500 $\mu$A. Actual current depends on load resistance:
+\begin{itemize}
+    \item Small $R_{load}$: error $\approx$ 10 $\mu$A
+    \item Medium $R_{load}$: error $\approx$ 38 $\mu$A  
+    \item Large $R_{load}$: error $\approx$ 200 $\mu$A (problematic)
+\end{itemize}
+
+\textbf{Drawbacks:}
+\begin{itemize}
+    \item Requires large voltages with significant power dissipation
+    \item Current varies with load changes
+    \item Not easily programmable
+\end{itemize}
+
+\textbf{Transistor-Based Current Source}
+
+A much better solution uses an NPN transistor:
+
+$$I_C \approx I_E = \frac{V_{base} - 0.6}{R_E}$$
+
+Since $V_E = V_{base} - 0.6$ V, the collector current depends on the base voltage and emitter resistance, independent of supply voltage (as long as transistor isn't saturated).
+
+\textbf{Voltage Regulation with Zener Diode}
+
+To eliminate fluctuations from supply voltage changes, replace the voltage divider resistor with a Zener diode. If the Zener breakdown voltage is 3.3 V, the base voltage remains constant at 3.3 V regardless of supply variations, ensuring constant load current.
+
+\textbf{Two-Transistor Configuration for Offset Cancellation}
+
+The 0.6 V $V_{BE}$ offset can be problematic. Using two transistors (Q1 and Q2) solves this:
+\begin{itemize}
+    \item Q2 is the output stage with current set by emitter voltage
+    \item Q1 is configured as a diode (base-collector shorted)
+    \item Q1's $V_{BE}$ drop compensates for Q2's $V_{BE}$ drop
+    \item Result: $I_{out} \approx V_{in}/R_E$ (no offset!)
+\end{itemize}
+
+Note: This is first-order compensation since transistors may have different $I_C$ and thus slightly different $V_{BE}$.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Transistor Current Source Design}
+
+\textbf{Given:} Design a 1.9 mA current source with 20 V supply
+
+\textbf{Step 1:} Choose base voltage using voltage divider
+\begin{itemize}
+    \item Design voltage divider for $V_{base} = 2.5$ V
+    \item Use resistors to create stable bias point
+\end{itemize}
+
+\textbf{Step 2:} Calculate emitter voltage
+$$V_E = V_{base} - 0.6 = 2.5 - 0.6 = 1.9 \text{ V}$$
+
+\textbf{Step 3:} Calculate emitter resistance
+$$R_E = \frac{V_E}{I_E} = \frac{1.9}{0.0019} = 1 \text{ k}\Omega$$
+
+\textbf{Result:} Current through load = 1.9 mA, independent of load resistance
+
+\textbf{With Zener Stabilization:}
+\begin{itemize}
+    \item Replace voltage divider with 3.3 V Zener
+    \item Supply voltage can fluctuate without affecting load current
+    \item Current remains constant at design value
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Simple resistor source: $I \approx V_{supply}/R$ (poor regulation)
+    \item Transistor source: $I_C = (V_{base} - 0.6)/R_E$ (good regulation)
+    \item Zener diode: stabilizes against supply voltage fluctuations
+    \item Two-transistor config: cancels $V_{BE}$ offset for accurate programming
+    \item High input impedance: ideal for microcontroller DAC control
+    \item Op-amps provide most accurate current sources (covered in advanced course)
+\end{itemize}
+\end{keypointsbox}
+
+\subsection{Amplifier Circuit Design}
+
+\subsubsection{How to Design a Common-Emitter Amplifier}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A common-emitter amplifier provides voltage gain (not current gain like emitter follower). The voltage gain is $A_v = R_C/R_E$, the output is taken from the collector (180° phase shift), and DC biasing must place the transistor in the active region to prevent signal clipping.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Common Terminal Configurations}
+
+The terminal designated as "common" serves as ground/reference for both input and output:
+\begin{itemize}
+    \item \textbf{Common Collector (Emitter Follower):} Base = input, Emitter = output, Collector = common (tied to supply)
+    \item \textbf{Common Emitter:} Base = input, Collector = output, Emitter = common (tied to ground)
+    \item \textbf{Common Base:} Emitter = input, Collector = output, Base = common
+\end{itemize}
+
+\textbf{Emitter Follower Applications}
+
+Before studying common-emitter amplifiers, recall that emitter followers are used for:
+\begin{itemize}
+    \item Current amplification without voltage gain
+    \item Impedance matching (high input impedance, low output impedance)
+    \item Buffer amplifiers for maximum power transfer
+\end{itemize}
+
+Example: Source with 120 k$\Omega$ output impedance driving 20 $\Omega$ load through emitter follower with 120 k$\Omega$ input impedance and 22 $\Omega$ output impedance.
+
+\textbf{Common-Emitter Amplifier Design Process}
+
+\textbf{1. Determine Gain Requirements}
+
+With supply voltage $V_{CC} = 20$ V and input signal 500 mV, we can't amplify by $\beta = 100$ (would require 50 V output). Choose realistic gain, e.g., $A_v = 10$ for 5 V output.
+
+\textbf{2. Add Collector Resistor}
+
+Without $R_C$, collector voltage stays at $V_{CC}$ (can't swing). The collector resistor enables voltage swing from 0 to $V_{CC}$. For maximum current of 2 mA:
+
+$$R_C = \frac{V_{CC}}{I_{C,max}} = \frac{20}{0.002} = 10 \text{ k}\Omega$$
+
+\textbf{3. Set Voltage Gain with Emitter Resistor}
+
+The voltage gain (without considering intrinsic emitter resistance $r_e$) is:
+
+$$A_v = \frac{R_C}{R_E}$$
+
+For $A_v = 10$ with $R_C = 10$ k$\Omega$:
+
+$$R_E = \frac{R_C}{A_v} = \frac{10000}{10} = 1 \text{ k}\Omega$$
+
+Note: Intrinsic emitter resistance $r_e \approx 20~\Omega$ can be significant. More accurate gain:
+
+$$A_v = \frac{R_C}{R_E + r_e} \approx \frac{10000}{1000 + 20} \approx 9.8$$
+
+\textbf{4. DC Biasing}
+
+The transistor must be biased in the forward active region. A voltage divider sets base voltage around 1.6-1.7 V:
+\begin{itemize}
+    \item Use resistors (e.g., 110 k$\Omega$ and 10 k$\Omega$) to create $V_{base} \approx 1.6$ V
+    \item This places $V_E \approx 1.0$ V and $V_C \approx 10$ V (mid-supply for maximum swing)
+    \item Avoids saturation ($V_C \approx V_{base}$) and cutoff ($V_{base} < 0.6$ V)
+\end{itemize}
+
+\textbf{5. AC Coupling}
+
+Input and output coupling capacitors:
+\begin{itemize}
+    \item Block DC, pass AC signals
+    \item Prevent loading of signal source
+    \item Allow independent DC biasing
+\end{itemize}
+
+\textbf{Important Note on Phase Inversion}
+
+Common-emitter configuration inverts the phase (180° shift). When input rises, output falls, and vice versa. This usually isn't a problem in most applications.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Complete Design Example}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item Input signal: 500 mV peak-to-peak
+    \item Supply voltage: 20 V
+    \item Load impedance: 1 M$\Omega$ (high-Z, doesn't need high current)
+    \item Desired gain: 10
+\end{itemize}
+
+\textbf{Component Selection:}
+
+1. \textbf{Collector resistor:} $R_C = 10$ k$\Omega$ (limits current to 2 mA max)
+
+2. \textbf{Emitter resistor:} $R_E = 1$ k$\Omega$ (sets gain to 10)
+
+3. \textbf{Bias resistors:} 110 k$\Omega$ and 10 k$\Omega$ (creates $V_{base} = 1.6$ V)
+
+4. \textbf{Coupling capacitors:} sized for desired low-frequency cutoff
+
+\textbf{Operating Point:}
+\begin{itemize}
+    \item $V_{base} = 1.6$ V (from voltage divider)
+    \item $V_E = 1.0$ V ($V_{base} - 0.6$ V)
+    \item $I_E = V_E/R_E = 1.0/1000 = 1$ mA
+    \item $I_C \approx I_E = 1$ mA
+    \item $V_C = V_{CC} - I_C R_C = 20 - 10 = 10$ V
+\end{itemize}
+
+\textbf{Performance:}
+\begin{itemize}
+    \item Input: 500 mV peak-to-peak
+    \item Output: $\approx$ 4.8 V peak-to-peak (gain $\approx$ 9.6)
+    \item Output centered at 10 V DC (optimal for maximum swing)
+    \item Phase inverted relative to input
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Common-emitter: voltage amplifier, emitter tied to ground
+    \item Voltage gain: $A_v = R_C/R_E$ (simplified) or $A_v = R_C/(R_E + r_e)$ (accurate)
+    \item Output from collector has 180° phase shift relative to input
+    \item DC bias keeps transistor in active region: $V_C > V_{base}$ (avoid saturation)
+    \item Bias resistors set $V_{base} > 0.6$ V (avoid cutoff)
+    \item Collector resistor enables voltage swing from 0 to $V_{CC}$
+    \item Coupling capacitors block DC, pass AC signals
+    \item Can cascade with emitter follower for current boosting
+\end{itemize}
+\end{keypointsbox}
+
+\subsection{Current Mirror Circuits}
+
+\subsubsection{Current Mirror}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A current mirror copies the current from one branch to another, keeping output current constant regardless of loading. The basic configuration uses two matched transistors with bases connected, where one transistor (Q1) has base-collector shorted and acts as a diode to set the reference current that Q2 mirrors.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Why "Current Mirror"?}
+
+The circuit gets its name because it copies or mirrors the current flowing in one active branch into another. Current mirroring is fundamental in integrated circuit design—from amplifiers to op-amps, nearly all ICs use at least one current mirror.
+
+\textbf{Basic Two-Transistor Configuration}
+
+The simplest current mirror consists of:
+\begin{itemize}
+    \item Q1: Base-collector shorted (acts as diode), sets reference
+    \item Q2: Mirrors the current to the load
+    \item Both bases connected together
+    \item Both emitters connected to ground
+\end{itemize}
+
+\textbf{How It Works}
+
+The input "programming current" flows through Q1. Since Q1 has base and collector connected, it behaves like a diode with $V_{BE} \approx 0.6$ V. This voltage also appears at Q2's base, turning it on with the same $V_{BE}$.
+
+For matched transistors with same $\beta$ and $V_{BE}$:
+$$I_{C1} \approx I_{C2}$$
+
+\textbf{Programming Current Calculation}
+
+Using Kirchhoff's voltage law on the input branch:
+
+$$I_{prog} = \frac{V_{CC} - V_{BE}}{R}$$
+
+More precisely, accounting for base currents of both transistors:
+
+$$I_{prog} = I_{C1} + 2I_{B}$$
+
+where both transistors draw base current through the programming resistor.
+
+\textbf{Limitations of Basic Mirror}
+
+\textbf{1. Output voltage variations:} Slight $V_{BE}$ variation with $V_{CE}$ at constant $I_C$ causes output current to vary slightly with output voltage.
+
+\textbf{2. Transistor matching required:} Transistors must be on same substrate, manufactured together for accurate mirroring. In simulation, transistors are identical; in reality, slight differences exist.
+
+\textbf{3. Base current error:} Both transistors draw base current, creating mismatch between programming and output current. Error is small for high-$\beta$ transistors but still present.
+
+\textbf{Improved Three-Transistor Mirror}
+
+Adding Q3 as a buffer reduces base current error:
+\begin{itemize}
+    \item Q3 provides base current for Q1 and Q2 via its emitter
+    \item Only Q3's base current flows through programming resistor
+    \item Reduces base current error by factor of $(\beta + 1)$
+\end{itemize}
+
+New programming current equation:
+
+$$I_{prog} = \frac{V_{CC} - 2V_{BE}}{R}$$
+
+(accounts for two $V_{BE}$ drops: Q3 and Q1)
+
+\textbf{Emitter Degeneration}
+
+Adding emitter resistors provides negative feedback:
+\begin{itemize}
+    \item Stabilizes mirror against temperature changes
+    \item Improves matching between discrete transistors
+    \item Reduces gain but improves performance in other aspects
+\end{itemize}
+
+\textbf{How Emitter Resistor Provides Negative Feedback:}
+
+If collector current tries to increase $\rightarrow$ emitter current increases $\rightarrow$ voltage drop across $R_E$ increases $\rightarrow$ $V_{BE}$ decreases (since $V_B$ is constant) $\rightarrow$ transistor turns off slightly $\rightarrow$ current increase is opposed.
+
+This negative feedback provides:
+\begin{itemize}
+    \item Temperature stability
+    \item Better gain control
+    \item Flatter frequency response
+    \item Improved circuit predictability
+\end{itemize}
+
+In integrated circuits, emitter resistors are often omitted because neighboring transistors have negligible parameter differences and same temperature. For discrete designs, emitter resistors are beneficial.
+
+\textbf{Wilson Current Mirror}
+
+A popular configuration that provides negative feedback without emitter resistors:
+\begin{itemize}
+    \item Uses three transistors: Q1, Q2, and Q3
+    \item Q3 provides inherent negative feedback
+    \item Better stability than basic mirror
+\end{itemize}
+
+\textbf{How Wilson Mirror Works:}
+
+Small current through programming resistor $\rightarrow$ Q3 base current $\rightarrow$ Q3 conducts $\rightarrow$ Q3 emitter current becomes programming current for Q1-Q2 mirror $\rightarrow$ Q1 and Q2 collector currents equal $\rightarrow$ Q3 collector current (output) mirrors input.
+
+\textbf{Negative Feedback Mechanism:}
+
+If output current (Q3 $I_C$) tries to increase $\rightarrow$ Q2 $I_C$ increases $\rightarrow$ Q1 $I_C$ mirrors increase $\rightarrow$ voltage drop across programming resistor increases $\rightarrow$ Q3 $V_B$ decreases $\rightarrow$ Q3 turns off slightly $\rightarrow$ output current increase is opposed.
+
+This self-regulating behavior provides better stability without emitter resistors.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Basic Current Mirror Design}
+
+\textbf{Given:} $V_{CC} = 5$ V, desired mirror current = 0.3 mA, $V_{BE} = 0.6$ V
+
+\textbf{Step 1:} Calculate programming resistor
+
+$$R = \frac{V_{CC} - V_{BE}}{I_{prog}} = \frac{5 - 0.6}{0.0003} = 14.67 \text{ k}\Omega$$
+
+Use standard value: 15 k$\Omega$
+
+\textbf{Step 2:} Verify operation
+\begin{itemize}
+    \item $I_{prog} = (5 - 0.6)/15000 = 0.293$ mA
+    \item Q1 acts as diode with $V_{BE} = 0.6$ V
+    \item Q2 base voltage = 0.6 V (same as Q1)
+    \item Q2 collector current $\approx$ 0.293 mA (mirrors Q1)
+\end{itemize}
+
+\textbf{Step 3:} Test with different loads
+\begin{itemize}
+    \item Load = 1 k$\Omega$: Output current = 0.293 mA
+    \item Load = 10 k$\Omega$: Output current = 0.293 mA
+    \item Current remains constant regardless of load (within limits)
+\end{itemize}
+
+\textbf{Note:} In simulation with identical transistors, current is exactly 0.3 mA. In practice, slight variations occur due to transistor mismatch.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Current mirror copies current from one branch to another
+    \item Basic mirror: two transistors, bases connected, Q1 base-collector shorted
+    \item Q1 acts as diode setting reference voltage for both transistors
+    \item Output current independent of load (constant current sink/source)
+    \item Limitations: transistor matching, base current error, $V_{CE}$ variations
+    \item Three-transistor mirror reduces base current error by $(\beta + 1)$
+    \item Emitter resistors provide negative feedback and temperature stability
+    \item Wilson mirror provides feedback without emitter resistors
+    \item Essential building block in all integrated circuit designs
+\end{itemize}
+\end{keypointsbox}
+
+\subsection{Differential Amplifier Analysis}
+
+\subsubsection{Differential Amplifier - Part 1}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A differential amplifier amplifies the difference between two input signals: $V_o = A_d(V_1 - V_2)$. This configuration is crucial for rejecting common-mode noise (signals appearing equally on both inputs) while amplifying differential signals. It's the fundamental building block of operational amplifiers.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Why Differential Amplifiers?}
+
+Differential amplifiers solve the critical problem of amplifying weak signals contaminated by noise. Applications include:
+\begin{itemize}
+    \item Twisted pair cable transmission (Ethernet, digital signals)
+    \item Audio signal processing
+    \item Local area network signals
+    \item Radio frequency communications
+    \item Any application where noise rejection is essential
+\end{itemize}
+
+\textbf{Basic Principle}
+
+An amplifier that amplifies the difference between two input signals:
+
+$$V_{out} = A_d(V_1 - V_2)$$
+
+where $A_d$ is the differential gain. The higher the difference between inputs, the higher the output voltage.
+
+\textbf{Twisted Pair Cable Transmission}
+
+Consider Ethernet cable carrying data from router to computer:
+\begin{itemize}
+    \item Two isolated copper wires twisted together
+    \item Both wires carry the same information
+    \item One wire has signal, other has inverted signal (180° out of phase)
+\end{itemize}
+
+\textbf{Signal Transmission:}
+\begin{itemize}
+    \item Wire 1: Original signal (e.g., sine wave at frequency $f$)
+    \item Wire 2: Inverted signal (same frequency, opposite phase)
+\end{itemize}
+
+\textbf{Differential Amplification:}
+
+When both signals enter the differential amplifier:
+
+$$V_{out} = A_d(V_1 - V_2)$$
+
+If $V_1 = +A\sin(\omega t)$ and $V_2 = -A\sin(\omega t)$:
+
+$$V_{out} = A_d(A\sin(\omega t) - (-A\sin(\omega t))) = A_d \cdot 2A\sin(\omega t)$$
+
+The signal is amplified by $2A_d$.
+
+\textbf{Noise Rejection Principle}
+
+When noise is induced in the cable (electromagnetic interference):
+\begin{itemize}
+    \item Noise appears on both wires equally (same phase and amplitude)
+    \item Both wires are physically close, so noise is identical
+    \item This is called "common-mode" noise
+\end{itemize}
+
+If noise $V_n$ is added to both inputs:
+\begin{itemize}
+    \item Wire 1: Signal + Noise = $V_1 + V_n$
+    \item Wire 2: Inverted Signal + Noise = $V_2 + V_n$
+\end{itemize}
+
+Differential output:
+$$V_{out} = A_d[(V_1 + V_n) - (V_2 + V_n)] = A_d(V_1 - V_2)$$
+
+The noise cancels out! Only the signal difference is amplified.
+
+\textbf{Two Types of Signals}
+
+\textbf{1. Differential Mode (Normal Mode):}
+\begin{itemize}
+    \item Inputs differ in magnitude or phase
+    \item Example: $V_1$ and $V_2$ 180° out of phase
+    \item This is the desired signal to amplify
+    \item Gain is $A_d$ (differential gain)
+\end{itemize}
+
+\textbf{2. Common Mode:}
+\begin{itemize}
+    \item Both inputs identical in voltage and phase
+    \item Example: Same noise on both inputs
+    \item Should ideally not be amplified
+    \item Gain is $A_c$ (common-mode gain, should be $\approx 0$)
+\end{itemize}
+
+\textbf{Common-Mode Rejection Ratio (CMRR)}
+
+A metric quantifying the amplifier's ability to reject common-mode signals:
+
+$$\text{CMRR} = 20 \log_{10}\left(\frac{A_d}{A_c}\right) \text{ [dB]}$$
+
+where:
+\begin{itemize}
+    \item $A_d$ = differential gain
+    \item $A_c$ = common-mode gain
+\end{itemize}
+
+\textbf{Ideal vs. Practical CMRR:}
+\begin{itemize}
+    \item Ideal op-amp: CMRR = $\infty$ dB ($A_c = 0$)
+    \item Practical op-amps: CMRR = 80-100 dB
+    \item Higher CMRR = better noise rejection
+\end{itemize}
+
+\textbf{Operational Amplifier Connection}
+
+Differential amplifiers are the main building blocks of operational amplifiers. Op-amps have differential input configuration:
+\begin{itemize}
+    \item Non-inverting input (+)
+    \item Inverting input (-)
+    \item Output proportional to difference between inputs
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Twisted Pair Signal Transmission}
+
+\textbf{Scenario:} Transmitting 200 Hz signal with 100 mV amplitude over long cable
+
+\textbf{Transmitted Signals:}
+\begin{itemize}
+    \item Wire 1: 200 Hz, 100 mV (original phase)
+    \item Wire 2: 200 Hz, 100 mV (inverted phase)
+\end{itemize}
+
+\textbf{Noise Induced During Transmission:}
+\begin{itemize}
+    \item 60 Hz hum from power lines: 50 mV on both wires (same phase)
+    \item Electromagnetic interference: various frequencies on both wires
+\end{itemize}
+
+\textbf{At Receiver (Differential Amplifier):}
+\begin{itemize}
+    \item Input 1: 200 Hz signal + 60 Hz noise + other noise
+    \item Input 2: Inverted 200 Hz signal + 60 Hz noise + other noise (same noise)
+\end{itemize}
+
+\textbf{Differential Amplifier Processing:}
+
+$$V_{out} = A_d[(V_{signal1} + V_{noise}) - (V_{signal2} + V_{noise})]$$
+$$V_{out} = A_d(V_{signal1} - V_{signal2})$$
+
+\textbf{Result:}
+\begin{itemize}
+    \item Clean 200 Hz signal amplified by $A_d$
+    \item All common-mode noise (60 Hz hum, interference) canceled
+    \item Output contains only the desired information
+\end{itemize}
+
+\textbf{Real-World Application:} This is exactly how Ethernet works. Digital data transmitted differentially over twisted pair cables with excellent noise immunity over long distances (up to 100 meters for standard Ethernet).
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Differential amplifier: $V_{out} = A_d(V_1 - V_2)$
+    \item Amplifies difference between inputs, rejects common signals
+    \item Common mode: both inputs same voltage and phase (noise)
+    \item Differential mode: inputs differ (desired signal)
+    \item CMRR = $20\log_{10}(A_d/A_c)$ measures noise rejection ability
+    \item Ideal CMRR = $\infty$ dB, practical = 80-100 dB
+    \item Twisted pair transmission: signal and inverted signal on two wires
+    \item Noise appears equally on both wires, gets canceled by differential amp
+    \item Foundation of operational amplifiers
+\end{itemize}
+\end{keypointsbox}
+
+\subsubsection{Differential Amplifier - Part 2}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A practical differential amplifier circuit uses two transistors with shared emitter resistor. Common-mode gain should ideally be zero (achieved by replacing emitter resistor with current source), while differential gain should be high. The output is taken from one collector, and the circuit exhibits excellent noise rejection when properly designed.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration}
+
+The differential amplifier consists of:
+\begin{itemize}
+    \item Two NPN transistors (Q1, Q2) with bases as inputs
+    \item Output taken from Q2 collector
+    \item Collector resistors ($R_C$) on both transistors
+    \item Shared emitter resistor ($R_E$) or current source
+    \item Dual supply ($\pm V_{CC}$) for maximum swing
+\end{itemize}
+
+\textbf{Two Operating Modes}
+
+\textbf{1. Common-Mode Operation}
+
+Both inputs receive the same signal (same voltage and phase). This represents noise that should be rejected.
+
+For basic circuit with emitter resistor $R_E$:
+\begin{itemize}
+    \item Both inputs rise together
+    \item More current flows through both transistors
+    \item More current through large $R_E$ creates large voltage drop
+    \item Output change is small due to negative feedback from $R_E$
+\end{itemize}
+
+Common-mode gain (with intrinsic emitter resistance $r_e$):
+
+$$A_c = \frac{R_C}{2R_E + r_e}$$
+
+For ideal case where $r_e \approx 0$:
+
+$$A_c = \frac{R_C}{2R_E}$$
+
+\textbf{Example:} With $R_C = 1$ k$\Omega$ and $R_E = 75$ k$\Omega$:
+\begin{itemize}
+    \item Output still fluctuates (not ideal)
+    \item Input: 2 V peak-to-peak
+    \item Output: 1 V peak-to-peak
+    \item $A_c = 0.5$ (should be closer to 0)
+\end{itemize}
+
+\textbf{2. Differential-Mode Operation}
+
+Inputs receive opposite signals (one rises while other falls).
+
+When input 1 rises and input 2 falls by same amount:
+\begin{itemize}
+    \item More voltage across left $R_C$ $\rightarrow$ more current through Q1
+    \item Less voltage across right $R_C$ $\rightarrow$ less current through Q2
+    \item Total current through $R_E$ stays approximately constant
+    \item Output voltage rises (Q2 collector has less voltage drop)
+\end{itemize}
+
+When input 1 falls and input 2 rises:
+\begin{itemize}
+    \item Q2 turns on more
+    \item Output voltage falls
+    \item Large voltage swing at output
+\end{itemize}
+
+Differential gain:
+
+$$A_d = \frac{R_C}{r_e}$$
+
+This is much larger than $A_c$ because $r_e \ll R_E$.
+
+\textbf{Common-Mode Rejection Ratio Calculation}
+
+For circuit with emitter resistor:
+
+$$\text{CMRR} = \frac{A_d}{A_c} = \frac{R_C/r_e}{R_C/2R_E} = \frac{2R_E}{r_e}$$
+
+Assuming $r_e \approx 0$ for simplified analysis:
+
+$$\text{CMRR} \approx \frac{R_E}{1 \text{ k}\Omega} \text{ (ratio form)}$$
+
+With $R_E = 75$ k$\Omega$:
+
+$$\text{CMRR} = \frac{75000}{1000} = 75$$
+
+This is decent but not excellent. We can do better!
+
+\textbf{Improved Design with Current Source}
+
+Replace the large emitter resistor $R_E$ with a current source:
+\begin{itemize}
+    \item Current source has very high impedance (ideally infinite)
+    \item Current source sinks constant current (e.g., 1.9 mA)
+    \item Much better common-mode rejection
+\end{itemize}
+
+\textbf{Current Source Design for Differential Amp:}
+
+Using PNP transistor Q3 with voltage divider:
+\begin{itemize}
+    \item Voltage divider sets Q3 base voltage (e.g., $-12.4$ V with $\pm 15$ V supply)
+    \item Q3 emitter voltage: $V_E = V_B + 0.6 = -13$ V
+    \item Voltage across Q3 emitter resistor: $(-15) - (-13) = 2$ V
+    \item Q3 emitter resistor value for 1.9 mA: $R_E = 2/0.0019 \approx 1$ k$\Omega$
+    \item Q3 collector current $\approx$ emitter current = 1.9 mA (constant)
+\end{itemize}
+
+\textbf{Performance with Current Source:}
+\begin{itemize}
+    \item Common-mode signal: output voltage doesn't change at all!
+    \item Differential-mode signal: high gain, clean amplification
+    \item CMRR is dramatically improved (approaches ideal)
+\end{itemize}
+
+New CMRR formula:
+
+$$\text{CMRR} = \frac{2R_{current\_source}}{r_e}$$
+
+Since $R_{current\_source} \gg R_E$ (ideally infinite), CMRR is much higher.
+
+\textbf{Collector Resistor Selection}
+
+Choose $R_C$ to place quiescent collector voltage at half supply:
+\begin{itemize}
+    \item Provides maximum dynamic range
+    \item Allows largest voltage swing (excursion)
+    \item Example: With $\pm 15$ V supply, set $V_C \approx 0$ V (midpoint)
+\end{itemize}
+
+\textbf{Real-World Signal Example}
+
+\textbf{Practical Application:}
+\begin{itemize}
+    \item Input 1: 60 Hz noise only
+    \item Input 2: 200 Hz signal (100 mV) + 60 Hz noise (same as input 1)
+    \item Output: Clean 200 Hz signal with no 60 Hz noise
+    \item Demonstrates perfect common-mode (noise) rejection
+\end{itemize}
+
+Using pulse signals instead of sine waves:
+\begin{itemize}
+    \item Pulses more sensitive to noise and distortion
+    \item Better test of circuit quality
+    \item Output pulses should be clean and sharp
+    \item Low CMRR would show distorted pulses
+\end{itemize}
+
+\textbf{Differential vs. Common-Mode Summary}
+
+\textbf{Differential Mode:}
+\begin{itemize}
+    \item Input 1 rises, Input 2 falls (or vice versa)
+    \item Total current through current source constant
+    \item Q1 and Q2 currents balance
+    \item Large output voltage swing
+    \item High gain
+\end{itemize}
+
+\textbf{Common Mode:}
+\begin{itemize}
+    \item Both inputs rise or fall together
+    \item Current source resists current change
+    \item Emitter voltages rise to match input changes
+    \item Collector currents unchanged
+    \item Output voltage constant (ideally)
+    \item Gain $\approx 0$ (ideally)
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Complete Differential Amplifier Design}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item Supply: $\pm 15$ V
+    \item Desired tail current: 1.9 mA
+    \item High CMRR for noise rejection
+\end{itemize}
+
+\textbf{Design Steps:}
+
+\textbf{1. Current Source Design}
+\begin{itemize}
+    \item Use voltage divider to set Q3 base: $V_B = -12.4$ V
+    \item Q3 emitter voltage: $V_E = -12.4 + 0.6 = -13$ V
+    \item Voltage across emitter resistor: $2$ V
+    \item Emitter resistor: $R_E = 2/0.0019 = 1.05$ k$\Omega$ (use 1 k$\Omega$)
+    \item Tail current: 1.9 mA constant
+\end{itemize}
+
+\textbf{2. Collector Resistor Selection}
+\begin{itemize}
+    \item Each transistor carries $\approx 1.9/2 = 0.95$ mA (quiescent)
+    \item For $V_C \approx 0$ V: $R_C = 15/0.00095 \approx 15.8$ k$\Omega$
+    \item Use standard value 15 k$\Omega$ or 16 k$\Omega$
+\end{itemize}
+
+\textbf{3. Performance Verification}
+
+\textbf{Common-mode test} (both inputs = 1 V, 60 Hz):
+\begin{itemize}
+    \item With emitter resistor (75 k$\Omega$): Output fluctuates, $A_c \approx 0.5$
+    \item With current source: Output rock solid, $A_c \approx 0$
+\end{itemize}
+
+\textbf{Differential-mode test} (Input 1 = +0.1 V, Input 2 = -0.1 V):
+\begin{itemize}
+    \item Large output swing
+    \item High differential gain ($A_d \approx 130$ in example)
+    \item Clean, undistorted output
+\end{itemize}
+
+\textbf{Mixed signal test} (Input 1 = 60 Hz noise, Input 2 = 200 Hz signal + 60 Hz noise):
+\begin{itemize}
+    \item Output: Clean 200 Hz only
+    \item 60 Hz completely removed
+    \item Signal amplified by $\approx 130$
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Two transistors with shared emitter connection
+    \item Common-mode: both inputs same $\rightarrow$ output unchanged (ideal)
+    \item Differential-mode: inputs opposite $\rightarrow$ large output swing
+    \item $A_c = R_C/(2R_E + r_e)$ (should be $\approx 0$)
+    \item $A_d = R_C/r_e$ (should be large)
+    \item CMRR = $2R_E/r_e$ with resistor, much higher with current source
+    \item Replace emitter resistor with current source for best CMRR
+    \item Current source has high impedance, sinks constant current
+    \item Set $V_C$ at mid-supply for maximum output swing
+    \item Pulse signals better for testing than sine waves
+    \item Practical CMRR with current source: approaches ideal (>>100)
+\end{itemize}
+\end{keypointsbox}

@@ -1,0 +1,217 @@
+Hello and welcome back for our final act.
+
+Let's fix a deficiency of the circuit, namely a tendency for the outward powers to turn off somewhat
+
+slowly to understand what's the problem?
+
+Let us inspect the powers that we are able to generate.
+
+OK?
+
+The policy generated, and I will stop the simulation.
+
+Now notice that the pool is turned off kind of slowly.
+
+It is not that abrupt lag to turn on, right?
+
+So this is a problem that we are going to solve, and we will try to somehow design a circuit that we
+
+had this turn off face to be much quicker and steeper before we start designing a circuit.
+
+Let's understand why our powers have such a slow turn off.
+
+Let's generate reports again and see what happens on the base of Q2.
+
+So basically, the problem happens because kids use base voltage, which if it's literally 100 millisecond
+
+after time constant arises smoothly and relatively slowly until it reaches the turn on voltage threshold
+
+of point 0.6 volt, at which point these cute you start conducting pulling the collector to ground.
+
+Now you have to understand the transistors are designed in a way so that when the voltage hits exactly
+
+600 volts, the transistor fully conducts.
+
+That's not true.
+
+And I will show you how it works.
+
+Let's have a look at this transistor, which is a general purpose ambient transistor.
+
+This is a small signal transistor so that it can handle only low current and relatively low voltages.
+
+This table here shows the maximum readings that you have to obey in order to not blow up the transistor.
+
+So we have maximum collector meter voltage collector base voltage meter based voltage maximum continuous
+
+collector current, which is only two hundred millions.
+
+You can most probably handle bigger currents, but only for a short amount of time.
+
+What we are really interested in here is the graph that shows basically how the transistor conducts.
+
+There should be a graph which shows the base emitter voltage versus the electric current.
+
+Note that there are two groups here graphs.
+
+Sorry that I advise you to look at, especially when you are choosing a transistor for a particular
+
+circuit.
+
+OK, so this is a graph and look here the transistor starts conducting, then the base meter voltage
+
+reaches around 600 million volts and the greater current is only one million amps.
+
+So the transistor is barely turned on right?
+
+And as you increase the base, emit a voltage.
+
+The greater current starts increasing quickly.
+
+The maximum current you can see here as well is 209 amps.
+
+So this means that the transistor is turned on and off to handle these two handed mediums on its collector,
+
+but only if the base emitter voltage is one world.
+
+Now, this doesn't mean that if there is one wasn't the base, the current that will flow, and the
+
+collector is strictly two hundred millions.
+
+It means that if the base emitter voltage is one volt, the transistor is turned on and off to handle
+
+200 mg, but it can flow any current from zero up to 200 million.
+
+OK, this current can vary depending on the resistor on the collector or emitter in case there is a
+
+resistor on the emitter.
+
+So I hope now you understand why this low turn off occurs, this voltage on the base should basically
+
+rise much quicker in order to avoid these slow transition from cutoff mode to fully turned on transistor,
+
+which is called saturation mode.
+
+Not by the way, that this problem does not occur at the turn on of the other pulse.
+
+Because that transition could use base voltage drops abruptly down to approximately minus four point
+
+four worlds owing to the sharp input step waveform, which is further sharpened by the switching action
+
+of Q1.
+
+The care here is to add to the output, a clever circuit known as the Schmidt Trigger notice that the
+
+output of our original circuit is the input of this new circuit that is called the trigger.
+
+And in order to analyze how this circuit works, I think it's better to get rid of this part of the
+
+circuit.
+
+So I removed the original circuit, and we will try to reproduce the pools using this, which obviously
+
+we can't clearly reproduce the pools because in this case, the turn off will be very fast.
+
+So probably it will be harder to understand, but still, it shouldn't cost too much problem.
+
+The first cop shows the input pulls and the next cop shows the output pulls.
+
+As you can see, I did the work meter here that measures the voltage drop across.
+
+These are nine.
+
+If you understand what this voltage drop across, this ah, nine means for the circuit.
+
+You will for sure understand how this circuit works.
+
+Thus, you can see both emitters are tied together.
+
+So the voltage drop across or nine is the emitter voltage, which is the same for both transistors.
+
+So it was like this.
+
+Imagine a time if you've seen the positive output outputs of the previous circuit.
+
+So the inputs to this new Schmidt circuit is high, and that holds true for deceleration.
+
+And so Q5 is in cutoff mode with the output at five oils.
+
+The emitter current of Q4 is about five millionth.
+
+So the emitter voltage is approximately 100 Millwall's.
+
+That's because if you multiply these five mediums with 20 ohms, you will get a voltage drop of 100
+
+million.
+
+That's right.
+
+Hmm.
+
+Does this 100 milliwatts effect us?
+
+Since the emitter voltage of Q4 is at 100 million volts and on the ground the base voltage.
+
+Not the base emitter voltage.
+
+I'm talking about the base voltage compared to ground rose to $738 watts.
+
+Remember that this value was usually around $640 watts, right?
+
+But now it's seven hundred thirty eight maybe volts.
+
+And that's because this time the transistor needs more voltage on the base to turn on.
+
+It needs more of, if exactly 100 milliwatts.
+
+The base meter voltage of Q4 should still be around six hundred forty million volts, and let's see.
+
+Yes, it's still approximately six hundred thirty eight million miles.
+
+So if you made the difference between $738 volts and 100 milliwatts, you will get around six hundred
+
+thirty eight milli volts in the previous circuit.
+
+This value was indeed around six hundred forty milli volts.
+
+But the emitter of the transistor was grounded, which means it was at zero volt potential.
+
+Now, imagine the trailing edge of the input pulse waveform, whose voltage smoothly drops toward the
+
+ground as it drops below 740 Millarworld Q4 begins to turn off so its collector voltage rises.
+
+If this were a simple transistor switch, the collector would rise to worlds here.
+
+How are the quake resistor are stable and instead supplies current to Q5, putting it in saturation?
+
+So Q5 Collector drops nearly to ground.
+
+The simple level of analyses, the secret appears to be pretty useless because its output is the same
+
+as its input.
+
+Let's look a little closer, though, as the input voltage drops to the $738 vote threshold and Q five
+
+10 as on the total emitter, current rises to 10 mg five mg from Kufa is correct or current, and another
+
+five mg from its base current, both of which flow out the emitter.
+
+The drop across the emitter register is now 200 million volts, which means that the input threshold
+
+of Q4 has increased to about $838 volts.
+
+So the input voltage, which had just dropped below $738 volts, now finds itself well below the new
+
+threshold, right, causing the output to switch abruptly.
+
+This regenerative action is how the Schmidt trigger turns a slowly moving waveform into an abrupt transition.
+
+As for our final act, let's see if this is really solve our problem.
+
+Let's generate the policy and see the output.
+
+Yes, as you can see, the turn off is the same as a turn on.
+
+So congratulations.
+
+We just finished our pulse generator circuit.

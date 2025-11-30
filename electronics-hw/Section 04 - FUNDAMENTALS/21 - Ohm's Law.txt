@@ -1,0 +1,213 @@
+One of the most important and basic laws of electrical circuits is Ohms Law, which states that the
+
+current passing through a conductor is proportional to the voltage over the resistance. Ohms law may
+
+sound a bit confusing when written in words,
+
+but it can be described by a simple formula where 'V' is voltage 'I' is current and 'R' is resistance.
+
+This same formula can also be written in order to calculate for the current or the resistance.
+
+Here's a diagram showing current voltage and resistance in a circuit.
+
+Now, any one of these can be calculated using Ohm's Law,
+
+if you know the values of the other two. So what does Ohm's Law actually describe?
+
+You see, Ohm's Law describes the way current flows through a resistance when a different electrical potential,
+
+or voltage, is applied at each end of the resistance.
+
+One way to think of this is as water flowing through a pipe.
+
+The voltage is the water pressure.
+
+The current is the amount of water flowing through the pipe, and the resistance is the size of the
+
+pipe.
+
+More water will flow through the pipe, the more pressure is applied and the bigger the pipe is.
+
+So the bigger the pipe, the lower the resistance and more current will flow. Just so that I'm sure everyone
+
+understands Ohm's Law
+
+Let's answer to a couple of questions together.
+
+First, if the resistance of an electrical circuit is increased, what will happen to the current assuming
+
+the voltage remains the same?
+
+You can pause the video and think about what the answer might be.
+
+So the answer to this question is,
+
+The voltage will decrease. Based on the current equation,
+
+The higher the resistance, the lower the current will be, the higher the resistance, the narrower the
+
+pipe will be
+
+so less amount of water will or electrons will flow through the circuit.
+
+All right.
+
+The second question is if the voltage across a resistance is doubled.
+
+What will happen to the current?
+
+So current is equal to voltage divided by resistance, right?
+
+If we double the voltage across the same resistor, you must also double the current for the equation
+
+to remain true.
+
+The third question is what is the voltage 'V' in this circuit?
+
+So we know that 2 amps of current is flowing in this circuit and the resistor has a value of 13 ohms.
+
+What might be the voltage that will produce a current of 2 amps to flow in the circuit, knowing that
+
+the resistance is 13 ohms?
+
+Well, the answer is quite simple.
+
+We apply Ohm's Law formula, which says that voltage is equal to current times resistance.
+
+So 2 amps times 13 ohms is equal to 26 volts.
+
+Awesome.
+
+So here are some interesting facts about ohms law.
+
+You see, Ohm's Law is generally applied only to direct current (DC) circuits and not alternating current (AC) circuits.
+
+In AC circuits, because the current is constantly changing,
+
+other factors, such as capacitance and inductance, must be taken into account.
+
+The concept behind Ohm's Law was first explained by German physicist George Ohm, who the law is also
+
+named after.
+
+The tool for measuring volts in an electrical circuit is called a voltmeter.
+
+An ammeter is used to measure the current, and an ohmmeter is used for measuring resistance.
+
+Three different equipments for measuring three different things.
+
+But as I explained previously, you can just use a multimeter that can measure several functions,
+
+including voltage, current, resistance, and many other things.
+
+And now let's head to our simulator for a fun exercise. In this circuit
+
+we have a 5V DC source,
+
+and we have two resistors in parallel. One resistor has a value of 100 ohms and the
+
+second has a value of 1k ohms.
+
+The task is to find the current flowing on both branches and the overall current.
+
+Now, without doing anything, we can notice that the current flowing on the first branch somehow moves
+
+faster than on the second branch.
+
+In this simulator, the faster the current moves, the higher the current compared to other parts of the
+
+circuit.
+
+So this is a nice visual clue telling us that on this branch, more current flows compared to the second
+
+branch.
+
+And why is that?
+
+Well, that's because the resistance is lower on this branch than on this one.
+
+And now let's apply Ohm's Law to calculate the current on both branches
+
+but actually, before we do that, you must understand something, OK?
+
+So, when we have a power source, and then we have a couple of other components connected in parallel with
+
+the voltage source
+
+then the voltage drop across each component, situated in parallel with the voltage source, is equal
+
+to the power source voltage.
+
+In this case, the voltage of the power source is 5V
+
+This means that 5V will be dropped across the first resistor and 5V will be dropped
+
+across the second resistor.
+
+We can place as many resistors in parallel
+
+the voltage drop across each resistor will be equal to 5V.
+
+And if you don't believe it,
+
+Hover your mouse over a resistor and on the bottom right corner, you will see that the voltage drop across
+
+this resistor is indeed 5V, and the voltage drop across the second resistor is also 5V.
+
+For now, just remember that when multiple electrical components like resistors, for example, are
+
+connected in parallel with a voltage source, the same amount of voltage will be dropped across each resistor.
+
+All right.
+
+Now that we know that 5V is dropped across the first resistor and 5V across the second
+
+resistor, we can calculate the current flowing through each resistor.
+
+How? By applying Ohm's Law! Current is equal to voltage divided by resistance, so 5V, divided
+
+by 100, is equal to 50mA and 5V divided by 1k ohm is 5mA.
+
+We can notice that on the branch with higher resistance, a lower amount of current will flow than compared
+
+to the branch with lower resistance.
+
+Now let me ask you something.
+
+How much current does the battery supply constantly to the whole circuit?
+
+:)
+
+Well, if 50mA is flowing in the first branch and 5mA is flowing in the second branch,
+
+then logically the battery needs to supply 55mA for the overall circuit.
+
+And now you might say, hold on a second.
+
+You just told me that in a closed loop circuit, the same amount of current will flow no matter where
+
+we measure it.
+
+In this case, 55mA flowing here, 50mA is flowing there
+
+and 55mA is flowing back to the battery.
+
+How is it possible that 50mA is flowing through the resistor and not 55mA?
+
+Well, if I were to disconnect this branch for a second.
+
+Notice that the situation has been changed, and now indeed, the same amount of current is flowing
+
+in this closed loop circuit. In order to truly understand how a DC circuit works
+
+you have to understand Kirchhoff's current and voltage law.
+
+There are two laws that you will have to learn in order to master and analyze DC circuits.
+
+But we are not there yet.
+
+Be patient in the next chapter, we will learn about these two laws
+
+but until then, I still want to show you some interesting things.
+
+I will see you next, course.

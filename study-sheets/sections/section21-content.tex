@@ -1,0 +1,1209 @@
+\section{Section 21 -- Audio Amplifier Classes}
+
+\subsection{Decibel and Power Measurements}
+
+\subsubsection{Decibel}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+The decibel (dB) is a logarithmic unit used to compare signal amplitudes or power levels. For voltage/amplitude: dB = $20\log_{10}(A_2/A_1)$. For power: dB = $10\log_{10}(P_2/P_1)$. This logarithmic scale makes it easier to work with ratios as large as millions.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Why Use Decibels?}
+
+When comparing amplitudes of two signals, you could say "Signal A is twice as large as Signal B," which is fine for small ratios. However, in electronics and audio, we often deal with ratios as large as millions. A logarithmic measure makes these comparisons more manageable and intuitive.
+
+\textbf{Decibel Definitions}
+
+\textbf{For Power Ratios:}
+
+$$\text{dB} = 10\log_{10}\left(\frac{P_2}{P_1}\right)$$
+
+where $P_1$ and $P_2$ represent the power in two signals.
+
+\textbf{For Voltage/Amplitude Ratios:}
+
+$$\text{dB} = 20\log_{10}\left(\frac{A_2}{A_1}\right)$$
+
+where $A_1$ and $A_2$ are the two signal amplitudes.
+
+\textbf{Common Decibel Values}
+
+\begin{itemize}
+    \item \textbf{Double amplitude:} $20\log_{10}(2) = 20 \times 0.3 = 6$ dB
+    \item \textbf{10$\times$ amplitude:} $20\log_{10}(10) = 20 \times 1 = 20$ dB
+    \item \textbf{Half amplitude:} $20\log_{10}(0.5) = 20 \times (-0.3) = -6$ dB
+    \item \textbf{1000$\times$ amplitude:} $20\log_{10}(1000) = 60$ dB
+\end{itemize}
+
+\textbf{Why Factor of 20 vs. 10?}
+
+Power is proportional to voltage squared: $P \propto V^2$. When converting voltage ratios to power ratios:
+
+$$\frac{P_2}{P_1} = \frac{V_2^2}{V_1^2} = \left(\frac{V_2}{V_1}\right)^2$$
+
+Applying logarithm:
+
+$$10\log_{10}\left(\frac{P_2}{P_1}\right) = 10\log_{10}\left[\left(\frac{V_2}{V_1}\right)^2\right] = 20\log_{10}\left(\frac{V_2}{V_1}\right)$$
+
+Hence, the factor of 20 for voltage/amplitude ratios.
+
+\textbf{Decibel in Audio Engineering}
+
+In audio systems, gain is commonly expressed in decibels rather than linear ratios:
+\begin{itemize}
+    \item Easier to work with cascade gains (add dB instead of multiply ratios)
+    \item More intuitive for large dynamic ranges
+    \item Industry standard for specifications
+\end{itemize}
+
+\textbf{Sound Pressure Levels}
+
+Decibels also measure sound loudness (SPL - Sound Pressure Level):
+\begin{itemize}
+    \item 0 dB: Threshold of hearing (complete silence)
+    \item 30 dB: Whisper
+    \item 60 dB: Normal conversation
+    \item 90 dB: Lawn mower
+    \item 120 dB: Rock concert, threshold of pain
+    \item 140 dB: Jet engine at close range
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Microphone Preamplifier Calculation}
+
+\textbf{Given:}
+\begin{itemize}
+    \item Microphone output: 1 mV
+    \item Preamplifier gain: 60 dB
+    \item Find output voltage
+\end{itemize}
+
+\textbf{Solution:}
+
+From decibel table, 60 dB corresponds to linear ratio of 1000.
+
+$$\text{Gain} = 10^{60/20} = 10^3 = 1000$$
+
+Output voltage:
+
+$$V_{out} = V_{in} \times \text{Gain} = 1 \text{ mV} \times 1000 = 1000 \text{ mV} = 1 \text{ V}$$
+
+\textbf{Verification:}
+
+$$\text{dB} = 20\log_{10}\left(\frac{1000 \text{ mV}}{1 \text{ mV}}\right) = 20\log_{10}(1000) = 20 \times 3 = 60 \text{ dB}$$ $\checkmark$
+
+\textbf{Practical Insight:}
+
+Instead of saying "the output voltage is 1000 times greater than the input," we simply say "the amplifier has 60 dB gain." This is more concise and standard in audio engineering.
+
+\textbf{Cascaded Gains:}
+
+If two amplifiers are cascaded, each with 20 dB gain:
+\begin{itemize}
+    \item Linear: Total gain = $10 \times 10 = 100$
+    \item Decibel: Total gain = $20 + 20 = 40$ dB
+\end{itemize}
+
+Adding decibels is simpler than multiplying ratios!
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Decibel: logarithmic unit for comparing signal levels
+    \item Power ratio: dB = $10\log_{10}(P_2/P_1)$
+    \item Voltage ratio: dB = $20\log_{10}(V_2/V_1)$
+    \item 6 dB = double amplitude, 20 dB = 10$\times$ amplitude
+    \item 60 dB = 1000$\times$ amplitude (common preamp gain)
+    \item Cascaded gains: add dB values instead of multiplying ratios
+    \item 0 dB SPL = threshold of hearing (silence)
+    \item Logarithmic scale better for large dynamic ranges
+\end{itemize}
+\end{keypointsbox}
+
+\subsection{Power Amplifier Fundamentals}
+
+\subsubsection{Power Amplifier Classes - Introduction}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Preamplifiers provide voltage gain with small current gain for signal processing, while power amplifiers provide high current gain to drive speakers. Power amplifier classes (A, B, AB, C, D) differ in topology, efficiency, and distortion characteristics. Efficiency = (useful power output / total power input) $\times$ 100\%.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Preamplifier vs. Power Amplifier}
+
+\textbf{Preamplifier:}
+\begin{itemize}
+    \item Shapes and conditions the signal
+    \item Provides significant voltage gain, small current gain
+    \item Controls: gain, bass, mid, treble, volume, etc.
+    \item Boosts weak signals to line level
+    \item Good for recording and signal processing
+    \item Low power consumption, minimal heat generation
+\end{itemize}
+
+\textbf{Power Amplifier:}
+\begin{itemize}
+    \item Receives signal from preamplifier
+    \item Outputs much larger version with high voltage and current
+    \item Drives speakers (transducers converting electrical $\rightarrow$ sound)
+    \item Must amplify current enough to power loudspeakers
+    \item High power consumption, generates significant heat
+    \item Requires heat management (heatsinks, cooling)
+\end{itemize}
+
+\textbf{Why Separate Stages?}
+
+Preamplifiers are kept separate from power amplifiers to:
+\begin{itemize}
+    \item Avoid noise from large power transistors
+    \item Keep sensitive low-level circuitry away from high-power stages
+    \item Prevent heat from power stage affecting preamp performance
+    \item Allow modular design (swap components independently)
+\end{itemize}
+
+\textbf{System Examples}
+
+\textbf{Guitar Amplifier:}
+\begin{itemize}
+    \item Input: Guitar pickup signal
+    \item Preamplifier: Shapes tone, controls gain/EQ
+    \item Power amplifier: Drives speaker
+    \item Combo amplifier: All stages in one cabinet
+\end{itemize}
+
+\textbf{Audio Amplifier:}
+\begin{itemize}
+    \item Input: Microphone (very weak signal)
+    \item Preamplifier: Boosts to line level
+    \item Mixer/Processor: Combines with other signals
+    \item Power amplifier: Drives loudspeakers
+\end{itemize}
+
+\textbf{Amplifier Efficiency}
+
+Efficiency is the ratio of useful power delivered to the load versus total power consumed:
+
+$$\eta = \frac{P_{out}}{P_{in}} \times 100\%$$
+
+where:
+\begin{itemize}
+    \item $P_{out}$ = useful power to speaker
+    \item $P_{in}$ = total electrical power from supply
+    \item Difference ($P_{in} - P_{out}$) = wasted as heat
+\end{itemize}
+
+\textbf{Example:}
+\begin{itemize}
+    \item 50\% efficient amplifier delivering 50 W: draws 100 W (50 W wasted as heat)
+    \item 80\% efficient amplifier delivering 50 W: draws 62.5 W (12.5 W wasted)
+\end{itemize}
+
+\textbf{Efficiency vs. Distortion Trade-off}
+
+\begin{itemize}
+    \item \textbf{Class A:} Most linear (least distortion), lowest efficiency ($\approx$ 25-30\%)
+    \item \textbf{Class B:} Better efficiency ($\approx$ 60-70\%), more distortion (crossover)
+    \item \textbf{Class AB:} Compromise between A and B
+    \item \textbf{Class D:} Highest efficiency ($\approx$ 90\%), switching design
+\end{itemize}
+
+\textbf{Conduction Angle}
+
+The conduction angle describes how much of the input cycle the amplifying device conducts:
+\begin{itemize}
+    \item \textbf{360°:} Device always on (Class A)
+    \item \textbf{180°:} Device on for half cycle (Class B)
+    \item \textbf{$<$ 180°:} Device on for less than half (Class C)
+\end{itemize}
+
+Conduction angle is closely related to efficiency. Longer conduction means more power dissipation but better linearity.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Amplifier Efficiency Comparison}
+
+\textbf{Scenario:} Need to deliver 100 W to speaker
+
+\textbf{Class A Amplifier (30\% efficiency):}
+\begin{itemize}
+    \item Power from supply: $P_{in} = 100/0.30 = 333$ W
+    \item Power wasted as heat: $333 - 100 = 233$ W
+    \item Requires large heatsink
+    \item Always drawing 333 W even with no signal!
+\end{itemize}
+
+\textbf{Class AB Amplifier (60\% efficiency):}
+\begin{itemize}
+    \item Power from supply: $P_{in} = 100/0.60 = 167$ W
+    \item Power wasted as heat: $167 - 100 = 67$ W
+    \item Moderate heatsink required
+    \item More practical for medium power
+\end{itemize}
+
+\textbf{Class D Amplifier (90\% efficiency):}
+\begin{itemize}
+    \item Power from supply: $P_{in} = 100/0.90 = 111$ W
+    \item Power wasted as heat: $111 - 100 = 11$ W
+    \item Small heatsink or passive cooling
+    \item Ideal for portable devices, subwoofers
+\end{itemize}
+
+\textbf{Heat Dissipation Impact:}
+
+For continuous 100 W output:
+\begin{itemize}
+    \item Class A: 233 W heat (like a space heater!)
+    \item Class AB: 67 W heat (manageable)
+    \item Class D: 11 W heat (minimal cooling needed)
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Preamp: voltage gain, signal shaping, low power
+    \item Power amp: current gain, drives speakers, high power
+    \item Separate stages prevent noise from power transistors affecting preamp
+    \item Efficiency = (useful power / total power) $\times$ 100\%
+    \item Class A: 25-30\% efficiency, best linearity
+    \item Class D: $\approx$ 90\% efficiency, switching design
+    \item Higher efficiency = less heat, smaller heatsinks
+    \item Conduction angle: 360° (Class A), 180° (Class B), $<$180° (Class C)
+\end{itemize}
+\end{keypointsbox}
+
+\subsection{Amplifier Class Theory}
+
+\subsubsection{Class A, B, AB, C, D - Theory}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Class A: single device, 360° conduction, high linearity, 25-30\% efficiency. Class B: two devices, 180° each, crossover distortion, 60\% efficiency. Class AB: hybrid, slight bias to eliminate crossover, 50-60\% efficiency. Class C: $<$180°, RF applications, 60-80\% efficiency. Class D: switching (PWM), 90\% efficiency, minimal distortion with proper design.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Class A Amplifier}
+
+The Class A amplifier is essentially a common-emitter configuration we've studied before.
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item \textbf{Conduction angle:} 360° (always on)
+    \item \textbf{Active elements:} Single transistor
+    \item \textbf{Bias:} Constant, keeps transistor in active region
+    \item \textbf{Linearity:} Excellent (minimal distortion)
+    \item \textbf{Efficiency:} 25-30\% (theoretical max 50\% with inductive coupling)
+\end{itemize}
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item High linearity and low distortion
+    \item Simple design (single device, minimal parts)
+    \item Excellent high-frequency response
+    \item Good feedback loop stability
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item Very poor efficiency (wastes 70-75\% as heat)
+    \item High power loss even with no signal
+    \item Requires large heatsinks
+    \item Only suitable for low-power applications
+    \item Continuous conduction $\rightarrow$ high heat generation
+\end{itemize}
+
+\textbf{Class B Amplifier (Push-Pull)}
+
+Uses two complementary transistors (NPN and PNP), each conducting for half the cycle.
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item \textbf{Conduction angle:} 180° per device
+    \item \textbf{Active elements:} Two transistors (complementary pair)
+    \item \textbf{Bias:} Provided by input signal (no quiescent current)
+    \item \textbf{Efficiency:} 60-70\% (theoretical max 78.5\%)
+\end{itemize}
+
+\textbf{How It Works:}
+\begin{itemize}
+    \item NPN conducts positive half-cycle (input $>$ 0.6 V)
+    \item PNP conducts negative half-cycle (input $<$ -0.6 V)
+    \item Each transistor "pushes" or "pulls" current through load
+    \item Combined output reconstructs full waveform
+\end{itemize}
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item Much better efficiency than Class A (60\%+ vs. 25-30\%)
+    \item Minimal heat dissipation (smaller heatsinks)
+    \item No quiescent current (zero power with no signal)
+    \item Good for medium to high power applications
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item \textbf{Crossover distortion:} Major problem!
+    \item Mismatch where two halves join (dead zone near zero crossing)
+    \item During 0 to 0.6 V transition, neither transistor conducts
+    \item Output "glitches" when crossing ground
+    \item Unacceptable for precision audio applications
+\end{itemize}
+
+\textbf{Class AB Amplifier}
+
+Combination of Class A and Class B to eliminate crossover distortion while maintaining reasonable efficiency.
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item \textbf{Conduction angle:} $>$ 180° per device (slight overlap)
+    \item \textbf{Active elements:} Two transistors with bias network
+    \item \textbf{Bias:} Small quiescent current keeps both slightly on
+    \item \textbf{Efficiency:} 50-60\% (compromise between A and B)
+\end{itemize}
+
+\textbf{How It Works:}
+\begin{itemize}
+    \item Both transistors pre-biased to stay slightly in conduction
+    \item Eliminates dead zone at crossover
+    \item Each device conducts slightly into other's half-cycle
+    \item Crossover distortion dramatically reduced
+\end{itemize}
+
+\textbf{Bias Methods:}
+\begin{itemize}
+    \item \textbf{Diode bias:} Two diodes create $\approx$ 1.4 V between bases
+    \item \textbf{Resistor network:} Voltage divider sets base voltages
+    \item \textbf{Adjustable:} Potentiometer allows fine-tuning
+\end{itemize}
+
+\textbf{Thermal Stability:}
+
+Diodes must be mounted on same heatsink as transistors:
+\begin{itemize}
+    \item Transistor temp coefficient: positive ($V_{BE}$ decreases with heat $\rightarrow$ more current)
+    \item Diode temp coefficient: negative ($V_f$ decreases with heat $\rightarrow$ less bias voltage)
+    \item Compensation: diode heating reduces bias, counteracting transistor heating
+    \item Prevents thermal runaway
+\end{itemize}
+
+\textbf{Trade-offs:}
+\begin{itemize}
+    \item Lower quiescent current $\rightarrow$ higher efficiency, more distortion
+    \item Higher quiescent current $\rightarrow$ lower efficiency, less distortion
+    \item Typical: 1.4 V bias (both transistors barely on)
+\end{itemize}
+
+\textbf{Class C Amplifier}
+
+Uses conduction angle $<$ 180° for RF applications.
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item \textbf{Conduction angle:} $<$ 180°
+    \item \textbf{Efficiency:} 60-80\% (tuned mode)
+    \item \textbf{Linearity:} Poor (untuned mode has huge distortion)
+    \item \textbf{Applications:} RF oscillators, modulators, transmitters
+\end{itemize}
+
+\textbf{Why It Works:}
+
+Output is highly nonlinear, but with tuned LC circuit at output:
+\begin{itemize}
+    \item LC tank resonates at desired frequency
+    \item Filters out harmonics and distortion
+    \item Produces clean sinusoidal output at resonant frequency
+\end{itemize}
+
+\textbf{Not suitable for:}
+\begin{itemize}
+    \item Audio amplification (too much distortion)
+    \item Complex waveforms (only works with simple sinusoids)
+    \item Linear amplification applications
+\end{itemize}
+
+\textbf{Class D Amplifier (Switching)}
+
+Uses pulse-width modulation (PWM) instead of linear amplification.
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item \textbf{Topology:} Switching design (not analog)
+    \item \textbf{Efficiency:} 90-95\% (highest of all classes)
+    \item \textbf{Devices:} MOSFETs (low on-resistance)
+    \item \textbf{Modulation:} PWM encoding of audio signal
+\end{itemize}
+
+\textbf{How It Works:}
+
+1. \textbf{Input encoding:} Analog signal compared with high-frequency triangle wave $\rightarrow$ PWM pulses
+
+2. \textbf{Amplification:} PWM signal drives switching MOSFETs at high power
+
+3. \textbf{Output filtering:} Low-pass filter reconstructs amplified analog signal
+
+\textbf{PWM Principle:}
+\begin{itemize}
+    \item Positive peak: 100\% duty cycle (always on)
+    \item Negative peak: 0\% duty cycle (always off)
+    \item Zero crossing: 50\% duty cycle
+    \item Triangle frequency >> audio frequency (e.g., 200-500 kHz)
+\end{itemize}
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item Extremely high efficiency (90-95\%)
+    \item Minimal heat generation (small/no heatsink)
+    \item No thermal runaway issues
+    \item Compact design
+    \item Ideal for portable devices, subwoofers
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item High-frequency noise emission (requires shielding)
+    \item Switching feed-through to output
+    \item Difficulty achieving excellent linearity
+    \item More complex than analog designs
+    \item Requires proper dead-time management (prevent shoot-through)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Consumer audio (nearly universal now)
+    \item Portable devices (battery-powered)
+    \item High-power applications (PA systems, subwoofers)
+    \item Increasingly used in high-end audio
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Class Comparison for 50 W Audio Amplifier}
+
+\textbf{Class A:}
+\begin{itemize}
+    \item Efficiency: 30\%
+    \item Input power: 167 W
+    \item Heat dissipated: 117 W (continuously!)
+    \item Heatsink: Very large
+    \item Distortion: $<$ 0.01\% (excellent)
+    \item Best for: Audiophile applications, low power
+\end{itemize}
+
+\textbf{Class B:}
+\begin{itemize}
+    \item Efficiency: 65\%
+    \item Input power: 77 W
+    \item Heat dissipated: 27 W
+    \item Heatsink: Medium
+    \item Distortion: 1-5\% (crossover distortion)
+    \item Best for: Not recommended (distortion issue)
+\end{itemize}
+
+\textbf{Class AB:}
+\begin{itemize}
+    \item Efficiency: 55\%
+    \item Input power: 91 W
+    \item Heat dissipated: 41 W
+    \item Heatsink: Medium
+    \item Distortion: $<$ 0.1\% (good)
+    \item Best for: General audio, PA systems
+\end{itemize}
+
+\textbf{Class D:}
+\begin{itemize}
+    \item Efficiency: 90\%
+    \item Input power: 56 W
+    \item Heat dissipated: 6 W
+    \item Heatsink: Small or none
+    \item Distortion: $<$ 0.05\% (with good design)
+    \item Best for: Portable, high-power, modern audio
+\end{itemize}
+
+\textbf{Selection Criteria:}
+\begin{itemize}
+    \item Ultimate sound quality: Class A
+    \item General purpose: Class AB
+    \item High power/efficiency: Class D
+    \item RF transmitters: Class C
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Class A: 360° conduction, 25-30\% efficiency, best linearity
+    \item Class B: 180° per device, 60-70\% efficiency, crossover distortion
+    \item Class AB: $>$180° per device, 50-60\% efficiency, eliminates crossover
+    \item Class C: $<$180°, RF only, 60-80\% efficiency with tuned circuits
+    \item Class D: PWM switching, 90-95\% efficiency, minimal heat
+    \item Thermal compensation: diodes on same heatsink as transistors
+    \item Efficiency vs. distortion: fundamental trade-off
+    \item Modern trend: Class D dominates consumer audio
+\end{itemize}
+\end{keypointsbox}
+
+\subsection{Practical Amplifier Simulations}
+
+\subsubsection{Simulation - Class A and Introduction to Class B}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Class A common-emitter amplifier provides voltage gain ($A_v = R_C/R_E$) but wastes power continuously with quiescent current flowing even without input signal. Efficiency $<$ 30\% due to constant power dissipation. Maximum output swing achieved by biasing collector at mid-supply voltage.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Class A Common-Emitter Amplifier Operation}
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item Input signal AC-coupled to base
+    \item Voltage divider biases transistor in active region
+    \item Collector resistor $R_C$ sets voltage swing capability
+    \item Emitter resistor $R_E$ sets voltage gain
+    \item Output from collector (voltage amplification)
+\end{itemize}
+
+\textbf{Voltage Gain:}
+
+$$A_v = \frac{R_C}{R_E}$$
+
+Example: $R_C = 10$ k$\Omega$, $R_E = 1$ k$\Omega$ $\rightarrow$ $A_v = 10$
+
+\textbf{Why Class A is Inefficient}
+
+The fundamental problem: transistor conducts continuously (360°), consuming power even with no input signal.
+
+\textbf{Quiescent Operating Point:}
+
+Setting collector voltage at mid-supply (e.g., 10 V with 20 V supply):
+\begin{itemize}
+    \item Allows maximum voltage swing: 0 to 20 V
+    \item Base voltage: $\approx$ 1.6 V (from voltage divider)
+    \item Emitter voltage: $V_E = V_B - 0.6 = 1.0$ V
+    \item Emitter current: $I_E = V_E/R_E = 1.0/1000 = 1$ mA
+    \item Collector current: $I_C \approx I_E = 1$ mA
+    \item Collector voltage: $V_C = V_{CC} - I_C R_C = 20 - 10 = 10$ V
+\end{itemize}
+
+\textbf{Power Dissipation (No Signal):}
+
+$$P_{dissipated} = V_{CE} \times I_C = 10 \text{ V} \times 1 \text{ mA} = 10 \text{ mW}$$
+
+This power is wasted as heat continuously, even when no music is playing!
+
+\textbf{Transistor as Switch vs. Amplifier}
+
+\textbf{Saturation mode (switch ON):}
+\begin{itemize}
+    \item $V_{CE} \approx 0$ V (minimum)
+    \item $I_C$ = maximum (limited by resistors)
+    \item Power dissipation: $P = 0 \times I_{max} \approx 0$ (low)
+    \item $I_C$ calculated by Ohm's Law, not $\beta I_B$
+\end{itemize}
+
+\textbf{Cutoff mode (switch OFF):}
+\begin{itemize}
+    \item $V_{CE} \approx V_{CC}$ (maximum)
+    \item $I_C \approx 0$ (near zero)
+    \item Power dissipation: $P = V_{CC} \times 0 \approx 0$ (low)
+\end{itemize}
+
+\textbf{Active mode (amplifier):}
+\begin{itemize}
+    \item $V_{CE}$ moderate (e.g., 10 V)
+    \item $I_C$ moderate (e.g., 1 mA)
+    \item Power dissipation: $P = 10 \times 1 = 10$ mW (high!)
+    \item This is why amplifiers get hot while switches don't
+\end{itemize}
+
+\textbf{Maximum Voltage Swing}
+
+For undistorted output, collector must swing between 0 V and $V_{CC}$:
+\begin{itemize}
+    \item Too high quiescent $V_C$ $\rightarrow$ clipping at top
+    \item Too low quiescent $V_C$ $\rightarrow$ clipping at bottom
+    \item Optimal: $V_C = V_{CC}/2$ (mid-supply)
+\end{itemize}
+
+\textbf{Why Collector Resistor is Necessary}
+
+Without $R_C$:
+\begin{itemize}
+    \item Collector voltage stays at $V_{CC}$ (can't swing down)
+    \item No voltage amplification possible
+    \item Output is DC only
+\end{itemize}
+
+With $R_C$:
+\begin{itemize}
+    \item When $I_C$ increases $\rightarrow$ voltage drop across $R_C$ increases $\rightarrow$ $V_C$ decreases
+    \item When $I_C$ decreases $\rightarrow$ voltage drop across $R_C$ decreases $\rightarrow$ $V_C$ increases
+    \item Output can swing from 0 to $V_{CC}$
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Class A Amplifier Design and Analysis}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item Supply voltage: 20 V
+    \item Desired gain: 10
+    \item Maximum collector current: 2 mA
+    \item Input signal: 500 mV peak-to-peak
+\end{itemize}
+
+\textbf{Component Selection:}
+
+1. \textbf{Collector resistor:} $R_C = V_{CC}/I_{C,max} = 20/0.002 = 10$ k$\Omega$
+
+2. \textbf{Emitter resistor:} $R_E = R_C/A_v = 10000/10 = 1$ k$\Omega$
+
+3. \textbf{Bias resistors:} Design for $V_B = 1.6$ V
+   \begin{itemize}
+       \item Top resistor: 110 k$\Omega$
+       \item Bottom resistor: 10 k$\Omega$
+   \end{itemize}
+
+\textbf{Operating Point Verification:}
+
+$$V_B = 20 \times \frac{10}{110 + 10} = 1.67 \text{ V}$$
+
+$$V_E = V_B - 0.6 = 1.07 \text{ V}$$
+
+$$I_E = \frac{V_E}{R_E} = \frac{1.07}{1000} = 1.07 \text{ mA}$$
+
+$$V_C = V_{CC} - I_C R_C = 20 - 1.07 \times 10 = 9.3 \text{ V}$$ (close to mid-supply $\checkmark$)
+
+\textbf{Performance:}
+\begin{itemize}
+    \item Input: 500 mV p-p
+    \item Output: $\approx$ 4.8 V p-p (gain $\approx$ 9.6, close to 10 $\checkmark$)
+    \item Output centered at 9.3 V DC
+    \item Can swing from $\approx$ 2 V to $\approx$ 18 V before clipping
+\end{itemize}
+
+\textbf{Power Efficiency:}
+
+Quiescent power: $P_Q = V_{CE} \times I_C = 10.7 \times 0.00107 = 11.4$ mW
+
+With signal, output power: $P_{out} = V_{rms}^2/R_L$ (depends on load)
+
+Efficiency typically $<$ 30\% for Class A configuration.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Class A = common-emitter amplifier with continuous conduction
+    \item Voltage gain: $A_v = R_C/R_E$ (simplified formula)
+    \item Quiescent point: bias collector at mid-supply for maximum swing
+    \item Constant power dissipation even with no signal (inefficient!)
+    \item Switching mode: low power (saturation: $V_{CE} \approx 0$, cutoff: $I_C \approx 0$)
+    \item Active mode: moderate $V_{CE}$ and $I_C$ $\rightarrow$ high power dissipation
+    \item Collector resistor enables voltage swing (essential for amplification)
+    \item Efficiency $<$ 30\% due to continuous quiescent current
+\end{itemize}
+\end{keypointsbox}
+
+\subsubsection{Simulation - Class B and AB}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Class B push-pull uses complementary NPN/PNP transistors, each conducting one half-cycle. Crossover distortion occurs in dead zone ($\pm$0.6 V). Class AB pre-biases both transistors with $\approx$ 1.4 V between bases to eliminate crossover, trading some efficiency for much lower distortion. Thermal compensation prevents runaway.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Class B Push-Pull Operation}
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item NPN transistor for positive half-cycle
+    \item PNP transistor for negative half-cycle
+    \item Emitters connected together to load
+    \item Bases connected together to input signal
+    \item Load referenced to ground (speaker)
+\end{itemize}
+
+\textbf{How Each Transistor Conducts}
+
+\textbf{Positive half-cycle (input $>$ 0.6 V):}
+\begin{itemize}
+    \item NPN base-emitter forward biased $\rightarrow$ NPN conducts
+    \item PNP base-emitter reverse biased $\rightarrow$ PNP off
+    \item NPN "pushes" current through load
+    \item Output follows input minus 0.6 V drop
+\end{itemize}
+
+\textbf{Negative half-cycle (input $<$ -0.6 V):}
+\begin{itemize}
+    \item NPN base-emitter reverse biased $\rightarrow$ NPN off
+    \item PNP base-emitter forward biased ($V_E > V_B$ by 0.6 V) $\rightarrow$ PNP conducts
+    \item PNP "pulls" current through load
+    \item Output follows input plus 0.6 V drop
+\end{itemize}
+
+\textbf{Dead Zone (-0.6 V $<$ input $<$ 0.6 V):}
+\begin{itemize}
+    \item Neither transistor conducts
+    \item Output stuck at 0 V
+    \item Creates "glitches" at zero crossing
+    \item This is crossover distortion!
+\end{itemize}
+
+\textbf{Why Class B is Efficient}
+
+With no input signal:
+\begin{itemize}
+    \item Both transistors in cutoff
+    \item No quiescent current flows
+    \item Zero power dissipation (ideal)
+    \item Huge improvement over Class A
+\end{itemize}
+
+With signal:
+\begin{itemize}
+    \item Each transistor only conducts half the time
+    \item Average power dissipation much lower
+    \item Efficiency can exceed 60\%
+\end{itemize}
+
+\textbf{Current Amplification}
+
+Even though no voltage gain (emitter follower):
+\begin{itemize}
+    \item Output current = $\beta \times$ base current
+    \item Typical $\beta = 100$ $\rightarrow$ 100$\times$ current gain
+    \item Essential for driving low-impedance speakers
+\end{itemize}
+
+\textbf{Class AB Solution to Crossover Distortion}
+
+\textbf{Bias Network Design:}
+
+Insert voltage source ($\approx$ 1.4 V) between bases:
+\begin{itemize}
+    \item Two diodes in series (most common)
+    \item Two resistors with voltage divider
+    \item Adjustable potentiometer for fine-tuning
+\end{itemize}
+
+\textbf{How 1.4 V Bias Works:}
+
+With emitters at 0 V (through load):
+\begin{itemize}
+    \item NPN base: +0.7 V $\rightarrow$ $V_{BE} = 0.7$ V $\rightarrow$ barely conducts
+    \item PNP base: -0.7 V $\rightarrow$ $V_{EB} = 0.7$ V $\rightarrow$ barely conducts
+    \item Both transistors slightly on simultaneously
+    \item No dead zone at crossover!
+\end{itemize}
+
+\textbf{Quiescent Current Trade-off:}
+
+Lower bias voltage (e.g., 1.0 V):
+\begin{itemize}
+    \item Less quiescent current
+    \item Higher efficiency
+    \item More crossover distortion
+\end{itemize}
+
+Higher bias voltage (e.g., 2.0 V):
+\begin{itemize}
+    \item More quiescent current
+    \item Lower efficiency
+    \item Less crossover distortion
+\end{itemize}
+
+Typical: 1.4 V (two diode drops) provides good compromise.
+
+\textbf{Thermal Compensation with Diodes}
+
+\textbf{The Problem: Thermal Runaway}
+
+As transistors heat up:
+\begin{itemize}
+    \item $V_{BE}$ decreases (negative temp coefficient)
+    \item For same base voltage, more current flows
+    \item More current $\rightarrow$ more heat $\rightarrow$ even more current
+    \item Positive feedback $\rightarrow$ thermal runaway $\rightarrow$ destruction!
+\end{itemize}
+
+\textbf{The Solution: Matched Diode Bias}
+
+Mount bias diodes on same heatsink as transistors:
+\begin{itemize}
+    \item Diodes heat up with transistors
+    \item Diode forward voltage decreases with temperature
+    \item Lower $V_f$ $\rightarrow$ less bias voltage between bases
+    \item Less bias $\rightarrow$ less current $\rightarrow$ compensates for transistor heating
+\end{itemize}
+
+\textbf{Temperature Coefficient Matching:}
+
+\begin{itemize}
+    \item Transistor: $V_{BE}$ decreases $\approx$ -2 mV/°C
+    \item Diode: $V_f$ decreases $\approx$ -2 mV/°C
+    \item Two diodes: total -4 mV/°C (for two transistors)
+    \item Perfect compensation when thermally coupled
+\end{itemize}
+
+\textbf{Practical Implementation:}
+
+In integrated circuits (e.g., LM386 audio amplifier):
+\begin{itemize}
+    \item Diodes and transistors on same silicon die
+    \item Perfect thermal tracking
+    \item Identical temperature curves
+    \item Excellent stability over temperature
+\end{itemize}
+
+\textbf{Resistor Network Alternative}
+
+Voltage divider from $+V$ to $-V$ with potentiometer:
+\begin{itemize}
+    \item More adjustable than diodes
+    \item Can tune for non-matched transistors
+    \item Allows compensation for component variations
+    \item No need for exact transistor matching
+\end{itemize}
+
+Disadvantage: No inherent thermal compensation (requires separate thermistor or diodes).
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Class B vs. Class AB Comparison}
+
+\textbf{Class B Push-Pull (No Bias):}
+
+Input: 5 V peak-to-peak sine wave
+
+Output characteristics:
+\begin{itemize}
+    \item Positive half: follows input minus 0.6 V
+    \item Negative half: follows input plus 0.6 V
+    \item Dead zone: -0.6 V to +0.6 V (1.2 V total)
+    \item Visible "glitches" at zero crossings
+    \item Distortion: 1-5\% THD
+\end{itemize}
+
+Quiescent current: 0 mA (excellent efficiency)
+
+\textbf{Class AB with Diode Bias:}
+
+Same 5 V p-p input, with two diodes creating 1.4 V bias
+
+Output characteristics:
+\begin{itemize}
+    \item Smooth transition through zero
+    \item No visible glitches
+    \item Clean waveform reproduction
+    \item Distortion: $<$ 0.1\% THD
+\end{itemize}
+
+Quiescent current: $\approx$ 2 mA (small power dissipation)
+
+Power dissipation: $P_Q = V_{CE} \times I_Q = 10 \times 0.002 = 20$ mW
+
+Much better than Class A (which might dissipate 35 W!), but small penalty compared to pure Class B.
+
+\textbf{Loudspeaker Example:}
+
+8 $\Omega$ speaker, 2 W RMS rating:
+
+Class A emitter follower:
+\begin{itemize}
+    \item Can deliver 2 W to speaker $\checkmark$
+    \item Quiescent dissipation: 35 W (!)
+    \item Requires large heatsink
+    \item Very inefficient
+\end{itemize}
+
+Class AB push-pull:
+\begin{itemize}
+    \item Can deliver 2 W to speaker $\checkmark$
+    \item Quiescent dissipation: $\approx$ 2 W
+    \item Moderate heatsink
+    \item Much more practical
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Class B: NPN conducts positive, PNP conducts negative
+    \item Crossover distortion in dead zone ($\pm$0.6 V)
+    \item Zero quiescent current $\rightarrow$ excellent efficiency (60\%+)
+    \item Class AB: 1.4 V bias keeps both transistors slightly on
+    \item Eliminates crossover distortion at cost of small quiescent current
+    \item Thermal compensation: diodes on same heatsink as transistors
+    \item Diode $V_f$ temperature coefficient matches transistor $V_{BE}$
+    \item Prevents thermal runaway (critical for reliability)
+    \item Efficiency trade-off: lower bias = higher efficiency, more distortion
+\end{itemize}
+\end{keypointsbox}
+
+\subsubsection{Simulation - Class D}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Class D uses PWM (pulse-width modulation) to encode analog signal as digital pulses. High-frequency switching MOSFETs amplify PWM signal with 90\%+ efficiency. Low-pass filter (Butterworth) reconstructs analog output. Dead-time between switch transitions prevents shoot-through current. Requires comparator, MOSFET driver, and careful design for minimal distortion.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Class D Operating Principle}
+
+Instead of linear amplification, Class D uses switching:
+\begin{itemize}
+    \item Transistors either fully ON or fully OFF (not in active region)
+    \item ON state: $V_{DS} \approx 0$, high current $\rightarrow$ power $\approx 0$
+    \item OFF state: $V_{DS}$ high, $I_D \approx 0$ $\rightarrow$ power $\approx 0$
+    \item Minimal power dissipation $\rightarrow$ 90-95\% efficiency!
+\end{itemize}
+
+\textbf{PWM Encoding Process}
+
+\textbf{Step 1: Generate Triangle Wave}
+
+High-frequency triangle (carrier):
+\begin{itemize}
+    \item Frequency: 200-500 kHz (10$\times$ higher than 20 kHz audio limit)
+    \item Amplitude: matches audio signal range
+    \item Fixed frequency and amplitude
+\end{itemize}
+
+\textbf{Step 2: Compare with Audio Signal}
+
+Comparator (op-amp without feedback):
+\begin{itemize}
+    \item (+) input: audio signal (low frequency)
+    \item (-) input: triangle wave (high frequency)
+    \item Output: digital (rail-to-rail)
+\end{itemize}
+
+\textbf{Comparator behavior:}
+\begin{itemize}
+    \item When audio $>$ triangle: output HIGH
+    \item When audio $<$ triangle: output LOW
+    \item Result: PWM pulses with duty cycle proportional to audio amplitude
+\end{itemize}
+
+\textbf{PWM Duty Cycle Encoding:}
+
+\begin{itemize}
+    \item Audio at positive peak: duty cycle $\approx$ 100\% (always HIGH)
+    \item Audio at zero: duty cycle = 50\% (equal HIGH/LOW)
+    \item Audio at negative peak: duty cycle $\approx$ 0\% (always LOW)
+\end{itemize}
+
+\textbf{Step 3: Power Amplification}
+
+MOSFET switching stage:
+\begin{itemize}
+    \item High-side MOSFET: connects load to $+V_{supply}$
+    \item Low-side MOSFET: connects load to ground
+    \item PWM signal controls switching
+    \item Both MOSFETs never on simultaneously (shoot-through prevention)
+\end{itemize}
+
+\textbf{Dead-Time Management}
+
+\textbf{The Problem: Shoot-Through}
+
+MOSFETs don't switch instantaneously:
+\begin{itemize}
+    \item Rise/fall times: 10-100 ns
+    \item During transition, both MOSFETs briefly ON
+    \item Creates low-impedance path: $+V$ $\rightarrow$ ground
+    \item High current pulse $\rightarrow$ MOSFET damage
+\end{itemize}
+
+\textbf{The Solution: Dead-Time Insertion}
+
+Specialized MOSFET driver IC (e.g., IR2110):
+\begin{itemize}
+    \item Adds delay between HIGH-side and LOW-side switching
+    \item Dead-time: 50-200 ns (adjustable)
+    \item Ensures one MOSFET fully off before other turns on
+    \item Prevents shoot-through current
+\end{itemize}
+
+\textbf{Step 4: Output Filtering}
+
+Low-pass filter reconstructs analog signal:
+\begin{itemize}
+    \item Removes high-frequency carrier (hundreds of kHz)
+    \item Passes audio frequencies (20 Hz - 20 kHz)
+    \item Extracts average voltage (which equals original audio!)
+\end{itemize}
+
+\textbf{Butterworth Filter}
+
+Preferred for audio applications:
+\begin{itemize}
+    \item Maximally flat passband (no ripple in audio frequencies)
+    \item Smooth frequency response
+    \item Minimal signal attenuation in passband
+    \item Sharp transition to stopband (rejects carrier)
+\end{itemize}
+
+Typical design:
+\begin{itemize}
+    \item 2nd or 3rd order Butterworth
+    \item Cutoff frequency: 30-50 kHz (above audio, below carrier)
+    \item Inductor and capacitor values calculated for 8 $\Omega$ load
+\end{itemize}
+
+\textbf{Why MOSFETs Instead of BJTs?}
+
+\textbf{MOSFET advantages for switching:}
+\begin{itemize}
+    \item Lower on-resistance ($R_{DS(on)}$): 10-50 m$\Omega$ vs. 100+ m$\Omega$
+    \item Faster switching: 10-50 ns vs. 100-500 ns
+    \item Voltage-controlled (no base current waste)
+    \item Better efficiency at high frequencies
+    \item No storage time delay (BJT problem)
+\end{itemize}
+
+\textbf{High-Side Driver Challenge}
+
+Low-side MOSFET: easy to drive (source at ground)
+
+High-side MOSFET: difficult (source floats at output voltage)
+\begin{itemize}
+    \item Gate must be 10-15 V above source to turn on
+    \item Source voltage varies with output
+    \item Need bootstrap circuit or isolated supply
+\end{itemize}
+
+\textbf{Solution:} Integrated MOSFET driver IC
+\begin{itemize}
+    \item Bootstrap capacitor creates floating supply
+    \item Provides adequate gate drive for high-side
+    \item Handles level-shifting automatically
+\end{itemize}
+
+\textbf{Advantages of Class D}
+
+\begin{itemize}
+    \item Efficiency: 90-95\% (vs. 25-30\% for Class A)
+    \item Heat: minimal (small/no heatsink)
+    \item Size: compact (no large heatsink)
+    \item Battery life: excellent for portable devices
+    \item Power density: high power in small package
+\end{itemize}
+
+\textbf{Disadvantages and Challenges}
+
+\begin{itemize}
+    \item EMI/RFI: high-frequency switching generates noise
+    \item Requires shielding and filtering
+    \item Switching artifacts can appear in output
+    \item More complex than analog designs
+    \item Requires specialized ICs (comparator, driver, MOSFETs)
+    \item PCB layout critical (noise coupling, ground loops)
+\end{itemize}
+
+\textbf{Modern Implementations}
+
+Today's Class D amplifiers often use:
+\begin{itemize}
+    \item Delta-sigma modulation (alternative to PWM)
+    \item Self-oscillating topology (no external triangle)
+    \item Integrated Class D amplifier ICs (all-in-one solution)
+    \item Digital input (no need for analog comparator)
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Class D Amplifier Design}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item Audio input: 20 Hz - 20 kHz
+    \item Output power: 50 W into 8 $\Omega$
+    \item Supply: $\pm$15 V
+    \item Switching frequency: 250 kHz
+\end{itemize}
+
+\textbf{PWM Stage:}
+
+Triangle wave generator: 250 kHz, $\pm$5 V amplitude
+
+Comparator (op-amp):
+\begin{itemize}
+    \item Audio signal at (+) input
+    \item Triangle at (-) input
+    \item Output: PWM at 250 kHz, duty cycle 0-100\%
+\end{itemize}
+
+\textbf{Power Stage:}
+
+MOSFET selection:
+\begin{itemize}
+    \item Voltage rating: $>$ 30 V (2$\times$ supply for safety)
+    \item Current rating: $>$ 5 A (peak current calculation)
+    \item $R_{DS(on)}$: $<$ 50 m$\Omega$ (low conduction loss)
+    \item Switching speed: $<$ 50 ns (for 250 kHz operation)
+\end{itemize}
+
+Dead-time: 100 ns (prevents 5 A shoot-through current)
+
+\textbf{Output Filter (2nd-order Butterworth):}
+
+Cutoff frequency: 40 kHz (between audio and carrier)
+
+For 8 $\Omega$ load:
+\begin{itemize}
+    \item Inductor: $L = 50~\mu$H
+    \item Capacitor: $C = 10~\mu$F
+    \item Response: -3 dB at 40 kHz, -40 dB/decade rolloff
+\end{itemize}
+
+\textbf{Performance:}
+
+Efficiency calculation:
+\begin{itemize}
+    \item Output power: 50 W
+    \item MOSFET losses: $I_{rms}^2 \times R_{DS(on)} = 2.5^2 \times 0.05 = 0.31$ W
+    \item Switching losses: $\approx$ 2 W (estimated)
+    \item Total input: 52.3 W
+    \item Efficiency: $50/52.3 = 95.6\%$ $\checkmark$
+\end{itemize}
+
+Heat dissipation: Only 2.3 W (vs. 116 W for Class A!)
+
+THD: $<$ 0.1\% with proper design and filtering
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Class D: switching amplifier using PWM encoding
+    \item PWM: compare audio with high-frequency triangle wave
+    \item Duty cycle encodes audio amplitude (50\% = zero, 100\% = peak)
+    \item MOSFETs switch at hundreds of kHz (fully ON/OFF, not linear)
+    \item Dead-time prevents shoot-through current (both MOSFETs ON)
+    \item Low-pass filter (Butterworth) reconstructs analog from PWM
+    \item Efficiency: 90-95\% (minimal heat, small/no heatsink)
+    \item MOSFETs preferred: low $R_{DS(on)}$, fast switching, voltage-controlled
+    \item High-side driver requires bootstrap or isolated supply
+    \item Dominant topology in modern audio (consumer, professional, portable)
+\end{itemize}
+\end{keypointsbox}

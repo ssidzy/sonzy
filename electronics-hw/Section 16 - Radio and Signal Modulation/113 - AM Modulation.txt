@@ -1,0 +1,103 @@
+The original method of encoding sound information or radio waves is called amplitude modulation, or
+
+simply am.
+
+It was developed in the first few decades of the 20th century, and AMM is a relatively simple way to
+
+add audio information to a carrier wave.
+
+So that sounds can be transmitted.
+
+Now, the following figure illustrates how amplitude modulation works.
+
+The first graph shows the modulating wave, which is the message signal.
+
+The next one is the carrier wave, which is a high frequency signal and contains no information.
+
+Why the last one is the resultant modulated wave amplitude modulation, or AM, as it is often called,
+
+is a form of modulation used for radio transmissions for broadcasting and two way radio communication
+
+applications.
+
+One of the key reasons for the use of amplitude modulation was its ease of use.
+
+The system simply required the carrier amplitude to be modulated.
+
+But more importantly, the detector required in the receiver could be a simple diode based circuit.
+
+This meant that AMM radios did not need complicated emulators and costs were reduced, which was the
+
+key requirement for widespread use of radio technology, especially in the early days of radio that
+
+ices were not available.
+
+I want to note that we will take a look into how an AM receiver is built in the following videos.
+
+So in order for a radio signal to carry audio or other information for broadcasting or for two way radio
+
+communication, it must be modulated or changed in some way.
+
+Although there are a number of ways in which a radio signal may be modulated.
+
+One of the easiest is to change its amplitude in line with variations of the sound.
+
+So when you mix the message signal with the carrier wave the result on Signal, we look at something
+
+like this.
+
+If we were to connect the peak voltage of each cycle, we would get an envelope that resembles 100 percent
+
+of the massive signal.
+
+So this envelope of the signal you can see follows the contours of the modulating signal.
+
+And of course, this envelope is just something that we had drawn on the graph.
+
+But it helps us visualize how the amplitude of the modulated signal changes in time in accordance of
+
+the voltage of the massive signal.
+
+As you can see, the amplitude modulation technique encodes information into the carrier wave by simply
+
+changing the amplitude of the carrier wave in relation to the voltage of the message signal while keeping
+
+the frequency of the modulated signal constant.
+
+As with any technology, there are advantages and disadvantages to be considered.
+
+The first advantage of air modulation is that it's easy to implement.
+
+Another advantage is that the air modulated signal can be modulated using a circuit consisting of very
+
+few components.
+
+And lastly, AM receivers are very cheap as more specialized components are needed.
+
+Unfortunately, the disadvantages of the air modulation outweigh the pros.
+
+And that's because they are not very efficient.
+
+In particular, this technique is not efficient in terms of its power usage.
+
+And finally, the main disadvantage of this modulation technique is that it is prone to high levels
+
+of noise because you see noise is amplitude based and obviously an detectors are sensitive to it.
+
+Now, although in the current technological climate and in its basic form, is not nearly as effective
+
+as other modes that can be used.
+
+It is still retained in many areas like broadcasting because of the number of users.
+
+However, it is likely that with time, its use will decrease the further and ultimately many a.m. transmissions
+
+will cease.
+
+However, its derivatives, like quadrature amputee's modulation, are widely used as they offer a very
+
+effective form of modulation, especially for data transmission.
+
+Regardless, understanding air modulation is crucial, especially if you want to understand how more
+
+complicated techniques work.

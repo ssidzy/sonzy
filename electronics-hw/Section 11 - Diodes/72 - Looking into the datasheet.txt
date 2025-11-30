@@ -1,0 +1,111 @@
+All right, so the diet that we are going to examine in more detail is the one forty one forty eight
+
+diet.
+
+If you go to the data of this particular diet, the first thing you will notice is that this diet is
+
+a small signal.
+
+First switching diet.
+
+Now, don't get scared because of this fancy name.
+
+Small signal only means that the diet works with relatively low voltages, which implies that it has
+
+lower power dissipation capabilities, which of course further implies that the current flowing through
+
+it is relatively small.
+
+And switching diet means that this one can switch on and off more rapidly than the other diets in the
+
+market.
+
+Why would you even switch on and off rapidly?
+
+A diet, you might ask.
+
+What's the point where you see there are many applications or electronic circuits that deal with high
+
+frequency signals?
+
+An example would be switching more power supplies, switching more power supplies, electronic circuits
+
+converts power using switching devices that are turned on and off at higher frequencies.
+
+These power supplies are very popular nowadays since they offer very good efficiency and we will learn
+
+more about them in the future.
+
+Now, the point here is that there are diodes that can switch on and off more rapidly than other diodes
+
+in the market, and this particular diode is better suitable for these kind of high frequency applications
+
+that I told you about switching more power supplies.
+
+Right.
+
+This diode actually would not be the best choice for these type of circuits, since they are designed
+
+for small signallers, meaning that its current handling capabilities is low.
+
+A power supply has to deliver at least one amper or more.
+
+Right.
+
+And if we go just a little below, we can see that the maximum forward continuous current is just 300
+
+amps.
+
+So as the name implies, this is the maximum current that the diode is able to conduct continuously
+
+when it's for buyers.
+
+If the dialed is switched on and off rapidly, the maximum current increases to 500 mg.
+
+Great.
+
+So the next etiquette risks that we are interested in is the forward voltage, the maximum forward voltage
+
+is one world and the minimum is not specified.
+
+In fact, it is specified in the graph below, which displays the forward current versus forward voltage
+
+curve.
+
+Now, from this graph, we can deduce that the diet won't conduct any current or any significant current
+
+when the voltage across it is below the zero point four zero point five words.
+
+We can see that starting from around zero point five words, the dired starts turning on and a little
+
+change in voltage will mean a large increase in current.
+
+In other words, the resistance of the dial dropped significantly after the forward voltage goes above
+
+zero point five words.
+
+The next important question is this is the breakdown wordage, the minimum breakdown voltage is one
+
+hundred words.
+
+And this means that this is the minimum voltage that if passed the diode basically breaks down and starts
+
+conducting in the opposite direction, which is something that you want to avoid happening in your circuit.
+
+Otherwise you might create a system failure and potentially destroying some components in your circuit
+
+below.
+
+We have a graph with reverse current versus reverse voltage.
+
+Now you can see that diodes are not perfect and unfortunately they do conduct current if voltage is
+
+applied in reverse.
+
+Fortunately, the current is quite low.
+
+We are talking about nine times here and until 100 what the current is basically less than one millionth.
+
+You can see that at 100 votes, the current just goes crazy.
+
+So be aware not to apply more than 100 words in reverse for this particular diode.

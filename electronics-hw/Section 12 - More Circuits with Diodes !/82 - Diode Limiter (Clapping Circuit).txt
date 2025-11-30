@@ -1,0 +1,251 @@
+All right.
+
+Welcome back to New Course.
+
+So in the previous course, we have seen that when an easy signal is correct, it is serious.
+
+If a diode or a positive cycle will pass through the diode and the negative cycle will be blocked wonderfully
+
+with what happens is that instead of connecting daily series to the source, we connect it in parallel.
+
+What if we have to dial like this, or what happens if we place on this one two source series with the
+
+diode in this course, we will show all the various ways that can be constructed.
+
+So let's get started on.
+
+The first day of Kliper that we are going to build is the one that can clip the positive amplitude of
+
+an AC signal.
+
+So how does the circuit work?
+
+As we already know, an AC signal goes to two phases, then it's positive and then it's negative during
+
+the positive portion of the signal current travels to the anode of the diode and then to ground and
+
+then repeats the process over and over again during the positive portion of the AC signal.
+
+Current flows across from the anode of the diode to the cathode sea's current flows, voltage falls
+
+across a diode and the resistor.
+
+We know that an average silicon diode requires a steady voltage drop of about 0.01 volts in order to
+
+operate.
+
+And remember, that voltage in parallel is the same.
+
+Therefore, since our output is in parallel to the diode, it will have a voltage of zero point seven
+
+watts during this positive portion of the AC signal.
+
+So even though we have a five words AC power supply during the positive half of the AC signal, the
+
+signal doesn't reach the peak fivefold, but instead has a steady DC voltage of zero point seven volts.
+
+On the other hand, during the negative portion of the signal, current is impeded from traveling because
+
+current can flow from the anode to the catalyst, a diode is a one way current device.
+
+OK, current can flow in from only one direction and to cathode, meaning that no current can flow across
+
+when the signal is negative.
+
+No voltage is right across the resistor or the diode.
+
+Therefore, the output of the circuit is the full minus five words from the AC water supply.
+
+Great.
+
+Now let's test the circuit in our simulator.
+
+All right, so we have a five DC sorry, AC power supply, a resistor to limit the current, then the
+
+diode is conducting and this diode here.
+
+So as you can see during the positive portion of the signal that I would start conducting.
+
+Why?
+
+Because the positive portion exceeds zero point seven volts, which is enough for the diode to open
+
+and conduct since there is a zero point seven voltage drop across a diode, the output voltage during
+
+this portion will be limited to zero point seven watts.
+
+Right.
+
+Remember that voltages in parallel are always the same.
+
+Now, during the negative portion of the signal, current is impeded from travelling because they are
+
+these reverse bias, hence the full negative portion will be present or the output also as a side note.
+
+Make sure that the reverse voltage, which is which in this case is minus five volts, does not exceed
+
+the maximum voltage allowed.
+
+For those who are confused, the reverse voltage is the voltage drop across a diode.
+
+If the voltage a decathlete is more positive than the voltage, the anode, these reverse voltage four
+
+diodes is usually much higher than the forward voltage, which reach for silicon diode is usually around
+
+zero point seven watts.
+
+Now, what do you think will happen if we change the direction of the diode so that it points in the
+
+opposite direction?
+
+Exactly.
+
+During the positive portion of the AC signal, current is impeded from flowing through the cathode because
+
+a diode will be a reverse bias.
+
+So when this point is positive, the cathode will be more positive than the diode.
+
+Right.
+
+Which means that the diode will not conduct has.
+
+The full positive portion of the signal will be present at the output.
+
+On the other hand, during the negative portion of the AC signal, the diode will be biased properly.
+
+Why?
+
+Because this time the energy will be more positive than the cathode, which results in a flow of current
+
+through the diode.
+
+Therefore, voltages dropped across a diode and the resistor being that the output is in parallel to
+
+the diode.
+
+Whatever voltage is across a diode, the same voltage will be present at the output.
+
+Now let's see the circuit in the simulator.
+
+All right.
+
+The same circuit.
+
+But this time the diode is pointing in the opposite direction.
+
+As we said, the positive portion will be fully present of the output without any attenuation.
+
+Why?
+
+The negative portion of the signal is limited to minus zero point six void's.
+
+Now, if we place one more diode facing the opposite direction and we connected properly.
+
+We will basically limit both the positive and the negative portion of the signal to zero point six volts
+
+and minus zero point six volts respectively.
+
+Great.
+
+We managed to create a square wave out of a sine wave, kind of.
+
+And now here comes the tricky part.
+
+For ideal diodes, the output waveform would be clipped to zero.
+
+However, due to the forward bias voltage drop across the diodes, the actual clipping point occurs
+
+to plus zero point six volts and minus zero point six watts respectively.
+
+But we can increase D plus minus zero point six threshold to any value you want up to the maximum value,
+
+which is the peak of the waveform, either by connecting together more diodes in Ceres, creating multiples
+
+of zero point six volts, or by adding a voltage bias to the diodes.
+
+Now we will explain how to buy a Dial Capossela with a negative amplitude.
+
+Again, the dial gives us zero point seven volts or zero point six words in the kids in the simulator.
+
+But let's just stick to zero point seven volt.
+
+If we want to keep the signal at three world, then we need to add two point three volts to the zero
+
+point seven watts.
+
+So we add a two point three volt DC source in series with the diode from a button to top the DC power
+
+source and a diode must both be plus two minus in polarity.
+
+If they are the voltages add to give a clear signal of three Voyles.
+
+Now this shows 90 percent positive and negative amplitudes clipped with biasing.
+
+So we clip the negative signal to two point six volts and we keep the positive signal to one point six
+
+voids.
+
+Replace a one word DC source in series with the forward bias diode.
+
+And since the diet has a voltage drop of zero point six volts, those are the voltage is one point six
+
+void's.
+
+Therefore, the AC 130 signal will be kept to one point six words during the positive portion of the
+
+signal.
+
+On the other hand, we place a two words.
+
+This exhausting series with the reverse bias diode sees the diode has a voltage drop off again, zero
+
+point six wards across it.
+
+The total voltage is two point six void's and therefore the AC 130 signal will be clipped to two point
+
+six volts during the negative portion of the signal.
+
+So these are all the combinations of specific ways that we can build with diodes.
+
+Truly, any level can be obtained in biasing.
+
+Now, of course, then you will look deeper circuit.
+
+We will not place a battery in series with each diode.
+
+What do we do instead?
+
+You will use a what is regulator or voltage lighter that will provide you the required DC voltage or
+
+a better option you can use Zenner diodes.
+
+The Zehner diode is acting like a bias directly circuits with the bias voltage being equal to the zehner
+
+breakdown voltage.
+
+The output waveform from Fawwaz and clipping circuit resembles that of the previous voltage bias diode
+
+clipping circuit.
+
+So the output waveform will be clipped a designer voltage plus the zero point six volts forward voltage
+
+drop of the other diode.
+
+So, for example, the positive hartsuyker will be clipped the some of the Zehner diode, which is three
+
+walls in this case, plus zero point six points from the other diode.
+
+And vice versa for the negative half cycle as their diets are manufactured with a wide range of voltages
+
+and can be used to give different voltage references.
+
+So Zehner diodes are available with zehner breakdown voltages ranging from two point four to 33 volts.
+
+If your typical tolerance of one or five percent, note that one conducting in the reverse breakdown
+
+region will currently flow through the Zendaya.
+
+So a suitable resistor must be chosen.
+
+

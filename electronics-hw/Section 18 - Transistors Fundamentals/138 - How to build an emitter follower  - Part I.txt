@@ -1,0 +1,215 @@
+Hello and welcome to the course where we find out how to build an emitter followers circuit.
+
+This is an important course and we will have a relatively high volume of mafia involved.
+
+But don't be scared, it's nothing complex.
+
+The reason why we will do all these calculations is because this is a very popular circuit.
+
+And the reason of that is because it's very useful.
+
+On the other hand, knowing how to calculate these components will help you understand better how transistors
+
+work, which is crucial for someone who is passionate about electronics.
+
+Even if you won't find this exact circuit in your application, you will stumble upon a transistor as
+
+many, many times.
+
+And by understanding the purpose of these components and understanding how to calculate them, it will
+
+be easier for you to analyze other circuits, whereas transistors are involved.
+
+So this is our circuit, and we will now get into the details of why the various components in the circuit
+
+are needed and how to choose the values for them.
+
+As you can see, the starting value of all the components, including power supply, is one I just had
+
+to give them a value for the beginning, but we will change all these values as we progress.
+
+All right.
+
+So what's the first thing we should do?
+
+The first thing is we decide how much wattage we are going to supply for the circuit.
+
+This is the voltage applied to the collector of the transistor.
+
+And you can really choose any value from above the base voltage to the maximum value that the transistor
+
+can handle on the collector.
+
+This is the epically 40 to 60 volts on most transistors.
+
+But for our circuit, we will choose a reasonable voltage value of 12.
+
+So this is the first consideration now that we know the power supply voltage, which is we see we bias
+
+the base voltage of the circuit, which means that we select the voltage that we want to fall across
+
+the base of the transistor.
+
+What value do we want across the base to be able to ask for this?
+
+We have to look at the complete picture.
+
+The amount of AC voltage that can be present to the output of the transistor is dependent on the DC
+
+voltage range that the circuit has.
+
+So this means that on one end of the spectrum, the transistor can swing up to 12 volts, which is basically
+
+right.
+
+And on the other end of the spectrum, the transistor can swing down to near ground about 0.7 volt.
+
+The reason the transistor cannot swing fully to ground is because the transistor will not turn on unless
+
+the diode is switched on, and that happens at about 0.7 volts.
+
+Therefore, 0.7 volt is the floor of the circuit, and another ground or zero would therefore be for
+
+power supply of 12 volt and a ground of 0.7 volts.
+
+The transistor can swing from zero point seven up to 12 points.
+
+Why this matters in regards to the voltage that we supply to the base is that whatever voltage comes
+
+into the circuit has a flaw of zero point seven and the ceiling of two avoids.
+
+Therefore, we want to bias the base voltage so that it falls in between these values, right?
+
+This gives a maximum peak to peak excursion for the signal and gives it the most room to operate without
+
+keeping even the base wattage is biased incorrectly or well off the midway.
+
+The transistor have can have significant clipping that produces poor output.
+
+For a 12 or sealing and 0.7 wards floor, the median value would be six point thirty five watts.
+
+If you have to take the dial voltage drop into consideration because the value of the base is 0.7 watts
+
+higher than the output.
+
+So by biasing the base voltage right in the middle of the ceiling and floor, it allows for maximum
+
+swing of the signal called the maximum peak to peak excursion.
+
+Then by a single transistor circuit that deals with 80 signals, the easy signal that will appear or
+
+that can appear the output without clipping is equivalent to the DC biasing.
+
+The easy signal will only be able to swing as far as the DC voltage biasing allows it.
+
+If the power supply is 20 volts and the floor is 0.7 watts, the transistor can swing from a peak value
+
+of 20 volts to a floor of 0.7 watts.
+
+So positioning the transistor at the midpoint of those voltages allows for the maximum swing of the
+
+easy signal from the ceiling to the floor.
+
+This is the optimum DC operating point for the circuit called the Q Point or Question Point.
+
+If you select a this year value or too low, you will, because the signal to clip earlier at the bottom
+
+of the waveform, if you choose are these you operating what is too high, you will cause the signal
+
+to clip at the top of the waveform.
+
+So based on this point, we want the voltage of the base to be midway between 12 volts, which is the
+
+supply voltage 0.7 volts, which represents the floor, so that's the base voltage, which is six point
+
+thirty five volts.
+
+So in order to get this voltage, we have to choose our resistors that allows for this voltage to appear
+
+at the base.
+
+The voltage of the base is biased through two resistors.
+
+The resistors form voltage divider and divide the supply voltage.
+
+We can divide our supply voltage into any voltage less than the power supply by choosing the correct
+
+value resistors.
+
+The base voltage is equal to which is three times or two divided by R1 plus R2.
+
+This is nothing else but the voltage divider equation.
+
+In order to solve this equation, we choose the value of one the resistor and then based on that resistor
+
+value compute the value of the other resistor based on this formula.
+
+So for the R2 to register a value of one kilogram is chosen as a reference point for the other ED doing
+
+the math.
+
+This computes to a value of one point one kilogram.
+
+So in order to get the value of six point thirty five watts debates, the values of the resistors are
+
+R1 equal to one point one kilo and are two equal to one column.
+
+Next, we have to decide the value of the R, these are the values that we choose is integral so that
+
+we do not overheat and possibly destroy the transistor.
+
+How we choose Ari is based on the value of the current current that is safe to flow through the transistor.
+
+So we will choose a range that is safe current that can flow through the transistor that one burned
+
+out.
+
+A safe current is 10 mg.
+
+That is a decent amount of current and one that will not burn all the transistor.
+
+So the to register is equal to the emitter voltage divided by the emitter current, to calculate the
+
+diameter voltage, we just have two degrees a diode drop from the base voltage, so six point thirty
+
+five volts minus 0.7 words is equal to five point sixty five volts.
+
+So the only difference in voltage between the base voltage and emitter voltage is the diode voltage
+
+drop between the two junctions.
+
+Because the transistor has a diode in it, from the base to the emitter, the transistor has an internal
+
+voltage drop.
+
+Therefore, the emitter voltage is equal to the base voltage minus the voltage drop across the diode.
+
+Now that we know the meter of voltage and the emitter current, we can't calculate the meter resistance
+
+based on ohms law dividing diameter voltage with the emitter current.
+
+We will get a resistance of five hundred sixty five ohms.
+
+So in our era, this register of about 500 ohms would suffice well for the circuit.
+
+I just noticed that I made a little mistake here, and I apologize for that.
+
+We wanted a base voltage of six point thirty five woods, right, because that's the middle point of
+
+the ceiling, which is 12 walls and floor, which is 0.7 volts.
+
+We want to set the base voltage exactly in the middle so that the input AC voltage we have the maximum
+
+excursion, which means it will have the maximum swing or the output.
+
+So to increase the base voltage, which is currently 5.7 volts, we have to change the values of the
+
+two resistors based on the voltage divide the regulation.
+
+Let's give this a value of one kilo.
+
+And for this, let's increase its value from one kilogram to 1.2 million.
+
+All right.
+
+This will make it.

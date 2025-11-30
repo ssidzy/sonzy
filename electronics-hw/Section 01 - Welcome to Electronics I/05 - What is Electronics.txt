@@ -1,0 +1,109 @@
+Now, one of the reasons I started this chapter with the story lessons about Thomas Edison was to point
+
+out that when the whole field of electronics was invented in 1883, electrical devices had already been
+
+around for at least a hundred years.
+
+For example, Benjamin Franklin was flying kites in thunderstorms more than a hundred years before. The
+
+first electric batteries ever invented by a fellow named Alessandro Volta in 1800.
+
+Volta's contribution is so important that the common term "Volt" is named for him.
+
+There is some archaeological evidence though that the ancient Parthian Empire may have been invented
+
+the electric battery in the II century BC.
+
+But if so, we don't know what they used their batteries for, and their invention was forgotten for
+
+two thousand years.
+
+The electric telegraph was invented in the 1830s and popularized in America by Samuel Morse, who invented
+
+the famous Morse code used to encode the alphabet and numerals into a series of short and long cliques
+
+that could be transmitted via Telegraph.
+
+In 1866, a telegraph cable was laid across the Atlantic Ocean, allowing instantaneous communication
+
+between the United States and Europe.
+
+Now, contrary to popular belief, Benjamin Franklin wasn't the first to fly a kite in a thunderstorm.
+
+In 1850, he published a paper outlining his idea.
+
+Then he let a few other people try it first, and after they survived,
+
+he tried the experiment himself and wound up getting all the credit.
+
+Benjamin Franklin was not only very smart.
+
+He was also very wise.
+
+Now, all the devices and many other common devices still in use today, such as lightbulbs, vacuum
+
+cleaners and toasters are known as electrical devices.
+
+So what exactly is the difference between electrical devices and electronic devices?
+
+You see, the answer lies in how devices manipulate electricity to do their work.
+
+Electrical devices take the energy of electric current and transform it in simple ways into some other
+
+form of energy, most likely light, heat or motion.
+
+For example, light bulbs turn electrical energy into light so you can stay up late at night reading
+
+a book for example.
+
+The heating elements in a toaster turn electrical energy into heat so you can burn your
+
+toast and the motor in your vacuum cleaner turns electrical energy into motion that drives a pump that
+
+sucks the burnt toast crumbs out of your carpet.
+
+In contrast, electronic devices do much more.
+
+Instead of just converting electrical energy into heat, light or motion, electronic devices are designed
+
+to manipulate the electrical current itself to do interesting and useful things.
+
+The very first electronic device invented in 1883 by Thomas Edison, manipulated the electrical current,
+
+pushing through a light bulb in a way that let Edison create a device that could monitor the voltage
+
+being provided to an electrical circuit and automatically increase or decrease the voltage if it became
+
+too low or too high.
+
+Now, don't worry if you are uncertain what the term "voltage" means at this point.
+
+You will learn about voltage in the next chapter.
+
+One of the most common things that electronic devices do is to manipulate electric current in a way
+
+that adds meaningful information to the current.
+
+So, for example, an audio electronic device adds sound information to an electric current so that
+
+you can listen to music or talk on a cell phone and video devices,
+
+add images to an electric current so you can watch great movies like Harry Potter, Lord of the Rings
+
+over and over again until you know every line by heart.
+
+Keep in mind, though, that the distinction between electric and electronic devices is a bit blurry.
+
+What used to be simple electrical devices now often include some electronic components in them.
+
+For example, your toaster may contain an electronic thermostat that attempts to keep the heat at just
+
+the right temperature to make perfect toast.
+
+Is it probably still burn your toast, but at least it tries not to, and even the most complicated
+
+electronic devices have simple electrical components in them.
+
+For example, although your TV set's remote control is a pretty complicated little electronic device, it contains
+
+batteries which are simple electrical devices.

@@ -1,0 +1,71 @@
+Now that we have covered resistors, inductors and capacitors, let's take a look at these three circuits
+
+that have the same AC source.
+
+However, the three AC sources are driving three different circuits in this graph below with yellow
+
+is shown, the current passing through the inductor with red is shown the current through the resistor
+
+in the middle and with orange the current through the capacitor.
+
+What's interesting here to note is that even though the three circuits are different, all the three
+
+AC power sources are driving the same impedance.
+
+So the current is exactly the same in each of the circuits since the aurora impedance of the three circuits
+
+are identical, we all know how to calculate the impedance of an RC and RF circuit, right?
+
+The impetus to calculate the aurora impedance of an error circuit is this one.
+
+And since I have already made the calculations first, of course, you have to calculate the inductive
+
+reactants for 80 hertz and then we plug in the values and you get an impedance of how much?
+
+Well, it's not very hard to guess it will be 200 owns this impedance has to match with the impetus
+
+of the Second Circuit, otherwise the current in the two circuits would be different, right?
+
+The overall impetus of the Second Circuit is easy to find out, since there's no Doctor Oracabessa representing
+
+the circuit, we have only one resistor, so the total impedance of the circuit will simply be discarded
+
+harridans.
+
+The total impedance of the Third Circuit will be 200 of the smell.
+
+Otherwise, the current flowing here would be different.
+
+Now, what we can learn from this simulation, we could learn that whatever your circuit looks like,
+
+the circuit will have a total impedance.
+
+The total impedance will define how much current will flow in the circuit.
+
+In optronics, you will often hear about impedance, especially about input and output impedance of
+
+a circuit.
+
+We will have a dedicated chapter for that, but briefly put in place of a circuit refers to the impedance
+
+with the power supply or the signal sees then enters the circuit.
+
+So this lockyear could be anything.
+
+And I see another circuit, whatever, if it's the same with it will have an input impedance.
+
+If you know the input impetus of the circuit you are driving with your signal, you will know how much
+
+current the circuit will sync by thinking.
+
+I mean how much current the circuit you are driving will require from your power source.
+
+Now, why is this equation important to remember, because no matter how complex your circuit is, you
+
+can always reduce it using Tavernese law and other methods to a circuit that has only one equivalent
+
+resistor, one equivalent inductor and one equivalent capacitor, if there is any capacity.
+
+Of course, once the circuit is reduced, you can't use this formula to calculate the total impedance
+
+of the circuit.

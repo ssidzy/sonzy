@@ -1,0 +1,57 @@
+So we already know that electric power is the rate at which energy is transferred.
+
+It's measured in terms of joules per second, where joules per second is nothing else but a watt.
+
+Given the few basic electricity terms we know, how could we calculate power in a circuit?
+
+Well, we've got a very standard measurement involving potential energy volts which are defined in terms
+
+of joules per unit of charge current.
+
+Another of our favorite electricity terms measures charge flow over time in terms of the emperor, which
+
+is coulombs per second.
+
+Put the two together and what do we get?
+
+Well, power.
+
+So to calculate power in any particular component in a circuit, multiply the voltage drop across it
+
+by the current running through it.
+
+For example, here is a simple circuit which has a nine volt battery connected across a ten ohm resistor.
+
+How do we calculate the power across the resistor?
+
+Well, first we have to find the current running through it, which is easy enough using Ohm's Law.
+
+Ohm's Law says that current is equal to voltage divided by resistance.
+
+So nine volts divided by ten ohm is equal to 0.9 amps.
+
+All right.
+
+So 900 milliamps is running through the resistor and nine volts across it.
+
+What kind of power is being applied to the resistor then?
+
+Nine volts multiplied by 0.9 amps is equal to 8.1W.
+
+A resistor transforms electric energy into heat.
+
+So the circuit transforms 8.1 joules of electric energy to heat every second.
+
+Now when it comes to calculating power in a purely resistive circuit, knowing two of three values voltage,
+
+current and or resistance is all you really need.
+
+By plugging Ohm's Law into our traditional power equation, we can create two new equations.
+
+The first purely in terms of voltage and resistance.
+
+So in our previous example, nine volts at the power of two divided by ten is 8.1W.
+
+And we never have to calculate the current running through the resistor.
+
+The second power equation can be formed solely in terms of current and resistance.

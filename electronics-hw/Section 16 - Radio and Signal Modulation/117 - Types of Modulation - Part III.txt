@@ -1,0 +1,125 @@
+Awesome.
+
+Now let's move further and step into the world of digital career, as we already know when signals are
+
+transmitted over long distances.
+
+They get effected by noise and interference, and there are several methods invented for effective transmission
+
+of signals over long distances without any error.
+
+You see, the conversion of analog signals into digital form has brought a Game-Changing revolution
+
+in the field of communication than modulation is used along with digital signals.
+
+If so, of the many drawbacks of analog communication.
+
+Now, unlike analog carrier that uses the high frequency sine wave, there are modulation techniques
+
+where the carrier itself is digital, and this can be further divided into analog data and digital data.
+
+When the carrier wave is digital and the data transmitted is analog, we use techniques such as post
+
+amplitude modulation, pulse width modulation and post position modulation.
+
+Now, you will probably never directly interact with digital personalization techniques, but they are
+
+pervasive everywhere in modern life.
+
+Modulation techniques are responsible for carrying information over long distances in everything from
+
+basic radio applications to high speed networking over copper, fiber and air.
+
+Furthermore, without a digital modulation techniques, we would all be stuck using a and FM radio for
+
+wireless communication.
+
+Do you think that Bluetooth or Wi-Fi of works or the basis of AM or FM the laser?
+
+If you think they do well, you are wrong just so that you get an idea.
+
+Let's take a brief look at the post amplitude modulation.
+
+You see, both epidermal dilation is normally described as a purely analog modulation scheme, but this
+
+is not exactly true in some ways.
+
+Perceptual modulation is a fusion between digital, analog and pulse modulation schemes.
+
+In a perceptible modulation, digital modulation is applied to an analog signal using amplitude shift
+
+king.
+
+This amplitude modulated analog signal is then used to modulate oppose train, and the post train is
+
+sent down the channel.
+
+So perceptual modulation is a modulation technique in which the amplitude of the poorest carrier signal
+
+is changed according to the amplitude of the message signal.
+
+Pretty similar to the Aboriginal immolation that we have seen in the previous courses.
+
+But unlike a.m. here, the carrier wave is a pulse train rather than a continuous wave signal.
+
+After modulation, we can notice that the amplitude of the pulses is wearing the with respect to the
+
+instantaneous amplitude of the message signal.
+
+Now, some of the applications of post amplitude modulation includes Ethernet communication.
+
+PEM signals can be used in photo biology, but we can also use them as an electronic driver for LCD
+
+lightning.
+
+The close relative of pulse amplitude modulation is pulse with modulation, so PVM is an acronym used
+
+for postfight modulation.
+
+And if you have programmed Arduino or any sort of PI controllers, I'm sure you know what PVM is in
+
+PVM.
+
+The width of the pulses is varied according to the aptitude of the message signal.
+
+Unlike pulse amplitude modulation in this technique, the amplitude of the signal is constant, and
+
+only the fifth is wearing PVM.
+
+Technique is similar to frequency modulation because by the variation of the width of the pulses, the
+
+frequency of the pulses in the PBM signal shows variation and techniques are mostly used in telecommunications
+
+for encoding purposes.
+
+Also, post with modulation helps in voltage regulation and as a result finds its use in controlling
+
+brightness in smart lightning systems and also controlling the speed of motors.
+
+Great.
+
+The last type of modulation technique is when we have a digital carrier, and the data transmitted is
+
+also digital.
+
+This is called us powerscourt modulation, and it's by far the most difficult modulation scheme to understand.
+
+Digital personal deletion schemes are effectively the same as analog to digital conversion.
+
+In fact, the same digital methods used to modulate an analog signal are used in ADC sampling.
+
+Most prominent among these is power cord modulation, where an analog signal is represented by a set.
+
+Of quantized digital poses in the time domain, an analog signal is sampled in the modulator and the
+
+signal level at each sampling interval defines a pulse interval, as shown here.
+
+Anyway, this is quite a complex topic and I really don't think it's necessary to get into.
+
+But the main takeaway from this is that post quality mutilation is mainly used to change the signal
+
+from analog to digital signal.
+
+So that analog signal, which is changed, can be broadcasted throughout the digital communication network
+
+and post coded modulation technique is mainly used in the satellite transmission systems and space communication.

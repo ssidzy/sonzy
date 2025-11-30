@@ -1,0 +1,259 @@
+The classes that we are going to talk about in this course are not only used in power amplifiers, but
+
+also used in audio amplifier circuits.
+
+The first class that we are going to examine is Class A amplifier.
+
+This amplifier circuit must look familiar to you because this configuration is nothing gas but a common
+
+emitter circuit amplifier.
+
+So we already talked about this circuit, and we have also seen how to design one.
+
+So let's just point out some facts about this configuration.
+
+OK, so class amplifier is a high gain amplifier.
+
+The high linearity in case of class, the amplifier, the conduction angle is 360 degree.
+
+As I explained in the previous course, a 360 degree conduction angle means that the amplifier device
+
+remains active for the entire time and use complete input signal, as we can see in this image.
+
+There is only one active element, which is nothing but a transistor.
+
+So the bias of the transistor remains on or the time right.
+
+Due to this never turn off feature, glass a amplifier provides better high frequency and feedback loops
+
+stability.
+
+Other than these advantages, class-A amplifier is easy to construct with a single device component
+
+and minimum parts count.
+
+Despite the advantages and highly merit, certainly it has some.
+
+It has many limitations due to continuous conduction nature.
+
+The class the amplifier introduce high power loss, also due to high linearity glass.
+
+The amplifier provides distortion and noises.
+
+The power supply and the bios construction need careful component selection to avoid unwanted noise
+
+and to minimize the distortion.
+
+So we mentioned that class.
+
+The amplifier has high power loss, right?
+
+This means that it emits heat and requires heat space, which sometimes is not available.
+
+The efficiency is very poor in class, the amplifiers.
+
+Theoretically, the efficiency varies between 25 to 30 percent.
+
+If used with the usual configuration, the efficiency can be improved using inductively coupled configuration.
+
+But the efficiency in such cases is not more than 40 or 50 percent dues.
+
+It is only suitable for low signal or low power level amplification purposes.
+
+Now that we highlighted some important facts about this class, let's move to Class B.
+
+The Glasby amplifier is a bit different from the class, as you can see here.
+
+It is created using two active devices which conduct half of the electoral cycle.
+
+In other words, they conduct 180 degree of the cycle, so two devices provide a combined current drive
+
+for the load.
+
+If the circuit is used to provide audio signal amplification, then the load is nothing but a speaker,
+
+right?
+
+You might wonder how are these transistors biased?
+
+Well, the bias is provided by the input signal, which means that the input signal has to be higher
+
+than 0.6 volt, and also the input has to go negative in order to bias the PMP transistor.
+
+Don't worry if you don't understand how this circuit works, because in the last course we try, we'll
+
+try to simulate some of the classes so that you get a better understanding of how they work.
+
+Knowledge is concentrated.
+
+Concentrate on the theory a little bit, and don't bother yourself if you don't understand exactly how
+
+the circuit works.
+
+So this Glasby amplifier consists of two active devices.
+
+We each get biased one by one.
+
+During the positive and negative half cycle of the sinusoidal wave and duals, the signal gets pushed
+
+or pulled to the amplify level from both positive and negative side.
+
+And by combining the result, we get complete cycle across the output because these two active devices
+
+are turned on one after another and because they conduct only half cycle, the efficiency gets improved
+
+compared to the efficiency of a the amplifier, which is 25 to 30 percent.
+
+The Class B amplifier can have an efficiency more than 60 percent.
+
+Although the heat dissipation is minimized in this class, providing a low heatsink space.
+
+But this class also have limitations.
+
+A very profound limitation of this class is the crossover distortion.
+
+A stew of devices provides each half of the sinusoidal waves, which are combined and joined across
+
+the output.
+
+There's a mismatch.
+
+In other words, crossover in the region where two halves are combined.
+
+This is because when one device complete the whole cycle, the other one needs to provide the same power,
+
+or most of the same time when either one finished the job.
+
+It is difficult to fix this error in Class B amplifier during the active device.
+
+The other device remains completely inactive.
+
+The error provides a distortion in the output signal, and due to this limitation, it is a major fail
+
+for precision audio amplifier applications.
+
+An alternate approach to overcome the crossover distortion is to use the AB Amplifier class, AB amplifier
+
+uses intermediate conduction angle of both classes and be dues.
+
+We can see the property of both Class AA Class B amplifier in this A-B class of amplifier topology.
+
+Seamless Class B It has the same configuration with two active devices, which conducts during half
+
+of the speakers individually, but each device bias differently so they do not get completely off during
+
+the unusable moment or the crossover moment.
+
+Each device does not leave the conduction immediately after completing the half of the sinusoidal waveform.
+
+Instead, they conduct a small amount of input on other half cycle.
+
+Using these biasing technique, the crossover mismatch during the dead zone is dramatically reduced.
+
+But in this configuration, efficiency is reduced as the linearity of the devices is compromised.
+
+The efficiency remains more than the efficiency of typical class amplifier, but it is less than the
+
+Class B amplifier system.
+
+Also, the diodes need to be carefully chosen with the exact same rating and need to be placed as close
+
+as possible to the output device in some silky construction.
+
+Designers tend to add the small value resistors to provide stable crests of the current across the device
+
+to minimize the distortion across the output.
+
+Apart from the Class A B and a B amplifier, there is another amplifier called the Class Seat.
+
+It's a traditional amplifier which works differently than the other amplifier classes class.
+
+The amplifier is tuned amplifier, which works in two different operation modes tuned or until the efficiency
+
+of class.
+
+The amplifier is much more than the A, B and AB, so a maximum 80 percent efficiency can be achieved
+
+in radio frequency related operations.
+
+The interesting thing here is that classical amplifier uses less than 180 degree conduction angle,
+
+and during the untU mode, the classical amplifier unfortunately gives huge distortion across the output.
+
+But in typical uses glass, the amplifier gives 60 to 70 percent efficiency.
+
+The output amplitude is a nonlinear function of the input, so classy amplifiers are not used for linear
+
+amplification.
+
+They are generally used in the radio frequency applications, including circuits such as oscillators
+
+that have a constant output amplitude and modulators where a high frequency signal is controlled by
+
+a low frequency signal.
+
+So it works fine with simple signal to the waveform, but may have unacceptable distortion with complex
+
+waveform.
+
+As the Class C amplifier, the transistor conducts for less than 180 degree of the input signal, on
+
+the other hand, closed the amplifiers are way more popular and wider spread across the amplifiers.
+
+It's one of my favorite in terms of functionality, and we will also try to simulate the circuit in
+
+our simulator in the next course.
+
+While Class A, B and A B are classified as analog designs class, the amplifiers are classified as
+
+switching designs.
+
+As you can see, the circuit is very different from the others.
+
+This is just a semi block diagram of a class, the amplifier.
+
+But the rest course we will see a full functional circuit.
+
+So unless the amplifier is a switching amplifier, which uses polls with modulation, if you are wondering
+
+what specific modulation is, I advise you to look that up on the internet because it's very important
+
+technique used in its ranks.
+
+Basically, positive modulation, or PVM, is a technique for getting analog results.
+
+We for digital means, so digital control is used to create a square wave, which is a signal switched
+
+between on and off, right?
+
+As the name implies, the width of the square waves are modified in order to vary the amount of current
+
+that flows to a device.
+
+All right, so the conduction angle is not a factor in such case as the direct input signal is changed
+
+with a variable plus width.
+
+In this class, the amplifier system, the linear gain is not accepted as they work just like a typical
+
+switch.
+
+We each have only two operations on or off before processing the input signal.
+
+The analog signal is converted into a poor stream by various modulation techniques, and then it is
+
+applied to the amplifier system as the pulses duration is related with the analog signal.
+
+It is again reconstructed using Lopez filter across the output.
+
+Remember that class?
+
+The amplifier is the highest power efficient amplifier class, so it has smaller heat dissipation,
+
+so a small heatsink is needed.
+
+The same with requires, whereas switching components like MOSFET, which has low on resistance, it
+
+is widely used apology in digital audio appears or controlling the motors as well.
+
+But we should keep in mind that it is not a digital converter.

@@ -1,0 +1,23 @@
+In the previous course I mentioned that electric power is measured by combining both how much electric
+
+energy is transferred and how fast that transfer happens.
+
+So energy is measured in terms of joules, and since power is a measure of energy over a set amount
+
+of time, we can measure it in joules per second.
+
+The international system of units for joules per second is the watt abbreviated as W, and it's very
+
+common to see what preceded by one of the standard prefixes like Microwatts, Milliwatt kilowatt, megawatt
+
+and gigawatts are all common depending on the situation.
+
+Microcontrollers like the Arduino will usually operate in the microwatt or milliwatt range.
+
+Laptop and desktop computers operate in the standard watt power range.
+
+Energy consumption of a house is usually in the kilowatt range.
+
+Large stadiums might operate at the megawatt scale and gigawatts come into play for large scale power
+
+stations and of course, time machines.

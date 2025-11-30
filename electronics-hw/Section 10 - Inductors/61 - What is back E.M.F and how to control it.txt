@@ -1,0 +1,289 @@
+Hello, welcome back.
+
+So in a circuit which contains inductance, as well as a resistance such as the one shown here, when
+
+the switch is closed, the current does not rise immediately to its steady state value, but rises in
+
+exponential fashion.
+
+This is due to the fact that the Bakiyev is greeted by the changing current flow through the inductor.
+
+This, Becky, IMF has an amplitude which is proportional to the rate of change of current, which means
+
+that the faster the rate of change, the greater the bank, IMF and a polarity which opposes the change
+
+in current in the inductor that caused it.
+
+Initially, the bank IMF is produced because the changing current in the inductor causes a changing
+
+magnetic field around it, and the changing magnetic field causes internal and IMF to be induced back
+
+into the inductor.
+
+This process is called self induction now because the Bakiyev opposes the rapid change in current taking
+
+place in the inductor, the rate of change of current, it's reduced and what would be a vertical line
+
+on the graph becomes a slope.
+
+The rate of change of current through the inductor is now less so.
+
+A smaller Vecchia MW is produced.
+
+This allows the current to increase further.
+
+The relationship between the changing current and Bekim produces a curve which always follows a mathematical
+
+law to produce a particular shape of curve that is an exponential curve.
+
+When the switch is open, the current decays in a similar exponential manner towards zero.
+
+Now, looking at this figure, which shows the voltage across the doctor, we can see that a switch
+
+on the voltage immediately rises to a maximum value.
+
+This is because when voltage is applied to the circuit, little or no current is flowing because the
+
+inductor is seen for a very short time or so.
+
+Very high resistance due to the Becky ECMWF effect caused by the rapidly changing magnetic field around
+
+the inductor inducing avoided, which is called GMF, back into the inductor, which is in the opposite
+
+polarity to the applied voltage from the supply, and so initially opposes the increasing current through
+
+the inductor because of this opposition caused by the Mbeki.
+
+If it appears initially that the inductor has a very high resistance and so the full supply shortages
+
+develop across the inductor current through the inductor begins to build.
+
+However, the rate of change of the magnetic field reduces the opposition due to the back GMF reduces
+
+and apparent resistance of the inductor force to a low value.
+
+And as a result, the voltage across the inductor decreases until a point is reached where the whole
+
+of the battery voltage is being developed.
+
+Across the resistor are the voltage or potential difference.
+
+Across the inductor is practically zero and energy is now stored in the magnetic field around the inductor.
+
+However, when the current is switched off, the magnetic field is now collapses.
+
+Instead of growing as it did, a switch on this collapsing magnetic field now returned its energy into
+
+the outer coil and induces a voltage, which is called Uzbeki IMF into the inductor.
+
+But because the changing magnetic field strength is in the opposite direction to the expanding field,
+
+a switch on the induced voltage is now in the opposite polarity.
+
+As shown here, the rapid collapse of the magnetic field on the switch opens can cause very large majority
+
+spikes because the amount of voltage induced is dependent on the rate of change of the magnetic field.
+
+The high voltage is produced can lead to working with a switch contacts as the voltage jumps the gap
+
+between the contacts.
+
+These large whitespace can also damage other components in a circuit, especially semiconductors.
+
+So care must be taken in the design of circuits containing inductors or driving inductive loads to prevent
+
+these spikes.
+
+So let me show you a practical example of when this Becky HMF introduces problems, and I will show
+
+you as well how to prevent it.
+
+First, let's take a look at the D.C. matter, every D.C. matter has five basic parts the Scheft brushes,
+
+stator, magnets, oratorical and a commentator in the most common D.C. matters.
+
+An external magnetic field is produced by high strength permanent magnets.
+
+The Roder, together with the Scheft and the attached commentator, rotates with respect to the stator.
+
+The Roter consist of Whiting's generally on a core and the way things are electrically connected to
+
+the commutator.
+
+So why am I showing this to you?
+
+Because I want you to realize that when you are dealing with matters, we are in fact dealing with inductors.
+
+The symbol of a D.C. matter is this one, but for this occasion only, let's replace this with the symbol
+
+of an inductor.
+
+And don't worry, we won't go wrong by doing this at all.
+
+So let's create a circuit so that we can drive this DC matter.
+
+Somehow we need a device or a circuit that can turn on and off.
+
+This mother, using a small electrical signal for this, will use an electrical component called the
+
+transistor.
+
+Using the transistor, we can drive the motor if a high current using a small electrical signal that
+
+might come from an integrated circuit.
+
+For example, of course, in the simulator, we will use a switch on the base of the transistor to simulate
+
+this behavior.
+
+And here we are.
+
+So I know we haven't learned about transistors yet.
+
+However, this is a very good example to show you that Becky PMF can cause really big problems.
+
+So how does a transistor work, you might ask?
+
+I won't go into detail because that would go beyond the scope of this lecture.
+
+But why do you have to know for the moment is that since we have an NPN transistor here, the transistor
+
+will allow current to flow from 20 volts to ground if there's around zero point seven walls between
+
+the base and emitter of the transistor.
+
+So Transistor has three legs.
+
+This is the base.
+
+This is the meter.
+
+And finally, the collector current will flow from collector to ammeter when the base is with zero point
+
+seven walls higher than the emitter.
+
+The Šemeta leg, as you can see, is connected to ground, so three point three words on the base is
+
+more than enough.
+
+However, I have chosen three point three words because most microcontrollers like Arduino, for example,
+
+can output either three point three words or five words.
+
+This resistor here is used to limit the current flow so that we won't create a short circuit between
+
+this three point three words and ground.
+
+Don't worry, if you don't understand transistors yet, you can always come back once you learn about
+
+them.
+
+So the goal of this circuit is to turn on and off for this matter here.
+
+How do we turn it on?
+
+By turning on the transistor first.
+
+So when I close the switch, current will flow through the matter and it starts spinning.
+
+What we are interested in here is the voltage that is present on the collector of the transistor.
+
+Unfortunately, there is a problem with the simulator here and the voltage on the collector keeps oscillating
+
+between two values.
+
+However, normally there would be a constant voltage of 20 volts across Collector and Emminger.
+
+So if I take this motor out for a second.
+
+And connect these directly, you can see that 20 voltage dropped across the collector and a meter of
+
+the transistor, the voltage coming from the power source must be dropped somewhere until it reaches
+
+ground, which is always zero volts.
+
+Right.
+
+So the whole world will be dropped across the transistor.
+
+We know that over time, the voltage drop across the inductor decreases to zero.
+
+So practically, there should be 20 volts here.
+
+And I forgot to mention that if you want to check the voltage, we respect ground on that piece of wire,
+
+just double click on it and click show voltage.
+
+So everything is good, the matter is spinning, and there's 20 words on the collector of the transistor
+
+now let's suppose you want to turn it off.
+
+You open the switch and notice the back here in action, the voltage on the collector suddenly rose
+
+to negative one hundred and two kilowatts.
+
+There is no transistor that could handle this voltage on its collector.
+
+So once you turn the mother off, you can as well throw out the transistor because you have blown it
+
+up in real life.
+
+The voltage here again wouldn't oscillate like here.
+
+There would be a huge negative spiral that would instantly blow up this transistor.
+
+So what can we do to protect our transistor so that we can safely turn off the mother?
+
+Well, Becky, PMF cannot be prevented, but it can be controlled in suppressing the IMF.
+
+The objective is to prevent the very high wattages and dissipate the stored energy in a controlled way.
+
+There are a number of ways to do this and we will look at one of the most common methods used.
+
+So the most common method is to use a flyback diode in parallel with the inductor.
+
+So there are more types of diodes that we will learn about in the future.
+
+For now, just remember that Frybread diodes are used for protection against these back GMF.
+
+What is Pich?
+
+You can look at it as a regular diode.
+
+Now the basic idea behind the use of a fibre diode is to provide an alternative path for the inductor
+
+for its current to flow.
+
+What's important to remember is that the diode is connected in reverse bias when the switch is closed
+
+and as a result, the diode doesn't impact the operation of the rest of the circuit when the matter
+
+is spinning.
+
+But when the switch is opened, the change in polarity of the inductor will make diode to place in forward
+
+bias.
+
+So when the switch is open, the inductor will reverse its polarity and the diode will be forward.
+
+Biased, white, forward, biased.
+
+The diode will allow current to flow through anticipate at the rate the end of their wants.
+
+So as you can see, the addition of a diode gives a path for the current to flow.
+
+Since diodes have almost no resistance, then for bias, the inductor only has to make a very small
+
+voltage drop to get the correct amount of current to flow.
+
+This prevents the switching device from working or being damaged.
+
+It is important to note that the diode polarity must be opposite of the power supply and this ensures
+
+that when the switch is closed, the diode we have no effect on the circuit, essentially looking like
+
+an open circuit.
+
+This also means that when the switch is open, the diode polarity will match the inductors, reversed
+
+polarity and prevent a serious what is pich?

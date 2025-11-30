@@ -1,0 +1,984 @@
+\section{Section 24 -- Operational Amplifier (Op-Amp) - Fundamentals}
+
+This section introduces the operational amplifier (op-amp), one of the most essential analog building blocks in electronics. We cover op-amp operation principles, the two golden rules for circuit analysis, fundamental configurations (comparator, buffer, non-inverting and inverting amplifiers), and practical limitations including gain-bandwidth product. Understanding these fundamentals enables design of amplifiers, filters, signal conditioners, and mathematical operation circuits.
+
+%--------------------------------------------------------------
+\subsection{Op-Amp Basics and Buffer Configurations}
+%--------------------------------------------------------------
+
+%--- Topic 173: Introduction (Op-Amp as Comparator) ---
+\subsubsection{Op-Amp Introduction and Comparator Operation}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+An operational amplifier (op-amp) is a high-gain DC differential amplifier with two inputs (inverting $-$ and non-inverting $+$) and one output. Open-loop gain is extremely large ($10^5$ to $10^6$), making direct use impractical. In open-loop configuration without feedback, op-amp acts as comparator: output swings to positive rail when $V_+ > V_-$, negative rail when $V_- > V_+$. Requires dual power supply ($\pm V_{CC}$) for bipolar operation.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Historical Context and Naming:}
+
+Operational amplifiers developed originally for analog computers performing mathematical operations (addition, subtraction, integration, differentiation, calculus) in hardware before digital computers existed. Name derives from this operational capability. While modern systems use digital computation, op-amps remain essential for analog signal processing, amplification, and mathematical operations in hardware.
+
+\textbf{Basic Structure and Terminology:}
+
+Op-amp has differential input stage with two input terminals:
+\begin{itemize}
+    \item \textbf{Non-inverting input ($+$):} Positive input terminal, output in-phase with this input
+    \item \textbf{Inverting input ($-$):} Negative input terminal, output out-of-phase (inverted) relative to this input
+    \item \textbf{Output:} Single-ended output terminal
+    \item \textbf{Power supply pins ($V_+$, $V_-$):} Dual supply required (e.g., $\pm 15$V), often omitted from schematics for clarity but always necessary in actual circuits
+\end{itemize}
+
+Internal architecture: Differential amplifier input stage (transistor pair Q1, Q2) followed by emitter follower output stage (Q3) providing low output impedance. Practical op-amp circuits (e.g., 741) contain complex circuitry with many transistors, resistors, compensation networks. Simplified models sufficient for circuit analysis using golden rules.
+
+\textbf{Open-Loop Gain:}
+
+Open-loop gain ($A_{OL}$) is natural internal gain without feedback, enormously large: typically $10^5$ to $10^6$ or higher. Datasheets often don't specify exact value because it varies widely with temperature, supply voltage, manufacturing variations. Safe to assume infinite for analysis purposes.
+
+Fundamental voltage relationship (open-loop):
+\[
+V_{out} = A_{OL} (V_+ - V_-)
+\]
+
+Where $V_+$ is voltage at non-inverting input, $V_-$ is voltage at inverting input. Due to massive gain, even millivolt differences between inputs drive output to saturation (rail limits).
+
+\textbf{Comparator Operation (Open-Loop Configuration):}
+
+Without feedback loop (open-loop), op-amp compares two input voltages and outputs digital-like signal:
+
+\textit{Case 1: $V_+ > V_-$} (non-inverting input higher):
+\[
+V_{out} = +V_{sat} \approx +V_{CC}
+\]
+Output swings to positive supply rail (e.g., +15V for $\pm 15$V supply).
+
+\textit{Case 2: $V_- > V_+$} (inverting input higher):
+\[
+V_{out} = -V_{sat} \approx -V_{CC}
+\]
+Output swings to negative supply rail (e.g., -15V).
+
+\textit{Case 3: $V_+ = V_-$} (inputs equal):
+\[
+V_{out} = A_{OL} \times 0 = 0\text{V (ideally)}
+\]
+
+In practice, output near zero but slight offset voltage may exist.
+
+Small input differences rapidly drive output to maximum/minimum due to enormous gain. Example: With $A_{OL} = 100,000$ and $V_+ - V_- = 0.1$mV:
+\[
+V_{out} = 100,000 \times 0.0001 = 10\text{V}
+\]
+
+If rails are $\pm 15$V, output achieves 10V. If difference were 1mV, calculated output would be 100V, but actual output saturates at rail voltage (15V).
+
+\textbf{Comparator Limitations:}
+
+Op-amps can function as comparators but aren't optimal. Dedicated comparator ICs designed specifically for comparison offer:
+\begin{itemize}
+    \item Faster switching speeds (op-amps not optimized for saturated operation)
+    \item Better-defined output levels compatible with digital logic
+    \item No phase compensation (intentionally fast switching)
+    \item Open-collector or push-pull outputs suitable for various applications
+\end{itemize}
+
+Op-amps used as comparators acceptable in non-critical applications but proper comparator ICs preferred for precision threshold detection, fast digital interfacing, or high-speed applications.
+
+\textbf{Power Supply Requirements:}
+
+Most op-amps require dual (split) power supply: positive rail ($+V_{CC}$, e.g., +15V) and negative rail ($-V_{CC}$, e.g., -15V) relative to ground. This allows:
+\begin{itemize}
+    \item Output swing through zero (both positive and negative voltages)
+    \item Amplification of AC signals without clipping
+    \item Bipolar operation essential for many applications
+\end{itemize}
+
+Single-supply op-amps exist (discussed in later topics) where negative rail connected to ground, requiring biasing techniques for AC signals.
+
+\textbf{Why Open-Loop Impractical:}
+
+Enormous open-loop gain makes op-amp unusable as standalone amplifier. Gain unstable (varies with temperature, supply voltage, device-to-device), output saturates with tiniest input differences, no control over amplification factor. Solution: negative feedback, transforming op-amp into controlled, stable, predictable amplifier.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Comparator Output Calculation:}
+
+Op-amp with open-loop gain $A_{OL} = 100,000$, powered by $\pm 15$V supply.
+
+\textit{Scenario 1:} $V_+ = 3$V, $V_- = 4$V.
+
+Difference: $V_+ - V_- = 3 - 4 = -1$V.
+
+Calculated output: $V_{out} = 100,000 \times (-1) = -100,000$V.
+
+Actual output: $V_{out} = -15$V (saturated at negative rail, cannot exceed supply).
+
+\textit{Scenario 2:} $V_+ = 2.001$V, $V_- = 2.000$V.
+
+Difference: $0.001$V = 1mV.
+
+Calculated output: $V_{out} = 100,000 \times 0.001 = 100$V.
+
+Actual output: $V_{out} = +15$V (saturated at positive rail).
+
+Even 1mV difference produces saturation. This demonstrates why open-loop gain makes op-amp function as comparator: output binary (at one rail or the other) for almost any input difference.
+
+\textbf{Threshold Detection Application:}
+
+Temperature sensor outputs 0-5V (0V = 0°C, 5V = 100°C). Want LED to turn on when temperature exceeds 50°C (2.5V).
+
+Circuit: Sensor voltage to $V_+$, reference 2.5V (from voltage divider) to $V_-$. Output drives LED (through current-limiting resistor).
+
+When $T < 50°C$: sensor voltage $< 2.5$V, so $V_+ < V_-$, output at $-15$V (LED off).
+
+When $T > 50°C$: sensor voltage $> 2.5$V, so $V_+ > V_-$, output at $+15$V (LED on).
+
+Simple threshold detector using op-amp as comparator.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Op-amp is high-gain differential amplifier: $V_{out} = A_{OL}(V_+ - V_-)$
+    \item Two inputs: non-inverting ($+$) and inverting ($-$); output in-phase with non-inverting input
+    \item Open-loop gain enormous ($10^5$ to $10^6$), varies widely, considered infinite for analysis
+    \item Requires dual power supply ($\pm V_{CC}$) for bipolar output swing
+    \item Open-loop configuration (no feedback): op-amp functions as comparator
+    \item Comparator output saturates at supply rails: $+V_{CC}$ when $V_+ > V_-$, $-V_{CC}$ when $V_- > V_+$
+    \item Op-amp internal structure: differential input stage, high-gain amplifier, emitter follower output
+    \item Direct use as amplifier impractical due to unstable, uncontrolled massive gain
+    \item Named "operational amplifier" for historical role in analog computers performing math operations
+    \item Dedicated comparator ICs superior to op-amps for comparison applications (faster, better output levels)
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topics 174-176: Op-Amp Buffer Circuit and Applications ---
+\subsubsection{Voltage Follower (Buffer) and Current Boosting}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Op-amp buffer (voltage follower) configured with output directly connected to inverting input, signal applied to non-inverting input. Output equals input ($V_{out} = V_{in}$, unity gain) but provides impedance transformation: extremely high input impedance (minimal loading on source) and low output impedance (can drive loads). Essential for interfacing high-impedance sources to low-impedance loads. Current capacity increased by adding emitter follower transistor in feedback loop.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{The Two Golden Rules of Op-Amps:}
+
+These rules enable analysis of virtually any op-amp circuit operating in linear region:
+
+\textit{Rule 1: No current flows into or out of the inputs.}
+
+Op-amp input impedance extremely high (megohms to teraohms), so input currents negligible (picoamps to nanoamps). For analysis purposes, assume zero input current:
+\[
+I_{in+} = I_{in-} = 0
+\]
+
+This rule applies to ALL op-amp configurations (open-loop, closed-loop, inverting, non-inverting).
+
+\textit{Rule 2: Op-amp adjusts output to make both inputs equal voltage.}
+
+When negative feedback present (closed-loop configuration), op-amp drives output voltage to whatever value necessary to equalize voltages at two inputs:
+\[
+V_+ = V_-
+\]
+
+Critical: Rule 2 ONLY applies with negative feedback (closed-loop). Does NOT apply to open-loop (comparator) configuration where inputs can differ.
+
+These two simple rules sufficient to analyze gain, impedance, behavior of most op-amp circuits without complex internal analysis.
+
+\textbf{Buffer (Voltage Follower) Configuration:}
+
+Simplest closed-loop configuration: output connected directly to inverting input (wire connection, $R_f = 0$), signal applied to non-inverting input.
+
+\textit{Circuit Analysis Using Golden Rules:}
+
+Given: Input voltage $V_{in}$ applied to $V_+$ terminal.
+
+From Rule 2 (negative feedback present): $V_- = V_+$, so $V_- = V_{in}$.
+
+Since output directly connected to inverting input: $V_{out} = V_-$.
+
+Therefore:
+\[
+V_{out} = V_{in}
+\]
+
+Unity gain: output voltage exactly follows input voltage. Hence names "voltage follower" or "buffer".
+
+From Rule 1: No current flows into either input. Input impedance appears infinite to source. Source not loaded.
+
+Output impedance very low (ohms), can source/sink tens of milliamps. Can drive low-impedance loads without voltage drop.
+
+\textbf{Purpose and Applications of Buffering:}
+
+\textit{Impedance Transformation Problem:}
+
+Voltage divider example: Two 10k$\Omega$ resistors divide 10V to produce 5V at junction. When 100$\Omega$ load connected:
+
+Parallel combination: $R_{eq} = \frac{10k \times 100}{10k + 100} \approx 99\Omega$ (bottom resistor in parallel with load).
+
+New divider ratio: $V_{out} = 10 \times \frac{99}{10000 + 99} \approx 0.098$V.
+
+Output collapses from 5V to 98mV! Voltage divider cannot supply current without severe voltage drop.
+
+\textit{Buffer Solution:}
+
+Insert op-amp buffer between voltage divider and load. Op-amp input draws zero current (Rule 1), so divider sees no load, maintains 5V. Op-amp output drives 100$\Omega$ load with 5V, sourcing required 50mA from power supply (not from divider).
+
+Load receives full 5V despite low impedance, source not perturbed.
+
+\textbf{Input and Output Impedance Characteristics:}
+
+\textit{Input Impedance:} Extremely high, typically:
+\begin{itemize}
+    \item BJT input op-amps: $10^6$ to $10^9\Omega$ (megohms to gigohms)
+    \item FET input op-amps: $10^{12}$ to $10^{14}\Omega$ (teraohms)
+\end{itemize}
+
+Input current negligible: nanoamps (nA) for BJT types, picoamps (pA) for FET types. Source not loaded.
+
+\textit{Output Impedance:} Very low, typically 10-100$\Omega$ in open-loop, approaching zero with feedback. Can drive loads of hundreds of ohms to kiloohms without significant voltage drop.
+
+\textbf{Current Sourcing Limitations:}
+
+Typical op-amp output current: 20-40mA continuous. Some op-amps handle up to 100mA, others limited to 10mA. Check datasheet for maximum output current specification.
+
+If load requires more current than op-amp can provide, op-amp enters current limiting or may be damaged. Output voltage sags if current demand exceeds capability.
+
+\textbf{Increasing Buffer Current with Transistor:}
+
+For loads requiring hundreds of milliamps or amps, add NPN power transistor to buffer circuit:
+
+\textit{Configuration:} Op-amp output drives transistor base, transistor collector connects to positive supply, emitter provides output to load. Feedback taken from emitter back to op-amp inverting input.
+
+\textit{Operation:} Op-amp provides small base current (few milliamps), transistor amplifies by $\beta$ (typically 50-200), emitter sources large load current (hundreds of mA to amps). Load current supplied from power supply via transistor, not from op-amp.
+
+\textit{Base-Emitter Drop Compensation:} Without feedback from emitter, output voltage $V_{out} = V_{in} - V_{BE} \approx V_{in} - 0.7$V. Fixed voltage drop error.
+
+With feedback from emitter to inverting input: Rule 2 forces $V_- = V_+$. Since $V_- =$ emitter voltage and $V_+ = V_{in}$, emitter voltage equals $V_{in}$. Op-amp automatically increases its output (base voltage) to $V_{in} + 0.7$V to compensate for $V_{BE}$ drop. Result: $V_{out} = V_{in}$ accurately.
+
+Transistor must be power type to handle high currents, requires heat sinking for power dissipation: $P = (V_{CC} - V_{out}) \times I_{load}$.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Voltage Divider Loading Problem:}
+
+Two 10k$\Omega$ resistors divide 10V supply. Unloaded output: $V_{out} = 10 \times \frac{10k}{20k} = 5$V.
+
+Load impedance 100$\Omega$ connected to output.
+
+Effective bottom resistance: $R_{parallel} = \frac{10k \times 100}{10k + 100} = \frac{1,000,000}{10,100} = 99.01\Omega$.
+
+Loaded output:
+\[
+V_{out} = 10 \times \frac{99.01}{10,000 + 99.01} = 10 \times 0.0098 = 0.098\text{V} = 98\text{mV}
+\]
+
+Output drops 98\% from desired value! Load current: $I = 0.098/100 = 0.98$mA.
+
+For load to receive 5V at 100$\Omega$: requires 50mA current. Divider cannot provide without massive voltage drop.
+
+\textbf{Buffer Solution:}
+
+Insert op-amp buffer: divider output to non-inverting input, load to op-amp output.
+
+Op-amp input current: 0A (Rule 1). Divider maintains 5V (no loading).
+
+Op-amp output: 5V (Rule 2, $V_{out} = V_{in}$).
+
+Load current: $5/100 = 50$mA, sourced from op-amp output.
+
+Op-amp draws 50mA from power supply, delivers to load. Divider unperturbed, load receives full 5V.
+
+\textbf{Current-Boosted Buffer Calculation:}
+
+Load requires 500mA at 5V (e.g., 10$\Omega$ load). Op-amp maximum output 40mA (insufficient).
+
+Add NPN transistor: $\beta = 100$, $V_{BE} = 0.8$V. Feedback from emitter to op-amp inverting input.
+
+For 500mA emitter current: base current $I_B = 500/100 = 5$mA (within op-amp capability).
+
+Without feedback compensation: emitter voltage $= 5 - 0.8 = 4.2$V (error).
+
+With feedback: Rule 2 forces emitter at 5V. Op-amp output (base) automatically rises to $5 + 0.8 = 5.8$V. Transistor emitter delivers 5V precisely, load receives 500mA.
+
+Power dissipation in transistor (assuming 12V supply): $P = (12 - 5) \times 0.5 = 3.5$W. Requires heat sink.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Golden Rule 1: No current flows into or out of op-amp inputs ($I_{in} = 0$), applies to all configurations
+    \item Golden Rule 2: Op-amp makes both inputs equal voltage ($V_+ = V_-$), applies ONLY with negative feedback
+    \item Buffer configuration: output connected to inverting input, signal to non-inverting input
+    \item Buffer provides unity gain: $V_{out} = V_{in}$, voltage follower action
+    \item Input impedance extremely high (gigohms to teraohms), output impedance very low (ohms)
+    \item Buffer isolates high-impedance sources from low-impedance loads, prevents source loading
+    \item Typical op-amp output current: 20-40mA, some up to 100mA, check datasheet for limits
+    \item Current-boosted buffer: add power transistor, feedback from emitter compensates $V_{BE}$ drop
+    \item Transistor feedback ensures $V_{out} = V_{in}$ despite base-emitter voltage drop
+    \item Applications: sensor interfacing, driving loads from voltage dividers, impedance matching, signal isolation
+\end{itemize}
+\end{keypointsbox}
+
+
+%--------------------------------------------------------------
+\subsection{Amplifier Configurations}
+%--------------------------------------------------------------
+
+%--- Topic 177: Non-Inverting Amplifier ---
+\subsubsection{Non-Inverting Amplifier}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Non-inverting amplifier applies input signal to non-inverting input, uses voltage divider (feedback resistor $R_f$ and ground resistor $R_1$) in feedback path to inverting input. Output in-phase with input. Voltage gain: $A_v = 1 + R_f/R_1$. Always gain $\geq 1$. High input impedance (like buffer), suitable for AC or DC signals. Feedback reduces enormous open-loop gain to stable, predictable closed-loop gain.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration:}
+
+Non-inverting amplifier topology:
+\begin{itemize}
+    \item Input signal applied to non-inverting input ($V_+$)
+    \item Feedback resistor $R_f$ connects output to inverting input ($V_-$)
+    \item Resistor $R_1$ connects inverting input to ground
+    \item $R_f$ and $R_1$ form voltage divider sampling fraction of output voltage
+\end{itemize}
+
+\textbf{Gain Derivation Using Golden Rules:}
+
+Voltage divider at inverting input creates:
+\[
+V_- = V_{out} \frac{R_1}{R_1 + R_f}
+\]
+
+From Rule 2 (negative feedback): $V_- = V_+$, and input applied to $V_+$, so:
+\[
+V_{in} = V_{out} \frac{R_1}{R_1 + R_f}
+\]
+
+Solving for $V_{out}/V_{in}$:
+\[
+\frac{V_{out}}{V_{in}} = \frac{R_1 + R_f}{R_1} = 1 + \frac{R_f}{R_1}
+\]
+
+Non-inverting amplifier voltage gain:
+\[
+\boxed{A_v = 1 + \frac{R_f}{R_1}}
+\]
+
+Note the $+1$ term (absent in inverting amplifier formula). Minimum gain is 1 (when $R_f = 0$, unity-gain buffer).
+
+\textbf{Example Calculation:}
+
+$R_f = 9$k$\Omega$, $R_1 = 1$k$\Omega$:
+\[
+A_v = 1 + \frac{9k}{1k} = 1 + 9 = 10
+\]
+
+For $V_{in} = 1$V: $V_{out} = 10 \times 1 = 10$V.
+
+For $V_{in} = -1$V (with dual supply): $V_{out} = 10 \times (-1) = -10$V.
+
+\textbf{Why "Non-Inverting":}
+
+Output signal in-phase with input signal (0° phase shift). Positive input produces positive output, negative input produces negative output. Signal not inverted.
+
+For AC signals: input and output waveforms aligned in time, peaks and troughs coincide. Contrasts with inverting amplifier (180° phase shift).
+
+\textbf{Characteristics and Advantages:}
+
+\textit{Input Impedance:} Extremely high (like buffer). Input current negligible due to Rule 1. Suitable for high-impedance sources (sensors, microphones, pickups) that cannot supply significant current.
+
+\textit{Output Impedance:} Very low (ohms). Can drive low-impedance loads.
+
+\textit{Gain Range:} Always $\geq 1$. Cannot provide attenuation (gain $< 1$). For gain exactly 1, use buffer ($R_f = 0$ or short).
+
+\textit{Common-Mode Rejection:} Non-inverting input referenced to ground through source impedance. Good common-mode rejection ratio (CMRR) rejects noise on both inputs.
+
+\textit{Stability:} Negative feedback via voltage divider stabilizes gain, reduces sensitivity to open-loop gain variations, temperature drift, supply voltage changes. Closed-loop gain determined almost entirely by external resistors (precision, stable).
+
+\textbf{AC and DC Compatibility:}
+
+Op-amp is DC-coupled: can amplify both DC and AC signals without modification. For AC signals with dual supply ($\pm V_{CC}$), no biasing required. AC waveform swings positive and negative around ground, output follows with gain applied.
+
+For single-supply operation (covered in later topic), AC signals require biasing to mid-supply to prevent clipping.
+
+\textbf{Resistor Selection:}
+
+Choose $R_1$ typically 1k$\Omega$ to 100k$\Omega$. Too low wastes current (output sources more current through divider). Too high increases noise sensitivity and input bias current errors.
+
+$R_f$ calculated from desired gain: $R_f = R_1 (A_v - 1)$.
+
+Use precision resistors (1\% or better) for accurate, stable gain.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Non-Inverting Amplifier Design:}
+
+Design amplifier with gain of 5 for audio application.
+
+Gain formula: $A_v = 1 + R_f/R_1 = 5$.
+
+Solving: $R_f/R_1 = 4$, so $R_f = 4 R_1$.
+
+Choose $R_1 = 10$k$\Omega$ (reasonable value for audio):
+\[
+R_f = 4 \times 10k = 40\text{k}\Omega
+\]
+
+Use standard value $R_f = 39$k$\Omega$ (closest), actual gain:
+\[
+A_v = 1 + \frac{39k}{10k} = 1 + 3.9 = 4.9
+\]
+
+Slightly lower than target but acceptable. For precision, use 40k$\Omega$ exactly (may require series/parallel combination or trim pot).
+
+\textbf{AC Signal Amplification:}
+
+Input: 1V peak-to-peak sine wave, 1kHz. Gain = 10 ($R_f = 9$k, $R_1 = 1$k).
+
+Output: 10V peak-to-peak sine wave, 1kHz.
+
+Input swings $\pm 0.5$V around ground. Output swings $\pm 5$V around ground. Waveforms in-phase.
+
+With $\pm 15$V supply, output easily accommodates $\pm 5$V swing (well within rails).
+
+\textbf{Buffer as Special Case:}
+
+Buffer is non-inverting amplifier with $R_f = 0$ (short circuit), $R_1 = \infty$ (open circuit, or absent).
+
+Gain: $A_v = 1 + 0/\infty = 1 + 0 = 1$. Unity gain confirmed by formula.
+
+Alternatively, direct connection (wire) from output to inverting input means $R_f = 0$: $A_v = 1 + 0/R_1 = 1$ regardless of $R_1$ value.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Non-inverting amplifier: input to non-inverting terminal, feedback to inverting terminal via voltage divider
+    \item Voltage gain: $A_v = 1 + R_f/R_1$, always $\geq 1$ (minimum unity gain)
+    \item Output in-phase with input (0° phase shift), hence "non-inverting"
+    \item High input impedance (megohms to gigohms), suitable for high-impedance sources
+    \item Low output impedance (ohms), can drive low-impedance loads
+    \item Stable gain determined by external resistor ratio, independent of open-loop gain variations
+    \item Buffer is special case: $R_f = 0$, gain = 1
+    \item Can amplify AC or DC signals without modification (DC-coupled)
+    \item Negative feedback reduces gain from enormous open-loop value to controlled closed-loop value
+    \item Resistor selection: $R_1$ typically 1k-100k$\Omega$, $R_f = R_1(A_v - 1)$ for desired gain
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topics 178-179: Inverting Amplifier ---
+\subsubsection{Inverting Amplifier and Single-Supply Operation}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Inverting amplifier applies input signal through resistor $R_{in}$ to inverting input, non-inverting input grounded. Output inverted (180° phase shift) relative to input. Voltage gain: $A_v = -R_f/R_{in}$ (negative sign indicates inversion). Virtual ground at inverting input node: appears at ground potential but no current flows to ground. For single-supply operation, bias non-inverting input to mid-supply via voltage divider, adds DC offset to output.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration:}
+
+Inverting amplifier topology:
+\begin{itemize}
+    \item Input signal applied through resistor $R_{in}$ to inverting input ($V_-$)
+    \item Non-inverting input ($V_+$) connected to ground (or bias voltage for single supply)
+    \item Feedback resistor $R_f$ connects output to inverting input
+    \item Input resistor $R_{in}$ and feedback resistor $R_f$ determine gain
+\end{itemize}
+
+\textbf{Virtual Ground Concept:}
+
+Critical concept for inverting amplifier analysis. Non-inverting input grounded (0V). From Rule 2 (negative feedback), op-amp forces inverting input to equal non-inverting input:
+\[
+V_- = V_+ = 0\text{V}
+\]
+
+Inverting input node at 0V (ground potential) BUT from Rule 1, no current flows into inverting input pin. Current cannot flow to ground through this node. Node called "virtual ground": at ground voltage but not actually connected to ground, no current path to ground.
+
+Confusing initially: measuring inverting input node with voltmeter shows 0V, yet input signal "disappears" across $R_{in}$. Signal voltage dropped entirely across $R_{in}$ because far end at virtual ground (0V).
+
+\textbf{Gain Derivation Using Golden Rules:}
+
+Input voltage $V_{in}$ applied through $R_{in}$. Virtual ground at inverting input (0V).
+
+Voltage across $R_{in}$: $V_{in} - 0 = V_{in}$.
+
+Current through $R_{in}$ (by Ohm's law):
+\[
+I_{in} = \frac{V_{in}}{R_{in}}
+\]
+
+From Rule 1: No current flows into inverting input pin. From Kirchhoff's current law: current through $R_{in}$ must continue through $R_f$ (nowhere else to go).
+
+So: $I_f = I_{in} = V_{in}/R_{in}$.
+
+Voltage across $R_f$: $V_f = I_f \times R_f = \frac{V_{in}}{R_{in}} \times R_f$.
+
+One end of $R_f$ at virtual ground (0V), other end at output. Voltage across $R_f$ from ground to output:
+\[
+V_{out} - 0 = -V_f
+\]
+
+(Negative because current flows from output toward virtual ground, making output negative when input positive.)
+
+Therefore:
+\[
+V_{out} = -\frac{R_f}{R_{in}} V_{in}
+\]
+
+Inverting amplifier voltage gain:
+\[
+\boxed{A_v = -\frac{R_f}{R_{in}}}
+\]
+
+Negative sign indicates inversion. Note: no $+1$ term (unlike non-inverting). Gain magnitude can be less than, equal to, or greater than 1.
+
+\textbf{Phase Inversion:}
+
+Output 180° out of phase with input. Positive input produces negative output, negative input produces positive output.
+
+For AC signals: when input at positive peak, output at negative peak. When input at zero crossing rising, output at zero crossing falling. Complete inversion.
+
+Example: $V_{in} = +1$V, $R_{in} = 1$k, $R_f = 10$k.
+\[
+V_{out} = -\frac{10k}{1k} \times 1 = -10\text{V}
+\]
+
+Input positive, output negative. Gain magnitude 10, sign indicates inversion.
+
+\textbf{Input Impedance Difference:}
+
+Unlike non-inverting amplifier, inverting amplifier input impedance NOT extremely high. Input impedance approximately equal to $R_{in}$ because input applied to virtual ground (low impedance point).
+
+For $R_{in} = 1$k$\Omega$, input impedance $\approx 1$k$\Omega$. Source must be able to drive this impedance. Not suitable for high-impedance sources without buffering.
+
+Trade-off: Gain can be less than 1 (attenuation possible), but input impedance lower.
+
+\textbf{Single-Supply Operation:}
+
+Inverting amplifier with dual supply ($\pm V_{CC}$): non-inverting input grounded, output swings positive and negative around ground.
+
+With single supply (e.g., $+V_{CC}$, ground): negative rail at ground (0V). Output cannot swing below ground. AC signals clipped at negative half-cycle.
+
+\textit{Solution: Bias Non-Inverting Input to Mid-Supply}
+
+Connect non-inverting input to $V_{CC}/2$ via voltage divider (two equal resistors from $V_{CC}$ to ground).
+
+From Rule 2: Virtual ground becomes $V_{CC}/2$ instead of 0V.
+
+Output biased to $V_{CC}/2$ with no input signal. AC input signal adds to this bias, output swings symmetrically above and below $V_{CC}/2$.
+
+Example: $+12$V single supply. Bias non-inverting input to 6V. With AC input signal $\pm 1$V and gain of 3, output swings $6 \pm 3$V (3V to 9V range), staying within 0-12V rails.
+
+\textit{DC Blocking Capacitor:}
+
+Input AC signal coupled through capacitor in series with $R_{in}$. Capacitor blocks DC component, passes AC. Prevents DC input from shifting bias point.
+
+Output may require DC blocking capacitor to following stage to remove $V_{CC}/2$ offset, passing only AC component.
+
+Capacitor values chosen based on lowest frequency of interest: $C \geq 1/(2\pi f_{low} R_{in})$ for input coupling.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Inverting Amplifier Calculation:}
+
+$R_{in} = 1$k$\Omega$, $R_f = 3$k$\Omega$, $V_{in} = +2$V.
+
+Gain: $A_v = -R_f/R_{in} = -3k/1k = -3$.
+
+Output: $V_{out} = -3 \times 2 = -6$V.
+
+Current through $R_{in}$: $I = 2/1k = 2$mA.
+
+Current through $R_f$: same 2mA (Rule 1, no current into op-amp).
+
+Voltage across $R_f$: $V = 2\text{mA} \times 3k = 6$V.
+
+Since inverting input at virtual ground (0V) and output side of $R_f$ must drop 6V, output at $-6$V. Confirms calculation.
+
+\textbf{Single-Supply AC Amplifier:}
+
+Design inverting amplifier for audio, gain = -5, single +12V supply.
+
+Bias: Non-inverting input to $12/2 = 6$V via two 10k$\Omega$ resistors (voltage divider).
+
+Virtual ground now at 6V. Output biased to 6V with no input.
+
+Gain: $R_f/R_{in} = 5$. Choose $R_{in} = 10$k, $R_f = 50$k.
+
+Input: 1V peak AC signal (0.5V amplitude, $\pm 0.5$V swing) coupled through capacitor.
+
+AC output: $0.5 \times (-5) = -2.5$V amplitude swing around 6V bias.
+
+Output voltage range: $6 - 2.5 = 3.5$V (negative peak) to $6 + 2.5 = 8.5$V (positive peak).
+
+Stays within 0-12V rails, no clipping. AC signal inverted (180° phase shift) and amplified.
+
+Input coupling capacitor (for 20Hz audio): $C \geq 1/(2\pi \times 20 \times 10k) \approx 0.8\mu$F. Use 1$\mu$F or 10$\mu$F.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Inverting amplifier: input via $R_{in}$ to inverting terminal, non-inverting terminal grounded (or biased)
+    \item Voltage gain: $A_v = -R_f/R_{in}$, negative sign indicates 180° phase inversion
+    \item Gain magnitude can be $< 1$, $= 1$, or $> 1$ (attenuation, unity, or amplification)
+    \item Virtual ground: inverting input at ground potential (or bias voltage) but no current flows to ground
+    \item Input impedance approximately $R_{in}$, not extremely high like non-inverting configuration
+    \item Current through $R_{in}$ equals current through $R_f$ (Rule 1: no current into op-amp input)
+    \item Output inverted: positive input $\rightarrow$ negative output, negative input $\rightarrow$ positive output
+    \item Single-supply operation requires biasing non-inverting input to mid-supply ($V_{CC}/2$)
+    \item DC blocking capacitors required for AC coupling in single-supply circuits
+    \item Output in single-supply has DC offset ($V_{CC}/2$), AC component superimposed on bias
+\end{itemize}
+\end{keypointsbox}
+
+
+%--------------------------------------------------------------
+\subsection{Bandwidth and Frequency Limitations}
+%--------------------------------------------------------------
+
+%--- Topic 180: Gain-Bandwidth Product ---
+\subsubsection{Gain-Bandwidth Product and Frequency Response}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Practical op-amps have limited bandwidth: gain decreases at higher frequencies due to internal frequency compensation (stabilizes op-amp against oscillation). Gain-Bandwidth Product (GBW or GBWP) is constant: product of closed-loop gain and bandwidth frequency. GBW = frequency where open-loop gain becomes unity (gain = 1). For closed-loop amplifier: $BW = GBW/A_v$. Higher gain reduces bandwidth; lower gain increases bandwidth. Trade-off between gain and frequency response.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Ideal vs. Practical Frequency Response:}
+
+Ideal op-amp: infinite bandwidth, amplifies all frequencies from DC to arbitrarily high frequencies with constant gain. Frequency-independent.
+
+Practical op-amp: Bandwidth limited. Open-loop gain constant only at very low frequencies (typically below 10Hz), then decreases linearly (20dB/decade) as frequency increases. Frequency compensation built into most op-amps ensures stability but limits bandwidth.
+
+\textbf{Open-Loop Frequency Response:}
+
+Open-loop gain vs. frequency (Bode plot):
+\begin{itemize}
+    \item Low frequencies (DC to $\approx 10$Hz): Gain constant at maximum ($A_{OL} \approx 10^5$ to $10^6$)
+    \item Above breakpoint frequency: Gain decreases at 20dB/decade (factor of 10 per decade of frequency)
+    \item Unity-gain frequency ($f_t$ or $f_{GBW}$): Frequency where open-loop gain = 1 (0dB)
+\end{itemize}
+
+For popular 741 op-amp: $A_{OL} \approx 100,000$ at DC, unity-gain frequency $\approx 1$MHz.
+
+At 100kHz: gain dropped to $\approx 10$. At 1MHz: gain = 1.
+
+\textbf{Gain-Bandwidth Product Definition:}
+
+GBW (or GBWP) is constant for a given op-amp, equal to unity-gain frequency:
+\[
+\boxed{GBW = A_v \times BW}
+\]
+
+Where $A_v$ is closed-loop voltage gain (magnitude), $BW$ is -3dB bandwidth (frequency where gain drops to 70.7\% of maximum, or -3dB).
+
+GBW also called unity-gain bandwidth, gain-bandwidth product, or $f_t$ (transition frequency).
+
+\textbf{Bandwidth Calculation:}
+
+For closed-loop amplifier with gain $A_v$, bandwidth:
+\[
+BW = \frac{GBW}{A_v}
+\]
+
+Higher gain $\rightarrow$ lower bandwidth. Lower gain $\rightarrow$ higher bandwidth.
+
+Example: Op-amp with $GBW = 1$MHz.
+\begin{itemize}
+    \item Gain = 1 (buffer): $BW = 1\text{MHz}/1 = 1$MHz (full bandwidth)
+    \item Gain = 10: $BW = 1\text{MHz}/10 = 100$kHz
+    \item Gain = 100: $BW = 1\text{MHz}/100 = 10$kHz
+\end{itemize}
+
+At frequencies above bandwidth, gain decreases. For gain 100 amplifier, signals above 10kHz have reduced gain. At 100kHz, actual gain might be only 10 instead of 100.
+
+\textbf{Why Frequency Compensation Limits Bandwidth:}
+
+Early op-amps prone to oscillation due to phase shifts in high-gain feedback loops. Internal frequency compensation (typically single dominant pole created by internal capacitor) rolls off gain at low frequency, ensuring phase margin sufficient for stability under all feedback conditions.
+
+Trade-off: Guaranteed stability at cost of reduced bandwidth. Uncompensated op-amps have wider bandwidth but require external compensation components and careful design to prevent oscillation.
+
+\textbf{Datasheet Specification:}
+
+Op-amp datasheets list "gain-bandwidth product", "unity-gain bandwidth", or "transition frequency" (all same parameter). Sometimes listed as "bandwidth" but actually refers to unity-gain frequency.
+
+Example: 741 datasheet shows "bandwidth" or "GBW" $\approx 1$MHz (typical), $\approx 1.5$MHz (some versions).
+
+When designing amplifier, always check GBW and calculate bandwidth for intended gain to ensure adequate frequency response for application.
+
+\textbf{Slew Rate vs. Bandwidth:}
+
+Separate limitation: Slew rate (maximum rate of output voltage change, V/$\mu$s) limits large-signal bandwidth. For small signals, GBW dominates. For large-amplitude signals, slew rate may further limit frequency response. Both parameters important for complete frequency characterization.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Bandwidth Calculation Example:}
+
+Op-amp: GBW = 1MHz. Design non-inverting amplifier with gain = 10.
+
+Bandwidth: $BW = GBW/A_v = 1\text{MHz}/10 = 100$kHz.
+
+Input signal: 50kHz sine wave. Well within 100kHz bandwidth, gain accurately 10.
+
+Input signal: 200kHz sine wave. Exceeds bandwidth. Actual gain reduced. At 200kHz, gain approximately $1\text{MHz}/200\text{kHz} = 5$ (half the intended gain). Output amplitude only half expected value.
+
+\textbf{Gain Trade-off Analysis:}
+
+Need to amplify 50kHz signal with op-amp GBW = 1MHz. What maximum gain maintains full bandwidth at 50kHz?
+
+Required: $BW \geq 50$kHz for signal to pass unattenuated.
+
+From $BW = GBW/A_v$:
+\[
+A_v = \frac{GBW}{BW} = \frac{1\text{MHz}}{50\text{kHz}} = 20
+\]
+
+Maximum gain = 20 to maintain full amplitude at 50kHz. If gain set to 100, bandwidth only 10kHz, and 50kHz signal attenuated by factor of $\approx 5$.
+
+\textbf{Audio Amplifier Design:}
+
+Audio range: 20Hz to 20kHz. Need gain = 40 (32dB) across entire audio range.
+
+Required GBW: $GBW \geq A_v \times BW = 40 \times 20\text{kHz} = 800$kHz.
+
+Select op-amp with GBW $\geq 800$kHz. Using 741 (GBW $\approx 1$MHz) provides margin: $BW = 1\text{MHz}/40 = 25$kHz, covers entire audio range.
+
+Using lower-bandwidth op-amp (GBW = 100kHz) gives $BW = 100\text{kHz}/40 = 2.5$kHz, inadequate (rolls off well below 20kHz audio limit).
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Practical op-amps have limited bandwidth; gain decreases with increasing frequency
+    \item Gain-Bandwidth Product (GBW): constant for given op-amp, $GBW = A_v \times BW$
+    \item GBW equals unity-gain frequency (frequency where open-loop gain = 1)
+    \item Closed-loop bandwidth: $BW = GBW/A_v$, higher gain reduces bandwidth
+    \item Internal frequency compensation stabilizes op-amp but limits bandwidth (dominant pole)
+    \item Open-loop gain decreases 20dB/decade above breakpoint frequency (typically $\approx 10$Hz)
+    \item Buffer (gain = 1) has maximum bandwidth equal to GBW
+    \item High-gain amplifiers have reduced bandwidth; signals above BW are attenuated
+    \item Always check datasheet GBW and calculate bandwidth for intended gain
+    \item Common op-amps: 741 (GBW $\approx 1$MHz), LM358 ($\approx 1$MHz), TL071 ($\approx 3$MHz), high-speed types (tens to hundreds of MHz)
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topic 181: Cascading Op-amps For Improved Bandwidth ---
+\subsubsection{Cascading Op-Amps to Increase Bandwidth}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Cascading (series connection) of multiple op-amp stages with distributed gain increases overall bandwidth compared to single high-gain stage. Total gain is product of individual stage gains. Total bandwidth calculated: $BW_{total} = BW_{stage} \times \sqrt{2^{1/n} - 1}$ where $n$ = number of stages, all stages identical gain. Diminishing returns beyond 2-3 stages. Two-stage design with gain $\sqrt{A_{total}}$ per stage provides $\approx 0.64 \times BW_{single}$ improvement.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Bandwidth Limitation Problem:}
+
+Single-stage amplifier with high gain has narrow bandwidth. Example: GBW = 1MHz, desired gain = 100.
+
+Single stage: $BW = 1\text{MHz}/100 = 10$kHz. If signal frequency 50kHz (above 10kHz bandwidth), gain reduced, output attenuated.
+
+Cannot simply increase GBW (op-amp parameter, fixed). Solution: Distribute gain across multiple stages.
+
+\textbf{Cascading Principle:}
+
+Connect output of first op-amp stage to input of second stage. Each stage provides portion of total gain. Output of last stage delivers total gain to load.
+
+\textit{Total Gain:} Product of individual stage gains:
+\[
+A_{total} = A_1 \times A_2 \times A_3 \times \cdots \times A_n
+\]
+
+For $n$ identical stages each with gain $A$:
+\[
+A_{total} = A^n
+\]
+
+Conversely, for total gain $A_{total}$ distributed equally across $n$ stages:
+\[
+A_{stage} = \sqrt[n]{A_{total}} = A_{total}^{1/n}
+\]
+
+\textbf{Bandwidth Improvement Calculation:}
+
+Each individual stage has bandwidth:
+\[
+BW_{stage} = \frac{GBW}{A_{stage}}
+\]
+
+Total system bandwidth (for $n$ identical stages):
+\[
+\boxed{BW_{total} = BW_{stage} \times \sqrt{2^{1/n} - 1}}
+\]
+
+This formula accounts for cumulative -3dB points of cascaded stages. Simple multiplication ($BW_{total} = n \times BW_{stage}$) incorrect; bandwidths combine geometrically, not linearly.
+
+\textbf{Two-Stage Example (Most Common):}
+
+Desired: $A_{total} = 100$, GBW = 1MHz.
+
+Single stage: $BW = 1\text{MHz}/100 = 10$kHz.
+
+Two stages: Each stage gain $A_{stage} = \sqrt{100} = 10$.
+
+Each stage bandwidth: $BW_{stage} = 1\text{MHz}/10 = 100$kHz.
+
+Total system bandwidth:
+\[
+BW_{total} = 100\text{kHz} \times \sqrt{2^{1/2} - 1} = 100\text{kHz} \times \sqrt{1.414 - 1} = 100\text{kHz} \times \sqrt{0.414}
+\]
+\[
+BW_{total} = 100\text{kHz} \times 0.6436 = 64.36\text{kHz}
+\]
+
+Improved from 10kHz (single stage) to 64.36kHz (two stages). Factor of 6.4 improvement!
+
+\textbf{Three-Stage Example:}
+
+Same total gain 100, three stages.
+
+Each stage gain: $A_{stage} = \sqrt[3]{100} = 4.642$.
+
+Each stage bandwidth: $BW_{stage} = 1\text{MHz}/4.642 = 215.44$kHz.
+
+Total bandwidth:
+\[
+BW_{total} = 215.44\text{kHz} \times \sqrt{2^{1/3} - 1} = 215.44\text{kHz} \times \sqrt{1.26 - 1}
+\]
+\[
+BW_{total} = 215.44\text{kHz} \times 0.51 = 109.87\text{kHz}
+\]
+
+Improved further to $\approx 110$kHz. Compared to two stages (64kHz): additional improvement factor only 1.7. Diminishing returns.
+
+\textbf{Diminishing Returns:}
+
+\begin{itemize}
+    \item 1 stage $\rightarrow$ 2 stages: 6.4$\times$ bandwidth improvement
+    \item 2 stages $\rightarrow$ 3 stages: 1.7$\times$ bandwidth improvement
+    \item 3 stages $\rightarrow$ 4 stages: 1.4$\times$ bandwidth improvement (approximate)
+\end{itemize}
+
+Beyond 3-4 stages, minimal bandwidth gain. Additional complexity (more components, power consumption, noise, cost) not justified. Practical designs typically use 2-3 stages maximum.
+
+\textbf{Design Trade-offs:}
+
+\textit{Advantages of Cascading:}
+\begin{itemize}
+    \item Significant bandwidth increase for given total gain
+    \item Lower gain per stage reduces distortion, improves linearity
+    \item Each stage operates within comfortable GBW margin
+\end{itemize}
+
+\textit{Disadvantages:}
+\begin{itemize}
+    \item More components, higher cost
+    \item Increased power consumption (multiple op-amps)
+    \item More PCB space required
+    \item Cumulative noise from multiple stages
+    \item Stability considerations for each stage
+\end{itemize}
+
+\textbf{Practical Application:}
+
+Use cascaded stages when:
+\begin{itemize}
+    \item High gain required at high frequency (beyond single-stage GBW limit)
+    \item Bandwidth-critical application (e.g., video, RF, high-speed data)
+    \item Distortion reduction important (lower gain per stage = better linearity)
+\end{itemize}
+
+Use single stage when:
+\begin{itemize}
+    \item Bandwidth adequate for application frequency
+    \item Simplicity, low cost, low power critical
+    \item Moderate gain requirement
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Design Problem: High-Gain Wideband Amplifier}
+
+Requirement: Amplify 50kHz signal with gain = 100. Op-amp GBW = 1MHz.
+
+\textit{Single-stage analysis:}
+
+Gain = 100, $BW = 1\text{MHz}/100 = 10$kHz.
+
+Signal at 50kHz well above 10kHz bandwidth. Gain at 50kHz approximately $1\text{MHz}/50\text{kHz} = 20$ (factor of 5 below target). Unacceptable.
+
+\textit{Two-stage design:}
+
+Each stage gain: $\sqrt{100} = 10$.
+
+Each stage bandwidth: $1\text{MHz}/10 = 100$kHz.
+
+Total bandwidth: $100\text{kHz} \times \sqrt{2^{0.5} - 1} = 64.36$kHz.
+
+Signal at 50kHz within 64kHz bandwidth, gain accurately 100. Success!
+
+Configuration: First stage non-inverting amplifier with gain 10 ($R_f = 9$k, $R_1 = 1$k). Second stage identical. Output of first stage to input of second stage.
+
+\textbf{Comparison Table:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Stages} & \textbf{Gain/Stage} & \textbf{BW/Stage} & \textbf{Total BW} \\
+\hline
+1 & 100 & 10 kHz & 10 kHz \\
+2 & 10 & 100 kHz & 64 kHz \\
+3 & 4.64 & 215 kHz & 110 kHz \\
+4 & 3.16 & 316 kHz & 143 kHz \\
+\hline
+\end{tabular}
+\end{center}
+
+Diminishing returns evident: 2$\rightarrow$3 stages adds 46kHz, 3$\rightarrow$4 stages adds only 33kHz.
+
+\textbf{Practical Limit Demonstration:}
+
+For gain 1000, GBW = 1MHz:
+
+Single stage: $BW = 1$kHz.
+
+Two stages (gain 31.6 each): $BW = 20.3$kHz (20$\times$ improvement).
+
+Three stages (gain 10 each): $BW = 51$kHz (51$\times$ improvement over single, 2.5$\times$ over two stages).
+
+Two-stage design provides excellent compromise: substantial bandwidth improvement with reasonable complexity.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Cascading multiple op-amp stages distributes total gain, increases bandwidth
+    \item Total gain: product of individual stage gains, $A_{total} = A_1 \times A_2 \times \cdots \times A_n$
+    \item For $n$ identical stages: $A_{stage} = \sqrt[n]{A_{total}}$ distributes gain equally
+    \item Total bandwidth: $BW_{total} = BW_{stage} \times \sqrt{2^{1/n} - 1}$ for $n$ identical stages
+    \item Two-stage design most common: $\approx 6$$\times$ bandwidth improvement over single high-gain stage
+    \item Three stages: additional $\approx 1.7$$\times$ improvement, diminishing returns evident
+    \item Beyond 3-4 stages: minimal bandwidth gain, added complexity not justified
+    \item Each stage operates at lower gain: better linearity, lower distortion
+    \item Trade-offs: improved bandwidth vs. added components, power, cost, noise
+    \item Formula assumes identical stages (same gain, same GBW); different stages require modified calculation
+\end{itemize}
+\end{keypointsbox}

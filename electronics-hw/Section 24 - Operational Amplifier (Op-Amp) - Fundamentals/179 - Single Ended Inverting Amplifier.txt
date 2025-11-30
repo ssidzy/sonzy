@@ -1,0 +1,237 @@
+Hello and welcome back.
+
+In the previous course, we have seen that the output voltage of an emerging bin is 180 degrees out
+
+of phase compared to the input voltage.
+
+So when the input voltage rises, the output voltage decreases because it's an inverting amplifier.
+
+Now, of course, one of the disadvantage of the inverting amplifier compared to the wording one we
+
+saw before, is that, as you can see, there is input current coming from the input source.
+
+So you don't want to use this when you have a high impedance source, which means that the source itself
+
+cannot provide current, so the source cannot provide Corot or it's very, very little.
+
+So this is where you want a nonemergency amplifier or at least a buffer.
+
+Some people we actually put a buffer or the input here and then drive the adverting amplifier.
+
+But usually in that sort of case, you would probably use a non inverting amplifier.
+
+Now we have to go deeper into this and talk about the power supply and Petraeus and all this sort of
+
+stuff and single supply up amps.
+
+I will try to keep it as brief as possible.
+
+But you saw in this configuration the APEP only has two power pins, OK?
+
+It's usually called replaster V minus.
+
+Now we Meiners, you can actually connect that to ground.
+
+There's nothing regardless of the data, it tell you.
+
+So there is nothing inherent in options that make them really a single supply of arms.
+
+So you can take an option that is V plus and minus and connect this pin down to ground like that.
+
+There is nothing to stop you as long as you meet the minimum specification and don't exceed the maximum,
+
+etc..
+
+So what happens if we did that in this case?
+
+Our input is also grounded here.
+
+Well, now it becomes a problem.
+
+You get into the practical limitations of the OP amp.
+
+These rules that we have seen aren't strictly true applied.
+
+These rules are totally valid.
+
+Different APEP would be an ideal one.
+
+Unfortunately, the real world operates have practical limitations.
+
+Still, these rules are a fantastic way and even professionals use these rules to analyze the circuits.
+
+So, for example, rule number one is through four idea options.
+
+But the ones that you can buy on the market, a little tiny, teeny weeny current can flow into and
+
+out of these piece depending on the type of the op you are actually got.
+
+And that's a real political limitation of these things.
+
+The other one is that the inputs cannot necessarily go right to the Raiders beat, whether positive
+
+negative reference round so you can get what's called a real train up or rail trail input appends.
+
+It is.
+
+Kades If you had to rail to really put up, then yeah, you might be able to get away with this and
+
+have the non-convertible was tied down to ground like this.
+
+But hang on, what's the point of that?
+
+If you've only got ground, this is an inverting amplifier.
+
+So it inverts your signal.
+
+So if you feed Wirewood in the upper will try to give minus 10 volt out because the game is minus a
+
+minus 10 in this case.
+
+So but how does it do that where the OP's negative supply pin is grounded?
+
+It doesn't work.
+
+It's got no room to do that.
+
+So the OP always has to be powered in the configuration that you expect your input signals to be referenced.
+
+Do so.
+
+If we were to use the inverting op ed configuration is before before single rail like this, if we wanted
+
+to amplify AC signals, well, the output signal won't go below ground Y because the negative supply
+
+is grounded.
+
+So the output voltage can only swing from zero volts up to the voltage on the positive supply pin.
+
+So what can we do in cases like this?
+
+How heavy amplify our input AC signal?
+
+Well, what we need to do is this zero point needs to go right down the bottom here like this.
+
+So we need to offset so that zero what we need to offset our input and output reference by a certain
+
+amount of voltage, how much we typically have the supply really to maximize your headroom.
+
+How do we do that?
+
+Well, I hinted to that before.
+
+So in order to offset the output voltage, we can't feed in here.
+
+So if this is V plus, we would go V plus divided by two.
+
+So we could we would feed that voltage half really there.
+
+And usually you would do that by putting a voltage divider that is powered by the same positive power
+
+supply.
+
+So the value of both resistors will be the same as we would feed the inverting input with half of the
+
+power supply.
+
+Do you remember that this point is called a neutral ground?
+
+Well, this is still called a virtual ground, even though it's not going to be so the.
+
+What is here is going to be equal to the voltage here due to our second open rule.
+
+So if our power supply is too active voice, for example, this point here would be half that.
+
+So it's going to be their voice.
+
+So if this point is a third world, we are going to have an offset voltage here as well at this point.
+
+And this will shift our output waveform up.
+
+And we will see that in the simulator in a minute.
+
+So, again, just to make this particular thing clear, so typically an up circuit will be operated
+
+from differential supplies, like, for example, plus minus 12.
+
+This is quite acceptable in many applications, but in many circuit designs, only one supply may be
+
+available.
+
+Under the circumstances, it is relatively easy to implement what is termed a singlehanded version of
+
+the inverting amplifier optimizer.
+
+With these uses only one supply and ground.
+
+The single voltage supply version of an open selected for the inverting amplifier circuit uses more
+
+components when compared to the dual real version.
+
+But the design of the amplifier element remains the same.
+
+Effectively, a half point is created for the non-working input, and in this way, the operational
+
+amplifier sees the same conditions.
+
+It would as if it were operating from a dual supply grade.
+
+Now let's see how it works.
+
+All right, we have an inverted amplifier, the input signal is a two words easy signal, and the output
+
+is an amplified version of the signal since the gain is three.
+
+The output is six words.
+
+Now, what happens if we need to amplify these AC signal, but we don't have negative power supply,
+
+so the negative power pin is grounded.
+
+Not all these.
+
+The output signal is now clipped, but zero words because it cannot go below this level in cases like
+
+this.
+
+We have to offset the output voltage at the half supply rail so that we have the maximum headroom for
+
+our signal to swing.
+
+Now, the app is only powered with a positive 15 volt, so in order to get the maximum headroom, the
+
+output, we need to supply seven point five words into our non inverting input.
+
+And by this, the virtual ground becomes seven point five volts and the output becomes seven point five
+
+words as well.
+
+So there is no voltage drop across these three km resistor.
+
+The current is zero.
+
+So both ends are at seven point five points.
+
+Now the output has an offset of seven point five volts, as you can see here.
+
+So the easy signal will be added on top of it.
+
+We actually have to add the capacitor series with the signal, with the input signal, otherwise it
+
+won't work.
+
+This decoupling capacitors use because the whole supply requires decoupling to ground because it's inverting
+
+input needs to appear as a signal ground whilst also being maintained at the half supply voltage.
+
+Anyway, let's not stress about this capacitor too much now.
+
+So then we feed an AC input signal.
+
+Notice that the AC signal will be added on top of the output of that voltage.
+
+Of course, amplified bingo.
+
+This is how we can use a non-working amplifier sorry, an emerging amplifier to amplify the 41 positif
+
+power supply.

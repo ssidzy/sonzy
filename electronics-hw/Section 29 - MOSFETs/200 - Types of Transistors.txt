@@ -1,0 +1,115 @@
+Hello, it's great to see you back, starting from this chapter we'll be discussing about a critically
+
+important electronic component Cohodas mosque that you see up until now we have learned and berserkers
+
+with transistors, right.
+
+More specifically with bipolar transistors.
+
+Why do I specify the transistor type?
+
+Because as you will see, there are more types of transistors, not just the people are one that we
+
+are familiar with.
+
+USPI no transistor is a semiconductor device which is used to amplify the signals as well as in switching
+
+circuits.
+
+Generally, transistors is made of solid material, which contains three terminals such as ammeter base
+
+and collector for connections with other components in the circuit.
+
+Transistors basically do just do things.
+
+Electronic circuits switch and amplify, but those two jobs are the key to getting really interesting
+
+things done.
+
+Here's why those functions are so important.
+
+Switching.
+
+If you can switch Ersten flow on and off, you can control over the flow and you can build involved
+
+circuits by incorporating lots of switches in the right places.
+
+Consider, for instance, the telephone switching system.
+
+By dialing a ten digit number.
+
+You can connect with any one of millions of people around the world or look at the Internet.
+
+Switching enables you to access a website hosted in, say, Europe while you are sitting on a train
+
+in, say, America.
+
+Other systems that rely on switching our computers, traffic lights, the electric power grid.
+
+Well, you get the idea.
+
+Switching is pretty darn important.
+
+Then comes the amplified.
+
+If you can amplify an electrical signal, you can store and just meet tiny signals and boost them,
+
+then you need to make something happen.
+
+For instance, radio waves carry tiny audio signals over long distances, and it's up to the amplifier
+
+in the stereo system to magnify the signal so it can move the diaphragm over.
+
+Speaker So you can hear the sound from the time of first transistor.
+
+International presence is the transistors are classified into different types, depending on either
+
+construction or operation, and they are explained using three diagram as shown here.
+
+So the transistor classification can be understood by observing these three diagram transistors are
+
+basically classified into two types.
+
+They are large transistors that we are already familiar with and field effect transistors.
+
+The people are Russian.
+
+Transistors are again are classified into NBN and BMB transistors.
+
+Right.
+
+The fat transistors are classified into Japhet and MOSFET Jiangshan transistors are classified into
+
+and General Japhet and be generally Japhet depending on their function.
+
+Moskva transistors are classified into the pleasure mode and an Hasman mode again, depletion and assessment
+
+mode.
+
+Transistors are classified into any channel and be channel.
+
+All right.
+
+So these are the types of transistors.
+
+But you might ask what's the difference between them, where you see how many differences?
+
+And the first and most obvious is how they are schematically represented.
+
+The figure here shows the circuit symbol is commonly used for various types of transistors.
+
+If you look attentively, each and every type of transistor has a different symbol.
+
+In order to become a good electrical engineer, I highly advise you to remember all the transistor types
+
+with their corresponding symbol, because once you get to know them better, you will see that they
+
+are quite a few differences between each of them.
+
+So let's not rush it and take it slower.
+
+In the upcoming courses, we will direct our attention solely towards Masterfoods.
+
+And whilst we understand how they work and there are advantages and disadvantages, of course, over
+
+the last one, we will also discuss about Jeffords.

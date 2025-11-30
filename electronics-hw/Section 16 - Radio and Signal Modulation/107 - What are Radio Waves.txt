@@ -1,0 +1,207 @@
+Most people think of radio as wireless broadcast of sound, most often music and speech.
+
+But the term radio is actually much broader than that.
+
+The broadcast of sound is actually just the one application of the extremely useful electrical phenomena
+
+that is called radio, especially the previous course.
+
+In order to convey information to somebody, a user must first impose a pattern which interacts with
+
+the media in a channel which gets decoded or the recipients end and is finally received in a form in
+
+which the recipient can understand it.
+
+You see, most of these interactions between the pattern's and the medium of the channel are best described
+
+by waves.
+
+For example, when somebody speaks, they are using pressure waves in order to convey information to
+
+somebody else.
+
+And these pressure waves represent points at which molecules of air are packed closer together and the
+
+point at which they are further apart.
+
+Energy is pumped into the atmosphere to compress molecules together.
+
+The high point of the energy which squashes the molecules closer together is called the crest of the
+
+wave.
+
+The low point of the energy when the molecules are far apart is called the trough of the wave.
+
+Now, the number of waves passing by in a single second, that will be the frequency right frequency
+
+is simply the number of waves passing per second, just like the ripples on a pond after a stone has
+
+been thrown into it, or the little ripples that passed through a certain point would indicate frequency.
+
+Radio frequency is identified a number of waves per second or cycles per second.
+
+The mother term for this is Hertz.
+
+The term Hertz.
+
+Here does not refer to the car rental company.
+
+Instead, it honors the great German physicist Henrik Hertz, who was the first person to build a device
+
+that could create and detect radio waves.
+
+Now, radio takes advantage of one of the most interesting of all electrical phenomena electromagnetic
+
+radiation, which is a type of energy that travels in waves at the speed of light electromagnetic radiation
+
+travels freely through the air and even in the vacuum of space.
+
+Radio is simply a specific radio frequency of the electromagnetic waves.
+
+The low end of this range is just a few cycles per second, and the upper end is about 300 billion cycles
+
+per second, which is also known as gigahertz.
+
+That's a pretty big range, but electromagnetic radiation waves with much higher frequencies exist as
+
+well and are in fact commonplace.
+
+You see electromagnetic radiation waves with frequencies higher than radio waves go by various names,
+
+including infrared ultraviolet X-rays, gamma rays and, most importantly, visible light.
+
+That's right, what we call light is exactly the same thing as what we call radio.
+
+But at higher frequencies, the frequency of visible light is measured in billions of hertz, also called
+
+terahertz, and the low end of visible light, which is the red, is around 405 terahertz and the upper
+
+end, which is violet, is around 790 terahertz.
+
+Now, as a general rule, and it's very important to remember, is that the lower the frequency that
+
+is, the longer the wavelength, the further a signal can penetrate through solid objects like montes
+
+walls, etc., or liquids such as seawater.
+
+This might explain why visible light cannot penetrate through walls or solid objects, or why submarines
+
+use a longer wavelength instead of a shorter one.
+
+Because the electromagnetic wave has to travel a longer distance and has to penetrate through the water
+
+and all the obstacles that can be found in the ocean.
+
+The same thing applies for AFM or AM radio, which we are going to talk about in more detail in just
+
+a moment.
+
+Then you are listening to the radio.
+
+I'm talking here about the classical radio, the electromagnetic wave that descend from a transmitter,
+
+which can be far away from you.
+
+I don't know tens or hundreds of kilometers away or miles away has to reach your radio antenna, and
+
+this is only possible if the wavelength is higher so that it can penetrate through walls, buildings
+
+and so on.
+
+So again, longer wavelengths have lower frequencies and lower energies.
+
+Now, radio waves, the longer ones don't have enough energy to interact with the electrons in Morse
+
+materials.
+
+And as a result, the waves pass through and around almost everything.
+
+So here's an interesting thought to ponder.
+
+Radio stations broadcast the specific frequency.
+
+For example, in San Francisco, there's a popular radio station called Quién B.R., which has been
+
+broadcasting on the frequency 680 kilohertz since 1922.
+
+There are plenty of other radio stations in the area, but only key NPR broadcasts at six hundred eighty
+
+kilohertz.
+
+The term channel is often used to refer to a radio station broadcasting at a particular frequency.
+
+For example, if somebody asked me what radio channel I like to listen to when I'm in San Francisco,
+
+I would tell him key and B are now an important thing to know is that radio waves travel at the speed
+
+of light.
+
+And because they travel at the speed of light, we can actually calculate the wavelength of a given
+
+frequency by dividing the distance that light travels in a single second by the number of cycles per
+
+second.
+
+You know?
+
+Light is pretty fast.
+
+It scoots along at one hundred eighty six thousand two hundred eighty two miles per second.
+
+And as a result, the wavelength of an electromagnetic radio wave oscillating at 100 kilohertz is about
+
+one point eighty six miles.
+
+All right, guys.
+
+Now let's end this course with a little history who really invented radio, you might ask.
+
+The history of radio technology is plagued by controversy over the question of who actually invented
+
+the thing.
+
+The answer most often given is the Italian inventor Guglielmo Marconi.
+
+I hope I'm pronouncing it correctly, but many others made important discoveries that give them a good
+
+claim to the title.
+
+Marconi He was the first person to demonstrate radio successfully and exploited commercially.
+
+In 1911, Marconi sent the message via radio across the Atlantic from England to Canada, though the
+
+message was faint consisted of nothing but the letter s and reception of the message wasn't independently
+
+confirmed.
+
+Nevertheless, Marconi accomplishment was astonishing, and he made many important contributions to
+
+the technology and business of radio.
+
+Another great contributor was the famous Nikola Tesla.
+
+In 1943, the U.S. Supreme Court ruled that many of Marconi as important radio patents were invalid
+
+because Nikola Tesla had already described these devices covered by Marconi patents.
+
+Tesla was a brilliant engineer who is best known for being the champion of alternating current over
+
+direct current for power distribution.
+
+He publicly demonstrated wireless communication devices as early as 1893.
+
+Tesla believed that wireless technology would be used not only for communication, but for power distribution
+
+as well.
+
+Was he right?
+
+Hmm, I guess so.
+
+If you look at the wireless charger cases, what they do is these chargers transfer energy from the
+
+charger to a receiver in the back of the phone via electromagnetic induction.
+
+Nikola Tesla already knew that this is going to happen back in the early 90s, which not only demonstrates
+
+that he was a genius, but also a visionary like Elon Musk.

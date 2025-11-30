@@ -1,0 +1,115 @@
+In the previous course, we examined a circuit where the load, which consists of this resistor and
+
+the LSD, is switched on and off using a switch connected to the base of the transistor, while side
+
+of the load is connected to a positive supply voltage.
+
+And the other side is switched to ground by the ambient transistor speeds.
+
+Now what if you want instead to ground one side of the load and switch the high side to a positive voltage?
+
+Well, that was easy enough, but we had to use the other polarity or transistor, which is the pump
+
+in this case, which if it's emitter at the positive rail and its connector tied to the loads high side.
+
+The transistor is in cutoff mode when the base is held, the meter voltage here 15 whirls and switched
+
+into saturation by bringing the base toward the collector like, in this case, towards ground.
+
+When the input is brought to ground.
+
+There's about four mg of base current to the 3.3 point base resistor, sufficient for switching loads
+
+up to about 200 mg.
+
+Question for you.
+
+How much is a sum of the voltage drops from this point to ground?
+
+So the first of all, these drop is between Ed and Bates, right, which is around six hundred seventy
+
+five million dollars for this particular transistor, and the remaining voltage is dropped across this
+
+resistor.
+
+So the sum of these two, what it drops is 15 watts, the voltage drop, or, let's say, forward biasing
+
+this diode is compulsory in order to turn the PMP transistor on.
+
+An awkwardness of this circuit is the need to hoard the input 15 words to turn off the switch.
+
+If we lower this voltage to, let's say, 12 volt, what do you think will happen?
+
+Well, we just turned on the transistor because since there is three was difference between the base
+
+voltage at that meter, that's enough to a forward bias these diode.
+
+So the what drop across emitter and numbers is 0.6 volts and the remaining voltage drops across this
+
+resistor.
+
+So it's not really a good design to hold the base of 15 balls in order to keep the transistor off,
+
+right.
+
+It would be much better to use a lower control voltage, for example, three bolts and ground, which
+
+is commonly available in digital logic.
+
+This circuit shows exactly how to do that and begins to reach Q2.
+
+Except the logic level input of zero volts or three words pulling it correctly lowered to ground accordingly.
+
+Then this transistor is in cutoff mode are three holes Q three off?
+
+And how does it do that?
+
+Well, it does that by bringing 15 volts to the base of your tree.
+
+So the voltage difference between emitter and bass is zero.
+
+The diode is not forward biased, which means the Q3 acts like an open circuit.
+
+It's like the emitter of Hue Tree is disconnected from the collector.
+
+Now, when the NBN transistor is saturated by a three watts input or two things, B is current from
+
+Q3 to bring it into saturation.
+
+The divider formed by our two and three, which is not even a divider in this case, may be confusing
+
+arteries.
+
+Job is to keep Q3 off when the NBN transistor is off and van to pause its collector law.
+
+Most of it's clear to current comes from the base of the PMP transistor.
+
+Look here, the current that flows on the collector of the Q2 is 4.3 million, right?
+
+And this 4.3 million arms comes from summing up Q3 based current, which is three point six million
+
+with zero point six million arms.
+
+Interesting, right?
+
+How come most of the current comes from the PMP transistor days and not from here?
+
+Well, that's because if you hook the work meter between the meter and the base of this Q3, we will
+
+measure the forward voltage drop of desired right since our tree is in parallel with this branch.
+
+The voltage must be the same, right, because they are in parallel.
+
+Now using ohms law and dividing 0.6 walls with one guitar home, we will get the current or $0.6 amps
+
+or 673 micrograms.
+
+All right.
+
+I hope you understood, if not, just leave a comment with your question below, and I will get back
+
+to you as soon as possible, so all three does not have much effect on the Q Three's saturation.
+
+In any case, the value of R3 three is not critical and could be made larger.
+
+The trade off is a slower turn off of Q3 owing to capacity effects.

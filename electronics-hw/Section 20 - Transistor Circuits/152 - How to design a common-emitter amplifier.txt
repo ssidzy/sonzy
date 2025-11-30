@@ -1,0 +1,273 @@
+When we talk about common collector, common meter and common base configurations, the terminal that's
+
+name that's common is the one that isn't used for input or output is the one that's used as a ground
+
+or common terminal by both the input and output of the circuit.
+
+Admitted a follower that we have talked about in the previous chapter, the base terminal of the transistor
+
+serves as the input diameter is the output, and the collector is common to both.
+
+It's tied to the power supply.
+
+Rail has its name.
+
+We know that the limiter follower is the current amplifier that has no voltage gain, and there are
+
+many instances, especially in digital electronics, where an increasing current is required.
+
+But no increase in voltage is needed in such a situation.
+
+And then meter follower can be used.
+
+For example, consider the two stage amplifier circuit as shown in this figure.
+
+Suppose these two stage amplifier has the desired voltage gain, but the current gain of these multi-stage
+
+amplifier is insufficient.
+
+In this case, you can't use an emitter follower to increase the current gain without increasing the
+
+voltage gain.
+
+Another application of the emitter, a follower, is for impedance matching.
+
+We know this in the meter follower has high input impedance and low output impedance.
+
+This makes the emitter follower an ideal circuit for impedance matching.
+
+This figure shows the impedance matching by an emitter follower.
+
+Here, the output impedance of the source is 120 kms, while that of load is 20 ohms.
+
+Then Meter Follower has an input impedance of 120 kms and output impedance of 22 ohms.
+
+It is connected between high impedance source and low impedance load.
+
+The net result of this arrangement is that maximum power is transferred from the original source to
+
+the original load.
+
+When the limiter follower is used for this purpose, it is called a buffer amplifier.
+
+So, Emmett, I'll follow what is good for certain tasks, as explained before, but what happens when
+
+the input signal is very low in voltage?
+
+And do you want to amplify that voltage instead of current?
+
+What if you want to amplify the voltage of a weak signal coming from an MP three player so that we can
+
+drive a reasonable big loudspeaker if it?
+
+We will do more complex circuits where we will learn about amplifiers pages, where a move, voltage
+
+amplification and current application is required to drive the loudspeaker.
+
+But for now, let's concentrate on how can we design a circuit which provides voltage amplification?
+
+This circuit is called the common emitter amplifier because the emitter is tied to ground and it's not
+
+used as input or output.
+
+This time, the output voltage is taken from the connector and not from the emitter.
+
+The first cop shows the poor signal, and the second scope shows the signal on the collector.
+
+What is the first thing that we have to consider?
+
+The external power source that is available for us is 20 volts.
+
+This means that the peak amplitude of the output signal can be no more than 20 volts, right?
+
+Our input signal is only five hundred milliseconds, and you want to drive this one mega ohm impedance.
+
+But for that, we will have to amplify this 500 million volts to a higher voltage.
+
+Again, we are not seeking to amplify the current since anyway, we are driving a high impedance load,
+
+which doesn't require big currents.
+
+This lot can also be the input impedance of a second circuit, which will further process our input
+
+signal, and it will be easier to process it since the capital of the input voltage will be amplified
+
+using the circuit.
+
+The first question is how big should the amplification be since the beta of this transistor is 100?
+
+We could theoretically amplify the input signal by a 100, but this would result in output signal of
+
+50 volts, right?
+
+How about an amplification of 10?
+
+So we transform an input signal of 500 million Allston output signal of five volts?
+
+That sounds good, but how can we set the amplification of the circuit?
+
+First of all, we have a better here, right?
+
+This means that you ought to get rid of any DC voltage as you want only the AC voltage or five or to
+
+pass through if you want later on, you can connect an emitter forever to boost the current.
+
+So we will have two stages of amplification, and you can drive a much lower impedance than this one
+
+mega load.
+
+Let's imagine a scenario where they put voltages to what this means that we turn on and off the transistor.
+
+Every time the voltage on the base reaches the threshold of zero point six volts, if we visualize the
+
+voltage on the collector, the voltage is a constant 20 volts even when the transistor conducts because
+
+there's nothing to pull this voltage down the ground in order to pull this, what is down to ground
+
+whenever the transistor is turned on?
+
+We have to insert resistor at the collector.
+
+Now there's all this drop of 20 volts across this collateral register.
+
+So the connector voltage is able to speak up and down between the ceiling of 20 volts and the floor,
+
+which is zero volt.
+
+This will make it possible for our output signal to swing just like here the input.
+
+Now what value should this collateral register have?
+
+If we want the maximum current of two millions to flow on the collector using ohms law, we will choose
+
+this resistance to be 10 kilos.
+
+As you can see, the output voltage jumps up to the maximum voltage of 20 volts because the amplification
+
+of the circuit is very high.
+
+In fact, if you are curious, the amplification of the circuit right now is given by the division between
+
+the collector resistors and emitter resistance.
+
+We don't have emit resistance, right?
+
+So the gain is 10 kilograms divided by zero, which is undefined.
+
+Actually, there is a small built-in, a resistance called stress resistance, which, as you might
+
+guess, it's very low.
+
+You can look on the internet.
+
+How to calculate this building emit a resistance, but if you assume that it has a resistance of 20
+
+ohms, the gain will be 10 kms divided by 20, which is 500.
+
+This is obviously too much.
+
+So what we can do to reduce this game is to add an emitter resistance.
+
+If we want a gain of 10, then the emitter resistance will be one kms.
+
+So the division between the Kyoto resistance and the emitter resistance is 10, which represents the
+
+gain of the circuit.
+
+The output signal still doesn't look very good.
+
+So what can we do?
+
+Let me change the voltage of the inparticular back to 500 volts and placing a resistance in series if
+
+our signal is the last thing we want to do because our signal is already weak and we don't want it to
+
+make it weaker.
+
+Instead, let's place a capacitor to get only the clean AC voltage that you are interested in.
+
+All right, the transistor is not biased.
+
+We should provide the DC bias voltage enough to turn this transistor on.
+
+We don't want our input signal to turn the transistor on the right.
+
+It can't even turn the transistor on since it's less than 0.6 volts.
+
+And even if it were higher than the transistor would be turned off during the period when the input
+
+signal goes from negative up to zero point six walls, which would represent the massive information
+
+loss.
+
+So that's bias the base voltage at one point seven volts using two registers, which will form a voltage
+
+divider.
+
+I already calculated using the voltage divided equation that this resistance has to be one hundred ten
+
+kms and the other one should be 10 kms.
+
+The 110 kms and 10 km distance is the transistors base at about one point six volts so that the average
+
+value of the input is moved up to that level.
+
+What you have to understand is that now the transistor works in forward active mode, which means that
+
+the quieter current is not influenced by these collateral resistance anymore.
+
+The Colletto current is said by the bass current, and the beta of the transistor seems the collector
+
+current is equal to the base current times 100, so a nine point seven times 100 is 973 micrograms.
+
+Make sure that you choose the value of these biased resistances so that it will provide an optimal current
+
+and voltage on the base, the voltage on the base should be a little higher than the threshold voltage
+
+of zero point six wolf, just enough to open the transistor but pay attention to not saturated the transistor.
+
+A transistor is saturated when the base voltage is around the same voltage as the collector voltage.
+
+On the other hand, if the current on the base is too high, you risk to burn up the transistor.
+
+Since the critical and my exceed the maximum current allowed, the base emitter junction acts like a
+
+diode.
+
+So the diameter will be one day a drop lower than the base since the transistor stays in forward active
+
+mode.
+
+The quattro current will be 100 times the base current.
+
+The emitter voltage fluctuates with the input voltage, and so the current across the one gilham resistor
+
+fluctuates proportionally since the greater resistor has the same current across it but has 10 times
+
+the resistance.
+
+The greater voltage swings 10 times as much.
+
+And with phase opposite to the input.
+
+Just remember that if the output signal is taken from the collector, the signal will have opposite
+
+phase as they input.
+
+This means that when they input signal goes up, the signal on the output goes down.
+
+But don't worry.
+
+Usually, this doesn't represent the problem.
+
+On the other hand, if the output signal is taken from the emitter, that would signal and the input
+
+signal have the same fees.
+
+I didn't mention, but the second cop shows the signal on the load and not on the collector.
+
+As you can see, the output voltage is almost 10 times higher than the input signal.
+
+Seeing his output voltages four point eight world and they put these five hundred million dollars.
+
+So congratulations, we have just built our first signal amplifier stage.

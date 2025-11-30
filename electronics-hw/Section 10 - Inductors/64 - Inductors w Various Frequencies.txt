@@ -1,0 +1,117 @@
+Here are three secrets, which are identical, except for the frequency of the source in the first year
+
+with the frequency of the AC source is 30 hertz and the maximum current flow is twenty three point three
+
+millions in the Second Circuit.
+
+The frequency is 80 hertz and the maximum current is seventeen point six millions in the last circuit.
+
+The frequency is the highest compared to the other two and the current is the lowest.
+
+So the main takeaway of this simulation is that inductors are able to pass lower frequencies more easily
+
+than higher ones because they oppose changes in current and low frequency, AC has more gradual changes,
+
+giving the doctor a chance to adjust so the higher frequency of the bottom will result in a lower current.
+
+So basically, that was it.
+
+However, I think that it will be a good practice if you try to calculate the maximum current flowing
+
+in one of the circuit.
+
+So if you remember back then we had capacitors here.
+
+We measured the current rmx for the last circuit.
+
+So let's not calculate the current rmx again, but the maximum current that is displayed already for
+
+us.
+
+We will pick the Lussier with a gun and see why the simulator measures nine point two million.
+
+Which is the peak value of the current sinusoidal waveform.
+
+In order to calculate the maximum current flow, we have to calculate first the equivalent impedance
+
+of the circuit, the equivalent or total impedance is the same thing, and it's not does that impedance
+
+is measured in arms and it's the total opposition that the circuit presents to alternating current.
+
+So someone would say that the total opposition to current flow is dualisms plus the inductive reactants
+
+at this particular frequency.
+
+And he wouldn't be very wrong.
+
+However, we cannot add them up like this because that would be too easy.
+
+The problem is that the inductor causes a phase shift between current and voltage, and because of that,
+
+resistance and reactors cannot be simply added up to give impedance.
+
+Instead, they must be added as vectors.
+
+And I have already shown this triangle to you.
+
+So again, if you want to add up the resistance with the reactance, you must add them up as vectors.
+
+Based on this triangle vector, the impedance is square root of all of the power of two plus X or the
+
+power of two, where X is equal to inductive reactants minus capacity reactants.
+
+Since we don't have any capacity reactants in the circuit.
+
+The final equal, I mean, the final equation will be this one.
+
+The inductive reactors of the 400 million Marine doctor at the frequency of 200 hertz is around 500.
+
+And to Ohmes now we can plug this value into the impedance formula and we will get a total impedance
+
+of five hundred and forty point three ohms.
+
+Great.
+
+Now, how do we calculate the maximum current flow?
+
+There you see, we wanted to avoid calculating current arms, but in the end it will be necessary do
+
+so.
+
+The peak current is equal to irony's Times Square root of two, where I Oremus, as you already know,
+
+is equal to we are a..
+
+Divided by the total impedance we are.
+
+And this is very easy to calculate since we already know the peak value of the signal, which is five
+
+points.
+
+So we are a mess is equal to peak voltage divided by square root of two, which will be equal to three
+
+point fifty three mold's.
+
+Now, let's plug this value into current R.A. so items will be equal to three point fifty three, divided
+
+by five hundred forty point three ohms, which will give us around six point five million.
+
+So let's go back to our simulator and check if it is indeed six point five millions.
+
+So, right, click on the third graph, go to properties, make sure to show current IDs checked and
+
+then check show rmx error rate.
+
+The simulator is measuring around six point four millions, which is very close to what we have obtained,
+
+the fingers that we have rounded up some values throughout the calculations.
+
+But yeah, we were not wrong.
+
+Now that we know the current Oremus calculating the current is a piece of cake.
+
+We only have to multiply this six point five millions with square root of two, which will give us a
+
+peak current or maximum current whatever of around nine point two million, which is the same with what
+
+the simulator is measuring for us.

@@ -1,0 +1,309 @@
+When we come back, in the previous course, we have seen that a halfway rectifier uses only a single
+
+diode to convert AC to DC, so it is very easy to construct the halfway rectifier, right.
+
+However, a simple dial in halfway rectifier only allows either a positive hot cycle or a negative cycle
+
+of the input AC single and the remaining half cycle they put AC signal is logged.
+
+As a result, a large amount of power is wasted.
+
+Furthermore, the halfway rectifiers are not suitable in the applications which need a steady and smooth
+
+DC voltage.
+
+So the halfway rectifiers are not efficient AC to DC converters.
+
+But we can easily overcome this drawback by using another type of rectifier known as fuel, where rectifier,
+
+the footway rectifier is further classified into two types sensor tefft footway rectifier and full weighbridge
+
+rectifier.
+
+All right.
+
+So let's talk first about center tableful where rectifier.
+
+As you can see, a sensor test for rectifier uses a center that transformer along with two diodes and
+
+the load very connected in the middle before going to the working principle of the circuit.
+
+Let's first take a look at the center path transformer.
+
+Then an additional wire is connected across the exact middle of the secondary widing of a transformer.
+
+It is known as a center tat's transformer.
+
+The wire is adjusted in such a way that it falls in the exact middle point of the secondary widing.
+
+So the wire is exactly at zero walls of the easy signal.
+
+This wire is known as a center tap.
+
+The center transformer works almost similar to a normal transformer, like a normal transformer.
+
+The center transformer also increases or reduces the AC voltage.
+
+However, a center transformer has another important feature, and that is the secondary widing of the
+
+center.
+
+Transformer divides the input AC current or AC signal into two parts.
+
+The upper part of the secondary lighting produces a positive voltage one and the lower part of the secondary
+
+widing produces a negative voltage, which is way to where we combine these two voltages output load.
+
+We get a complete AC signal.
+
+The sun between we want and we do gives the total output voltage.
+
+So the voltages we want to read you are equal in magnitude, but opposite in direction.
+
+That is the voltages produced by the upper part and lower part of the secondary widing are 180 degrees
+
+out of phase with each other.
+
+However, by using a four way rectifier with standard transformer, we can produce the voltages that
+
+are in phase with each other in simple words, by using a full way rectifier.
+
+If sedar tap the transformer, we can produce a current that flows only in one direction.
+
+So how does a standard tableful way rectifier works during the positive lifecycle of the input AC signal
+
+terminal A become positive, terminal B become negative and a centre tap is grounded.
+
+So it means that it is at zero towards the positive terminal is connected to the P side of the diode.
+
+The one and the negative terminal B is connected to the inside of the diode D one.
+
+So the diode one is forward by during the positive cycle and allows electric current through it.
+
+On the other hand, the negative terminal B is connected to the P side of the diode D2 and the positive
+
+terminal A is connected to the inside of the diode D2.
+
+So the dial of the data is reverse biased during the positive cycle and does not allow electric current
+
+through it during the negative half cycle.
+
+Current flows only in the lower part of the circuit, while the upper part of the circuit carry no current
+
+to the load because diode one is reverse bias.
+
+Duse, during the negative cycle of the input AC signal only diode D2 allows electric current while
+
+diode one does not allow electric current does the dial.
+
+The one allows electric current during the positive cycle and iodized to allow electric current during
+
+the negative cycle of the input AC signal.
+
+And as a result, both have cycles positive and negative of the input AC signal are allowed.
+
+So the DC voltage is almost equal to the input AC voltage and the average output voltage across the
+
+lower resistor is double that of the single halfway rectifier circuit.
+
+Earth, the spaces between each halfway developed by each diode is now being filled in by the other
+
+diode.
+
+The average DC output voltage across the lower resistor is now double that of the single Halfaya rectifier
+
+circuit and is about zero point six hundred thirty seven times VMAX of the peak voltage, assuming no
+
+losses.
+
+So WiMAX is the maximum peak value in one half of the second widing, and we are analysis that our best
+
+value, we can even improve the average output of the rectifier, while at the same time reducing the
+
+AC variations of the rectified output by using a smoothing capacitor to filter the output waveform.
+
+All right.
+
+But how could we connect one here?
+
+Well, it's very easy as moving.
+
+Or is it a capacitor connected in a parallel with the load across the output increases the average D.C.
+
+output level even higher as the capacitor acts like a storage device.
+
+Great.
+
+So what are the advantages of a four way rectifier with a center transformer?
+
+The first one is the high rectifier efficiency.
+
+Fully rectifier has high rectifier efficiency than the halfway rectifier.
+
+That means the footway rectifier converts AC to D.C. more efficiently than the halfway rectifier.
+
+The second advantage is the low power loss.
+
+Well, in a halfway rectifier, only half cycle is allowed and the remaining half cycle is blocked.
+
+Right.
+
+And as a result, more than half of the voltage is wasted.
+
+But in a full way rectifier, both half cycles are allowed at the same time.
+
+So no signal is wasted in a four way rectifier.
+
+The third advantage is that low REPL the output DC signal in Fourier Rectifier has fewer ripples than
+
+the halfway rectifier.
+
+This will also present a huge drawback, which is a center that transformers are expensive and also
+
+occupy a large space.
+
+So again, the main disadvantage of this type of Fourier rectifier circuit is that a larger transformer
+
+for a given power output is required with two separate but identical secondary.
+
+Whiting's making this type of Woolooware rectifying circuit costly compared to the full Wadebridge Rectifiers,
+
+the liquid equivalent grade.
+
+I wish we could have simulated this liquid, but unfortunately the simulator doesn't provide us a center
+
+type transformer, so we will only be able to simulate Durbridge Rectifier that we are going to talk
+
+about right now.
+
+All right.
+
+So another type of circuit that produces the same output waveform as the Fourier rectifier is the full
+
+wave bridge rectifier.
+
+This type of signal phase rectifier uses for individual rectifying diodes connected in a closed loop
+
+bridge configuration to produce the desired output.
+
+The main advantage of this bridge circuit is that it does not require a special center tap transformer,
+
+thereby reducing its size and caused the single secondary.
+
+Widing is connected to one side of the dial the bridge network and the load to the other side.
+
+The four diodes labeled the one to the four, are arranged in series pairs, with only two diodes conducting
+
+currently during each half cycle.
+
+So during the positive cycle of the supply diodes, the Wanandi to conduct these series wire diodes,
+
+the three, the four are reverse bias and the current flows through the load.
+
+But why do we construct this circuit in a simulator and continue the discussion there?
+
+All right.
+
+So how does this work with work?
+
+Well, let me slow down the simulation speed a little bit and let's see what happens during the positive
+
+half cycle of the AC input voltage.
+
+So during the positive half cycle, diodes Daewon one indeed you conducting a series, but the three
+
+and four are switched off as they are now reversed by us.
+
+Now let me adjust the simulation speed again.
+
+So during the negative half cycle diodes, the three and four conducting series, while the one and
+
+two are reversed by us, great.
+
+So we have seen how awful we have projected fireworks, though there are a few things to point out here.
+
+If you look at the circuit during each half cycle, the current flow through to diodes instead of just
+
+one like for the Hathway rectify, right?
+
+So the amplitude of the output voltage is to what is drops, which is two times zero point seven.
+
+So one point four was less than the input max amplitude.
+
+Also, the radio frequency is twice the supply frequency.
+
+So Reba frequency is twice the frequency of the AC signal being rectified.
+
+Why the negative and positive pulses every cycle are now relative to the negative and positive sides
+
+of the rectifier and the voltage changeover occurs every half cycle.
+
+Therefore, the period is half and the frequency is twice.
+
+Now, in order to provide a smooth D.C. output, we can, of course, connect capacitor in parallel
+
+with the load.
+
+But one thing I want to mention here is the type of the capacitor that you should use in the circuit.
+
+I mean, there are so many types of capacitors out there and one might be confused whether to use a
+
+ceramic capacitor and the capacitor or probably a tantalum capacitor.
+
+So resurrecting a reservoir capacitor for moving applications in a power supply not only is the value
+
+in terms of capacitance important to give the required deeper voltage reduction, but it is also very
+
+important to ensure that the capacitor rippa a current rating is not exceeded.
+
+If too much current is drawn by the load, the capacitor will heat up and its life expectancy reduced,
+
+or in extreme cases, it could fail, sometimes catastrophically.
+
+If you open the power supply case, you will probably see big bulky capacitors inside of it.
+
+Why do you think these capacitors are so big?
+
+That's because of their capacitance.
+
+We had this cost that the more current the law requires, the higher the smoothing capacitance has to
+
+be.
+
+Right.
+
+Generally, we almost always use acrylic capacitors in our power supply circuit.
+
+Why?
+
+Because they have a greater capacitance per volume than any other type of capacitor.
+
+Because of the size difference.
+
+Few non-equity capacitors are made with capacitors greater than 10 microworld because of their construction
+
+and polarity.
+
+Sensitive operation electrolytic capacitors require more careful use than other capacitors if installed
+
+improperly, like reverse polarized electrolytic capacitors will not achieve Corot capacitors and may
+
+build internal gas pressure, leading to a minor explosion.
+
+Also, because of their higher capacitance value, quality capacitors are most often used in lower frequency
+
+applications, such as in power supply filters.
+
+The high capacitance value typically associated with Atleti capacitors act as a short or low impedance
+
+lines for radio frequency and higher frequency applications.
+
+Why?
+
+Because the capacity of reactance is inversely proportional with the frequency of capacitance.
+
+So a big capacitance along with a high frequency, the capacity reactance will be highly affected,
+
+meaning that it will be very low acting more like a short circuit for high frequency AC signals.
+
+

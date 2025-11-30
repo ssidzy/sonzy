@@ -1,0 +1,297 @@
+In this course, we learn about a new electrical component, which is called astrally now, I have probably
+
+heard about it.
+
+Relays are used extensively, very high current needs to be controlled by a small current.
+
+Relays are electrically operators, which is that open and close the circuits by receiving electrical
+
+signals from outside sources.
+
+Some people may associate Labor for raising competition where members of the team take turns passing
+
+battles to complete the race.
+
+The relays embedded in electrical products work in a similar way.
+
+They receive electrical signals and sends the signal to the other equipment by turning the switch on
+
+and off.
+
+For example, when you push the button on a TV remote to watch TV, it sends an electrical signal to
+
+the relay inside a TV, turning the main power on.
+
+There are various types of relays used in many applications to control different amounts of currents
+
+and number of circuits.
+
+The relay technology can be divided into two categories the fertilizer movable contact, which can be
+
+also called as mechanical relay.
+
+And the other type is the normal.
+
+Will the contact, which people call it as MOSFET Relay or Solid-State, relate.
+
+So the mechanical relay is a type of relay that has contacts that are mechanically actuated to open
+
+or close by magnetic force to switch signals, currents and voltages on or off like mechanical relays
+
+the most it has non-moving contact, but instead employ semiconductor electrical switching elements
+
+such as Riak and fed by the operation of these circuit signals.
+
+Currents and voltages are switched on or off electronically.
+
+Well, we didn't learn about mosfet or THEARC yet, so expanding it right now would cause a lot of this.
+
+We will cover 3.x and Masferrer in the future and we also will consider.
+
+But don't worry, we will take a brief look at MOSFET released you, but only towards the end of the
+
+course.
+
+So what does a mechanical look like?
+
+Well, this image shows the structure of a mechanical relay.
+
+It consists of a coil which receives an electrical signal and convert it to a mechanical action and
+
+contact that open and close the electric circuit.
+
+We already know, at least I hope so, that the flow of current through an ethical conductor causes
+
+the magnetic field around the conductor.
+
+Right now, if this conductor is ready to form a coil, then the magnetic field produced gets oriented
+
+along the length of the coil.
+
+If the current is flowing through, the conductor increases, then the magnetic field strength also
+
+increases and vice versa.
+
+And yes, we are talking about this current here and not AC.
+
+When we talked about Transformers, we have seen that DC current through the primary could not induce
+
+any current into the secondary.
+
+And that's because a transformer is based on a very simple fact about electricity, which is when a
+
+fluctuating electric current flows through a wire, it generates a magnetic field.
+
+When a magnetic field fluctuates around a piece of wire, it generates an electric current in the wire.
+
+So if you put a certain coil of wire next to the first one and send a fluctuating electric current into
+
+the first coil, we will create an electric current in the second wire.
+
+But I will repeat it again.
+
+This will work only a fluctuating magnetic field which can be achieved by a fluctuating current.
+
+So I wanted to make it clear that DC Current does create a magnetic field around any doctor, but is
+
+just that the strength of the magnetic field is constant and that's all.
+
+Now let's take a closer look at how a lamp is turned on using a switch and relay.
+
+Here we have a battery in serious a switch relay, another battery and the lamp.
+
+The lamp is not turned on.
+
+See, the circuit here is open.
+
+Since the switch is closed, there would be a current flowing through the coil.
+
+Right.
+
+This current through the call magnetize is the iron core so that it will generate the magnetic force
+
+that will attract the armature to the core.
+
+When the armature is attracted to the iron core, the moving contact and fixed contact come together
+
+in contact.
+
+So the relay contact is in on state now.
+
+The electrical current flows through the fixed contact, turning the lamp light on.
+
+If you turn the switch off, the current stops flowing through the coil and the force to attack the
+
+armature no longer exists and the armature returns to its original position by the force of the release
+
+Sprink.
+
+When the armature returns to its original position, contacts are separated, so the relay contact is
+
+in off state.
+
+The current stops flowing through the fixed contact, turning the lamp light off.
+
+One of the major characteristics of a mechanical delay is the physical spacing between the coil and
+
+the contact component in order to achieve appropriate level of insulation or both input and output.
+
+And now let's have a look at three sections of electrical relays.
+
+As I said right in the beginning, relay permits a small amount of electrical current to control high
+
+current loads.
+
+So in this circuit, we have two circuits, actually, and the amount of current flowing in the circuit
+
+is represented by these batteries.
+
+So in the last circuits, we have three times less current flowing than in the second one, but enough
+
+to create an electromagnetic force that will attract the armature.
+
+So when the switch is closed, a small current will pass through the hole, resulting in a larger amount
+
+of current passing through the controls to control the lamp.
+
+The network, which is similar with the exception of the load that we try to drive.
+
+Now we have an AC motor here which is controlled obviously by an AC current.
+
+This example shows that AC loads can also be strictly controlled from DC power source.
+
+Cool, isn't it?
+
+The next circuit shows that one input signal to the call can simultaneously control several independent
+
+circuits, but wait a little bit.
+
+Oh, yes, I forgot to tell you that there are more types of mechanical switches based on its construction.
+
+The first one is single, poor, single through.
+
+These have two terminals which can be connected or disconnected, including two terminals from the coil,
+
+sartorially has four terminals in total.
+
+The next type is single pole double through.
+
+Here we have a common terminal that connects to either of the others, including two for the coil.
+
+Such a relay has five terminals in total.
+
+The next type is double pole single through these have two pairs of terminals equivalent to two Singapore
+
+single throw switches or relays actuated by a single coil, including two for the core.
+
+Such relay has six terminals in total.
+
+The last type, and I think you have already guessed it, it's double double throw.
+
+These have two rows of changeover terminals equivalent to two Singapore double switches or relays actuated
+
+by a single coil.
+
+Such a relay has eight terminals, including the coil.
+
+Now, when you look at a data sheet of early, what do we expect to see or what do you think are the
+
+characteristics of a relay?
+
+Well, an important characteristic of a relay is the rated called voltage.
+
+This is the voltage that the relay is supposed to receive.
+
+When you energize it, the next one is the set or operate voltage.
+
+This is the minimum voltage that the relay needs to close its switch.
+
+This will be a little bit less than the ideal coil voltage.
+
+The next one is the rated power, sometimes called us operating current.
+
+This is the power that relay specifically meant to handle.
+
+For example, if a relay is rated at 60 watts, no more than 60 watts should be used with the relay.
+
+The power rating is the power consumption of the coil, usually expressed in milliwatts.
+
+When the relay is energized, power should not be used for a relay about its power rating.
+
+The less important characteristics is the switching capacity.
+
+Now switching capacity is the maximum amount of current that you can switch with contact inside the
+
+relay.
+
+Usually this is for as loads which are attached to the contacts of a relay example being a light bulb
+
+attached to the relay contact for the relay to power it on.
+
+When you use a device that requires a lot of clearance, such as a mother, the mother takes a big initial
+
+surge of current before it gets up to speed.
+
+In this case, make sure you choose a relay ready for double the current that the mortar draws when
+
+it is running.
+
+And now let's take a brief look at a relay in action in our simulator.
+
+In this circuit, we try to control a lamp using firewall's DC power supply.
+
+The lamp has a nominal voltage of 120 volts, so we will supply the lamp using an AC power source that
+
+outputs as high a wave of 120 volts.
+
+Arms the inductor of the relays here, and if I hit the switch, noticed that the electromagnetic force
+
+will attract the armature to the core, creating a path between the AC power source and ground.
+
+The lamp needs some time to glow, fully sees inside of it.
+
+So there's a resistance that needs to heat up and that takes a little time.
+
+Of course, in real life, this time would be very, very short.
+
+Now, if I hit the switch again, the armature will no longer be attracted, so it will go back to its
+
+normal position.
+
+Now, what happens if I close the switch again and I start playing with the input DC voltage?
+
+Now it's five words, but if I start decreasing it at some point, the electromagnetic force will be
+
+too weak to attract the armature.
+
+And that's the reason why you should look at a rated coil voltage.
+
+And besides, make sure that your L-A can handle the power that in this case the lamp requires.
+
+Now let's talk a little bit about MOSFET Relate.
+
+Maspeth Relate is a semiconductor relay that uses power moscovitz in output elements.
+
+Most of that relay consists of the following three components and LCD, as you can see here, on the
+
+image for the diode array that receives the light emitted by the LCD and a MOSFET chip.
+
+So a mass that really operates according to the following principles.
+
+The LDA lights up when the current is connected.
+
+The input side, this light that is sent by the red will be converted into a voltage again when it is
+
+received by the photo diode.
+
+And it is voltage would be a great voltage to drive mosfet.
+
+We are controlled circuit.
+
+One of the major characteristics of a mass that really is that it utilizes semiconductor so the contacts
+
+do not mechanically open and close.
+
+As a result, benefits include the reduction of footprint, quiet operation, longer operating life
+
+and eliminating the need for additional maintenance.

@@ -1,0 +1,143 @@
+All right, guys, in the previous course, we have learned about how to use the Senate diode as a voltage
+
+regulator.
+
+First, I want to mention that using a diode in this configuration to regulate the voltage across a
+
+load is not very used and recommended.
+
+Even if it works, it has this major drawback.
+
+That is this resistor here will dissipate out of power since it's basically in series with our Lord.
+
+Second, you need to choose it in a way so that enough current is flowing through the Senate diode and
+
+the current limited light is not very low so that enough current can pass through the node.
+
+So imagine previously that there is a kind of compromise that you have to make here.
+
+A better voltage regulator can be constructed using a zehner along with a transistor.
+
+Now the current limiting resistor for the Senate off can be much larger since it won't effect the current
+
+flowing through the node.
+
+Second, the load can request a much larger current from the voltage regulator circuit.
+
+Now this circuit is usually good enough.
+
+However, this equation still has some drawbacks, and that is the output voltage of the regulator cannot
+
+be adjusted, so it's tied to the breakdown voltage and a diode.
+
+Second, if the load needs too much current, there's a chance that this transistor will blow up, meaning
+
+that it will heat up and destroy it, since there's a limit of coral that can be passed from collector
+
+to emitter.
+
+So if too much current is passed through the transistor, it will heat up and get destroyed.
+
+The third drawback is that there is this base ammeter voltage drop of the transistor, which is around
+
+zero point six votes for a typical transistor.
+
+This means that the output voltage of the regulator circuit will be equal to the breakdown wattage of
+
+DNA diode minus the base ammeter voltage drop.
+
+So the breakdown voltage of DNA is 5.5 watts, but the output voltage is just four point nine words
+
+since around zero point six is dropped across the bass and emitter of the transistor.
+
+I know we didn't learn about transistors yet.
+
+Basically this base ammeter voltage drop of zero point six.
+
+What is necessary to byas the transistor?
+
+In other words, to open it up and conduct current?
+
+So how do we design a better voltage regulator circuit?
+
+What is regulators are nowadays available in the form of integrated circuits.
+
+These are, in short, Caldas Icee regulators, along with the functionality like a normal regulator,
+
+an easy regulator has the properties like thermal compensation, short circuit protection and surge
+
+protection, which are built into the device.
+
+See, regulators comes in many types fixed positive voltage regulators, fix negative voltage regulators
+
+and adjustable voltage regulators.
+
+Now let's go briefly through each one of them.
+
+Let's start with the fixed positive voltage regulators.
+
+They are called fixed because the output of these regulators is fixed to a specific value and the values
+
+are positive, which means the output, what is provided is a positive voltage.
+
+The most serious is 78 series.
+
+And ISIS will be like seven eight zero six seventy eight, twelve seventy eight, 15, etc., which
+
+provide the plus six volts plus twelve words and plus 15 words respectively as output wattages.
+
+This figure shows the ISO seventy eight 10 connected to provide a fixed ten volts positive regulated
+
+output voltage.
+
+All you need to do is to power this ac DC voltage.
+
+Of course it needs to be higher than the voltage that will output, which in this case it's a third
+
+world and all you need is to place these two capacitors as shown here where they are optional.
+
+But it's good to have CS C one is used to prevent unwanted oscillations and the output capacity to act
+
+as a filter to improve transient response.
+
+Now, the second type of ice regulator is the fixed negative voltage regulators, the output of these
+
+regulators is fixed to a specific value and the values are negative, which means the output, what
+
+is provided is negative the most.
+
+Your series is 79 series and the ISIS will be like 79, 06, 79, 12, 79, 15, etc, which provide
+
+minus six words, minus 12 words and minus 15 words respectively as output voltages.
+
+So this figure shows the AC 79 10 connected to provide a fixed 10 volts negative regulated output voltage.
+
+The two capacitors had the same apurpose.
+
+Again, C one is used to prevent unwanted oscillations and C two to improve the transient response.
+
+The next type of what the regulator is the adjustable one.
+
+An adjustable voltage regulator has three terminals in, out and adjustable in the input and output
+
+terminals are common, whereas the adjustable terminal is provided with a variable resistor, which
+
+lets the output to vary between a wide range.
+
+This figure shows an unregulated power supply, driving an alarm 317 adjustable AC regulator, which
+
+is commonly used.
+
+The alarm 317 is three times positive adjustable voltage regulator and can supply up to one point five
+
+amps of load current over an adjustable output range of one point twenty five words to 37 words.
+
+Since alarm regulators are commonly popular and used in almost any circuit, I think it's important
+
+to understand how at least one of these ISO works in more detail.
+
+As a result, in the next course we will check the working principle of an and 317.
+
+I see.
+
+So see you there.

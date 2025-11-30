@@ -1,0 +1,85 @@
+In this course, we will be talking a little bit about the electric current, just so that you understand
+
+what electricity is all about.
+
+So what is electric current? Why does our light bulb turns on whenever we press the switch?
+
+Basically, electric current or just simply current is nothing else, but the flow of electrons in a circuit.
+
+To use electricity,
+
+we need electrons to flow in the same direction around the circuit.
+
+We usually use copper cables to form the circuit because the atoms that make copper have a loosely bound
+
+electrons in their outermost or valence shell, which is free to move around inside the metal.
+
+This free electron is very easy to move, which is why copper is so popular.
+
+It's so easy to move that it will naturally just move to other copper atoms by itself.
+
+But this occurs randomly in any and all directions, which is not very useful for us.
+
+You see, electric current is what happens,
+
+when the random exchange of electrons that occurs constantly in a conductor becomes organized and begins
+
+to move in the same direction. When current flows through a conductor, such as a copper wire,
+
+all those electrons that were previously moving about randomly get together and start moving in the
+
+same direction.
+
+If a force acts on the electrons to move them in a particular direction, then they will all drift in
+
+the same direction, although still in a somewhat disorderly fashion,
+
+but there is an overall movement in one direction.
+
+The force that acts on the electrons is called an electromotive force, or EMF for short, and its quantity
+
+is voltage measured in volts.
+
+So the force that acts upon the electrons to move in one direction is called electromotive force,
+
+Or you can simply call it voltage.
+
+By far, the easiest way to apply such a force on these tiny electrons to start moving is by using a
+
+simple battery.
+
+When you place the battery in a circuit, which in this case is just a simple, closed loop circuit
+
+made out of copper wire.
+
+You will start noticing that electrons within the copper wire start moving in the same direction, and
+
+they will just simply move around and around until the battery eventually loses all the energy stored in it.
+
+:)
+
+And this is basically where electronics begins.
+
+First, you need the voltage source that has enough power or energy to move these electrons.
+
+Then we need some conductors, like copper wires, to form a closed loop circuit.
+
+As the name implies, a closed loop circuit is, well closed.
+
+Electrons cannot escape the circuit.
+
+So there has to be a way for the electrons to travel back to their initial position.
+
+I hope I am clear enough.
+
+As you notice, I don't want to get into too much details to confuse you.
+
+I just want you to understand the concept of electric current.
+
+Now that you have an electromotive force, such as a battery that pushes the electrons in one direction,
+
+we can then place things such as lamps in the way of these electrons so that they flow through it and
+
+generate light.
+
+

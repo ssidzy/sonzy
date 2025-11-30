@@ -1,0 +1,147 @@
+Hello and welcome back.
+
+There was an era where we're making a telephone call over distant places.
+
+One had to put his mouth very close to the transmitter, speak very slowly and very loudly, so that
+
+message can be heard clearly by the person at the other end.
+
+Today, we can even make video calls over worldwide with high quality resolutions, right?
+
+The secret of such tremendous development of technology lies in a surgical filter theory and transmission
+
+line.
+
+Three electrical filters, as you might know, are circuits that are only selected band of frequencies.
+
+Why attenuating other unwanted pregnancies?
+
+One of such filters is High Pass Filter.
+
+If you are already familiar with the concept of Lopez Filter, this course will be easy for you to understand.
+
+So let's begin.
+
+A high pass filter is a filter, which Percy's high frequency signals and blocks or impedes low frequency
+
+signals.
+
+In other words, high frequency signals go through much easier, and low frequency signals have a much
+
+harder getting through, which is why it's a high pass filter.
+
+High pass filters can be constructed using resistors with either capacitors or inductors, a high pass
+
+filter composed of a register, and the capacitor is called the High Pass RC filter and the high pass
+
+filter before register, and an indicator is called a high pass or air filter.
+
+We will go through both of these type of circuits show how both RC and red hyper filters are constructed.
+
+Both circuits have the effect of passing through high frequency signals while impeding low frequency
+
+ones.
+
+So I say let's start by discussing about high pass RC filter.
+
+A high pass filter, again is a filter which passes through high frequency signals composed of a register
+
+and the capacitor to create the hype RC filter.
+
+The capacitor is placed in series with the power signal entering the circuit, such as shown in this
+
+circuit diagram.
+
+Also, capacitor is a reactor device, it offers differing resistance to signals of different frequencies
+
+entering through it.
+
+A capacitor is a reactive device which offers very high resistance to low frequency or DC signals and
+
+lower resistance to high frequency signals.
+
+So because competitors offer very high resistance to low frequency or DC signals, it means that the
+
+signal trying to pass through it will be blocked.
+
+So this type of filter only allows high frequency signals to pass through and not DC.
+
+These type of GPUs that also functions as a coupling capacitor because it copies the AC signal from
+
+one part of the circuit to another while blocking the DC.
+
+There are a lot of circulating with copying capacitors are present.
+
+So if you don't quite understand the function of a copying capacitor, don't worry because we will shortly
+
+discuss about it in more details.
+
+High pass filters are very common and are used in many type of circuit setups, was a circuit in which
+
+they are used are a microphone and circuit.
+
+Microphones are devices which need both DC and AC signals in order to work.
+
+Microphones need DC power in order to have the power to turn on and be able to operate, and they record
+
+easy signals such as human speech, music or noises, right?
+
+As a result, they deal with both types of signals, right?
+
+The DC is only needed to power the microphone on and should not appear on the output with the easy signal.
+
+The DC is for power only and should not be mixed with the audio signal.
+
+So topaz the easy signal to and block the DC.
+
+We use the high pass filter so that only the AC signal appears on the output.
+
+Now that we have gone through what the hype has filter is, let's go over a practical example and build
+
+one.
+
+To build a high pass filter, the components we will use are a function generator.
+
+10.
+
+None offered ceramic capacitor and the 100 Ohm resistor.
+
+So the formula to calculate the frequency of an RTA circuit is this one here.
+
+And by doing the math, we got a frequency of one hundred fifty nine hertz.
+
+Therefore, this RTC required will pass frequencies above one hundred fifty nine hertz.
+
+We've barely know attenuation frequencies below one hundred fifty nine hertz will be attenuated the
+
+farther away and lower it is from one hundred fifty nine hertz.
+
+The greater the output signal is attenuated.
+
+So if we put an easy signal into the circuit from the fashion generator and place a signal to a very
+
+low frequency, such as 100 hertz or so, the capacitor will block out this voltage signal and it will
+
+not go through the output or be greatly attenuated.
+
+You can check this if you have an oscilloscope, if you know, increase the frequency of the signal
+
+to 20 kilohertz, the signal will go through unimpeded not being blocked at all.
+
+The capacitor will have no effect and all high frequency signals passed through unimpeded without any
+
+attenuation.
+
+This is a diagram showing what happens to low and high frequencies when fed into this high pass filter.
+
+The low frequency signals, which are near zero hertz, are blocked and do not go past the capacitor.
+
+Therefore, these signals do not show up the output.
+
+On the other hand, the high frequency signals go through unimpeded and pass to output.
+
+And this is why it's a high pass filter.
+
+It passes through high frequencies, but block low frequencies.
+
+

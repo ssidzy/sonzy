@@ -1,0 +1,317 @@
+All right, folks, now that we hopefully got an idea of how these switching regulators work, we can
+
+talk about their efficiency at some point.
+
+I mentioned that switching regulators have a much higher efficiency than linear regulators.
+
+Right.
+
+But I explain why that is, since I wanted you to get a little familiar with this switching circuits.
+
+So to explain this first, let's have a look at how a linear regulator works.
+
+I know we already covered this, so I would just go briefly through it to explain how the linear regulator
+
+works and why it is so inefficient.
+
+We will start with an example application as shown here.
+
+In this case, we have a 24 words input that is being converted into a six volt output before Lord current
+
+of one empire, as you can see, we don't use the linear voltage or whether I see what we have here
+
+is just the main components that build up a linear regulator.
+
+If you don't know how a linear regulator works internally, I advise you to go back to the course where
+
+we build one from scratch.
+
+You will find the course in the chapter called Linear Voltage Regulators.
+
+So looking at this figure, you can see that all we have between the input and output is a transistor
+
+which is named as Q1, which is also called the pass element.
+
+This means that the voltage across the transistor Q1 is the difference between input and output.
+
+We can rewrite this to solve for the output voltage from this equation.
+
+We can see that the output voltage is regulated by controlling the voltage across this transistor.
+
+The control of Q1 is accomplished.
+
+Using an up and negative feedback.
+
+The OP amp senses the output voltage and compares it to this reference voltage.
+
+If the output voltage is greater than the reference, then Q1 is driven less and the voltage across
+
+it increases.
+
+This causes the output voltage to decrease.
+
+If the output voltage was too low.
+
+Q1 would be driven more to lower the voltage drop across Q1, which would bring the output voltage up.
+
+To see why interrogators are so inefficient, we need to look at the lowered current path.
+
+Because the EMP has high impedance inputs and only driving the base of the transistor, we assume that
+
+no current goes in or out of it.
+
+With the EMP removed, all that is left is a direct path from input output, meaning that the input
+
+current equals the output current.
+
+So this is the equivalent circuit that you've seen before, I guess it's helpful to show you here how
+
+the circuits work so that we avoid any confusion.
+
+The reference voltage is set by the Zenner diode, which has a breakdown voltage of six volts as a result.
+
+Six words will be present on the Nanine been.
+
+This 10 km resistor is used to limit the current flow through the Zehner diode.
+
+The inverting pin of the upper EMP is tied to the output without any sort of wattage divider circuit.
+
+This time we know that the OP amp will try whatever it can to keep both inputs the same wattage.
+
+Right.
+
+How will you do that?
+
+Well, by outputting six point seven volts, the reason why it outputs six point seven words is because
+
+there's a zero point seven volt voltage drop between the base and Daym, right?
+
+So by outputting six point seven volts, zero point seven words will be dropped on the base and meter
+
+and hence six words will be present on the output.
+
+And as a result, the upper amp achieves to keep.
+
+Both inputs are the same voltage.
+
+The AMP is a pretty smart device right now.
+
+I mentioned previously that the input current is equal to the output current and this is actually what
+
+I wanted to show you here.
+
+Let's see if they are indeed equal.
+
+The input current is one ember and the output current is also one ember.
+
+So I hope by seeing this it will avoid any sort of confusion about why these two current are equal.
+
+Well, of course, they are not exactly exactly equal since some current will flow down on this path
+
+to power.
+
+The Zehner Diode, the OP amp has a very high input impedance, meaning that almost no current will
+
+flow down on this path.
+
+The reason why we will assume that the input current is 100 percent equal to the output current is because,
+
+as you will see, it will ease the calculations that we will do further.
+
+We can now use this information to calculate the efficiency and power dissipated by the linear regulator.
+
+The input power is equal to the input voltage times, the input current, the input voltages.
+
+Twenty four worlds and see the current flowing.
+
+This path is one amper the input power becomes twenty four.
+
+What's on the other hand, the output power is equal to output voltage times the output current the
+
+output voltages six words and the current is again one amper so six volts, I mean six watts of power
+
+is dissipated on the load.
+
+The efficiency of the circuit can be calculated by simply dividing the output power with the input power,
+
+which comes to be 25 percent.
+
+How do we calculate the power dissipated by this linear voltage regulator?
+
+It is it if the input power is 24 watts and the output power is six.
+
+What this means that 18 watts of power needs to be dissipated somewhere, right?
+
+For a load of only six.
+
+What the linear regulator is dissipating 18 watts of power.
+
+This is a lot of power to dissipate in such a small package without any heating or air flow.
+
+Typical thermal impedance of 20 degrees Celsius per watt of a linear regulator.
+
+NATO 220 package would result in a temperature rise of 360 degrees Celsius from Zhongxun to ambient.
+
+If no thermal management was applied, this would clearly fail if no measures were taken to reduce the
+
+thermal impedance such as heating or airflow.
+
+The addition of a heating and airflow adds to the size, cost and complexity of the system, which negates
+
+many of the benefits of using a linear regulator.
+
+That is cost and complexity.
+
+For this example here, a heating may be required in addition to airflow.
+
+Now, one of the interesting effects of the input current equaling the output current is that the efficiency
+
+calculation can be simplified to without divided by way.
+
+In from this, we can see that the greater the difference between input and output, the lower the efficiency
+
+and the more power will be dissipated in the regulator, which makes linear regulators undesirable in
+
+cases with large input voltage to output voltage ratios switching.
+
+Regulators, on the other hand, operate much differently than linear regulators.
+
+The main difference is related to how the transistor is controlled.
+
+This figure shows a simplified bank regulator, which is a switching regulator that produces an output
+
+voltage that is lower than the input voltage, the same function as the linear regulator.
+
+In our previous example, the circuit is similar in many ways to the linear regulator.
+
+The main physical difference is a diode and the LC filter on the output.
+
+Like the linear regulator, the switching regulator uses an upper amp and negative feedback to control
+
+a transistor.
+
+The first major difference and the reason that it is called a switching regulator is that the transistor
+
+is driven such that it is either fully on ideally a short circuit or fully off, ideally an open circuit.
+
+This is a big difference compared to the linear regulator where the transistor is controlled linearly
+
+in between fully on and off state.
+
+This transistor is switched on and off at high frequency and creates a square wave of the node connecting
+
+Q1, the one and one which we call the switch node.
+
+The output voltage is regulated by controlling the average value of the switch node voltage for a fixed
+
+frequency operation.
+
+The average value is equal to the time that the switch is on, divided by the period multiplied by the
+
+input voltage.
+
+The ratio of all the time to period is known as the duty ratio.
+
+And in the back regulator is equal to the ratio of output voltage to input voltage, for our example.
+
+This results in a duty ratio of 25 percent to convert twenty four volts input to a six words output.
+
+Now the square is on the switch node feeds into the LC network between the switch node and output,
+
+the AC network is a low base filter and only allows the average or ADC value of the switch node to pass
+
+through to the output.
+
+So by controlling the duty ratio and thus the average voltage at the switch node, the switching converter
+
+can control the output voltage.
+
+This process is known as PRST with modulation or simply BVM to see what the circuit is more efficient
+
+than the linear one.
+
+We can look at the switching regulator in both its on and off states under the same conditions as the
+
+example we had for the Línea regulator in the honor state.
+
+The transistor is driven fully on so that it represents a short.
+
+In this case, current will flow from the input to the output.
+
+But the losses in the transistor are zero watts because the voltage across it is zero where current
+
+is flowing.
+
+The other elements in the current path inductor, capacitor and diode are all ideally lossless.
+
+And so during the on time, ideally no power will be dissipated.
+
+In the off state, the transistor is fully off and represents an open circuit, in this case, the voltage
+
+across the transistor is equal to the input voltage, but no current flow through it because it is an
+
+open circuit.
+
+The power dissipated in the transistor in the state is also zero watt.
+
+And again, the other components are assumed to be lossless.
+
+This shows that in both on and off state, the switching regulator will ideally dissipate no power.
+
+This means that the upper limit of the efficiency is 100 percent, whereas the linear regulator has
+
+an upper limit equal to the out divided by way in.
+
+Another way to look at this is that the input power during the on time is equal to the input voltage
+
+times, the output current, just like the linear regulator.
+
+However, during the off time, no current flows out from the input, so the input power is zero.
+
+What the average amount of power into the regulator or one switching cycle is equal to the input power
+
+during the on time times, the average amount of time that the switch is on, which is the duty ratio.
+
+And because in the case of the converter, the duty ratio is equal to the ratio of output voltage to
+
+input voltage.
+
+The following equation shows that the input power ends up equaling the output power, which means that
+
+the efficiency is 100 percent.
+
+Now, I know in reality, the inductor capacitor and diode in the back regulator are not ideal and will
+
+all incur losses, decreasing the efficiency, the transistor will also not be ideal and have some losses
+
+due to the on state resistance, along with losses due to the switching.
+
+Therefore, the efficiency of switching regulator is dependent on the chosen components and operating
+
+conditions.
+
+On the other hand, the efficiency of a regulator is independent of chosen components, and it's dependent
+
+only on the input and output, what its conditions.
+
+And now let's see briefly the practical implications of poor efficiency, as I mentioned earlier, one
+
+of the main reasons that linnear regulators remain so popular despite their poor efficiency, is their
+
+cost, simplicity and familiarity.
+
+However, as cost previously, the poor efficiency and associated thermal issues can necessitate heating
+
+and airflow, which act against these benefits.
+
+Switching regulators are an efficient alternative.
+
+And while they may be more expensive and complex upfront, they can decrease system costs and complexity
+
+by reducing the need for expensive and bulky thermal management devices to get a feel for just how much
+
+thermal management is required for the example conditions.
+
+This figure shows a side by side comparison of a linear regulator before heating that we force.
+
+Air cooling would allow the same operating temperature range as with off the shelf switching regulator.

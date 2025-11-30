@@ -1,0 +1,239 @@
+Now, Leslie, we have to choose the value of the capacitors in the circuit, both capacitors have the
+
+same function.
+
+They allow only the AC signal to pass through and block the DC from passing through.
+
+So they function as Kopplin capacitors.
+
+We will first show how to calculate the value of the capacitor, the input.
+
+In order to correctly choose an appropriate value of the capacitor, you have to take many things into
+
+account, which we allow these costs.
+
+One, we have to decide the cut off frequency of the circuit.
+
+This is the frequency that we want filtered out.
+
+If you are dealing with four sound signals, for example, the frequency range that is audible to humans
+
+is 20 hertz to 20000 hertz.
+
+So we want only the audio signals passed through 20 hertz is a good off request to choose.
+
+This means that any frequency of the range or lower will be filtered out to ground, so we choose 20
+
+hertz as the cutoff frequency.
+
+And if you take 20 hertz and apply it to angular frequency, we get an angular frequency of 120 five
+
+seconds.
+
+The power of minus one.
+
+This is one part of the equation.
+
+The next thing we must consider is the value of the resistance that the capacitor sees the first part
+
+of this circuit from the capacitor and the resistor that it sees down to ground forms a high-pitched
+
+filter, an RC high pass filter and RC High best filter is a liquid composed of a capacitor before resistor
+
+connected to ground.
+
+If you visualize Coron flowing into the circuit, current can go either one or three ways.
+
+Current can go through the capacitor and through the R to register and down to ground.
+
+Current can go through the capacitor and through the R wall resistor or karoon cashflow through the
+
+transistor.
+
+Now flow through the R e resistor down to ground.
+
+It may seem strange that current can flow through the R y resistor, but ACS ignores CDs high voltage
+
+levels of the ground as well.
+
+So even though it's to the DC level of 12 volts to AC signals, it can also be a ground.
+
+And this is why this can be a path down to ground as well.
+
+So these are the three ways that current airflow in the circuit, even though current can take those
+
+paths.
+
+It's ultimately what a capacitor sees that determines the real resistance that it encounters.
+
+So we will talk about these now.
+
+Resistors R1 and R2 are in parallel.
+
+And the reason of that is the easy signal sees the DC power supply as ground as well.
+
+Therefore, the capacitor sees the equivalent resistance of these two parallel resistors, so the capacitor
+
+sees the one kilogram in parallel with the one point two km.
+
+These are the equivalent resistance of these resistors is roughly 500 homes.
+
+So this is the resistance that the kappa sources at one pathway.
+
+The other pathway is when the current goes through the transistor and through resistor Ori.
+
+This resistance will be behtar times r e.
+
+We've beta equal to about 100 doing this math.
+
+This resistance computes to 50 kilo.
+
+Remember that current always takes the path of least resistance, so between the options of 500 ohm
+
+or 56kg current, we obviously take the $500 pathway.
+
+So five hundred armies, the Cubans resistance that the RC High Pass Filter Network sees.
+
+And we know that we want to cut off frequency of twenty hertz and calculating the annual frequency for
+
+twenty hertz gives us an angular frequency of one hundred twenty five seconds of the power of minus
+
+one.
+
+So going to the equation, which is our equivalent times, see one equal to one times 125 seconds of
+
+the power of minus one.
+
+This would be equal to 500 times a C one, which is equal to zero point zero zero eight seconds.
+
+Now doing the math this computes into a c one value of sixteen microphones.
+
+So the first capacitor is 16 microphones.
+
+Now we move on to the second capacitor and it's chosen similarly to the first capacitor.
+
+We want the second capacitor to react similar to the first in regard to the frequency that we are dealing
+
+with.
+
+This is because the same frequency signal that is input is output too, right?
+
+So you want to measure the frequency response for both capacitors to the same frequency.
+
+So for the output capacitor, we also calculated according to its 20 hertz frequency response computing,
+
+the angular frequency, we again get an equal effect mass of one hundred twenty five seconds.
+
+The power of minus one.
+
+We use the same formula again, which is our equivalent times CO2 equal to one divided by one hundred
+
+twenty five seconds of the power of minus one.
+
+Now what is our equivalent?
+
+In his case, our equivalent is the resistance that the output capacitor sees in the circuit.
+
+Looking from the capacitor back to the input side, the capacitor sees the resistance of R1 in parallel
+
+with R2.
+
+And the result is divided by the beta.
+
+The result of this equation is five ohms.
+
+So the output capacitor sees an equivalent resistance of five ohm looking back to the input of the circuit.
+
+So plugging these values into the equation, which is our equivalent times CO2 equal to one divided
+
+by one hundred twenty five seconds of the power of minus one.
+
+This would be equal to five times the CO2, which is equal to zero point zero zero eight seconds.
+
+Now solving for CO2, we get capacitance of one hundred sixty micro ferrets, so this is the value of
+
+the output capacitor.
+
+Congratulations.
+
+Now we've sold for all the values of the components and the circuit.
+
+You can see basically the calculations that the secret is a how you put the impetus and the low output
+
+impedance, as we calculated, the input impedance is at times Ori, which we calculated to be 50kg.
+
+The output impedance is all one imperative or two.
+
+The result is divided by beta.
+
+This would be equal to five ohms.
+
+So you can see how the circuit has a high impedance and low output impedance, so it functions very
+
+well as a buffer.
+
+This circuit can be added to wattage light that needs to be buffered, which allows or the voltage to
+
+be transferred over while giving out a low impedance output so that a load can be powered.
+
+Know that this is a basic buffer circuit.
+
+It is not as accurate as an extra buffer.
+
+Cheap for one buffer chip has greater impedance, lower output impedance for another.
+
+It's completely accurate voltage power circuit being that the transistor has an internal diode that
+
+has a voltage drop roughly equivalent to 0.7 volts, so it loses this voltage of the output.
+
+So the output signal is 0.7 was lower than the signal.
+
+You can see it's not completely awarded, far lower.
+
+However, for all basic purposes, it functions very well as low precision buffer.
+
+All right.
+
+Let's check if our circuit is actually working, remember that the base voltage is exactly in the middle
+
+of the ceiling, which is the power supply and floor, which is 0.7 woods.
+
+So the Doppler signal can have the maximum excursion if 6.5 volts is the middle point.
+
+It means that if you have a sine wave of five point five woods big amplitude, or we can see 11 volts
+
+peak to peak, then the sun on the base should swing from six point five watts up to 12 hours, and
+
+after that, down to zero point seven woods.
+
+I will start the simulation and let's see how the output signal looks like in the oscilloscope.
+
+Alright, design, they look just fine.
+
+The note is that there are no clippings on either side of the signal.
+
+I always slow down the simulation a little bit so we can check if the signal reaches the ceiling and
+
+the floor, so the butter voltage should be around zero voice, right?
+
+That's because when the base wattage reaches the bottom voltage of 0.7 volts, the meter is lower with
+
+one day drop, right?
+
+Let's we can see the bottom voltage is indeed very close to zero wolf.
+
+It's around 200 million volts.
+
+And that's because the base voltage is biased to 6.5 volts and not 6.3 watts, as it should be.
+
+Now let's check the upper voltage.
+
+So again, when the base voltage reaches the ceiling, which is a 12 volt, the meter will be around
+
+eleven point four volts, right?
+
+And indeed, it's around that voltage.
+
+So this means that the signal transferred has the maximum excursion.
+
+And that's exactly what we wanted.

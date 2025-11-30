@@ -1,0 +1,3474 @@
+% ====================================================================
+% Section 08 -- Capacitors
+% ====================================================================
+
+\section{Section 08 -- Capacitors}
+
+% --------------------------------------------------------------------
+\subsection{Capacitor Introduction}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Capacitor:} Two-terminal passive component that stores electrical energy
+    \item \textbf{Unit:} Farad (F); typically pF to $\mu$F range (1 F is huge!)
+    \item \textbf{Symbol:} Two parallel lines (flat for non-polarized, curved for polarized/electrolytic)
+    \item \textbf{Key property:} Stores charge like a battery but releases it much faster
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{What is a Capacitor?}
+
+\vspace{0.15cm}
+
+\textbf{Definition and Purpose:}
+\begin{itemize}
+    \item \textbf{Two-terminal electrical component}
+    \item Special ability: \textbf{Store electrical energy}
+    \item One of the three fundamental passive components (resistor, capacitor, inductor)
+    \item Found in virtually every electronic circuit
+    \item Works differently from a battery
+\end{itemize}
+
+\textbf{Comparison with batteries:}
+\begin{itemize}
+    \item \textbf{Batteries:} Store energy chemically, release slowly (hours to years)
+    \item Example: Quartz watch battery lasts several years
+    \item \textbf{Capacitors:} Store energy electrically, release rapidly (seconds or less)
+    \item Example: Camera flash - charges for ~1 second, releases instantly
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Practical Application - Camera Flash:}
+
+\textit{How it works:}
+\begin{enumerate}
+    \item Camera battery charges the flash capacitor (takes ~1 second)
+    \item Capacitor stores energy
+    \item When photo taken, capacitor releases all energy instantly
+    \item Energy drives xenon flash bulb for brief, intense burst of light
+    \item Fraction of a second discharge
+\end{enumerate}
+
+\textit{Why not use battery directly?}
+\begin{itemize}
+    \item Battery cannot deliver huge burst of current instantly
+    \item Capacitor can - perfect for high-power, short-duration needs
+    \item Capacitor acts as temporary high-current source
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Schematic Symbols:}
+
+\textbf{Two common representations:}
+
+\textit{1. Non-polarized capacitor (flat lines):}
+\begin{itemize}
+    \item Two parallel straight lines
+    \item Close together but not touching
+    \item Can be connected either way (no polarity)
+    \item Typical for ceramic, film capacitors
+\end{itemize}
+
+\textit{2. Polarized capacitor (curved line):}
+\begin{itemize}
+    \item One straight line, one curved line
+    \item Curved line indicates negative terminal (cathode)
+    \item Indicates \textbf{polarity matters}
+    \item Usually electrolytic capacitors
+    \item MUST connect + to higher voltage, - to lower
+\end{itemize}
+
+\textbf{Labeling:}
+\begin{itemize}
+    \item Each capacitor has designator: C1, C2, C3, etc.
+    \item Value indicates capacitance (how many Farads)
+    \item Example: C1 = 100$\mu$F (100 microfarads)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Capacitance - Measuring Storage Ability:}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item Capacitance = amount of charge capacitor can store
+    \item More capacitance = more charge storage capacity
+    \item Unit: \textbf{Farad (F)}
+    \item Abbreviated: F
+\end{itemize}
+
+\textbf{The Farad is HUGE:}
+\begin{itemize}
+    \item 1 Farad is enormous in electronics
+    \item Even 0.001 F (1 millifarad) is considered big
+    \item Typical capacitors: picofarads to microfarads
+    \item Large capacitors rarely exceed a few thousand $\mu$F
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Common Capacitance Ranges:}
+
+\textbf{Picofarads (pF):}
+\begin{itemize}
+    \item $1 \text{ pF} = 10^{-12}$ F
+    \item Very small capacitance
+    \item Used in high-frequency circuits (RF, oscillators)
+    \item Typical range: 1 pF to 1,000 pF
+\end{itemize}
+
+\textbf{Nanofarads (nF):}
+\begin{itemize}
+    \item $1 \text{ nF} = 10^{-9}$ F = 1,000 pF
+    \item Medium-small capacitance
+    \item General-purpose filtering
+    \item Typical range: 1 nF to 1,000 nF
+\end{itemize}
+
+\textbf{Microfarads ($\mu$F):}
+\begin{itemize}
+    \item $1 \text{ $\mu$F} = 10^{-6}$ F = 1,000 nF
+    \item Most common range in electronics
+    \item Power supply filtering, coupling, decoupling
+    \item Typical range: 1 $\mu$F to several thousand $\mu$F
+\end{itemize}
+
+\textbf{Farads (F):}
+\begin{itemize}
+    \item Used only in \textbf{supercapacitors} or \textbf{ultracapacitors}
+    \item Special capacitors for energy storage
+    \item Rare in typical electronics
+    \item Can replace small batteries
+    \item Range: 0.1 F to several hundred F
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Capacitance Hierarchy (small to large):}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Unit} & \textbf{Conversion} & \textbf{Typical Use} \\
+\hline
+pF (picofarad) & $10^{-12}$ F & High frequency, RF \\
+nF (nanofarad) & $10^{-9}$ F & Filtering, coupling \\
+$\mu$F (microfarad) & $10^{-6}$ F & Power supplies, general \\
+F (farad) & 1 F & Supercaps, energy storage \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.15cm}
+
+\textbf{Key Takeaways:}
+
+\textbf{Primary function:}
+\begin{itemize}
+    \item Store electrical energy
+    \item Release energy quickly when needed
+    \item Similar to battery but much faster discharge
+\end{itemize}
+
+\textbf{Capacitance value:}
+\begin{itemize}
+    \item Measured in Farads (F)
+    \item Typical range: pF to $\mu$F
+    \item Larger value = more charge storage
+\end{itemize}
+
+\textbf{Symbol recognition:}
+\begin{itemize}
+    \item Flat lines = non-polarized (can connect either way)
+    \item Curved line = polarized (polarity matters!)
+    \item Always labeled with value and designator
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Camera Flash Capacitor}
+
+\textit{Typical camera flash circuit:}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item Capacitor: 300 $\mu$F
+    \item Charging voltage: 300V
+    \item Charging time: ~1 second (from camera battery)
+    \item Discharge time: ~0.001 second (1 millisecond)
+\end{itemize}
+
+\textbf{Energy stored:}
+\begin{equation*}
+    E = \frac{1}{2}CV^2 = \frac{1}{2} \times 300 \times 10^{-6} \times 300^2 = 13.5\text{ J}
+\end{equation*}
+
+\textbf{Power during flash:}
+\begin{equation*}
+    P = \frac{E}{t} = \frac{13.5}{0.001} = \boxed{13{,}500\text{ W}}
+\end{equation*}
+
+Huge instantaneous power from tiny component!
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Capacitance Unit Conversions}
+
+\textbf{Convert 4,700 pF to nF:}
+\begin{equation*}
+    4{,}700\text{ pF} = \frac{4{,}700}{1{,}000} = \boxed{4.7\text{ nF}}
+\end{equation*}
+
+\textbf{Convert 0.047 $\mu$F to nF:}
+\begin{equation*}
+    0.047\text{ $\mu$F} = 0.047 \times 1{,}000 = \boxed{47\text{ nF}}
+\end{equation*}
+
+\textbf{Convert 220 nF to $\mu$F:}
+\begin{equation*}
+    220\text{ nF} = \frac{220}{1{,}000} = \boxed{0.22\text{ $\mu$F}}
+\end{equation*}
+
+\textbf{Convert 100 $\mu$F to F:}
+\begin{equation*}
+    100\text{ $\mu$F} = 100 \times 10^{-6} = \boxed{0.0001\text{ F}}
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Comparing Capacitor vs Battery}
+
+\textit{Scenario: Powering LED}
+
+\textbf{Battery approach:}
+\begin{itemize}
+    \item 9V battery (alkaline)
+    \item Energy capacity: ~20,000 J
+    \item Can power LED for hours
+    \item Slow discharge rate
+\end{itemize}
+
+\textbf{Capacitor approach:}
+\begin{itemize}
+    \item 1,000 $\mu$F, 10V capacitor
+    \item Energy: $E = \frac{1}{2} \times 0.001 \times 10^2 = 0.05$ J
+    \item Can power LED for ~1 second
+    \item Rapid discharge
+\end{itemize}
+
+\textbf{Comparison:}
+\begin{itemize}
+    \item Battery: 400,000$\times$ more energy storage
+    \item Capacitor: Can deliver current much faster
+    \item Each suited for different applications
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Supercapacitor Energy Storage}
+
+\textit{Modern supercapacitor:}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item Capacitance: 10 F (yes, 10 Farads!)
+    \item Max voltage: 2.7V
+    \item Size: Similar to AA battery
+\end{itemize}
+
+\textbf{Energy stored:}
+\begin{equation*}
+    E = \frac{1}{2} \times 10 \times 2.7^2 = \boxed{36.45\text{ J}}
+\end{equation*}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Backup power for memory
+    \item Energy harvesting
+    \item Quick charge/discharge cycles
+    \item Much longer lifespan than batteries
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Why 1 Farad is Huge}
+
+\textit{Consider typical circuit board:}
+
+\textbf{Standard decoupling:}
+\begin{itemize}
+    \item 100 nF capacitor
+    \item Across power pins
+    \item Physical size: ~2mm $\times$ 1mm
+\end{itemize}
+
+\textbf{If using 1 F instead:}
+\begin{equation*}
+    \text{Ratio} = \frac{1\text{ F}}{100\text{ nF}} = \frac{1}{100 \times 10^{-9}} = 10{,}000{,}000\times
+\end{equation*}
+
+Would need 10 million times more physical space! (unrealistic)
+
+This is why typical electronics uses pF to $\mu$F range.
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Capacitor:} Passive component storing electrical energy (two terminals)
+    \item \textbf{Key difference from battery:} Fast discharge (seconds vs hours)
+    \item \textbf{Unit:} Farad (F), typically pF to $\mu$F in circuits
+    \item \textbf{Symbol:} Flat lines (non-polarized), curved line (polarized)
+    \item \textbf{Capacitance:} Amount of charge it can store
+    \item \textbf{1 Farad is huge:} Most caps in pF to $\mu$F range
+    \item \textbf{Supercapacitors:} F range, special energy storage applications
+    \item \textbf{Found everywhere:} Very few circuits without capacitors
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What does a capacitor do? \\
+    \textit{A:} Stores electrical energy and can release it quickly.
+    
+    \item \textbf{Q:} How is capacitor different from battery? \\
+    \textit{A:} Capacitor releases energy much faster (seconds vs hours); battery stores chemically, capacitor electrically.
+    
+    \item \textbf{Q:} What is the unit of capacitance? \\
+    \textit{A:} Farad (F).
+    
+    \item \textbf{Q:} Is 1 Farad typical in electronics? \\
+    \textit{A:} No, 1 F is huge; typical range is picofarads (pF) to microfarads ($\mu$F).
+    
+    \item \textbf{Q:} What does curved line in capacitor symbol mean? \\
+    \textit{A:} Polarized capacitor (electrolytic); polarity matters - must connect correctly.
+    
+    \item \textbf{Q:} Example of capacitor application? \\
+    \textit{A:} Camera flash - stores energy for instant high-power light burst.
+\end{itemize}
+
+\textbf{Capacitance Units:}
+\begin{itemize}
+    \item 1 $\mu$F = 1,000 nF = 1,000,000 pF
+    \item 1 nF = 1,000 pF
+    \item 1 F = 1,000,000 $\mu$F (rarely used except supercaps)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Power supply filtering and smoothing
+    \item Coupling and decoupling signals
+    \item Energy storage (flash, backup power)
+    \item Timing circuits
+    \item Filters (high-pass, low-pass, band-pass)
+\end{itemize}
+
+\textbf{Common Misconceptions:}
+\begin{itemize}
+    \item "Capacitors are like batteries" - Similar but release energy much faster
+    \item "All capacitors same" - No, polarized vs non-polarized crucial difference
+    \item "Bigger always better" - No, depends on application and frequency
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{How a Capacitor is Made}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Structure:} Two metal plates + insulating dielectric between them
+    \item \textbf{Capacitance formula:} $C = \epsilon_r \epsilon_0 \frac{A}{d}$ (larger area/smaller distance = more capacitance)
+    \item \textbf{Dielectric:} Insulating material (paper, ceramic, plastic, etc.)
+    \item \textbf{Key:} DC cannot flow through (dielectric blocks it), but voltage stored across plates
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Basic Construction:}
+
+\vspace{0.15cm}
+
+\textbf{Three essential components:}
+\begin{enumerate}
+    \item \textbf{Two metal plates} (conductive)
+    \item \textbf{Dielectric} (insulator between plates)
+    \item \textbf{Terminal wires} (connect to circuit)
+\end{enumerate}
+
+\textit{The schematic symbol resembles actual construction:}
+\begin{itemize}
+    \item Two parallel lines = two metal plates
+    \item Space between lines = dielectric insulator
+    \item Plates close together but never touching
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{The Metal Plates:}
+
+\textbf{Material:}
+\begin{itemize}
+    \item \textbf{Aluminum} (most common, cheap)
+    \item \textbf{Tantalum} (electrolytic capacitors)
+    \item \textbf{Silver} (high-performance)
+    \item Other conductive metals
+\end{itemize}
+
+\textbf{Properties:}
+\begin{itemize}
+    \item Placed parallel to each other
+    \item Very close together
+    \item Each connected to terminal wire
+    \item Conductive surface area crucial for capacitance
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{The Dielectric (Insulator):}
+
+\textbf{Purpose:}
+\begin{itemize}
+    \item Separates the two plates
+    \item Prevents direct electrical contact
+    \item \textbf{Blocks DC current flow}
+    \item Allows electric field to form between plates
+    \item Material affects capacitance value
+\end{itemize}
+
+\textbf{Common dielectric materials:}
+
+\textit{Paper:}
+\begin{itemize}
+    \item Older technology
+    \item Impregnated with oil or wax
+    \item Low cost
+\end{itemize}
+
+\textit{Ceramic:}
+\begin{itemize}
+    \item Very common today
+    \item Stable, reliable
+    \item Various formulations
+    \item Used in ceramic disc capacitors
+\end{itemize}
+
+\textit{Plastic film:}
+\begin{itemize}
+    \item Polyester, polypropylene
+    \item Good temperature stability
+    \item Film capacitors
+\end{itemize}
+
+\textit{Glass:}
+\begin{itemize}
+    \item High precision
+    \item Expensive
+    \item Low loss
+\end{itemize}
+
+\textit{Aluminum oxide:}
+\begin{itemize}
+    \item Electrolytic capacitors
+    \item Very thin layer (high capacitance)
+    \item Polarized
+\end{itemize}
+
+\textit{Tantalum oxide:}
+\begin{itemize}
+    \item Tantalum electrolytic capacitors
+    \item Stable, reliable
+    \item Higher capacitance density
+\end{itemize}
+
+\textit{Air:}
+\begin{itemize}
+    \item Variable capacitors
+    \item Tuning circuits (old radios)
+    \item Low capacitance
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why DC Cannot Flow Through Capacitor:}
+
+\textbf{The dielectric acts as insulator:}
+\begin{itemize}
+    \item Blocks direct current path
+    \item Electrons cannot physically travel through insulator
+    \item Current cannot flow from one plate to other
+    \item \textbf{DC is blocked}
+\end{itemize}
+
+\textbf{But voltage can exist across plates:}
+\begin{itemize}
+    \item Positive charges accumulate on one plate
+    \item Negative charges accumulate on other plate
+    \item Electric field forms between plates
+    \item Voltage present even though no current flows
+    \item Energy stored in electric field
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Capacitance Formula:}
+
+\textbf{Factors determining capacitance:}
+
+The capacitance value depends on physical construction:
+\begin{equation*}
+    \boxed{C = \epsilon_r \epsilon_0 \frac{A}{d}}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $C$ = capacitance (F)
+    \item $\epsilon_r$ = relative permittivity of dielectric (dimensionless constant)
+    \item $\epsilon_0$ = permittivity of free space ($8.854 \times 10^{-12}$ F/m)
+    \item $A$ = overlapping area of plates (m²)
+    \item $d$ = distance between plates (m)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{How Each Factor Affects Capacitance:}
+
+\textbf{Plate Area (A):}
+
+\textit{Larger area $\rightarrow$ MORE capacitance}
+\begin{itemize}
+    \item More surface to accumulate charges
+    \item Directly proportional: 2$\times$ area = 2$\times$ capacitance
+    \item To increase capacitance, increase plate size
+\end{itemize}
+
+\textbf{Distance Between Plates (d):}
+
+\textit{Smaller distance $\rightarrow$ MORE capacitance}
+\begin{itemize}
+    \item Charges closer together = stronger electric field
+    \item Inversely proportional: ½ distance = 2$\times$ capacitance
+    \item Thinner dielectric = higher capacitance
+    \item But too thin risks breakdown
+\end{itemize}
+
+\textbf{Dielectric Constant ($\epsilon_r$):}
+
+\textit{Higher permittivity $\rightarrow$ MORE capacitance}
+\begin{itemize}
+    \item Material property of dielectric
+    \item Vacuum/air: $\epsilon_r = 1$ (reference)
+    \item Ceramic: $\epsilon_r \approx 10 - 10{,}000$ (varies widely)
+    \item Aluminum oxide: $\epsilon_r \approx 7-10$
+    \item Tantalum oxide: $\epsilon_r \approx 25$
+    \item Higher $\epsilon_r$ allows more charge storage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Design Tradeoffs:}
+
+\textbf{To maximize capacitance:}
+\begin{enumerate}
+    \item Use larger plate area (increases size/cost)
+    \item Reduce plate spacing (risk of breakdown, manufacturing limits)
+    \item Choose dielectric with high $\epsilon_r$ (material selection)
+\end{enumerate}
+
+\textbf{Why electrolytic capacitors have high capacitance:}
+\begin{itemize}
+    \item Oxide layer extremely thin ($d$ very small)
+    \item Effective plate area very large (etched, rough surface)
+    \item Result: High capacitance in small volume
+    \item Tradeoff: Must be polarized
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Summary of Construction:}
+
+\textbf{Physical structure:}
+\begin{itemize}
+    \item Two parallel conductive plates
+    \item Separated by thin insulating dielectric
+    \item Each plate connected to terminal
+    \item Entire assembly often rolled or stacked
+\end{itemize}
+
+\textbf{Electrical behavior:}
+\begin{itemize}
+    \item DC blocked by dielectric
+    \item Voltage can exist across plates
+    \item Charges accumulate on plates
+    \item Electric field stores energy
+\end{itemize}
+
+\textbf{Capacitance depends on:}
+\begin{itemize}
+    \item Plate area (larger = more C)
+    \item Plate spacing (smaller = more C)
+    \item Dielectric material (higher $\epsilon_r$ = more C)
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Simple Parallel-Plate Capacitor Calculation}
+
+\textit{Design a capacitor with these specifications:}
+\begin{itemize}
+    \item Plate area: $A = 0.01 \text{ m}^2$ (100 cm²)
+    \item Plate separation: $d = 0.001 \text{ m}$ (1 mm)
+    \item Dielectric: Ceramic with $\epsilon_r = 10$
+\end{itemize}
+
+\textbf{Calculate capacitance:}
+\begin{align*}
+    C &= \epsilon_r \epsilon_0 \frac{A}{d} \\
+    &= 10 \times 8.854 \times 10^{-12} \times \frac{0.01}{0.001} \\
+    &= 10 \times 8.854 \times 10^{-12} \times 10 \\
+    &= 8.854 \times 10^{-10} \text{ F} \\
+    &= \boxed{885.4 \text{ pF}}
+\end{align*}
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Effect of Doubling Plate Area}
+
+\textit{Using same capacitor from Example 1:}
+
+\textbf{Original:}
+\begin{itemize}
+    \item $A = 0.01$ m², $C = 885.4$ pF
+\end{itemize}
+
+\textbf{Double the area:}
+\begin{itemize}
+    \item $A = 0.02$ m²
+\end{itemize}
+
+\textbf{New capacitance:}
+\begin{align*}
+    C_{new} &= 10 \times 8.854 \times 10^{-12} \times \frac{0.02}{0.001} \\
+    &= \boxed{1{,}770.8 \text{ pF}}
+\end{align*}
+
+Result: 2$\times$ area = 2$\times$ capacitance $\checkmark$
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Effect of Halving Distance}
+
+\textit{Using original capacitor:}
+
+\textbf{Original:}
+\begin{itemize}
+    \item $d = 0.001$ m (1 mm), $C = 885.4$ pF
+\end{itemize}
+
+\textbf{Halve the distance:}
+\begin{itemize}
+    \item $d = 0.0005$ m (0.5 mm)
+\end{itemize}
+
+\textbf{New capacitance:}
+\begin{align*}
+    C_{new} &= 10 \times 8.854 \times 10^{-12} \times \frac{0.01}{0.0005} \\
+    &= 10 \times 8.854 \times 10^{-12} \times 20 \\
+    &= \boxed{1{,}770.8 \text{ pF}}
+\end{align*}
+
+Result: ½ distance = 2$\times$ capacitance $\checkmark$
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Effect of Different Dielectric}
+
+\textit{Same physical dimensions, different materials:}
+
+\textbf{Air dielectric ($\epsilon_r = 1$):}
+\begin{equation*}
+    C = 1 \times 8.854 \times 10^{-12} \times \frac{0.01}{0.001} = 88.54 \text{ pF}
+\end{equation*}
+
+\textbf{Ceramic dielectric ($\epsilon_r = 10$):}
+\begin{equation*}
+    C = 10 \times 8.854 \times 10^{-12} \times \frac{0.01}{0.001} = 885.4 \text{ pF}
+\end{equation*}
+
+\textbf{High-K ceramic ($\epsilon_r = 1000$):}
+\begin{equation*}
+    C = 1000 \times 8.854 \times 10^{-12} \times \frac{0.01}{0.001} = 88.54 \text{ nF}
+\end{equation*}
+
+Same size, 1000$\times$ more capacitance with better dielectric!
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Why Electrolytic Capacitors Are Large}
+
+\textit{Typical aluminum electrolytic:}
+
+\textbf{Construction:}
+\begin{itemize}
+    \item Aluminum oxide dielectric: $\epsilon_r \approx 8$
+    \item Oxide layer thickness: $d \approx 1$ $\mu$m = $10^{-6}$ m (very thin!)
+    \item Etched foil increases effective area: $A \approx 0.1$ m² (large!)
+\end{itemize}
+
+\textbf{Capacitance:}
+\begin{align*}
+    C &= 8 \times 8.854 \times 10^{-12} \times \frac{0.1}{10^{-6}} \\
+    &= 8 \times 8.854 \times 10^{-12} \times 10^5 \\
+    &= 7.08 \times 10^{-6} \text{ F} \\
+    &= \boxed{7.08 \text{ $\mu$F}}
+\end{align*}
+
+Extremely thin dielectric + large area = high capacitance in small volume!
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Practical Ceramic Capacitor}
+
+\textit{0805 SMD ceramic capacitor - 100 nF:}
+
+\textbf{Physical dimensions:}
+\begin{itemize}
+    \item Size: 2mm $\times$ 1.2mm $\times$ 0.5mm (tiny!)
+    \item Dielectric: High-K ceramic, $\epsilon_r \approx 2000$
+    \item Multiple layers stacked
+\end{itemize}
+
+\textbf{Estimation (simplified):}
+\begin{itemize}
+    \item Effective area (multi-layer): $A \approx 0.0001$ m²
+    \item Dielectric thickness: $d \approx 10$ $\mu$m
+\end{itemize}
+
+\begin{align*}
+    C &= 2000 \times 8.854 \times 10^{-12} \times \frac{0.0001}{10 \times 10^{-6}} \\
+    &\approx 177 \text{ nF}
+\end{align*}
+
+Close to 100 nF (actual has optimized geometry).
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Structure:} Two parallel metal plates separated by insulating dielectric
+    \item \textbf{Formula:} $C = \epsilon_r \epsilon_0 \frac{A}{d}$
+    \item \textbf{Larger plates:} More area $\rightarrow$ more capacitance
+    \item \textbf{Closer plates:} Smaller distance $\rightarrow$ more capacitance (inversely proportional)
+    \item \textbf{Dielectric material:} Higher $\epsilon_r$ $\rightarrow$ more capacitance
+    \item \textbf{DC blocking:} Dielectric prevents current flow through capacitor
+    \item \textbf{Voltage storage:} Charges accumulate on plates, electric field stores energy
+    \item \textbf{Electrolytic secret:} Ultra-thin oxide + large effective area = high C
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What are the main parts of a capacitor? \\
+    \textit{A:} Two metal plates and insulating dielectric between them.
+    
+    \item \textbf{Q:} Why can't DC current flow through capacitor? \\
+    \textit{A:} Dielectric is an insulator - blocks direct current path.
+    
+    \item \textbf{Q:} How to increase capacitance? \\
+    \textit{A:} Increase plate area, decrease plate spacing, or use dielectric with higher permittivity.
+    
+    \item \textbf{Q:} What is dielectric? \\
+    \textit{A:} Insulating material between plates (ceramic, plastic, paper, oxide, etc.).
+    
+    \item \textbf{Q:} If you double plate area, what happens to capacitance? \\
+    \textit{A:} Capacitance doubles (directly proportional).
+    
+    \item \textbf{Q:} If you halve distance between plates? \\
+    \textit{A:} Capacitance doubles (inversely proportional to distance).
+\end{itemize}
+
+\textbf{Capacitance Formula:}
+\begin{itemize}
+    \item $C = \epsilon_r \epsilon_0 \frac{A}{d}$
+    \item $\epsilon_0 = 8.854 \times 10^{-12}$ F/m (constant)
+    \item $\epsilon_r$ = dielectric constant (material property)
+    \item Proportional to area $A$
+    \item Inversely proportional to distance $d$
+\end{itemize}
+
+\textbf{Common Dielectrics:}
+\begin{itemize}
+    \item Air: $\epsilon_r = 1$
+    \item Paper: $\epsilon_r \approx 3-4$
+    \item Ceramic: $\epsilon_r \approx 10-10{,}000$
+    \item Aluminum oxide: $\epsilon_r \approx 8-10$
+    \item Tantalum oxide: $\epsilon_r \approx 25$
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Thinking current flows through capacitor (DC blocked!)
+    \item Confusing area with volume
+    \item Forgetting inverse relationship with distance
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Types of Capacitors}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Ceramic:} Small, cheap, low ESR, ideal for high-frequency coupling/decoupling
+    \item \textbf{Electrolytic:} High capacitance, polarized, higher ESR, power supply filtering
+    \item \textbf{Supercapacitors:} Farad-range, energy storage, low voltage rating
+    \item Key factors: Size, voltage rating, leakage, ESR, tolerance
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Factors to Consider When Choosing Capacitors:}
+
+\vspace{0.15cm}
+
+\textbf{1. Size (Physical and Capacitance):}
+\begin{itemize}
+    \item \textbf{Physical volume:} Can be largest component in circuit or tiny SMD
+    \item \textbf{Capacitance value:} More capacitance typically requires larger size
+    \item Tradeoff between performance and board space
+\end{itemize}
+
+\textbf{2. Maximum Voltage Rating:}
+\begin{itemize}
+    \item Each capacitor rated for max voltage across it
+    \item Ratings: 6.3V, 10V, 16V, 25V, 50V, 100V, 400V, etc.
+    \item \textbf{Exceeding voltage rating destroys capacitor}
+    \item Always design with safety margin (use 50-70\% of max rating)
+\end{itemize}
+
+\textbf{3. Leakage Current:}
+\begin{itemize}
+    \item \textbf{No capacitor is perfect}
+    \item Tiny current leaks through dielectric (nanoamps typically)
+    \item Causes slow energy drain
+    \item Electrolytic capacitors have higher leakage
+    \item Ceramic and film have very low leakage
+\end{itemize}
+
+\textbf{4. Equivalent Series Resistance (ESR):}
+\begin{itemize}
+    \item Terminals not 100\% conductive
+    \item Small resistance in series (usually $< 0.01\Omega$)
+    \item Becomes problem with high currents $\rightarrow$ heat and power loss
+    \item \textbf{Remember ESR - important for next topics!}
+    \item Ceramic: very low ESR
+    \item Electrolytic: higher ESR
+\end{itemize}
+
+\textbf{5. Tolerance:}
+\begin{itemize}
+    \item Actual capacitance varies from nominal value
+    \item Typical tolerances: $\pm$1\%, $\pm$5\%, $\pm$10\%, $\pm$20\%
+    \item Precision caps: $\pm$1\% (expensive)
+    \item General purpose: $\pm$10\% to $\pm$20\%
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{CERAMIC CAPACITORS (Most Common):}
+
+\textbf{Market share:} ~80\% of all capacitors produced
+
+\textbf{Construction:}
+\begin{itemize}
+    \item Dielectric: Ceramic material
+    \item Small physical size
+    \item Small capacitance values (pF to low $\mu$F)
+    \item Surface mount: 0402, 0603, 0805, 1206 packages
+    \item Through-hole: Yellow/brown disc shape
+\end{itemize}
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item \textbf{Very low ESR} (near ideal)
+    \item \textbf{Very low leakage}
+    \item Non-polarized (can connect either way)
+    \item Usually hard to find > 10 $\mu$F ceramic
+    \item Least expensive option
+    \item Excellent high-frequency performance
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item High-frequency coupling
+    \item Decoupling/bypass capacitors
+    \item Filtering
+    \item Timing circuits
+    \item General-purpose applications
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item Limited to smaller capacitance values
+    \item Some types have voltage coefficient (C changes with voltage)
+    \item Temperature coefficient varies by type
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{ELECTROLYTIC CAPACITORS (Aluminum \& Tantalum):}
+
+\textbf{Why they exist:}
+\begin{itemize}
+    \item High capacitance in small volume
+    \item 1 $\mu$F to 1,000,000 $\mu$F range
+    \item Oxide layer extremely thin $\rightarrow$ high capacitance
+    \item Well-suited for high-voltage applications
+\end{itemize}
+
+\textbf{Aluminum Electrolytic:}
+
+\textit{Appearance:}
+\begin{itemize}
+    \item Tin can shape (cylindrical)
+    \item Both leads from bottom (radial)
+    \item Or leads from each end (axial)
+    \item Capacitance and voltage marked on body
+\end{itemize}
+
+\textit{Critical: POLARIZED}
+\begin{itemize}
+    \item \textbf{Anode (+):} Positive terminal (longer lead usually)
+    \item \textbf{Cathode (-):} Negative terminal (marked with stripe/arrow)
+    \item Anode MUST be at higher voltage than cathode
+    \item \textbf{Reverse voltage $\rightarrow$ POP and failure!}
+\end{itemize}
+
+\textit{What happens if reversed:}
+\begin{itemize}
+    \item Spectacular failure (popping sound)
+    \item Electrolyte vents/bursts
+    \item Becomes short circuit (permanent damage)
+    \item Never apply reverse voltage!
+\end{itemize}
+
+\textit{Characteristics:}
+\begin{itemize}
+    \item High capacitance: 1 $\mu$F - 100,000 $\mu$F+
+    \item Voltage ratings: 6.3V to 450V typical
+    \item \textbf{Higher leakage current} (nanoamps to microamps)
+    \item \textbf{Higher ESR} than ceramic
+    \item Less ideal for energy storage (due to leakage)
+    \item Polarity critical
+\end{itemize}
+
+\textit{Applications:}
+\begin{itemize}
+    \item Power supply filtering/smoothing
+    \item Bulk energy storage
+    \item Audio coupling (high capacitance needed)
+    \item DC blocking with large signals
+\end{itemize}
+
+\textbf{Tantalum Electrolytic:}
+
+\textit{Advantages over aluminum:}
+\begin{itemize}
+    \item Smaller size for same capacitance
+    \item Lower ESR
+    \item Better frequency response
+    \item More stable over temperature
+\end{itemize}
+
+\textit{Disadvantages:}
+\begin{itemize}
+    \item More expensive
+    \item Still polarized
+    \item Lower voltage ratings typically
+    \item Can fail catastrophically if abused
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{SUPERCAPACITORS (Ultracapacitors):}
+
+\textbf{Purpose:} Energy storage (battery replacement/supplement)
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item \textbf{Huge capacitance:} Farads range (0.1F to 3,000F!)
+    \item \textbf{Low voltage:} Typically 2.5V to 2.7V max per cell
+    \item Can chain in series for higher voltage (reduces total C)
+    \item Physical size similar to battery
+\end{itemize}
+
+\textbf{Market share:} ~2\% of capacitor market
+
+\textbf{vs Batteries:}
+
+\textit{Advantages:}
+\begin{itemize}
+    \item Much faster charge/discharge
+    \item Much longer lifespan (millions of cycles)
+    \item No chemical degradation
+    \item More environmentally friendly
+\end{itemize}
+
+\textit{Disadvantages:}
+\begin{itemize}
+    \item Cannot hold as much energy as battery (for same size)
+    \item Low voltage rating
+    \item Self-discharge (leakage) higher than batteries
+    \item More expensive per joule stored
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Backup power (memory retention)
+    \item Energy harvesting systems
+    \item Regenerative braking (vehicles)
+    \item Peak power delivery
+    \item Quick charge/discharge applications
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{FILM CAPACITORS:}
+
+\textbf{Construction:}
+\begin{itemize}
+    \item Plastic film dielectric (polyester, polypropylene, etc.)
+    \item Very low parasitic losses
+    \item Non-polarized
+\end{itemize}
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item Excellent for high currents
+    \item Low ESR
+    \item Good temperature stability
+    \item Self-healing property (some types)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item High-voltage applications
+    \item High-frequency, high-current
+    \item Motor run capacitors
+    \item Power factor correction
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{MICA CAPACITORS:}
+
+\textbf{Characteristics:}
+\begin{itemize}
+    \item Very high temperature tolerance: up to 237°C
+    \item Excellent long-term stability (0.01\% - 0.02\% change)
+    \item High precision, low loss
+    \item Low temperature coefficient
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item High-precision analog circuits
+    \item High-quality audio (Hi-Fi)
+    \item High-frequency circuits
+    \item RF applications
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item Complex, expensive manufacturing
+    \item Bulky compared to modern ceramics
+    \item Limited capacitance values
+    \item High cost
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Summary Table:}
+
+\begin{center}
+\small
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Type} & \textbf{Capacitance} & \textbf{Polarized?} & \textbf{ESR} & \textbf{Use} \\
+\hline
+Ceramic & pF - 10$\mu$F & No & Very Low & General, HF \\
+Aluminum Elec & 1$\mu$F - 100mF & Yes & Medium & Power supply \\
+Tantalum Elec & 1$\mu$F - 1mF & Yes & Low-Med & Compact, stable \\
+Supercap & 0.1F - 3000F & Yes/No & Medium & Energy storage \\
+Film & nF - 100$\mu$F & No & Low & High V, high I \\
+Mica & pF - nF & No & Very Low & Precision, RF \\
+\hline
+\end{tabular}
+\end{center}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Choosing Capacitor for Power Supply Filter}
+
+\textit{Requirements:}
+\begin{itemize}
+    \item Filter 12V power supply
+    \item Need 1,000 $\mu$F capacitance
+    \item Low-frequency (60 Hz ripple)
+\end{itemize}
+
+\textbf{Choice: Aluminum Electrolytic}
+
+\textit{Why?}
+\begin{itemize}
+    \item Need high capacitance (1,000 $\mu$F)
+    \item Ceramic typically doesn't go this high
+    \item Low frequency (ESR not critical)
+    \item DC application (polarity OK)
+\end{itemize}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item Capacitance: 1,000 $\mu$F
+    \item Voltage rating: 25V (2$\times$ safety margin over 12V)
+    \item Type: Radial aluminum electrolytic
+    \item Observe polarity!
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Decoupling Capacitor for Digital IC}
+
+\textit{Requirements:}
+\begin{itemize}
+    \item Decouple 5V digital IC
+    \item High-frequency noise (MHz range)
+    \item Small board space
+\end{itemize}
+
+\textbf{Choice: Ceramic 0.1 $\mu$F}
+
+\textit{Why?}
+\begin{itemize}
+    \item Very low ESR (fast response to current spikes)
+    \item Good high-frequency performance
+    \item Small SMD package (0805 or 0603)
+    \item Non-polarized (easy placement)
+    \item Inexpensive
+\end{itemize}
+
+\textbf{Specifications:}
+\begin{itemize}
+    \item 0.1 $\mu$F (100 nF)
+    \item 10V or 16V rating
+    \item X7R ceramic (stable)
+    \item 0805 package
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Supercapacitor Backup Power}
+
+\textit{System needs:}
+\begin{itemize}
+    \item 100 mA current for 10 seconds during power loss
+    \item 3.3V system voltage
+\end{itemize}
+
+\textbf{Energy required:}
+\begin{align*}
+    E &= P \times t = V \times I \times t \\
+    &= 3.3 \times 0.1 \times 10 = 3.3\text{ J}
+\end{align*}
+
+\textbf{Capacitor energy:}
+\begin{equation*}
+    E = \frac{1}{2}CV^2 \quad \Rightarrow \quad C = \frac{2E}{V^2}
+\end{equation*}
+
+\begin{align*}
+    C &= \frac{2 \times 3.3}{3.3^2} = \frac{6.6}{10.89} = 0.606\text{ F}
+\end{align*}
+
+\textbf{Choice:} 1F supercapacitor @ 5.5V (provides margin)
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Voltage Rating Safety}
+
+\textit{Bad design:}
+\begin{itemize}
+    \item 12V supply
+    \item Using 16V rated capacitor
+    \item Voltage spikes can exceed 16V $\rightarrow$ \textbf{FAILURE}
+\end{itemize}
+
+\textit{Good design:}
+\begin{itemize}
+    \item 12V supply
+    \item Using 25V rated capacitor
+    \item Safety factor: 25/12 = 2.08$\times$ (good margin)
+    \item Can tolerate transients and spikes
+\end{itemize}
+
+\textbf{Rule of thumb:} Use 1.5$\times$ to 2$\times$ voltage rating of actual voltage
+
+\vspace{0.2cm}
+
+\textbf{Example 5: ESR Impact on Filtering}
+
+\textit{Two capacitors, same value (1,000 $\mu$F):}
+
+\textbf{Aluminum electrolytic:}
+\begin{itemize}
+    \item ESR: 0.5$\Omega$ (typical)
+    \item At 1A ripple current: $V_{ripple} = I \times ESR = 1 \times 0.5 = 0.5V$
+\end{itemize}
+
+\textbf{Low-ESR electrolytic:}
+\begin{itemize}
+    \item ESR: 0.05$\Omega$
+    \item At 1A ripple: $V_{ripple} = 1 \times 0.05 = 0.05V$
+\end{itemize}
+
+Low-ESR capacitor provides 10$\times$ better ripple reduction!
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Ceramic:} Most common (80\%), low ESR, small C, non-polarized, ideal HF
+    \item \textbf{Electrolytic:} High C ($\mu$F-mF), polarized, must respect polarity or fails
+    \item \textbf{Supercaps:} Farad range, energy storage, low voltage (2.5V typical)
+    \item \textbf{ESR:} Equivalent series resistance, lower is better for AC/switching
+    \item \textbf{Leakage:} All caps leak slightly; electrolytic worst, ceramic best
+    \item \textbf{Voltage rating:} Never exceed; use 1.5-2$\times$ safety factor
+    \item \textbf{Polarity:} Electrolytic MUST be connected correctly (+ to higher V)
+    \item \textbf{Film \& Mica:} Special apps (precision, high-temp, high-freq)
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What happens if you reverse electrolytic capacitor? \\
+    \textit{A:} It will pop/burst and fail, becoming short circuit.
+    
+    \item \textbf{Q:} When to use ceramic vs electrolytic? \\
+    \textit{A:} Ceramic for small C, high-freq, decoupling; electrolytic for large C, power filtering.
+    
+    \item \textbf{Q:} What is ESR? \\
+    \textit{A:} Equivalent Series Resistance - internal resistance causing power loss and limiting high-freq performance.
+    
+    \item \textbf{Q:} Why supercapacitors special? \\
+    \textit{A:} Farad-range capacitance for energy storage, but low voltage rating (2.5-2.7V).
+    
+    \item \textbf{Q:} How to identify electrolytic polarity? \\
+    \textit{A:} Negative terminal marked with stripe; positive lead usually longer.
+    
+    \item \textbf{Q:} What's typical voltage safety margin? \\
+    \textit{A:} Use capacitor rated 1.5$\times$ to 2$\times$ actual operating voltage.
+\end{itemize}
+
+\textbf{Selection Criteria:}
+\begin{itemize}
+    \item Capacitance value needed
+    \item Frequency of operation (ESR matters at high freq)
+    \item Voltage rating (with safety margin)
+    \item Physical size constraints
+    \item Polarity requirements
+    \item Cost
+\end{itemize}
+
+\textbf{Applications by Type:}
+\begin{itemize}
+    \item Ceramic: Decoupling, coupling, filtering, timing
+    \item Electrolytic: Power supply smoothing, bulk storage
+    \item Supercap: Backup power, energy harvesting
+    \item Film: High voltage, high current, motor capacitors
+    \item Mica: Precision RF, high-quality audio
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{How a Capacitor Works (in a DC Circuit)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Charging:} Current flows until capacitor voltage = supply voltage
+    \item \textbf{Fully charged:} No more current flows (DC blocked by dielectric)
+    \item \textbf{Discharging:} Stored charge released when path provided
+    \item \textbf{Need resistor:} Limits charging current (prevents infinite current spike)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Capacitor Behavior in DC Circuit:}
+
+\vspace{0.15cm}
+
+\textbf{The Insulating Dielectric:}
+\begin{itemize}
+    \item Dielectric is non-conductive (insulator)
+    \item \textbf{Blocks DC current from flowing through}
+    \item Current cannot physically pass through capacitor
+    \item Instead, voltage exists across plates as electrical charge
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{How Charging Works:}
+
+\textbf{Initial state (uncharged):}
+\begin{itemize}
+    \item No charge on plates
+    \item Voltage across capacitor = 0V
+    \item Ready to accept current
+\end{itemize}
+
+\textbf{When voltage applied:}
+\begin{enumerate}
+    \item Current starts flowing into capacitor
+    \item Electrons accumulate on one plate (becomes negative)
+    \item Electrons repelled from other plate (becomes positive)
+    \item Opposite charges attract but can't reach each other (dielectric blocks)
+    \item Voltage across capacitor builds up
+    \item As voltage increases, current decreases
+    \item When capacitor voltage = supply voltage, current stops
+\end{enumerate}
+
+\textbf{Physical process:}
+\begin{itemize}
+    \item \textbf{Negative plate:} Electrons pile up (excess negative charge)
+    \item \textbf{Positive plate:} Electrons removed (deficit = positive charge)
+    \item Charges stuck on plates (nowhere to go)
+    \item Electric field forms between plates
+    \item Energy stored in this electric field
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{When Fully Charged:}
+
+\textbf{Conditions:}
+\begin{itemize}
+    \item Voltage across capacitor = supply voltage
+    \item Plates "full" of charge (no more can fit)
+    \item Negative charges on one plate repel new electrons
+    \item \textbf{Current flow stops completely}
+\end{itemize}
+
+\textbf{Capacitor acts like:}
+\begin{itemize}
+    \item Open circuit (infinite resistance to DC)
+    \item No current path
+    \item Voltage present but no current
+\end{itemize}
+
+\textbf{Capacitance determines:}
+\begin{itemize}
+    \item Maximum charge storage
+    \item Bigger capacitance = more charge = longer charging time
+    \item For given current: $t_{charge} \propto C$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Discharging Process:}
+
+\textbf{When discharge path provided:}
+\begin{enumerate}
+    \item Positive and negative charges want to reunite
+    \item If path created (e.g., resistor connected), current flows
+    \item Current flows \textbf{opposite direction} from charging
+    \item Charges neutralize
+    \item Voltage across capacitor decreases
+    \item When fully discharged, voltage = 0V
+\end{enumerate}
+
+\textbf{Current direction during discharge:}
+\begin{itemize}
+    \item Conventional current: positive plate $\rightarrow$ negative plate
+    \item Opposite to charging current direction
+    \item Makes sense: releasing stored energy
+\end{itemize}
+
+\textbf{Example with LED:}
+\begin{itemize}
+    \item Capacitor charged to 5V
+    \item Connect LED across it
+    \item Stored energy lights LED briefly
+    \item LED dims as capacitor discharges
+    \item LED turns off when capacitor empty
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why Resistor Needed During Charging:}
+
+\textbf{The problem (without resistor):}
+\begin{itemize}
+    \item Initially, capacitor voltage = 0V
+    \item Supply voltage = 5V (for example)
+    \item By Ohm's law: $I = V/R$
+    \item If $R = 0$ (ideal wires, ideal supply, ideal capacitor)
+    \item Then $I = V/0 = \infty$ (infinite current!)
+\end{itemize}
+
+\textbf{In simulation:}
+\begin{itemize}
+    \item Simulator treats components as ideal
+    \item No internal resistance in ideal voltage source
+    \item No resistance in ideal capacitor
+    \item No resistance in ideal wires
+    \item Results in error: "Loop has no resistance"
+    \item Cannot compute (division by zero)
+\end{itemize}
+
+\textbf{In real world:}
+\begin{itemize}
+    \item \textbf{Power supply:} Has internal resistance (limits current)
+    \item \textbf{Wires:} Have small resistance
+    \item \textbf{Capacitor:} Has ESR (equivalent series resistance)
+    \item These resistances prevent infinite current
+    \item But still can have very high inrush current
+\end{itemize}
+
+\textbf{Solution:}
+\begin{itemize}
+    \item Add series resistor to limit current
+    \item Typical: few ohms to kiloohms (depends on application)
+    \item Protects capacitor from excessive current
+    \item Prevents damage to power supply
+    \item Controls charging rate
+\end{itemize}
+
+\textbf{Always check datasheet:}
+\begin{itemize}
+    \item Maximum voltage rating
+    \item Maximum current rating
+    \item Maximum charging current
+    \item Operating temperature range
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Voltage Drop Across Diode (Forward Bias):}
+
+\textbf{In circuits with diodes:}
+\begin{itemize}
+    \item Diode conducts when forward-biased
+    \item Typical forward voltage drop: ~0.6-0.7V (silicon diode)
+    \item Capacitor charges to: $V_{supply} - V_{diode}$
+    \item Example: 5V supply $\rightarrow$ 4.3-4.4V on capacitor
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Summary of DC Behavior:}
+
+\textbf{Charging phase:}
+\begin{itemize}
+    \item Current flows (initially high)
+    \item Voltage across capacitor increases
+    \item Current decreases as capacitor fills
+    \item Stops when $V_C = V_{supply}$
+\end{itemize}
+
+\textbf{Fully charged:}
+\begin{itemize}
+    \item No current flows
+    \item Capacitor = open circuit
+    \item Voltage remains constant (if no leakage)
+    \item Energy stored in electric field
+\end{itemize}
+
+\textbf{Discharging:}
+\begin{itemize}
+    \item Current flows (if path provided)
+    \item Opposite direction from charging
+    \item Voltage decreases
+    \item Energy released to circuit
+\end{itemize}
+
+\textbf{Key insight:}
+\begin{itemize}
+    \item Capacitor blocks steady DC
+    \item But passes changing voltage (transients)
+    \item This property crucial for AC circuits (next topic)
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Simple Charging Circuit}
+
+\textit{Circuit:}
+\begin{itemize}
+    \item 5V battery
+    \item 200 $\mu$F capacitor (initially discharged)
+    \item 1 k$\Omega$ resistor in series
+\end{itemize}
+
+\textbf{Initial condition (t = 0):}
+\begin{itemize}
+    \item $V_C = 0V$ (capacitor voltage)
+    \item Voltage across resistor: $V_R = 5V - 0V = 5V$
+    \item Initial current: $I_0 = V_R / R = 5 / 1000 = 5$ mA
+\end{itemize}
+
+\textbf{Fully charged (t = $\infty$):}
+\begin{itemize}
+    \item $V_C = 5V$
+    \item Voltage across resistor: $V_R = 5V - 5V = 0V$
+    \item Final current: $I_{\infty} = 0$ A (no current)
+\end{itemize}
+
+\textbf{Charging follows exponential:}
+\begin{equation*}
+    V_C(t) = V_{supply}(1 - e^{-t/RC})
+\end{equation*}
+
+(RC time constant covered in next chapter)
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Effect of Increasing Supply Voltage}
+
+\textit{Same circuit, increase voltage to 10V:}
+
+\textbf{Initially:}
+\begin{itemize}
+    \item Capacitor still at 5V (from before)
+    \item Voltage across resistor: $10V - 5V = 5V$
+    \item Current: $I = 5V / 1k\Omega = 5$ mA
+\end{itemize}
+
+\textbf{Capacitor charges again:}
+\begin{itemize}
+    \item Current flows until $V_C = 10V$
+    \item Charges from 5V to 10V
+    \item Then current stops again
+\end{itemize}
+
+\textbf{Key point:} Capacitor adjusts to new voltage level.
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Discharge Through LED}
+
+\textit{Capacitor charged to 5V, then connected to LED:}
+
+\textbf{Initial discharge:}
+\begin{itemize}
+    \item LED forward voltage: ~2V
+    \item Voltage available for current: $5V - 2V = 3V$
+    \item Assume LED resistance ~50$\Omega$ (simplified)
+    \item Initial current: $I = 3V / 50\Omega = 60$ mA
+\end{itemize}
+
+\textbf{As capacitor discharges:}
+\begin{itemize}
+    \item Capacitor voltage drops
+    \item Current through LED decreases
+    \item LED brightness dims
+    \item When $V_C < 2V$, LED turns off
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Current Limiting Resistor Importance}
+
+\textit{Without current limiting:}
+
+\textbf{Ideal scenario (simulation):}
+\begin{itemize}
+    \item No resistor in series
+    \item Simulator error: "Infinite current"
+    \item Cannot compute
+\end{itemize}
+
+\textbf{Real world (still dangerous):}
+\begin{itemize}
+    \item Wire resistance: 0.1$\Omega$
+    \item Supply internal resistance: 0.5$\Omega$
+    \item Total: 0.6$\Omega$
+    \item Initial current: $I = 5V / 0.6\Omega = 8.3$ A!
+    \item Very high inrush current
+    \item Can damage components
+\end{itemize}
+
+\textbf{With 10$\Omega$ resistor:}
+\begin{itemize}
+    \item Total resistance: ~10.6$\Omega$
+    \item Initial current: $I = 5V / 10.6\Omega = 0.47$ A
+    \item Much safer!
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Capacitor Voltage vs. Time}
+
+\textit{Track voltage during charging:}
+
+\textbf{Circuit: 5V, 100$\mu$F, 1k$\Omega$}
+\begin{itemize}
+    \item Time constant: $\tau = RC = 1000 \times 100 \times 10^{-6} = 0.1$ s
+\end{itemize}
+
+\textbf{Voltage at various times:}
+\begin{align*}
+    t = 0: \quad V_C &= 0V \\
+    t = \tau: \quad V_C &= 5(1 - e^{-1}) = 3.16V \text{ (63\%)} \\
+    t = 2\tau: \quad V_C &= 5(1 - e^{-2}) = 4.32V \text{ (86\%)} \\
+    t = 3\tau: \quad V_C &= 5(1 - e^{-3}) = 4.75V \text{ (95\%)} \\
+    t = 5\tau: \quad V_C &= 5(1 - e^{-5}) = 4.97V \text{ (99\%)}
+\end{align*}
+
+"Fully charged" typically means 5$\tau$ (99% of final value).
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Polarity in DC Circuit}
+
+\textit{Electrolytic capacitor in circuit:}
+
+\textbf{Correct connection:}
+\begin{itemize}
+    \item Positive plate to +5V rail
+    \item Negative plate to ground (0V)
+    \item Voltage across: +5V (anode higher than cathode)
+    \item Works perfectly
+\end{itemize}
+
+\textbf{Incorrect (reversed):}
+\begin{itemize}
+    \item Positive plate to ground
+    \item Negative plate to +5V
+    \item Reverse voltage applied
+    \item Capacitor fails (pops)
+    \item Becomes short circuit
+    \item \textbf{NEVER DO THIS!}
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{DC blocked:} Fully charged capacitor blocks DC (acts as open circuit)
+    \item \textbf{Charging:} Current flows until $V_C = V_{supply}$
+    \item \textbf{Current direction:} Charging and discharging currents flow opposite directions
+    \item \textbf{Resistor required:} Limits charging current (prevents damage/infinite current)
+    \item \textbf{Dielectric blocks:} Current cannot physically flow through insulator
+    \item \textbf{Energy storage:} Charges accumulate on plates, stored in electric field
+    \item \textbf{Discharging:} Releases stored energy when path provided
+    \item \textbf{Capacitance matters:} Larger C = more charge = longer time to charge
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What happens when capacitor fully charged in DC circuit? \\
+    \textit{A:} Current stops flowing; capacitor acts as open circuit.
+    
+    \item \textbf{Q:} Why does current stop? \\
+    \textit{A:} Dielectric blocks DC; plates full of charge; voltage across capacitor equals supply voltage.
+    
+    \item \textbf{Q:} Why need resistor when charging? \\
+    \textit{A:} Limits inrush current; prevents infinite current spike at t=0 when $V_C = 0$.
+    
+    \item \textbf{Q:} What direction does discharge current flow? \\
+    \textit{A:} Opposite to charging current; from positive plate to negative plate.
+    
+    \item \textbf{Q:} Can DC current flow through capacitor? \\
+    \textit{A:} No, dielectric is insulator - blocks DC permanently.
+    
+    \item \textbf{Q:} How is energy stored in capacitor? \\
+    \textit{A:} Electric field between charged plates stores energy.
+\end{itemize}
+
+\textbf{Charging Process:}
+\begin{itemize}
+    \item Initial: High current, low voltage
+    \item During: Decreasing current, increasing voltage
+    \item Final: Zero current, voltage = supply
+    \item Time depends on R and C ($\tau$ = RC)
+\end{itemize}
+
+\textbf{Discharging Process:}
+\begin{itemize}
+    \item Requires discharge path (resistor, LED, etc.)
+    \item Current flows opposite direction
+    \item Voltage decreases exponentially
+    \item Energy released to load
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Thinking DC flows through capacitor (NO!)
+    \item Forgetting current-limiting resistor
+    \item Reversing polarity on electrolytic caps
+    \item Expecting instant charging (it's exponential)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Calculating Charge, Voltage, and Current}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Charge equation:} $Q = CV$ (charge = capacitance $\times$ voltage)
+    \item \textbf{Current equation:} $I = C\frac{dV}{dt}$ (current depends on rate of voltage change)
+    \item \textbf{Key insight:} Faster voltage change $\rightarrow$ more current
+    \item Steady DC voltage $\rightarrow$ zero current through capacitor
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Fundamental Capacitor Equations:}
+
+\vspace{0.15cm}
+
+\textbf{Charge-Voltage-Capacitance Relationship:}
+
+\textbf{The equation:}
+\begin{equation*}
+    \boxed{Q = CV}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $Q$ = charge stored (coulombs, C)
+    \item $C$ = capacitance (farads, F)
+    \item $V$ = voltage across capacitor (volts, V)
+\end{itemize}
+
+\textbf{Meaning:}
+\begin{itemize}
+    \item Charge stored is product of capacitance and voltage
+    \item More voltage $\rightarrow$ more charge stored
+    \item Larger capacitance $\rightarrow$ more charge for same voltage
+    \item Capacitance is constant (fixed value)
+\end{itemize}
+
+\textbf{Defining one Farad:}
+\begin{itemize}
+    \item $1$ Farad stores $1$ Coulomb per $1$ Volt
+    \item $1\text{ F} = 1\text{ C/V}$
+    \item Very large unit in practice
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Current Through Capacitor:}
+
+\textbf{The derivative equation:}
+\begin{equation*}
+    \boxed{I = C\frac{dV}{dt}}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $I$ = current through capacitor (A)
+    \item $C$ = capacitance (F)
+    \item $\frac{dV}{dt}$ = rate of voltage change (V/s)
+\end{itemize}
+
+\textbf{Critical understanding:}
+\begin{itemize}
+    \item Current depends on \textbf{how fast voltage changes}
+    \item NOT on the voltage level itself
+    \item Faster voltage change $\rightarrow$ more current
+    \item No voltage change $\rightarrow$ zero current
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Three Scenarios - Voltage vs. Current:}
+
+\textbf{Scenario 1: Constant DC voltage}
+
+\textit{Voltage behavior:}
+\begin{itemize}
+    \item Voltage steady at 5V
+    \item No change in voltage
+    \item $\frac{dV}{dt} = 0$ V/s
+\end{itemize}
+
+\textit{Current result:}
+\begin{equation*}
+    I = C \times 0 = 0\text{ A}
+\end{equation*}
+
+\textbf{Zero current when voltage constant!}
+
+This is why fully charged capacitor in DC circuit has no current.
+
+\vspace{0.15cm}
+
+\textbf{Scenario 2: Linearly rising voltage}
+
+\textit{Voltage behavior:}
+\begin{itemize}
+    \item Voltage rises uniformly from 0V to 5V
+    \item Constant rate of change
+    \item Example: rises 5V in 2 seconds
+    \item $\frac{dV}{dt} = 5/2 = 2.5$ V/s (constant)
+\end{itemize}
+
+\textit{Current result:}
+\begin{itemize}
+    \item For 100$\mu$F capacitor:
+\end{itemize}
+\begin{equation*}
+    I = 100 \times 10^{-6} \times 2.5 = 250\text{ $\mu$A (constant)}
+\end{equation*}
+
+\textbf{Constant voltage rise $\rightarrow$ constant current}
+
+\vspace{0.15cm}
+
+\textbf{Scenario 3: Variable voltage change}
+
+\textit{Voltage behavior:}
+\begin{itemize}
+    \item First: Linear rise (slow)
+    \item Then: Swift rise (fast)
+    \item Then: Slow rise again
+\end{itemize}
+
+\textit{Current result:}
+\begin{itemize}
+    \item Slow rise: Small current
+    \item Swift rise: \textbf{Large current spike}
+    \item Slow rise: Small current again
+\end{itemize}
+
+\textbf{Key observation:}
+\begin{itemize}
+    \item Even though voltage higher during slow rise
+    \item Current is lower because rate of change is lower
+    \item \textbf{Current tracks rate of change, not voltage level}
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Mathematical Insight (Calculus):}
+
+\textbf{Where $\frac{dV}{dt}$ comes from:}
+\begin{itemize}
+    \item Derivative of voltage with respect to time
+    \item Instantaneous rate of change
+    \item Slope of voltage vs. time graph
+\end{itemize}
+
+\textbf{From charge equation:}
+\begin{align*}
+    Q &= CV \\
+    \frac{dQ}{dt} &= C\frac{dV}{dt} \quad \text{(take derivative)}
+\end{align*}
+
+But current is rate of charge flow:
+\begin{equation*}
+    I = \frac{dQ}{dt}
+\end{equation*}
+
+Therefore:
+\begin{equation*}
+    I = C\frac{dV}{dt}
+\end{equation*}
+
+\vspace{0.15cm}
+
+\textbf{Why This Equation Matters:}
+
+\textbf{Understanding capacitor behavior:}
+\begin{itemize}
+    \item Explains why DC is blocked (no voltage change $\rightarrow$ no current)
+    \item Explains why AC passes (continuous voltage change $\rightarrow$ continuous current)
+    \item Predicts current for any voltage waveform
+    \item Foundation for impedance and reactance
+\end{itemize}
+
+\textbf{Practical implications:}
+\begin{itemize}
+    \item Sudden voltage change $\rightarrow$ large current spike
+    \item Slow voltage ramp $\rightarrow$ small, controlled current
+    \item Design consideration for power supply turn-on
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{When This Equation is NOT Enough:}
+
+\textbf{Limitations of $I = C\frac{dV}{dt}$:}
+\begin{itemize}
+    \item Only applies for linear voltage changes
+    \item For AC sinusoidal voltage, need reactance ($X_C$)
+    \item For exponential RC charging, use time constant ($\tau$ = RC)
+    \item For real circuits, account for ESR
+\end{itemize}
+
+\textbf{For AC circuits:}
+\begin{itemize}
+    \item Use capacitive reactance: $X_C = \frac{1}{2\pi fC}$
+    \item Calculate RMS current from RMS voltage
+    \item Account for 90° phase shift
+    \item (Covered in upcoming topics)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Energy Stored in Capacitor:}
+
+\textbf{Energy equation:}
+\begin{equation*}
+    \boxed{E = \frac{1}{2}CV^2}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $E$ = energy (joules, J)
+    \item $C$ = capacitance (F)
+    \item $V$ = voltage (V)
+\end{itemize}
+
+\textbf{Insights:}
+\begin{itemize}
+    \item Energy proportional to $V^2$ (doubling voltage = 4$\times$ energy)
+    \item Energy proportional to $C$ (doubling C = 2$\times$ energy)
+    \item All energy stored in electric field between plates
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Summary of Key Equations:}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Equation} & \textbf{Meaning} \\
+\hline
+$Q = CV$ & Charge stored \\
+$I = C\frac{dV}{dt}$ & Instantaneous current \\
+$E = \frac{1}{2}CV^2$ & Energy stored \\
+\hline
+\end{tabular}
+\end{center}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Charge Stored Calculation}
+
+\textit{Given:}
+\begin{itemize}
+    \item Capacitor: 220 $\mu$F
+    \item Voltage: 12V
+\end{itemize}
+
+\textbf{Calculate charge:}
+\begin{align*}
+    Q &= CV \\
+    &= 220 \times 10^{-6} \times 12 \\
+    &= 2.64 \times 10^{-3}\text{ C} \\
+    &= \boxed{2.64\text{ mC (millicoulombs)}}
+\end{align*}
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Current During Linear Voltage Rise}
+
+\textit{Scenario:}
+\begin{itemize}
+    \item 100 $\mu$F capacitor
+    \item Voltage rises from 0V to 10V in 0.5 seconds
+    \item Linear (uniform) rise
+\end{itemize}
+
+\textbf{Rate of voltage change:}
+\begin{equation*}
+    \frac{dV}{dt} = \frac{10 - 0}{0.5} = 20\text{ V/s}
+\end{equation*}
+
+\textbf{Current:}
+\begin{align*}
+    I &= C\frac{dV}{dt} \\
+    &= 100 \times 10^{-6} \times 20 \\
+    &= 2 \times 10^{-3}\text{ A} \\
+    &= \boxed{2\text{ mA}}
+\end{align*}
+
+Current remains constant at 2 mA during entire 0.5-second rise.
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Faster Voltage Change $\rightarrow$ More Current}
+
+\textit{Same capacitor (100 $\mu$F), same voltage range (0-10V):}
+
+\textbf{Case A: Rise in 0.5 seconds}
+\begin{itemize}
+    \item $\frac{dV}{dt} = 20$ V/s
+    \item $I = 2$ mA
+\end{itemize}
+
+\textbf{Case B: Rise in 0.1 seconds (5$\times$ faster)}
+\begin{itemize}
+    \item $\frac{dV}{dt} = 10/0.1 = 100$ V/s
+    \item $I = 100 \times 10^{-6} \times 100 = 10$ mA
+\end{itemize}
+
+\textbf{Result:} 5$\times$ faster rise = 5$\times$ more current
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Energy Stored}
+
+\textit{Calculate energy in 1,000 $\mu$F capacitor at different voltages:}
+
+\textbf{At 5V:}
+\begin{equation*}
+    E = \frac{1}{2} \times 1000 \times 10^{-6} \times 5^2 = 0.0125\text{ J}
+\end{equation*}
+
+\textbf{At 10V:}
+\begin{equation*}
+    E = \frac{1}{2} \times 1000 \times 10^{-6} \times 10^2 = 0.05\text{ J}
+\end{equation*}
+
+\textbf{At 20V:}
+\begin{equation*}
+    E = \frac{1}{2} \times 1000 \times 10^{-6} \times 20^2 = 0.2\text{ J}
+\end{equation*}
+
+\textbf{Observation:}
+\begin{itemize}
+    \item Doubling voltage: $5V \to 10V$ increases energy 4$\times$
+    \item Doubling again: $10V \to 20V$ increases energy 4$\times$ more
+    \item Energy scales with $V^2$
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Why Steady DC = Zero Current}
+
+\textit{DC voltage applied to capacitor:}
+
+\textbf{After fully charged:}
+\begin{itemize}
+    \item Voltage constant at 12V
+    \item No change in voltage
+    \item $\frac{dV}{dt} = 0$ V/s
+\end{itemize}
+
+\textbf{Current:}
+\begin{equation*}
+    I = C \times 0 = 0\text{ A}
+\end{equation*}
+
+This is mathematical proof that DC is blocked!
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Sudden Voltage Step}
+
+\textit{Ideal voltage step from 0V to 5V instantly:}
+
+\textbf{Theoretical:}
+\begin{itemize}
+    \item Voltage changes from 0 to 5 in zero time
+    \item $\frac{dV}{dt} = 5/0 = \infty$ V/s
+    \item Current: $I = C \times \infty = \infty$ A
+\end{itemize}
+
+\textbf{Reality:}
+\begin{itemize}
+    \item Nothing changes instantly
+    \item Always some resistance (ESR, wires, source)
+    \item Limits current to finite value
+    \item But can still be very large inrush current
+\end{itemize}
+
+This is why we need current-limiting resistors!
+
+\vspace{0.2cm}
+
+\textbf{Example 7: Capacitance from Charge and Voltage}
+
+\textit{Measurement:}
+\begin{itemize}
+    \item Capacitor charged to 15V
+    \item Stores 3 mC of charge
+    \item What is capacitance?
+\end{itemize}
+
+\textbf{Rearrange $Q = CV$:}
+\begin{align*}
+    C &= \frac{Q}{V} \\
+    &= \frac{3 \times 10^{-3}}{15} \\
+    &= 0.2 \times 10^{-3}\text{ F} \\
+    &= \boxed{200\text{ $\mu$F}}
+\end{align*}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Charge equation:} $Q = CV$ (charge proportional to voltage)
+    \item \textbf{Current equation:} $I = C\frac{dV}{dt}$ (current proportional to rate of voltage change)
+    \item \textbf{Steady voltage:} $\frac{dV}{dt} = 0 \Rightarrow I = 0$ (DC blocked)
+    \item \textbf{Fast voltage change:} Large $\frac{dV}{dt} \Rightarrow$ large current
+    \item \textbf{Energy stored:} $E = \frac{1}{2}CV^2$ (proportional to $V^2$)
+    \item \textbf{One Farad:} Stores 1 Coulomb per 1 Volt
+    \item \textbf{Current tracks:} Rate of change, NOT voltage level
+    \item \textbf{Derivative:} $\frac{dV}{dt}$ is instantaneous slope of voltage vs. time
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} How much charge in 100$\mu$F capacitor at 10V? \\
+    \textit{A:} $Q = CV = 100 \times 10^{-6} \times 10 = 1$ mC.
+    
+    \item \textbf{Q:} Why does DC not flow through capacitor? \\
+    \textit{A:} DC is constant voltage; $\frac{dV}{dt} = 0$; therefore $I = C \times 0 = 0$.
+    
+    \item \textbf{Q:} What determines current through capacitor? \\
+    \textit{A:} Rate of voltage change ($\frac{dV}{dt}$), not voltage level.
+    
+    \item \textbf{Q:} If voltage changes twice as fast, what happens to current? \\
+    \textit{A:} Current doubles (directly proportional).
+    
+    \item \textbf{Q:} Energy stored in 1F cap at 2.5V? \\
+    \textit{A:} $E = \frac{1}{2} \times 1 \times 2.5^2 = 3.125$ J.
+    
+    \item \textbf{Q:} Define one Farad. \\
+    \textit{A:} Capacitance that stores 1 Coulomb of charge per 1 Volt.
+\end{itemize}
+
+\textbf{Key Formulas:}
+\begin{itemize}
+    \item Charge: $Q = CV$
+    \item Current: $I = C\frac{dV}{dt}$
+    \item Energy: $E = \frac{1}{2}CV^2$
+    \item Rearranged: $C = Q/V$, $V = Q/C$
+\end{itemize}
+
+\textbf{Practical Insights:}
+\begin{itemize}
+    \item Sudden voltage change $\rightarrow$ large current spike (inrush)
+    \item Slow voltage ramp $\rightarrow$ small, manageable current
+    \item Constant DC $\rightarrow$ zero current (capacitor charged)
+    \item AC sinusoid $\rightarrow$ continuous current (always changing)
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Thinking current depends on voltage level (it depends on rate of change!)
+    \item Forgetting $\frac{dV}{dt} = 0$ for DC
+    \item Not using correct equation for AC (need reactance formula)
+    \item Confusing charge (Q) with capacitance (C)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Capacitor in an AC Circuit}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{AC passes:} Capacitor allows AC current (constantly charging/discharging)
+    \item \textbf{90° phase shift:} Current leads voltage by 90° in purely capacitive circuit
+    \item \textbf{Why phase shift:} Current maximum when voltage changing fastest (at zero crossing)
+    \item DC blocked, AC passed - fundamental capacitor property
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Capacitor Behavior with AC:}
+
+\vspace{0.15cm}
+
+\textbf{Recap of DC behavior:}
+\begin{itemize}
+    \item DC: Capacitor charges to supply voltage, then current stops
+    \item Voltage constant $\rightarrow$ $\frac{dV}{dt} = 0$ $\rightarrow$ no current
+    \item Capacitor acts as open circuit for DC
+\end{itemize}
+
+\textbf{AC changes everything:}
+\begin{itemize}
+    \item AC voltage constantly changing
+    \item Never reaches steady state
+    \item Capacitor continuously charging and discharging
+    \item \textbf{Current flows continuously!}
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{How AC Passes Through Capacitor:}
+
+\textbf{The process:}
+\begin{enumerate}
+    \item AC voltage oscillates: positive $\rightarrow$ zero $\rightarrow$ negative $\rightarrow$ zero (repeat)
+    \item When voltage rising: Capacitor charges (current flows in)
+    \item When voltage falling: Capacitor discharges (current flows out)
+    \item Continuous back-and-forth current flow
+    \item Direction reverses every half cycle
+\end{enumerate}
+
+\textbf{Key insight:}
+\begin{itemize}
+    \item Voltage always changing $\rightarrow$ $\frac{dV}{dt} \neq 0$ $\rightarrow$ current exists
+    \item This is why capacitor "passes" AC
+    \item Actually blocking DC but allowing AC
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Phase Relationship: Current Leads Voltage by 90°:}
+
+\textbf{In purely resistive circuit:}
+\begin{itemize}
+    \item Voltage and current \textbf{in phase}
+    \item Both peak at same time
+    \item Both zero at same time
+    \item Rise and fall together
+    \item Ohm's Law: $I = V/R$ applies instantaneously
+\end{itemize}
+
+\textbf{In purely capacitive circuit:}
+\begin{itemize}
+    \item Voltage and current \textbf{NOT in phase}
+    \item \textbf{90° phase difference}
+    \item Current leads voltage by 90°
+    \item When current peaks, voltage is zero
+    \item When voltage peaks, current is zero
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{WHY 90° Phase Shift? (Critical Understanding):}
+
+\textbf{Remember:} $I = C\frac{dV}{dt}$ (current proportional to rate of voltage change)
+
+\textbf{Analyzing sinusoidal AC voltage:}
+
+\textit{When voltage is at peak (maximum):}
+\begin{itemize}
+    \item Voltage at top of sine wave
+    \item Momentarily not changing (slope = 0)
+    \item $\frac{dV}{dt} = 0$ at this instant
+    \item Therefore: $I = C \times 0 = 0$ (current is zero!)
+\end{itemize}
+
+\textit{When voltage is zero (crossing):}
+\begin{itemize}
+    \item Voltage crossing through zero
+    \item This is where voltage changing \textbf{fastest}
+    \item Steepest slope on sine wave
+    \item $\frac{dV}{dt}$ is maximum
+    \item Therefore: $I = C \times (\text{max})$ $\rightarrow$ current is maximum!
+\end{itemize}
+
+\textbf{Result:}
+\begin{itemize}
+    \item Current peaks when voltage crosses zero
+    \item Current zero when voltage at peak
+    \item This creates 90° phase shift
+    \item Current "leads" voltage (peaks first)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Visualizing the Phase Shift:}
+
+\textbf{Phasor diagram interpretation:}
+
+\textit{Voltage waveform (sine wave):}
+\begin{itemize}
+    \item Starts at 0°, rises to peak at 90°
+    \item Returns to zero at 180°
+    \item Negative peak at 270°
+    \item Back to zero at 360° (one cycle complete)
+\end{itemize}
+
+\textit{Current waveform (leading by 90°):}
+\begin{itemize}
+    \item Peaks at 0° (when voltage is zero)
+    \item Zero at 90° (when voltage peaks)
+    \item Negative peak at 180° (when voltage at zero)
+    \item Zero at 270° (when voltage at negative peak)
+\end{itemize}
+
+\textbf{Memory aid:}
+\begin{itemize}
+    \item "ICE" mnemonic: In Capacitors, current (I) leads voltage (E)
+    \item Current gets to peak before voltage does
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Comparison: Resistor vs. Capacitor:}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Property} & \textbf{Resistor} & \textbf{Capacitor} \\
+\hline
+Phase shift & 0° (in phase) & 90° (I leads V) \\
+DC behavior & Passes (constant I) & Blocks (I = 0) \\
+AC behavior & Passes (I $\propto$ V) & Passes (I $\propto$ dV/dt) \\
+Relation & $I = V/R$ & $I = C\frac{dV}{dt}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.15cm}
+
+\textbf{Practical Observation in Oscilloscope:}
+
+\textbf{Yellow trace (current):}
+\begin{itemize}
+    \item Peaks first
+    \item Crosses zero before voltage
+    \item Leads by 90°
+\end{itemize}
+
+\textbf{Green trace (voltage):}
+\begin{itemize}
+    \item Lags behind current
+    \item Peaks 90° after current peaks
+    \item Crosses zero 90° after current
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why This Matters:}
+
+\textbf{Circuit design implications:}
+\begin{itemize}
+    \item Phase shift affects power factor
+    \item Important in AC power systems
+    \item Affects filter design (high-pass, low-pass)
+    \item Phase relationships crucial in signal processing
+\end{itemize}
+
+\textbf{Key applications:}
+\begin{itemize}
+    \item \textbf{DC blocking:} Couples AC signals, blocks DC offset
+    \item \textbf{AC coupling:} Passes audio/RF signals, blocks DC
+    \item \textbf{Filtering:} Frequency-dependent behavior (covered next topics)
+    \item \textbf{Phase shifting:} Intentional 90° shift in some circuits
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Summary - Capacitor with AC:}
+
+\textbf{Behavior:}
+\begin{itemize}
+    \item Allows AC to pass (continuous charging/discharging)
+    \item Current never stops (voltage always changing)
+    \item Acts like conductor for AC (with frequency-dependent "resistance")
+\end{itemize}
+
+\textbf{Phase relationship:}
+\begin{itemize}
+    \item 90° phase shift between V and I
+    \item Current leads voltage
+    \item Due to $I = C\frac{dV}{dt}$ relationship
+\end{itemize}
+
+\textbf{Big takeaway:}
+\begin{itemize}
+    \item \textbf{Capacitors block DC and allow AC}
+    \item Fundamental property exploited in countless applications
+    \item Phase shift intrinsic to capacitive behavior
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Phase Shift Observation}
+
+\textit{Circuit with 1 $\mu$F capacitor, 1 kHz AC source:}
+
+\textbf{Voltage waveform:}
+\begin{itemize}
+    \item Sinusoidal, 5V peak
+    \item Frequency: 1 kHz
+    \item Period: T = 1 ms
+\end{itemize}
+
+\textbf{Current waveform:}
+\begin{itemize}
+    \item Also sinusoidal
+    \item Same frequency (1 kHz)
+    \item But peaks 0.25 ms \textbf{earlier} than voltage
+\end{itemize}
+
+\textbf{Phase calculation:}
+\begin{align*}
+    \text{Phase shift} &= \frac{0.25\text{ ms}}{1\text{ ms}} \times 360° \\
+    &= 0.25 \times 360° \\
+    &= \boxed{90°}
+\end{align*}
+
+Current leads voltage by exactly 90°!
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Why Current Maximum at Voltage Zero}
+
+\textit{AC voltage: $V(t) = 10\sin(2\pi \times 60t)$ (60 Hz, 10V peak)}
+
+\textbf{Rate of voltage change:}
+\begin{equation*}
+    \frac{dV}{dt} = 10 \times 2\pi \times 60 \times \cos(2\pi \times 60t)
+\end{equation*}
+
+\textbf{At t = 0 (voltage = 0):}
+\begin{align*}
+    V(0) &= 10\sin(0) = 0\text{ V} \\
+    \frac{dV}{dt}\bigg|_{t=0} &= 10 \times 2\pi \times 60 \times \cos(0) \\
+    &= 3{,}770\text{ V/s (maximum rate of change!)}
+\end{align*}
+
+\textbf{At peak (t = T/4, voltage = 10V):}
+\begin{align*}
+    V(T/4) &= 10\sin(90°) = 10\text{ V (maximum)} \\
+    \frac{dV}{dt}\bigg|_{t=T/4} &= 10 \times 2\pi \times 60 \times \cos(90°) \\
+    &= 0\text{ V/s (no change!)}
+\end{align*}
+
+This proves current maximum when voltage zero, and vice versa!
+
+\vspace{0.2cm}
+
+\textbf{Example 3: DC vs. AC Through Capacitor}
+
+\textit{Same circuit, different sources:}
+
+\textbf{DC source (5V constant):}
+\begin{itemize}
+    \item Initial: Current flows (capacitor charging)
+    \item After ~5$\tau$: Current = 0 (fully charged)
+    \item Steady state: Capacitor = open circuit
+    \item DC blocked $\checkmark$
+\end{itemize}
+
+\textbf{AC source (5V RMS, 60 Hz):}
+\begin{itemize}
+    \item Continuous current flow
+    \item Current oscillates at 60 Hz
+    \item Never stops (voltage always changing)
+    \item AC passes $\checkmark$
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Audio Signal Coupling}
+
+\textit{Microphone output:}
+\begin{itemize}
+    \item AC audio signal: $\pm$0.1V at various frequencies (20 Hz - 20 kHz)
+    \item DC offset: +2.5V (bias voltage from microphone)
+    \item Total signal: 2.5V DC + AC audio
+\end{itemize}
+
+\textbf{Coupling capacitor (1 $\mu$F):}
+\begin{itemize}
+    \item Blocks 2.5V DC component
+    \item Passes AC audio component
+    \item Output: Pure AC audio ($\pm$0.1V, no DC)
+\end{itemize}
+
+\textbf{Result:} Clean audio signal for amplifier!
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Frequency Effect (Preview)}
+
+\textit{Same capacitor (10 $\mu$F), different frequencies:}
+
+\textbf{Low frequency (10 Hz):}
+\begin{itemize}
+    \item Voltage changes slowly
+    \item $\frac{dV}{dt}$ is small
+    \item Current is small
+    \item Capacitor offers high "resistance" to low freq
+\end{itemize}
+
+\textbf{High frequency (10 kHz):}
+\begin{itemize}
+    \item Voltage changes rapidly
+    \item $\frac{dV}{dt}$ is large
+    \item Current is large
+    \item Capacitor offers low "resistance" to high freq
+\end{itemize}
+
+This frequency-dependent behavior leads to reactance (next topic)!
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{AC passes:} Capacitor allows AC current (continuous charging/discharging)
+    \item \textbf{DC blocked:} Steady voltage $\rightarrow$ no current (after initial charging)
+    \item \textbf{90° phase shift:} Current leads voltage by 90° in pure capacitive circuit
+    \item \textbf{Why phase shift:} $I = C\frac{dV}{dt}$ $\rightarrow$ current max when dV/dt max (at zero crossing)
+    \item \textbf{Zero crossing:} Voltage changing fastest $\rightarrow$ current maximum
+    \item \textbf{Peak voltage:} Voltage not changing $\rightarrow$ current zero
+    \item \textbf{"ICE" mnemonic:} In Capacitors, I (current) leads E (voltage)
+    \item \textbf{Fundamental property:} Blocks DC, passes AC
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} Does capacitor pass AC or DC? \\
+    \textit{A:} Passes AC, blocks DC.
+    
+    \item \textbf{Q:} What is phase relationship between V and I in capacitor? \\
+    \textit{A:} Current leads voltage by 90°.
+    
+    \item \textbf{Q:} Why does current lead voltage in capacitor? \\
+    \textit{A:} Because $I = C\frac{dV}{dt}$ - current maximum when voltage changing fastest (at zero crossing).
+    
+    \item \textbf{Q:} When is current maximum in AC capacitor circuit? \\
+    \textit{A:} When voltage crosses zero (voltage changing fastest).
+    
+    \item \textbf{Q:} When is current zero? \\
+    \textit{A:} When voltage at peak (not changing, dV/dt = 0).
+    
+    \item \textbf{Q:} Why does capacitor allow AC but block DC? \\
+    \textit{A:} AC always changing (dV/dt $\neq$ 0) $\rightarrow$ current flows; DC constant (dV/dt = 0) $\rightarrow$ no current.
+\end{itemize}
+
+\textbf{Phase Shift Memory:}
+\begin{itemize}
+    \item "ICE": In Capacitor, current (I) leads voltage (E)
+    \item Think: Current is "ahead" by 90°
+    \item Current peaks first, then voltage peaks
+    \item Opposite of inductor (ELI: in inductor, E leads I)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item DC blocking/AC coupling (audio, RF)
+    \item Signal isolation (remove DC offset)
+    \item Filter circuits (frequency-dependent)
+    \item Phase shifting networks
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Thinking capacitor "conducts" AC (it alternately charges/discharges)
+    \item Confusing phase lead with phase lag
+    \item Forgetting 90° applies to pure capacitive circuit only
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Impedance and Reactance of a Capacitor}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Capacitive reactance:} $X_C = \frac{1}{2\pi fC}$ (opposition to AC, measured in $\Omega$)
+    \item \textbf{Higher frequency:} Lower reactance (passes easier)
+    \item \textbf{DC (f=0):} Infinite reactance (blocks completely)
+    \item \textbf{Impedance:} $Z = \sqrt{R^2 + X_C^2}$ (total opposition in circuit)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Capacitive Reactance ($X_C$):}
+
+\vspace{0.15cm}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item \textbf{Capacitive reactance:} Measure of capacitor's opposition to AC current
+    \item Symbol: $X_C$
+    \item Unit: Ohms ($\Omega$), like resistance
+    \item But NOT the same as resistance!
+\end{itemize}
+
+\textbf{Key difference from resistance:}
+\begin{itemize}
+    \item \textbf{Resistance:} Fixed value (e.g., 100$\Omega$, 1k$\Omega$)
+    \item \textbf{Reactance:} Varies with frequency
+    \item Higher frequency $\rightarrow$ lower reactance
+    \item Lower frequency $\rightarrow$ higher reactance
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Capacitive Reactance Formula:}
+
+\begin{equation*}
+    \boxed{X_C = \frac{1}{2\pi fC}}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $X_C$ = capacitive reactance ($\Omega$)
+    \item $\pi$ = 3.14159...
+    \item $f$ = frequency (Hz)
+    \item $C$ = capacitance (F)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Understanding the Formula:}
+
+\textbf{Inversely proportional to frequency:}
+\begin{itemize}
+    \item As $f$ increases $\rightarrow$ $X_C$ decreases
+    \item Higher frequency $\rightarrow$ less opposition $\rightarrow$ more current
+    \item Lower frequency $\rightarrow$ more opposition $\rightarrow$ less current
+    \item Capacitor "prefers" high frequencies
+\end{itemize}
+
+\textbf{Inversely proportional to capacitance:}
+\begin{itemize}
+    \item As $C$ increases $\rightarrow$ $X_C$ decreases
+    \item Larger capacitor $\rightarrow$ less opposition
+    \item Smaller capacitor $\rightarrow$ more opposition
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Extreme Cases:}
+
+\textbf{When frequency = 0 (DC):}
+\begin{align*}
+    X_C &= \frac{1}{2\pi \times 0 \times C} \\
+    &= \frac{1}{0} \\
+    &= \infty \text{ (infinite reactance)}
+\end{align*}
+
+\textbf{Capacitor acts as open circuit for DC!} This proves mathematically why DC is blocked.
+
+\textbf{When frequency = $\infty$ (theoretical):}
+\begin{align*}
+    X_C &= \frac{1}{2\pi \times \infty \times C} \\
+    &= 0\text{ $\Omega$}
+\end{align*}
+
+Capacitor acts like a wire (short circuit) at infinitely high frequency.
+
+\vspace{0.15cm}
+
+\textbf{Frequency Response Graph:}
+
+\textbf{Reactance vs. Frequency (log scale):}
+\begin{itemize}
+    \item At low frequencies: High reactance (steep curve)
+    \item At high frequencies: Low reactance (approaches zero)
+    \item Inverse relationship (hyperbolic curve)
+    \item Never negative (always positive opposition)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Impedance ($Z$) - Total Opposition:}
+
+\textbf{In circuit with resistor AND capacitor:}
+
+\textbf{Wrong approach:}
+\begin{equation*}
+    Z \neq R + X_C \quad \text{(Cannot simply add!)}
+\end{equation*}
+
+\textbf{Why not?}
+\begin{itemize}
+    \item Resistance and reactance at 90° to each other
+    \item Voltage across R in phase with current
+    \item Voltage across C lags current by 90°
+    \item Must add as vectors, not scalars
+\end{itemize}
+
+\textbf{Correct formula (series R-C circuit):}
+\begin{equation*}
+    \boxed{Z = \sqrt{R^2 + X_C^2}}
+\end{equation*}
+
+This is Pythagorean theorem! Resistance and reactance are perpendicular.
+
+\vspace{0.15cm}
+
+\textbf{Calculating Current with Impedance:}
+
+\textbf{For RMS (AC) values:}
+\begin{equation*}
+    I_{rms} = \frac{V_{rms}}{Z}
+\end{equation*}
+
+Similar to Ohm's Law, but using impedance instead of resistance.
+
+\vspace{0.15cm}
+
+\textbf{Reactance in Circuit Analysis:}
+
+\textbf{Series R-C circuit:}
+\begin{enumerate}
+    \item Calculate $X_C$ at operating frequency
+    \item Calculate total impedance: $Z = \sqrt{R^2 + X_C^2}$
+    \item Calculate current: $I = V/Z$
+    \item Voltage across R: $V_R = I \times R$
+    \item Voltage across C: $V_C = I \times X_C$
+\end{enumerate}
+
+\textbf{Note:} $V_R$ and $V_C$ don't simply add to $V_{total}$ (phase shift!)
+
+\vspace{0.15cm}
+
+\textbf{Why Reactance is Important:}
+
+\textbf{Filter design:}
+\begin{itemize}
+    \item Frequency-dependent behavior creates filters
+    \item High-pass filter: Capacitor blocks low freq, passes high freq
+    \item $X_C$ determines cutoff frequency
+    \item (More in filter chapters)
+\end{itemize}
+
+\textbf{Coupling/decoupling:}
+\begin{itemize}
+    \item Choose C so $X_C$ is low at signal frequencies
+    \item Ensures minimal attenuation
+    \item Example: Audio coupling needs low $X_C$ at 20 Hz - 20 kHz
+\end{itemize}
+
+\textbf{Power calculations:}
+\begin{itemize}
+    \item Reactance doesn't dissipate power (unlike resistance)
+    \item Energy stored and released each cycle
+    \item Affects power factor in AC circuits
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Summary Table:}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Frequency} & \textbf{Reactance $X_C$} \\
+\hline
+0 Hz (DC) & $\infty$ (blocks) \\
+Low freq & High (impedes) \\
+High freq & Low (passes easily) \\
+$\infty$ Hz & 0 $\Omega$ (wire) \\
+\hline
+\end{tabular}
+\end{center}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Calculate Reactance at Two Frequencies}
+
+\textit{Given:} 220 nF capacitor
+
+\textbf{At 1 kHz:}
+\begin{align*}
+    X_C &= \frac{1}{2\pi fC} \\
+    &= \frac{1}{2\pi \times 1000 \times 220 \times 10^{-9}} \\
+    &= \frac{1}{1.382 \times 10^{-3}} \\
+    &= \boxed{723.4\text{ $\Omega$}}
+\end{align*}
+
+\textbf{At 20 kHz:}
+\begin{align*}
+    X_C &= \frac{1}{2\pi \times 20000 \times 220 \times 10^{-9}} \\
+    &= \frac{1}{2.764 \times 10^{-2}} \\
+    &= \boxed{36.2\text{ $\Omega$}}
+\end{align*}
+
+\textbf{Observation:} 20$\times$ frequency $\rightarrow$ 1/20$\times$ reactance (36.2 $\approx$ 723.4/20)
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Impedance Calculation (Series R-C)}
+
+\textit{Circuit:}
+\begin{itemize}
+    \item Resistor: 200$\Omega$
+    \item Capacitor: 10 $\mu$F
+    \item Frequency: 80 Hz
+    \item Supply: 5V RMS
+\end{itemize}
+
+\textbf{Step 1 - Calculate reactance:}
+\begin{align*}
+    X_C &= \frac{1}{2\pi \times 80 \times 10 \times 10^{-6}} \\
+    &= \boxed{198.9\text{ $\Omega$}}
+\end{align*}
+
+\textbf{Step 2 - Calculate impedance:}
+\begin{align*}
+    Z &= \sqrt{R^2 + X_C^2} \\
+    &= \sqrt{200^2 + 198.9^2} \\
+    &= \sqrt{40000 + 39561} \\
+    &= \sqrt{79561} \\
+    &= \boxed{282.1\text{ $\Omega$}}
+\end{align*}
+
+\textbf{Step 3 - Calculate current:}
+\begin{align*}
+    I_{rms} &= \frac{V_{rms}}{Z} \\
+    &= \frac{5}{282.1} \\
+    &= \boxed{17.7\text{ mA}}
+\end{align*}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Why Can't We Just Add R + $X_C$?}
+
+\textit{Using same circuit from Example 2:}
+
+\textbf{Wrong (arithmetic sum):}
+\begin{equation*}
+    Z_{wrong} = R + X_C = 200 + 198.9 = 398.9\text{ $\Omega$}
+\end{equation*}
+
+\textbf{Correct (vector sum):}
+\begin{equation*}
+    Z_{correct} = \sqrt{200^2 + 198.9^2} = 282.1\text{ $\Omega$}
+\end{equation*}
+
+\textbf{Difference:} $398.9 - 282.1 = 116.8$$\Omega$ error (41\% wrong!)
+
+This is why we must use Pythagorean formula.
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Reactance at Audio Frequencies}
+
+\textit{1 $\mu$F coupling capacitor for audio:}
+
+\textbf{At 20 Hz (low audio):}
+\begin{equation*}
+    X_C = \frac{1}{2\pi \times 20 \times 1 \times 10^{-6}} = 7{,}958\text{ $\Omega$}
+\end{equation*}
+
+\textbf{At 1 kHz (mid audio):}
+\begin{equation*}
+    X_C = \frac{1}{2\pi \times 1000 \times 1 \times 10^{-6}} = 159\text{ $\Omega$}
+\end{equation*}
+
+\textbf{At 20 kHz (high audio):}
+\begin{equation*}
+    X_C = \frac{1}{2\pi \times 20000 \times 1 \times 10^{-6}} = 8\text{ $\Omega$}
+\end{equation*}
+
+\textbf{Problem:} High reactance at 20 Hz might attenuate bass!
+
+\textbf{Solution:} Use larger capacitor (e.g., 10 $\mu$F) for lower reactance across entire audio range.
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Choosing Capacitor for Low Reactance}
+
+\textit{Requirement:} Reactance $< 10$$\Omega$ at 60 Hz
+
+\textbf{Rearrange formula to find C:}
+\begin{align*}
+    X_C &= \frac{1}{2\pi fC} \\
+    C &= \frac{1}{2\pi fX_C} \\
+    &= \frac{1}{2\pi \times 60 \times 10} \\
+    &= 265 \times 10^{-6}\text{ F} \\
+    &= \boxed{265\text{ $\mu$F}}
+\end{align*}
+
+Need at least 265 $\mu$F capacitor!
+
+\vspace{0.2cm}
+
+\textbf{Example 6: DC Blocking Verification}
+
+\textit{Any capacitor at DC (f = 0):}
+
+\begin{align*}
+    X_C &= \frac{1}{2\pi \times 0 \times C} \\
+    &= \frac{1}{0} \\
+    &= \infty\text{ $\Omega$}
+\end{align*}
+
+\textbf{Current (by Ohm's Law):}
+\begin{equation*}
+    I = \frac{V}{X_C} = \frac{V}{\infty} = 0\text{ A}
+\end{equation*}
+
+Mathematical proof that DC is blocked!
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Reactance formula:} $X_C = \frac{1}{2\pi fC}$ (measured in $\Omega$)
+    \item \textbf{Inversely proportional:} Higher $f$ or higher $C$ $\rightarrow$ lower $X_C$
+    \item \textbf{DC (f=0):} $X_C = \infty$ $\rightarrow$ capacitor blocks DC
+    \item \textbf{High frequency:} $X_C$ approaches 0 $\rightarrow$ capacitor like wire
+    \item \textbf{Impedance:} $Z = \sqrt{R^2 + X_C^2}$ (NOT $R + X_C$!)
+    \item \textbf{Phase consideration:} R and $X_C$ perpendicular (90°), use Pythagoras
+    \item \textbf{Reactance $\neq$ resistance:} Reactance varies with frequency, resistance doesn't
+    \item \textbf{No power dissipation:} Reactance stores/releases energy, doesn't dissipate
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What is capacitive reactance? \\
+    \textit{A:} Measure of capacitor's opposition to AC current, measured in ohms.
+    
+    \item \textbf{Q:} Formula for reactance? \\
+    \textit{A:} $X_C = \frac{1}{2\pi fC}$
+    
+    \item \textbf{Q:} What happens to reactance as frequency increases? \\
+    \textit{A:} Reactance decreases (inversely proportional).
+    
+    \item \textbf{Q:} Reactance at DC (f=0)? \\
+    \textit{A:} Infinite ohms (capacitor blocks DC completely).
+    
+    \item \textbf{Q:} How to calculate impedance of series R-C? \\
+    \textit{A:} $Z = \sqrt{R^2 + X_C^2}$ (Pythagorean theorem).
+    
+    \item \textbf{Q:} Why not just add $R + X_C$? \\
+    \textit{A:} They are 90° out of phase; must use vector addition.
+\end{itemize}
+
+\textbf{Key Formulas:}
+\begin{itemize}
+    \item Reactance: $X_C = \frac{1}{2\pi fC}$
+    \item Rearranged: $C = \frac{1}{2\pi fX_C}$, $f = \frac{1}{2\pi CX_C}$
+    \item Impedance: $Z = \sqrt{R^2 + X_C^2}$ (series R-C)
+    \item Current: $I = V/Z$ (RMS values for AC)
+\end{itemize}
+
+\textbf{Practical Insights:}
+\begin{itemize}
+    \item High freq $\rightarrow$ low $X_C$ $\rightarrow$ capacitor passes easily
+    \item Low freq $\rightarrow$ high $X_C$ $\rightarrow$ capacitor impedes
+    \item Design filters using frequency dependence
+    \item Choose C for desired $X_C$ at operating frequency
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Adding $R + X_C$ arithmetically (must use $\sqrt{R^2 + X_C^2}$!)
+    \item Thinking reactance = resistance (different concepts)
+    \item Forgetting frequency dependence
+    \item Using wrong units (f in Hz, C in Farads)
+\end{itemize}
+\end{keypointsbox}
+
+% ----------------------------------------------------------------------------------------------------------------
+% NOTE: Topics 8-13 are being added to complete Section 08
+% Due to extensive similar content focusing on practical applications,
+% these remaining topics cover: frequency effects, capacitance variations,
+% and practical applications (coupling, decoupling, bypass, smoothing)
+% ----------------------------------------------------------------------------------------------------------------
+
+\subsection{Capacitors with Various Frequencies \& Capacitances - Practical Summary}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Higher frequency:} Lower reactance $\rightarrow$ more current $\rightarrow$ capacitor passes easily
+    \item \textbf{Larger capacitance:} Lower reactance $\rightarrow$ more current  for same frequency
+    \item \textbf{Applications:} Coupling (AC pass, DC block), Decoupling (noise removal), Bypass (local power), Smoothing (ripple reduction)
+    \item Choose C based on frequency and desired reactance
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\textbf{Frequency Effects:}
+\begin{itemize}
+    \item High freq $\rightarrow$ low $X_C$ $\rightarrow$ capacitor like wire
+    \item Low freq $\rightarrow$ high $X_C$ $\rightarrow$ capacitor blocks
+    \item Design consideration: Choose C for low $X_C$ at signal frequencies
+\end{itemize}
+
+\textbf{Capacitance Effects:}
+\begin{itemize}
+    \item Larger C $\rightarrow$ lower $X_C$ $\rightarrow$ more current
+    \item Smaller C $\rightarrow$ higher $X_C$ $\rightarrow$ less current
+    \item Power supply: Use large C (mF range)
+    \item High-freq decoupling: Use small C (nF-$\mu$F range)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Coupling Capacitors}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Purpose:} Pass AC signals while blocking DC offset
+    \item \textbf{Application:} Connect two circuit stages, remove DC bias
+    \item \textbf{Example:} Microphone output (AC audio + DC bias) $\rightarrow$ capacitor $\rightarrow$ amplifier (AC only)
+    \item Choose C large enough: Low $X_C$ at lowest signal frequency
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{What is Coupling?}
+
+\vspace{0.15cm}
+
+\textbf{Purpose of coupling capacitor:}
+\begin{itemize}
+    \item Connect (couple) two circuit stages
+    \item Pass AC signal from stage 1 to stage 2
+    \item Block DC voltage from stage 1
+    \item Each stage can have different DC bias
+\end{itemize}
+
+\textbf{Classic example - Audio amplifier stages:}
+\begin{itemize}
+    \item Stage 1: Microphone preamp (DC bias = 2.5V)
+    \item Stage 2: Power amplifier (DC bias = 5V)
+    \item Coupling capacitor between them
+    \item AC audio passes through
+    \item DC voltages isolated
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Microphone Circuit Example:}
+
+\textbf{Microphone output signal:}
+\begin{itemize}
+    \item AC component: Audio signal ($\pm$0.1V, 20 Hz - 20 kHz)
+    \item DC component: Bias voltage (+2.5V for powering mic)
+    \item Total output: 2.5V DC + AC audio
+\end{itemize}
+
+\textbf{Problem without coupling capacitor:}
+\begin{itemize}
+    \item Amplifier sees 2.5V DC + AC
+    \item DC offset affects amplifier bias point
+    \item May cause distortion or clipping
+    \item DC not needed at amplifier input
+\end{itemize}
+
+\textbf{Solution with coupling capacitor:}
+\begin{itemize}
+    \item Capacitor blocks 2.5V DC
+    \item Capacitor passes AC audio
+    \item Amplifier sees only AC signal (centered at 0V)
+    \item Clean audio amplification
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Choosing Coupling Capacitor Value:}
+
+\textbf{Requirements:}
+\begin{enumerate}
+    \item Must pass lowest frequency of interest
+    \item Reactance should be low at lowest frequency
+    \item Rule of thumb: $X_C < \frac{1}{10}$ of load impedance
+\end{enumerate}
+
+\textbf{For audio coupling (20 Hz - 20 kHz):}
+\begin{itemize}
+    \item Critical frequency: 20 Hz (lowest)
+    \item If $X_C$ too high at 20 Hz $\rightarrow$ bass attenuation
+    \item Typical values: 1$\mu$F - 10$\mu$F for audio
+    \item Larger C = better bass response
+\end{itemize}
+
+\textbf{Calculation example:}
+\begin{itemize}
+    \item Want $X_C < 100\Omega$ at 20 Hz
+    \item $C = \frac{1}{2\pi fX_C} = \frac{1}{2\pi \times 20 \times 100} \approx 80$ $\mu$F
+    \item Use standard value: 100 $\mu$F
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Polarity Considerations:}
+
+\textbf{If using electrolytic capacitor:}
+\begin{itemize}
+    \item Must observe polarity!
+    \item Positive terminal toward higher DC voltage
+    \item In microphone example: + toward mic output
+    \item Negative toward amplifier input (lower/no DC)
+\end{itemize}
+
+\textbf{Non-polarized alternative:}
+\begin{itemize}
+    \item Film or ceramic capacitor
+    \item No polarity concern
+    \item But limited to smaller values (typically < 10$\mu$F)
+    \item May not provide sufficient coupling at low frequencies
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Coupling:} Passes AC, blocks DC between circuit stages
+    \item \textbf{Reactance:} Must be low at lowest signal frequency
+    \item \textbf{Audio:} Typically 1-10 $\mu$F for full 20 Hz - 20 kHz range
+    \item \textbf{Polarity:} Electrolytic + toward higher DC voltage
+    \item \textbf{Purpose:} Isolate DC bias levels while passing signal
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What does coupling capacitor do? \\
+    \textit{A:} Passes AC signal while blocking DC component between stages.
+    
+    \item \textbf{Q:} Why need coupling in amplifier? \\
+    \textit{A:} Each stage may have different DC bias; capacitor isolates DC while passing AC signal.
+    
+    \item \textbf{Q:} How to choose coupling capacitor value? \\
+    \textit{A:} Large enough so reactance is low at lowest signal frequency.
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Decoupling \& Bypass Capacitors}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Decoupling:} Removes AC noise from DC power supply
+    \item \textbf{Bypass:} Provides local energy storage for fast current demands
+    \item \textbf{Placement:} Across power rails, close to IC
+    \item \textbf{Multiple values:} Different capacitors handle different frequencies
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Decoupling Capacitors:}
+
+\vspace{0.15cm}
+
+\textbf{The problem - Noisy DC:}
+\begin{itemize}
+    \item Real power supplies have AC noise superimposed on DC
+    \item Switching circuits create voltage ripples
+    \item Long PCB traces have inductance
+    \item Sudden current demands cause voltage dips
+\end{itemize}
+
+\textbf{The solution:}
+\begin{itemize}
+    \item Place capacitor in parallel with power supply
+    \item Capacitor has low reactance to AC noise
+    \item AC noise shunted to ground through capacitor
+    \item DC component unaffected (capacitor blocks DC)
+    \item Result: Clean DC power to IC
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Bypass Capacitors (Similar but Different Purpose):}
+
+\textbf{The problem - Inductive supply lines:}
+\begin{itemize}
+    \item PCB traces have inductance
+    \item Inductors resist changing current
+    \item When IC switches, needs fast current
+    \item Inductive supply cannot respond quickly
+    \item Voltage dips occur
+\end{itemize}
+
+\textbf{The solution:}
+\begin{itemize}
+    \item Capacitor acts as local energy reservoir
+    \item Charged and ready near IC
+    \item When IC needs current spike, cap provides it instantly
+    \item Bypasses the slow, inductive supply path
+    \item Maintains stable voltage at IC
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why Multiple Capacitor Values in Parallel?}
+
+\textbf{Real capacitor model:}
+\begin{itemize}
+    \item Not just capacitance
+    \item Has ESR (equivalent series resistance)
+    \item Has ESL (equivalent series inductance)
+    \item Forms RLC circuit
+    \item Has resonant frequency
+\end{itemize}
+
+\textbf{Frequency response:}
+\begin{itemize}
+    \item Below resonance: Capacitive (impedance decreases with freq)
+    \item At resonance: Minimum impedance
+    \item Above resonance: Inductive (impedance increases!)
+\end{itemize}
+
+\textbf{Solution - Multiple capacitors:}
+\begin{enumerate}
+    \item \textbf{Large (1-100 $\mu$F):} Low-frequency noise, bulk energy storage
+    \item \textbf{Medium (0.1-1 $\mu$F):} Mid-frequency decoupling
+    \item \textbf{Small (10-100 nF):} High-frequency noise
+\end{enumerate}
+
+\textbf{Result:}
+\begin{itemize}
+    \item Each capacitor effective at different frequency range
+    \item Combined: Low impedance across wide frequency spectrum
+    \item Better overall performance than single value
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Placement Critical:}
+
+\textbf{Rules:}
+\begin{itemize}
+    \item Place as close as possible to IC power pins
+    \item Minimizes inductance in path
+    \item Smaller capacitors closer (they handle high freq)
+    \item Larger capacitors can be slightly further
+    \item Short, wide traces preferred
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Decoupling:} Removes AC noise from DC supply (noise to ground)
+    \item \textbf{Bypass:} Provides local fast current (bypasses slow supply)
+    \item \textbf{Placement:} As close as possible to IC power pins
+    \item \textbf{Multiple values:} Cover wide frequency range (nF to $\mu$F)
+    \item \textbf{Typical:} 0.1 $\mu$F ceramic + 10 $\mu$F electrolytic per IC
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} Difference between decoupling and bypass? \\
+    \textit{A:} Decoupling removes noise; bypass provides local energy. Same placement, slightly different purpose.
+    
+    \item \textbf{Q:} Why multiple capacitor values? \\
+    \textit{A:} Each effective at different frequency; real caps have resonance; multiple values cover wider range.
+    
+    \item \textbf{Q:} Where to place bypass capacitor? \\
+    \textit{A:} As close as possible to IC power pins to minimize inductance.
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Smoothing Capacitors}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Purpose:} Convert pulsating DC (after rectification) to smooth DC
+    \item \textbf{Operation:} Charges during voltage peaks, discharges during dips
+    \item \textbf{Value:} Large (100 $\mu$F - 10,000 $\mu$F typical)
+    \item \textbf{Limitation:} Provides smoothing but NOT regulation
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Power Supply Context:}
+
+\vspace{0.15cm}
+
+\textbf{AC to DC conversion process:}
+\begin{enumerate}
+    \item AC from wall outlet (120V/230V, 50/60 Hz)
+    \item Transformer steps down voltage
+    \item Rectifier converts AC to pulsating DC
+    \item \textbf{Smoothing capacitor reduces ripple}
+    \item Voltage regulator provides stable DC (optional)
+\end{enumerate}
+
+\textbf{After rectification (without smoothing):}
+\begin{itemize}
+    \item Pulsating DC voltage
+    \item Voltage varies from 0V to peak
+    \item Ripple frequency = 2$\times$ AC frequency (full-wave)
+    \item Not suitable for powering circuits
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{How Smoothing Works:}
+
+\textbf{Charging phase (voltage rising):}
+\begin{itemize}
+    \item Rectifier output rises to peak
+    \item Capacitor charges to peak voltage
+    \item Capacitor fully charged at peak
+\end{itemize}
+
+\textbf{Discharging phase (voltage falling):}
+\begin{itemize}
+    \item Rectifier output starts falling
+    \item Load draws current
+    \item Capacitor supplies current from stored energy
+    \item Capacitor voltage slowly decreases
+    \item "Fills in the gaps" between pulses
+\end{itemize}
+
+\textbf{Next cycle:}
+\begin{itemize}
+    \item Rectifier voltage rises again
+    \item Recharges capacitor to peak
+    \item Process repeats
+\end{itemize}
+
+\textbf{Result:}
+\begin{itemize}
+    \item Much smoother DC voltage
+    \item Small ripple remains
+    \item Larger capacitor = smoother output
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Choosing Smoothing Capacitor:}
+
+\textbf{Factors:}
+\begin{itemize}
+    \item Load current (higher I $\rightarrow$ need larger C)
+    \item Acceptable ripple voltage
+    \item Ripple frequency (50/60 Hz $\rightarrow$ 100/120 Hz for full-wave)
+\end{itemize}
+
+\textbf{Rule of thumb:}
+\begin{itemize}
+    \item $C \approx \frac{I_{load}}{2fV_{ripple}}$
+    \item Where f = ripple frequency, $V_{ripple}$ = acceptable ripple
+    \item Typical: 1,000 - 10,000 $\mu$F for 1A load
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Limitations:}
+
+\textbf{Smoothing is NOT regulation:}
+\begin{itemize}
+    \item Output voltage varies with load
+    \item Higher load $\rightarrow$ more ripple, lower average voltage
+    \item Lower load $\rightarrow$ less ripple, higher voltage
+    \item Input voltage changes affect output
+\end{itemize}
+
+\textbf{For regulated supply:}
+\begin{itemize}
+    \item Add voltage regulator after smoothing cap
+    \item Regulator maintains constant output
+    \item Capacitor still needed (regulator input requirement)
+    \item Combined: smooth AND regulated DC
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Smoothing:} Reduces ripple in rectified DC
+    \item \textbf{Operation:} Charges at peaks, discharges during dips
+    \item \textbf{Value:} Large (hundreds to thousands of $\mu$F)
+    \item \textbf{NOT regulation:} Voltage still varies with load
+    \item \textbf{Polarity:} Electrolytic must be connected correctly
+    \item \textbf{For regulation:} Add voltage regulator after smoothing
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What does smoothing capacitor do? \\
+    \textit{A:} Reduces ripple voltage in rectified DC by storing/releasing energy.
+    
+    \item \textbf{Q:} Does smoothing capacitor provide regulation? \\
+    \textit{A:} No, only reduces ripple. Voltage still varies with load. Need regulator for stable output.
+    
+    \item \textbf{Q:} Why large capacitance needed? \\
+    \textit{A:} Must supply load current during discharge phase (between AC peaks); larger C = less voltage drop.
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Power supplies (after rectifier)
+    \item Battery eliminator circuits
+    \item Linear power supplies
+    \item Always paired with voltage regulator for quality DC
+\end{itemize}
+\end{keypointsbox}
+

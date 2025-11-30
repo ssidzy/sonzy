@@ -1,0 +1,317 @@
+We'll come back in this story, we will learn about different types of diets, these include small signal
+
+diodes, power diodes, Zenner diodes, light emitting diodes and shatkin diets.
+
+This will be a brief note on different types of diets with basic functionality and its sacred symbol.
+
+If you find this course difficult to understand no more, because we will go through each one of them
+
+in more detail.
+
+And as I said here, we are just going to lay down some fundamental theory about them.
+
+Now, in the previous course, we went through the data of a single diet.
+
+Right.
+
+The first thing you have to remember about these type of diet is that similar diets are used in Atlantic
+
+Circuits where small currents or high frequencies are involved, such as in radio, television and digital
+
+logic circuits.
+
+Generally, the function of a small signal diode is encapsulated in glass to protect the production
+
+and usually have a red or black band at one end of their body to help identify which end is the cathode
+
+terminal.
+
+The most widely used of all, the glass encapsulated in a diode is the very common one and forty one
+
+four to eight.
+
+Small signal and switching diodes have much lower power and current ratings around 150 Myriam's 500
+
+milliwatts maximum compared to power diodes.
+
+But they can function better in high frequency applications or in clipping and switching applications
+
+that deal with shorter duration persse waveforms.
+
+The characteristics of a signal diode are different for both germanium and silicon types and are given
+
+as follows.
+
+So the germanium diode has a lower forward voltage drop than the silicon diode, while the germanium
+
+diode has a forward voltage of only about zero point two to zero point three volts, the silicon that
+
+has a forward voltage of about zero point six to zero point seven.
+
+What's now?
+
+The thing is both types of diodes have some advantages and disadvantages or one of the other.
+
+Nowadays, silicon diodes are preferred over germanium diodes because the advantages of the silicon
+
+one exceeds the advantages that the germanium one offers.
+
+As a result, silicon diodes are much more widespread and using optronics than their germanium counterpart.
+
+Great.
+
+The next type of diode is the power diode.
+
+As the name implies, power diodes are capable of passing large currents at high voltage values.
+
+They behave similarly, a signal diode, meaning that they only conduct current in one direction from
+
+its energy to its Gethard, but not in reverse direction.
+
+A widely used application of these feature and diodes in general using the conversion of an alternative
+
+voltage into a continuous voltage.
+
+In other words, rectification.
+
+In each chapter we will learn how to convert and alternating voltage to these high voltage.
+
+So don't worry about rectification for the moment.
+
+What you have to remember is that rectification is the process of converting an easy signal to the signal.
+
+And this is possible in multiple ways, such as using a halfway rectifier or footway, rectifier, etc.
+
+The reason why power deals are used in rectification is because, as you mentioned, they are capable
+
+of passing large currents at high voltage values.
+
+Rectifiers are essential circuits for power supplies that convert an AC input voltage into a DC voltage
+
+supply that can be used to power grids.
+
+Powering electric circuits often require a current higher than one empire, so power diodes are immersed
+
+in the ratification process.
+
+Well, however, small single diodes can also be used as rectifiers in low power, low current, less
+
+than one EMP rectifiers or applications.
+
+But where large forward by is current or higher reverse bias blocking voltages are involved, the junction
+
+of a small signal diode would eventually overheat and melt.
+
+So larger, more robust power diodes are used instead.
+
+The power semiconductor diode, known simply as the power diode, has a much larger Zhongxun area compared
+
+to its smaller single diode cousin, resulting in a high forward current capability of up to several
+
+hundred ends and a reverse blocking voltage of up to several thousand miles.
+
+Since the power diode has a large function, it is not suitable for high frequency applications.
+
+About one megahertz, but special and expensive high frequency, high current diodes are also available.
+
+For high frequency rectifier applications, Chutki diodes are generally used because of their short
+
+reverse recovery time and low voltage drop in their forward bias condition.
+
+So what are short videos?
+
+The short video is another type of semiconductor diode, but have the advantage that they are forward.
+
+Voltage drop is substantially less than that of the conventional Silicon Beach Junction diode shortly.
+
+Diodes have many useful applications from rectification signal conditioning, switching through the
+
+TTL and Seema's logic gates due mainly to their low power and fast switching speeds.
+
+DTA Shocklee Logic Gates are identified by the letter as appearing somewhere in their logic Gates silkie
+
+code like, for example, the seven four zero zero.
+
+As discussed previously, the NIE voltage at which a short video turns on and starts conducting is at
+
+the much lower voltage level than its production equivalent as shown here on the current voltage critics.
+
+As we can see on the current voltage critics of the Chutki diet, this is very similar to that of a
+
+standard production diet, except the Cordner or WNY voltage at which the Junction diet starts to conduct
+
+is much lower at around zero point four.
+
+What's the diet also has many uses in digital circuits and are extensively used in Chutki TTL digital
+
+logic.
+
+Gates selkowitz due to their higher frequency response, decreased switching time and lower power consumption
+
+where high speed switching is required shortly based DTL is the obvious choice.
+
+Don't worry, we will learn about diodes in more detail in our future course.
+
+So let's move further.
+
+The next type of diode is the Zehner Diode.
+
+The Xanadu behaves just like a normal general-purpose diode consisting of a Silicon Junction and then
+
+biased in the forward direction.
+
+That is a. positive.
+
+With respect to its cathode, it behaves just like a normal signal diode passing the rated current.
+
+However, unlike a conventional diet that blocks any flow of current through itself, then reverse bias,
+
+that is, the cathode becomes more positive than the not.
+
+As soon as the reverse voltage reaches a predetermined value, the Senate diet begins to conduct in
+
+the reverse direction.
+
+This is because then the reverse mortgage applied across the zehner that exceeds the rated voltage of
+
+the device, a process called avalanche breakdown occurs in the semiconductor depletion layer, and
+
+the current starts to flow through the diode to limit this increase in voltage.
+
+The colors now flowing through the Senate increases dramatically to the maximum Sevket value, which
+
+is usually limited by a series resistor and once achieved, this reverse saturation currently remains
+
+fairly constant over a wide range of reverse voltages.
+
+The voltage point at which the voltage across the center will become stable is called the Zenner voltage,
+
+and for Zinner diodes, this voltage can range from less than one would to a few hundred volts.
+
+The point at which the Senate vote is triggered, the current to flow through the diode can be very
+
+accurately controlled.
+
+Ended up being stage of the diode semiconductor construction, giving the diode a specific zehner breakdown
+
+voltage like for example, four point three words or seven point five words.
+
+This is then their breakdown.
+
+Voltage of the current voltage curve is almost a vertical straight line.
+
+The Zehner diode is used in its reverse bias or reverse breakdown mode.
+
+That is the diodes and connects to the negative supply from the current voltage casuistry curve.
+
+We can see that the Zehner diode has a region in its reverse biostatistics of almost constant negative
+
+voltage, regardless of the value of the current flowing through the diode.
+
+The great thing is that this voltage remains almost constant, even if large changes in current providing
+
+the xenon diodes current remains between the breakdown current and its maximum current rating.
+
+This ability of the Xanadu to control itself can be used to great effect to regulate or stabilize a
+
+voltage source against supply or load variations.
+
+The fact that the voltage across a diode in the region is almost constant turns out to be an important
+
+catalytic of the Zehner diode as it can be used in the simplest types of voltage regulator applications.
+
+In simple terms of voltage, that greater is a system designed to automatically maintain a constant
+
+voltage, as NATO is always operated in its reverse by its condition.
+
+And as such, a simple voltage regulator circuit can be designed using a Zahner diode to maintain a
+
+constant DC output voltage across the road in spite of variations in the input voltage or changes in
+
+the load current.
+
+Now, you know, future course will design voltage regulators with diodes, so you will get a better
+
+understanding of how they are used.
+
+Great.
+
+So the last type of diode we are going to talk about is the light emitting diode.
+
+Light emitting diodes or simply LEDs are among the most widely used of all the different types of semiconductor
+
+diodes available today and are commonly used in TVs and color displays.
+
+They are the most visible type of diode that emit a fairly narrow bandwidth of either visible light
+
+at different colored wavelengths, invisible infrared light for remote controls or laser type light.
+
+When a forward current is passed through down the light emitting diode or led LCD more commonly called,
+
+is basically just a specialized type of diode as they have very similar electrical characteristics to
+
+appear Zhongxun diode.
+
+This means that the analogy will pass current in its forward direction, but block the flow of current
+
+in the reverse direction.
+
+When they operate in the forward bias region, so they conduct current through them.
+
+They basically convert electrical energy into light energy.
+
+Also, nearly all modern light emitting diodes have their cathode, which is the minus terminal identified
+
+by either a notch or flat spot on the body or by the cathode lead being shorter than the other as the
+
+anad, which is the plus lead, is longer than the cathode.
+
+The high efficiency and directional nature of LEDs makes them ideal for many industrial uses, and these
+
+are increasingly common in streetlights, parking garages, lightning walkway and other outdoor area
+
+lightning.
+
+However, another useful application of light emitting diodes is in opto coupling an optical blur or
+
+auto isolator.
+
+A city also called, is a single tronic device that consists of a light emitting diode, combined with
+
+either a photo diode or a photo transistor to provide an optical signal path between an input connection
+
+and an output connection while maintaining electrical isolation between two circuits.
+
+This electrical isolation is especially useful where the signal from a low voltage circuit such as a
+
+battery power circuit, computer or microcontroller is required to operate or control another external
+
+circuit operating at a potentially dangerous voltage.
+
+Now, if you were to wrap everything up, it would be something like this signal diodes are used in
+
+high frequency applications already in low frequency applications where the current throw in the circuit
+
+is small.
+
+General-Purpose signal diodes such as the one n a forty one forty eight are made from silicon and have
+
+a forward voltage drop of about zero point seven words, rectifier diodes or power diodes are used in
+
+power supplies to convert, alternating current to direct current, a process called rectification.
+
+They are also used elsewhere in circuits, of course, where a large current must pass through the diode.
+
+Chutki diets, well, these diets feature low forward voltage drop as compared to the ordinary silicon
+
+production diodes, Chutki diodes are mostly used in radio frequency applications and in digital circuits
+
+due to their higher frequency response, decreased switching time and lower power consumption.
+
+As in, diodes are used to maintain a fixed voltage.
+
+As a result, they are mainly used in voltage regulator circuits.
+
+Last but not least, light emitting diode is one of the most popular type of diodes, and then these
+
+diode permits, the transfer of electric current between the electrodes, light is produced.

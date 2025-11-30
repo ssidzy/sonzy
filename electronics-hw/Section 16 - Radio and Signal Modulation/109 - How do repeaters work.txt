@@ -1,0 +1,39 @@
+All right, guys.
+
+It's a continuation of the previous course, I want to show you something about repeaters.
+
+I don't know whether you have used or heard about Walkie-Talkie.
+
+I hope I pronouncing it correctly, which is nothing else but the head held portable radio that uses
+
+radio waves to communicate wirelessly on a single frequency band.
+
+Now, as long as the other person holding a walkie talkie is in a straight line from the initial user
+
+who's holding a walkie-talkie as well, both can communicate without a problem.
+
+This is a radio to radio connection, and it's called simplex communication.
+
+A walkie talkie works fine if there is no obstruction between the radio that is calling and the radio
+
+that is receiving.
+
+But what happens if there is a heel or a big building in the way line of sight is no longer possible
+
+because something is blocking the radio?
+
+Often in these situations, a radio that can repeat the message is placed on the top of the mountain
+
+called a repeater or base station.
+
+If a user wants to make a call on the handheld radio, the message goes in a straight line up to the
+
+repeater.
+
+So what happens is that the repeater needs to receive the frequency that the caller transmitted before,
+
+and then the repeater transmits the same message down to the user on the other side of the mountain.
+
+It works similarly to the satellite and its cost, with very high frequency radio propagation.
+
+But instead of a satellite, it is a fixed radio on top of the hill.

@@ -1,0 +1,1230 @@
+\section{Section 22 -- Other Circuits Using BJT}
+
+\subsection{Multivibrator Circuits}
+
+\subsubsection{Astable Multivibrator}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+An astable multivibrator is a free-running oscillator that continuously switches between two states without external trigger, generating a square wave output. Two transistors alternately switch between saturation and cutoff, with timing controlled by RC networks. Output frequency determined by resistor-capacitor time constants.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{What is a Multivibrator?}
+
+Multivibrators are circuits used to implement two-state devices such as:
+\begin{itemize}
+    \item Relaxation oscillators
+    \item Timers
+    \item Flip-flops
+\end{itemize}
+
+The two states refer to two voltage levels (e.g., 0 V and 5 V), often represented as logic HIGH and logic LOW.
+
+\textbf{Classification:}
+\begin{itemize}
+    \item \textbf{Astable:} No stable state, oscillates continuously
+    \item \textbf{Monostable:} One stable state, temporarily switches when triggered
+    \item \textbf{Bistable:} Two stable states, requires trigger to switch between them
+\end{itemize}
+
+\textbf{Astable Multivibrator Operation}
+
+\textbf{Circuit consists of:}
+\begin{itemize}
+    \item Two NPN transistors (Q1, Q2)
+    \item Two coupling capacitors (C1, C2)
+    \item Collector resistors and timing resistors
+    \item Power supply ($V_{CC}$)
+\end{itemize}
+
+\textbf{Operating Principle:}
+
+The circuit oscillates because the two transistors alternately switch between saturation (fully ON) and cutoff (fully OFF).
+
+\textbf{Starting Condition (power-on):}
+
+Initially, both transistors may briefly conduct, but due to slight component asymmetries, one will turn off first. Let's assume Q1 saturates and Q2 cuts off.
+
+\textbf{State 1: Q1 ON, Q2 OFF}
+
+\begin{itemize}
+    \item Q1 in saturation: $V_{CE} \approx 0$ V, collector near ground
+    \item C2 discharges through Q1 collector (which is at ground)
+    \item Q2 base held negative by discharging C1 (from previous cycle)
+    \item Q2 remains in cutoff
+    \item C1 charging toward $V_{CC}$ through R1
+\end{itemize}
+
+\textbf{Transition from State 1 to State 2:}
+
+After time period determined by R1-C1 time constant:
+\begin{itemize}
+    \item C1 fully discharges, begins charging in reverse direction
+    \item Q2 base voltage rises above 0.6 V $\rightarrow$ Q2 turns on
+    \item Q2 collector drops to ground $\rightarrow$ C2 discharges
+    \item C2 discharge creates negative voltage at Q1 base $\rightarrow$ Q1 turns off
+    \item C2 begins charging toward $V_{CC}$ through R2
+\end{itemize}
+
+\textbf{State 2: Q1 OFF, Q2 ON}
+
+Now the roles are reversed:
+\begin{itemize}
+    \item Q2 in saturation
+    \item Q1 in cutoff (held off by C2 discharge)
+    \item C2 charging through R2
+\end{itemize}
+
+\textbf{Transition from State 2 to State 1:}
+
+After time determined by R2-C2 time constant, the cycle repeats.
+
+\textbf{Key Mechanism: RC Time Constant}
+
+The frequency of oscillation is controlled by the RC networks:
+\begin{itemize}
+    \item Larger R or C $\rightarrow$ slower charging $\rightarrow$ lower frequency
+    \item Smaller R or C $\rightarrow$ faster charging $\rightarrow$ higher frequency
+\end{itemize}
+
+\textbf{Capacitor Polarity Reversal}
+
+Critical concept: When a transistor switches ON:
+\begin{itemize}
+    \item Its collector drops from $V_{CC}$ to $\approx$ 0 V suddenly
+    \item Coupling capacitor was charged with one polarity
+    \item Sudden voltage drop causes capacitor voltage to reverse
+    \item This creates negative voltage at other transistor's base
+    \item Negative base voltage keeps transistor OFF
+\end{itemize}
+
+Example: If C2 was charged to 5 V (right positive, left at $V_{CC}$), and right side suddenly drops to 0 V, the left side goes to $-5$ V relative to right side.
+
+\textbf{Why It Oscillates Continuously}
+
+The circuit is inherently unstable in both states:
+\begin{itemize}
+    \item Each state is temporary (determined by RC time constant)
+    \item Capacitors continuously charge/discharge
+    \item Each transition triggers the next transition
+    \item No stable equilibrium exists
+    \item Produces continuous square wave oscillation
+\end{itemize}
+
+\textbf{Output Waveform}
+
+Square wave taken from either collector:
+\begin{itemize}
+    \item Amplitude: approximately $V_{CC}$
+    \item Frequency: determined by RC values
+    \item Duty cycle: typically 50\% (if R1C1 = R2C2)
+    \item Asymmetric duty cycles possible with different RC values
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Astable Multivibrator Design}
+
+\textbf{Design square wave generator:}
+\begin{itemize}
+    \item Supply voltage: $V_{CC} = 5$ V
+    \item Desired frequency: approximately 1 kHz
+    \item Symmetric output (50\% duty cycle)
+\end{itemize}
+
+\textbf{Component Selection:}
+
+For 50\% duty cycle, make both RC networks equal: R1 = R2 and C1 = C2
+
+Time for each half-cycle: $T/2 \approx 0.693 \times R \times C$
+
+For 1 kHz frequency: $T = 1/f = 1$ ms, so each half-cycle = 0.5 ms
+
+$$0.5 \text{ ms} = 0.693 \times R \times C$$
+
+Choose $C = 0.1~\mu$F:
+
+$$R = \frac{0.5 \times 10^{-3}}{0.693 \times 0.1 \times 10^{-6}} = 7.2 \text{ k}\Omega$$
+
+Use standard value: $R = 6.8$ k$\Omega$ or 7.5 k$\Omega$
+
+\textbf{Complete Circuit:}
+\begin{itemize}
+    \item R1 = R2 = 7.2 k$\Omega$ (timing resistors)
+    \item C1 = C2 = 0.1 $\mu$F (coupling capacitors)
+    \item Collector resistors: 1 k$\Omega$ (typical)
+    \item Transistors: any general-purpose NPN (e.g., 2N2222)
+\end{itemize}
+
+\textbf{Expected Performance:}
+\begin{itemize}
+    \item Frequency: $\approx$ 1 kHz
+    \item Output: 0 to 5 V square wave
+    \item Power consumption: continuous (circuit always active)
+    \item Very stable oscillation with no external components needed
+\end{itemize}
+
+\textbf{Asymmetric Duty Cycle Example:}
+
+For 70\% HIGH, 30\% LOW:
+\begin{itemize}
+    \item Make R1C1 larger (controls HIGH time)
+    \item Make R2C2 smaller (controls LOW time)
+    \item Ratio R1/R2 $\approx$ 70/30 = 2.33
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Astable = no stable state, continuous oscillation
+    \item Two transistors alternately saturate and cut off
+    \item RC networks control timing (charge/discharge)
+    \item Capacitor polarity reversal creates negative base voltage
+    \item Frequency: $f \approx 1/(1.4RC)$ for symmetric design
+    \item Output: square wave with controllable frequency and duty cycle
+    \item No external trigger needed (free-running oscillator)
+    \item Simple DC to square wave converter with few components
+\end{itemize}
+\end{keypointsbox}
+
+\subsubsection{Monostable Multivibrator}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A monostable multivibrator has one stable state (OFF) and temporarily switches to unstable state (ON) when triggered. Output stays ON for time period $T \approx R \times C$, then returns to stable OFF state. Used for timers, pulse generators, and momentary activation circuits.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Monostable Characteristics}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item One stable state (output normally OFF)
+    \item One unstable state (output temporarily ON)
+    \item Requires external trigger to switch states
+    \item Automatically returns to stable state after time delay
+    \item Also called "one-shot" multivibrator
+\end{itemize}
+
+\textbf{Stable State (Before Trigger)}
+
+Q1 in cutoff, Q2 in saturation:
+\begin{itemize}
+    \item Q2 collector near ground (saturated)
+    \item Q1 base voltage very low (negative) $\rightarrow$ Q1 OFF
+    \item Capacitor C1 fully charged to $V_{CC}$
+    \item Circuit remains in this state indefinitely
+    \item Output (from Q1 collector) = HIGH ($\approx V_{CC}$)
+\end{itemize}
+
+\textbf{Why Q1 Stays OFF:}
+
+Q2 saturated means:
+\begin{itemize}
+    \item Q2 collector $\approx$ ground
+    \item Q1 base connected through resistor to Q2 collector
+    \item Q1 base voltage $\approx$ 0 V (insufficient to turn on)
+    \item Even changing timing resistor won't help (all current goes through Q2 to ground)
+\end{itemize}
+
+\textbf{Why Capacitor is Charged:}
+
+With Q2 saturated and Q1 OFF:
+\begin{itemize}
+    \item Left side of C1: connected to $V_{CC}$ through resistor
+    \item Right side of C1: Q1 base at low voltage
+    \item Voltage difference charges C1 to nearly $V_{CC}$
+    \item C1 holds this charge in stable state
+\end{itemize}
+
+\textbf{Trigger Event}
+
+Push button or pulse applied to Q1 base:
+\begin{itemize}
+    \item Positive pulse raises Q1 base above 0.6 V
+    \item Q1 turns ON $\rightarrow$ Q1 collector drops to ground
+    \item Q1 collector connected to Q2 base through resistor
+    \item Q2 base voltage drops $\rightarrow$ Q2 turns OFF
+\end{itemize}
+
+\textbf{Unstable State (After Trigger)}
+
+Q1 saturated, Q2 in cutoff:
+\begin{itemize}
+    \item Q1 collector near ground
+    \item Output (from Q1) = LOW (device turns ON)
+    \item Q2 base held low by Q1 collector
+    \item C1 begins discharging through circuit
+\end{itemize}
+
+\textbf{Capacitor Discharge Phase}
+
+Critical mechanism for timing:
+\begin{itemize}
+    \item C1 was charged to $V_{CC}$ (left positive)
+    \item Right side suddenly connected to ground via Q1
+    \item C1 reverses polarity, creating negative voltage at Q2 base
+    \item This keeps Q2 OFF during timing period
+    \item C1 begins charging in reverse through timing resistor R
+\end{itemize}
+
+\textbf{Return to Stable State}
+
+As C1 charges through R:
+\begin{itemize}
+    \item Q2 base voltage rises (becomes less negative)
+    \item When Q2 base reaches +0.6 V $\rightarrow$ Q2 turns ON
+    \item Q2 collector drops to ground
+    \item Q1 base pulled low $\rightarrow$ Q1 turns OFF
+    \item Circuit returns to stable state
+    \item Output returns to HIGH (device turns OFF)
+\end{itemize}
+
+\textbf{Timing Calculation}
+
+Duration of unstable state (ON time):
+
+$$T \approx R \times C$$
+
+where:
+\begin{itemize}
+    \item $R$ = timing resistor connected to Q2 base
+    \item $C$ = coupling capacitor
+    \item More precisely: $T \approx 0.69 \times R \times C$
+\end{itemize}
+
+\textbf{Component Roles}
+
+\textbf{Timing resistor (R):}
+\begin{itemize}
+    \item Controls charging rate of capacitor
+    \item Larger R $\rightarrow$ slower charging $\rightarrow$ longer ON time
+    \item Smaller R $\rightarrow$ faster charging $\rightarrow$ shorter ON time
+\end{itemize}
+
+\textbf{Collector resistor at output:}
+\begin{itemize}
+    \item Prevents base-emitter voltage drop from appearing at output
+    \item Ensures output swings full range (0 to $V_{CC}$)
+    \item Without it, output only reaches $V_{CC} - V_{BE} \approx V_{CC} - 0.6$ V
+\end{itemize}
+
+\textbf{Base current limiting resistor:}
+\begin{itemize}
+    \item Prevents short circuit when trigger is applied
+    \item Limits base current to safe levels
+    \item Protects transistor and trigger source
+\end{itemize}
+
+\textbf{Applications}
+
+\begin{itemize}
+    \item \textbf{Timers:} Turn device ON for specific duration
+    \item \textbf{Pulse generators:} Create single pulse per trigger
+    \item \textbf{Debouncing:} Clean up noisy switch contacts
+    \item \textbf{Interactive exhibits:} Press button $\rightarrow$ demonstration runs once
+    \item \textbf{Touch toys:} Press stomach $\rightarrow$ toy speaks once
+    \item \textbf{Delay circuits:} Activate something after delay
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{LED Timer Circuit}
+
+\textbf{Requirement:} Press button to turn LED ON for exactly 2 seconds
+
+\textbf{Design:}
+
+Choose capacitor: $C = 100~\mu$F
+
+Calculate resistor for $T = 2$ s:
+
+$$R = \frac{T}{C} = \frac{2}{100 \times 10^{-6}} = 20 \text{ k}\Omega$$
+
+More precise calculation with 0.69 factor:
+
+$$R = \frac{2}{0.69 \times 100 \times 10^{-6}} = 29 \text{ k}\Omega$$
+
+Use standard value: $R = 27$ k$\Omega$ or 30 k$\Omega$
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item $V_{CC} = 10$ V
+    \item Q1, Q2: general-purpose NPN transistors
+    \item Timing: R = 27 k$\Omega$, C = 100 $\mu$F
+    \item LED in series with collector resistor at Q1 collector
+    \item Trigger: push button connected to Q1 base through 1 k$\Omega$ resistor
+\end{itemize}
+
+\textbf{Operation:}
+\begin{itemize}
+    \item Initially: LED OFF (stable state)
+    \item Press button: LED turns ON
+    \item Hold button or release: doesn't matter, LED stays ON
+    \item After 2 seconds: LED automatically turns OFF
+    \item Press again: LED turns ON for another 2 seconds
+\end{itemize}
+
+\textbf{Verification in Simulation:}
+
+Measure time between trigger and return to stable state:
+\begin{itemize}
+    \item Start time: when button pressed
+    \item End time: when LED turns off
+    \item Duration: $\Delta t \approx$ 2 seconds (may be $\approx$ 1.8 s depending on simulation accuracy)
+\end{itemize}
+
+\textbf{Adjusting ON Time:}
+\begin{itemize}
+    \item For 5 seconds: increase R to 72 k$\Omega$ (or C to 250 $\mu$F)
+    \item For 0.5 seconds: decrease R to 7.2 k$\Omega$ (or C to 25 $\mu$F)
+    \item Easy to customize for specific applications
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Monostable = one stable state (normally OFF)
+    \item Trigger switches to unstable state temporarily
+    \item ON time duration: $T \approx 0.69 \times R \times C$
+    \item Automatically returns to stable state after timing period
+    \item Capacitor discharge/recharge controls timing
+    \item No need to hold trigger (one pulse sufficient)
+    \item Similar to astable but with only one RC network
+    \item Applications: timers, pulse generators, debouncing, delays
+\end{itemize}
+\end{keypointsbox}
+
+\subsubsection{Bistable Multivibrator}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A bistable multivibrator has two stable states and requires two separate triggers (SET and RESET) to switch between them. Output remains in current state until opposite trigger is applied. Forms the basis of flip-flops and latches used in digital memory and storage elements.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Bistable Characteristics}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item Two stable states (both can persist indefinitely)
+    \item Requires trigger to change from one state to other
+    \item Remains in new state until opposite trigger applied
+    \item Also called "flip-flop" or "latch"
+    \item Basic storage element in digital electronics
+\end{itemize}
+
+\textbf{Key Difference from Other Multivibrators:}
+
+\begin{itemize}
+    \item \textbf{Astable:} 0 stable states (always oscillating)
+    \item \textbf{Monostable:} 1 stable state (returns automatically)
+    \item \textbf{Bistable:} 2 stable states (stays until triggered)
+\end{itemize}
+
+\textbf{Circuit Configuration}
+
+\textbf{Differences from monostable:}
+\begin{itemize}
+    \item NO capacitors (capacitors made it unstable)
+    \item Two trigger inputs instead of one
+    \item SET trigger: switches output to HIGH
+    \item RESET trigger: switches output to LOW
+\end{itemize}
+
+\textbf{Logic Triggers:}
+
+Instead of push buttons, logic inputs used:
+\begin{itemize}
+    \item Logic LOW (0): 0 V (acts like ground)
+    \item Logic HIGH (1): 5 V (sends pulse to base)
+    \item More intuitive for digital applications
+    \item Can interface with digital circuits directly
+\end{itemize}
+
+\textbf{State 1: Q2 ON, Q1 OFF (Output HIGH)}
+
+Initial stable condition:
+\begin{itemize}
+    \item Q2 in saturation $\rightarrow$ collector near ground
+    \item Q1 in cutoff $\rightarrow$ collector at $V_{CC}$ (output HIGH)
+    \item Q1 base connected to Q2 collector (through resistor) $\rightarrow$ held LOW
+    \item Q2 base receives current through resistor from Q1 collector $\rightarrow$ stays ON
+    \item This state persists indefinitely
+\end{itemize}
+
+\textbf{Cross-Coupling Mechanism:}
+
+Each transistor's collector controls the other's base:
+\begin{itemize}
+    \item Q1 collector $\rightarrow$ Q2 base (through resistor)
+    \item Q2 collector $\rightarrow$ Q1 base (through resistor)
+    \item Positive feedback: whichever is ON keeps other OFF
+    \item Stable in either configuration
+\end{itemize}
+
+\textbf{SET Operation (Output LOW $\rightarrow$ HIGH)}
+
+Apply positive pulse to Q1 base (SET input):
+\begin{itemize}
+    \item SET trigger raises Q1 base above 0.6 V
+    \item Q1 turns ON $\rightarrow$ Q1 collector drops to ground
+    \item Q1 collector connected to Q2 base
+    \item Q2 base voltage drops $\rightarrow$ Q2 turns OFF
+    \item Q2 collector rises to $V_{CC}$
+    \item Q2 collector feeds back to Q1 base $\rightarrow$ keeps Q1 ON
+    \item New stable state established
+\end{itemize}
+
+\textbf{State 2: Q1 ON, Q2 OFF (Output LOW)}
+
+Now the roles are reversed:
+\begin{itemize}
+    \item Q1 in saturation $\rightarrow$ collector near ground (output LOW)
+    \item Q2 in cutoff $\rightarrow$ collector at $V_{CC}$
+    \item Q2 base connected to Q1 collector $\rightarrow$ held LOW
+    \item Q1 base receives current from Q2 collector $\rightarrow$ stays ON
+    \item This state also persists indefinitely
+\end{itemize}
+
+\textbf{RESET Operation (Output HIGH $\rightarrow$ LOW)}
+
+Apply positive pulse to Q2 base (RESET input):
+\begin{itemize}
+    \item RESET trigger raises Q2 base above 0.6 V
+    \item Q2 turns ON $\rightarrow$ Q2 collector drops to ground
+    \item Q2 collector connected to Q1 base
+    \item Q1 base voltage drops $\rightarrow$ Q1 turns OFF
+    \item Q1 collector rises to $V_{CC}$ (output HIGH again)
+    \item Q1 collector feeds back to Q2 base $\rightarrow$ keeps Q2 ON
+    \item Returns to original stable state
+\end{itemize}
+
+\textbf{Base Current Limiting Resistors}
+
+Series resistors at trigger inputs are critical:
+\begin{itemize}
+    \item Prevent short circuit: trigger HIGH (5 V) to ground (via saturated transistor)
+    \item Without resistor: direct path from 5 V to 0 V
+    \item Would draw excessive current, damage components
+    \item Typical value: 100 $\Omega$ to 1 k$\Omega$
+\end{itemize}
+
+\textbf{Data Storage Application}
+
+Bistable circuit stores 1 bit of information:
+\begin{itemize}
+    \item Output HIGH = binary 1 (data stored)
+    \item Output LOW = binary 0 (data erased)
+    \item SET pulse writes "1"
+    \item RESET pulse writes "0"
+    \item Data retained indefinitely (as long as power applied)
+\end{itemize}
+
+\textbf{Foundation of Digital Memory}
+
+Flip-flops and latches based on bistable circuits:
+\begin{itemize}
+    \item \textbf{SR Latch:} Set-Reset latch (basic bistable)
+    \item \textbf{D Flip-flop:} Data storage element
+    \item \textbf{JK Flip-flop:} Toggle capability
+    \item \textbf{T Flip-flop:} Toggle on clock
+\end{itemize}
+
+All digital memory (RAM, registers, counters) built from these elements!
+
+\textbf{Practical Applications}
+
+\begin{itemize}
+    \item \textbf{Car alarm:} Door opens (SET) $\rightarrow$ alarm ON, owner presses button (RESET) $\rightarrow$ alarm OFF
+    \item \textbf{Push-on/push-off switch:} First press ON, second press OFF
+    \item \textbf{Digital counters:} Each flip-flop stores one bit
+    \item \textbf{Computer memory:} Billions of bistable elements store data
+    \item \textbf{State machines:} Control sequences in processors
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Bistable Circuit as Memory Element}
+
+\textbf{Circuit:}
+\begin{itemize}
+    \item $V_{CC} = 5$ V
+    \item Two NPN transistors (Q1, Q2)
+    \item Collector resistors: 1 k$\Omega$ each
+    \item Cross-coupling resistors: 10 k$\Omega$ each
+    \item Trigger input resistors: 100 $\Omega$ each
+    \item Output: LED at Q1 collector
+\end{itemize}
+
+\textbf{Initial State:}
+\begin{itemize}
+    \item Q2 ON, Q1 OFF
+    \item Output HIGH (LED OFF in this example with LED at Q1)
+    \item Stored bit: "1"
+\end{itemize}
+
+\textbf{Operation Sequence:}
+
+\textbf{Step 1:} Apply SET pulse (logic HIGH to Q1 base)
+\begin{itemize}
+    \item Q1 turns ON
+    \item Q2 turns OFF
+    \item Output goes LOW (LED turns ON)
+    \item Stored bit: "0"
+\end{itemize}
+
+\textbf{Step 2:} Release SET (back to logic LOW)
+\begin{itemize}
+    \item Output remains LOW (LED stays ON)
+    \item Bit "0" is retained
+    \item No change without trigger
+\end{itemize}
+
+\textbf{Step 3:} Apply RESET pulse (logic HIGH to Q2 base)
+\begin{itemize}
+    \item Q2 turns ON
+    \item Q1 turns OFF
+    \item Output goes HIGH (LED turns OFF)
+    \item Stored bit: "1"
+\end{itemize}
+
+\textbf{Step 4:} Release RESET
+\begin{itemize}
+    \item Output remains HIGH (LED stays OFF)
+    \item Bit "1" is retained
+    \item Waits for next SET pulse
+\end{itemize}
+
+\textbf{Current Flow Without Limiting Resistor:}
+
+If 100 $\Omega$ resistor removed at SET input:
+\begin{itemize}
+    \item SET = 5 V, Q2 collector = 0 V (ground)
+    \item Direct short circuit: 5 V to ground
+    \item Current: limited only by transistor $R_{CE(sat)} \approx 1~\Omega$
+    \item $I = 5/1 = 5$ A (would destroy circuit!)
+    \item Limiting resistor: $I = 5/100 = 50$ mA (safe)
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Bistable = two stable states, both persist indefinitely
+    \item SET trigger: output HIGH, RESET trigger: output LOW
+    \item No capacitors (unlike astable and monostable)
+    \item Cross-coupled transistors create positive feedback
+    \item Stores 1 bit of information (digital memory element)
+    \item Foundation of flip-flops and latches
+    \item Basis of all digital memory (RAM, registers, counters)
+    \item Current limiting resistors essential at trigger inputs
+\end{itemize}
+\end{keypointsbox}
+
+\subsection{Schmitt Trigger and Oscillators}
+
+\subsubsection{Schmitt Trigger}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A Schmitt trigger is a comparator with hysteresis, providing two different threshold voltages for rising (upper threshold) and falling (lower threshold) edges. This prevents multiple output transitions caused by noisy input signals, converting slow or noisy inputs into clean digital outputs.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{What is Hysteresis?}
+
+Hysteresis means the circuit has different switching thresholds depending on direction:
+\begin{itemize}
+    \item \textbf{Upper threshold ($V_{TH}$):} Input rising, output switches LOW $\rightarrow$ HIGH
+    \item \textbf{Lower threshold ($V_{TL}$):} Input falling, output switches HIGH $\rightarrow$ LOW
+    \item \textbf{Hysteresis gap:} $\Delta V = V_{TH} - V_{TL}$
+\end{itemize}
+
+\textbf{Problem Without Hysteresis}
+
+Simple comparator with single threshold:
+\begin{itemize}
+    \item Noise on input near threshold causes multiple output toggles
+    \item Slow-rising input crosses threshold multiple times
+    \item Output "chatters" or "bounces"
+    \item Unreliable digital signal
+\end{itemize}
+
+Example: Noisy signal with 2 pulses but noise causes 6-7 output transitions at threshold crossings.
+
+\textbf{Solution With Schmitt Trigger}
+
+Two separate thresholds eliminate noise sensitivity:
+\begin{itemize}
+    \item Input must rise above $V_{TH}$ to switch output HIGH
+    \item Then input must fall below $V_{TL}$ to switch output LOW
+    \item Noise between $V_{TL}$ and $V_{TH}$ has no effect
+    \item Clean, reliable output even with noisy input
+\end{itemize}
+
+Example: Same noisy signal produces exactly 2 clean output pulses.
+
+\textbf{Circuit Operation (BJT Implementation)}
+
+\textbf{Initial State: Input LOW, Output LOW}
+
+\begin{itemize}
+    \item Input at 0 V (applied to Q1 base)
+    \item Q1 in cutoff (base-emitter voltage negative)
+    \item Q2 in saturation (receives base current from Q1 collector)
+    \item Output (Q2 collector) near ground (LOW)
+    \item Emitter resistor shared by both transistors
+\end{itemize}
+
+\textbf{Emitter Resistor Creates Hysteresis:}
+
+Key mechanism:
+\begin{itemize}
+    \item Both emitters connected to common resistor $R_E$
+    \item Current through $R_E$ creates voltage at emitters
+    \item This voltage affects threshold for both transistors
+    \item Positive feedback: state change alters threshold
+\end{itemize}
+
+\textbf{Input Rising (LOW $\rightarrow$ HIGH Transition):}
+
+As input rises from 0 V:
+\begin{itemize}
+    \item Q1 base voltage increases
+    \item Q1 emitter at $\approx$ 0.9 V (Q2 conducting sets this)
+    \item Q1 needs $V_{BE} \approx 0.6$ V to turn on
+    \item Q1 turns ON when input reaches: $V_{TH} = V_E + 0.6 \approx 1.5$ V
+\end{itemize}
+
+\textbf{Upper Threshold ($V_{TH}$):}
+
+$$V_{TH} = V_E + V_{BE} \approx 1.5 \text{ V}$$
+
+When input exceeds $V_{TH}$:
+\begin{itemize}
+    \item Q1 turns ON $\rightarrow$ Q1 collector drops
+    \item Q2 base voltage drops $\rightarrow$ Q2 turns OFF
+    \item Q2 collector rises to $V_{CC}$ (output HIGH)
+    \item Emitter voltage changes (now set by Q1)
+    \item New threshold established for falling edge
+\end{itemize}
+
+\textbf{Input Falling (HIGH $\rightarrow$ LOW Transition):}
+
+With output HIGH (Q1 ON, Q2 OFF):
+\begin{itemize}
+    \item Q1 emitter at lower voltage (only Q1 current through $R_E$)
+    \item Q2 needs base higher than emitter by 0.6 V to turn on
+    \item But Q2 base tied to Q1 collector (near ground)
+    \item Q1 must come out of saturation for Q2 to turn on
+\end{itemize}
+
+\textbf{Lower Threshold ($V_{TL}$):}
+
+$$V_{TL} = V_E + V_{BE} \approx 1.1 \text{ V}$$
+
+When input falls below $V_{TL}$:
+\begin{itemize}
+    \item Q1 current decreases, comes out of saturation
+    \item Q1 collector voltage rises (enters active region)
+    \item Q2 base voltage rises above emitter
+    \item Q2 turns ON $\rightarrow$ output goes LOW
+    \item Cycle completes
+\end{itemize}
+
+\textbf{Hysteresis Window}
+
+Gap between thresholds:
+
+$$\Delta V = V_{TH} - V_{TL} \approx 1.5 - 1.1 = 0.4 \text{ V}$$
+
+This gap provides noise immunity:
+\begin{itemize}
+    \item Noise up to 0.4 V peak-to-peak won't cause false triggering
+    \item Larger gap = more noise immunity, less sensitivity
+    \item Smaller gap = more sensitivity, less noise immunity
+    \item Adjustable by changing emitter resistor value
+\end{itemize}
+
+\textbf{Applications}
+
+\begin{itemize}
+    \item \textbf{Wave shaping:} Convert slow/noisy signals to clean square waves
+    \item \textbf{Sensor interfacing:} Light sensor, temperature sensor with noise
+    \item \textbf{Debouncing:} Clean up mechanical switch contacts
+    \item \textbf{Level detection:} Detect when signal crosses threshold
+    \item \textbf{Oscillators:} Combined with RC network for relaxation oscillator
+    \item \textbf{Advertising boards:} Light-dependent turn-on without flickering
+\end{itemize}
+
+\textbf{Practical Example: Light-Activated Sign}
+
+Photodiode measures outdoor luminosity:
+\begin{itemize}
+    \item As sun sets, voltage decreases
+    \item At dusk, voltage crosses lower threshold
+    \item Sign turns ON
+    \item Without hysteresis: sign would flicker as clouds pass
+    \item With hysteresis: sign stays ON until much brighter (morning)
+    \item Upper threshold prevents premature turn-off
+\end{itemize}
+
+\textbf{IC Implementations}
+
+Many ICs have built-in Schmitt trigger inputs:
+\begin{itemize}
+    \item 74HC14: Hex Schmitt trigger inverter
+    \item 555 timer: internal Schmitt trigger comparator
+    \item Op-amp circuits: easy to add hysteresis with positive feedback
+\end{itemize}
+
+\textbf{Transfer Characteristic}
+
+Plot output vs. input shows hysteresis loop:
+\begin{itemize}
+    \item Input increasing: output switches at $V_{TH}$
+    \item Input decreasing: output switches at $V_{TL}$
+    \item Creates characteristic "loop" shape
+    \item Width of loop = hysteresis amount
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Schmitt Trigger for Noisy Signal Cleanup}
+
+\textbf{Input Signal:}
+\begin{itemize}
+    \item 2 V sine wave (0 to 2 V)
+    \item Plus 200 Hz noise ($\pm$0.3 V amplitude)
+    \item Composite: slow rise/fall with significant noise
+\end{itemize}
+
+\textbf{Circuit Parameters:}
+\begin{itemize}
+    \item $V_{CC} = 5$ V
+    \item Upper threshold: $V_{TH} \approx 1.5$ V
+    \item Lower threshold: $V_{TL} \approx 1.1$ V
+    \item Hysteresis gap: 0.4 V
+\end{itemize}
+
+\textbf{Operation:}
+
+\textbf{Input rising from 0 V:}
+\begin{itemize}
+    \item Passes through 1.1 V: no change (below $V_{TH}$)
+    \item Noise causes $\pm$0.3 V fluctuations around 1.1 V
+    \item Output remains LOW (immune to noise)
+    \item At 1.5 V: output switches to HIGH
+    \item Clean transition despite noise
+\end{itemize}
+
+\textbf{Input at peak (2 V):}
+\begin{itemize}
+    \item Output stays HIGH
+    \item Noise doesn't bring input below 1.1 V threshold
+    \item No false triggering
+\end{itemize}
+
+\textbf{Input falling from 2 V:}
+\begin{itemize}
+    \item Passes through 1.5 V: no change (must reach $V_{TL}$)
+    \item Noise around 1.5 V has no effect
+    \item At 1.1 V: output switches to LOW
+    \item Another clean transition
+\end{itemize}
+
+\textbf{Result:}
+\begin{itemize}
+    \item Input: noisy 2 V sine wave
+    \item Output: clean square wave, exactly 2 pulses
+    \item No false triggering from noise
+    \item Perfect for digital circuit interfacing
+\end{itemize}
+
+\textbf{Without Schmitt Trigger (Simple Comparator):}
+\begin{itemize}
+    \item Single threshold at 1.3 V
+    \item Input noise causes $\pm$0.3 V variation
+    \item Near threshold: multiple crossings (1.0-1.6 V range)
+    \item Output: 6-8 pulses instead of 2
+    \item Unreliable, unusable signal
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Schmitt trigger: comparator with hysteresis (two thresholds)
+    \item Upper threshold ($V_{TH}$): input rising, output goes HIGH
+    \item Lower threshold ($V_{TL}$): input falling, output goes LOW
+    \item Hysteresis gap: $\Delta V = V_{TH} - V_{TL}$ provides noise immunity
+    \item Shared emitter resistor creates positive feedback
+    \item Prevents multiple transitions from noisy/slow inputs
+    \item Converts analog signals to clean digital outputs
+    \item Applications: wave shaping, debouncing, sensor interfacing
+\end{itemize}
+\end{keypointsbox}
+
+\subsubsection{Colpitts Oscillator (Positive Feedback Explained)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+A Colpitts oscillator uses an LC tank circuit with capacitive voltage divider to create positive feedback, generating continuous sinusoidal oscillations. Frequency determined by $f = 1/(2\pi\sqrt{LC_{total}})$ where $C_{total} = C_1C_2/(C_1+C_2)$. Positive feedback from emitter (in-phase with input) sustains oscillations by compensating for losses.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{What is an Oscillator?}
+
+An oscillator is an electronic circuit that produces periodically oscillating signals:
+\begin{itemize}
+    \item Sine wave (analog oscillators)
+    \item Square wave (digital oscillators)
+    \item Triangle, sawtooth, etc.
+\end{itemize}
+
+\textbf{Why Oscillators are Essential:}
+
+\begin{itemize}
+    \item Heartbeat of microcontrollers and processors
+    \item Clock signals for digital circuits
+    \item Radio frequency generation (transmitters, receivers)
+    \item Signal generation for testing and measurement
+\end{itemize}
+
+Without oscillators, digital circuits would remain in "deep sleep"—no clock, no operation!
+
+\textbf{Types of Oscillators}
+
+\begin{itemize}
+    \item \textbf{RC oscillators:} Low frequency (audio range)
+    \item \textbf{LC oscillators:} High frequency (RF applications)
+    \item \textbf{Crystal oscillators:} Very stable, precise frequency
+    \item \textbf{Op-amp based:} Adjustable, stable frequencies
+\end{itemize}
+
+\textbf{Colpitts Oscillator Characteristics:}
+
+\begin{itemize}
+    \item Frequency range: 30 kHz to 300 MHz
+    \item LC tank circuit (inductor + capacitors)
+    \item High frequency sine wave generation
+    \item Used in RF applications: radio receivers, transmitters, mobile communications
+    \item Withstands temperature variations well
+    \item Easy frequency adjustment (vary L or C)
+\end{itemize}
+
+\textbf{Positive vs. Negative Feedback}
+
+\textbf{Positive Feedback:}
+\begin{itemize}
+    \item Output fed back to input in-phase
+    \item Input and feedback add together
+    \item Output increases (grows with time)
+    \item Used to produce oscillations
+    \item Unstable by design (desired for oscillators)
+\end{itemize}
+
+\textbf{Negative Feedback:}
+\begin{itemize}
+    \item Output fed back to input out-of-phase (180°)
+    \item Feedback subtracts from input
+    \item Output decreases (stabilizes)
+    \item Used to stabilize amplifier gain
+    \item Stable by design (desired for amplifiers)
+\end{itemize}
+
+\textbf{Why Emitter Feedback is Positive}
+
+NPN transistor phase relationships:
+\begin{itemize}
+    \item Input: base voltage
+    \item Collector output: 180° phase shift (inverted)
+    \item Emitter output: 0° phase shift (in-phase with input)
+\end{itemize}
+
+For positive feedback:
+\begin{itemize}
+    \item Must take feedback from emitter (in-phase)
+    \item NOT from collector (would be negative feedback)
+    \item Emitter signal adds to input $\rightarrow$ positive feedback
+\end{itemize}
+
+\textbf{LC Tank Circuit}
+
+Heart of Colpitts oscillator:
+\begin{itemize}
+    \item Inductor (L) in parallel with capacitors (C1, C2 in series)
+    \item Natural resonant frequency
+    \item Stores energy alternately in magnetic field (L) and electric field (C)
+    \item Energy oscillates back and forth
+    \item Creates sinusoidal voltage
+\end{itemize}
+
+\textbf{Tank Circuit Operation:}
+
+\textbf{1. Capacitor charged:}
+\begin{itemize}
+    \item Energy stored in electric field
+    \item Begins discharging through inductor
+\end{itemize}
+
+\textbf{2. Current flows through inductor:}
+\begin{itemize}
+    \item Energy transferred to magnetic field
+    \item Current builds up
+\end{itemize}
+
+\textbf{3. Magnetic field collapses:}
+\begin{itemize}
+    \item Inductor generates voltage (opposes change in current)
+    \item Charges capacitor in opposite polarity
+\end{itemize}
+
+\textbf{4. Cycle repeats:}
+\begin{itemize}
+    \item Energy oscillates between L and C
+    \item Creates sinusoidal waveform
+\end{itemize}
+
+\textbf{Problem: Damping}
+
+Real components have resistance:
+\begin{itemize}
+    \item Energy lost as heat in each cycle
+    \item Oscillation amplitude decreases over time
+    \item Eventually stops (damped oscillation)
+\end{itemize}
+
+\textbf{Solution: Transistor Amplification}
+
+Transistor compensates for losses:
+\begin{itemize}
+    \item Amplifies weak oscillation
+    \item Feeds energy back into tank circuit
+    \item Maintains constant amplitude
+    \item Continuous oscillation (undamped)
+\end{itemize}
+
+\textbf{Colpitts Circuit Operation}
+
+\textbf{Power-on sequence:}
+
+\textbf{1. Initial charging:}
+\begin{itemize}
+    \item Current flows from $V_{CC}$ through bias resistor
+    \item Charges capacitors C1 and C2
+    \item Initially, capacitors have low impedance (act like short)
+    \item Inductor has high impedance (opposes current change)
+    \item Current prefers path through capacitors
+\end{itemize}
+
+\textbf{2. Capacitors charge:}
+\begin{itemize}
+    \item C1 charges until voltage reaches 0.6-0.7 V
+    \item C1 in parallel with base-emitter junction
+    \item When $V_{C1} \geq 0.6$ V $\rightarrow$ transistor turns ON
+\end{itemize}
+
+\textbf{3. Transistor turns ON:}
+\begin{itemize}
+    \item Large emitter current flows (limited by 100 $\Omega$ resistor)
+    \item Emitter current splits: some through C1, some through C2
+    \item Both capacitors begin discharging (charging in reverse)
+    \item Collector voltage drops (transistor saturates)
+\end{itemize}
+
+\textbf{4. Inductor responds:}
+\begin{itemize}
+    \item Current through inductor was building up
+    \item Transistor saturation reduces current
+    \item Magnetic field in inductor collapses
+    \item Inductor generates voltage (opposes current change)
+    \item This voltage charges C2 and discharges C1 further
+\end{itemize}
+
+\textbf{5. Transistor turns OFF:}
+\begin{itemize}
+    \item C1 voltage drops below 0.6 V
+    \item Base-emitter no longer forward biased
+    \item Transistor enters cutoff
+    \item Collector voltage rises back to $\approx V_{CC}$
+\end{itemize}
+
+\textbf{6. LC tank oscillates:}
+\begin{itemize}
+    \item Energy continues oscillating in LC circuit
+    \item C1 charges back up through bias resistor
+    \item When C1 reaches 0.6 V again $\rightarrow$ transistor turns ON
+    \item Cycle repeats
+\end{itemize}
+
+\textbf{Positive Feedback Mechanism}
+
+Critical for sustained oscillation:
+\begin{itemize}
+    \item Emitter current flows when transistor ON
+    \item This current goes through capacitive divider (C1, C2)
+    \item Voltage across C1 fed directly to base
+    \item Emitter voltage in-phase with base voltage
+    \item Feedback adds to input $\rightarrow$ positive feedback
+    \item Compensates for LC tank losses
+\end{itemize}
+
+\textbf{Without positive feedback:}
+\begin{itemize}
+    \item Remove emitter connection
+    \item Transistor still amplifies
+    \item But weak input signal (no feedback boost)
+    \item Insufficient to compensate losses
+    \item Oscillation dies out quickly
+\end{itemize}
+
+\textbf{Frequency Calculation}
+
+Resonant frequency of LC tank:
+
+$$f = \frac{1}{2\pi\sqrt{LC_{total}}}$$
+
+where $C_{total}$ is series combination of C1 and C2:
+
+$$C_{total} = \frac{C_1 \cdot C_2}{C_1 + C_2}$$
+
+For equal capacitors ($C_1 = C_2 = C$):
+
+$$C_{total} = \frac{C}{2}$$
+
+$$f = \frac{1}{2\pi\sqrt{LC/2}} = \frac{1}{\pi\sqrt{2LC}}$$
+
+\textbf{Example:} $L = 1$ mH, $C_1 = C_2 = 100~\mu$F
+
+$$C_{total} = \frac{100 \times 100}{100 + 100} = 50~\mu\text{F}$$
+
+$$f = \frac{1}{2\pi\sqrt{10^{-3} \times 50 \times 10^{-6}}} = \frac{1}{2\pi\sqrt{5 \times 10^{-8}}} \approx 225 \text{ Hz}$$
+
+\textbf{Frequency Adjustment}
+
+Easy to tune output frequency:
+\begin{itemize}
+    \item Increase L or C $\rightarrow$ lower frequency
+    \item Decrease L or C $\rightarrow$ higher frequency
+    \item Variable capacitor $\rightarrow$ adjustable oscillator
+    \item Variable inductor (rare) $\rightarrow$ coarse tuning
+\end{itemize}
+
+\textbf{Advantages of Colpitts Oscillator}
+
+\begin{itemize}
+    \item High frequency capability (up to 300 MHz)
+    \item Good frequency stability
+    \item Temperature resistant
+    \item Simple circuit, few components
+    \item Easy frequency adjustment
+    \item Low cost
+\end{itemize}
+
+\textbf{Applications}
+
+\begin{itemize}
+    \item Radio frequency oscillators in receivers
+    \item Local oscillators in transceivers
+    \item Signal generators for testing
+    \item Mobile communication devices
+    \item RF transmitters
+\end{itemize}
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Colpitts Oscillator Design for 217 Hz}
+
+\textbf{Requirements:}
+\begin{itemize}
+    \item Output frequency: 217 Hz (from simulation)
+    \item Sinusoidal waveform
+    \item Low distortion
+\end{itemize}
+
+\textbf{Component Selection:}
+
+Choose: $C_1 = C_2 = 100~\mu$F (equal values for symmetry)
+
+Calculate total capacitance:
+
+$$C_{total} = \frac{C_1 \cdot C_2}{C_1 + C_2} = \frac{100 \times 100}{200} = 50~\mu\text{F}$$
+
+Calculate required inductance for $f = 217$ Hz:
+
+$$L = \frac{1}{(2\pi f)^2 C_{total}} = \frac{1}{(2\pi \times 217)^2 \times 50 \times 10^{-6}}$$
+
+$$L = \frac{1}{1.864 \times 10^6 \times 50 \times 10^{-6}} = \frac{1}{93.2} \approx 10.7 \text{ mH}$$
+
+Use: $L = 10$ mH (close standard value)
+
+\textbf{Complete Circuit:}
+\begin{itemize}
+    \item Inductor: 10 mH
+    \item Capacitors: $C_1 = C_2 = 100~\mu$F
+    \item Bias resistor: 1 k$\Omega$ (provides DC bias and limits current)
+    \item Emitter resistor: 100 $\Omega$ (limits emitter current)
+    \item Collector resistor: 100 $\Omega$ (sets output impedance)
+    \item Transistor: general-purpose NPN (e.g., 2N2222)
+    \item Supply: $V_{CC} = 5$ V
+\end{itemize}
+
+\textbf{Performance:}
+
+Base voltage: $\approx$ 100 mV peak-to-peak (small signal)
+
+Collector output: $\approx$ 4.5 V peak-to-peak (amplified)
+
+Frequency: 217 Hz (as designed)
+
+Waveform: Clean sinusoidal (low distortion)
+
+\textbf{Positive Feedback Verification:}
+
+With feedback connected: Large stable oscillation, 4.5 V amplitude
+
+Without feedback (emitter disconnected): Tiny oscillation ($<$ 10 mV), rapidly decays
+
+This proves positive feedback is essential for sustained oscillation!
+
+\textbf{Frequency Tuning Example:}
+
+To change to 500 Hz:
+\begin{itemize}
+    \item Keep $C_1 = C_2 = 100~\mu$F
+    \item Calculate: $L = 1/(2\pi \times 500)^2 \times 50 \times 10^{-6} = 2.03$ mH
+    \item Use $L = 2.2$ mH (standard value)
+    \item Actual frequency: $\approx$ 480 Hz (close enough)
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Colpitts: LC oscillator with capacitive voltage divider
+    \item Positive feedback from emitter (in-phase with input)
+    \item Frequency: $f = 1/(2\pi\sqrt{LC_{total}})$ where $C_{total} = C_1C_2/(C_1+C_2)$
+    \item LC tank circuit oscillates naturally but decays (damped)
+    \item Transistor amplifies and feeds energy back (undamped)
+    \item Emitter output in-phase with base (positive feedback)
+    \item Collector output 180° out-of-phase (negative feedback, not used)
+    \item Range: 30 kHz - 300 MHz (RF applications)
+    \item Easy frequency tuning by varying L or C
+    \item Applications: RF oscillators, transmitters, receivers
+\end{itemize}
+\end{keypointsbox}

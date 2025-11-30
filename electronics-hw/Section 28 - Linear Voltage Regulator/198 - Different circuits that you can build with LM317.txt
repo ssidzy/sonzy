@@ -1,0 +1,239 @@
+So let's take a look on the datasheet of the island, 317 a little bit, because I want to show you
+
+that the data did actually provide some very useful information and guidelines, how to build different
+
+types of circuits.
+
+And the reason why I'm showing you this is because I want you to know that when you are using regulators
+
+where there are tons of different regulators outside, OK, and looking at the data of the particular
+
+alarm that you are using, it can ease your life very much.
+
+So the beginning of the data sheet provides us information about its features.
+
+What are the applications where this particular L.M. can be used?
+
+A short description and then we can see here a battery charge circuit.
+
+I will explain how the circuit works soon.
+
+Don't worry.
+
+Now, let's scroll down a little bit.
+
+Here we can see the peeing configuration functions, so this regulator comes in three different packages
+
+and that is presented here.
+
+Here we have the absolute maximum ratings, which, for example, tells us the maximum input to output
+
+differential voltage, which is 40 void's.
+
+Then we have the ESD ratings, which says that the regulator can handle electromagnetic discharge up
+
+to 2.5 kilowatts if it's a human body model and one kilowatts if it's charge device model.
+
+Or at the next table represents the recommended operating conditions, telling us the minimum and maximum
+
+voltage that it can output, the output current can be between zero point zero one and one point five
+
+amps.
+
+And note that this is a recommended use.
+
+So if you wanted the regulator to output more current, you should mounted on a heating.
+
+Then we have the electrical characteristics, which provides us information about different parameters
+
+like light regulation, low regulation, thermoregulation, etc., well, this table is less interesting,
+
+so let's move further.
+
+Then we have typical characteristics which shows us different types of graphs, so the first one, it's
+
+about lower regulation and we can see here how the output voltage behaves when the output current increases
+
+under different ambient temperatures.
+
+Then we have the transient response that we already talked about.
+
+Right.
+
+So let's move further.
+
+Then we have the functional block diagram.
+
+OK, so this is a high level abstraction of what's inside of the Realm 317.
+
+All right, now let's move further.
+
+And here, notice that we have a typical application of how this regulator is recommended to use.
+
+We can see that this is actually improved from the one that we built in the previous course, and they
+
+were nice enough to explain what's the purpose of each component in the circuit.
+
+So if you are curious what each component does, here's a clear explanation.
+
+So this is a typical application, but if we scroll down, we will stumble upon system examples.
+
+The first one is zero would do 30 volts regulator circuit.
+
+Where do you find anything strange in the circuit apart from using a negative power supply?
+
+What I find interesting is that this circuit can output a voltage as close as a zero volts so it can
+
+output even lower voltages than one point to Watts, which was mentioned as the minimum voltage capable
+
+to output.
+
+In the next course, we will learn how to create a power supply that can output positive and the negative
+
+voltage.
+
+So don't worry about these negative 10 volts right now.
+
+By the way, if you are curious why these nodes used it here to prevent the negative power supply to
+
+sync current out of the ground.
+
+So while a positive voltage sources current, the negative voltage is sinking current.
+
+So these diode here prevents Corones from the ground, which is a zero would to move towards the minus
+
+10 volts.
+
+Right, minus Tannenwald.
+
+Is it a lower potential?
+
+So current will tend to flow from the higher potential to a lower one.
+
+But see, this current through a diode can flow only from the energy towards the cathode current is
+
+basically blocked.
+
+All right.
+
+So the other circuit that we see here is an adjustable regulator circuit with improved Rieper rejection.
+
+So what is a rejection?
+
+Well, repair rejection is the ability of the regulator in this case to maintain constant or accurate
+
+output voltage despite AC fluctuations in the power supply, which is the input voltage.
+
+So C2 helps to stabilize the voltage at the adjustment pean, which helps reject noise and diodes one
+
+exist to discharge C to increase the output is shorted to ground.
+
+So if the output voltage is shortly to ground, so if we is connected to ground by mistake or because
+
+a component got damaged for whatever reason, this diode will create a low impedance path for the C
+
+due to discharge the one we conduct and then the one conducts.
+
+It has very low resistance, right?
+
+Ideally it's zero.
+
+So C2 will discharge nicely through the one and through the ground.
+
+Right.
+
+The next circuit is caldas precision current limiter circuit.
+
+So this circuit basically acts like a current saw circuit, which we learned in the course intended
+
+for beginners.
+
+And as you can see, the output current is limited to one point two divided by R-1.
+
+So current limited circuits are key to power supplies, protecting them in cases of a short circuit
+
+or other overload condition in view of the possible damage to a power supply in cases of overload.
+
+Currently, meters are almost always fitted and they are a standard feature incorporated into reregulated
+
+power supply.
+
+I see where this regulator doesn't have a limited built inside of it.
+
+So this will be probably placed into a bigger power supply circuit to limit the output current grade.
+
+Now here we have a circuit called US Battery Charger Circuit.
+
+If you ever need to design a battery charge circuit, you can use this this one.
+
+So by using our one in our two, we can set the output voltage, which we think is ideal to charge our
+
+battery.
+
+These zero point to all resistance is used, as you can see, to limit the current output of the three
+
+hundred 317 minimizing damage to the battery cell.
+
+Well, right at the beginning, when you connect your battery to charge, the battery will be seen as
+
+zero.
+
+Resistance is we are seeing very much current for a short amount of time and that can be enough to,
+
+Kirsan says.
+
+So when you connect the battery to the circuit, instead of creating a short circuit for a very short
+
+amount of time, the current will be limited to one point twenty five volts.
+
+Divided by hour is great.
+
+Now the next circuit is called us 50 million amps constant current battery charger circuit.
+
+So the input voltage should be four point twenty five volts higher than the battery voltage.
+
+And the charging current is set to one point twenty five volts.
+
+Divided by this 24 or restarts in about circuit.
+
+The current was limited indeed, but it was not set to be constant.
+
+So it could be as much as the battery demanded.
+
+Basically, as long as it's not shorted here, the current is set to be constant so it can be lower
+
+or higher.
+
+All right, and the last quit I want to show you is the silk with Caldas high current adjustable regulators
+
+who quit by using the silk with we can bypass the current limitations of this regulator.
+
+These type seventy three must be a power transistor, since most of the current will pass through it
+
+and these PMP transistor is only used to drive the power transistor.
+
+There's a huge collective resistance here of 500 home, which is used for the purpose to limit the current
+
+passing through the control of the transistor.
+
+So current that is provided by the input voltage will take the path of least resistance.
+
+Right.
+
+And which path has the lowest resistance through these powers?
+
+Transistor.
+
+Right.
+
+Because there's no collective resistance whatsoever like the other one.
+
+So even here it says that the NPN at the top of the schematic allow higher occurrence we out than the
+
+three 317 can provide while still keeping the output voltage at levels determined by the adjustment
+
+been registered if either of the three seventeen.
+
+So if you need, for whatever reason, higher occurrence to source to your load, you can use the circuit.
+
+

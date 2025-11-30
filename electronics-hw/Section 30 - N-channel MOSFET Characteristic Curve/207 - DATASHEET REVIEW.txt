@@ -1,0 +1,147 @@
+All right, so this is a data sheet of a randomly chosen and it has been called Field Effect Transistor,
+
+as you can see, it has the same package as the transistor one.
+
+Thankfully, it's very easy to confuse with it.
+
+And we have the schematic symbol.
+
+We learn about this diode here in another course.
+
+But now, if you scroll down a little bit, the first thing you will see is the absolute maximum ratings
+
+at here.
+
+We can read that stress is exceeding the absolute maximum ratings may damage the device.
+
+So why do we have here?
+
+Well, the first thing that is mentioned is the maximum to source voltage, which is 60 miles.
+
+Applying a voltage higher than a 60 votes on the drain may cause mosfet to enter the Breeda region and
+
+be permanently damaged.
+
+However, it's worth noting here that this 60 votes is valid when the gate source is short circuited.
+
+So as he has seen on the Kasese curve for different datasource voltages, slightly different drain voltages
+
+is needed to enter the brain region.
+
+So here are the data.
+
+She specifies the maximum drain source voltage when the gate and source is grounded.
+
+So they are at zero volts.
+
+We know that an engine has been moored.
+
+Mossler starts conducting current when the gate voltage is close or exceeds the threshold voltage and
+
+then the gate is tied to ground.
+
+So it's a zero watts.
+
+No current will flow through the channel.
+
+However, if the drain voltage applied is higher than 60 votes, the Fed will eventually break down
+
+and conduct enough current to damage itself.
+
+All right.
+
+This was it about this parameter.
+
+And let's move further.
+
+There's a maximum gate to source what is specified.
+
+So we already know that the higher the gate to source voltage for an antonymous that is, the higher
+
+the current that will flow through the channel.
+
+However, you cannot increase the gate voltage to infinite.
+
+Obviously, that's why the maximum gate voltage that you can apply when the source is rounded is plus
+
+minus 20 volts in continuous mode if you are in a switching mode.
+
+So for example, if you are switching on and off the fat, you can apply up to 40 volts.
+
+If the switching speed is lower than 50 microseconds, there is a maximum drain specified which says
+
+that the Fed can continuously conduct current up to 280 micro amps without damaging itself.
+
+And when the current is pulsed so that basically the fat is switched on and off rapidly, a maximum
+
+current of one point five amps can handle.
+
+All right.
+
+So the next parameter that we were looking for in the previous course was the train source, Bradon
+
+Voltage.
+
+So the breakdown of the Fed occurs when the drain source voltage is greater or equal than 60 votes,
+
+basically is the same with the maximum drain to source voltage specified earlier.
+
+So make sure your train voltage will never exceed the 60 volts, otherwise you risk blowing up your
+
+mosfet.
+
+Now, one of the most important parameter that we look for when choosing a mosfet is the threshold voltage.
+
+For that, we just have to scroll down a little bit and here it is, gatecrash on voltage.
+
+So FETs just like any other electrical components, are not ideal.
+
+So instead of specifying one threshold voltage, there's a range given, which is between zero point
+
+eight and three words.
+
+Usually I like to consider the middle value as the threshold voltage, which is around two point one
+
+volts.
+
+And if you want more information about this, like how the drain current varies with the gate voltage,
+
+you can scroll down and search a graph called as the transfer characteristics.
+
+Here you can see that as long as the gate to source voltage is below two words, there is no drin current.
+
+But starting from two two point three words, the train car starts increasing with the increase of voltage.
+
+And by the help of this graph, you can precisely determine the drain.
+
+Correct?
+
+So let's see a target voltage of six words at room temperature.
+
+There will be around one amps flowing from DataSource.
+
+There's another charge that we must look at, and it's nothing else but the oil in the region, critics.
+
+So this chart is basically what we have seen in each of the course.
+
+It is chapter.
+
+It's nothing else but the characteristics curve.
+
+So let's examine a line.
+
+Let's take this one.
+
+When the gate source voltage is fixed at four walls, you can't see that until the dream source voltage
+
+is below one world.
+
+The drain current has a linear, I mean inertly linear response to changes in the drain source voltage.
+
+So we are in the omic region.
+
+But once the drain voltage exceeds one watts, you can see that the Fed set rates and an increase in
+
+drain voltage won't have any effect on the drain current, which will be in this case around zero point
+
+four amps or 400 milligrams.

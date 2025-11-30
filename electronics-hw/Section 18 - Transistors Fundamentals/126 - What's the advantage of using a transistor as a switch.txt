@@ -1,0 +1,323 @@
+One of the most fundamental applications of the transistor is using it to control the flow of power
+
+to another part of the circuit.
+
+Basically using it as an electric switch.
+
+In the analog electronics world, transistor switches are used to switch on a high power load using
+
+a small electric current.
+
+For example, transistor switches can be used to switch and control lamps, relays or even motors.
+
+In the digital world, they are used to make logic gates, which can go on to create microcontrollers,
+
+microprocessors and other integrated circuits.
+
+Since this course is centered around analog electronics, we will be discussing only how transistors
+
+can be used in switching high power loads.
+
+However, if you are curious about how to construct logic gates memories, the CPU and other cool stuff,
+
+then check out my course called Crash Course Digital Electronics.
+
+Now a transistor is an electrically controlled switch that has many advantages over normal physical
+
+context, which is a physical switch is limited to the speed of your hand.
+
+If the human hand can't switch switches faster than three hertz, the switching speed will be limited
+
+to three hertz.
+
+A physical switch has to states on and off either no voltage or the source voltage.
+
+On the other hand, varying the base current of a transistor will cause the transistor to act not only
+
+as a switch but also as a variable resistor.
+
+And we will see how to do that in a later course.
+
+The third advantage of a transistor is that a transistor can switch from zero hertz to around several
+
+gigahertz, depending upon the type of transistor used, which means they are much, much faster than
+
+a normal switch.
+
+With reference to these transistors don't have any moving parts, so they are noiseless.
+
+Unlike a traditional relay, for example, the fourth advantage is that when we are dealing with high
+
+currents, a mechanical switch connected in a series with a high power load might cause irking.
+
+Since the transistor does not break the circuit, you have no arc and therefore no damage to the device.
+
+Also, eliminating the arc eliminates noise.
+
+Mechanical switches also suffer from contact bounces.
+
+And as a result, if your circuit requires a clean input signal, it won't get it because the contacts
+
+will bounce and cause a ringing signal.
+
+And lastly, transistors can be used in a variety of ways.
+
+For example, pick it up with my controller and you've got next to infinite possibilities of using the
+
+transistor as a switch.
+
+A normal switch needs pressure to press it into place with a microcontroller transistor combination.
+
+You can control it from claps to voice to any other strange, weird.
+
+Whatever idea you cut, your imagination is the limit.
+
+Now that we have gone through some of the advantages that the transistor can offer over a traditional
+
+mechanical switch, let me present to you some circuits that can be built with a transistor working
+
+as a switch.
+
+For example, one way you could use a transistor is by connecting the base terminal to the high or digital
+
+pin of a controller.
+
+Arduino, for example, has several digital pins that can be used to output zero volts or five volts.
+
+One of the main reasons why people use transistors in conjunction with a mac controller is because an
+
+IO pin can only supply a relatively low amount of current.
+
+If you look into the data sheet of the Arduino ono, you will notice that the IO pins can output up
+
+to a maximum of 20 milliamps at a voltage of five volts.
+
+That's 0.1 watts per pin, and that's certainly not enough for driving high power loads.
+
+A high power load is just the umbrella term used to describe electrical components that require a high
+
+amount of current to operate.
+
+These can be high power LEDs, light bulbs, motors, etc. For example, a small DC motor is likely
+
+to use more power than an Arduino digital output can handle directly.
+
+If we try to connect the matter straight to an Arduino pin, there's a good chance that it could damage
+
+the Arduino.
+
+A small transistor like the PIN 2222 can be used as a switch that uses just a little current from the
+
+Arduino digital output pin to control the much bigger current of the matter.
+
+The transistor has three leads, and most of the electricity flows from the collector to the emitter.
+
+But this will only happen if a small amount is flowing into the base connection.
+
+The small current is supplied by the Arduino digital output.
+
+As you can see here, the pin d three of the Arduino is connected to the resistor and just like when
+
+using an LED.
+
+This limits the current flowing into the transistor through the base.
+
+Also notice that there is a diode connected across the connections of the mother.
+
+As we already know, diodes only allow electricity to flow in one direction, which is a direction of
+
+their arrow.
+
+Then you turn the power off to a motor.
+
+You get a negative spike of voltage that can damage your Arduino or the transistor.
+
+And the diode protects against this by shorting out any such reverse current from the mother.
+
+Now, let's take another example.
+
+Let's imagine that you want to control a 230 volts light bulb powered by the electrical outlet using
+
+an ordinary owner.
+
+So the light bulb will run on 230 volts.
+
+AC And we need to turn it on and off using a mac controller.
+
+How would you do that?
+
+Well, the base of the transistor will still be connected to an IO pin through a resistor, of course.
+
+But where do we place the light bulb?
+
+Could we attach it to the collector and connect the collector pin to 230 volts ac?
+
+Of course not, unless you want to blow up your transistor.
+
+For this reason, it's really common to use a relay in conjunction with a transistor.
+
+For this exercise, we will be using a 12 volt relay, which only means that 12 volts is required on
+
+the coil terminals in order to get it to close.
+
+So when 12 volts is applied to the coil, the relay will pull in.
+
+In other words, it will switch.
+
+So let's see what the circuit would look like in our simulator.
+
+All right.
+
+As you can see, the base terminal is not connected to an actual controller pin.
+
+So I'm just marking the behavior of an IO pin by simply connecting the base to a five watts power supply
+
+through a switch.
+
+Now we have a simple NTP transistor, a relay, a 12 watts power supply, a 230 volts, AC power supply
+
+and a light bulb.
+
+The purpose of this circuit is that then the imaginary microcontroller outputs five volts on an IO pin.
+
+The transistor will turn on allowing current to flow from the 12 volt power supply down to ground,
+
+and then current flows through this coil.
+
+It will create a magnetic field.
+
+That magnetic field, if strong enough, will attract this plate, causing it to switch.
+
+And once the relay has switched, a connection is made between the 230 volts, power supply and the
+
+light bulb, causing it to start glowing.
+
+So if I hit the switch, the transistor has turned on, causing the relay to also switch.
+
+The connection between the light bulb and the 230 volts AC is made and the light bulb is glowing and
+
+it's completely separated from the main circuit.
+
+This diet here has the same purpose as it had when I was showing the circuit with the motor when I turn
+
+the transistor off.
+
+So no more current flows through the coil.
+
+A large negative spike of voltage is generated which can damage the transistor.
+
+The negative voltage spike is produced by the energy stored in magnetic fields, so when current is
+
+switched off, this energy has to go somewhere.
+
+But where should it go?
+
+Well, surely not through the transistor.
+
+So when I hit the switch again, this energy will circle through the diode and the inductor until it
+
+dies off.
+
+And in this way, we successfully protected the transistor from blowing up.
+
+The next circuit that we will look at is a fire warning circuit, which will make an LED to turn on
+
+once the temperature in the room is too high.
+
+One important component in the circuit of a heat operated switch is the third Mr..
+
+The third Mr..
+
+Is a type of resistor that responds depending upon the surrounding temperature.
+
+Its resistance increases when the temperature is low and vice versa.
+
+Then heat is applied to the third Mr..
+
+Its resistance drops and the base current increases followed by a greater increase in the electric current
+
+and the LED will turn on the circuit, as you can see, is already built.
+
+So let's examine it in a little bit more detail.
+
+You can notice right away that the base of this NPN transistor is connected to a voltage divider.
+
+This voltage divided circuit is built by a third Mr. and a resistor using the slider on the right.
+
+I can increase or decrease the ambient temperature and the thermostat will react to it by changing its
+
+resistance.
+
+So right now, the temperature that it's sensing is 25 degrees Celsius and at this temperature its resistance
+
+is 600 ohms.
+
+If I lower the temperature, its resistance increases, and the higher the temperature gets, the lower
+
+its resistance.
+
+Now, at room temperature, which is usually considered to be between 20 and 25 degrees Celsius, the
+
+output of the voltage divider is 363 millivolts.
+
+This is certainly not enough to turn on a transistor.
+
+By the way, I do hope you know how to calculate the output voltage of a voltage divider.
+
+This 363 millivolts can be easily calculated by applying the voltage divider equation.
+
+Now as the temperature increases, the resistance of the thermostat decreases, which causes the output
+
+of the voltage divider to increase.
+
+So as the temperature increases, the base voltage increases as well.
+
+And if the temperature is high enough, the base voltage will be high enough as well to turn the transistor
+
+on, which will make the LED turn on as well.
+
+This is awesome.
+
+But the actual reason why I brought this circuit up is to show you how the current on the collector
+
+changes with respect to the base voltage.
+
+After all, how could we design a circuit with a transistor if we cannot calculate how much current
+
+will flow through the collector and emitter?
+
+So let me bring the temperature all the way down and let's see how the collector current changes with
+
+respect to the voltage applied to the base terminal.
+
+As I'm slowly increasing the base voltage, the collector current is slowly increasing as well.
+
+It's almost like a linear relationship.
+
+However, once the base voltage reaches around 500 millivolts from that point on with very little increase
+
+in voltage, the electric current increases much more.
+
+So it's no more a linear relationship.
+
+The electric current increases exponentially compared to a little increase in base voltage.
+
+The second interesting thing to note here is that after the base voltage reaches like 660 millivolts
+
+from that point on, even if you increase the base voltage further, the electric current won't change
+
+at all.
+
+So it will get stuck at 9.7 milliamps and no increase in base voltage can modify that any more.
+
+In the next course, we will start digging into how the voltages and currents in a transistor depend
+
+on each other.
+
+Like what's the relationship between the electric current and emitter current?
+
+Or what's the relationship between the electric current and base current?
+
+But to understand these things, we have to first talk about the different operating modes a transistor
+
+can work in.

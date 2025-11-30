@@ -1,0 +1,205 @@
+So this is a sketch of some of the components involved in AM Radio transmission as the audio in order
+
+to generate the radio frequency signal for AM radio transmission.
+
+The information contained in the original sound signal must be put in a form that can be sent to a great
+
+distance.
+
+And how do we do that?
+
+By applying a modulation technique such as amplitude modulation, for example, the amplitude modulator
+
+block will take us input a carrier wave that has a fixed frequency, let's say three kilohertz.
+
+And the second input will be the sound signal, which might be someone talking into a microphone.
+
+Now, the voltage of the sound will be used to vary the amplitude of the carrier wave by an amount proportional
+
+to the strength of the original sound signal.
+
+The modulated carrier wave is then amplified by the carrier transmitter, which amounts to a power amplifier,
+
+which can applied the modulated electrical wave to the conducting element in the transmitting broadcast
+
+antenna of the radio station whilst the signal is transmitted.
+
+A radio receiver that is relatively close to the transmitting antenna will pick up the signal using,
+
+of course, an antenna.
+
+What is the radio receiving going to do with the signal?
+
+Hmm.
+
+Let's find out.
+
+All right, folks, here we are.
+
+And the circle that you see here is a radio receiver or more technically an am detector.
+
+The first cop shows the signal on the antenna.
+
+So here we have an antenna.
+
+The middle scope shows the carrier wave, and the scope shows the message signal after demolition.
+
+So how does this work?
+
+First and foremost, we have to acknowledge the fact that in an area or, let's say, inner city, there
+
+can be more than one transmitters, right?
+
+I mean, this is usually always the case.
+
+There can be hundreds or thousands of transmitters in close proximity of your radio.
+
+If that's the case, which usually is the signal that you see here on the antenna is a mixture of all
+
+the radio channels and noise that are flying in the air and inevitably picked up by the antenna.
+
+What do we do after that?
+
+Well, we need to select our channel, which is usually done by rotating the knob in one direction until
+
+the desired channel.
+
+But that particular frequency becomes loud and clear.
+
+As I said at the beginning, we are broadcasting at a frequency of three kilohertz.
+
+So the job of our radio receiver is to select only the channel transmitting at three kilohertz.
+
+Now this channel selection is done using a tuner, which in our case is composed of an inductor and
+
+the capacitor placed in parallel.
+
+In our example, we use a fixed value capacitor, but in a classical radio, when you are rotating this
+
+knob or whatever it is, you are actually modifying the value of this capacitor in our particular case.
+
+We have a two point eight microflora capacitor and a one milli henry inductor.
+
+Again, the job of a tuner is to separate one radio channel from the thousands of radio signals that
+
+the antenna receives.
+
+The tuner works using a principle called resonance.
+
+And I'm sure you have heard about resonant frequency before when you place any doctor and the capacitor
+
+in parallel.
+
+They will resonate at a particular frequency.
+
+And this resonant frequency is represented by the following equation.
+
+Now, if you plugged the value of the inductor and capacitor into this formula, we will get the frequency
+
+of three kilohertz.
+
+So using only doctor of one Milli Henry and the capacitor of 2.8 Micron Farad, we set the tuner to
+
+resonate at a frequency of three kilohertz, which is exactly what you want whilst the tuner starts
+
+resonating, which is due to the fact that from the multitude of radio signals that is picked up by
+
+the antenna, there exists a signal before frequency of three kilohertz.
+
+The output of the tuner can be visualized by placing a scope between the tuner and a diode capacitor
+
+circuit.
+
+In this hope, we can beautifully see the modulated carrier wave, which is a combination of the massive
+
+signal and the carrier signal that we have talked about in previous courses.
+
+And for those who are wondering what this green stuff is, it's just a simple AC signal, but the horizontal
+
+scale.
+
+In other words, the timescale has been decreased so that we can clearly see the modulated signal just
+
+like the textbooks teaches us.
+
+So look at this how beautiful it is.
+
+What you see here is the combination of the massive signal and the carrier wave and what is our next
+
+step?
+
+Well, we have to get rid of the carrier RIP, the carrier wave did its job by carrying the information
+
+from one place to another, but it's time for us to say goodbye from it.
+
+And how do we do that?
+
+Well, by simply using a diode and a capacitor, by using a diode and a capacitor.
+
+Believe it or not, we can extract the information from this modulated signal.
+
+By the way, this diode capacitor circuit is called the detection stage.
+
+OK, so we have the tuning stage, then we have the detection stage.
+
+So let's pause a little bit.
+
+Why do you think we need this diode here?
+
+Well, if we look at this modulated signal, we can immediately see that our message is present twice,
+
+the information itself is this envelope, right?
+
+But the notice that we have a positive and a negative envelope, this negative envelope is formed due
+
+to the fact that this is an easy signal.
+
+So it oscillates between positive and negative voltage.
+
+As I have mentioned, this positive and the loop is what we need.
+
+And the easiest way to get rid of the negative voltage is by rectifying the signal using a diode.
+
+Again, a diode is used to rectify this signal.
+
+And this only allows current to flow in one direction.
+
+And this means that half of the waveform is allowed through.
+
+Now, after Diode, we will only have the positive side of the AC signal.
+
+In other words, only the positive the which is exactly what we need.
+
+But we are not done yet.
+
+We got rid of the negative side of the modulated wave, but we still need a way to extract the message
+
+from this wave.
+
+And as we already know, the contour or the envelope is the message itself.
+
+It's the AC message that was used to modulate the carrier wave.
+
+So by placing a capacitor in parallel, the peak voltage of each cycle will be connected together.
+
+And the result a message is shown in this graph.
+
+As you can see, the message signal is a little bit noisy, which might occur because of the mismatch
+
+of the value of this capacitor.
+
+You can't play around with this capacitor and see how changing its value affects the message signal.
+
+Or better yet, you could place another capacitor in parallel to reduce these tiny ripples from the
+
+message signal.
+
+But yeah, that's it.
+
+We have successfully modulated the radio wave.
+
+We got the message which could be then fed into an amplifier stage, right?
+
+Because at this moment, the message is weak and tired after all its journey.
+
+So we could amplify it and feed it into a loudspeaker.

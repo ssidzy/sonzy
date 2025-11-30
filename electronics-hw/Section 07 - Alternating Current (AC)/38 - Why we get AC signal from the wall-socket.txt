@@ -1,0 +1,217 @@
+Great.
+
+So this particular course aims to give you a brief overlook on why we receive AC voltage from the power
+
+distribution instead of DC, I guess I don't have to tell you because you already know the voltage that
+
+you get from the wall socket is an AC voltage.
+
+Now, of course, depending on where you live in each continent, this AC voltage Kaveri in amplitude
+
+and slightly in frequency, you know, compared to AC voltage, DC voltage was found much earlier.
+
+This high voltage is found in nature.
+
+So when people started investigating electricity, they found D.C. electricity.
+
+First, some examples of this ICARDA nature are lightning, static electric discharge.
+
+You know, when you touch a charged material and get a little spark, electric rays, for example,
+
+can produce between 50 and 200 volts of 30 amps, DC current if they are threatened.
+
+Of course, other examples from charged particles emitted from sun surface during solar storm interacting
+
+with the magnetic field of earth.
+
+So although DC voltage was first invented, nowadays every home and business is wired for AC.
+
+So all your home appliances from TV, fridge lamps, vacuum cleaner are all powered from an AC source
+
+by plugging the power cord in the wall socket.
+
+Don't get me wrong, this doesn't mean that the TV operates internally on AC voltage.
+
+There's something called AC to DC converter called rectifiers that converts the AC voltage to a DC voltage.
+
+So even though your computer, for example, is connected to a wall socket or outlet which as we know,
+
+outputs an AC voltage, the computer itself doesn't work on AC.
+
+Actually, you will be surprised that almost all of your gadgets and devices work on DC voltage, but
+
+if so, instead of AC, will it be easier to just receive DC voltage directly from the wall socket so
+
+that we can avoid this headache of converting AC to DC?
+
+Well, in order to understand this, we have to go back in the late 80s when a variety of inventions
+
+across the United States and Europe led to a full scale battle between alternating current and current
+
+distribution.
+
+So in the late 80s, these voters could not be easily converted to high voltages.
+
+And this was a big problem.
+
+And even today, you cannot increase DC voltage very easily.
+
+For more information about how to increase the voltage, check out DC to DC Converters.
+
+So because these high voltage could not be easily converted to high voltages as a result, Edison proposed
+
+a small or small local power plants that would power individual neighborhoods or city sections.
+
+Power was distributed using three wires from the power plant.
+
+It was plus minus 110 volt and the ground wire.
+
+So, for example, lights and other devices can be connected between the plus 110 words and ground,
+
+which is the neutral wire, 110 volts allowed for some voltage drop between the plant and the load,
+
+which was which is home in this case or office or whatever.
+
+Even though the voltage drop across the power lines was accounted for, power plants needed to be located
+
+within one mile of the end user.
+
+This limitation made power distribution in rural areas extremely difficult, if not impossible.
+
+With Tesla's patents, Westinghouse worked to perfected the AC distribution system.
+
+Transformers that we talk about later in the course provided an inexpensive method to step up the voltage
+
+of AC to several thousand words and back down to usable levels.
+
+All right, so let's examine why transmitting is much more efficient in terms of power than just meeting
+
+the AC.
+
+Here we have two separate power plants feeding two separate houses, each one being located over 1000
+
+feet away.
+
+The difference between the two systems is that the first power plant generates this current while the
+
+second one AC current.
+
+So both houses demand 100 amps current at 480 watts.
+
+And because of this, the plant generates one hundred and thirty four hundred eighty volts.
+
+So far, so good.
+
+The question is, how can we transfer this power in the most efficient way to the house without any
+
+power loss due to the long transmission cable?
+
+Since we haven't learned about Transformers yet, let's start by analyzing the D.C. system first.
+
+So this is system in order to carry 100 amps over the line, a large cable in diameter will be required
+
+for the DC system.
+
+Larger cable means lower conductor resistance.
+
+Why?
+
+Because resistance is equal to resistivity times less divided by cross section area.
+
+So the electrical resistance of conductor is a function of its length and the conductor area.
+
+And based on this equation, we can see that resistance is inversely proportional to diameter.
+
+This means that when the diameter increases, the resistance decreases.
+
+I know this might be counterintuitive, but the thing is, when the diameter of a conductor is big,
+
+then electrons can flow more easily through.
+
+It has lowered the resistance.
+
+All right, let's not deviate too much from our topic.
+
+So typically zero point fifteen ohms per 1000 feet can be used for a 100 conductor.
+
+All right, so if the resistance of the cable is zero point fifteen ohms based on unflawed, the voltage
+
+drop across it is zero point 15 times 100, which is equal to 15 words.
+
+This means that the DC generator must generate 480 volts plus 15 volts to deliver the required power
+
+to the house now that we know the voltage drop across the cable.
+
+We can calculate the power loss.
+
+Since power is equal to voltage times current, the power loss will be 15 volts times 100 ounce, which
+
+is 1500 watts.
+
+So let's remember this power loss and the we will compare this number to the power loss of the AC system.
+
+Now, understanding how power is transmitted over an AC system is slightly complicated, but if you
+
+want to understand this in more detail, take the course.
+
+Call the long distance partners mission, of course, that you will find after learning about inductors
+
+and transformers.
+
+And in that course, we will fully understand why AC makes the transmission of electric power to great
+
+distances much more economical compared to its DC counterpart.
+
+Anyhow, let's give it a shot.
+
+But don't worry, if you don't get it now, you will surely understand this later in the course.
+
+The tricky part here is that we have transformers, so a transformer works only with AC signals and
+
+their job is to increase or decrease the input voltage.
+
+So this notation only means that the transformer increases the input voltage from 480 volts to four
+
+thousand eight hundred.
+
+What's the catch here is that since the voltage was amplified, the current must decrease by a proportional
+
+amount so that the power after the transformer remains the same as the input power.
+
+So a transformer is not a magical component that can increase the overall net power.
+
+This would mean that the transformer works as a power generator.
+
+Of course, it's not the case.
+
+CES is just a basic passive component.
+
+So in our case, the transformer increases the voltage at the expense of lowering the current so that
+
+the output power remains the same as the input power.
+
+So if you understand this, everything else will be a piece of cake.
+
+Now, as you can see, the current is 10 times lower since the voltage was amplified by 10.
+
+Since the current is lower, a smaller cable will be required.
+
+Smaller cable in diameter means higher resistance and typically a one point five ohms per 1000 feet
+
+can be used for a 10 and conductor, in which case the voltage drop is one point five times 10, which
+
+is 15 words.
+
+Alright, alright, hold on.
+
+Now let's calculate the power loss.
+
+So power is equal to voltage times current.
+
+So it's 15 volts times ten, which is equal to one hundred and fifty watts.
+
+Now I guess it's not a question which system we use for transmitting power.
+
+The power loss in the AC system is ten times lower than for the basic system making the system suitable
+
+for distributing power compared to its AC counterpart.

@@ -1,0 +1,1524 @@
+% ====================================================================
+% SECTION 09: RC TIME CONSTANT
+% ====================================================================
+
+\section*{\LARGE\color{headercolor} Section 09 -- RC Time Constant}
+\addcontentsline{toc}{section}{Section 09: RC Time Constant}
+
+% --------------------------------------------------------------------
+\subsection{RC Time Constant ($\tau = RC$)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Time Constant:} $\tau = R \times C$ (in seconds)
+    \item \textbf{Charging:} After 1$\tau$: 63\% charged | After 5$\tau$: ~99\% charged (full)
+    \item \textbf{Discharging:} After 1$\tau$: 37\% remains | After 5$\tau$: ~1\% remains (empty)
+    \item \textbf{Units:} R in ohms ($\Omega$), C in farads (F) $\rightarrow$ $\tau$ in seconds (s)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{What is RC Time Constant?}
+
+\vspace{0.15cm}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item Time constant ($\tau$) = Resistance $\times$ Capacitance
+    \item $\tau = R \times C$ where R in $\Omega$, C in F
+    \item Measured in seconds (s)
+    \item Determines how fast capacitor charges/discharges
+    \item Larger $\tau$ = slower charging/discharging
+\end{itemize}
+
+\textbf{Why does it matter?}
+\begin{itemize}
+    \item Capacitor doesn't charge/discharge instantly
+    \item Resistor limits current $\rightarrow$ slows charging
+    \item Larger R or C $\rightarrow$ longer time to charge
+    \item Time constant quantifies this delay
+    \item Critical for timing circuits and filters
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{The Charging Process:}
+
+\textbf{RC charging circuit:}
+\begin{itemize}
+    \item Resistor in series with capacitor
+    \item DC voltage source applied
+    \item Capacitor starts at 0V
+    \item Current flows: $I = \frac{V_{supply} - V_C}{R}$
+    \item As $V_C$ increases, current decreases
+    \item Eventually $V_C = V_{supply}$, current = 0
+\end{itemize}
+
+\textbf{Exponential voltage rise:}
+\begin{itemize}
+    \item $V_C(t) = V_{supply} \times (1 - e^{-t/\tau})$
+    \item NOT linear! Exponential curve
+    \item Fast rise initially, slows down later
+    \item Asymptotically approaches $V_{supply}$
+    \item Never truly reaches 100\% (but very close)
+\end{itemize}
+
+\textbf{Key time points during charging:}
+\begin{enumerate}
+    \item \textbf{At $t = 0$:} $V_C = 0$V (0\% charged)
+    \item \textbf{At $t = 1\tau$:} $V_C = 0.632 \times V_{supply}$ (63.2\% charged)
+    \item \textbf{At $t = 2\tau$:} $V_C = 0.865 \times V_{supply}$ (86.5\% charged)
+    \item \textbf{At $t = 3\tau$:} $V_C = 0.950 \times V_{supply}$ (95.0\% charged)
+    \item \textbf{At $t = 4\tau$:} $V_C = 0.982 \times V_{supply}$ (98.2\% charged)
+    \item \textbf{At $t = 5\tau$:} $V_C = 0.993 \times V_{supply}$ (99.3\% charged)
+\end{enumerate}
+
+\textbf{The "5 tau rule":}
+\begin{itemize}
+    \item After 5$\tau$, capacitor considered "fully charged"
+    \item Actually 99.3\%, but close enough for practical purposes
+    \item Total charging time $\approx 5 \times R \times C$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{The Discharging Process:}
+
+\textbf{RC discharging circuit:}
+\begin{itemize}
+    \item Capacitor initially charged to $V_{initial}$
+    \item Voltage source removed or switched to ground
+    \item Capacitor discharges through resistor
+    \item Current flows opposite direction
+    \item Current: $I = \frac{V_C}{R}$ (decreases as $V_C$ decreases)
+\end{itemize}
+
+\textbf{Exponential voltage decay:}
+\begin{itemize}
+    \item $V_C(t) = V_{initial} \times e^{-t/\tau}$
+    \item Exponential decay curve
+    \item Fast drop initially, slows down later
+    \item Asymptotically approaches 0V
+\end{itemize}
+
+\textbf{Key time points during discharging:}
+\begin{enumerate}
+    \item \textbf{At $t = 0$:} $V_C = V_{initial}$ (100\% charged)
+    \item \textbf{At $t = 1\tau$:} $V_C = 0.368 \times V_{initial}$ (36.8\% remains)
+    \item \textbf{At $t = 2\tau$:} $V_C = 0.135 \times V_{initial}$ (13.5\% remains)
+    \item \textbf{At $t = 3\tau$:} $V_C = 0.050 \times V_{initial}$ (5.0\% remains)
+    \item \textbf{At $t = 4\tau$:} $V_C = 0.018 \times V_{initial}$ (1.8\% remains)
+    \item \textbf{At $t = 5\tau$:} $V_C = 0.007 \times V_{initial}$ (0.7\% remains)
+\end{enumerate}
+
+\textbf{The "5 tau rule" for discharging:}
+\begin{itemize}
+    \item After 5$\tau$, capacitor considered "fully discharged"
+    \item Actually 0.7\%, essentially zero for practical purposes
+    \item Total discharging time $\approx 5 \times R \times C$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Current During Charging/Discharging:}
+
+\textbf{Charging current:}
+\begin{itemize}
+    \item $I(t) = \frac{V_{supply}}{R} \times e^{-t/\tau}$
+    \item Maximum at $t = 0$: $I_{max} = \frac{V_{supply}}{R}$
+    \item Exponentially decreases
+    \item At $t = 1\tau$: Current drops to 37\% of initial
+    \item At $t = 5\tau$: Current essentially zero
+\end{itemize}
+
+\textbf{Discharging current:}
+\begin{itemize}
+    \item $I(t) = -\frac{V_{initial}}{R} \times e^{-t/\tau}$
+    \item Negative sign: Opposite direction to charging
+    \item Maximum magnitude at $t = 0$
+    \item Exponentially decreases in magnitude
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Unit Conversions (Critical!):}
+
+\textbf{Remember powers of ten:}
+\begin{itemize}
+    \item Resistors often in k$\Omega$ or M$\Omega$
+    \item Capacitors often in $\mu$F, nF, or pF
+    \item Must convert to base units for $\tau$ calculation!
+\end{itemize}
+
+\textbf{Common conversions:}
+\begin{itemize}
+    \item 1 k$\Omega$ = 1,000 $\Omega$ = $10^3$ $\Omega$
+    \item 1 M$\Omega$ = 1,000,000 $\Omega$ = $10^6$ $\Omega$
+    \item 1 $\mu$F = 0.000001 F = $10^{-6}$ F
+    \item 1 nF = 0.000000001 F = $10^{-9}$ F
+    \item 1 pF = 0.000000000001 F = $10^{-12}$ F
+\end{itemize}
+
+\textbf{Shortcut for common combinations:}
+\begin{itemize}
+    \item k$\Omega$ $\times$ $\mu$F = ms (milliseconds)
+    \item M$\Omega$ $\times$ $\mu$F = s (seconds)
+    \item k$\Omega$ $\times$ nF = $\mu$s (microseconds)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Factors Affecting Time Constant:}
+
+\textbf{Resistance effect:}
+\begin{itemize}
+    \item Larger R $\rightarrow$ limits current more $\rightarrow$ slower charging
+    \item Double R $\rightarrow$ double $\tau$ $\rightarrow$ 2$\times$ longer time
+    \item Smaller R $\rightarrow$ faster charging (but higher current!)
+\end{itemize}
+
+\textbf{Capacitance effect:}
+\begin{itemize}
+    \item Larger C $\rightarrow$ more charge needed $\rightarrow$ slower charging
+    \item Double C $\rightarrow$ double $\tau$ $\rightarrow$ 2$\times$ longer time
+    \item Smaller C $\rightarrow$ faster charging
+\end{itemize}
+
+\textbf{Practical implications:}
+\begin{itemize}
+    \item Want fast charging? Use small R and small C
+    \item Want slow charging (timing delay)? Use large R or large C
+    \item Trade-offs: Small R = high current, large C = bigger/expensive
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical Calculations}
+\begin{examplebox}
+\textbf{Example 1: Basic Time Constant Calculation}
+
+Given: R = 100 k$\Omega$, C = 200 $\mu$F
+
+Calculate time constant:
+\begin{itemize}
+    \item Convert to base units: R = 100,000 $\Omega$, C = 0.0002 F
+    \item $\tau = R \times C = 100,000 \times 0.0002 = 20$ seconds
+    \item Or use shortcut: 100 k$\Omega$ $\times$ 200 $\mu$F = 100 $\times$ 200 ms = 20,000 ms = 20 s
+\end{itemize}
+
+Full charging time:
+\begin{itemize}
+    \item $5\tau = 5 \times 20 = 100$ seconds
+    \item Takes ~1 minute 40 seconds to fully charge
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Charging to Specific Voltage}
+
+Given: $V_{supply}$ = 12V, R = 10 k$\Omega$, C = 100 $\mu$F
+
+Time constant: $\tau = 10 \times 10^3 \times 100 \times 10^{-6} = 1$ second
+
+Voltage after 1 second (1$\tau$):
+\begin{itemize}
+    \item $V_C = 12 \times 0.632 = 7.58$V (63.2\% of 12V)
+\end{itemize}
+
+Voltage after 2 seconds (2$\tau$):
+\begin{itemize}
+    \item $V_C = 12 \times 0.865 = 10.38$V (86.5\% of 12V)
+\end{itemize}
+
+Voltage after 5 seconds (5$\tau$):
+\begin{itemize}
+    \item $V_C = 12 \times 0.993 = 11.92$V (99.3\% of 12V - essentially full)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Discharging from Initial Voltage}
+
+Given: $V_{initial}$ = 9V, R = 47 k$\Omega$, C = 1000 $\mu$F
+
+Time constant: $\tau = 47 \times 10^3 \times 1000 \times 10^{-6} = 47$ seconds
+
+Voltage after 47 seconds (1$\tau$):
+\begin{itemize}
+    \item $V_C = 9 \times 0.368 = 3.31$V (36.8\% remains)
+\end{itemize}
+
+Voltage after 94 seconds (2$\tau$):
+\begin{itemize}
+    \item $V_C = 9 \times 0.135 = 1.22$V (13.5\% remains)
+\end{itemize}
+
+Time to fully discharge:
+\begin{itemize}
+    \item $5\tau = 5 \times 47 = 235$ seconds $\approx$ 3 minutes 55 seconds
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Initial Charging Current}
+
+Given: $V_{supply}$ = 5V, R = 1 k$\Omega$, C = 470 $\mu$F
+
+Time constant: $\tau = 1000 \times 470 \times 10^{-6} = 0.47$ seconds
+
+Initial charging current ($t = 0$):
+\begin{itemize}
+    \item $I_{max} = \frac{V_{supply}}{R} = \frac{5}{1000} = 0.005$A = 5 mA
+    \item This is the current at the instant voltage is applied
+\end{itemize}
+
+Current after 0.47 seconds (1$\tau$):
+\begin{itemize}
+    \item $I = 5 \text{ mA} \times 0.368 = 1.84$ mA (dropped to 37\%)
+\end{itemize}
+
+Current after 2.35 seconds (5$\tau$):
+\begin{itemize}
+    \item $I \approx 0$ mA (essentially zero, capacitor fully charged)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 5: Designing for Specific Delay}
+
+Requirement: Need 10-second delay
+
+Choose C = 100 $\mu$F (standard value)
+
+Calculate required R:
+\begin{itemize}
+    \item $\tau = R \times C$
+    \item $R = \frac{\tau}{C} = \frac{10}{100 \times 10^{-6}} = 100,000$ $\Omega$ = 100 k$\Omega$
+\end{itemize}
+
+Verification:
+\begin{itemize}
+    \item $\tau = 100 \text{ k}\Omega \times 100 \text{ $\mu$F} = 10$ s $\checkmark$
+    \item Full charge time: $5\tau = 50$ seconds
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 6: Effect of Doubling Components}
+
+Original: R = 10 k$\Omega$, C = 22 $\mu$F, $\tau$ = 0.22 s
+
+Double resistance (R = 20 k$\Omega$):
+\begin{itemize}
+    \item New $\tau = 20 \times 10^3 \times 22 \times 10^{-6} = 0.44$ s
+    \item Time constant doubles! (2$\times$ slower)
+\end{itemize}
+
+Double capacitance (C = 44 $\mu$F, R back to 10 k$\Omega$):
+\begin{itemize}
+    \item New $\tau = 10 \times 10^3 \times 44 \times 10^{-6} = 0.44$ s
+    \item Time constant also doubles! (same effect as doubling R)
+\end{itemize}
+
+Double both (R = 20 k$\Omega$, C = 44 $\mu$F):
+\begin{itemize}
+    \item New $\tau = 20 \times 10^3 \times 44 \times 10^{-6} = 0.88$ s
+    \item Time constant quadruples! (4$\times$ slower)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 7: Unit Conversion Practice}
+
+Calculate $\tau$ for: R = 2.2 M$\Omega$, C = 10 $\mu$F
+
+Method 1 (convert to base units):
+\begin{itemize}
+    \item R = 2,200,000 $\Omega$, C = 0.00001 F
+    \item $\tau = 2,200,000 \times 0.00001 = 22$ seconds
+\end{itemize}
+
+Method 2 (use shortcut: M$\Omega$ $\times$ $\mu$F = s):
+\begin{itemize}
+    \item $\tau = 2.2 \times 10 = 22$ seconds $\checkmark$
+\end{itemize}
+
+Full charge time: $5\tau = 110$ seconds = 1 minute 50 seconds
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Time Constant Formula:} $\tau = R \times C$ (R in $\Omega$, C in F, $\tau$ in s)
+    
+    \item \textbf{Charging Key Points:}
+    \begin{itemize}
+        \item 1$\tau$: 63.2\% charged
+        \item 5$\tau$: 99.3\% charged (considered "full")
+        \item $V_C(t) = V_{supply}(1 - e^{-t/\tau})$
+    \end{itemize}
+    
+    \item \textbf{Discharging Key Points:}
+    \begin{itemize}
+        \item 1$\tau$: 36.8\% remains
+        \item 5$\tau$: 0.7\% remains (considered "empty")
+        \item $V_C(t) = V_{initial} \times e^{-t/\tau}$
+    \end{itemize}
+    
+    \item \textbf{Exponential Process:} NOT linear! Fast initially, slows down later
+    
+    \item \textbf{5 Tau Rule:} Full charge/discharge takes approximately $5 \times R \times C$
+    
+    \item \textbf{Current Behavior:} Maximum at $t=0$, exponentially decreases
+    
+    \item \textbf{Unit Shortcuts:}
+    \begin{itemize}
+        \item k$\Omega$ $\times$ $\mu$F = ms
+        \item M$\Omega$ $\times$ $\mu$F = s
+        \item k$\Omega$ $\times$ nF = $\mu$s
+    \end{itemize}
+    
+    \item \textbf{Component Effects:}
+    \begin{itemize}
+        \item Larger R or C $\rightarrow$ slower charging (longer $\tau$)
+        \item Smaller R or C $\rightarrow$ faster charging (shorter $\tau$)
+        \item Proportional relationship: 2$\times$R or 2$\times$C $\rightarrow$ 2$\times$$\tau$
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What is the RC time constant? \\
+    \textit{A:} $\tau = R \times C$, measured in seconds. It determines how fast a capacitor charges or discharges through a resistor.
+    
+    \item \textbf{Q:} How much is a capacitor charged after 1 time constant? \\
+    \textit{A:} 63.2\% of the supply voltage (charging) or 36.8\% remaining (discharging).
+    
+    \item \textbf{Q:} When is a capacitor considered fully charged? \\
+    \textit{A:} After 5 time constants (5$\tau$), when it reaches 99.3\% of supply voltage.
+    
+    \item \textbf{Q:} Is charging/discharging linear or exponential? \\
+    \textit{A:} Exponential. Fast change initially, then slows down asymptotically.
+    
+    \item \textbf{Q:} What happens to time constant if you double the resistance? \\
+    \textit{A:} Time constant doubles ($\tau$ is proportional to R). Charging takes twice as long.
+    
+    \item \textbf{Q:} Why does resistor slow down charging? \\
+    \textit{A:} Resistor limits current: $I = \frac{V_{supply} - V_C}{R}$. Larger R $\rightarrow$ smaller I $\rightarrow$ slower charging.
+    
+    \item \textbf{Q:} What is the initial current when charging starts? \\
+    \textit{A:} $I_{max} = \frac{V_{supply}}{R}$ (capacitor voltage is 0, so full voltage across R).
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Formulas Summary:}
+\begin{itemize}
+    \item \textbf{Time Constant:} $\tau = R \times C$
+    \item \textbf{Charging Voltage:} $V_C(t) = V_{supply}(1 - e^{-t/\tau})$
+    \item \textbf{Discharging Voltage:} $V_C(t) = V_{initial} \times e^{-t/\tau}$
+    \item \textbf{Charging Current:} $I(t) = \frac{V_{supply}}{R} e^{-t/\tau}$
+    \item \textbf{Discharging Current:} $I(t) = -\frac{V_{initial}}{R} e^{-t/\tau}$
+    \item \textbf{Full Charge/Discharge Time:} $t_{full} \approx 5\tau$
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Forgetting unit conversions (using k$\Omega$ or $\mu$F directly)
+    \item Thinking charging is linear (it's exponential!)
+    \item Confusing charging percentages (63\%) with discharging (37\%)
+    \item Assuming capacitor fully charges at 1$\tau$ (actually only 63\%)
+    \item Not accounting for 5$\tau$ total time in timing circuits
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{RC Circuits: Charging, Discharging, and Signal Filtering}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Square Wave Input:} Capacitor charges/discharges repeatedly
+    \item \textbf{If pulse width $\gg$ 5$\tau$:} Full charge/discharge, output looks like input
+    \item \textbf{If pulse width $\ll$ 5$\tau$:} Partial charge/discharge, output smoothed/filtered
+    \item \textbf{Low-Pass Filter:} Passes low frequencies, blocks high frequencies. $f_c = \frac{1}{2\pi RC}$
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{RC Circuit Response to Square Waves:}
+
+\vspace{0.15cm}
+
+\textbf{The setup:}
+\begin{itemize}
+    \item RC circuit (resistor + capacitor in series)
+    \item Input: Square wave (alternates between high and low)
+    \item Output: Voltage across capacitor
+    \item Behavior depends on relationship between pulse width and time constant
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Case 1: Pulse Width $\gg$ 5$\tau$ (Long Pulses)}
+
+\textbf{What happens:}
+\begin{itemize}
+    \item Pulse duration much longer than 5 time constants
+    \item Capacitor has enough time to fully charge (during high)
+    \item Capacitor has enough time to fully discharge (during low)
+    \item Output voltage closely follows input square wave
+    \item Nearly perfect square wave at output
+\end{itemize}
+
+\textbf{Example:}
+\begin{itemize}
+    \item $\tau = 1$ ms, Pulse width = 50 ms (50$\tau$)
+    \item Capacitor charges fully in first 5 ms
+    \item Stays charged for remaining 45 ms of pulse
+    \item Then discharges fully when pulse goes low
+    \item Output: Clean square wave
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Case 2: Pulse Width $\approx$ 5$\tau$ (Matched Pulses)}
+
+\textbf{What happens:}
+\begin{itemize}
+    \item Pulse duration approximately equals 5 time constants
+    \item Capacitor just barely reaches full charge/discharge
+    \item Output shows exponential curves
+    \item Visible charging/discharging slopes
+    \item Output resembles classic RC waveform
+\end{itemize}
+
+\textbf{Example:}
+\begin{itemize}
+    \item $\tau = 10$ ms, Pulse width = 50 ms (5$\tau$)
+    \item Capacitor charges to 99\% during high pulse
+    \item Then immediately starts discharging
+    \item Output: Exponential rise and fall visible
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Case 3: Pulse Width $\approx$ 2$\tau$ (Medium Pulses)}
+
+\textbf{What happens:}
+\begin{itemize}
+    \item Pulse duration about 2 time constants
+    \item Capacitor only charges to ~86\% during high
+    \item Capacitor only discharges to ~13\% during low
+    \item Output voltage range reduced compared to input
+    \item Clear exponential charging/discharging curves
+\end{itemize}
+
+\textbf{Example:}
+\begin{itemize}
+    \item Input: 0V to 5V square wave
+    \item $\tau = 10$ ms, Pulse width = 20 ms (2$\tau$)
+    \item Capacitor charges to: $5 \times 0.865 = 4.33$V
+    \item Then discharges to: $4.33 \times 0.135 = 0.58$V
+    \item Output swings: 0.58V to 4.33V (reduced from 0V-5V)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Case 4: Pulse Width $\ll$ 5$\tau$ (Short Pulses)}
+
+\textbf{What happens:}
+\begin{itemize}
+    \item Pulse duration much shorter than 5 time constants
+    \item Capacitor doesn't have time to charge or discharge significantly
+    \item Output voltage stays relatively constant
+    \item Only small ripple around average value
+    \item Acts as filter - removes fast changes
+\end{itemize}
+
+\textbf{Example:}
+\begin{itemize}
+    \item Input: 0V to 5V square wave, 50\% duty cycle
+    \item $\tau = 100$ ms, Pulse width = 1 ms (0.01$\tau$)
+    \item Capacitor barely charges/discharges
+    \item Output: Approximately 2.5V DC with tiny ripple
+    \item Square wave "smoothed" to nearly constant voltage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{RC Low-Pass Filter:}
+
+\textbf{What is a low-pass filter?}
+\begin{itemize}
+    \item Passes low frequencies (lets them through)
+    \item Blocks (attenuates) high frequencies
+    \item RC circuit acts as low-pass filter naturally
+    \item Output taken across capacitor
+\end{itemize}
+
+\textbf{How it works:}
+\begin{itemize}
+    \item \textbf{Low frequencies:} Long period, capacitor has time to charge/discharge, follows input
+    \item \textbf{High frequencies:} Short period, capacitor can't respond fast enough, output attenuated
+    \item Cutoff frequency ($f_c$): Frequency where signal reduced to 70.7\% (-3 dB)
+\end{itemize}
+
+\textbf{Cutoff frequency formula:}
+\begin{itemize}
+    \item $f_c = \frac{1}{2\pi RC}$ (in Hz)
+    \item Where R in $\Omega$, C in F
+    \item This is the -3 dB point
+    \item Below $f_c$: Most signal passes
+    \item Above $f_c$: Signal increasingly attenuated
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Filter Response Characteristics:}
+
+\textbf{Frequency below cutoff ($f < f_c$):}
+\begin{itemize}
+    \item Signal passes with minimal attenuation
+    \item Output amplitude $\approx$ input amplitude
+    \item Capacitor reactance high compared to signal period
+\end{itemize}
+
+\textbf{Frequency at cutoff ($f = f_c$):}
+\begin{itemize}
+    \item Signal amplitude reduced to 70.7\% (0.707)
+    \item This is -3 dB attenuation
+    \item Power reduced to half (-3 dB = half power)
+    \item Capacitive reactance equals resistance: $X_C = R$
+\end{itemize}
+
+\textbf{Frequency above cutoff ($f > f_c$):}
+\begin{itemize}
+    \item Signal increasingly attenuated
+    \item Higher frequency $\rightarrow$ more attenuation
+    \item Roll-off: -20 dB per decade (10$\times$ frequency)
+    \item At 10$\times$$f_c$: Output is 1/10th of input
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Practical Filtering Applications:}
+
+\textbf{Removing high-frequency noise:}
+\begin{itemize}
+    \item Desired signal: Low frequency (e.g., audio, DC with ripple)
+    \item Unwanted noise: High frequency (e.g., switching noise, RF interference)
+    \item Design filter with $f_c$ above desired signal, below noise
+    \item RC filter passes signal, blocks noise
+\end{itemize}
+
+\textbf{Example - Power supply filtering:}
+\begin{itemize}
+    \item DC power with 100 kHz switching noise
+    \item Want to remove noise, keep DC
+    \item Choose $f_c = 1$ kHz (well below noise frequency)
+    \item If R = 10 $\Omega$, need: $C = \frac{1}{2\pi f_c R} = \frac{1}{2\pi \times 1000 \times 10} \approx 16$ $\mu$F
+    \item 100 kHz noise attenuated by factor of 100 (-40 dB)
+\end{itemize}
+
+\textbf{Example - Audio filtering (removing bass):}
+\begin{itemize}
+    \item Remove frequencies below 200 Hz
+    \item Use high-pass filter (output across R, not C!)
+    \item Same $f_c$ formula applies
+    \item Choose C = 1 $\mu$F, calculate R: $R = \frac{1}{2\pi f_c C} = \frac{1}{2\pi \times 200 \times 10^{-6}} \approx 796$ $\Omega$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Duty Cycle Effects:}
+
+\textbf{50\% duty cycle (symmetric square wave):}
+\begin{itemize}
+    \item Equal high and low times
+    \item If pulse width $\ll$ $\tau$: Output settles to average (half of input swing)
+    \item If pulse width $\approx$ $\tau$: Output oscillates symmetrically
+\end{itemize}
+
+\textbf{Non-50\% duty cycle:}
+\begin{itemize}
+    \item Unequal charge/discharge times
+    \item Output DC level shifts
+    \item Longer high time $\rightarrow$ higher average output voltage
+    \item Longer low time $\rightarrow$ lower average output voltage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Designing RC Circuits for Specific Response:}
+
+\textbf{Want output to follow input (minimal filtering):}
+\begin{itemize}
+    \item Choose $\tau \ll$ pulse width
+    \item Rule of thumb: $\tau < \frac{1}{10}$ of shortest pulse
+    \item Ensures full charge/discharge
+\end{itemize}
+
+\textbf{Want output smoothed (heavy filtering):}
+\begin{itemize}
+    \item Choose $\tau \gg$ pulse width
+    \item Rule of thumb: $\tau > 10 \times$ pulse width
+    \item Capacitor can't respond to changes
+\end{itemize}
+
+\textbf{Want visible charging curves (educational):}
+\begin{itemize}
+    \item Choose $\tau \approx$ pulse width
+    \item See exponential charging/discharging
+    \item Useful for learning/demonstration
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical Calculations}
+\begin{examplebox}
+\textbf{Example 1: Cutoff Frequency Calculation}
+
+Given: R = 1 k$\Omega$, C = 100 nF
+
+Calculate cutoff frequency:
+\begin{itemize}
+    \item $f_c = \frac{1}{2\pi RC} = \frac{1}{2\pi \times 1000 \times 100 \times 10^{-9}}$
+    \item $f_c = \frac{1}{2\pi \times 10^{-4}} = \frac{1}{6.28 \times 10^{-4}} \approx 1592$ Hz $\approx 1.6$ kHz
+\end{itemize}
+
+Response at different frequencies:
+\begin{itemize}
+    \item At 100 Hz ($< f_c$): Signal passes (minimal attenuation)
+    \item At 1592 Hz ($= f_c$): Signal reduced to 70.7\%
+    \item At 16 kHz ($10 \times f_c$): Signal reduced to ~10\%
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Designing Filter for Noise Removal}
+
+Requirement: Remove 50 kHz switching noise from DC signal
+
+Choose cutoff well below noise: $f_c = 5$ kHz (10$\times$ lower than noise)
+
+Select R = 100 $\Omega$ (low to avoid voltage drop)
+
+Calculate required C:
+\begin{itemize}
+    \item $C = \frac{1}{2\pi f_c R} = \frac{1}{2\pi \times 5000 \times 100}$
+    \item $C = \frac{1}{3.14 \times 10^6} \approx 0.318$ $\mu$F
+    \item Use standard value: 0.33 $\mu$F or 330 nF
+\end{itemize}
+
+Verify noise attenuation at 50 kHz:
+\begin{itemize}
+    \item Noise is 10$\times$ above cutoff
+    \item Attenuation: Approximately 1/10 or -20 dB
+    \item If noise was 1V, output noise $\approx$ 0.1V
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Square Wave Response}
+
+Given: R = 10 k$\Omega$, C = 22 $\mu$F, Input = 0-5V square wave at 10 Hz (50\% duty)
+
+Time constant: $\tau = 10,000 \times 22 \times 10^{-6} = 0.22$ s = 220 ms
+
+Square wave period: $T = \frac{1}{10} = 0.1$ s = 100 ms
+
+Pulse width (50\% duty): 50 ms
+
+Compare pulse width to time constant:
+\begin{itemize}
+    \item Pulse width = 50 ms
+    \item $\tau$ = 220 ms
+    \item Pulse width $< \tau$ (actually 0.23$\tau$)
+\end{itemize}
+
+Charging during 50 ms pulse:
+\begin{itemize}
+    \item Time = 0.23$\tau$ (not even 1$\tau$)
+    \item Voltage reaches: $5 \times (1 - e^{-0.23}) = 5 \times 0.205 \approx 1.03$V
+    \item Only charges to 20.5\% of 5V
+\end{itemize}
+
+Discharging during 50 ms low:
+\begin{itemize}
+    \item Starting from 1.03V
+    \item Discharges for 0.23$\tau$
+    \item Voltage drops to: $1.03 \times e^{-0.23} = 1.03 \times 0.795 \approx 0.82$V
+\end{itemize}
+
+Result:
+\begin{itemize}
+    \item Output oscillates between 0.82V and 1.03V (small ripple!)
+    \item Input was 0-5V, but output only varies by 0.21V
+    \item Heavily filtered/smoothed
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Fast Square Wave (High Frequency)}
+
+Given: Same circuit (R = 10 k$\Omega$, C = 22 $\mu$F, $\tau$ = 220 ms)
+
+Input: 0-5V square wave at 100 Hz (period = 10 ms, pulse width = 5 ms)
+
+Compare: Pulse width = 5 ms = 0.023$\tau$ (very short!)
+
+Charging during 5 ms:
+\begin{itemize}
+    \item $V_C = 5 \times (1 - e^{-0.023}) = 5 \times 0.023 \approx 0.11$V
+    \item Barely charges at all!
+\end{itemize}
+
+Result:
+\begin{itemize}
+    \item Output voltage nearly constant
+    \item Tiny ripple around 2.5V (average of 0-5V)
+    \item 100 Hz signal completely filtered out
+    \item Acts as smoothing capacitor
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 5: Matching Time Constant to Pulse}
+
+Requirement: Want to see clear RC charging curve on oscilloscope
+
+Input: 1 kHz square wave (period = 1 ms, pulse width = 0.5 ms)
+
+Design for 5$\tau$ = pulse width:
+\begin{itemize}
+    \item $5\tau = 0.5$ ms
+    \item $\tau = 0.1$ ms = 100 $\mu$s
+\end{itemize}
+
+Choose C = 10 nF, calculate R:
+\begin{itemize}
+    \item $R = \frac{\tau}{C} = \frac{100 \times 10^{-6}}{10 \times 10^{-9}} = 10,000$ $\Omega$ = 10 k$\Omega$
+\end{itemize}
+
+Verification:
+\begin{itemize}
+    \item $\tau = 10,000 \times 10 \times 10^{-9} = 100$ $\mu$s $\checkmark$
+    \item During 0.5 ms pulse, capacitor charges for 5$\tau$ $\rightarrow$ reaches 99\%
+    \item Clear exponential curve visible on scope
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 6: Audio Low-Pass Filter}
+
+Application: Remove high-frequency hiss above 5 kHz
+
+Choose cutoff: $f_c = 5$ kHz
+
+Select C = 47 nF (standard audio capacitor value)
+
+Calculate R:
+\begin{itemize}
+    \item $R = \frac{1}{2\pi f_c C} = \frac{1}{2\pi \times 5000 \times 47 \times 10^{-9}}$
+    \item $R = \frac{1}{1.476 \times 10^{-3}} \approx 677$ $\Omega$
+    \item Use standard value: 680 $\Omega$
+\end{itemize}
+
+Performance:
+\begin{itemize}
+    \item Below 5 kHz: Audio passes clearly
+    \item At 5 kHz: -3 dB (barely noticeable)
+    \item At 50 kHz: -20 dB (1/10th amplitude, noise greatly reduced)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 7: Power Supply Ripple Filtering}
+
+Given: 12V DC with 120 Hz ripple (from full-wave rectifier)
+
+Want: Reduce ripple below 100 mV
+
+Choose cutoff: $f_c = 12$ Hz (10$\times$ below ripple frequency)
+
+If R = 10 $\Omega$ (low resistance to minimize voltage drop):
+\begin{itemize}
+    \item $C = \frac{1}{2\pi \times 12 \times 10} = \frac{1}{754} \approx 1327$ $\mu$F
+    \item Use standard value: 1500 $\mu$F or 2200 $\mu$F electrolytic
+\end{itemize}
+
+Attenuation at 120 Hz:
+\begin{itemize}
+    \item 120 Hz is 10$\times$ above cutoff
+    \item Attenuation: ~1/10 (-20 dB)
+    \item If original ripple was 1V, filtered ripple $\approx$ 100 mV $\checkmark$
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Square Wave Response:} Depends on pulse width vs. time constant ($\tau$)
+    
+    \item \textbf{Pulse $\gg$ 5$\tau$:} Full charge/discharge, output follows input
+    
+    \item \textbf{Pulse $\ll$ 5$\tau$:} Partial charge/discharge, output smoothed
+    
+    \item \textbf{Low-Pass Filter:} RC circuit naturally filters high frequencies
+    
+    \item \textbf{Cutoff Frequency:} $f_c = \frac{1}{2\pi RC}$ (-3 dB point, 70.7\% amplitude)
+    
+    \item \textbf{Filter Response:}
+    \begin{itemize}
+        \item Below $f_c$: Signal passes
+        \item At $f_c$: -3 dB (70.7\%)
+        \item Above $f_c$: -20 dB/decade roll-off
+    \end{itemize}
+    
+    \item \textbf{Applications:} Noise filtering, smoothing, signal conditioning
+    
+    \item \textbf{Design Trade-off:} Larger $\tau$ = better filtering but slower response
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What happens when square wave pulse is much shorter than time constant? \\
+    \textit{A:} Capacitor doesn't have time to charge significantly. Output becomes smooth DC with tiny ripple (filtering effect).
+    
+    \item \textbf{Q:} What is cutoff frequency of RC low-pass filter? \\
+    \textit{A:} $f_c = \frac{1}{2\pi RC}$. Frequency where signal is attenuated to 70.7\% (-3 dB).
+    
+    \item \textbf{Q:} How does RC circuit filter high frequencies? \\
+    \textit{A:} At high frequencies, capacitor reactance is low, so signal shorted to ground through capacitor. Low frequencies have high reactance, so signal passes.
+    
+    \item \textbf{Q:} What is roll-off rate of RC filter? \\
+    \textit{A:} -20 dB per decade. At 10$\times$ cutoff frequency, signal is 1/10th amplitude.
+    
+    \item \textbf{Q:} How to design filter to remove 50 kHz noise? \\
+    \textit{A:} Choose cutoff well below 50 kHz (e.g., 5 kHz), then calculate R and C using $f_c = \frac{1}{2\pi RC}$.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Formulas:}
+\begin{itemize}
+    \item \textbf{Cutoff Frequency:} $f_c = \frac{1}{2\pi RC}$
+    \item \textbf{Component from Cutoff:} $C = \frac{1}{2\pi f_c R}$ or $R = \frac{1}{2\pi f_c C}$
+    \item \textbf{Time Constant:} $\tau = RC = \frac{1}{2\pi f_c}$
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Power supply noise filtering
+    \item Audio tone controls (bass/treble)
+    \item Anti-aliasing filters (before ADC)
+    \item Smoothing rectified AC to DC
+    \item Debouncing switches (removing bounce noise)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Application Examples: Timing Circuits and Comparators}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Time Delay Circuit:} RC charges, CMOS buffer switches at threshold $\rightarrow$ pulse delay
+    \item \textbf{Timer with Comparator:} Button charges cap, comparator output high until cap discharges below reference
+    \item \textbf{Comparator:} Compares two voltages, output goes high/low based on which input is higher
+    \item Real-world applications: Delays, timers, pulse shaping, automatic control
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Application 1: Time Delay Circuit with CMOS Buffer}
+
+\vspace{0.15cm}
+
+\textbf{Circuit description:}
+\begin{itemize}
+    \item Input: Pulse (step voltage)
+    \item RC charging circuit
+    \item CMOS buffer (digital IC) connected after RC
+    \item Output: Delayed pulse
+\end{itemize}
+
+\textbf{What is a CMOS buffer?}
+\begin{itemize}
+    \item Digital component (pair of transistors)
+    \item High input impedance (draws very little current)
+    \item Low output impedance (can drive loads)
+    \item Acts as current amplifier (voltage stays same)
+    \item Requires external power supply (active device)
+    \item Symbol: Triangle
+\end{itemize}
+
+\textbf{CMOS buffer switching behavior:}
+\begin{itemize}
+    \item Has a threshold voltage (typically ~50\% of supply)
+    \item When input below threshold: Output = LOW (0V)
+    \item When input above threshold: Output = HIGH ($V_{supply}$)
+    \item Switches quickly between states
+    \item Gradual input $\rightarrow$ sharp output transition
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{How the time delay works:}
+
+\textbf{Point A (input):}
+\begin{itemize}
+    \item Sharp rising edge (pulse)
+    \item Goes from 0V to $V_{supply}$ instantly
+\end{itemize}
+
+\textbf{Point B (after RC):}
+\begin{itemize}
+    \item Capacitor charging voltage
+    \item Exponential rise from 0V to $V_{supply}$
+    \item Takes 5$\tau$ to fully charge
+    \item Smooth, curved waveform
+\end{itemize}
+
+\textbf{Point C (CMOS buffer output):}
+\begin{itemize}
+    \item Stays LOW until Point B reaches threshold
+    \item When threshold crossed: Switches HIGH abruptly
+    \item Output pulse delayed by time it takes to reach threshold
+    \item Sharp edges (even though input was gradual)
+\end{itemize}
+
+\textbf{Calculating the delay:}
+\begin{itemize}
+    \item If threshold = 50\% of $V_{supply}$
+    \item Capacitor reaches 50\% at approximately 0.7$\tau$
+    \item Delay time $\approx 0.7 \times R \times C$
+    \item Can adjust delay by changing R or C
+\end{itemize}
+
+\textbf{Why use this circuit?}
+\begin{itemize}
+    \item Creates time delay between events
+    \item Allows one action to complete before another starts
+    \item Pulse shaping (converts slow rise to sharp edge)
+    \item Clock delay in digital circuits
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Application 2: One-Shot Timer with Comparator}
+
+\vspace{0.15cm}
+
+\textbf{What is a comparator?}
+\begin{itemize}
+    \item Integrated circuit (IC)
+    \item Two inputs: (+) non-inverting, (-) inverting
+    \item One output
+    \item Powered by $V+$ (positive supply) and ground
+    \item Symbol: Triangle with + and - inputs
+\end{itemize}
+
+\textbf{How comparator works:}
+\begin{itemize}
+    \item Compares voltage at (+) input to voltage at (-) input
+    \item If (+) $>$ (-): Output = HIGH ($V+$)
+    \item If (+) $<$ (-): Output = LOW (ground)
+    \item Switches very quickly
+    \item Draws negligible current from inputs (high impedance)
+    \item Can source/sink ~20 mA at output
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{One-shot timer circuit description:}
+
+\textbf{Components:}
+\begin{itemize}
+    \item Voltage divider (two resistors): Sets reference voltage
+    \item Capacitor: Stores charge for timing
+    \item Resistor in series with cap: Controls discharge rate
+    \item Push button: Triggers timer
+    \item Comparator: Monitors capacitor voltage
+\end{itemize}
+
+\textbf{Reference voltage (at - input):}
+\begin{itemize}
+    \item Created by voltage divider
+    \item Constant voltage (e.g., 37\% of $V+$ = 1.8V for 5V supply)
+    \item Stays fixed throughout operation
+    \item This is the comparison threshold
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Operation sequence:}
+
+\textbf{1. Initial state (idle):}
+\begin{itemize}
+    \item Capacitor fully discharged (0V)
+    \item (+) input at 0V
+    \item (-) input at reference (1.8V)
+    \item Since (+) $<$ (-): Output = LOW (ground)
+\end{itemize}
+
+\textbf{2. Button pressed momentarily:}
+\begin{itemize}
+    \item Capacitor charges quickly to $V+$ (5V) through button
+    \item Button released
+    \item (+) input now at 5V
+    \item (-) input still at 1.8V
+    \item Since (+) $>$ (-): Output switches to HIGH (5V)
+\end{itemize}
+
+\textbf{3. Timing phase (button released):}
+\begin{itemize}
+    \item Capacitor discharges through resistor
+    \item Exponential decay: $V_C(t) = 5 \times e^{-t/\tau}$
+    \item Time constant: $\tau = R \times C$
+    \item Output stays HIGH while $V_C > 1.8$V
+\end{itemize}
+
+\textbf{4. Timeout (end of timing):}
+\begin{itemize}
+    \item Capacitor voltage drops below 1.8V (reference)
+    \item (+) input now $<$ (-) input
+    \item Comparator output switches back to LOW
+    \item Circuit ready for next trigger
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Calculating the timeout duration:}
+
+\textbf{Voltage equation during discharge:}
+\begin{itemize}
+    \item $V_C(t) = V_{initial} \times e^{-t/\tau}$
+    \item Where $V_{initial} = 5$V, $V_{reference} = 1.8$V
+\end{itemize}
+
+\textbf{Find time when $V_C$ = 1.8V:}
+\begin{itemize}
+    \item $1.8 = 5 \times e^{-t/\tau}$
+    \item $\frac{1.8}{5} = e^{-t/\tau}$
+    \item $0.36 = e^{-t/\tau}$
+    \item Taking natural log: $\ln(0.36) = -\frac{t}{\tau}$
+    \item $-1.02 = -\frac{t}{\tau}$
+    \item $t = 1.02\tau$
+\end{itemize}
+
+\textbf{Timeout = 1.02$\tau$ = 1.02 $\times$ R $\times$ C}
+
+\textbf{Example:}
+\begin{itemize}
+    \item Want 1-minute (60 second) timeout
+    \item Choose C = 1000 $\mu$F
+    \item $R = \frac{60}{1.02 \times 0.001} = 58,800$ $\Omega$ $\approx$ 56 k$\Omega$ or 62 k$\Omega$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why different voltages give different timeout formulas?}
+
+\textbf{For 37\% reference (1 time constant):}
+\begin{itemize}
+    \item $V_{ref} = 0.37 \times V_{initial}$
+    \item Timeout exactly = 1$\tau$ (by definition of time constant!)
+\end{itemize}
+
+\textbf{For 36\% reference (like 1.8V/5V):}
+\begin{itemize}
+    \item $V_{ref} = 0.36 \times V_{initial}$
+    \item Timeout $\approx$ 1.02$\tau$ (slightly longer)
+\end{itemize}
+
+\textbf{For 13.5\% reference:}
+\begin{itemize}
+    \item Timeout = 2$\tau$
+\end{itemize}
+
+\textbf{For 5\% reference:}
+\begin{itemize}
+    \item Timeout = 3$\tau$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Practical considerations:}
+
+\textbf{Advantages of this timer:}
+\begin{itemize}
+    \item Simple circuit (few components)
+    \item Easily adjustable (change R or C)
+    \item Repeatable (consistent timing)
+    \item One-shot operation (single pulse per trigger)
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item Not precise (component tolerances $\pm$10-20\%)
+    \item Temperature affects R and C values
+    \item Comparator has small offset voltage (error)
+    \item For precision timing, use crystal oscillator or timer IC (555)
+\end{itemize}
+
+\textbf{Improvements:}
+\begin{itemize}
+    \item Use precision resistors and capacitors ($\pm$1\%)
+    \item Temperature-stable components
+    \item Add potentiometer for fine adjustment
+    \item Use precision comparator (lower offset)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Real-World Applications:}
+
+\textbf{Time delay circuits:}
+\begin{itemize}
+    \item Turn on light 5 seconds after switch pressed
+    \item Delay relay activation
+    \item Staircase timer (light stays on for fixed time)
+    \item Camera flash recovery time
+\end{itemize}
+
+\textbf{One-shot timers:}
+\begin{itemize}
+    \item Automatic shutoff (e.g., bathroom fan runs for 10 min after switch off)
+    \item Timeout alarms
+    \item Monostable circuits
+    \item Pulse width generation
+\end{itemize}
+
+\textbf{Pulse shaping:}
+\begin{itemize}
+    \item Convert slow-rising signal to sharp edge
+    \item Debounce mechanical switches
+    \item Generate clock signals
+    \item Digital signal conditioning
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Advanced Concept: Why Not Use Tricks Too Often?}
+
+\textbf{The statement from source:}
+\begin{itemize}
+    \item "You try not too often to rely on tricks like this"
+    \item Referring to RC delay tricks
+\end{itemize}
+
+\textbf{Why be cautious?}
+\begin{itemize}
+    \item Component tolerances cause timing variation
+    \item Temperature changes affect timing
+    \item Aging changes component values
+    \item Not as reliable as crystal-based timing
+    \item Hard to make very precise or very long delays
+\end{itemize}
+
+\textbf{When RC timing IS appropriate:}
+\begin{itemize}
+    \item Short delays (microseconds to seconds)
+    \item Precision not critical ($\pm$10-20\% acceptable)
+    \item Low-cost requirement
+    \item Simple implementation needed
+    \item Occasional/non-critical use
+\end{itemize}
+
+\textbf{When to use better alternatives:}
+\begin{itemize}
+    \item Need precision timing: Use crystal oscillator + counter
+    \item Long delays (minutes/hours): Use timer IC (e.g., 555) or microcontroller
+    \item Critical timing: Use dedicated timer chip
+    \item Programmable delays: Use microcontroller
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical Calculations}
+\begin{examplebox}
+\textbf{Example 1: CMOS Buffer Time Delay}
+
+Circuit: R = 10 k$\Omega$, C = 100 $\mu$F, Buffer threshold = 2.5V (50\% of 5V)
+
+Time constant: $\tau = 10,000 \times 100 \times 10^{-6} = 1$ second
+
+Find delay time (time to reach 2.5V):
+
+Using charging equation: $V_C(t) = 5(1 - e^{-t/\tau})$
+
+Set $V_C = 2.5$V:
+\begin{itemize}
+    \item $2.5 = 5(1 - e^{-t/1})$
+    \item $0.5 = 1 - e^{-t}$
+    \item $e^{-t} = 0.5$
+    \item $-t = \ln(0.5) = -0.693$
+    \item $t = 0.693$ seconds $\approx$ 0.7$\tau$
+\end{itemize}
+
+Delay $\approx$ 0.7 seconds
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Adjusting Delay Time}
+
+Want 5-second delay, buffer threshold still 50\%
+
+From Example 1: Delay = 0.7$\tau$
+
+Required: $0.7\tau = 5$ seconds
+
+Solve for $\tau$: $\tau = \frac{5}{0.7} = 7.14$ seconds
+
+Choose C = 470 $\mu$F, find R:
+\begin{itemize}
+    \item $R = \frac{\tau}{C} = \frac{7.14}{470 \times 10^{-6}} = 15,190$ $\Omega$
+    \item Use standard value: 15 k$\Omega$
+\end{itemize}
+
+Verification:
+\begin{itemize}
+    \item $\tau = 15,000 \times 470 \times 10^{-6} = 7.05$ s
+    \item Delay = $0.7 \times 7.05 = 4.94$ s $\approx$ 5 s $\checkmark$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: One-Shot Timer (1 Minute)}
+
+Requirement: Output HIGH for 60 seconds after button press
+
+Reference voltage: 37\% of $V+$ (for simple 1$\tau$ timeout)
+
+Design:
+\begin{itemize}
+    \item Timeout = 1$\tau$ = 60 seconds
+    \item Choose C = 1000 $\mu$F (large, but reasonable)
+    \item $R = \frac{60}{0.001} = 60,000$ $\Omega$ = 60 k$\Omega$
+\end{itemize}
+
+Voltage divider for 37\% reference (assuming 5V supply):
+\begin{itemize}
+    \item $V_{ref} = 0.37 \times 5 = 1.85$V
+    \item If $R_1$ = 10 k$\Omega$ (top), $R_2$ = ? (bottom)
+    \item $\frac{R_2}{R_1 + R_2} = 0.37$
+    \item $R_2 = \frac{0.37 \times 10k}{1 - 0.37} = 5.87$ k$\Omega$
+    \item Use 5.6 k$\Omega$ or 6.2 k$\Omega$
+\end{itemize}
+
+Operation:
+\begin{itemize}
+    \item Button pressed: Cap charges to 5V, output goes HIGH
+    \item Cap discharges: After 60s reaches 1.85V, output goes LOW
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Timer with Different Reference}
+
+Given: R = 47 k$\Omega$, C = 1000 $\mu$F, $V+$ = 5V
+
+Voltage divider creates: $V_{ref}$ = 1.8V (36\% of 5V)
+
+Calculate timeout:
+
+Using discharge equation: $1.8 = 5 \times e^{-t/\tau}$
+
+Solve:
+\begin{itemize}
+    \item $\frac{1.8}{5} = 0.36 = e^{-t/\tau}$
+    \item $\ln(0.36) = -1.02 = -\frac{t}{\tau}$
+    \item $t = 1.02\tau$
+\end{itemize}
+
+Time constant: $\tau = 47,000 \times 0.001 = 47$ seconds
+
+Timeout: $t = 1.02 \times 47 = 47.94$ seconds $\approx$ 48 seconds
+
+\vspace{0.15cm}
+
+\textbf{Example 5: Comparator Voltage Calculation}
+
+Comparator circuit with $V+ = 12$V
+
+Voltage divider: $R_1$ = 10 k$\Omega$, $R_2$ = 4.7 k$\Omega$
+
+Calculate reference voltage:
+\begin{itemize}
+    \item $V_{ref} = V+ \times \frac{R_2}{R_1 + R_2}$
+    \item $V_{ref} = 12 \times \frac{4700}{10000 + 4700}$
+    \item $V_{ref} = 12 \times \frac{4700}{14700} = 12 \times 0.32 = 3.84$V
+\end{itemize}
+
+Comparator behavior:
+\begin{itemize}
+    \item When (+) input $> 3.84$V: Output = 12V (HIGH)
+    \item When (+) input $< 3.84$V: Output = 0V (LOW)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 6: Designing for Specific Timeout with Custom Reference}
+
+Requirement: 30-second timeout, reference at 20\% of $V+$
+
+Find timeout multiplier for 20\% (0.2):
+\begin{itemize}
+    \item $0.2 = e^{-t/\tau}$
+    \item $\ln(0.2) = -1.61 = -\frac{t}{\tau}$
+    \item $t = 1.61\tau$
+\end{itemize}
+
+For 30-second timeout:
+\begin{itemize}
+    \item $1.61\tau = 30$
+    \item $\tau = \frac{30}{1.61} = 18.6$ seconds
+\end{itemize}
+
+Choose C = 470 $\mu$F:
+\begin{itemize}
+    \item $R = \frac{18.6}{470 \times 10^{-6}} = 39,574$ $\Omega$
+    \item Use 39 k$\Omega$ or 43 k$\Omega$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 7: Comparing Different Reference Voltages}
+
+Same RC: $\tau$ = 10 seconds
+
+Different reference voltages:
+
+50\% reference:
+\begin{itemize}
+    \item Timeout = $0.69\tau = 6.9$ seconds
+\end{itemize}
+
+37\% reference:
+\begin{itemize}
+    \item Timeout = $1.0\tau = 10$ seconds
+\end{itemize}
+
+20\% reference:
+\begin{itemize}
+    \item Timeout = $1.61\tau = 16.1$ seconds
+\end{itemize}
+
+10\% reference:
+\begin{itemize}
+    \item Timeout = $2.3\tau = 23$ seconds
+\end{itemize}
+
+Lower reference $\rightarrow$ longer timeout (capacitor takes longer to discharge to lower voltage)
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{CMOS Buffer:} High input Z, low output Z, switches at threshold voltage
+    
+    \item \textbf{Time Delay:} RC charges, buffer switches when threshold reached
+    
+    \item \textbf{Delay Calculation:} For 50\% threshold, delay $\approx 0.7\tau$
+    
+    \item \textbf{Comparator:} Compares (+) and (-) inputs, output HIGH if (+)$>$(-)
+    
+    \item \textbf{One-Shot Timer:} Button charges cap, discharges through R, output HIGH until below reference
+    
+    \item \textbf{Timeout Formula:} Depends on reference voltage percentage
+    \begin{itemize}
+        \item 37\% reference: Timeout = 1$\tau$
+        \item 50\% reference: Timeout = 0.69$\tau$
+        \item Custom: Solve $V_{ref}/V_{initial} = e^{-t/\tau}$
+    \end{itemize}
+    
+    \item \textbf{Voltage Divider:} Creates fixed reference for comparator (-) input
+    
+    \item \textbf{Limitations:} Component tolerance, temperature, not for precision timing
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} How does CMOS buffer create sharp output from gradual input? \\
+    \textit{A:} Buffer has threshold. Below threshold = LOW, above = HIGH. Switches quickly even if input rises slowly.
+    
+    \item \textbf{Q:} How does comparator work? \\
+    \textit{A:} Compares two inputs. If (+) input greater than (-) input, output goes HIGH. Otherwise LOW.
+    
+    \item \textbf{Q:} How to create 1-minute timer with RC and comparator? \\
+    \textit{A:} Set $\tau = RC = 60$s (for 37\% reference). Button charges cap, then discharges through R. Output HIGH until voltage drops below reference.
+    
+    \item \textbf{Q:} Why set reference at 37\%? \\
+    \textit{A:} 37\% is the voltage remaining after 1$\tau$ during discharge. Makes timeout exactly equal to time constant.
+    
+    \item \textbf{Q:} What's the purpose of voltage divider in timer circuit? \\
+    \textit{A:} Creates fixed reference voltage for comparator (-) input. Determines when timer expires.
+    
+    \item \textbf{Q:} Can RC timing be very precise? \\
+    \textit{A:} No. Component tolerances ($\pm$10-20\%), temperature effects, aging cause variation. Use for non-critical timing only.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Formulas:}
+\begin{itemize}
+    \item \textbf{Delay (50\% threshold):} $t_{delay} \approx 0.69\tau = 0.69RC$
+    \item \textbf{Timeout (37\% reference):} $t_{timeout} = 1.0\tau = RC$
+    \item \textbf{General Timeout:} Solve $\frac{V_{ref}}{V_{initial}} = e^{-t/\tau}$ $\rightarrow$ $t = -\tau \ln\left(\frac{V_{ref}}{V_{initial}}\right)$
+    \item \textbf{Voltage Divider:} $V_{ref} = V+ \times \frac{R_2}{R_1 + R_2}$
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Automatic shutoff timers (lights, fans)
+    \item Delay circuits (relay activation)
+    \item Pulse shaping (convert slow to fast edge)
+    \item Debouncing (remove switch bounce)
+    \item Monostable multivibrators
+    \item Timeout alarms
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Component Notes:}
+\begin{itemize}
+    \item \textbf{CMOS Buffer:} Examples: 74HC04, CD4050, 74HCT14 (Schmitt trigger)
+    \item \textbf{Comparator:} Examples: LM311, LM393, LM339
+    \item Comparator $\neq$ Op-amp (though op-amp can work as comparator in simple cases)
+    \item Op-amp covered in detail later in course
+\end{itemize}
+\end{keypointsbox}
+

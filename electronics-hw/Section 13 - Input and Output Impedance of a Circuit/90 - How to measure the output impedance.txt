@@ -1,0 +1,33 @@
+All right.
+
+So how can we measure the output impedance of a circuit?
+
+Well, the measurement of output impedance uses the same method earth for input impedance, but with
+
+different connections.
+
+In this case, the amplifier load is replaced with a variable resistor, care must be taken, however,
+
+to assure that the resistance connected in place of the load is able to dissipate sufficient power without
+
+damage.
+
+The amplifier need not be run at full power for this test.
+
+So, first of all, connect the test circuit as shown in this figure.
+
+And initially, the output from the amplifier should be adjusted for a display similar to that used
+
+for the input impedance test.
+
+But this time with no load connected to the output terminals.
+
+The test resistance is connected across the output terminals and adjusted for maximum resistance before
+
+switching on the amplifier.
+
+The first resistance uses reduced in value until the display indicates half the amplitude of that noted
+
+with no load.
+
+But this resistance is now the same value as the output impedance.

@@ -1,0 +1,183 @@
+So I have built a circuit, but I also highly recommend you to build for yourself, to wear not just
+
+this one, but all the other circuits that we are studying, because you might probably wonder what
+
+is the voltage there or current flowing in this power for the other one, which I might miss to show.
+
+All right.
+
+The input voltage is a clean 52 volt DC, and the reason why it's 52 volts is because we have a dial
+
+here then to base a meter voltage drops.
+
+So if you want to obtain 50 volts output, then you have to take into account these voltage drops.
+
+The same right now is powering a load of one km.
+
+So the current will be 50 million.
+
+Sizewell, even though it receives 50 millions, the current passing through the tube power transistors
+
+is one hundred and three millions.
+
+Why is that?
+
+Because of this resistor here through which 152 million is passing through.
+
+You might say that this is not a very good design, which is true, but it's a functional one.
+
+As we said in the previous course, in order to discharge these capacitor when no current is provided,
+
+this resistor is used.
+
+So if we suddenly unplug the power supply from the wall socket, then you can notice that the capacitor
+
+is successfully discharging through the 330 ohm resistor.
+
+All right, so I have reset to the simulation.
+
+Now, if we don't have this resistance and no load is connected to the output and then we unplug the
+
+power supply, notice that the capacitor has remained charged at 50 void's.
+
+And the moment you connect the load, that requires a maximum voltage of, let's say, 10 volts, the
+
+circuit you connect will get damaged.
+
+This capacitor is optional, but it's a good practice in order to further flatten out the output.
+
+DC voltage, especially the circuit that you are powering, is keep changing its current demands, like,
+
+for example, circuits that working computation or any other sort of digital circuit.
+
+If you were to design this circuit in real life, make sure that you use power resistor, which can
+
+dissipate the power on it.
+
+Now, if we were to take it out, we can see that the current across the two transistors is split evenly
+
+where it was split even before.
+
+But right now, the current passing through each one is 27 milligrams.
+
+Now, of course, we could get rid of these two resistors here because the simulator treats the dual
+
+transistors identically.
+
+But as you mentioned, in real world, no two transistors are exactly identical, even if they have
+
+the same part number.
+
+Since most of the current are passing through these two transistors, make sure that you mount them
+
+on a heating.
+
+Now, I have a little slider here on the right, which you cannot see, and I can't use it to increase
+
+or decrease the value of the potential meter.
+
+So by changing the value of the potential meter, we can decrease.
+
+Or increase the output voltage.
+
+But how does this work by changing the voltage of Couture's bass?
+
+We also change the voltage of the base of Cuchi.
+
+Why?
+
+Because basically we are playing with the voltage drop between the connector and meter of Q1.
+
+Then Q1 is in cut off mode as it is right now, because the base of Q2 is only set at 250 to milliwatt,
+
+no current is flowing through it, right.
+
+So the collector RAIM voltage will be maximum around fifty two words.
+
+There is only around two hundred seventy millivolts voltage drop across the dial because the current
+
+flowing through it is very small.
+
+Still enough to place Q3 in forward active mode.
+
+The moment we increase the base voltage of Q1, Q2 will turn on more and more, decreasing the base
+
+voltage of Q3.
+
+Why?
+
+Because Q1 is pulling Q3 base towards ground.
+
+So as we return on Q1, more and more the voltage drop between its connector and ammeter is getting
+
+lower and lower, which causes Q3 base to decrease towards ground.
+
+And remember, current always takes the path of least resistance.
+
+So even if you have this connection here, the path towards ground is at the lower resistance.
+
+Of course, depending on how much Q1 is turned on since the base voltage of Q3 is decreasing, so does
+
+the output voltage.
+
+Why?
+
+Because at the end of Q3 is getting lower as well.
+
+If the editor of Q3 is getting lower, the base of Q4 and Q5 is getting lower as well.
+
+And if the base of Q4 and Q4 is decreasing, so does their ammeter voltage.
+
+Simple enough, right?
+
+Then the circuit outputs its maximum voltage, which is 50 volts, the base of Q1 one is placed at 252
+
+millibars, which is because of the voltage divided effect.
+
+The input voltage of the voltage divider is 50 volts or one is 10 km and R2 is 50 ohm.
+
+Now, if you solve the equation, you will get 250 to millivolts.
+
+However, when Q2 is fully turned on, as it is right now, so it's Q1, the base wattages, one point
+
+three words and the output voltage is also one point three was one of the main drawback of the circuit
+
+is that the output cannot drop lower than one point three words because otherwise Q3 and Q4 will turn
+
+off and then the feedback network will start working.
+
+Remember that good power supplies can output a voltage as close as zero point one voids if it's necessary.
+
+But for that, the power supply requires a little bit more complex circuitry.
+
+Now, one more thing I want to explain, why do you think we use an illington pair as feedback?
+
+Well, the reason why we use two transistors instead of one is to decrease the amount of current required
+
+on the base of Q2.
+
+We don't want to steal any current from the output.
+
+Right.
+
+What I mean is that we try to minimize the current required for the feedback network.
+
+And as we know, a Darlington's pair amplification or bitta is equal to BITA one times B2.
+
+This means that the base current of Q2 can be a bit at times lower.
+
+So if both betas are 100 as it is right now, then the base current can be 100 times lower than if we
+
+were to use only one transistor.
+
+Right now, Q2 is fully turned on.
+
+Right.
+
+And notice that the base current of Q2 is equal to nine point seven micrograms and the quarter current
+
+of Q1 is equal to 98 mediums.
+
+So the collector current of Q1 is a 1000 times higher than the base of Q2.
+
+All right, thank you for watching and see you at course again.

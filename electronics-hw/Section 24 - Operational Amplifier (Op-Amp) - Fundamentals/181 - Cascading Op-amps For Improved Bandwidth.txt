@@ -1,0 +1,199 @@
+All right, welcome back.
+
+In the previous course, we discussed one of the limitations of any options, and that is they are banned.
+
+If what is banned, if the operational amplifiers ban beef is the frequency range over which the voltage
+
+gain of the amplifier is about 70 percent or minus three decibel of its maximum output value.
+
+So an ideal operation amplifier has an even in frequency response.
+
+I can amplify any frequency signals from D.C. to the highest frequencies.
+
+So it is therefore assumed to have an infinite bandwidth.
+
+With real options, the bandwidth is limited by the gain bandwidth product, which is equal to the frequency
+
+where the amplifiers gain becomes unity, the gain that the product is a parameter that you can find
+
+in the data set of the APEP, and it's equal to the gain times, the cut off frequency or bandwidth.
+
+So the gain the bandwidth product is a constant number.
+
+Right.
+
+And based on this equation, you can see that the higher the gain, the lower the bandwidth.
+
+So if you're OP AMP has a game bandwidth product of one megahertz and you want to amplify by you, you
+
+might have a bandwidth of 500 kilohertz if you want your game to be 10.
+
+The bandwidth is reduced to 100 kilohertz.
+
+This means that if you want to amplify signals about 100 kilohertz, the gain, even though you have
+
+said it to be 10, will be lower.
+
+And if you want ever higher gain, the benefits reduced accordingly.
+
+Now, let's say you want to build a inverting amplifier that amplifies the signal by a 100.
+
+So we have a tiny input AC voltage that has to be amplified and the frequency of the signal is 50 kilohertz.
+
+The signal might come from a sensor, you know, whatever.
+
+So the gain the product of our up amp is one megahertz.
+
+And for some reason we have to stick with this up amp because of some other features that it has, like
+
+very high input impedance, etc..
+
+What do we do?
+
+Well, we know that the close look voltage gain of Anani inverting operation amplifier is given by this
+
+equation.
+
+Based on this equation we set are two to be ninety nine km and are one two one kilometre grade, which
+
+is build a circuit that amplifies the signal by 100.
+
+Really.
+
+Does it really amplify the signal by 100.
+
+Hmm.
+
+Let's see.
+
+So the gain bandwidth product of our up amp is one megahertz and our gain is one hundred.
+
+So the bandwidth of our OP amp is one megahertz divided by 100, which is equal to 10 kilohertz.
+
+So notice that the input signal is frequency, which is 50 kilohertz is not within our bandwidth.
+
+And this means that the output signal will be attenuated by the upper implementation.
+
+So the gain would be 100.
+
+It would be probably 80 or 70.
+
+I don't know.
+
+So what can we do in case like this?
+
+How can we increase the bandwidth of our OP amp?
+
+Well, the best way to increase bandwidth is to cascade another up like this.
+
+So both options are identical.
+
+Of course, both have the same gain by this product.
+
+But now we still want our 100 times gain out of here.
+
+Right.
+
+But of course, we don't do it in one stage.
+
+We do times 10 and times then.
+
+So we change our values there and we've still got our times 100 gain.
+
+But what does it do to our bandwidth now actually driving?
+
+This might be a little bit tricky, but in the end there's a very simple formula which can calculate
+
+the total system bandwidth here for us.
+
+Many stages as you want.
+
+On one big assumption, the assumption is that all of the options are identical, I mean, identical
+
+Gaborik product and identical gain.
+
+But in our case, hey, that's perfect.
+
+So the formula here is the water system bandwidth is equal to the bandwidth of one stage here multiplied
+
+by the square root of due to the power of one on RN and being the number of stages in this case, it's
+
+two stages.
+
+So it would be two to the power of half and then minus one.
+
+So square root of all that bingo.
+
+We can pop this in the formula and determine our bandwidth.
+
+Well, let's look at our two stage design here, we are just going to use this formula and plug the
+
+numbers in.
+
+Now, the bandwidth of one individual stage is not 10 kilohertz.
+
+It was 10 kilohertz when the stage had the gain of 100.
+
+But now, since the gain of one individual stages 10, the bandwidth of one stage is one megahertz divided
+
+by ten, which is equal to 100 kilohertz, and multiplying it with the square root of two to the power
+
+of one on N and by in two stages.
+
+So two are the power of love.
+
+Minus one equals two sixty four point thirty five kilohertz.
+
+By adding a second stage and the second option and cascading them, we've now gone from 10 kilohertz
+
+bandwidth to a sixty four point thirty six kilohertz bandwidth.
+
+Look, it's six point four times better.
+
+Awesome.
+
+How many stages can we cascade, you might ask?
+
+Can increase the bandwidth to infinite by having infinite stages?
+
+Well, of course not.
+
+We got a quite an improvement going from one stage to two stage in terms of bandwidth.
+
+We increased it by an improvement of six point four times.
+
+Fantastic.
+
+But do we get the same improvement when we go to three stages?
+
+Well, let's take a look at it now instead of times 10 again.
+
+So the cube root of 100 is four point six four one six.
+
+And yes, it does have to be that precise, especially if you are doing a precise circuit.
+
+So with three stages of the numbers in the formula again, but our bandwidth is not 100 kilohertz of
+
+each stage.
+
+It's improved, it's more than double.
+
+It's two hundred fifteen point forty four kilohertz.
+
+So we improved the bandwidth of each stage now by lowering the gain, obviously, based on this formula.
+
+But does it have an overall net improvement?
+
+Well, yes, it does.
+
+Part of the number in our total system bandwidth is now one hundred and nine point eighty four kilohertz,
+
+which is a decent improvement on a sixty four kilohertz.
+
+But it's not the huge six point four times improvement we got here.
+
+It's only an extra one point seven times.
+
+And if you go to four stages etc etc, you just get diminishing returns on our bandwidth.
+
+So, you know, a practical limit, you can stop at three or four stages.

@@ -1,0 +1,195 @@
+In the previous course, I laid down a strategy that you can use to analyze the circuit using kickoffs,
+
+rules, and it's really straightforward.
+
+Now you have a circuit diagram in front of you.
+
+First, you want to label the points in the circuit as A, B, C, D, etc., which would only help
+
+with the orientation.
+
+Then you locate the nodes and label them with the currents and directions into and out of it.
+
+Then you choose the loops in the circuit by making sure that each component is included in at least
+
+one loop.
+
+Then you apply a kickoffs current law which will produce some equations related to the currents in the
+
+circuit.
+
+Finally, you apply kickoffs.
+
+What is law?
+
+Now let's examine some steps in this procedure more closely than locating the nodes in the circuit.
+
+Do not be concerned about the direction of the currents.
+
+You see, if the direction of current flow is not obvious, choosing any direction is sufficient as
+
+long as at least one current points into the node and at least one current points out of the node.
+
+If the arrow is in the opposite direction of the conventional current flow, the result for the current
+
+in the question will be negative, but the answer will still be correct.
+
+Now the number of nodes depends on the circuit, right?
+
+Each current should be included in a node.
+
+Do not include nodes that are not linearly independent, meaning nodes that contain the same information.
+
+For example, consider this figure.
+
+Now, as you can see, there are two nodes or junctions in this circuit.
+
+Node B and node E points A, C, D and F are not junctions because a junction must have three or more
+
+connections.
+
+The equation for node B is I1 is equal to a two plus three, and the equation for Node E is a two plus
+
+a three equal to I1.
+
+As you can see, these are equivalent equations, so it is necessary to keep only one of them.
+
+So now we are choosing the loops in the circuit.
+
+You need enough loops so that each component is colored once.
+
+Without repeated loops, this figure shows four choices for loops to solve a sample circuit.
+
+Choices A, B, and C have a sufficient amount of loops to solve the circuit completely.
+
+Option D reflects more loops than necessary to solve the circuit.
+
+In the next course, we will be analysing the circuit similar to this.
+
+But before we do that, let's try to analyze some basic circuits in our simulator that contain only
+
+one loop.
+
+All right.
+
+So here in this closed loop circuit, we have a worthy source of five words, a resistor across, which
+
+is connected to what meter which measures the voltage drop across the resistor.
+
+Since there's only a single resistor in this closed loop circuit, the whole voltage provided by the
+
+voltage source will be dropped across it.
+
+Has the work meter shows five worlds.
+
+The current in the circuit has the same direction as the flow of positive charge that these conventional
+
+current flow hear.
+
+The flow of current through the resistor is from point A to point B that is from positive terminal to
+
+a negative terminal.
+
+As a result, as we are travelling in the same direction as current flow, there will be a fall in potential
+
+across the resistive element, giving rise to a minus.
+
+Current times are voltage drop across it.
+
+So the voltage drop, according to Ohm's Law, is defined as current times.
+
+Resistance sees current flows from A to point B, in other words, from the positive terminal to the
+
+negative terminal, there will be a fall in potential across this resistor, a fall results in a minus
+
+sign so we can write down that the output voltage of the water source minus the current times, this
+
+resistance is equal to zero if the flow of current is in the opposite direction.
+
+So it's from point B to point A, then there is a rise in potential across the resistive element as
+
+we are moving from a negative potential to a positive potential, giving us a plus current times this
+
+resistance what is drop.
+
+So if we choose to analyze the circuit in the clockwise direction as we did before, then we would write
+
+down the current times.
+
+This resistance minus the voltage of the voltage source is equal to zero.
+
+Right.
+
+I know it might be confusing at first, but don't worry because we will do more exercises so you will
+
+get a good hang of it.
+
+In order to apply calculus of what is law, we must first decide the direction of current flow, which
+
+can be either clockwise or anticlockwise.
+
+That's the type I recommend you to choose a direction that is the same with the actual direction of
+
+current flow.
+
+So the current in this case flows out of the positive terminal to the negative terminal, which is a
+
+clockwise direction.
+
+Right?
+
+Hence we choose to analyze the circuit in a clockwise direction now because what this law states that
+
+the algebraic some of the potential differences in any loop must be equal to zero, since the two resistors
+
+are one and or two are wired together in a series connection, they are both part of the same loop,
+
+so the same current must flow through each resistor.
+
+Right?
+
+As a result, the voltage drop across resistor are one if current times are one and the voltage drop
+
+across resistor or two is current times are two.
+
+Since we are travelling in the same direction as current flow, there will be a fall in potential across
+
+these resistive elements.
+
+Hence a minus sign at the beginning has to be added.
+
+As a result, we can write down that the voltage source potential minus current times are one minus.
+
+Current times are two is equal to zero.
+
+This means that the sum of the voltage drops across these two resistors is equal to the voltage source
+
+potential.
+
+Now we can simplify this equation by writing vs equal to current times or one plus or two.
+
+Right where R1 plus R2 he is nothing else but equivalent or total resistance in this closed loop path.
+
+We can see that applying Google's voltage law to this single closed loop produces the formula for the
+
+equivalent or total resistance in the series circuit.
+
+And we can expand on this to find that the values of the voltage drops are the loop.
+
+So the current flowing in this path is equal to V.S. divided by or one plus or two, right?
+
+As a result, the voltage drop across R1 is equal to current times R1 where current is equal to less
+
+divided by one plus R2.
+
+So the voltage drop across this resistor can be calculated using this equation while the voltage drop
+
+across the second resistor can be calculated using the same method and thus you can see using these
+
+two equations we can find out the voltage drop across both registers without knowing the actual current
+
+flowing into, say, liquid.
+
+How cool is that?
+
+

@@ -1,0 +1,103 @@
+It happens quite often that you need a fixed D.C. voltage across a lot, but the D.C. power supply our
+
+using is not the voltage that you need for your load.
+
+So you have a 12 voice battery and the load now the load when we say load, it can really mean anything.
+
+And I see others here with David have an input impedance and the resistor is a good way to represent
+
+the load.
+
+So let's imagine a scenario when the load operates on three point three words.
+
+So the law that requires no more than three point three words, but you only have a 12 watts battery.
+
+So powering the load we travel, it's directly we blow it up.
+
+While I think you could use is a wattage divider.
+
+Right.
+
+Using a basic voltage divided circuit, we can manage to reduce the voltage to three point three miles.
+
+This circuit has many problems, however.
+
+First, there will be always a constant participation on these two resistors.
+
+So you will waste a lot of power by providing these three point three words.
+
+If I hover over the first resistor down on the right corner, it says that this resistor dissipates
+
+a power of 96 milliwatts and the second one dissipates the power of 34 milliwatts.
+
+This means that more than 100 milliwatt is wasted for providing this three point three watts.
+
+The second problem of the circuit is that the load cannot request too much current from this voltage
+
+divider because let's say at the moment the load requires more current.
+
+Suddenly the voltage across the load decreases, which might be lower than the required operating voltage
+
+of the device.
+
+Now you have to recalculate the resistors value and this will just not work as expected.
+
+It's very unstable.
+
+If you don't remember why the output voltage of the voltage divided drops.
+
+Please go back to the core called what is dividers.
+
+I explained it there.
+
+Remolded is.
+
+So all the dividers are not usually used to generate supply shortages because they provide no regulation,
+
+it can work well if the law that the world is divided, Powers has a high input impedance in the range
+
+of mega ohms, having a 10 mega home register, say in parallel with this resistor won't effect it much
+
+as long as this resistor is itself order of magnitude lower than the input impedance of the load.
+
+So how can we improve the circuit?
+
+Well, using multiple diodes in series.
+
+By connecting five identical diodes in series, each one having a forward voltage of zero point seven
+
+words, we can more or less generate a stable three point three words.
+
+The current through the diodes is set by these 150 resistor.
+
+As a result, we for twelve volt power supply, around 658 millivolts, is right across each diode.
+
+If we take the load out just for a second.
+
+The current flow in the circuit can be calculated by dividing the voltage drop across the register with
+
+its resistance, the voltage drop across the resistor is equal to swearwords, minus the sum of all
+
+the individual voltage drops across.
+
+Each resistor has eight point seven volts divided by 150.
+
+Ohm is equal to fifty eight millions.
+
+Now, the advantage of using the with compared to the volatility of either one is that the output voltage
+
+will be constant in spite of variations in the current in the load connected.
+
+Or in the variations of the input voltage applied, hence supply across the voltage is provided by the
+
+diode series combination.
+
+Now we can say that the output voltage is regulated, however.
+
+In the future, we will learn how to build more performant, more energy efficient voltage regulators.
+
+For instance, we can replace these series diodes, WEAFER singers and their diode using just the singers
+
+in their diode.
+
+We can generate a constant three point three words, but more on this later.

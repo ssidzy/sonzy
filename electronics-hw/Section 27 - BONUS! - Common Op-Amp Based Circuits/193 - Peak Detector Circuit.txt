@@ -1,0 +1,257 @@
+Hello and welcome to a new chapter here, we will study some common searches that you will find out
+
+there based on, right.
+
+We are still studying about UPS and the best way to understand how they work is to build real life circuits,
+
+fit the same that we are going to look at is called peak detectors circuit.
+
+As the name implies, a peak detector outputs.
+
+Are these high voltage equal to the peak value of the applied AC signal.
+
+So why is a peak detector useful?
+
+Because it can determine the peak or in other words, the maximum value of an input signal.
+
+This circuit has the capability to store the peak value of the input AC voltage for infinite amount
+
+of time.
+
+Until it comes to that condition, the peak detector circuit utilizes its property of following the
+
+highest value of an input signal and storing it.
+
+So why would you use a ping detector circuit if you can just measure the voltage of an AC signal before
+
+voltmeter, you might ask.
+
+First of all, a multimeter measures the Oremus value of the voltage.
+
+And then if you want to get to the peak of the signal, you have to multiply this value by a square
+
+root of two to get a theoretical peak value.
+
+But this is only true if the signal you are measuring is a nice, clean sine wave signal.
+
+Well, usually these big detectors are used to measure the peak of nonoxynol through the waveforms and
+
+tradition.
+
+AC meters just cannot measure the peak of such signals.
+
+The peak detector circuit, as you can see, consists of diode and capacitor along with an op ed.
+
+The circuit, as you can see it, does not require any complex component in order to determine the peak
+
+of the input waveform.
+
+The working principle of the circuit is quite easy.
+
+The capacitor here is used to actually store the peak of the input waveform as the time passes.
+
+If the circuit detects a higher peak, the new peak value is stored in the capacitor until it is discharged
+
+and soon we will see how to discharge this capacitor.
+
+But for the time being, I didn't include it in the circuit to be easier to understand how the circuit
+
+works.
+
+So the capacitor will always retain the highest peak of the input voltage.
+
+But how does it do that?
+
+Well, as you can see, the capacitor in the circuit is charged through the diode.
+
+Do you remember when we talked about halfway precision rectifiers circuits?
+
+Well, just like there, the negative feedback of the ApoB is connected after the diode.
+
+What does this mean?
+
+It means that the voltage drop across the diode is ignored.
+
+We know that up amps tries to keep both inputs at the same voltage.
+
+This means that the OP in this case has to output a voltage that is with one diode drop higher than
+
+the input voltage, so that after the diode, which is the output of the circuit, the voltage on the
+
+inverting pin will be the same as the voltage on the non-working been great.
+
+Now what happens when the capacitor is connected back to the circuit?
+
+Well, at the beginning, when the capacitor is not charged, then we apply a signal on the input,
+
+the OP amp will output the same voltage, right?
+
+Its output signal will charge up the capacitor and will charge it to avoid it.
+
+That is equal to the peak value of the input and it will likely see to that voltage until the input
+
+voltage is higher than the current peak retained by the capacitor.
+
+So if you have a very big input signal that looks like this, and let's say the first big value is ten
+
+watts, then the capacitor will be charged up to 10 watts.
+
+What happens after that?
+
+The input signal starts to decrease.
+
+During this time, the voltage across the capacitor is towards since the capacity is connected to the
+
+inverting pin, the voltage on the inverting bill will be as well.
+
+Tannenwald referenced to ground.
+
+As long as the voltage on the inverting pin is higher, the AMP outputs a negative voltage, which is
+
+equal to the voltage that the upper be supplied with.
+
+So if the OP is powered V four plus minus 15, what's the appropriate output?
+
+Minus 15 watts?
+
+Because the voltage on the inverting pin is higher than the voltage on the Narnian voting pin.
+
+And this is a tricky part here.
+
+I know, because even though it has a negative feedback, the OP amp works almost like a comparator.
+
+We know that op amp tries to keep both inputs at the same wattage.
+
+Right.
+
+And since the voltage on the non-reporting pin is lower than the voltage on the inverting pin, and
+
+since the output is connected back to the inverted pin, the op ed tries to output a negative voltage
+
+so that it reduces the voltage on the inverting pin until it's equal to the voltage on the non inverting
+
+pin.
+
+So the op ed starts to output minus one word.
+
+It checks.
+
+If both inputs are equal rights, not then outputs minus two words, then minus three.
+
+Still, the inputs are not equal and it goes like this until bombs into minus 15 watts, it cannot go
+
+lower than minus 15 watts if the OP is power minus 15 watts.
+
+Right.
+
+So even though the OP has the intention to keep above input of the same voltage, it just can't.
+
+Because of this diode, the diet is reverse biased, meaning that there's no current flowing in this
+
+path.
+
+And basically the diode blocks any current to flow into the AMP, which would be necessary if the output
+
+voltage is negative and without this negative voltage, that the up and outputs would discharge the
+
+capacitor right away.
+
+Basically, without this diode, even if the capacitor is connected, the output voltage would simply
+
+follow the input voltage.
+
+So it would work as the world is far lower.
+
+So again, this diode prevents the capacitor to discharge.
+
+Now, when the next becomes, which is higher than the previous peak, the voltage on the non inverting
+
+pin will be higher than the voltage on the emerging pin, which is basically the voltage across the
+
+capacitor.
+
+And because it's higher, the AMP will output a positive voltage that is higher than the current voltage
+
+that the capacitor has retained.
+
+And as a result, the capacitor is charged up to the new value.
+
+So let's try to see how this works in the simulator.
+
+All right.
+
+So this circuit outputs the big voltage of the input in order to create a similar to the waveform.
+
+There are two similar generators plays in series which will all put a signal that looks like this.
+
+The output is shown here and that is that when I hit reset, the capacitor always and always holds the
+
+current peak value of the input voltage and it never drops.
+
+And the moment the input voltage is higher than the current peak, the capacitor gets updated with the
+
+new voltage.
+
+So if the input voltage is larger, the UPB output goes positive onto the capacitor is charged up to
+
+the new peak value.
+
+If the input voltage is smaller, the diode keeps the capacitor from being discharged.
+
+Now, there are two problems with this earthquake.
+
+First, we cannot manually discharge the capacitor, and second, the moment we connect a load to the
+
+circuit.
+
+The voltage that the capacitor holds will drop instantly, so we have to somehow process these big voltage,
+
+right.
+
+And we can perhaps connect this output to an ADC converter so that by using a microcontroller and the
+
+display, we can display the peak value of the input voltage.
+
+But what if the input of the ADC does not have a very high input impedance?
+
+What if the ADC will draw some amount of current from the circuit which will in turn discharge our capacitor?
+
+Well, we don't want that right.
+
+And that's why we should connect Abolfathi liquid to the output of the circuit.
+
+All right.
+
+So these buffer circuit is nothing else but a voltage follower.
+
+Its advantage is that it has a very high input impedance, meaning that the input of the append will
+
+not draw any current.
+
+And the OP has a low output impedance, meaning that it can drive any loads like the ADC that we talked
+
+about without dropping the input voltage.
+
+So now we can connect safely our ADC to the zero with one problem solved.
+
+The next problem is that we need somehow to these charges capacitor.
+
+We cannot leave this capacitor charged up forever.
+
+Right?
+
+There are many solutions for this.
+
+You can either these charges capacitor before transistor, which is controlled by a microcontroller
+
+or easier.
+
+You can just connect a switch button and a resistor in parallel with the capacitor.
+
+When you hit the switch button, the capacitor will discharge because of this loop and thus you can
+
+see the capacity's discharging quite slow.
+
+So we should decrease the value of the register to, let's say, 20 OMS.
+
+And now when you briefly hit the switch, the capacitor gets discharged right away.

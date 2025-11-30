@@ -1,0 +1,85 @@
+I thought it would be fun to start this course with a story, so please bear with me.
+
+In January of 1880, Thomas Edison filled the patent for a new type of device that created light by
+
+passing an electric current through a carbon coated filament contained in a sealed glass tube.
+
+In other words, Edison invented the lightbulb.
+
+Students of history will tell you that Edison didn't really invent the lightbulb.
+
+He just improved on previous ideas.
+
+But that's not the point of the story.
+
+Edison's light bulb patent was approved, but he still had a lot of work to do before he could begin
+
+manufacturing a commercially viable light bulb.
+
+The biggest problem with his design was that the lamps deemed the more he used them.
+
+This was because of the carbon coated filament inside the bulb got hot.
+
+It shed little particles of carbon, which stuck to the inside of the glass.
+
+These particles resulted in a black coating on the inside of the bulb, which obstructed the light.
+
+Edison and his team of engineers tried desperately to discover a way to prevent this shedding of carbon.
+
+And one day, someone on his team noticed that the black carbon came off of just one end of the filament
+
+and not both ends.
+
+The team thought that maybe some type of electric charge was coming out of the filament. In order to test
+
+this theory,
+
+they introduced a third wire into the lamp to see if it could catch some of this electric charge, and
+
+it did.
+
+They soon discovered that an electric current flowed from the heated filament to this third wire,
+
+and that the hotter the filament got, the more electric current flowed.
+
+Now this discovery, which came to be known as the Edison effect, marks the beginning of technology
+
+known as electronics.
+
+The device, which Edison patented on Nov. 15, 1883, is the world's first electronic device.
+
+When Edison patented his device in 1883, he had no idea what it would lead to.
+
+Now, just about one hundred and thirty years later, it's hard to imagine a world without electronics.
+
+You see, electronics devices are everywhere.
+
+There are more television sets in the United States than there are people.
+
+No one uses a film to make pictures anymore.
+
+Cameras have become electronics devices, and you rarely see a teenager anymore without headphones in
+
+his ears. Without electronics,
+
+life would be very different.
+
+Have you ever wondered what makes these electronic devices tick?
+
+In the first chapters, I will examine the bits and pieces that make up the most common types of electronic
+
+devices and take a look at basic concept that underlies all the electronics. Electricity!
+
+I promise I won't bore you too much with tedious or complicated physics concepts, but I must warn you
+
+from the start.
+
+In order to learn how electronics works at the level that will let you begin to design or build your
+
+own electronic devices, you need to have at least a basic idea of what electricity is. Not just what
+
+it does, but what it actually is.
+
+So put on your thinking cap and get started.
+
+

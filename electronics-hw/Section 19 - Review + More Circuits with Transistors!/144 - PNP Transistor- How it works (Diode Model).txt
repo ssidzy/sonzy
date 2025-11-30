@@ -1,0 +1,51 @@
+We'll come back, so PNB transistor has the same names as the poppy base EDM, and to write a poppy
+
+transistor will turn on whether you have a small current running from ATM to base of the transistor.
+
+And when I say turn on, I mean that the transistor will open up a channel between ammeter and Connecter,
+
+and this channel can carry a much larger current OK, to get current running from ammeter to base,
+
+you need a voltage difference of about zero point zero words.
+
+Since the chloro goes from ammeter to base, the base needs to be zero point seven was lower than Daym.
+
+So by setting the base voltage of a petrolist or two zero point seven was lower than Daym, you turn
+
+the transistor on and allow for corale to flow from ammeter to collector.
+
+And now let's take an example.
+
+So to turn this ALYDA on, you need to turn on the transistor so that the channeler from ammeter to
+
+collector opens.
+
+To turn on the transistor.
+
+You need to get the voltage on the base to be zero point seven watts lower than Daym, which is nine
+
+watts, minus zero point seven watts, which is equal to eight point three words.
+
+So as long as the base of the pipe is lower with zero point seven volts that daym the transistor will
+
+conduct current.
+
+But why exactly is 0.01?
+
+Watts has dropped from Daym to the base.
+
+If you look at the super simplified model of a transistor, you will see two diodes pointing towards
+
+the base where there is voltage applied to the meter.
+
+There will be a dial drop of zero point seven volts, right?
+
+So the base will be zero point seven volts lower the daym, hence the transistor will turn on again.
+
+This representation is not quite accurate because if you apply voltage at the collector, these diode
+
+will not conduct Corot and the transistor won't turn on.
+
+But it's true that if you apply a voltage at the base, current will not flow from base to collector
+
+or from base daym.

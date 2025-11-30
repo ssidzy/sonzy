@@ -1,0 +1,489 @@
+\section{Section 13: Input and Output Impedance of a Circuit}
+
+% Topic 1: Input Impedance of a Circuit
+\subsection{Input Impedance of a Circuit}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{Input impedance} ($Z_{in}$) is the combined effect of all resistances, capacitances, and inductances seen by a signal at the input of a circuit. Represented as a resistor to ground (conceptually, not physical component), it determines how much the circuit loads the source. \textbf{High input impedance} (typically $\geq$ 10$\times$ source impedance) is desired to avoid loading the signal source and attenuating the input voltage. Low input impedance creates voltage divider with source impedance, reducing signal strength before amplification. Input impedance varies with frequency due to reactive components (capacitors/inductors). Critical for weak signal amplification (microphones, sensors) where any voltage loss is significant.
+
+\textbf{Key principle:} $Z_{in}$ should be high to prevent signal attenuation via voltage divider effect
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. Concept of Input Impedance:}
+
+Every circuit with input/output terminals has input and output impedance. These are \textbf{conceptual values} (measured in ohms), not physical resistors you can remove. They represent the combined electrical behavior of all internal components.
+
+\textbf{Representation:}
+\begin{itemize}
+    \item Shown as resistor connected from input terminal to ground
+    \item Actually inside the circuit, but drawn externally for clarity
+    \item For purely resistive circuits: called "input resistance" $R_{in}$
+    \item With reactive components: called "input impedance" $Z_{in}$
+\end{itemize}
+
+\textbf{What contributes to $Z_{in}$:}
+\begin{itemize}
+    \item All resistors connected to input side
+    \item Capacitive reactance: $X_C = \frac{1}{2\pi fC}$ (decreases with frequency)
+    \item Inductive reactance: $X_L = 2\pi fL$ (increases with frequency)
+    \item Combined impedance: $Z_{in} = \sqrt{R^2 + (X_L - X_C)^2}$
+    \item Frequency dependent due to reactive components
+    \item At high frequencies, capacitor/inductor effects become significant
+\end{itemize}
+
+\textbf{2. Why High Input Impedance is Important:}
+
+Signal sources (microphones, sensors, antennas, previous circuit stages) have internal source impedance. When connected to circuit input, source impedance and input impedance form \textbf{voltage divider}.
+
+\textbf{Voltage Divider Effect:}
+\begin{itemize}
+    \item Source has internal resistance $R_s$ (or impedance $Z_s$)
+    \item Circuit has input impedance $Z_{in}$
+    \item Voltage at circuit input: $V_{in} = V_{source} \times \frac{Z_{in}}{R_s + Z_{in}}$
+    \item If $Z_{in}$ is low, significant voltage dropped across $R_s$, less reaches circuit
+    \item If $Z_{in}$ is high ($\geq 10 \times R_s$), most voltage appears at input
+\end{itemize}
+
+\textbf{Design Rule:}
+\begin{itemize}
+    \item $Z_{in} \geq 10 \times Z_{source}$ (minimum)
+    \item Higher is better for weak signals
+    \item Op-amps: typical $Z_{in} = 10^6$ to $10^{12}$~$\Omega$ (excellent for weak signals)
+    \item Audio inputs: typical 10~k$\Omega$ to 1~M$\Omega$
+    \item Sensor interfaces: often $>$1~M$\Omega$ to avoid loading tiny signals
+\end{itemize}
+
+\textbf{3. Critical for Weak Signals:}
+
+Microphones output 1--100~mV, sensors may output µV levels. Any voltage loss before amplification is problematic:
+\begin{itemize}
+    \item Low $Z_{in}$ loads source, reducing voltage significantly
+    \item Example: 1~mV sensor signal with 10~k$\Omega$ source into 10~k$\Omega$ input loses 50\% voltage (500~µV)
+    \item Same signal into 1~M$\Omega$ input: loses only ~1\% (990~µV preserved)
+    \item Signal-to-noise ratio degraded if input impedance too low
+    \item Can't recover lost voltage by later amplification (noise amplified too)
+\end{itemize}
+
+\textbf{4. Frequency Dependence:}
+
+Input impedance changes with signal frequency when capacitors/inductors present:
+\begin{itemize}
+    \item Capacitors: $Z_C$ decreases at high frequency (shorts AC, blocks DC)
+    \item Inductors: $Z_L$ increases at high frequency (blocks AC, passes DC)
+    \item Input impedance specification often given at specific frequency (e.g., 1~kHz)
+    \item Bandwidth considerations: must maintain high $Z_{in}$ over signal frequency range
+    \item Parasitic capacitance at high frequencies can reduce $Z_{in}$ unintentionally
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Voltage Divider Effect with Low Input Impedance}
+
+Given: Signal source = 10~V AC, source impedance $R_s = 1$~k$\Omega$, amplifier input impedance variable
+
+\textbf{Case 1: High input impedance ($Z_{in} = 1$~M$\Omega$):}
+\begin{itemize}
+    \item Voltage divider: $V_{in} = 10 \times \frac{10^6}{10^3 + 10^6} = 10 \times \frac{10^6}{1.001 \times 10^6}$
+    \item $V_{in} \approx 9.99$~V (essentially full 10~V signal)
+    \item Voltage loss: 0.01~V (0.1\% loss, negligible)
+\end{itemize}
+
+\textbf{Case 2: Medium input impedance ($Z_{in} = 50$~k$\Omega$):}
+\begin{itemize}
+    \item $V_{in} = 10 \times \frac{50k}{1k + 50k} = 10 \times \frac{50}{51}$
+    \item $V_{in} = 9.8$~V
+    \item Voltage loss: 0.2~V (2\% loss, acceptable for many applications)
+\end{itemize}
+
+\textbf{Case 3: Low input impedance ($Z_{in} = 10$~k$\Omega$):}
+\begin{itemize}
+    \item $V_{in} = 10 \times \frac{10k}{1k + 10k} = 10 \times \frac{10}{11}$
+    \item $V_{in} = 9.09$~V
+    \item Voltage loss: 0.91~V (9.1\% loss, significant attenuation)
+\end{itemize}
+
+\textbf{Case 4: Very low input impedance ($Z_{in} = 1$~k$\Omega$):}
+\begin{itemize}
+    \item $V_{in} = 10 \times \frac{1k}{1k + 1k} = 10 \times \frac{1}{2}$
+    \item $V_{in} = 5$~V
+    \item Voltage loss: 5~V (50\% loss, severe attenuation, unacceptable!)
+\end{itemize}
+
+\textbf{Conclusion:} Rule of thumb confirmed: $Z_{in} \geq 10 \times R_s$ maintains $>$90\% voltage transfer
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Weak Microphone Signal}
+
+Given: Microphone output = 10~mV AC, microphone impedance = 200~$\Omega$, need amplification
+
+\textbf{Amplifier A: $Z_{in} = 500$~$\Omega$}
+\begin{itemize}
+    \item $V_{in} = 10mV \times \frac{500}{200 + 500} = 10 \times \frac{500}{700}$
+    \item $V_{in} = 7.14$~mV
+    \item Lost 2.86~mV (28.6\% signal loss before amplification)
+    \item Poor design: violates 10$\times$ rule
+\end{itemize}
+
+\textbf{Amplifier B: $Z_{in} = 47$~k$\Omega$}
+\begin{itemize}
+    \item $V_{in} = 10mV \times \frac{47k}{0.2k + 47k} = 10 \times \frac{47}{47.2}$
+    \item $V_{in} = 9.96$~mV
+    \item Lost only 0.04~mV (0.4\% signal loss, excellent)
+    \item Good design: $47k \gg 10 \times 200\Omega = 2k\Omega$ $\checkmark$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Frequency-Dependent Input Impedance}
+
+Given: Amplifier with 100~k$\Omega$ resistor to ground, parallel 100~pF input capacitance
+
+\textbf{At 1~kHz (audio):}
+\begin{itemize}
+    \item $X_C = \frac{1}{2\pi fC} = \frac{1}{2\pi \times 10^3 \times 100 \times 10^{-12}}$
+    \item $X_C = 1.59$~M$\Omega$ (very high, capacitor nearly open circuit)
+    \item $Z_{in} \approx 100$~k$\Omega$ (resistor dominates, capacitor negligible)
+\end{itemize}
+
+\textbf{At 1~MHz (RF):}
+\begin{itemize}
+    \item $X_C = \frac{1}{2\pi \times 10^6 \times 100 \times 10^{-12}}$
+    \item $X_C = 1.59$~k$\Omega$ (low, capacitor shunts to ground)
+    \item Parallel combination: $Z_{in} = \frac{100k \times 1.59k}{100k + 1.59k} \approx 1.57$~k$\Omega$
+    \item Input impedance drops dramatically at high frequency!
+\end{itemize}
+
+\textbf{Impact:} High-frequency signals attenuated by low $Z_{in}$ due to parasitic capacitance. Important for wideband amplifiers and RF circuits.
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Input Impedance Definition:} Combined effect of all R, C, L at circuit input, measured in ohms. Determines how much circuit loads the source signal. Not a physical component but conceptual representation of circuit's electrical behavior
+    
+    \item \textbf{High $Z_{in}$ Requirement:} Typically $Z_{in} \geq 10 \times Z_{source}$ to avoid voltage divider attenuation. Prevents loading weak signal sources (microphones, sensors, antennas, previous stages)
+    
+    \item \textbf{Voltage Divider Effect:} Source impedance $R_s$ and input impedance $Z_{in}$ divide voltage: $V_{in} = V_{source} \times \frac{Z_{in}}{R_s + Z_{in}}$. Low $Z_{in}$ causes significant signal loss
+    
+    \item \textbf{Frequency Dependence:} Capacitive/inductive reactance changes with frequency, altering $Z_{in}$. Parasitic capacitance reduces $Z_{in}$ at high frequencies. Must specify frequency when stating impedance value
+    
+    \item \textbf{Critical for Weak Signals:} Microphones (1--100~mV), sensors (µV--mV) require very high $Z_{in}$ (>100~k$\Omega$). Any voltage loss before amplification is unrecoverable and degrades SNR
+    
+    \item \textbf{Q: Why can't we recover lost voltage by amplifying more?} A: Noise is also amplified. If signal attenuated before first stage, signal-to-noise ratio already degraded. High $Z_{in}$ preserves original SNR
+    
+    \item \textbf{Q: What's typical input impedance for different circuits?} A: Op-amps: M$\Omega$ to T$\Omega$ (excellent); Audio amps: 10k--1M$\Omega$; Oscilloscope: 1M$\Omega$ || 10--20pF; RF circuits: 50 or 75~$\Omega$ (matched to transmission line)
+    
+    \item \textbf{Q: Is high $Z_{in}$ always better?} A: Generally yes for voltage amplification. Exception: impedance matching for maximum power transfer (RF systems) requires matched impedances, not necessarily high $Z_{in}$
+\end{itemize}
+\end{keypointsbox}
+
+\newpage
+
+% Topics 2-5: Consolidated
+\subsection{Output Impedance, Impedance Matching, and Measurement Techniques}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{Output impedance} ($Z_{out}$) is the impedance in series with a circuit's output, representing combined R/L/C at output side. \textbf{Low output impedance} (typically $\leq$ 1/10 load impedance) ensures strong signal delivery without voltage drop across $Z_{out}$. High $Z_{out}$ causes voltage divider with load, wasting power internally.
+
+\textbf{Impedance matching} ($Z_{source} = Z_{load}$) maximizes \textbf{power transfer} (50\% efficiency) for RF/transmission line applications. Prevents signal reflections on transmission lines. Mismatched impedances cause standing waves and reflected power that can damage source.
+
+\textbf{Measurement methods:} Input impedance measured by inserting variable resistor in series, adjusting until output halves (then $R_{var} = Z_{in}$). Output impedance measured by varying load until output halves at no-load value (then $R_{load} = Z_{out}$). Requires signal generator and oscilloscope.
+
+\textbf{Key equations:} Power transfer: $P_{max} = \frac{V^2}{4Z}$ when matched; Reflection coefficient: $\Gamma = \frac{Z_L - Z_0}{Z_L + Z_0}$
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. Output Impedance Concept:}
+
+Output impedance is the impedance seen looking back into a circuit's output terminals.
+
+\textbf{Representation:}
+\begin{itemize}
+    \item Shown as resistor in \textbf{series} with output (contrast: input impedance is to ground)
+    \item Conceptual, not physical—represents combined effect of all components at output side
+    \item Acts like internal resistance limiting current delivery capability
+    \item Higher $Z_{out}$ = weaker output drive, more voltage lost internally
+\end{itemize}
+
+\textbf{What contributes to $Z_{out}$:}
+\begin{itemize}
+    \item Output stage transistor resistance (emitter/source resistance)
+    \item Resistors in series with output
+    \item Reactive components (capacitors/inductors) at output
+    \item Frequency dependent if reactive components present
+\end{itemize}
+
+\textbf{2. Why Low Output Impedance is Important:}
+
+Load impedance and output impedance form voltage divider, reducing voltage delivered to load.
+
+\textbf{Voltage Divider at Output:}
+\begin{itemize}
+    \item Circuit generates voltage $V_{source}$ with output impedance $Z_{out}$ in series
+    \item Load impedance $Z_{load}$ connected
+    \item Voltage at load: $V_{load} = V_{source} \times \frac{Z_{load}}{Z_{out} + Z_{load}}$
+    \item If $Z_{out}$ is high, significant voltage dropped internally, less reaches load
+    \item If $Z_{out}$ is low ($\leq Z_{load}/10$), most voltage appears at load
+\end{itemize}
+
+\textbf{Design Rule:}
+\begin{itemize}
+    \item $Z_{out} \leq Z_{load}/10$ (maximum)
+    \item Lower is better for efficient voltage delivery
+    \item Op-amps: typical $Z_{out} < 100$~$\Omega$ (can drive low impedance loads)
+    \item Audio power amps: often $<1$~$\Omega$ (drive 4--8~$\Omega$ speakers efficiently)
+    \item Voltage regulators: milli-ohm range for stiff voltage output
+\end{itemize}
+
+\textbf{Power Dissipation Issue:}
+\begin{itemize}
+    \item Power wasted in $Z_{out}$: $P_{wasted} = I^2 Z_{out}$
+    \item High $Z_{out}$ means circuit heats itself instead of delivering power to load
+    \item Efficiency: $\eta = \frac{P_{load}}{P_{load} + P_{wasted}} = \frac{Z_{load}}{Z_{load} + Z_{out}}$
+    \item Example: $Z_{out} = 100$~$\Omega$, $Z_{load} = 100$~$\Omega$ $\rightarrow$ only 50\% efficient
+\end{itemize}
+
+\textbf{3. Impedance Matching for Maximum Power Transfer:}
+
+Contrary to low $Z_{out}$ rule, some applications require $Z_{out} = Z_{load}$ for maximum \textbf{power} (not voltage) transfer.
+
+\textbf{Maximum Power Transfer Theorem:}
+\begin{itemize}
+    \item Power delivered to load: $P_L = I^2 Z_L = \frac{V_{source}^2 Z_L}{(Z_{out} + Z_L)^2}$
+    \item Taking derivative and setting to zero: maximum when $Z_L = Z_{out}$
+    \item At match: $P_{max} = \frac{V_{source}^2}{4Z_{out}}$
+    \item Efficiency at match: 50\% (half power wasted in source, half to load)
+    \item Seems wasteful but necessary for certain applications
+\end{itemize}
+
+\textbf{When Impedance Matching is Required:}
+\begin{itemize}
+    \item RF transmission (antennas, coax cables): typically 50 or 75~$\Omega$ systems
+    \item Transmission lines must be terminated with characteristic impedance $Z_0$
+    \item Audio transformers coupling stages (vintage equipment)
+    \item Sensor interfaces for maximum power extraction
+    \item Test equipment (signal generators, network analyzers)
+\end{itemize}
+
+\textbf{4. Transmission Line Effects:}
+
+Transmission lines (coax cables, twisted pair, PCB traces at high frequency) have characteristic impedance $Z_0$.
+
+\textbf{Proper Termination ($Z_L = Z_0$):}
+\begin{itemize}
+    \item All energy propagates down line and absorbed by load
+    \item No reflections, clean signal
+    \item Maximum power delivered
+    \item Common values: 50~$\Omega$ (RF), 75~$\Omega$ (video), 100--120~$\Omega$ (twisted pair Ethernet)
+\end{itemize}
+
+\textbf{Mismatched Termination ($Z_L \neq Z_0$):}
+\begin{itemize}
+    \item Reflection coefficient: $\Gamma = \frac{Z_L - Z_0}{Z_L + Z_0}$
+    \item $Z_L > Z_0$: positive reflection (signal bounces back same polarity)
+    \item $Z_L < Z_0$: negative reflection (signal bounces back inverted)
+    \item Standing waves on line (voltage/current vary along length)
+    \item Power wasted, signal distortion, possible source damage from reflected power
+    \item VSWR (Voltage Standing Wave Ratio): $VSWR = \frac{1 + |\Gamma|}{1 - |\Gamma|}$ (1 = perfect match, >2 = poor)
+\end{itemize}
+
+\textbf{5. Measuring Input Impedance:}
+
+Equipment needed: Signal generator, oscilloscope (or AC voltmeter), variable resistor (decade box ideal)
+
+\textbf{Procedure:}
+\begin{enumerate}
+    \item Connect variable resistor in series between signal generator and circuit input
+    \item Set $R_{var} = 0$~$\Omega$ initially
+    \item Connect oscilloscope across circuit output (or load)
+    \item Apply 1~kHz sine wave from generator, adjust amplitude for clear display
+    \item Note peak-to-peak output voltage $V_{out1}$ with $R_{var} = 0$
+    \item Increase $R_{var}$ gradually while watching oscilloscope
+    \item When output drops to exactly $V_{out1}/2$, stop
+    \item Measure $R_{var}$ with ohmmeter: this value equals $Z_{in}$ at test frequency
+\end{enumerate}
+
+\textbf{Theory:} When $R_{var} = Z_{in}$, voltage divider gives 50/50 split. Input voltage to circuit is half of generator voltage, output proportionally halves.
+
+\textbf{6. Measuring Output Impedance:}
+
+Equipment: Signal generator (or drive circuit at normal operation), oscilloscope, variable load resistor (high power rating if measuring power amp)
+
+\textbf{Procedure:}
+\begin{enumerate}
+    \item Disconnect normal load, leave output open circuit
+    \item Connect oscilloscope across output terminals
+    \item Apply input signal, note output voltage $V_{oc}$ (open circuit voltage)
+    \item Connect variable resistor across output, set to maximum resistance initially
+    \item Gradually reduce $R_{load}$ while watching oscilloscope
+    \item When output drops to exactly $V_{oc}/2$, stop
+    \item Measure $R_{load}$: this value equals $Z_{out}$ at test frequency
+\end{enumerate}
+
+\textbf{Theory:} When $R_{load} = Z_{out}$, voltage divider gives 50/50 split. Half voltage dropped across internal $Z_{out}$, half across external load.
+
+\textbf{Caution:} For power amplifiers, don't run at full power during test (can damage variable resistor). Use moderate input level sufficient for measurement.
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Output Impedance Effect on Load Voltage}
+
+Given: Amplifier generates 10~V output, output impedance $Z_{out} = 200$~$\Omega$, various loads
+
+\textbf{Load 1: $Z_{load} = 8$~$\Omega$ (speaker)}
+\begin{itemize}
+    \item $V_{load} = 10 \times \frac{8}{200 + 8} = 10 \times \frac{8}{208}$
+    \item $V_{load} = 0.38$~V (only 3.8\% of voltage delivered!)
+    \item Power in speaker: $P = \frac{(0.38)^2}{8} = 18$~mW
+    \item Power wasted in $Z_{out}$: $P_{wasted} = \frac{(0.38/8)^2 \times 200}{1} \approx 450$~mW
+    \item Terrible efficiency, unsuitable for audio
+\end{itemize}
+
+\textbf{Load 2: $Z_{load} = 100$~$\Omega$}
+\begin{itemize}
+    \item $V_{load} = 10 \times \frac{100}{200 + 100} = 10 \times \frac{100}{300}$
+    \item $V_{load} = 3.33$~V (33.3\% voltage delivered)
+    \item Still significant loss, but better
+\end{itemize}
+
+\textbf{Load 3: $Z_{load} = 2$~k$\Omega$ (10$\times$ rule)}
+\begin{itemize}
+    \item $V_{load} = 10 \times \frac{2k}{200 + 2k} = 10 \times \frac{2000}{2200}$
+    \item $V_{load} = 9.09$~V (90.9\% voltage delivered $\checkmark$)
+    \item Efficient voltage delivery, good design
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Maximum Power Transfer}
+
+Given: Signal source $V_s = 12$~V, $Z_{out} = 50$~$\Omega$, variable load
+
+\textbf{Case 1: Matched load ($Z_L = 50$~$\Omega$):}
+\begin{itemize}
+    \item Current: $I = \frac{12}{50 + 50} = \frac{12}{100} = 0.12$~A
+    \item Voltage at load: $V_L = 0.12 \times 50 = 6$~V
+    \item Power to load: $P_L = \frac{6^2}{50} = 0.72$~W
+    \item Power in source: $P_{source} = \frac{6^2}{50} = 0.72$~W (same!)
+    \item Total power: 1.44~W, efficiency = 50\%
+    \item Maximum power delivered to load $\checkmark$
+\end{itemize}
+
+\textbf{Case 2: Higher load ($Z_L = 100$~$\Omega$):}
+\begin{itemize}
+    \item Current: $I = \frac{12}{50 + 100} = 0.08$~A
+    \item Voltage at load: $V_L = 0.08 \times 100 = 8$~V
+    \item Power to load: $P_L = \frac{8^2}{100} = 0.64$~W (less than matched!)
+\end{itemize}
+
+\textbf{Case 3: Lower load ($Z_L = 25$~$\Omega$):}
+\begin{itemize}
+    \item Current: $I = \frac{12}{50 + 25} = 0.16$~A
+    \item Voltage at load: $V_L = 0.16 \times 25 = 4$~V
+    \item Power to load: $P_L = \frac{4^2}{25} = 0.64$~W (less than matched!)
+\end{itemize}
+
+\textbf{Verification:} Maximum power (0.72~W) occurs at matched impedance (50~$\Omega$) $\checkmark$
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Transmission Line Reflections}
+
+Given: 50~$\Omega$ coax cable, source matched 50~$\Omega$, various terminations, signal = 5~V pulse
+
+\textbf{Termination 1: $Z_L = 50$~$\Omega$ (matched):}
+\begin{itemize}
+    \item $\Gamma = \frac{50 - 50}{50 + 50} = 0$ (no reflection)
+    \item All energy absorbed by load
+    \item Clean pulse at load, no distortion
+    \item Power delivered: maximum
+\end{itemize}
+
+\textbf{Termination 2: $Z_L = 200$~$\Omega$ (too high):}
+\begin{itemize}
+    \item $\Gamma = \frac{200 - 50}{200 + 50} = \frac{150}{250} = 0.6$ (positive reflection)
+    \item 60\% of voltage reflects back in same polarity
+    \item Standing wave pattern on cable
+    \item Power absorbed: less than matched case
+\end{itemize}
+
+\textbf{Termination 3: $Z_L = 10$~$\Omega$ (too low):}
+\begin{itemize}
+    \item $\Gamma = \frac{10 - 50}{10 + 50} = \frac{-40}{60} = -0.67$ (negative reflection)
+    \item 67\% of voltage reflects back inverted
+    \item Severe standing waves
+    \item Power wasted, distortion, potential source damage
+\end{itemize}
+
+\textbf{Termination 4: Open circuit ($Z_L = \infty$):}
+\begin{itemize}
+    \item $\Gamma = \frac{\infty - 50}{\infty + 50} \approx 1$ (total positive reflection)
+    \item Voltage doubles at open end (5~V forward + 5~V reflected = 10~V)
+    \item No power absorbed, all reflected
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Measuring Input Impedance}
+
+Given: Amplifier unknown $Z_{in}$, 1~kHz signal generator, oscilloscope, decade box
+
+\textbf{Procedure:}
+\begin{itemize}
+    \item Set decade box $R = 0$~$\Omega$
+    \item Apply 1~kHz, 2~V signal
+    \item Output reads 8~V (gain = 4)
+    \item Increase decade box resistance
+    \item At $R = 22$~k$\Omega$, output drops to 4~V (half of 8~V)
+    \item Therefore: $Z_{in} = 22$~k$\Omega$ at 1~kHz $\checkmark$
+\end{itemize}
+
+\textbf{Verification:} When $R = Z_{in}$, input voltage is $2V \times \frac{22k}{22k+22k} = 1V$ (half), so output is $1V \times 4 = 4V$ (half of 8V) $\checkmark$
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Output Impedance Definition:} Series impedance at circuit output representing combined R/L/C. Acts like internal resistance limiting current delivery. Low $Z_{out}$ enables strong drive capability
+    
+    \item \textbf{Low $Z_{out}$ Requirement:} Typically $Z_{out} \leq Z_{load}/10$ to deliver voltage efficiently without internal voltage drop. Prevents power waste, ensures most signal reaches load. Critical for driving low-impedance loads (speakers, long cables)
+    
+    \item \textbf{Impedance Matching vs Low $Z_{out}$:} Two different goals! Matching ($Z_{source} = Z_{load}$) maximizes \textbf{power} transfer (50\% efficiency) for RF/transmission lines. Low $Z_{out}$ ($Z_{out} \ll Z_{load}$) maximizes \textbf{voltage} transfer (>90\% efficiency) for general amplifiers
+    
+    \item \textbf{Maximum Power Transfer:} Occurs when $Z_L = Z_{out}$. Delivers $P_{max} = \frac{V^2}{4Z_{out}}$ to load. Always 50\% efficient (half power wasted in source). Required for RF systems to prevent reflections
+    
+    \item \textbf{Transmission Line Reflections:} Mismatch causes reflection coefficient $\Gamma = \frac{Z_L - Z_0}{Z_L + Z_0}$. Standing waves form, power reflected back, signal distortion, potential source damage. Match termination to line's $Z_0$ for clean transmission
+    
+    \item \textbf{Measurement Principle:} Both $Z_{in}$ and $Z_{out}$ measured using half-voltage method. When test resistor equals unknown impedance, voltage divider creates 50/50 split, observable voltage halves
+    
+    \item \textbf{Q: Why are RF systems typically 50$\Omega$?} A: Compromise between power handling (lower better) and loss (higher better) for coax cables. Standardization enables interoperability. 75~$\Omega$ used for video (optimized for loss)
+    
+    \item \textbf{Q: Can we have both high $Z_{in}$ and low $Z_{out}$?} A: Yes! Op-amps achieve this: M$\Omega$ input, <100~$\Omega$ output. Allows weak signal amplification with strong output drive. Best of both worlds for general-purpose amplifiers
+    
+    \item \textbf{Q: What happens if $Z_{out}$ too high for speaker?} A: Damping factor reduced, poor bass control, voltage loss, power wasted as heat in amplifier. Speaker sees weak drive, can't produce full power. Want $Z_{out} < 0.1$~$\Omega$ for 8~$\Omega$ speaker ideally
+\end{itemize}
+\end{keypointsbox}

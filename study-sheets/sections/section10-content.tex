@@ -1,0 +1,1095 @@
+% ====================================================================
+% SECTION 10: INDUCTORS
+% ====================================================================
+
+\section*{\LARGE\color{headercolor} Section 10 -- Inductors}
+\addcontentsline{toc}{section}{Section 10: Inductors}
+
+% --------------------------------------------------------------------
+\subsection{Inductor -- Introduction}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Construction:} Coil of wire (solenoid) that creates magnetic field
+    \item \textbf{Inductance:} L in Henries (H), typically $\mu$H or mH
+    \item \textbf{Opposes current changes:} $V = L\frac{dI}{dt}$ (voltage proportional to rate of current change)
+    \item \textbf{Dual of capacitor:} Stores energy in magnetic field, opposes current changes (C opposes voltage changes)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{What is an Inductor?}
+
+\vspace{0.15cm}
+
+\textbf{Physical construction:}
+\begin{itemize}
+    \item Simple length of wire coiled up
+    \item Coil shape called solenoid
+    \item Current through wire creates magnetic field
+    \item Coil amplifies magnetic field strength
+    \item Symbol shows coil loops (lines = core material)
+\end{itemize}
+
+\textbf{Why coil shape?}
+\begin{itemize}
+    \item Straight wire: Weak magnetic field (negligible unless mega-amps)
+    \item Coiled wire: Magnetic fields from each loop add up
+    \item Result: Much stronger total magnetic field
+    \item More turns = stronger field
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Inductance -- The Key Property:}
+
+\textbf{Self-induction mechanism:}
+\begin{enumerate}
+    \item Voltage applied $\rightarrow$ current flows $\rightarrow$ magnetic field created
+    \item Changing magnetic field $\rightarrow$ induces voltage back (Lenz's Law)
+    \item Induced voltage (back EMF) opposes the change
+    \item Result: Current cannot change rapidly!
+\end{enumerate}
+
+\textbf{Inductor equation:}
+\begin{itemize}
+    \item $V_L = L \frac{dI}{dt}$
+    \item Voltage across inductor proportional to rate of current change
+    \item Fast current change $\rightarrow$ large voltage
+    \item Steady current (dI/dt=0) $\rightarrow$ zero voltage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Inductor vs. Capacitor (Dual Relationship):}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Property} & \textbf{Capacitor} & \textbf{Inductor} \\
+\hline
+Stores energy in & Electric field & Magnetic field \\
+\hline
+Opposes changes in & Voltage & Current \\
+\hline
+Key equation & $I = C\frac{dV}{dt}$ & $V = L\frac{dI}{dt}$ \\
+\hline
+Energy formula & $E = \frac{1}{2}CV^2$ & $E = \frac{1}{2}LI^2$ \\
+\hline
+DC behavior & Blocks (open) & Passes (wire) \\
+\hline
+AC behavior & Passes (low $X_C$) & Blocks (high $X_L$) \\
+\hline
+Phase shift & I leads V by 90° & V leads I by 90° \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.15cm}
+
+\textbf{Behavior in Circuits:}
+
+\textbf{DC circuit (constant current):}
+\begin{itemize}
+    \item Initially: High voltage, zero current (opposes change)
+    \item Gradually: Current rises exponentially
+    \item Eventually: Acts like wire (zero resistance)
+    \item Final state: $V_L = 0$, current limited only by R
+\end{itemize}
+
+\textbf{AC circuit (changing current):}
+\begin{itemize}
+    \item Continuously opposes current changes
+    \item Creates inductive reactance $X_L = 2\pi fL$
+    \item Higher frequency $\rightarrow$ higher opposition
+    \item Useful in filters, transformers, RF circuits
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Inductance Unit:}
+
+\textbf{Henry (H):}
+\begin{itemize}
+    \item Named after Joseph Henry
+    \item 1 H = 1 V·s/A (volt-second per ampere)
+    \item Henry is very large unit
+    \item Practical: mH ($10^{-3}$ H), $\mu$H ($10^{-6}$ H), nH ($10^{-9}$ H)
+\end{itemize}
+
+\textbf{Typical ranges:}
+\begin{itemize}
+    \item nH: RF circuits, chip inductors
+    \item $\mu$H: Switching converters, filters (1-1000 $\mu$H)
+    \item mH: Audio equipment, power supplies
+    \item H: Large transformers, electromagnets
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Where Inductors are Used:}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Transformers (voltage conversion)
+    \item Filters (with capacitors)
+    \item Energy storage (switching regulators)
+    \item RF circuits (tuning, matching)
+    \item EMI suppression (chokes)
+    \item Motors and solenoids
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical Calculations}
+\begin{examplebox}
+\textbf{Example 1: Voltage Across Inductor During Current Change}
+
+Given: L = 10 mH, current rises from 0 to 1A in 0.1 seconds (linear)
+
+Calculate voltage:
+\begin{itemize}
+    \item $\frac{dI}{dt} = \frac{1A - 0A}{0.1s} = 10$ A/s
+    \item $V_L = L \frac{dI}{dt} = 0.01 \times 10 = 0.1$~V = 100 mV
+\end{itemize}
+
+If same change in 0.01s (10$\times$ faster):
+\begin{itemize}
+    \item $\frac{dI}{dt} = 100$ A/s
+    \item $V_L = 0.01 \times 100 = 1$~V (10$\times$ higher!)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Steady Current (DC)}
+
+Given: L = 50 $\mu$H, constant DC current I = 2A
+
+Calculate voltage:
+\begin{itemize}
+    \item $\frac{dI}{dt} = 0$ (steady current, no change)
+    \item $V_L = L \times 0 = 0$~V
+    \item Inductor acts like wire in DC steady state!
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Energy Stored in Inductor}
+
+Given: L = 100 mH, I = 500 mA
+
+Energy formula: $E = \frac{1}{2}LI^2$
+
+Calculate:
+\begin{itemize}
+    \item $E = \frac{1}{2} \times 0.1 \times (0.5)^2$
+    \item $E = 0.05 \times 0.25 = 0.0125$~J = 12.5 mJ
+\end{itemize}
+
+Double current to 1A:
+\begin{itemize}
+    \item $E = \frac{1}{2} \times 0.1 \times 1^2 = 0.05$~J = 50 mJ
+    \item Energy quadruples (E $\propto$ I²)!
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Comparison with Capacitor}
+
+Capacitor: C = 100 $\mu$F, V = 5V
+\begin{itemize}
+    \item Energy: $E_C = \frac{1}{2} \times 0.0001 \times 25 = 1.25$ mJ
+    \item Stores energy in electric field between plates
+\end{itemize}
+
+Inductor: L = 100 mH, I = 50 mA
+\begin{itemize}
+    \item Energy: $E_L = \frac{1}{2} \times 0.1 \times 0.0025 = 0.125$ mJ
+    \item Stores energy in magnetic field around coil
+\end{itemize}
+
+Different energy storage mechanism, similar component size!
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Construction:} Coil of wire (solenoid), creates magnetic field
+    
+    \item \textbf{Opposes current changes:} $V_L = L\frac{dI}{dt}$ (fundamental equation)
+    
+    \item \textbf{DC behavior:} Eventually acts like wire ($V_L=0$ at steady state)
+    
+    \item \textbf{AC behavior:} Continuously opposes $\rightarrow$ creates reactance
+    
+    \item \textbf{Energy storage:} $E = \frac{1}{2}LI^2$ in magnetic field
+    
+    \item \textbf{Unit:} Henry (H), typically $\mu$H or mH in practice
+    
+    \item \textbf{Dual of capacitor:}
+    \begin{itemize}
+        \item Capacitor: Opposes V changes, stores in E-field
+        \item Inductor: Opposes I changes, stores in B-field
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What is an inductor? \\
+    \textit{A:} Coil of wire that stores energy in magnetic field and opposes changes in current.
+    
+    \item \textbf{Q:} Why does inductor oppose current changes? \\
+    \textit{A:} Changing current creates changing magnetic field, which induces voltage (back EMF) that opposes the change (Lenz's Law).
+    
+    \item \textbf{Q:} How does inductor behave in DC vs AC? \\
+    \textit{A:} DC steady state: acts like wire (zero V). AC: opposes with reactance, blocks high frequencies.
+    
+    \item \textbf{Q:} What's the difference between inductor and capacitor? \\
+    \textit{A:} Inductor opposes current changes/stores in magnetic field. Capacitor opposes voltage changes/stores in electric field.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Formulas:}
+\begin{itemize}
+    \item \textbf{Voltage:} $V_L = L\frac{dI}{dt}$
+    \item \textbf{Energy:} $E = \frac{1}{2}LI^2$
+    \item \textbf{Reactance:} $X_L = 2\pi fL$ (covered in detail later)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+% NOTE: Topics 2-13 consolidated for efficiency while maintaining comprehensive coverage
+% Following topics build systematically: construction$\rightarrow$behavior$\rightarrow$applications
+% --------------------------------------------------------------------
+
+\subsection{Types of Inductors \& Construction}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Inductance formula:} $L = \frac{\mu N^2 A}{l}$ (permeability, turns, area, length)
+    \item \textbf{Air core:} Low L ($\mu$H range), RF circuits, high frequency
+    \item \textbf{Iron core:} High L (mH-H), transformers, audio, low frequency
+    \item \textbf{Ferrite core:} Most common, adjustable permeability, gray/black color
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Inductance Formula:}
+
+$L = \frac{\mu N^2 A}{l}$ where:
+\begin{itemize}
+    \item L = inductance (H)
+    \item $\mu = \mu_0 \mu_r$ (permeability) - how easily magnetic field forms
+    \item N = number of turns
+    \item A = cross-sectional area (m²)
+    \item l = length of coil (m)
+\end{itemize}
+
+\textbf{Increasing inductance:}
+\begin{itemize}
+    \item More turns (N²!) $\rightarrow$ much higher L
+    \item Larger area $\rightarrow$ higher L
+    \item Shorter length $\rightarrow$ higher L  
+    \item Higher permeability core $\rightarrow$ higher L
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Air Core Inductors:}
+\begin{itemize}
+    \item Core material: Air ($\mu_r \approx 1$, low permeability)
+    \item Low inductance (typically <5 $\mu$H)
+    \item Fast current rise time
+    \item High frequency capable (MHz-GHz)
+    \item Applications: RF circuits, oscillators, antennas
+    \item No core losses, no saturation
+\end{itemize}
+
+\textbf{Iron Core Inductors:}
+\begin{itemize}
+    \item Core material: Iron ($\mu_r = 200$-5000)
+    \item High inductance (mH to H range)
+    \item Large, heavy construction
+    \item Low frequency use (50/60 Hz power)
+    \item Applications: Transformers, audio equipment, filters
+    \item Core losses at high frequency (eddy currents, hysteresis)
+\end{itemize}
+
+\textbf{Ferrite Core Inductors:}
+\begin{itemize}
+    \item Core: Iron oxide powder + epoxy resin
+    \item Gray/black color, brittle material
+    \item Most widely used type
+    \item Permeability controllable (ratio of ferrite to epoxy)
+    \item Medium inductance ($\mu$H to mH)
+    \item Applications: Switching supplies, EMI filters, chokes
+    \item Lower losses than iron at higher frequencies
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Formula:} $L = \frac{\mu N^2 A}{l}$ - inductance proportional to turns squared
+    \item \textbf{Air core:} Low L, RF/high frequency
+    \item \textbf{Iron core:} High L, power/audio/transformers
+    \item \textbf{Ferrite core:} Most common, adjustable, versatile
+    \item \textbf{Core material:} Dramatically affects inductance ($\mu_r$ factor)
+\end{enumerate}
+
+\textbf{Interview Q:}
+\textit{Q: Why use core materials?} \\
+A: Increase permeability ($\mu$) $\rightarrow$ much higher inductance in same physical size.
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Inductors in Series and Parallel}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Series:} $L_{total} = L_1 + L_2 + L_3 + ...$ (like resistors)
+    \item \textbf{Parallel:} $\frac{1}{L_{total}} = \frac{1}{L_1} + \frac{1}{L_2} + ...$ (opposite of capacitors!)
+    \item Inductors behave exactly opposite to capacitors in series/parallel
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples}
+\begin{examplebox}
+\textbf{Series:} 10 $\mu$H + 15 $\mu$H = 25 $\mu$H
+
+\textbf{Parallel:} Two 10 $\mu$H $\rightarrow$ $L = \frac{10 \times 10}{10 + 10} = 5$ $\mu$H
+\end{examplebox}
+
+% --------------------------------------------------------------------
+\subsection{Inductor Behavior in DC Circuit \& RL Time Constant}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Initially:} $V_L$ high, I=0 (opposes sudden current)
+    \item \textbf{Exponential rise:} $I(t) = \frac{V}{R}(1 - e^{-t/\tau})$ where $\tau = \frac{L}{R}$
+    \item \textbf{After 5$\tau$:} Acts like wire, I = V/R
+    \item Opposite behavior to capacitor (which starts with high I, zero V)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{RL Time Constant:}
+
+$\tau = \frac{L}{R}$ (in seconds)
+
+\textbf{Current rise (charging):}
+\begin{itemize}
+    \item At t=0: I=0, $V_L = V_{supply}$ (maximum)
+    \item At t=1$\tau$: I=63\% of final
+    \item At t=5$\tau$: I=99\% of final $\approx$ V/R
+\end{itemize}
+
+\textbf{Current decay (discharging):}
+\begin{itemize}
+    \item At t=0: $I=I_0$, $V_L = -V$ (reverse polarity!)
+    \item At t=1$\tau$: I=37\% remains
+    \item At t=5$\tau$: $I\approx 0$
+    \item Direction unchanged (unlike capacitor)
+\end{itemize}
+
+\textbf{Energy storage:} $E = \frac{1}{2}LI^2$ in magnetic field
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Time constant:} $\tau = \frac{L}{R}$ (larger L or smaller R $\rightarrow$ slower)
+    \item \textbf{Opposes changes:} Resists sudden current changes
+    \item \textbf{Steady DC:} Acts like wire ($V_L=0$)
+    \item \textbf{vs. Capacitor:}
+    \begin{itemize}
+        \item Cap: $\tau = RC$, high I initially
+        \item Ind: $\tau = L/R$, high V initially
+    \end{itemize}
+\end{itemize}
+
+\textbf{Interview Q:}
+\textit{Q: What happens when switch closes in RL circuit?} \\
+A: Current rises exponentially from 0 to V/R over ~5$\tau$. Inductor opposes rapid change.
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Back EMF and Protection (Flyback Diode)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Back EMF:} When current interrupted $\rightarrow$ magnetic field collapses $\rightarrow$ huge voltage spike
+    \item \textbf{Danger:} Can destroy transistors/components (hundreds of volts!)
+    \item \textbf{Solution:} Flyback diode in parallel (reverse biased normally)
+    \item Critical for motors, relays, solenoids
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Back EMF Mechanism:}
+
+\begin{enumerate}
+    \item Current flowing $\rightarrow$ magnetic field built up
+    \item Switch opens $\rightarrow$ current stops rapidly
+    \item dI/dt very large (fast change!)
+    \item $V_L = L\frac{dI}{dt}$ $\rightarrow$ huge voltage (kV possible!)
+    \item Polarity reversed (opposes current decrease)
+\end{enumerate}
+
+\textbf{Flyback Diode Protection:}
+
+\textbf{Connection:} Diode in parallel with inductor/motor, reverse biased
+
+\textbf{Normal operation (switch on):}
+\begin{itemize}
+    \item Diode reverse biased $\rightarrow$ no effect
+    \item Current flows through inductor normally
+\end{itemize}
+
+\textbf{Switch off (back EMF):}
+\begin{itemize}
+    \item Inductor polarity reverses
+    \item Diode becomes forward biased
+    \item Provides path for inductor current
+    \item Energy dissipates safely through diode
+    \item Voltage limited to ~0.7V (diode drop)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item DC motors (essential!)
+    \item Relays and solenoids
+    \item Inductive loads driven by transistors
+    \item Any switching of inductive load
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Back EMF:} Collapsing field $\rightarrow$ large dI/dt $\rightarrow$ huge voltage spike
+    \item \textbf{Danger:} Can exceed transistor breakdown voltage
+    \item \textbf{Flyback diode:} Reverse biased normally, conducts during spike
+    \item \textbf{Must use:} With motors, relays, any inductive switching
+    \item \textbf{Diode polarity:} Cathode to +supply, anode to ground (reverse of normal)
+\end{enumerate}
+
+\textbf{Interview Q:}
+\textit{Q: Why does turning off motor destroy transistor?} \\
+A: Motor inductance creates huge back EMF spike when current interrupted. Flyback diode prevents this.
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Inductor in AC Circuit (Phase Relationship)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Phase shift:} Voltage leads current by 90° (ELI mnemonic)
+    \item \textbf{Opposite of capacitor:} Cap has I leads V, Inductor has V leads I
+    \item \textbf{Reactive component:} Stores/releases energy each cycle
+    \item Energy oscillates in magnetic field
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{90° Phase Shift Explanation:}
+
+\textbf{ELI the ICE man mnemonic:}
+\begin{itemize}
+    \item \textbf{ELI:} In inductors (L), voltage (E) leads current (I)
+    \item \textbf{ICE:} In capacitors (C), current (I) leads voltage (E)
+\end{itemize}
+
+\textbf{Why voltage leads in inductor?}
+\begin{itemize}
+    \item $V_L = L\frac{dI}{dt}$ (voltage depends on rate of change)
+    \item When I crosses zero: dI/dt is maximum $\rightarrow$ $V_L$ is maximum
+    \item When I is at peak: dI/dt is zero $\rightarrow$ $V_L$ is zero
+    \item Result: $V_L$ peaks 90° before I peaks
+\end{itemize}
+
+\textbf{Comparison table:}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Property} & \textbf{Resistor} & \textbf{Inductor} \\
+\hline
+Phase shift & 0° (V and I together) & 90° (V leads I) \\
+Energy & Dissipated (heat) & Stored/released (no loss) \\
+Frequency effect & None & Higher f $\rightarrow$ more opposition \\
+\hline
+\end{tabular}
+\end{center}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Phase:} Voltage leads current by 90° (ELI mnemonic)
+    \item \textbf{Reactive:} Stores energy, doesn't dissipate
+    \item \textbf{vs. Capacitor:} Opposite phase (ICE vs ELI)
+    \item \textbf{Application:} Phase shift circuits, power factor correction
+\end{enumerate}
+
+\textbf{Interview Q:}
+\textit{Q: What does "reactive" mean for inductor?} \\
+A: Opposes current changes, stores energy in magnetic field, creates 90° phase shift. No real power dissipation.
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Inductive Reactance $X_L = 2\pi fL$}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Formula:} $X_L = 2\pi fL$ (ohms)
+    \item \textbf{Direct relationship:} Higher f $\rightarrow$ higher $X_L$ (blocks HF)
+    \item \textbf{DC (f=0):} $X_L = 0$ (wire)
+    \item \textbf{Opposite of capacitor:} $X_C = \frac{1}{2\pi fC}$ decreases with f
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Inductive Reactance:}
+
+$X_L = 2\pi fL$ where:
+\begin{itemize}
+    \item $X_L$ = inductive reactance ($\Omega$)
+    \item f = frequency (Hz)
+    \item L = inductance (H)
+\end{itemize}
+
+\textbf{Frequency dependence:}
+\begin{itemize}
+    \item \textbf{Low frequency:} Low $X_L$ $\rightarrow$ passes easily
+    \item \textbf{High frequency:} High $X_L$ $\rightarrow$ blocks
+    \item \textbf{DC (f=0):} $X_L = 0$ $\rightarrow$ acts like wire
+    \item \textbf{f$\rightarrow$$\infty$:} $X_L \rightarrow \infty$ $\rightarrow$ open circuit
+\end{itemize}
+
+\textbf{Comparison with capacitor:}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Frequency} & \textbf{$X_C$} & \textbf{$X_L$} \\
+\hline
+DC (0 Hz) & $\infty$ (blocks) & 0 (passes) \\
+Low freq & High (blocks) & Low (passes) \\
+High freq & Low (passes) & High (blocks) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Impedance in RL circuit:}
+
+$Z = \sqrt{R^2 + X_L^2}$ (NOT $R + X_L$!)
+
+\textbf{Current calculation:}
+
+$I = \frac{V_{rms}}{Z}$
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples}
+\begin{examplebox}
+\textbf{Example 1:} L = 30 mH at 10 kHz
+
+$X_L = 2\pi \times 10000 \times 0.03 = 1885$ $\Omega$
+
+At 1 kHz: $X_L = 188$ $\Omega$ (10$\times$ lower frequency $\rightarrow$ 10$\times$ lower reactance)
+
+\vspace{0.15cm}
+
+\textbf{Example 2:} L = 400 mH, R = 200 $\Omega$, f = 200 Hz
+
+$X_L = 2\pi \times 200 \times 0.4 = 502.4$ $\Omega$
+
+$Z = \sqrt{200^2 + 502.4^2} = \sqrt{40000 + 252405} = 540.8$ $\Omega$
+
+If V = 5V: $I_{rms} = \frac{5}{540.8} = 9.2$ mA
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Formula:} $X_L = 2\pi fL$ (directly proportional to f and L)
+    \item \textbf{Frequency effect:} Higher f $\rightarrow$ higher $X_L$ $\rightarrow$ more opposition
+    \item \textbf{DC behavior:} f=0 $\rightarrow$ $X_L=0$ $\rightarrow$ inductor is wire
+    \item \textbf{vs. Capacitor:} Opposite frequency dependence
+    \item \textbf{Impedance:} $Z = \sqrt{R^2 + X_L^2}$ (vector addition)
+\end{enumerate}
+
+\textbf{Interview Q:}
+\textit{Q: How does inductor behave at very low vs very high frequency?} \\
+A: Low freq (DC): $X_L\approx 0$, acts like wire. High freq: $X_L$ very high, blocks AC.
+
+\textbf{Formulas:}
+\begin{itemize}
+    \item $X_L = 2\pi fL = \omega L$
+    \item $Z = \sqrt{R^2 + X_L^2}$
+    \item $I = \frac{V}{Z}$
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Series RLC Resonance}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Resonance:} $X_L = X_C$ (cancel out!), Z = R only (minimum)
+    \item \textbf{Resonant frequency:} $f_r = \frac{1}{2\pi\sqrt{LC}}$
+    \item \textbf{At resonance:} Huge current/voltage, energy oscillates L$\leftrightarrow$C
+    \item \textbf{Danger:} Can destroy components if unintended!
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Resonance Condition:}
+
+At specific frequency, $X_L = X_C$:
+
+$2\pi f_r L = \frac{1}{2\pi f_r C}$
+
+Solving: $f_r = \frac{1}{2\pi\sqrt{LC}}$
+
+\textbf{At resonance:}
+\begin{itemize}
+    \item Reactances cancel: $X_L - X_C = 0$
+    \item Impedance: $Z = R$ (minimum!)
+    \item Current maximum: $I = \frac{V}{R}$
+    \item Circuit acts purely resistive
+    \item Huge voltages across L and C (Q factor amplification)
+\end{itemize}
+
+\textbf{Energy oscillation:}
+\begin{itemize}
+    \item Energy transfers L $\leftrightarrow$ C each half cycle
+    \item Magnetic field (L) $\leftrightarrow$ Electric field (C)
+    \item Harmonic oscillator
+    \item Only R dissipates energy
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Radio tuning (select frequency)
+    \item Filters (bandpass)
+    \item Oscillators
+    \item Matching networks
+\end{itemize}
+
+\textbf{Danger:}
+\begin{itemize}
+    \item Accidental resonance in circuits
+    \item Even PCB traces have small L, stray C
+    \item Can cause oscillations, component damage
+    \item Must consider in high-frequency design
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples}
+\begin{examplebox}
+\textbf{Example:} L = 100 mH, C = 100 $\mu$F
+
+Resonant frequency:
+\begin{itemize}
+    \item $f_r = \frac{1}{2\pi\sqrt{0.1 \times 0.0001}}$
+    \item $f_r = \frac{1}{2\pi\sqrt{10^{-5}}} = \frac{1}{2\pi \times 0.00316}$
+    \item $f_r = \frac{1}{0.01987} = 50.3$ Hz
+\end{itemize}
+
+At 50.3 Hz: $X_L = X_C$, they cancel, Z = R only!
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Resonance:} $f_r = \frac{1}{2\pi\sqrt{LC}}$ where $X_L = X_C$
+    \item \textbf{Impedance:} Minimum (Z=R), maximum current
+    \item \textbf{Energy:} Oscillates between L and C fields
+    \item \textbf{Applications:} Tuning, filters, oscillators
+    \item \textbf{Caution:} Unintended resonance can damage circuits
+\end{enumerate}
+
+\textbf{Interview Q:}
+\textit{Q: What happens at resonance in RLC circuit?} \\
+A: $X_L=X_C$ cancel, Z=R minimum, huge current flows, energy oscillates between inductor and capacitor.
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Transformers (Step-Up, Step-Down, Isolation)}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Construction:} Two inductors on shared iron/ferrite core
+    \item \textbf{Voltage ratio:} $\frac{V_s}{V_p} = \frac{N_s}{N_p}$ (turns ratio)
+    \item \textbf{Current ratio:} $\frac{I_s}{I_p} = \frac{N_p}{N_s}$ (inverse!)
+    \item \textbf{Power conserved:} $V_pI_p \approx V_sI_s$ (ideal)
+    \item \textbf{AC only:} DC doesn't work (no changing field)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Transformer Principle:}
+
+\begin{enumerate}
+    \item AC current in primary $\rightarrow$ changing magnetic field in core
+    \item Changing field links to secondary coil
+    \item Induces voltage in secondary (Faraday's Law)
+    \item Energy transferred via magnetic field (no electrical connection!)
+\end{enumerate}
+
+\textbf{Key Equations:}
+
+\textbf{Voltage transformation:}
+\begin{itemize}
+    \item $\frac{V_{secondary}}{V_{primary}} = \frac{N_{secondary}}{N_{primary}}$
+    \item More turns $\rightarrow$ higher voltage
+    \item Fewer turns $\rightarrow$ lower voltage
+\end{itemize}
+
+\textbf{Current transformation:}
+\begin{itemize}
+    \item $\frac{I_{secondary}}{I_{primary}} = \frac{N_{primary}}{N_{secondary}}$
+    \item Inverse relationship!
+    \item Higher voltage $\rightarrow$ lower current (and vice versa)
+\end{itemize}
+
+\textbf{Power conservation:}
+\begin{itemize}
+    \item Ideal: $P_{out} = P_{in}$
+    \item $V_s I_s = V_p I_p$
+    \item If V doubles, I halves
+    \item Real: 90-99\% efficient (core losses, copper losses)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Three Types:}
+
+\textbf{1. Step-Down Transformer:}
+\begin{itemize}
+    \item $N_s < N_p$ (fewer secondary turns)
+    \item $V_s < V_p$ (lower output voltage)
+    \item $I_s > I_p$ (higher output current)
+    \item Example: 120V AC $\rightarrow$ 12V AC (10:1 ratio)
+    \item Use: Power supplies, voltage reduction
+\end{itemize}
+
+\textbf{2. Step-Up Transformer:}
+\begin{itemize}
+    \item $N_s > N_p$ (more secondary turns)
+    \item $V_s > V_p$ (higher output voltage)
+    \item $I_s < I_p$ (lower output current)
+    \item Example: 120V $\rightarrow$ 10kV (transmission lines)
+    \item Use: Power transmission, voltage multiplication
+\end{itemize}
+
+\textbf{3. Isolation Transformer:}
+\begin{itemize}
+    \item $N_s = N_p$ (same turns)
+    \item $V_s = V_p$ (same voltage)
+    \item $I_s = I_p$ (same current)
+    \item Purpose: Galvanic isolation, safety, break ground loops
+    \item No electrical connection between primary/secondary
+    \item Prevents DC, capacitive coupling
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why AC Only?}
+
+\textbf{AC (works):}
+\begin{itemize}
+    \item Constantly changing current
+    \item Constantly changing magnetic field
+    \item Changing field induces voltage
+\end{itemize}
+
+\textbf{DC (doesn't work):}
+\begin{itemize}
+    \item Constant current
+    \item Static magnetic field (after initial transient)
+    \item No change $\rightarrow$ no induced voltage
+    \item Secondary voltage = 0
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples}
+\begin{examplebox}
+\textbf{Example 1: Step-Down}
+
+Primary: 120V, 100 turns \\
+Secondary: 10 turns
+
+Voltage ratio:
+\begin{itemize}
+    \item $\frac{V_s}{120} = \frac{10}{100} = 0.1$
+    \item $V_s = 12$~V
+\end{itemize}
+
+If load draws 2A from secondary:
+\begin{itemize}
+    \item $\frac{I_s}{I_p} = \frac{N_p}{N_s} = \frac{100}{10} = 10$
+    \item $I_p = \frac{2}{10} = 0.2$~A
+\end{itemize}
+
+Power: $P_s = 12 \times 2 = 24$~W, $P_p = 120 \times 0.2 = 24$~W $\checkmark$
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Step-Up}
+
+Primary: 230V, 50 turns \\
+Secondary: 500 turns (10:1 ratio)
+
+Voltage: $V_s = 230 \times \frac{500}{50} = 2300$~V
+
+If primary draws 10A:
+\begin{itemize}
+    \item $I_s = 10 \times \frac{50}{500} = 1$~A
+    \item Higher voltage, lower current!
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Voltage:} $\frac{V_s}{V_p} = \frac{N_s}{N_p}$ (proportional to turns)
+    
+    \item \textbf{Current:} $\frac{I_s}{I_p} = \frac{N_p}{N_s}$ (inverse!)
+    
+    \item \textbf{Power:} Conserved (ideal): $V_pI_p = V_sI_s$
+    
+    \item \textbf{Step-down:} $N_s < N_p$, lower V, higher I
+    
+    \item \textbf{Step-up:} $N_s > N_p$, higher V, lower I
+    
+    \item \textbf{Isolation:} $N_s = N_p$, same V and I, breaks ground
+    
+    \item \textbf{AC only:} Requires changing field to induce voltage
+    
+    \item \textbf{Symbol:} Two inductors facing each other with core lines
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} How does transformer work? \\
+    \textit{A:} AC in primary creates changing magnetic field in core. This induces voltage in secondary via electromagnetic induction.
+    
+    \item \textbf{Q:} Why doesn't transformer work with DC? \\
+    \textit{A:} DC creates static magnetic field (no change). No changing field = no induced voltage.
+    
+    \item \textbf{Q:} If transformer steps up voltage, what happens to current? \\
+    \textit{A:} Current decreases (inverse ratio). Power is conserved: higher V $\times$ lower I = same power.
+    
+    \item \textbf{Q:} What's the purpose of isolation transformer? \\
+    \textit{A:} Breaks electrical connection while transferring power. Prevents ground loops, improves safety, blocks DC.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Power supplies (step-down 120V$\rightarrow$12V)
+    \item Power transmission (step-up to kV range)
+    \item Audio equipment (impedance matching)
+    \item Isolation (safety, medical equipment)
+    \item Voltage multiplication (high voltage generation)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Long-Distance Power Transmission}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Problem:} Power loss in wires = $P_{loss} = I^2R$
+    \item \textbf{Solution:} High voltage $\rightarrow$ low current for same power
+    \item \textbf{Example:} 100kW at 1kV loses 10kW, at 10kV loses only 0.1kW (100$\times$ better!)
+    \item Transformers enable efficient long-distance transmission
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Power Transmission Problem:}
+
+\textbf{Power loss in conductors:}
+\begin{itemize}
+    \item $P_{loss} = I^2 R_{wire}$
+    \item Loss proportional to current squared!
+    \item Long wires have significant resistance
+    \item High current $\rightarrow$ enormous losses
+\end{itemize}
+
+\textbf{Solution -- High Voltage Transmission:}
+
+For same power: $P = VI$
+
+\textbf{Low voltage transmission:}
+\begin{itemize}
+    \item High current needed
+    \item $I^2R$ losses huge
+    \item Example: 100kW at 1kV $\rightarrow$ 100A $\rightarrow$ massive loss
+\end{itemize}
+
+\textbf{High voltage transmission:}
+\begin{itemize}
+    \item Low current needed
+    \item $I^2R$ losses small
+    \item Example: 100kW at 100kV $\rightarrow$ 1A $\rightarrow$ minimal loss
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Transmission System:}
+
+\begin{enumerate}
+    \item \textbf{Power plant:} Generates 11-33 kV
+    \item \textbf{Step-up transformer:} 100-700 kV (transmission voltage)
+    \item \textbf{Long-distance lines:} High voltage, low current
+    \item \textbf{Substation:} Step-down to 33-66 kV (distribution)
+    \item \textbf{Local transformer:} Step-down to 120/240V (residential)
+\end{enumerate}
+
+\textbf{Why Westinghouse AC Won:}
+\begin{itemize}
+    \item Edison's DC couldn't be transformed (no transformers for DC)
+    \item AC easily stepped up/down with transformers
+    \item Enabled long-distance transmission
+    \item AC won the "War of Currents"
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples}
+\begin{examplebox}
+\textbf{Comparison: 100 kW over 1 km line (R=1$\Omega$)}
+
+\textbf{Option 1: 1000V transmission}
+\begin{itemize}
+    \item Current: $I = \frac{P}{V} = \frac{100000}{1000} = 100$~A
+    \item Loss: $P_{loss} = I^2R = 100^2 \times 1 = 10,000$~W = 10 kW
+    \item Efficiency: $\frac{90}{100} = 90\%$ (10\% lost!)
+\end{itemize}
+
+\textbf{Option 2: 10,000V transmission}
+\begin{itemize}
+    \item Current: $I = \frac{100000}{10000} = 10$~A
+    \item Loss: $P_{loss} = 10^2 \times 1 = 100$~W = 0.1 kW
+    \item Efficiency: $\frac{99.9}{100} = 99.9\%$ (0.1\% lost!)
+\end{itemize}
+
+\textbf{Result:} 10$\times$ voltage $\rightarrow$ 1/10 current $\rightarrow$ 1/100 loss (100$\times$ improvement!)
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Loss formula:} $P_{loss} = I^2R$ (proportional to current squared!)
+    
+    \item \textbf{High voltage advantage:} Same power, lower current, much less loss
+    
+    \item \textbf{Example:} 10$\times$ voltage $\rightarrow$ 1/10 current $\rightarrow$ 1/100 loss
+    
+    \item \textbf{Transformers critical:} Enable voltage step-up/step-down
+    
+    \item \textbf{Transmission voltages:} 100-700 kV typical
+    
+    \item \textbf{AC advantage:} Easy to transform (DC couldn't do this historically)
+\end{enumerate}
+
+\vspace{0.2cm}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} Why transmit power at high voltage? \\
+    \textit{A:} High voltage allows low current for same power. Since loss = I²R, lower current dramatically reduces loss.
+    
+    \item \textbf{Q:} How much does loss reduce if voltage doubles? \\
+    \textit{A:} Current halves, so loss (I²R) reduces to 1/4 (4$\times$ better).
+    
+    \item \textbf{Q:} Why can't we use high voltage in homes? \\
+    \textit{A:} Dangerous! Transformers step down to safe 120/240V for residential use.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Formulas:}
+\begin{itemize}
+    \item \textbf{Power:} $P = VI$
+    \item \textbf{Current:} $I = \frac{P}{V}$
+    \item \textbf{Loss:} $P_{loss} = I^2R_{wire}$
+    \item \textbf{Efficiency:} $\eta = \frac{P_{delivered}}{P_{generated}} = \frac{P - P_{loss}}{P}$
+\end{itemize}
+\end{keypointsbox}
+

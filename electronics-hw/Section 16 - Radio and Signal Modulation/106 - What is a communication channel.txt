@@ -1,0 +1,117 @@
+We call we call me a call.
+
+It's radio time in this chapter, we will be covering broadly for important topics, namely, we will
+
+be understanding how radio waves work.
+
+We will be seeing how transmitters and receivers work.
+
+We'll be looking then at the different types of relations.
+
+And last but not least, we will be building a simple radio.
+
+However, before we get into what radio waves are, let us understand first what is a communication?
+
+You see, communication begins that somebody wants to convey information to somebody else.
+
+That information must be presented as some kind of pattern.
+
+For example, speech is a pattern.
+
+Smoke signals are a pattern.
+
+Talking drums are a pattern.
+
+Telephone calls are pattern.
+
+Morse code is a pattern.
+
+These patterns then travel over a communication channel typically involving a medium.
+
+For instance, smoke passing through air electrical signals passing through wire or speech, passing
+
+through the atmosphere as a series of pressure waves.
+
+Now, whilst the pattern reaches the recipient, it needs to be decoded and it needs to be understood.
+
+So somebody needs to understand what the dots and dashes of Morse code mean, or what the patterns of
+
+smoke signals mean, or simply to process the sounds that make up human speech.
+
+Lastly, it's received in a form in which the recipient can actually understand the information and
+
+act on it.
+
+That's the basic model of all types of communication.
+
+And actually, this is the way in which her radio communication works.
+
+Somebody speaks into a radio.
+
+It gets encoded or turned into a pattern by the transmitter.
+
+It then gets sent us an electromagnetic waves through a communication channel, which in this case is
+
+the atmosphere which is then received by a radio.
+
+After that, it is decoded.
+
+So the pattern is understood and get converted again to sound that the receiver understands and can
+
+act on.
+
+Now, I don't know whether you heard about the golden age of radio.
+
+This is a period roughly from 1930 through the 1940s, when the medium of commercial broadcast radio
+
+grew into the fabric of daily life in the United States, providing news and entertainment to a country
+
+struggling with economic depression and war.
+
+During this time, radio was booming.
+
+In reality, radio has never been more popular than it is right now.
+
+In the 1930s and 40s, most people knew radio for just one thing broadcasting audio signals.
+
+Today, audio broadcast or radio is as commonplace as ever.
+
+But the list of other types of information being broadcast by radio technology has skyrocketed.
+
+First, there was broadcast television, which is nothing more than the combination of audio and video
+
+broadcasts over radio.
+
+Then there were cell phones which use radio to extend the world's telephone network to places that phone
+
+cables cannot reach.
+
+Then there was wireless networking, which replaced bulky computer network cables with data transmitted
+
+over radio.
+
+Nowadays, there are cellular data plans which transmit internet data over radio, and there are many
+
+other popular uses for radio technology, including radar GPS, navigation system and wireless Bluetooth
+
+devices.
+
+As I mentioned in this chapter, you will learn some of the basic concepts of radio, including what
+
+it is, how it works and how it was is colored along the way.
+
+You will learn a few interesting and in some cases sad stories about the early pioneers of radio.
+
+And by the time you are done, you will learn how to build a crystal radio.
+
+The simplest of all radio circuits.
+
+One more thing I want to mention is that throughout this chapter, I occasionally refer to radio as
+
+if it's only for the broadcast of sound.
+
+Whenever I do, just keep in mind that radio is also used for broadcasting, video and digital data,
+
+as well as other types of information.
+
+And now let's see what radio waves are.

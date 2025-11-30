@@ -1,0 +1,97 @@
+Great.
+
+So, again, we have this amplifier stage here that receives the incoming signal, which is a speech
+
+or song, whatever, if the amplified and will eventually drive a loud speaker, the output impedance
+
+is represented as a resistance increase.
+
+If it's the with the output, impedance is again, nothing else but the combined effect of all the resistance's
+
+capacity reoccurrences and inductive reactants is connected to the output side of the circuit.
+
+This circuit will output an AC signal which is represented by this resource.
+
+Now, an important fact that you have to remember is that usually output dependencies should be low,
+
+less than a tenth of the load impedance connected to the output.
+
+If an output impedance is too high, it will be unable to supply a sufficiently strong signal to the
+
+load because most of the signals voltage will be lost inside the circuit, driving current through the
+
+output impedance.
+
+Is that out?
+
+The road could be a simple component or the input impedance of another circuit.
+
+So let's go to our simulator to understand why the output of the circuit should low.
+
+All right.
+
+So, again, we use a source here instead of an AC.
+
+Just understand this concept easier.
+
+And the signal is the one that the amplifier stage outputs after receiving that weak AC signal as input.
+
+So depending on how big the amplification is, this output voltage can be firewall's towards 100 volts,
+
+whatever the problem is with this output impedance or and by the way, this load here is, let's say,
+
+a loudspeaker.
+
+That would make sense.
+
+Right.
+
+And of course, the loudspeaker itself will also have an input impedance, which is represented by this
+
+resistance.
+
+I guess it's pretty easy to see why this output impedance of the circuit should be low now that the
+
+output impedance of the amplifier is low.
+
+The loudspeaker receives the entire ten Walt Disney signal without getting attenuated.
+
+If we increase the output impedance to, say, 200 on the loudspeaker will receive only nine I mean,
+
+eight point three volts instead of 10 volts.
+
+That's because the output impedance, as you can see, of the First Circuit with the input impedance
+
+of the Second Circuit, that in this case is just a loudspeaker will form of what is divider.
+
+And by using the voltage divided equation, we can clearly see why this voltage drops even before entering
+
+the loudspeaker.
+
+So I hope you understood why the input pedals should be high and the output impedance low.
+
+Maybe it's difficult to see exactly how this all works out, since it's quite abstract what we did here
+
+with all these boxes and things like that.
+
+Once we learn about operation amplifiers, for example, you will see that a very important feature
+
+of it is exactly that.
+
+Its input impedance is very high and the output impedance very low.
+
+These characteristics of the AMP makes it quite an excellent amplifier, since it features a very high
+
+input impedance, it can amplify very weak signals.
+
+By weak, I mean signals that are very low in voltage and in current as well.
+
+And because it features a very low output impedance, it can drive almost any kind of load in the next
+
+course.
+
+Let's talk about another interesting topic, cohodas impedance matching.
+
+See you next course.
+
+

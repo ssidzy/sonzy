@@ -1,0 +1,1820 @@
+% ====================================================================
+% SECTION 06: Electric Power P[W] Fundamentals
+% ====================================================================
+
+\section{Section 06 -- Electric Power P[W] Fundamentals}
+
+% --------------------------------------------------------------------
+\subsection{Electric Power - Introduction}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Power:} Rate of energy transfer over time
+    \item \textbf{Electric Power:} How fast electrical energy is converted to other forms
+    \item Energy cannot be created/destroyed - only transformed
+    \item Producers supply power (batteries), consumers use power (LEDs, motors)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Why Power Matters:}
+
+\textit{Two fundamental reasons:}
+\begin{itemize}
+    \item \textbf{Cost:} Energy costs money - batteries and electricity aren't free
+    \item \textbf{Safety:} Energy can be harmful (heat, radiation, sound, nuclear)
+\end{itemize}
+
+\textit{Power measures:}
+\begin{itemize}
+    \item How fast pennies drain from your wallet
+    \item How fast energy is being used or produced
+    \item Potential for component damage (overheating, smoking resistors)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{What is Electric Power?}
+
+\textit{General definition:}
+\begin{itemize}
+    \item Power = rate at which energy is transferred or transformed
+    \item "Rate" means per unit time
+    \item More power = faster energy transfer
+\end{itemize}
+
+\textit{Energy basics:}
+\begin{itemize}
+    \item Energy = ability to move something or make change happen
+    \item Energy cannot be created or destroyed (conservation law)
+    \item Energy can only be \textbf{transformed} from one form to another
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Forms of Energy:}
+
+\textit{Many types exist:}
+\begin{itemize}
+    \item \textbf{Mechanical:} Motion, kinetic energy
+    \item \textbf{Electrical:} Moving electrons, current flow
+    \item \textbf{Chemical:} Batteries, fuel
+    \item \textbf{Electromagnetic:} Light, radio waves
+    \item \textbf{Thermal:} Heat energy
+    \item \textbf{Nuclear:} Atomic reactions
+    \item \textbf{Sound:} Acoustic energy
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Energy Transformations in Electronics:}
+
+\textit{Electronics converts energy to/from electrical form:}
+
+\textbf{Electric to Light (LED):}
+\begin{itemize}
+    \item Electrical energy $\rightarrow$ Electromagnetic energy
+    \item LED consumes electric power, produces light
+    \item Some energy lost as heat (byproduct)
+\end{itemize}
+
+\textbf{Electric to Motion (Motor):}
+\begin{itemize}
+    \item Electrical energy $\rightarrow$ Mechanical energy
+    \item Motor consumes electric power, produces rotation
+    \item Also produces heat and sound (losses)
+\end{itemize}
+
+\textbf{Electric to Sound (Buzzer):}
+\begin{itemize}
+    \item Electrical energy $\rightarrow$ Acoustic energy
+    \item Buzzer consumes electric power, produces sound waves
+\end{itemize}
+
+\textbf{Chemical to Electric (Battery):}
+\begin{itemize}
+    \item Chemical energy $\rightarrow$ Electrical energy
+    \item Battery produces electric power from chemical reactions
+    \item 9V alkaline battery converts chemical potential to voltage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Electric Energy Flow:}
+
+\textit{How electric energy works:}
+\begin{enumerate}
+    \item Starts as \textbf{electric potential energy} (voltage)
+    \item Electrons flow through potential difference
+    \item Potential energy converts to \textbf{electric energy} (current $\times$ voltage)
+    \item Electric energy transforms to other useful forms (light, heat, motion)
+\end{enumerate}
+
+\vspace{0.15cm}
+
+\textbf{Power Consumers vs Producers:}
+
+\textit{Consumers:}
+\begin{itemize}
+    \item Transform electric energy INTO another form
+    \item Examples: Resistors (heat), LEDs (light), motors (motion)
+    \item \textbf{Consume} or \textbf{dissipate} power
+    \item Power is positive (energy leaving electrical form)
+\end{itemize}
+
+\textit{Producers:}
+\begin{itemize}
+    \item Transform energy FROM another form into electric
+    \item Examples: Batteries (chemical$\rightarrow$electric), solar cells (light$\rightarrow$electric)
+    \item \textbf{Supply} or \textbf{generate} power
+    \item Power is supplied to circuit
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Power Measures Two Things:}
+
+\textit{Electric power combines:}
+\begin{enumerate}
+    \item \textbf{How much:} Amount of electric energy transferred (Joules)
+    \item \textbf{How fast:} Rate of transfer (per second)
+\end{enumerate}
+
+\textit{Result:}
+\begin{itemize}
+    \item Power = Energy / Time
+    \item Units: Joules per second
+    \item Standard name: Watt (W)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Conservation in Circuits:}
+
+\textit{Energy conservation law:}
+\begin{itemize}
+    \item Power supplied = Power consumed (in steady state)
+    \item Battery power out = Sum of all component powers
+    \item No energy created or destroyed
+    \item All supplied energy eventually becomes heat (usually)
+\end{itemize}
+
+\textit{Example circuit:}
+\begin{itemize}
+    \item Battery supplies 10W
+    \item LED consumes 2W (1.8W light + 0.2W heat)
+    \item Resistor consumes 8W (all becomes heat)
+    \item Total consumed: 2W + 8W = 10W $\checkmark$
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Energy Transformations}
+
+\textit{LED circuit:}
+\begin{itemize}
+    \item 5V battery powers LED through resistor
+    \item Battery: Chemical $\rightarrow$ Electric (produces power)
+    \item LED: Electric $\rightarrow$ Light + Heat (consumes power)
+    \item Resistor: Electric $\rightarrow$ Heat (consumes power)
+\end{itemize}
+
+\textbf{Energy flow:}
+\begin{equation*}
+    \text{Chemical} \xrightarrow{\text{Battery}} \text{Electric} \xrightarrow{\text{LED+Resistor}} \text{Light + Heat}
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Power Scale Examples}
+
+\textit{Different power levels in real devices:}
+
+\textbf{Arduino (Microcontroller):}
+\begin{itemize}
+    \item Operating power: 100-500 mW (milliwatts)
+    \item Low power sleep mode: 1-10 mW
+    \item Range: Microwatts to milliwatts
+\end{itemize}
+
+\textbf{LED Lighting:}
+\begin{itemize}
+    \item Small indicator LED: 20-100 mW
+    \item Standard LED bulb: 5-15 W
+    \item High-power LED: 1-10 W
+\end{itemize}
+
+\textbf{Laptop Computer:}
+\begin{itemize}
+    \item Typical operation: 30-65 W
+    \item Heavy load: 100-150 W
+    \item Range: Standard watts
+\end{itemize}
+
+\textbf{Household:}
+\begin{itemize}
+    \item Average house: 1-5 kW (kilowatts)
+    \item Air conditioner: 2-5 kW
+    \item Electric stove: 2-3 kW
+\end{itemize}
+
+\textbf{Large Stadium:}
+\begin{itemize}
+    \item Lighting and facilities: 1-10 MW (megawatts)
+    \item Major sporting event: 5-20 MW
+\end{itemize}
+
+\textbf{Power Station:}
+\begin{itemize}
+    \item Large coal plant: 500-2000 MW
+    \item Nuclear plant: 1-2 GW (gigawatts)
+    \item Hydroelectric dam: 1-10 GW
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Motor Energy Conversion}
+
+\textit{DC motor powered by 12V battery:}
+
+\textbf{Energy transformations:}
+\begin{itemize}
+    \item Input: 12V $\times$ 500mA = 6W electrical
+    \item Output: Mechanical rotation (shaft work)
+    \item Losses: Heat (70\%), Sound (5\%)
+    \item Useful mechanical: ~25\% = 1.5W
+\end{itemize}
+
+\textbf{Energy accounting:}
+\begin{itemize}
+    \item 6W supplied (chemical$\rightarrow$electric in battery)
+    \item 1.5W useful mechanical work
+    \item 4.2W lost as heat
+    \item 0.3W lost as sound
+    \item Total: 6W consumed = 6W supplied $\checkmark$
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Battery Lifetime Estimation}
+
+\textit{Given:}
+\begin{itemize}
+    \item 9V battery capacity: 500 mAh (milliamp-hours)
+    \item Circuit draws: 50 mA constant
+\end{itemize}
+
+\textbf{Battery life:}
+\begin{equation*}
+    \text{Time} = \frac{\text{Capacity}}{\text{Current}} = \frac{500\,\text{mAh}}{50\,\text{mA}} = 10\text{ hours}
+\end{equation*}
+
+\textbf{Energy used:}
+\begin{itemize}
+    \item Power: $P = 9V \times 50mA = 450mW = 0.45W$
+    \item Time: 10 hours = 36,000 seconds
+    \item Energy: $E = P \times t = 0.45 \times 36000 = 16,200\text{ J}$
+\end{itemize}
+
+\textbf{Cost (if from wall outlet):}
+\begin{itemize}
+    \item Energy: 0.45W $\times$ 10h = 4.5 Wh = 0.0045 kWh
+    \item At \$0.12/kWh: 0.0045 $\times$ 0.12 = \$0.00054 (\textasciitilde{}0.05 cents)
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Power Prefix Practice}
+
+\textit{Convert between units:}
+
+\textbf{Microwatts to watts:}
+\begin{equation*}
+    500\,\mu W = 500 \times 10^{-6}W = 0.0005W
+\end{equation*}
+
+\textbf{Milliwatts to watts:}
+\begin{equation*}
+    250\,mW = 250 \times 10^{-3}W = 0.25W
+\end{equation*}
+
+\textbf{Kilowatts to watts:}
+\begin{equation*}
+    3.5\,kW = 3.5 \times 10^{3}W = 3500W
+\end{equation*}
+
+\textbf{Megawatts to watts:}
+\begin{equation*}
+    2\,MW = 2 \times 10^{6}W = 2,000,000W
+\end{equation*}
+
+\textbf{Gigawatts to watts:}
+\begin{equation*}
+    1.21\,GW = 1.21 \times 10^{9}W = 1,210,000,000W
+\end{equation*}
+
+(Yes, that's a Back to the Future reference - DeLorean time machine!)
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Power:} Rate of energy transfer (Energy/Time)
+    \item \textbf{Conservation:} Energy cannot be created/destroyed, only transformed
+    \item \textbf{Consumers:} Convert electric$\rightarrow$other (LEDs, motors, resistors)
+    \item \textbf{Producers:} Convert other$\rightarrow$electric (batteries, solar cells)
+    \item \textbf{Forms:} Electrical, mechanical, chemical, electromagnetic, thermal, sound
+    \item \textbf{Why care:} Cost (money) and safety (heat, damage)
+    \item \textbf{Circuit balance:} Power supplied = Power consumed
+    \item \textbf{Transformations:} Always involve some loss (usually heat)
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What is electric power? \\
+    \textit{A:} Rate at which electrical energy is transferred or transformed.
+    
+    \item \textbf{Q:} Can energy be created or destroyed? \\
+    \textit{A:} No - only transformed from one form to another (conservation law).
+    
+    \item \textbf{Q:} What energy transformation happens in an LED? \\
+    \textit{A:} Electrical energy $\rightarrow$ Electromagnetic (light) + Heat.
+    
+    \item \textbf{Q:} Is a battery a power consumer or producer? \\
+    \textit{A:} Producer - converts chemical energy to electrical.
+    
+    \item \textbf{Q:} Is a resistor a power consumer or producer? \\
+    \textit{A:} Consumer - converts electrical energy to heat.
+    
+    \item \textbf{Q:} Why do we care about power in circuits? \\
+    \textit{A:} Cost (energy costs money) and safety (too much power causes heat/damage).
+    
+    \item \textbf{Q:} What happens to energy supplied by battery? \\
+    \textit{A:} Consumed by components and transformed to other forms (light, heat, motion).
+\end{itemize}
+
+\textbf{Energy Transformation Examples:}
+\begin{itemize}
+    \item LED: Electric $\rightarrow$ Light + Heat
+    \item Motor: Electric $\rightarrow$ Mechanical + Heat + Sound
+    \item Buzzer: Electric $\rightarrow$ Sound + Heat
+    \item Resistor: Electric $\rightarrow$ Heat (100\%)
+    \item Battery: Chemical $\rightarrow$ Electric
+    \item Solar cell: Light $\rightarrow$ Electric
+\end{itemize}
+
+\textbf{Power Scale Reference:}
+\begin{itemize}
+    \item $\mu$W (microwatt): $10^{-6}$ W - Low-power sensors
+    \item mW (milliwatt): $10^{-3}$ W - Arduino, small LEDs
+    \item W (watt): $10^{0}$ W - Laptops, light bulbs
+    \item kW (kilowatt): $10^{3}$ W - Household appliances
+    \item MW (megawatt): $10^{6}$ W - Large buildings, stadiums
+    \item GW (gigawatt): $10^{9}$ W - Power stations
+\end{itemize}
+
+\textbf{Common Misconceptions:}
+\begin{itemize}
+    \item Power is NOT voltage (voltage is potential)
+    \item Power is NOT current (current is flow rate)
+    \item Current doesn't "get used up" (energy does)
+    \item More voltage doesn't always mean more power (depends on current too)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Wattage}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Watt (W):} Unit of power = Joules per second
+    \item Energy measured in Joules; Power = Energy/Time
+    \item Symbol: W (uppercase, not to confuse with "w" for work)
+    \item Prefixes: $\mu$W, mW, W, kW, MW, GW (depends on application)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{The Watt - Official Unit of Power:}
+
+\vspace{0.15cm}
+
+\textbf{Definition:}
+
+\textit{Power measures energy transfer rate:}
+\begin{itemize}
+    \item Energy measured in \textbf{Joules (J)}
+    \item Time measured in \textbf{seconds (s)}
+    \item Power = Energy / Time = Joules/second
+\end{itemize}
+
+\textit{International System of Units (SI):}
+\begin{itemize}
+    \item Official name: \textbf{Watt}
+    \item Symbol: \textbf{W}
+    \item Equivalence: 1 W = 1 J/s
+    \item Named after James Watt (Scottish inventor)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Mathematical Expression:}
+
+\begin{equation*}
+    P = \frac{E}{t}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $P$ = Power (Watts)
+    \item $E$ = Energy (Joules)
+    \item $t$ = Time (seconds)
+\end{itemize}
+
+\textit{Rearranging:}
+\begin{align*}
+    E &= P \times t \quad \text{(Energy from power and time)} \\
+    t &= \frac{E}{P} \quad \text{(Time from energy and power)}
+\end{align*}
+
+\vspace{0.15cm}
+
+\textbf{Prefixes for Different Scales:}
+
+\textit{Very common in electronics and power systems:}
+
+\textbf{Microwatt ($\mu$W):}
+\begin{itemize}
+    \item $1\,\mu W = 10^{-6}$ W = 0.000001 W
+    \item Ultra-low power devices
+    \item Examples: Watches, pacemakers, wireless sensors
+\end{itemize}
+
+\textbf{Milliwatt (mW):}
+\begin{itemize}
+    \item $1\,mW = 10^{-3}$ W = 0.001 W
+    \item Low power electronics
+    \item Examples: Arduino, LEDs, small circuits
+\end{itemize}
+
+\textbf{Watt (W):}
+\begin{itemize}
+    \item Base unit = 1 W
+    \item Common consumer electronics
+    \item Examples: Laptops, light bulbs, phone chargers
+\end{itemize}
+
+\textbf{Kilowatt (kW):}
+\begin{itemize}
+    \item $1\,kW = 10^{3}$ W = 1,000 W
+    \item Household and automotive power
+    \item Examples: Appliances, electric vehicles, HVAC
+\end{itemize}
+
+\textbf{Megawatt (MW):}
+\begin{itemize}
+    \item $1\,MW = 10^{6}$ W = 1,000,000 W
+    \item Industrial and large facilities
+    \item Examples: Factories, data centers, large buildings
+\end{itemize}
+
+\textbf{Gigawatt (GW):}
+\begin{itemize}
+    \item $1\,GW = 10^{9}$ W = 1,000,000,000 W
+    \item Power generation and distribution
+    \item Examples: Power plants, electrical grids, time machines
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Application-Specific Ranges:}
+
+\textbf{Microcontrollers ($\mu$W to mW):}
+\begin{itemize}
+    \item Arduino Uno: 200-500 mW (active)
+    \item Arduino sleep mode: 1-10 mW
+    \item ESP32 WiFi: 100-300 mW
+    \item ATtiny sleep: 1-100 $\mu$W
+\end{itemize}
+
+\textbf{Consumer Electronics (W range):}
+\begin{itemize}
+    \item LED bulb: 5-15 W
+    \item Laptop: 30-100 W
+    \item Desktop PC: 100-500 W
+    \item Phone charger: 5-20 W
+\end{itemize}
+
+\textbf{Household (kW range):}
+\begin{itemize}
+    \item Refrigerator: 100-800 W (0.1-0.8 kW)
+    \item Microwave: 600-1200 W (0.6-1.2 kW)
+    \item Air conditioner: 2-5 kW
+    \item Electric water heater: 3-5 kW
+    \item Whole house: 1-5 kW average
+\end{itemize}
+
+\textbf{Large Scale (MW to GW):}
+\begin{itemize}
+    \item Sports stadium: 5-20 MW
+    \item Small town: 10-50 MW
+    \item Large city: 1-10 GW
+    \item Coal power plant: 500-2000 MW
+    \item Nuclear plant: 1-2 GW
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Energy vs Power - Critical Distinction:}
+
+\textit{Energy (Joules):}
+\begin{itemize}
+    \item \textbf{Amount} of work that can be done
+    \item Total capacity
+    \item Stored in batteries, capacitors, fuel
+    \item Example: "Battery stores 10,000 J"
+\end{itemize}
+
+\textit{Power (Watts):}
+\begin{itemize}
+    \item \textbf{Rate} at which work is done
+    \item How fast energy is used/produced
+    \item Example: "Circuit consumes 5 W"
+\end{itemize}
+
+\textit{Analogy:}
+\begin{itemize}
+    \item Energy = Water in bucket (amount)
+    \item Power = Flow rate from bucket (how fast)
+    \item 10 liters flowing at 1 L/s $\rightarrow$ 10 seconds to empty
+    \item 10,000 J at 5 W $\rightarrow$ 2,000 seconds to deplete
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Watt-Hour (Wh) - Energy Unit:}
+
+\textit{Common in batteries and utilities:}
+\begin{itemize}
+    \item Watt-hour (Wh) = Power $\times$ Time
+    \item 1 Wh = 1 W for 1 hour = 3,600 J
+    \item Kilowatt-hour (kWh) = 1,000 Wh
+\end{itemize}
+
+\textit{Why use Wh instead of J?}
+\begin{itemize}
+    \item More convenient for everyday use
+    \item Easier to understand (watts $\times$ hours)
+    \item Standard on electricity bills (kWh)
+    \item Battery capacity often in mAh or Wh
+\end{itemize}
+
+\textit{Example:}
+\begin{itemize}
+    \item 100W bulb for 10 hours = 1,000 Wh = 1 kWh
+    \item At \$0.12/kWh $\rightarrow$ costs \$0.12
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Energy to Power Conversion}
+
+\textit{Given:}
+\begin{itemize}
+    \item Device uses 5,000 J of energy
+    \item Runs for 50 seconds
+\end{itemize}
+
+\textbf{Calculate power:}
+\begin{equation*}
+    P = \frac{E}{t} = \frac{5000\,J}{50\,s} = \boxed{100\,W}
+\end{equation*}
+
+Device operates at 100 watts.
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Power to Energy Conversion}
+
+\textit{Given:}
+\begin{itemize}
+    \item LED consumes 50 mW
+    \item Operates for 2 hours
+\end{itemize}
+
+\textbf{Calculate energy:}
+\begin{align*}
+    P &= 50\,mW = 0.05\,W \\
+    t &= 2\,hours = 2 \times 3600 = 7200\,s \\
+    E &= P \times t = 0.05 \times 7200 = \boxed{360\,J}
+\end{align*}
+
+Also in watt-hours:
+\begin{equation*}
+    E = 0.05\,W \times 2\,h = 0.1\,Wh
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Unit Conversion Practice}
+
+\textbf{Convert 2,500 mW to watts:}
+\begin{equation*}
+    2500\,mW = 2500 \times 10^{-3} = 2.5\,W
+\end{equation*}
+
+\textbf{Convert 0.003 W to microwatts:}
+\begin{equation*}
+    0.003\,W = 3 \times 10^{-3} = 3\,mW = 3000\,\mu W
+\end{equation*}
+
+\textbf{Convert 5 kW to watts:}
+\begin{equation*}
+    5\,kW = 5 \times 10^{3} = 5000\,W
+\end{equation*}
+
+\textbf{Convert 1.5 MW to kW:}
+\begin{equation*}
+    1.5\,MW = 1.5 \times 10^{6}\,W = 1500\,kW
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Electricity Bill Calculation}
+
+\textit{Given:}
+\begin{itemize}
+    \item 2 kW air conditioner runs 6 hours/day for 30 days
+    \item Electricity rate: \$0.12 per kWh
+\end{itemize}
+
+\textbf{Energy consumed:}
+\begin{align*}
+    E &= P \times t \\
+    &= 2\,kW \times (6\,h/day \times 30\,days) \\
+    &= 2 \times 180 = 360\,kWh
+\end{align*}
+
+\textbf{Cost:}
+\begin{equation*}
+    \text{Cost} = 360\,kWh \times \$0.12/kWh = \boxed{\$43.20}
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Battery Runtime Calculation}
+
+\textit{Given:}
+\begin{itemize}
+    \item Battery capacity: 2,000 mAh at 3.7V
+    \item Device power consumption: 500 mW
+\end{itemize}
+
+\textbf{Battery energy:}
+\begin{align*}
+    E &= V \times Q \\
+    Q &= 2000\,mAh = 2\,Ah = 2 \times 3600 = 7200\,C \\
+    E &= 3.7 \times 7200 = 26{,}640\,J
+\end{align*}
+
+Or in watt-hours:
+\begin{equation*}
+    E = 3.7\,V \times 2\,Ah = 7.4\,Wh
+\end{equation*}
+
+\textbf{Runtime:}
+\begin{align*}
+    t &= \frac{E}{P} = \frac{7.4\,Wh}{0.5\,W} = 14.8\,hours
+\end{align*}
+
+Or in Joules:
+\begin{equation*}
+    t = \frac{26640\,J}{0.5\,W} = 53{,}280\,s = \boxed{14.8\,hours}
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Comparing Power Levels}
+
+\textit{Which uses more power?}
+
+\textbf{Option A:} 500 mW for 10 hours
+\begin{equation*}
+    E_A = 0.5\,W \times 10\,h = 5\,Wh
+\end{equation*}
+
+\textbf{Option B:} 2 W for 2 hours
+\begin{equation*}
+    E_B = 2\,W \times 2\,h = 4\,Wh
+\end{equation*}
+
+\textbf{Result:} Option A uses more \textit{energy} (5 Wh vs 4 Wh), but Option B has higher \textit{power} (2 W vs 0.5 W).
+
+Key distinction: Power is rate, energy is total amount!
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Watt (W):} Unit of power = 1 Joule/second
+    \item \textbf{Formula:} $P = E/t$ (Power = Energy / Time)
+    \item \textbf{Common prefixes:} $\mu$W, mW, W, kW, MW, GW
+    \item \textbf{Energy vs Power:} Energy = amount; Power = rate
+    \item \textbf{Watt-hour (Wh):} Energy unit = Power $\times$ Time
+    \item \textbf{Electricity billing:} kWh (kilowatt-hours)
+    \item \textbf{Named after:} James Watt (Scottish inventor)
+    \item \textbf{Symbol:} W (uppercase)
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What is a watt? \\
+    \textit{A:} Unit of power equal to one joule per second.
+    
+    \item \textbf{Q:} What's the difference between Joules and Watts? \\
+    \textit{A:} Joules measure energy (amount), Watts measure power (rate of energy transfer).
+    
+    \item \textbf{Q:} How many watts in 1 kilowatt? \\
+    \textit{A:} 1,000 watts.
+    
+    \item \textbf{Q:} What is a kilowatt-hour? \\
+    \textit{A:} Energy used by 1 kW device for 1 hour = 3.6 million Joules.
+    
+    \item \textbf{Q:} Device uses 200 mW for 5 hours. Energy consumed? \\
+    \textit{A:} E = 0.2 W $\times$ 5 h = 1 Wh = 3,600 J.
+    
+    \item \textbf{Q:} Typical power range for Arduino? \\
+    \textit{A:} 100-500 mW (milliwatt range).
+\end{itemize}
+
+\textbf{Power Range Guide:}
+\begin{itemize}
+    \item $\mu$W: Ultra-low power (watches, sensors)
+    \item mW: Low power electronics (Arduino, LEDs)
+    \item W: Consumer devices (laptops, bulbs)
+    \item kW: Appliances, vehicles
+    \item MW: Industrial, large buildings
+    \item GW: Power plants, grids
+\end{itemize}
+
+\textbf{Unit Conversion Quick Reference:}
+\begin{itemize}
+    \item 1 W = 1,000 mW = 1,000,000 $\mu$W
+    \item 1 kW = 1,000 W
+    \item 1 MW = 1,000 kW = 1,000,000 W
+    \item 1 GW = 1,000 MW = 1,000,000,000 W
+\end{itemize}
+
+\textbf{Common Calculations:}
+\begin{itemize}
+    \item Power from energy and time: $P = E/t$
+    \item Energy from power and time: $E = P \times t$
+    \item Time from energy and power: $t = E/P$
+    \item Watt-hours to Joules: Wh $\times$ 3,600 = J
+    \item Joules to Watt-hours: J / 3,600 = Wh
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Calculating Power}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Basic formula:} $P = V \times I$ (Power = Voltage $\times$ Current)
+    \item \textbf{With resistance:} $P = I^2 R$ or $P = V^2 / R$ (using Ohm's Law)
+    \item Need any 2 of 3 values (V, I, R) to calculate power
+    \item Power in component = voltage drop $\times$ current through it
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Fundamental Power Equation:}
+
+\vspace{0.15cm}
+
+\textbf{Deriving Power from Basic Definitions:}
+
+\textit{What we know:}
+\begin{itemize}
+    \item \textbf{Voltage (V):} Potential energy per unit charge = Joules/Coulomb
+    \item \textbf{Current (I):} Charge flow per unit time = Coulombs/second
+    \item \textbf{Power (P):} Energy transfer per unit time = Joules/second
+\end{itemize}
+
+\textit{Combining voltage and current:}
+\begin{align*}
+    P &= \frac{\text{Energy}}{\text{Time}} \\
+    &= \frac{\text{Joules}}{\text{second}} \\
+    &= \frac{\text{Joules}}{\text{Coulomb}} \times \frac{\text{Coulombs}}{\text{second}} \\
+    &= V \times I
+\end{align*}
+
+\textbf{Result - Primary Power Formula:}
+\begin{equation*}
+    \boxed{P = V \times I}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $P$ = Power (Watts)
+    \item $V$ = Voltage (Volts)
+    \item $I$ = Current (Amperes)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Using Ohm's Law to Create Alternative Formulas:}
+
+\textit{Ohm's Law reminder:}
+\begin{equation*}
+    V = I \times R \quad \text{or} \quad I = \frac{V}{R}
+\end{equation*}
+
+\vspace{0.15cm}
+
+\textbf{Power Formula 1: Using Voltage and Resistance}
+
+\textit{Start with:} $P = V \times I$
+
+\textit{Substitute:} $I = V/R$
+
+\begin{align*}
+    P &= V \times \frac{V}{R} \\
+    P &= \frac{V^2}{R}
+\end{align*}
+
+\textbf{Result:}
+\begin{equation*}
+    \boxed{P = \frac{V^2}{R}}
+\end{equation*}
+
+\textit{Use when:}
+\begin{itemize}
+    \item Know voltage across component
+    \item Know resistance of component
+    \item Don't know current (don't need to calculate it)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Power Formula 2: Using Current and Resistance}
+
+\textit{Start with:} $P = V \times I$
+
+\textit{Substitute:} $V = I \times R$
+
+\begin{align*}
+    P &= (I \times R) \times I \\
+    P &= I^2 \times R
+\end{align*}
+
+\textbf{Result:}
+\begin{equation*}
+    \boxed{P = I^2 R}
+\end{equation*}
+
+\textit{Use when:}
+\begin{itemize}
+    \item Know current through component
+    \item Know resistance of component
+    \item Don't know voltage (don't need to calculate it)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Three Power Formulas - Summary:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Formula} & \textbf{When to Use} & \textbf{Known Values} \\
+\hline
+$P = V \times I$ & V and I known & Voltage, Current \\
+$P = \frac{V^2}{R}$ & V and R known & Voltage, Resistance \\
+$P = I^2 R$ & I and R known & Current, Resistance \\
+\hline
+\end{tabular}
+\end{center}
+
+\textit{Key insight:}
+\begin{itemize}
+    \item Need ANY TWO of three values (V, I, R)
+    \item Can always calculate power
+    \item Choose formula based on what you know
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Step-by-Step Power Calculation:}
+
+\textbf{Example approach:}
+\begin{enumerate}
+    \item Identify the component (resistor, LED, etc.)
+    \item Find voltage drop ACROSS component
+    \item Find current THROUGH component
+    \item Multiply: $P = V \times I$
+\end{enumerate}
+
+\textit{Alternative if resistance known:}
+\begin{enumerate}
+    \item Know any two: V, I, or R
+    \item Choose appropriate power formula
+    \item Calculate power
+    \item Check if within component rating
+\end{enumerate}
+
+\vspace{0.15cm}
+
+\textbf{Practical Circuit Example:}
+
+\textit{Given:}
+\begin{itemize}
+    \item 9V battery
+    \item 10$\Omega$ resistor
+    \item Series circuit
+\end{itemize}
+
+\textbf{Step 1 - Find current (Ohm's Law):}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{9}{10} = 0.9\,A = 900\,mA
+\end{equation*}
+
+\textbf{Step 2 - Calculate power (Method 1: V and I):}
+\begin{equation*}
+    P = V \times I = 9 \times 0.9 = 8.1\,W
+\end{equation*}
+
+\textbf{Or Step 2 - Calculate power (Method 2: $V^2/R$):}
+\begin{equation*}
+    P = \frac{V^2}{R} = \frac{9^2}{10} = \frac{81}{10} = 8.1\,W
+\end{equation*}
+
+\textbf{Or Step 2 - Calculate power (Method 3: $I^2R$):}
+\begin{equation*}
+    P = I^2 R = (0.9)^2 \times 10 = 0.81 \times 10 = 8.1\,W
+\end{equation*}
+
+All three methods give same answer!
+
+\vspace{0.15cm}
+
+\textbf{Physical Interpretation:}
+
+\textit{What does 8.1W mean?}
+\begin{itemize}
+    \item Resistor dissipates 8.1 Joules per second
+    \item Electrical energy $\rightarrow$ Heat energy
+    \item 8.1W of heat produced continuously
+    \item After 1 minute: $8.1 \times 60 = 486$ Joules as heat
+    \item After 10 minutes: $8.1 \times 600 = 4,860$ Joules
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{When Each Formula is Most Useful:}
+
+\textbf{$P = V \times I$ (Traditional):}
+\begin{itemize}
+    \item Most direct and intuitive
+    \item Use when both V and I are known/measured
+    \item Works for any component (not just resistors)
+    \item Best for components with varying resistance
+\end{itemize}
+
+\textbf{$P = V^2/R$ (Voltage-based):}
+\begin{itemize}
+    \item Use when voltage is fixed/known
+    \item Don't need to calculate current first
+    \item Common for components across power supply
+    \item Shows: Double voltage = 4$\times$ power (quadratic relationship)
+\end{itemize}
+
+\textbf{$P = I^2 R$ (Current-based):}
+\begin{itemize}
+    \item Use when current is fixed/known
+    \item Common in series circuits (same current everywhere)
+    \item Don't need to calculate voltage first
+    \item Shows: Double current = 4$\times$ power (quadratic relationship)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Power in Complete Circuit:}
+
+\textit{Conservation principle:}
+\begin{itemize}
+    \item Power supplied = Power consumed (steady state)
+    \item Battery/source power = Sum of all component powers
+    \item $P_{source} = P_{R1} + P_{R2} + P_{R3} + \ldots$
+\end{itemize}
+
+\textit{Example verification:}
+\begin{itemize}
+    \item 12V battery, 1A current $\rightarrow$ $P_{source} = 12 \times 1 = 12W$
+    \item Three resistors in series: 4W, 5W, 3W
+    \item Total consumed: $4 + 5 + 3 = 12W$ $\checkmark$
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: All Three Methods}
+
+\textit{Given:} $R = 100\Omega$, $V = 10V$ across resistor
+
+\textbf{Method 1 - Find I, then P:}
+\begin{align*}
+    I &= \frac{V}{R} = \frac{10}{100} = 0.1\,A \\
+    P &= V \times I = 10 \times 0.1 = \boxed{1\,W}
+\end{align*}
+
+\textbf{Method 2 - Use $V^2/R$:}
+\begin{align*}
+    P &= \frac{V^2}{R} = \frac{10^2}{100} = \frac{100}{100} = \boxed{1\,W}
+\end{align*}
+
+\textbf{Method 3 - Use $I^2R$:}
+\begin{align*}
+    I &= 0.1\,A \text{ (from Method 1)} \\
+    P &= I^2 R = (0.1)^2 \times 100 = 0.01 \times 100 = \boxed{1\,W}
+\end{align*}
+
+All methods confirm: 1W dissipated!
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Series Circuit Power Distribution}
+
+\textit{Given:}
+\begin{itemize}
+    \item 12V battery
+    \item Three resistors in series: $R_1 = 10\Omega$, $R_2 = 20\Omega$, $R_3 = 30\Omega$
+\end{itemize}
+
+\textbf{Total resistance:}
+\begin{equation*}
+    R_{total} = 10 + 20 + 30 = 60\Omega
+\end{equation*}
+
+\textbf{Circuit current:}
+\begin{equation*}
+    I = \frac{12}{60} = 0.2\,A
+\end{equation*}
+
+\textbf{Power in each resistor (using $P = I^2R$):}
+\begin{align*}
+    P_{R1} &= I^2 R_1 = (0.2)^2 \times 10 = 0.04 \times 10 = 0.4\,W \\
+    P_{R2} &= I^2 R_2 = (0.2)^2 \times 20 = 0.04 \times 20 = 0.8\,W \\
+    P_{R3} &= I^2 R_3 = (0.2)^2 \times 30 = 0.04 \times 30 = 1.2\,W
+\end{align*}
+
+\textbf{Total power:}
+\begin{equation*}
+    P_{total} = 0.4 + 0.8 + 1.2 = 2.4\,W
+\end{equation*}
+
+\textbf{Verify with source power:}
+\begin{equation*}
+    P_{source} = V \times I = 12 \times 0.2 = 2.4\,W \quad \checkmark
+\end{equation*}
+
+\textit{Observation:} Larger resistor dissipates more power in series!
+
+\vspace{0.2cm}
+
+\textbf{Example 3: LED Current Limiting Resistor Power}
+
+\textit{Given:}
+\begin{itemize}
+    \item 5V supply
+    \item LED: $V_f = 2V$, $I_f = 20mA$
+    \item Current limiting resistor: $R = ?$
+\end{itemize}
+
+\textbf{Find resistor value:}
+\begin{align*}
+    V_R &= V_{supply} - V_{LED} = 5 - 2 = 3V \\
+    R &= \frac{V_R}{I} = \frac{3}{0.02} = 150\Omega
+\end{align*}
+
+\textbf{Power in resistor:}
+\begin{align*}
+    P_R &= V_R \times I = 3 \times 0.02 = \boxed{0.06\,W = 60\,mW}
+\end{align*}
+
+Or using $I^2R$:
+\begin{equation*}
+    P_R = (0.02)^2 \times 150 = 0.0004 \times 150 = 0.06\,W
+\end{equation*}
+
+\textbf{Resistor rating needed:} Standard 1/8W (125mW) is sufficient.
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Voltage Doubling Effect on Power}
+
+\textit{Given:} $R = 50\Omega$ resistor
+
+\textbf{At 5V:}
+\begin{equation*}
+    P_1 = \frac{V^2}{R} = \frac{5^2}{50} = \frac{25}{50} = 0.5\,W
+\end{equation*}
+
+\textbf{At 10V (doubled):}
+\begin{equation*}
+    P_2 = \frac{V^2}{R} = \frac{10^2}{50} = \frac{100}{50} = 2\,W
+\end{equation*}
+
+\textbf{Ratio:}
+\begin{equation*}
+    \frac{P_2}{P_1} = \frac{2}{0.5} = 4
+\end{equation*}
+
+\textit{Conclusion:} Doubling voltage quadruples power! (Quadratic relationship)
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Multi-Component Circuit}
+
+\textit{Circuit:}
+\begin{itemize}
+    \item 15V battery
+    \item $R_1 = 100\Omega$ in series with parallel combination
+    \item $R_2 = 200\Omega$ and $R_3 = 200\Omega$ in parallel
+\end{itemize}
+
+\textbf{Parallel combination:}
+\begin{equation*}
+    R_{23} = \frac{R_2 \times R_3}{R_2 + R_3} = \frac{200 \times 200}{200 + 200} = 100\Omega
+\end{equation*}
+
+\textbf{Total resistance:}
+\begin{equation*}
+    R_{total} = R_1 + R_{23} = 100 + 100 = 200\Omega
+\end{equation*}
+
+\textbf{Main current:}
+\begin{equation*}
+    I_1 = \frac{15}{200} = 0.075\,A = 75\,mA
+\end{equation*}
+
+\textbf{Power in $R_1$:}
+\begin{equation*}
+    P_1 = I_1^2 R_1 = (0.075)^2 \times 100 = 0.5625\,W
+\end{equation*}
+
+\textbf{Voltage across parallel resistors:}
+\begin{equation*}
+    V_{23} = I_1 \times R_{23} = 0.075 \times 100 = 7.5V
+\end{equation*}
+
+\textbf{Current through each parallel resistor:}
+\begin{equation*}
+    I_2 = I_3 = \frac{7.5}{200} = 0.0375\,A = 37.5\,mA
+\end{equation*}
+
+\textbf{Power in $R_2$ and $R_3$:}
+\begin{equation*}
+    P_2 = P_3 = V \times I = 7.5 \times 0.0375 = 0.28125\,W
+\end{equation*}
+
+\textbf{Total power:}
+\begin{equation*}
+    P_{total} = 0.5625 + 0.28125 + 0.28125 = 1.125\,W
+\end{equation*}
+
+\textbf{Verify:}
+\begin{equation*}
+    P_{source} = 15 \times 0.075 = 1.125\,W \quad \checkmark
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Finding Unknown Resistance from Power}
+
+\textit{Given:}
+\begin{itemize}
+    \item Resistor dissipates 2W
+    \item Current through it: 100mA
+\end{itemize}
+
+\textbf{Find resistance:}
+
+From $P = I^2 R$:
+\begin{align*}
+    R &= \frac{P}{I^2} = \frac{2}{(0.1)^2} = \frac{2}{0.01} = \boxed{200\Omega}
+\end{align*}
+
+\textbf{Verify with voltage:}
+\begin{align*}
+    V &= I \times R = 0.1 \times 200 = 20V \\
+    P &= V \times I = 20 \times 0.1 = 2W \quad \checkmark
+\end{align*}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Basic formula:} $P = V \times I$ (most fundamental)
+    \item \textbf{With resistance:} $P = V^2/R$ or $P = I^2 R$
+    \item \textbf{Need 2 of 3:} Knowing any two (V, I, R) allows power calculation
+    \item \textbf{Quadratic relationship:} Double V or I $\rightarrow$ 4$\times$ power
+    \item \textbf{Conservation:} $P_{source} = \sum P_{components}$
+    \item \textbf{All formulas equivalent:} Choose based on known values
+    \item \textbf{Units:} V in volts, I in amps, R in ohms $\rightarrow$ P in watts
+    \item \textbf{Energy over time:} $E = P \times t$ (power $\times$ duration)
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} State the three power formulas. \\
+    \textit{A:} $P = VI$, $P = V^2/R$, $P = I^2R$.
+    
+    \item \textbf{Q:} 10V across 100$\Omega$ resistor. Power dissipated? \\
+    \textit{A:} $P = V^2/R = 100/100 = 1W$.
+    
+    \item \textbf{Q:} If voltage doubles, how does power change? \\
+    \textit{A:} Quadruples (4$\times$ power), since $P \propto V^2$.
+    
+    \item \textbf{Q:} Which resistor dissipates more power in series - larger or smaller? \\
+    \textit{A:} Larger resistance (same current, $P = I^2R$, so larger R $\rightarrow$ larger P).
+    
+    \item \textbf{Q:} 12V, 2A through circuit. Total power? \\
+    \textit{A:} $P = VI = 12 \times 2 = 24W$.
+    
+    \item \textbf{Q:} Derive $P = V^2/R$ from $P = VI$. \\
+    \textit{A:} Substitute $I = V/R$ into $P = VI$: $P = V(V/R) = V^2/R$.
+\end{itemize}
+
+\textbf{Power Formula Selection Guide:}
+\begin{itemize}
+    \item Known V and I $\rightarrow$ Use $P = VI$
+    \item Known V and R $\rightarrow$ Use $P = V^2/R$
+    \item Known I and R $\rightarrow$ Use $P = I^2R$
+    \item Any two values sufficient!
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Resistor power rating selection
+    \item LED current limiting resistor sizing
+    \item Circuit power consumption calculation
+    \item Battery life estimation
+    \item Thermal management (heat dissipation)
+    \item Energy cost calculation
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Using total voltage instead of voltage drop across component
+    \item Forgetting to square V or I in formulas
+    \item Wrong units (must use Volts, Amps, Ohms)
+    \item Confusing power (rate) with energy (total)
+\end{itemize}
+
+\textbf{Key Relationships:}
+\begin{itemize}
+    \item $P \propto V^2$ (at constant R)
+    \item $P \propto I^2$ (at constant R)
+    \item $P \propto 1/R$ (at constant V)
+    \item $P \propto R$ (at constant I)
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Resistor Power Ratings}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{Power rating:} Maximum power component can safely dissipate
+    \item Common resistor ratings: 1/8W, 1/4W, 1/2W, 1W, 2W
+    \item Exceeding rating $\rightarrow$ overheating $\rightarrow$ "magic smoke" (component failure)
+    \item Always select resistor with rating > calculated power (safety margin)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Why Power Ratings Matter:}
+
+\vspace{0.15cm}
+
+\textbf{Energy Transformation and Heat:}
+
+\textit{What happens in components:}
+\begin{itemize}
+    \item All components transform energy from one type to another
+    \item \textbf{Desired transformations:} LEDs$\rightarrow$light, motors$\rightarrow$motion, batteries$\rightarrow$charging
+    \item \textbf{Undesired transformations:} Energy losses, usually as heat
+    \item Heat is unavoidable byproduct in most circuits
+\end{itemize}
+
+\textit{Even "useful" components produce heat:}
+\begin{itemize}
+    \item LEDs: Mostly light, but some heat
+    \item Motors: Mostly motion, but winding resistance creates heat
+    \item Batteries: Charging creates heat
+    \item All have internal resistance $\rightarrow$ power loss
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Heat and Component Damage:}
+
+\textit{Too much heat is dangerous:}
+\begin{itemize}
+    \item Components have maximum temperature limits
+    \item Exceeding limits causes:
+    \begin{itemize}
+        \item Physical damage (melting, burning)
+        \item Performance degradation
+        \item Parameter drift
+        \item Complete failure ("letting the magic smoke out")
+    \end{itemize}
+\end{itemize}
+
+\textit{Power rating definition:}
+\begin{itemize}
+    \item Maximum power component can dissipate safely
+    \item Usually specified at room temperature (25°C)
+    \item Higher ambient temperature $\rightarrow$ must derate (use less power)
+    \item Exceeding rating $\rightarrow$ overheating $\rightarrow$ damage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Resistors - Notorious Power Consumers:}
+
+\textit{Why resistors are special concern:}
+\begin{itemize}
+    \item 100\% of electrical energy $\rightarrow$ heat (no useful output)
+    \item Drop voltage AND pass current $\rightarrow$ $P = VI$
+    \item More voltage = more current = MORE power (quadratic)
+    \item Easy to exceed rating if not careful
+\end{itemize}
+
+\textit{Example of dangerous scenario:}
+\begin{itemize}
+    \item 9V across 10$\Omega$ resistor
+    \item Current: $I = 9/10 = 0.9A$
+    \item Power: $P = 9 \times 0.9 = 8.1W$
+    \item Standard 1/2W (0.5W) resistor rated for only 0.5W
+    \item This is 16$\times$ over rating! $\rightarrow$ Immediate damage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Common Resistor Power Ratings:}
+
+\textbf{Standard values:}
+\begin{itemize}
+    \item \textbf{1/8W (0.125W):} Very common, small size, cheap
+    \item \textbf{1/4W (0.25W):} Most common general purpose
+    \item \textbf{1/2W (0.5W):} Common, slightly larger
+    \item \textbf{1W:} Moderate power, larger physical size
+    \item \textbf{2W:} Higher power, significantly larger
+    \item \textbf{5W, 10W, 25W+:} Power resistors, large with heatsinks
+\end{itemize}
+
+\textbf{Size correlation:}
+\begin{itemize}
+    \item Higher rating = physically larger resistor
+    \item Larger surface area $\rightarrow$ better heat dissipation
+    \item Power resistors may have heatsink mounting
+    \item Ceramic body for high-power types
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Selecting Proper Power Rating:}
+
+\textbf{Design rule:}
+\begin{itemize}
+    \item Calculate actual power dissipation
+    \item Select rating at least 2$\times$ calculated power (safety margin)
+    \item For critical applications: 50\% derating (use 2W for 1W dissipation)
+\end{itemize}
+
+\textit{Why safety margin?}
+\begin{itemize}
+    \item Component tolerances (resistance may vary $\pm$5\% or $\pm$10\%)
+    \item Voltage supply variations
+    \item Ambient temperature higher than 25°C
+    \item Aging effects
+    \item Prevent continuous operation at maximum rating
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Power Resistors:}
+
+\textit{When standard resistors aren't enough:}
+\begin{itemize}
+    \item Specifically designed for high power dissipation
+    \item Ratings: 5W, 10W, 25W, 50W, 100W+
+    \item Construction: Ceramic body, wirewound
+    \item Often have mounting holes for heatsinks
+    \item More expensive than standard resistors
+\end{itemize}
+
+\textit{Applications:}
+\begin{itemize}
+    \item Current sensing (shunt resistors)
+    \item Load banks (testing power supplies)
+    \item Braking resistors (motors)
+    \item Dummy loads
+    \item High-power voltage dividers
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Practical Example - LED Current Limiting:}
+
+\textit{Scenario:}
+\begin{itemize}
+    \item 10mm super-bright red LED
+    \item Maximum current: 80mA
+    \item Forward voltage: $V_f = 2.2V$
+    \item Power supply: 9V battery
+    \item Goal: Maximum brightness
+\end{itemize}
+
+\textbf{Calculate resistor:}
+\begin{align*}
+    V_R &= V_{supply} - V_f = 9 - 2.2 = 6.8V \\
+    R &= \frac{V_R}{I} = \frac{6.8}{0.08} = 85\Omega \text{ (use 82$\Omega$ standard)}
+\end{align*}
+
+\textbf{Calculate power:}
+\begin{align*}
+    P_R &= V_R \times I = 6.8 \times 0.08 = 0.544W
+\end{align*}
+
+\textbf{Resistor selection:}
+\begin{itemize}
+    \item Calculated power: 0.544W
+    \item 1/2W (0.5W) rating: NOT enough (would overheat)
+    \item 1W rating: Acceptable, but tight
+    \item \textbf{Best choice: 1W or 2W resistor}
+\end{itemize}
+
+\textit{Why 1/2W is bad:}
+\begin{itemize}
+    \item 0.544W > 0.5W rating
+    \item Resistor will get very hot
+    \item May not immediately fail, but stressed
+    \item Shortened lifespan, possible intermittent failure
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Minimizing Power Loss:}
+
+\textit{Design strategies:}
+\begin{itemize}
+    \item Use switching regulators instead of linear (less heat)
+    \item Reduce voltage drop across resistors where possible
+    \item Use current sources instead of resistors (for LEDs)
+    \item Choose lower resistance values when appropriate
+    \item Use PWM for LED brightness control (not resistor)
+\end{itemize}
+
+\textit{When power loss is desired:}
+\begin{itemize}
+    \item Heating elements (intentional heat generation)
+    \item Load resistors (testing power supplies)
+    \item Discharge resistors (bleeding capacitors)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Other Components with Power Ratings:}
+
+\textit{Power ratings apply to many components:}
+
+\textbf{Voltage regulators:}
+\begin{itemize}
+    \item Linear regulators dissipate significant power
+    \item $P = (V_{in} - V_{out}) \times I$
+    \item Need heatsinks for higher currents
+\end{itemize}
+
+\textbf{Diodes:}
+\begin{itemize}
+    \item Forward voltage drop $\times$ current = power
+    \item Rectifier diodes in power supplies
+    \item Schottky diodes have lower forward drop (less power)
+\end{itemize}
+
+\textbf{MOSFETs and transistors:}
+\begin{itemize}
+    \item On-state: $P = I^2 R_{DS(on)}$
+    \item Switching: Transition losses
+    \item High-power applications need thermal management
+\end{itemize}
+
+\textbf{Motor drivers:}
+\begin{itemize}
+    \item H-bridges dissipate power in switching elements
+    \item Current sensing resistors
+    \item Thermal shutdown protection common
+\end{itemize}
+
+\textbf{Amplifiers:}
+\begin{itemize}
+    \item Power dissipation in output stage
+    \item Class A worst (always conducting)
+    \item Class D best efficiency (switching)
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Standard LED Current Limiting}
+
+\textit{Given:}
+\begin{itemize}
+    \item 5V supply
+    \item LED: $V_f = 2V$, $I_f = 20mA$
+\end{itemize}
+
+\textbf{Resistor value:}
+\begin{equation*}
+    R = \frac{5-2}{0.02} = \frac{3}{0.02} = 150\Omega
+\end{equation*}
+
+\textbf{Power dissipation:}
+\begin{equation*}
+    P = 3 \times 0.02 = 0.06W = 60mW
+\end{equation*}
+
+\textbf{Rating selection:}
+\begin{itemize}
+    \item 60mW actual dissipation
+    \item 1/8W (125mW) rating: 2$\times$ margin $\checkmark$
+    \item \textbf{Use: 1/8W or 1/4W resistor (both OK)}
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 2: High-Power LED (From Problem Description)}
+
+\textit{Given:}
+\begin{itemize}
+    \item 9V battery
+    \item 10mm super-bright LED: $V_f = 2.2V$, $I_{max} = 80mA$
+\end{itemize}
+
+\textbf{Design:}
+\begin{align*}
+    V_R &= 9 - 2.2 = 6.8V \\
+    R &= \frac{6.8}{0.08} = 85\Omega \text{ $\rightarrow$ use 82$\Omega$ standard}
+\end{align*}
+
+\textbf{Actual current with 82$\Omega$:}
+\begin{equation*}
+    I = \frac{6.8}{82} = 0.0829A = 82.9mA
+\end{equation*}
+
+\textbf{Power:}
+\begin{equation*}
+    P = 6.8 \times 0.083 = 0.564W
+\end{equation*}
+
+\textbf{Rating needed:}
+\begin{itemize}
+    \item 0.564W dissipation
+    \item 1/2W (0.5W): Too small! $\times$
+    \item 1W rating: Acceptable (77\% of rating)
+    \item \textbf{Recommended: 1W resistor} (or 2W for cool operation)
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Voltage Divider Power}
+
+\textit{Given:}
+\begin{itemize}
+    \item 12V input
+    \item Voltage divider: $R_1 = R_2 = 10k\Omega$
+    \item Output: 6V (half of 12V)
+\end{itemize}
+
+\textbf{Current through divider:}
+\begin{equation*}
+    I = \frac{12}{20k} = 0.6mA
+\end{equation*}
+
+\textbf{Power in each resistor:}
+\begin{equation*}
+    P = I^2 R = (0.0006)^2 \times 10000 = 0.0036W = 3.6mW
+\end{equation*}
+
+\textbf{Rating:}
+\begin{itemize}
+    \item 3.6mW per resistor
+    \item 1/8W (125mW) has 35$\times$ margin
+    \item \textbf{Standard 1/4W resistors work fine}
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 4: When 1/2W Isn't Enough}
+
+\textit{Given:}
+\begin{itemize}
+    \item 24V supply
+    \item Need to drop to 12V at 500mA load
+    \item Using series resistor (linear regulation)
+\end{itemize}
+
+\textbf{Resistor value:}
+\begin{equation*}
+    R = \frac{24-12}{0.5} = \frac{12}{0.5} = 24\Omega
+\end{equation*}
+
+\textbf{Power dissipation:}
+\begin{equation*}
+    P = 12 \times 0.5 = 6W
+\end{equation*}
+
+\textbf{Rating selection:}
+\begin{itemize}
+    \item 6W dissipation
+    \item Need at least 6W rated resistor
+    \item \textbf{Use: 10W or 15W power resistor with heatsink}
+\end{itemize}
+
+\textit{Better solution:} Use switching regulator (much more efficient!)
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Multiple Resistors vs Power Resistor}
+
+\textit{Problem:} Need 100$\Omega$ at 2W dissipation
+
+\textbf{Option 1: Single power resistor}
+\begin{itemize}
+    \item 100$\Omega$, 5W power resistor
+    \item Cost: Higher
+    \item Size: Large
+\end{itemize}
+
+\textbf{Option 2: Four 1/2W resistors in series/parallel}
+\begin{itemize}
+    \item Four 200$\Omega$, 1/2W resistors in parallel
+    \item $R_{eq} = 200/4 = 50\Omega$ $\times$ (wrong value)
+\end{itemize}
+
+\textbf{Option 3: Two resistors in series}
+\begin{itemize}
+    \item Two 50$\Omega$, 1W resistors in series
+    \item $R_{eq} = 50 + 50 = 100\Omega$ $\checkmark$
+    \item Each dissipates 1W (within rating)
+    \item Total: 2W
+    \item \textbf{This works!}
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Temperature Derating}
+
+\textit{Given:}
+\begin{itemize}
+    \item 1W resistor rated at 25°C
+    \item Operating in 70°C environment
+    \item Derating: 2.5mW/°C
+\end{itemize}
+
+\textbf{Temperature difference:}
+\begin{equation*}
+    \Delta T = 70 - 25 = 45°C
+\end{equation*}
+
+\textbf{Power reduction:}
+\begin{equation*}
+    P_{reduce} = 45 \times 2.5mW = 112.5mW
+\end{equation*}
+
+\textbf{Derated power rating:}
+\begin{equation*}
+    P_{derated} = 1000mW - 112.5mW = 887.5mW \approx 0.89W
+\end{equation*}
+
+\textit{Safe operating power at 70°C: ~0.9W instead of 1W}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{Power rating:} Maximum safe power dissipation (usually at 25°C)
+    \item \textbf{Common ratings:} 1/8W, 1/4W, 1/2W, 1W, 2W, 5W, 10W+
+    \item \textbf{Selection rule:} Use rating $\geq$ 2$\times$ calculated power
+    \item \textbf{Exceed rating:} Component overheats, fails ("magic smoke")
+    \item \textbf{Size matters:} Higher rating = larger physical size
+    \item \textbf{Resistors worst:} 100\% energy $\rightarrow$ heat
+    \item \textbf{Power resistors:} Special high-power types (5W+)
+    \item \textbf{Derating:} Reduce rating at high ambient temperatures
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What is a power rating? \\
+    \textit{A:} Maximum power component can safely dissipate without damage.
+    
+    \item \textbf{Q:} Common resistor power ratings? \\
+    \textit{A:} 1/8W, 1/4W, 1/2W, 1W, 2W (and 5W+ for power resistors).
+    
+    \item \textbf{Q:} Resistor dissipates 0.3W. What rating to use? \\
+    \textit{A:} 1/2W or 1W (need safety margin above 0.3W).
+    
+    \item \textbf{Q:} What happens if you exceed power rating? \\
+    \textit{A:} Component overheats, may burn/smoke, fails.
+    
+    \item \textbf{Q:} Why do resistors need power ratings? \\
+    \textit{A:} They convert 100\% electrical energy to heat - too much heat damages them.
+    
+    \item \textbf{Q:} 9V across 10$\Omega$ - can you use 1/2W resistor? \\
+    \textit{A:} No! Power = 81/10 = 8.1W, far exceeds 0.5W rating. Need 10W+ power resistor.
+\end{itemize}
+
+\textbf{Standard Power Ratings:}
+\begin{itemize}
+    \item 1/8W = 0.125W (very common, small)
+    \item 1/4W = 0.25W (most common general purpose)
+    \item 1/2W = 0.5W (common, slightly larger)
+    \item 1W = 1.0W (moderate power)
+    \item 2W, 5W, 10W+ (power resistors, large)
+\end{itemize}
+
+\textbf{Design Guidelines:}
+\begin{itemize}
+    \item Calculate actual power dissipation
+    \item Select rating 2$\times$ actual (minimum)
+    \item For critical: 50\% derating (2W for 1W actual)
+    \item Account for ambient temperature
+    \item Larger is safer (better heat dissipation)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item LED current limiting (1/8W to 1W typically)
+    \item Voltage dividers (usually 1/4W sufficient)
+    \item Current sensing shunts (power resistors)
+    \item Load banks (high-power resistors)
+    \item Pull-up/pull-down (1/8W or 1/4W)
+\end{itemize}
+
+\textbf{Warning Signs of Overheating:}
+\begin{itemize}
+    \item Resistor very hot to touch
+    \item Discoloration (browning, blackening)
+    \item Smoke or burning smell ("magic smoke")
+    \item Value drift (resistance changes)
+    \item Solder melting around component
+    \item PCB discoloration under resistor
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Using standard resistor for high-power application
+    \item Not accounting for voltage drop across resistor
+    \item Forgetting safety margin
+    \item Ignoring ambient temperature effects
+    \item Not considering thermal resistance of PCB
+\end{itemize}
+\end{keypointsbox}
+

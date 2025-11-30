@@ -1,0 +1,157 @@
+In most systems, including the mobile device, we have only one power source with fixed voltage level,
+
+which is the battery, right.
+
+But within the device there are many different parts which require different levels of voltage input.
+
+So some parts would need a voltage, which is lower than the batteries voltage.
+
+Some other parts would require higher voltage.
+
+How can we supply all these different voltage levels from a single fixed voltage?
+
+We would need special components which can translate a voltage from one level to another level DC DC
+
+Converters is a kind of device or circuit that does this kind of voltage translation.
+
+Now let's get see on this diagram.
+
+DC DC converters can be split into two.
+
+We have linear and switching converters.
+
+We already talked about the linear voltage regulators write.
+
+The thing about linear voltage regulators is that they will always step down the input voltage to another
+
+fixed, constant regulated voltage.
+
+Take, for example, the alarm 317, which is an adjustable voltage regulator that can supply up to
+
+one point five amps.
+
+So you have the input we're in and the output without the output voltage can be controlled by changing
+
+the ratio of our one and or two.
+
+Well, here in the example, R2 two is a variable resistor and by changing its resistance, you basically
+
+change the output voltage.
+
+All right, so the output voltage of an industrial voltage regulator is controlled by the ratio of the
+
+voltage divider.
+
+They cannot increase the input voltage only to lower it.
+
+In other words, it steps down the voltage.
+
+On the other hand, another type of implementation is that to use switching devices which turn on and
+
+off the voltage source with certain patterns so that you can get the desired output voltage by taking
+
+the average over time.
+
+So they work totally differently than the linear power supplies.
+
+He uses a switching element to transform the incoming power supply into a PRST voltage, which is then
+
+moved using capacitors, inductors and other elements.
+
+And they are many of three types.
+
+We have converters, both converters and bulk, both converters.
+
+So we will go through each one of them soon.
+
+However, what I want you to understand now is the advantages and disadvantages that the Linnear and
+
+the speeching regulators offer.
+
+So let's start with the linnear regulators.
+
+The advantages that they offer are as follows simple circuit configuration, few external parts, low
+
+noise so they don't generate almost any noise in the circuit.
+
+However, the disadvantages are as follows.
+
+They have a relatively poor efficiency and they can generate heat and they can only step down the voltage.
+
+Now, linnear regulators are almost always a good choice if you need to step down the voltage from one
+
+level to another.
+
+However, that saving energy is crucial, like in mobile phones, for example, in this case is linear
+
+voltage regulators are not the best choice because of their relatively poor efficiency.
+
+In this case, it is better to use a switching converter that can achieve significantly higher efficiency.
+
+That early near voltage regulator.
+
+They also generate less heat and they can step down or step up the voltage.
+
+However, this also comes with some disadvantages.
+
+Like more external parts required, it has a much more complicated design and they also generate noise.
+
+The reason why they generate noise is because, as you will soon see, the switching circuit, which
+
+in this diagram is called control, the circuit will turn on and off a transistor represented here as
+
+a simple switch.
+
+So it will turn on and off this switch at a very high speed.
+
+As a general rule of thumb, the faster circuit switch, the more noise they generate.
+
+Now, in this chapter, there will be a course where I'm explaining why a switching regulator has a
+
+much higher efficiency than a linear regulator.
+
+That's something important to understand for everyone.
+
+But for that, I want you first to get familiar with this type of switching circuits.
+
+Now, let's run through each one of the convertors briefly.
+
+The convertor is a DC to DC converter that is producing a voltage that has been stepped down or in other
+
+words, reduced from the input voltage, such you can use it to power a lower voltage device from a
+
+higher voltage source.
+
+Again, above converter produces a voltage that is lower than the input voltage.
+
+Now, a boost converter, on the other hand, steps the voltage up, as suggested by its name and as
+
+a result produces higher output voltage as opposed to the lower input voltage.
+
+It is generally used in the likes of Ali deLites, that extra power from a lithium cell.
+
+But of course, it can be used in many other applications.
+
+So those converter produces an output voltage that is higher than the input voltage.
+
+Another type of DC to D.C. motor is the caboose converter, Ababa's converter is a dual purpose DC to
+
+DC converter.
+
+It can either step up or step down the voltage in order to produce an output that may be higher or lower
+
+than the input.
+
+It can also be used to produce either negative or positive voltages and as a result is used in a variety
+
+of places.
+
+All right, so what we have seen here is just a very generalized, high level diagram of a computer,
+
+as we mentioned previously, these converters use high frequency switching circuit together with inductors
+
+and capacitors in order to understand how these converters work, will try to build our own in a simulator
+
+without using any converter.
+
+I see that offers solutions out of the box.

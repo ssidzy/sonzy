@@ -1,0 +1,155 @@
+Hey, guys, welcome back! In this chapter, we'll try to demystify what voltage, current and resistance
+
+is, which are the three fundamental elements that you must know to analyze electronic circuits.
+
+So we use the term "voltage" all the time, right?
+
+And we know that AA batteries have 1.5V, a USB connector or a phone charger provides 5V.
+
+And when dealing with electronics, we usually work with 3.3V, 5V and sometimes higher numbers.
+
+Car appliances, for example, operate on 12V and mains,
+
+It's either 110 or 220 volts, but of course, this depends on which part of the world you leave.
+
+Now, despite the fact that voltage is everywhere, I often see beginner questions where voltage
+
+is confused with current, capacity or energy.
+
+And this is not surprising considering that voltage is often explained with vague terms such as potential difference
+
+or electric field or electric tension, which only makes sense if you already come from a
+
+physics background.
+
+So what exactly is voltage and how does it relate to current?
+
+What does ground mean?
+
+Can you measure the voltage inside an electrical wire? When giving beginner electronics workshops,
+
+I always struggled when I got to the part where I explained voltage.
+
+I spent a lot of time thinking about how can I explain it without relying on existing knowledge in electronics.
+
+When one day I came up with a simple analogy. Voltage is motivation.
+
+It's how motivated electrons are to move from one point in the circuit to another.
+
+Amazingly, the first time I tried this explanation in a workshop, one of the students raised his hand
+
+and asked: So is it like when the cost of living in Tel Aviv is higher than the one in Berlin?
+
+Motivating people to relocate?
+
+At this moment, I knew it clicked.
+
+The more expensive Tel Aviv is relative to Berlin,
+
+people are more motivated to move.
+
+Their level of motivation is the voltage.
+
+Relocating, however, is not trivial.
+
+You have to pay for the flights! So if the flights are expensive, only the most motivated people will
+
+travel.
+
+But if the flights are cheap, the number of people travelling will increase.
+
+So the cost of flights is the equivalent of electrical resistance and the actual number of people moving
+
+from Tel Aviv to Berlin every day resembles current.
+
+All right.
+
+So again, voltage is how motivated are electrons to move from one point to another.
+
+Resistance is how hard is the way between these two points and current is how many electrons usually
+
+travel through a specific wire every second.
+
+This relation between these three is defined in a very simple formula called Ohm's law, which states
+
+that voltage is equal to current times resistance.
+
+This is the fundamental thing you need to know when you try to make sense of electronic circuits.
+
+In fact, we will learn about Ohm's law in more detail in another course, but we have to know right now that
+
+many of the rules can be easily derived,
+
+once you understand this fundamental relation. Now, when you have a power source, such as a battery.
+
+It has two leads, right?
+
+The positive and the negative lead.
+
+When these leads are disconnected from each other,
+
+there's no route for the electricity to flow, so the resistance is infinite.
+
+This means that there will be no current, just like if there are no flights between Tel Aviv and Berlin.
+
+Even with the highest motivation,
+
+it will not be possible to make this journey.
+
+Similarly, if you short circuit the battery, which means that we simply connect the positive and the
+
+negative terminal together with a simple wire, there will be a nearly zero resistance path between them,
+
+which means a LOT of current will flow.
+
+This is similar to having many, many airplanes or very large airplanes going between Tel Aviv and Berlin,
+
+driving the airfare very low. Even with the slightest motivation, you will still jump on the plane
+
+and make the trip.
+
+Now, when we connect a resistor between the leads, we can apply Ohm's Law to figure out the current.
+
+Let's try with some numbers.
+
+Assume we have a 1.5V battery and a 100-ohm resistor.
+
+What would the current be?
+
+So using this equation, we get 1.5 equal to current times, 100. From this equation, current
+
+will be equal to 0.015A, which is 15mA.
+
+Now, what happens when we connect another 100 ohms resistor in parallel with the first one?
+
+We can use Ohm's formula again.
+
+But let's try to understand it intuitively instead. By adding a second resistor in parallel,
+
+we just added another path through which electrons can flow, right?
+
+It's basically as
+
+we added another daily flight between Tel Aviv and Berlin, or made our airplane twice as large.
+
+This means that we can now drop prices.
+
+In other words, the resistance has decreased.
+
+So despite having the same level of motivation, more people can now travel and the current will increase.
+
+In contrast, adding a resistor in series is like stopping the direct flight service to Berlin, so you
+
+now have to take connection flight, for instance, to London.
+
+This means that the prices will go up,
+
+as now you have to pay for two flights instead of just one.
+
+So the resistance has increased.
+
+Fewer people will be willing to pay for travelling.
+
+And the current will decrease.
+
+

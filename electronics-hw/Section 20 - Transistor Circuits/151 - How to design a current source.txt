@@ -1,0 +1,189 @@
+The simplest form of a constant currency liquid is a simple register.
+
+If the voltage of the source voltage is much higher than the voltage where the current is required,
+
+then the output current will be almost independent of the load.
+
+Under these circumstances, the current can be calculated very easily.
+
+Earth, it is approximately the power supply voltage divided by this resistance because the voltage
+
+on the load is much smaller than the voltage on the source.
+
+So in order for this current law to work, which means to provide a constant and the known current to
+
+the load, the resistance of the Lord must be much lower than the resistance of the current force.
+
+If this relationship between the two is true, then the current that will flow in the circuit is approximately
+
+the power supply voltage divided with this resistance dividing five walls with these 10 kms.
+
+We get the current or 500 migrants.
+
+So the difference between the desired current and one is only 10 microns.
+
+Hmm.
+
+Not the death for the beginning.
+
+If we want the current of one million arms to flow across this load, we would set these resistance
+
+to approximately five kms.
+
+As you can see, the difference is between one million and nine hundred sixty two microns is 38 microns.
+
+If we want, let's say, two point five million to flow across the load, we would set this resistance
+
+to two kms.
+
+This time, the difference between 2.5 million and 2.3 million is 200 microns.
+
+So the difference between the design current and the actual one is considered pretty big.
+
+We start to cause a problem and we are only at 2.5 years.
+
+What if you want more or less?
+
+You can see it's not precise and it will never be.
+
+And the lower this resistance gets, the more influence these load resistance will have upon setting
+
+the operational current.
+
+There are several drawbacks to the simple resistor current source.
+
+To make a good approximation to a current source, you must use large voltages with lots of participation
+
+in this resistor.
+
+This means that variations in load may cause some current variations if sufficiently high values of
+
+source voltage are not available.
+
+In addition, the current isn't easily programmable like, for example, control over over a large range
+
+by means of a voltage somewhere else in the circuit.
+
+So the question is how can we improve the circuit?
+
+Happily, it is possible to make a very good clarion source before Transistor.
+
+It works like this applying a base voltage, the base wattage higher than 0.6 volts ensures that the
+
+emitter is always conducting.
+
+So the emitter voltage is equal to the base voltage minus 0.6 woods.
+
+So the emitter current is equal emitter voltage divided by the emitter resistance.
+
+In other words, we consider the emitter current is equal to the base voltage minor 0.6 Walsall, divided
+
+by the emitter resistance.
+
+But since the emitter current is approximately equal to the collective current for large beta, the
+
+greater current will be approximately equal to the base voltage minus 0.6 walls or divided by the emitter
+
+resistance, which, as you can see, it's independent of the power supply voltage.
+
+As long as the transistor is not saturated, so the base voltage, which is provided by this voltage
+
+divider is equal to two point five.
+
+Oil's diameter voltage is one day a drop less, so it's one point nine voids.
+
+And if you divide these 1.9 voids with the emitter resistor, we get one point nine million of current
+
+through our load.
+
+Now you can play with the base voltage to set the operating current, and you also have the advantage
+
+that the input impedance of the transistor is high, so it doesn't require high current to drive the
+
+circuit, which is ideal in case you want to connect the base to a pin of a microcontroller, which
+
+happens to be a digital to analog converter.
+
+You can notice that even if I change the value of the load, the current is not changing at all.
+
+So this means that we can provide the constant currency to multiple loads with different dependencies.
+
+There is only one problem here.
+
+Usually, power supplies have fluctuations in voltage, which means that if the power supply rises or
+
+decreases, the result from the voltage divider will vary too, which means nothing goes.
+
+But the current through our load will vary, too.
+
+How can we design a circuit that even if we have power supply fluctuations, we are able to maintain
+
+a constant current through our load?
+
+In order to remove any fluctuations in current arising from changes in the supply voltage, it is a
+
+simple matter to add some regulations to the basic circuit.
+
+This is achieved by replacing the resistor here, which was used for voltage revision before Zenner
+
+or voltage reference voltage.
+
+The breakdown voltage of the Zenner is a 3.3 volts, so the voltage across the Zenner will be three
+
+point three volts.
+
+If enough current is driving it, and of course, if the voltage that has to be regulated is higher
+
+than the breakdown voltage itself.
+
+Now, even if we have fluctuations in the power supply voltage, the current through the load is concerned.
+
+And that's exactly what we wanted to achieve.
+
+The design of this current thought is good, but not good enough.
+
+The problem with this current source is that you have to apply a base voltage that is offset by 0.6
+
+volts from the voltage that you want to appear across the emitter resistor.
+
+And of course, it is the latter that sets the output.
+
+Current is the same offset issue as with an emitter follower.
+
+And you can't use the same trick to bring about a proximate cancellation of the offset in situations
+
+in which that is a problem.
+
+Let's have a look at this circuit.
+
+It has our standard current source output stage Q2, with the current said by the voltage across the
+
+emitter resistor, which is equal to the emitter voltage divided by the emitter resistance.
+
+So key to his base needs to be obese emit a voltage higher, which is the 0.6 watts offset.
+
+But that's just what the ppm being put forward does anyway.
+
+So wala the voltage of Q to remettre winds up being approximately equal to the input.
+
+What is that?
+
+You apply?
+
+And so the output current is simply the input voltage divided by the emitter resistance.
+
+If no ifs, ands or buts or base emitter offsets, that's cute.
+
+We have to point out, though, that this is not a particularly accurate cancellation because the two
+
+transistors really in general have different collective currents and therefore somewhat different base
+
+emitter drops.
+
+But it's the first order hack and a lot better than nothing.
+
+The magic of operation amplifiers that I will publish in the next course, intended for intermediates,
+
+will provide a way to make current sources in which the output current is accurately programmed by the
+
+input voltage without the base emitter voltage offset.

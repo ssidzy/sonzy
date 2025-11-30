@@ -1,0 +1,149 @@
+Hello, everyone.
+
+In the previous course, we have seen how a radio transmitter is constructed using block diagrams,
+
+the power supply provides the necessary electric power to operate the transmitter.
+
+Then the oscillator will generate a carrier wave, which is usually nothing else but the simple sine
+
+wave at a fixed frequency.
+
+The modulator then will add the useful information to this carrier wave, so it will encode the information
+
+into the carrier wave using some sort of techniques that we will learn about soon.
+
+Then the modulated signal is amplified and transmitted via the help of the antenna that will convert
+
+the amplified signal to radio waves.
+
+Pretty easy right now.
+
+Let's go to the other side and see how a radio receiver is constructed.
+
+Of course, again, we are going to use block diagrams for simplicity purposes, but towards the end
+
+of this chapter, we are going to build our own the receiver.
+
+So a radio receiver is the opposite of a radio transmitter.
+
+It uses an antenna to capture radio waves, processes, doos waves to extract only those waves that
+
+are vibrating at the desired frequency expects the audio signals that were added to do as waves amplifies
+
+the audio signals and finally plays them on a speaker.
+
+This figure shows these components, so let's try to explain each block diagram one by one.
+
+First, we have an antenna, right?
+
+This will be responsible of capturing the radio waves.
+
+Typically, the antenna is simply a length of wire when this wire is exposed to radio waves.
+
+The waves induce a very small, alternating current in the antenna.
+
+That's the reason why we use an RF amplifier right at the beginning so that these very small alternating
+
+current induced in the antenna is amplified lost.
+
+The signal received is amplified.
+
+We feed it into something called tuna.
+
+Now, the tuna might be the most difficult part.
+
+Understand a tuna is nothing else but the circuit that can extract signals of a particular frequency
+
+from a mix of signals of different frequencies on its own.
+
+The antenna captures radio waves of all frequencies and sends them to the RF amplifier, which dutifully
+
+amplifies them all.
+
+Unless you want to listen to every radio channel at the same time, you need a circuit that can pick
+
+out just the signals for the channel you want to hear, and that's the role of the tuner.
+
+The tuner usually employs the combination of an inductor.
+
+For example, a coil and a capacitor to form a circuit that resonates at a particular frequency.
+
+This frequency, called the resonance frequency, is determined by the values chosen for the call and
+
+the capacitor.
+
+This type of circuit tends to block any AC signals at the frequency above or below the resonant frequency.
+
+You can adjust the resonant frequency by wearing the amount of inductance in the coil or the capacitance
+
+of the capacitor.
+
+In simple radio receiver circuits such as the one you will learn about at the end of this chapter,
+
+the tuning is adjusted by varying the number of turns of wire in the coil.
+
+More sophisticated tuners use a variable capacitor, also called a tuning capacitor to vary the frequency.
+
+So again, the tuner will filter out all the frequencies that are not relevant.
+
+So let's see if the radio transmitter transmits at the frequency of ninety nine point six kilohertz,
+
+and we want to receive only this particular frequency.
+
+Then we will have to adjust the tuner so that it will filter out all the frequencies above ninety nine
+
+point six kilohertz and below ninety nine point six kilohertz.
+
+If you have used a radio receiver before, you know that if you want to listen to a particular channel,
+
+you have to turn the knob until the sound becomes a loud and clear.
+
+Then you turn the knob.
+
+You are actually modifying the tuner to allow only a radio channel to be received, so the tuner is
+
+nothing else but the filter.
+
+Awesome.
+
+Now, once we have a channel selected, the signal will be fed into a detector state.
+
+This stage is responsible for separating the audio information from the carrier wave.
+
+If you recall the transmitter and quality for.
+
+Nation into a carrier wave.
+
+So our responsibility now is to decode this information.
+
+Don't worry, I will show you in more detail how a detector works.
+
+But for now, let's just understand the purpose of each block diagram.
+
+So the detector will be the one which gets rid of the carrier rate and will extract the data from it
+
+in technical terms.
+
+The detector will modulate a previously modulated signal by removing all the high frequency components
+
+of a signal.
+
+Once we learn about modulation techniques, you will see that the carrier wave has a much higher frequency
+
+than the information itself.
+
+And that's the reason why the detector or the modulator will get rid of the high frequency components.
+
+Once the data is instructed by data, I mean the audio signal.
+
+If we are strictly talking about classical radios, the audio signal is amplified and fed into a speaker
+
+so that everyone can hear the audio loud and clear.
+
+Now, of course, that many variations on these basic radio receiver design, many receivers include
+
+additional filtering and tuning circuits to better lock on to the intended frequency or to produce better
+
+quality audio output and exclude other signals.
+
+Still, these basic elements are found in most receiver circuits.

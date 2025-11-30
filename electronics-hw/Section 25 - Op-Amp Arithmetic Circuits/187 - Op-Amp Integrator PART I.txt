@@ -1,0 +1,179 @@
+Hello, when we come back.
+
+Until now, we have seen that albums can be used to perform arithmetic operations like addition and
+
+subtraction.
+
+Besides, these operations and operation amplifier can be configured to perform the mathematical operations
+
+of integration and differentiation in this story.
+
+We will learn and analyze the working of operation amplifier integrator.
+
+So let's get started.
+
+In most cases, we know the feedback that is used is mainly resistive in nature before direct resistive
+
+performing at least part of the network.
+
+However, for the integrator, this is not the case.
+
+The component providing the feedback between the output and input of the up is a capacitor as the name
+
+of the op amp integrator implies.
+
+It performs a function that is an electronic equivalent to the mathematical integration function.
+
+In fact, electronic integration circuits can be used in analog computers in terms of their operation.
+
+The circuit produces an output that is proportional to the integral of its input voltage with respect
+
+to time.
+
+This means that the output voltage at any time is determined by the start output voltage, the length
+
+of time the input voltage has been present and the value of the input voltage.
+
+The basic idea behind an integrated circuit is shown here, although there are few changes for the UPM
+
+greater circuit.
+
+This concept is what is behind its operation.
+
+So from this diagram, it can be seen that while the input remains at zero, so does the output.
+
+However, when astep input wattages apply to the input, the output rises.
+
+When the step input returns to zero, the output remains at the voltage it last attained.
+
+So integrating astep input voltage like this, we get an output as it is shown here.
+
+In other words, the magnitude of the output signal is determined by the length of time a voltage is
+
+present at its input.
+
+It makes sense, right?
+
+The more the input voltage stays high, the greater the output voltage.
+
+Now the construction of a simple integrated circuit using up amper requires two passive components and
+
+one active component.
+
+The two components are resistors and capacitors, the resistor and the capacitor form.
+
+First order Lopez filter across the active component of an integrated circuit is exactly opposite of
+
+open, a differentiator circuit that we will see later.
+
+So how does the circuit work?
+
+Open game, as we know, is somewhere close to infinite, therefore, the inverting input of the amplifier
+
+is a virtual ground.
+
+When a voltage is applied across the R-1, the current start to flow through the resistor as the capacitor
+
+has very low resistors.
+
+The capacitor is connected in the feedback position and the resistance of the capacitor is insignificant.
+
+So this situation, if the amplifier gain ratio is calculated, the result will be less than the unity.
+
+But why?
+
+We know that the gain ratio of an inverting amplifier is given us minus R.F. divided by our ear.
+
+In our case, the resistance of the capacitor, which is Korda's reactors, which is dependent on frequency,
+
+is X C.
+
+We have talked about capacitors reactors before, so I assume we know what it is.
+
+So as I said, the amplifiers gain is less than unity.
+
+And that's because the gain ratio, which in this case is minus the capacitors reactance divided by
+
+three, is too small.
+
+Practically, the capacitor has very low resistance between the plates and whatever the value or one
+
+holds, the output result of XY divided by one will be very low.
+
+The capacitor begins to charge up by the input voltage and in the same ratio the capacitor impedance
+
+also starts to increase.
+
+The charging rate is determined by the RC time constant of R one and C one.
+
+The operator urf now hampered and the negative feedback will produce an output voltage across the UPB
+
+to maintain the virtual earth condition across the input.
+
+So again, when there is an important signal applied, we are talking about a DC here for a better understanding.
+
+So we have a step input voltage.
+
+The capacitor starts to charge up, right.
+
+And the charging time or the charging rate is determined by the RC time constant.
+
+The higher the value of R1, the slower C one will charge up.
+
+It makes sense right us the feedback Cabaser C begins to charge up due to the influence of the input
+
+voltage, its impedance x C slowly increase in proportion to its rate of charge.
+
+So the capacitor charges up at the rate determined by the RC Time constant of the series Our C Network.
+
+The negative feedback that forces the OP amp to produce an output voltage that maintains a virtual earth.
+
+The op amps inverting input and sees the capacitor is connected between the op amps inverting input,
+
+which is that which will grant potentia right.
+
+And the output which is now negative.
+
+The potential voltage, which is we see developed across the capacitor, slowly increases, causing
+
+the charging current to decrease as the impedance of the capacitor increases.
+
+And this results in the ratio of Xixi divided by R in increasing producing linearly increasing ramp
+
+output voltage that continues to increase until the capacitor is fully charged.
+
+When the capacitor has fully charged up at this point, the capacitor acts as an open circuit, blocking
+
+any more flow of DC current, the ratio of feedback capacitor to input resistor is now infinite, resulting
+
+in infinite gain and the result of this high gain, which is similar to the options.
+
+Open loop gain, if you remember, is that the output of the amplifier goes into saturation as shown
+
+here.
+
+If you don't know what separation means in this context, the separation occurs when the output voltage
+
+of the amplifier swings heavily to one voltage supply, rail or the other with little or no control
+
+in between.
+
+So we say that an upper arm goes into saturation when its output bumps into the voltage supply rail,
+
+either the positive or the negative one.
+
+Now the rate at which the output voltage increases, which is the rate of change, is determined by
+
+the value of the resistor and the capacitor, which is the RC time constant by changing.
+
+These are the time constant value, either by changing the value of the capacitor C or the resistor,
+
+or the time in which it takes the output.
+
+What is to reach saturation can also be changed.
+
+If we look at this diagram, we can see that by altering the value of either the capacitor or resistor,
+
+we can alter the time the output voltage reaches saturation.
+
+So let's see this behavior in our simulator.

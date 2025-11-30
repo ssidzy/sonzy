@@ -1,0 +1,101 @@
+Now, let's move further and talk about the next region called as the Omec region, that the Omec region
+
+of a transistor, which is also called as the Linnear region, is the region where the drain current
+
+has a linear path to changes in the drain source voltage, which mimics the linear response that would
+
+be obtained from Ohm's Law.
+
+So the drain current depends on the drain to source voltage right to the beginning of the curve, as
+
+you can see.
+
+Then the drain to source voltage is small.
+
+The drain current varies nearly linearly with the drain to source voltage.
+
+So the Y axis is the drain current and the x axis is a drain to source voltage.
+
+These values that you can see here are just informative.
+
+Different fats have different values.
+
+And the reason why you see here, multiple lines is because the transition from omic region to separation
+
+region or from separation to breakdown region depends on the voltage applied on the gate.
+
+So notice that as long as the Fed is in the Omec region, an increase in datasource voltage will increase
+
+the drain current proportionally.
+
+Now, as you might have guessed, the reason why the only region is called the Linnear region is because
+
+the drain current there is nearly linearly with the drain voltage, and it's also called the omic region
+
+because the Fed acts like a variable resistor.
+
+So the only region is the only region of a fat cat is the curve where there's a linear response in current
+
+from changes in the voltage.
+
+It is called the only region or linear region because the fat behaves like a voltage controlled resistor.
+
+It mimics ohms law where current has a linear response to changes in voltage.
+
+In other parts of the latest curve, the current behaves not linearly.
+
+Nothing else would occur in Ohm's Law.
+
+Now, you might ask, what's the condition required for the Fed to operate in the region?
+
+Well, it's very easy.
+
+These omic region happens when the datasource voltage is higher than the threshold voltage and then
+
+drain to source voltage is lower than get to source voltage, minus the threshold voltage.
+
+So this is the condition required for the Fed to operate in the Linea region, which we will see now
+
+in the simulator.
+
+And here we are.
+
+Now let's change the drain voltage to zero volts, all right, now if we halwa over the mosfet, you
+
+can see down on the right corner that right now the Fed operates in the linear region.
+
+So we are in the only region right now.
+
+And also note that the threshold voltages, again, one point five words.
+
+So the reason why the Fed is in the linear region is because, first of all, the voltage applied on
+
+the gate is higher than the threshold voltage of one point five.
+
+That's right.
+
+And the drain voltage is lower than the gate voltage minus the threshold voltage.
+
+So the voltage minus the threshold voltages to words, which means that the Fed will operate in the
+
+omic region as long as a drain voltage is lower than how much do what's right.
+
+And of course, as long as the gate voltage is higher than the threshold voltage.
+
+Now, notice that as I increase the drain voltage, the drain current also increases nearly linearly,
+
+just as the characteristic curve pointed out.
+
+And as long as we are below to what the Fed acts like a voltage control resistor where voltage is nearly
+
+linear with the current, however, notice that once we exceed two words, the drain current stop increasing.
+
+Why?
+
+Because we have entered in the next operating region code does the separation region in the separation
+
+region.
+
+The drain voltage doesn't really have any effect on the drain current.
+
+But let's talk about this in the next course.

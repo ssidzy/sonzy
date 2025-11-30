@@ -1,0 +1,255 @@
+All right, we come back.
+
+If you have made it here, I want to congratulate you.
+
+It is a pretty long journey, right.
+
+And I hope this course is very beneficial for you.
+
+So, again, thank you for joining and it was a pleasure to have you here.
+
+Now, before any discord, there's still something important that I want to show you, and that is how
+
+to design a what is regulator using an upper hand by using a common operation amplifier and a few other
+
+external components, it is possible to design a linear voltage regulator capable of offering excellent
+
+performance and particularly suitable for powering low power.
+
+Loads of voltage regulator, as we know, is designed to automatically regulate the voltage level.
+
+This makes sure that even when a load is applied, the voltage doesn't drop.
+
+So voltage regulators are used to adjust the voltage from a power source to the voltage a device requires.
+
+The situation here not only performs the function of a water regulator, but can generate a stabilized
+
+output voltage with an error of less than one percent.
+
+It provides a fast response to changes in low voltage, generating an almost completely repoll free
+
+output voltage.
+
+So we have an unstabilized D.C. power source which may contain repairs and other noise and the output
+
+we get.
+
+A regulated voltage which reduces the repairs at the voltage won't drop on the load as long as the input
+
+voltage is higher than the required output.
+
+Voltage is fine.
+
+We can output voltage based on our requirements.
+
+All right.
+
+But how do we set the output to a specific voltage level using this voltage divider?
+
+All right.
+
+So in order to understand how this circuit works, we have to go back to our EU rules regarding options
+
+so we know that there is no input current flowing into the two inputs.
+
+Right.
+
+Which is great.
+
+And the second rule is that the OP will do whatever it can to keep both inputs at the same voltage.
+
+As you can see, this diode here is not a whatever diode.
+
+It's a zero diode which is used for voltage reference.
+
+So this diode here is biased through this resistance.
+
+And when the dial is correctly reversed, biased, the zehner diode keeps the voltage across its leaders
+
+close to the zehner breakdown voltage.
+
+So if the breakdown wattages six words, for example, and if the zehner is properly biased, meaning
+
+that there's enough voltage and current flowing through it, then the voltage on the Naani voting machine
+
+will be six words.
+
+So if our desire is to output at Warboys, for example, a zehner diode before breakdown voltage of
+
+six volts is a good choice.
+
+Why?
+
+We will see that in a minute.
+
+Now, if the voltage on the nonee working Pinnies six, what's the voltage on the inverting pin?
+
+Has to be six words as well.
+
+Right.
+
+But how do we get six words on the inverting pin when this pin is connected to the output of this?
+
+What is divider?
+
+Well, let's assume that both resistors have the same value.
+
+And if so, then the voltage divider has to be powered with swearwords in order to output six watts.
+
+Right.
+
+And you can bet that the op ed will output whatever voltage is required for the voltage divider to be
+
+powered to avoid and well, this Travolta is nothing else but the output of our voltage regulator circuit.
+
+So what voltage does the operator has to output more than 12 watts, right.
+
+Because the transistor has a base ammeter voltage drop.
+
+If this voltages around zero point seven, what they're up at will output twelve point seven words so
+
+that the voltage or the editor of the transistor will be to avoid.
+
+All right, but after all, why do we use a transistor here?
+
+Couldn't we just connect the output of the UPB directly to the output of the voltage regulator?
+
+Well, we could, but the opposite might not be able to supply enough current to the load.
+
+For example, a very popular op used by students and hobbyists is the symbol for one up, and this one,
+
+if you check it datasheet, you will see that it can output a maximum current of just 20 millions.
+
+Well, 20 million is not very much right.
+
+And as a result, this transistor here is used to supply the load with much more current than the OP
+
+itself could possibly supply.
+
+The only job of this up is to drive these transistor with the proper voltage and supply enough base
+
+current to the transistor.
+
+Remember, collector ammeter current is equal to better times based current.
+
+Now let's go to the simulator and continue our discussion there.
+
+Here we are.
+
+So in order to simulate an unregulated voltage source that has ripples in it, I have chosen a triangular
+
+wave generator.
+
+And as you can see, the input voltage looks like this.
+
+And what we get at the output is a ripple free, clean DC voltage that is suitable to your power and
+
+load.
+
+So the output voltage is stable regardless of the current required by the load.
+
+Now, the purpose of DNA diode is to provide a voltage reference, keeping the positive input of the
+
+up about six volts about ground.
+
+Now, the UPB outputs whatever voltage is required to keep the miners input also at six volts, right.
+
+And this what is divider ensures that the output voltage is two times the reference voltage, which
+
+is to what you might ask, what is the purpose of this resistance here?
+
+Well, this resistance is used as protection if someone by mistake short the output terminal above ground.
+
+So if the output is shorted there, the current will be so high that the transistor will blow up.
+
+And we don't want that right.
+
+A simple resistance.
+
+The series will do the job.
+
+So the maximum control that will flow in this path is the input voltage divided by this resistance.
+
+Unfortunately, we can't see this resistor in action because if I showed the output, the simulator,
+
+we complain that the maximum current is exceeded.
+
+And that's because the operator is treated as an ideal one and an ideal option can output an infinite
+
+amount of current.
+
+Well, in real life, that's not the case.
+
+The majority of the options can barely output the current more than zero point five amps.
+
+Now, what happens if you want to change the output voltage to a different one?
+
+We always change.
+
+The resistance is around to get our necessary output voltage.
+
+And yes, I almost forgot to show you that the output voltage can be calculated using this simple equation
+
+which says that the output voltage is equal to the general voltage times are one divided by our two
+
+plus one.
+
+So by using this equation, it's quite easy to find out the appropriate value of these two resistors.
+
+Now, if you want to convert the circuit into an adjustable voltage regulator, then instead of these
+
+two resistors, we can use a potential meter.
+
+Now, by using a potential meeta, we can increase or decrease the output voltage depending on our needs.
+
+Care must be taken.
+
+When you choose the transistor, it is advisable to use a power transistor instead of a small SIGNALER
+
+transistor, and that's because of the power dissipation in any linear regulator.
+
+Heat losses or this transistor increases that the output voltage decreases as the output voltage decreases,
+
+more and more heat dissipates or the transistor.
+
+But why is that?
+
+Because the what is difference between the input and output has to be dropped somewhere, right?
+
+So if the input is 16 words, let's say, as you can see, I have changed the triangular generator to
+
+simply DC power source for this example.
+
+And the output is six fold.
+
+That note that the output can be lower than the reference voltage.
+
+So this is one of the disadvantage of the circuit.
+
+That's why you will most often find a voltage difference of one point twenty five balls or something
+
+like that.
+
+So where were we?
+
+If the input is at 60 votes and the output is at six words, then the voltage difference between the
+
+two is ten would add this voltage has to be dropped somewhere.
+
+Right.
+
+And where will it be dropped across this transistor?
+
+Of course, the main disadvantage of linear regulators is their inefficiency, mainly due to the excessive
+
+power dissipation transistor, which operates in a linear region because efficiency is given by the
+
+output voltage divided by the input voltage ratio.
+
+It follows that the circuit has an efficiency equal to six words divided by 16 words in this case,
+
+which is equal to 37 percent, and therefore 63 percent of the energy is dissipated in the form of heat.
+
+It is therefore necessary to provide appropriate cooling systems such as heating's or heat dissipation
+
+layers on the BCB made of copper or other metals.

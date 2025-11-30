@@ -1,0 +1,99 @@
+All right, so let's see, how can this work with integrate our input signal?
+
+Well, what we are doing here is that we combine an 800 square signal with a 40 hertz, a square wave
+
+signal.
+
+So the input looks like this.
+
+I know it looks weird, but this example is very good to show that the output is indeed the integrate
+
+of the input signal.
+
+What is integration in the first place?
+
+Well, this goes into calculus and I don't want to bore you out with that.
+
+Integration is used in many different places and has different purposes.
+
+In our case, the circuit basically outputs the average value of our input signal over a given time.
+
+So this Al Pacino that we see here, which looks like a triangle array.
+
+Right.
+
+Is built by averaging this weird looking input signal from Daewon, I say to T2.
+
+So this is with calculate the integral of the input, meaning that the output voltage changes at a rate
+
+proportional to the input voltage.
+
+So the upper attempts to keep its minus input are the same voltage as the plus input.
+
+And this requires it to drain an amount of current proportional to the input voltage.
+
+The input current is equal to how much the input current is equal to the input voltage divided by this
+
+one km.
+
+So this year, I mean, this input current goes through the capacitor whose voltage is proportional
+
+to the integral of the current flowing through it.
+
+There is a nice equation actually that you can use to calculate the output voltage over a given time.
+
+And it looks like this.
+
+So the output voltage of an AMP integrator can be calculated using this equation.
+
+I know it's not the most beautiful equation, but if you have some basic integration scales, you can
+
+calculate the exact output or I mean output voltage over a given time.
+
+Now, what happens if instead of a square wave, we apply a sine wave?
+
+Well, this is where you might say, aha, this is really performance is the reason I'm saying this,
+
+if you had some doubts until now.
+
+So what is the integral of Senex?
+
+It's minus cause X, right?
+
+For an AC integrator, a sinusoidal input waveform will produce another sine wave as its output, which
+
+will be 90 degrees out of phase with the input, so producing a cosine wave.
+
+So using this Elkwood, we converted Asar.
+
+We have intercourse sine wave, which is 90 degrees out of phase.
+
+However, this is not frequently used and because of a certain limitation where we fit the integrator
+
+with an AC signal, the upper integrator performs less like an interpreter and begins to behave more
+
+like an active Lopez filter that we haven't called yet, passing low frequency signals while attenuating
+
+the high frequencies.
+
+And so the core frequency of the circuit is one divided by duppy times.
+
+These capacitors times, this resistance.
+
+But I know it's a lot to take in right now, and this is indeed not a regular surgery that you will
+
+use day by day, one of the most popular use of ANOP, the greater ease to produce the triangular wave
+
+out of a square rape triangle or waves are extensively used in some applications of triangle or wave
+
+include sampling circuits to restore firing circuits, frequency generator circuits, tone generators,
+
+milkweeds, etc..
+
+Another use of perpetrator is in analog to digital converters.
+
+Sometimes even sensors use an iterator to reproduce useful outputs.
+
+And last but not least, interpreters can be using analog computers where integration is needed to be
+
+done using the analog circuit.

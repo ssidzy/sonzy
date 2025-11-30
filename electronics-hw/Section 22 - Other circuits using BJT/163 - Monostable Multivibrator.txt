@@ -1,0 +1,227 @@
+In this course, we will talk about another type of multi vibrator, namely the monos table one.
+
+So a modest table, multi vibrator, it is one in which the output of the circuit turns on for a period
+
+of time and then shuts off.
+
+The output must be triggered on and it all turns on once per trigger and then shuts off.
+
+In the absence of a trigger being sent to the circuit, the output stays off, which is its stable state.
+
+And this is why the circuit is called US Monos Table State Circuit.
+
+It is always off except in the event that there is a trigger so the stable state of one unstable circuit
+
+is off.
+
+We simply use push button to allow for the trigger that is necessary to turn on the output in the circuit.
+
+Will you have an LSD as the output device being that it's easy to visualize what's going on through
+
+the use of an already more unstable multi vibrator?
+
+Circuits can be used for any circuit that needs to be momentarily turned on.
+
+Once, for example, if you are in an exhibit where you want users to press a button to demonstrate
+
+a circuit once these type of circuit can be used.
+
+But even more commonplace is any device that you want to operate was before a push button press.
+
+Think about how many applications there are.
+
+Think of touch toys where you press the stomach and it says something.
+
+The toy only talks where you press on it.
+
+So this is an example of a model stabilizer created only does the action one time with a single trigger.
+
+Each time you want to activate it again, you would have to trigger it again.
+
+So you can see there are many applications that can be used for.
+
+Let's jump directly to the simulation part, because I'm sure you will understand how the circuit works
+
+right away.
+
+And here we are, you are probably realized how similar this is with ease to an unstable one, the first
+
+difference is that there is no resistor here and a capacitor here was replaced by a resistor before
+
+hitting the trigger, which consists of a push button that is connected to ground before resistor in
+
+between.
+
+Let's see what's going on.
+
+Cue one transistor is in cut off mode because the base voltage compared to ground or the base metal
+
+voltage, same thing is 45 people.
+
+It's the reason why this voltage is so low is because Q2 is turned on since the connector voltage is
+
+much smaller than the base voltage.
+
+Q2 is in the saturation mode and we know that when the transistor is in saturation mode, the collector
+
+ammeter voltage is usually between zero point zero five and zero point to.
+
+In our case, it's a zero point zero for millivolts.
+
+This means that collector or the collector of Coutu is actually connected to ground.
+
+You can look at the connected meter as a resistor, but since Q2 is in saturation, this collector šemeta
+
+resistor has a very low value.
+
+So as long as the collector of Q2 is tied to ground, Cuonzo Base will also be very close to the ground
+
+level.
+
+And even if we change, these are three value.
+
+The base voltage of Q1 won't change at all because, in fact, there is not even current flowing in
+
+this path since oil goes down the ground.
+
+We will see soon was the importance of these 100 or resistor here.
+
+Now let's go to the left side of the screen.
+
+What do we see here?
+
+The capacitor C1 is charged to the power supply voltage there almost because on the left side of it,
+
+it's 10 volts and the right side is 696 millibars.
+
+So the capacitor is actually charged to 10 volts, minus six hundred ninety six million volts, which
+
+is nine point three hundred and four void's.
+
+On the left side of the circuit, there is no current flowing anymore, c one is charged and Q1 is in
+
+cut off mode.
+
+As a result, the left side of C one is like being tied to the power supply voltage due towards how
+
+our current is flowing nicely through the resistance r and question how much voltage is dropped across
+
+this resistance?
+
+Then what's Minola, 696 millivolts, right?
+
+I have already seen how was geolocation happens in cases like this.
+
+Each component of the circuit has a specific role that is called soon, but now let's hit the switch
+
+button and see what happens.
+
+All right.
+
+The LCD is turned on and in a short amount of time, the LCD will turn off.
+
+So just like we expected, a more stable circuit is turned on for a period of time and then shuts off.
+
+So what are we going to do now is I will slow down the simulation and I will hit the trigger once again
+
+and see what happens in more details.
+
+All right, the switch was triggered and noticed that Q1 is now turned on and Q2 is in cutoff mode because
+
+Q2 is not conducting the car and coming from the power supply is split into two current takes this path
+
+to turn the lights on and the other direction is toward the base of Q1 down the ground, providing enough
+
+current and voltage to turn this on.
+
+But why is Q2 turned off?
+
+That's because the base voltage is negative, which happens because of the discharging capacitor C1
+
+before Q1 was turned on, you remember that here was 10 volts and here around 690 millivolts.
+
+Right.
+
+But the moment Q1 started conducting the capacitor, C1 started discharging in the opposite direction.
+
+So before it was charged from left to right, but now is discharging from right to left, which you
+
+can look at it like this charging, but in fact is just charging up again, but this time from right
+
+to left.
+
+So if I increase the simulation, speed it just a little bit, you can notice that the base voltage
+
+of Q2 is increasing.
+
+And that's because C1 is now charging up through the resistor are the energy will be turned on until
+
+C one is charged to about 700 millivolts, which is enough to turn Q2 on.
+
+You can actually see now that if you use a lower resistance, these capacitor will charge up from right
+
+to left faster.
+
+And if R is higher in resistance, less current will flow due to ohms law.
+
+Hence the base voltage will rise slower.
+
+And this is actually what our C network is about.
+
+It's about timing.
+
+The way you calculate how long the LCD will be turned on is actually very easy.
+
+The amount of time that the output device will be on for is approximately equal to R times.
+
+See, if we multiply one km, we for 18 micro Farad's we get the time constant of zero point zero 18
+
+seconds.
+
+In other words, 18 milliseconds.
+
+Of course, in the simulator you won't notice that it's eight milliseconds because we had this simulation
+
+speed which slows everything down for us.
+
+But in fact we can see how long the LCD was turned on.
+
+If we do the difference between the end time and the third time, you will see that it's somewhere around
+
+eight milliseconds.
+
+Great.
+
+Now was the purpose of our three and our two, you might ask, well, if we take our three out and then
+
+we hit the trigger, you will find out that the LSD is not turning on anymore.
+
+But why is that?
+
+Well, let's slow down the simulation of it.
+
+I will hit the switch and now notice that the connector voltage is 760 millivolts, and since the early
+
+is connected to the collector, the entity will receive the same voltage on its leg.
+
+And obviously the energy will not turn on because a standard LCD like this one requires at least one
+
+point two volts to turn on.
+
+But why is the connector voltage 760 millimoles?
+
+Because that's the base meter voltage drop of Q1.
+
+First the voltage is dropped across R2 and the rest is dropped across the base meter voltage so that
+
+at the end it reaches zero volts or ground.
+
+On the other hand or two is required to not create a short circuit, then the lid is turned on because
+
+the end doesn't really have any resistance.
+
+So without Archil, you might create a short circuit between the power supply and the D ground.
+
+Another purpose of this article is to control the amount of current that flows through Q2 when it is
+
+turned on.

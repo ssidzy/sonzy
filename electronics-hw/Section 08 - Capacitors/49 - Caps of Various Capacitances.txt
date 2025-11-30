@@ -1,0 +1,53 @@
+In the previous course, we could see that capacitors are able to pass high frequencies more easily
+
+than lower ones, and the reason of it is because for higher frequencies, the reactors of the capacitor,
+
+which is measured in ohms, is lower.
+
+Hence more current will flow in the circuit.
+
+Now, let's do a kind of similar simulation, but now the frequency of the three sources will be identical,
+
+except the capacitors value will change.
+
+And here we are, as you can see, the frequency of each source is identical, the voltage that the
+
+output is also the same, which is firewalled.
+
+The difference is the size of the capacitors in them.
+
+Now, we know that a capacitor has the ability of being able to store an electric charge of electrons.
+
+The electric charge, as we know, has the same Burcu, and it's equal to the capacitors capacitance
+
+times the voltage across it.
+
+So based on this formula, we can see that the capacitors ability to store these electrical charge between
+
+its plates is proportional to the applied voltage and the size of the capacitor.
+
+The greater the capacitance, the greater will be the charge stored on the plate of the capacitor.
+
+So again, a larger capacitor can store more charge, so the current will be greater for a given voltage.
+
+The capacitor on the top is the largest, so the current flow is the greatest in this circuit.
+
+Now, actually, there's another way of thinking, we know that the capacity reactance is equal to one
+
+or two P times F times C based on this equation, you can see that the higher the capacitance, the
+
+lower the reactors.
+
+Lower reactance means that the overall impedance of that circuit, which takes into account both the
+
+resistance and the reactors of the capacitor, will be lower as well.
+
+As a result, more currently will flow in the circuit.
+
+Now, I want to mention that these simulations that we are making are only good for you to understand
+
+the behavior of capacitor in real life.
+
+You want see capacitors or circuits like these because these are pretty useless, right?
+
+So I say, let's take a look at the first practical use of a capacitor in a real world scenario.

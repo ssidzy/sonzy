@@ -1,0 +1,209 @@
+Hello, guys.
+
+We come back, the main objective of this course is to find out how to convert 220 water supply into
+
+a plus 12 volts and minus 12 all supply.
+
+These are called us a dual power supply us.
+
+We get positive and negative to avoid words, power supply at the same time.
+
+And this can be achieved in simple three steps.
+
+Firstly, 220 volts AC is converted into 12 words AC by using simple step down transformer.
+
+Secondly, the output of this transformer is given to the rectifier circuit, which will convert the
+
+AC supply into the sea supply.
+
+The output of the rectifier circuit contains ripples and to filter out these ripples, capacitor of
+
+2200 micro ferid of 25 volts is used.
+
+Lastly, the output of the capacitor that is pure DC is given to voltage regulator seven eight 12 seven
+
+nine 12, which will regulate the output voltage plus swearwords and minus 12 was DC.
+
+Despite the change in input voltage.
+
+As you can see, the transformer that we use is not as simple as that of transformer.
+
+These type of transformer is Kohler's center, that transformer because it is designed to provide two
+
+separate secondary voltages.
+
+You know, a central transformer, as the name implies, the tipping point is in the exact center of
+
+the secondary relighting, providing a common connection for two equal but opposite secondary voltages.
+
+With the center that grounded the output, we will be positive in nature with respect to the ground,
+
+while the voltage on the other secondary wehbe will be negative and opposite in nature.
+
+That is, they are 180 electrical degrees out of phase with each other.
+
+How the output voltage is calculated on the two secondaries is no different from that of an ordinary
+
+transformer.
+
+Primary and secondary voltages, currents and turns ratios are all calculated the same.
+
+This image shows how a central transformer looks in real life.
+
+The primary consists of two wires, while the secondary has three wires where T2 is the ground.
+
+So, for example, a 24 Worrell's centered transformer will measure 24 volts across the outer two taps
+
+and travels AC from each outer tap to the center tap.
+
+These two warboys a supplies are 180 degrees out of phase if each other does, making it easy to derive
+
+positive and negative towards D.C. power supplies from them.
+
+And the advantage of using a central transformer is that we can get both plus travel and minus where
+
+this supply using only one transformer.
+
+Of course it would output any other voltages depending on the input voltage and the terms ratio.
+
+Alright, now that we have plus minus 12 watts AC, we have to feed that into a full rectifier.
+
+So as you can see, the outer two terminals of the center transformer are connected to the bridge rectifiers
+
+illiquid.
+
+In order to convert the AC to DC, we can't make two types of rectifiers.
+
+One is Half-Breed Rectifier.
+
+A second is full bridge rectifier in a hospital, rectifier output wattages half of the input voltage.
+
+So for example, if input voltages 24 would then output these high voltages travels.
+
+And the number of diode used in these type of rectifier is to, you know, Fulbright's rectifier, the
+
+number of diodes is four and it is connected as shown here.
+
+And the output voltage is the same as the input voltage.
+
+They're not quite the same.
+
+The output is less with two diode drops because if you look at how Bridgitte fireworks only two diodes
+
+conduct in the same time.
+
+So you should take this voltage produced by diodes into account.
+
+Sverre.
+
+So in our example, footbridge rectifiers used, this means that the number of diodes is for an input
+
+and output.
+
+Voltage of the rectifier is 24 volts adc we ripples need of course.
+
+In this satellite power supply circuit, diabetes rectifiers made up of six amps for power diodes,
+
+rating of these dieties six amps and 400 volts, it is not necessary to use this much of a high capacity
+
+diode.
+
+But because of safety and flexibility purpose, high current capacity diode is used well, generally
+
+because of surges.
+
+In current, it is possible to damage the diode if we use low and operating diode.
+
+Now the output of the rectifier is not a pure DC, right?
+
+It contains ripples.
+
+So in order to flatten these voltage out, in other words, to remove ripples from the supply filter,
+
+capacitors are used.
+
+So to filter capacitor operating 2200 micro and 25 words are used as shown in the circuit.
+
+The connection of both capacitors are such that the common terminal of the capacitors is connected directly
+
+to the center terminal of the center.
+
+That transformer now this capacitor will get charged up to 12 was WDC as both are connected with the
+
+common terminal of a transformer.
+
+Furthermore, the capacitors will remove the ripples from the DC supply and give a pure DC output.
+
+But the output of both capacitors are not regulated.
+
+So to me, the supply regulated output of the capacitors are given to the voltage regulator is.
+
+The next important thing is to regulate the output voltage.
+
+Otherwise the output voltage will be wearing as per the input voltage changes and also the output voltage
+
+will drop.
+
+The moment you connect the load because of the voltage wider effect and we talked about this issue in
+
+the beginning of the chapter.
+
+Now, if we need to have all this output, then I see seven, eight, 12 is used.
+
+However, if required output voltages plus five words, for example, then seven eight zero five is
+
+used.
+
+So the last two digits of the AC gives the output voltage rating.
+
+Third-Class digit shows whether the voltage is positive or negative for positive voltage.
+
+The number eight is used for negative voltage.
+
+Number nine number is used.
+
+So I see seven, eight, 12 is used for plus 12 votes regulation and I see seven, nine, 12 is used
+
+for minors to avoid voltage regulation.
+
+So as you can see, compared to the alarm 317, which is an adjustable regulator, these ICS are not
+
+adjustable.
+
+They can only output on certain voltage.
+
+So they are great to use when you need one fixed voltage somewhere in your circuit.
+
+What are the implications of a dual power supply?
+
+You might ask?
+
+Well, actually there are many.
+
+So, for example, if DC motors are used as a load, then for a plus wells, it will rotate in a clockwise
+
+direction and for minus 12 hours it will rotate in the opposite direction.
+
+For example, motors which are used in toys like cars, buses, etc., will move forward in case of
+
+plus tablets and it will move reverse in case of minus travel.
+
+It's another use case of dual power supply.
+
+Is Vandersloot with you are powering contains operational amplifiers.
+
+Well, operation amplifiers need two power sources because the open up must operate in both polarities
+
+of the incoming signal.
+
+Without the negative source, the EMP won't swing into action during the negative cycle of the signal.
+
+So that signal portions output will be clipped.
+
+That is, remain at the ground itself, which is obviously not recommended.
+
+If it's not clear how an operational amplifier works, then stay tuned, because starting with the next
+
+chapter, we will demystify how an operation amplifier works and will be plenty of surface.
+
+You don't see you there.

@@ -1,0 +1,181 @@
+Welcome back.
+
+Until now, we have seen how unstable and stable it works, the last type of multi vibrator is the stable
+
+one, which requires two inputs to operate.
+
+A beast circuit will keep a state unless we trigger it to change states.
+
+So just like a more stable circuit and then you hit the trigger, the output will change from low to
+
+high.
+
+But unlike monos table, the output won't go back to low unless you hit the other trigger.
+
+And this is why we call one of the input trigger set, which will set the output to high and the other
+
+input trigger called Caldas Reset.
+
+That will change the output back to its previous state.
+
+Without understanding how this Bookstaber multi operator works, you want to understand how flipflops
+
+and leches work because they are actually based on a B stable, a circuit where flipflops leches are
+
+a fundamental building block of digital electronic system.
+
+One of their chief applications is in storing data and as such they are widely used in computers and
+
+processor systems of all sorts.
+
+So when someone ask what is the basic storage element, you really apply, the basic storage element
+
+are the leches and flipflops.
+
+Let's not get into too much detail regarding leches and flipflops.
+
+Now they are part of digital electronics and also explaining how they work now would go beyond the scope
+
+of this letter.
+
+What's more important now is to understand how a stable circuit works.
+
+All right, here we are.
+
+Our two trigger points are the set and reset.
+
+Note that at this time we use logic inputs which work just like Bowdens.
+
+But it's a more intuitive to use these ones than the logic level is low, just like now.
+
+It acts as a ground.
+
+So there's zero words here.
+
+When you push it, the logic level turns to logic high, which is five words.
+
+So basically when you push it, once you send a signal to the base of the transistor, you can even
+
+change the voltages.
+
+So if you.
+
+Right, click on it and click on edit, you can change the voltages that represent the low and high.
+
+So again, then the logic level is low, it acts as ground, then it is high.
+
+It's like sending fireballs to the base.
+
+If we look at the output right now, is logic high?
+
+So it is that a five words in order to change the output state back to zero words or logic low, you
+
+have to send a pulse on the other transistor base, which is called reset.
+
+So in the context of digital electronics, now you can see how this circuit can store one bit for you.
+
+If it receives a pulse from the exterior, you will store one bit of information which is represented
+
+by logic in binary.
+
+This would be one.
+
+If you want to change these back to zero, just hit the reset button again.
+
+Initially, Q2 is on and Q1 is of CS, Q1 is of no current is flowing through it and its collector voltage
+
+is close to five volts.
+
+This allows current to flow through into the base of Q2, which keeps Q2 switched on.
+
+Q2 is in saturation mode right now, keeping the collector voltage close to ground.
+
+And this prevents any current from flowing into the base of Q1 to switch it on.
+
+The resistor that's connected in series with the base is used to limit the current and to not create
+
+a short circuit between firewall's and this ground where you want to create the short circuit without
+
+it anyway, because we have this 100 on register here.
+
+But actually, how can we calculate the amount of current flowing in this path?
+
+Well, Ohm's Law says that current is equal to voltage divided by resistance.
+
+Right?
+
+What is the voltage and what is the resistance where the total resistance flowing in this path is 100
+
+ohm in series with one km.
+
+So it's 1100 or in total.
+
+Now, what's the voltage while I say it's five words, but in fact, since we have one dewdrop here,
+
+we have to take it into account because it drops our voltage from five words down to four point three
+
+words.
+
+So because of this base ammeter voltage drop, the total voltage is firewall's minus zero point seven
+
+volts, which is the basic metal voltage, and this equates to four point three voids.
+
+So four point three words divided by one thousand and one hundred ohm equals to around three point eight
+
+millions.
+
+Now, by sending a positive person on Cuban base, we will turn a Q one on and these positive voltage
+
+on the base of Q One will force the other transistor to turn off.
+
+Now you can see that without these 100 unregister, we would create a short circuit between fibroids
+
+and this ground.
+
+But what is the purpose of these two one KMB resistor?
+
+You might ask.
+
+Well, let me ask you one thing.
+
+What do you think is the voltage drop on this one KMB resistor right now?
+
+This is zero volts or a grand, right.
+
+And this is as well.
+
+This one, Killorn Resistor, is actually in parallel with the base ammeter diode.
+
+And we know that, you know, parallel circuit, the voltage drops across each of the branches is the
+
+same.
+
+So in this case, the diode will dictate the voltage drop because that's fixed.
+
+It can be more than 700 millivolts.
+
+And as a result, the voltage drop on this resistor is the same as the base meter voltage.
+
+If we take out the other one kilometer and we hit the reset button, you will see that we got an error.
+
+What we did is we created a nice short circuit between these firewalls and this ground.
+
+There was no resistance in its path whatsoever, only the intrinsic resistance of the Šemeta resistance,
+
+the little R, if you remember.
+
+But that's relatively very low.
+
+And also, I don't think that the simulator actually take that into account.
+
+All right.
+
+So they say, OK, we can store one bit of information and it is widely used in digital logic and computer
+
+memory.
+
+Another useful application that I just thought about is an alarm system in your car.
+
+Then the thief opens the door, the alarm will turn on and does not go off until the owner presses a
+
+reset switch within the car.

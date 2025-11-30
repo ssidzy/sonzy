@@ -1,0 +1,217 @@
+Hello and welcome back.
+
+In this course, we will learn how to buy us a transistor first, what is transistor biasing where transistor
+
+biasing is the controlled amount of voltage and current that must be given to a transistor for it to
+
+produce the desired amplification or switching effect?
+
+I know this might sound confusing at first, but don't worry because it's not that hard at all.
+
+In other words, transistors must be fed the correct or appropriate levels of wattages and or currence
+
+to their various regions in order to function properly and amplify signals to the correct level.
+
+These controls, the amount of voltage and or currents are fed to the different functions of the transistor
+
+is transistor biase.
+
+So without appropriate transistor biasing, the transistor may not function at all or amplify very poorly,
+
+such as produce clipping of the signal or produce too low of gain.
+
+Therefore, it's very important that the transistor is biased correctly for it to produce the intended
+
+output effect.
+
+And now let's take the simplest form of biasing, which is based.
+
+Bias based bias is the simplest way to bias people as the transistor.
+
+So how does it work?
+
+Well, we have a firewall's matter here that provides the voltage and current to the base of the transistor.
+
+The base is a 650 milliwatt and ammeter is at zero words.
+
+Hence the transistor is turned on.
+
+Right.
+
+But if the battery is five words, why do we have here 650 million words?
+
+By using the Akihiko voltage law, we will understand how wattages are allocated.
+
+This is a closed loop, right?
+
+So here we can apply Keiko's law, which states that the sum of all the voltage drops in a loop is equal
+
+to zero.
+
+Or to put it more easily, these five would need to be dropped somewhere on this, which is ground,
+
+which is zero.
+
+So first is dropped across this resistance and then is dropped across the diode, which is present between
+
+the between the base and ammeter.
+
+The voltage drop across a standard diode is always around zero point seven volts.
+
+Well, in this case is 650 millions.
+
+Hence, the remaining voltage needs to be dropped across this resistance.
+
+So there will be a what is drapeau four point three volts across this resistance.
+
+So the voltage drop across this resistance plus the voltage drop in between base and meter is fireboats.
+
+Great.
+
+Now, notice that the electric current is 100 times bigger than the base current.
+
+But why is that?
+
+That's because if we double click on the transistor, we will see that the beta is one hundred.
+
+If you're not sure about the beat of your transistor, you can always measure it.
+
+Yes, you heard it.
+
+Well, almost herie multimeter nowadays can check the beat of a transistor in the previous course.
+
+We have seen that the datasheet of an entire transistor, instead of mentioning a constant mehtar value,
+
+it specified the range.
+
+And that's because it is very hard for transistors to be produced with a precise bittar value during
+
+the manufacturing process, and therefore manufacturers generally specify a range that may be within
+
+the grid.
+
+Now, the problem with the circuit is that the output current is highly dependent on the beat of the
+
+transistor.
+
+This is a very bad practice to rely on the beat of the transistor because Betacam vary with the temperature
+
+collector voltage, etc. and instead we will buy the transistor in a different way so that we can actually
+
+modify the overall current gain as we reach.
+
+One popular technique used is a method called voltage divided by US.
+
+Voltage divided by us is the most popular and used way to buy a transistor.
+
+It uses a few transistors to make sure that voltage is divided and distributed into the transistor at
+
+correct levels.
+
+Why resistor the Šemeta resistor?
+
+Ari also helps provide stability against variations in beta that may exist from transistors or transistor
+
+for the circuit.
+
+We are going to assume that the BETYE is equal to one hundred for the transistor and let's try to find
+
+out the collector ammeter current.
+
+I didn't mention and I'm sorry for that.
+
+The electric current is always roughly equal to the emitter current.
+
+So when we talk about electric current, we can safely assume that it's the same current flowing in
+
+the emitter.
+
+To also I want to mention that I have covered all these things in my previous course already and in
+
+more detail.
+
+I just wanted to cover it again to make sure that everyone understands how the transistor works.
+
+Now, in order to calculate the emitter current first we need to know the base resistance.
+
+The base resistance can be calculated using Tevanian Theorem.
+
+According to the interim, these two resistors are in parallel.
+
+So the total base resistance is a.
+
+KMB, great, now let's calculate the base voltage using the voltage divider equation.
+
+We will get the base voltage of 12 volts.
+
+Now we can calculate the meter current using the following formula.
+
+Using this equation, we get a current of nine point seventy four millions.
+
+It's very important for you to understand that the Šemeta resistance provides stability in gain of the
+
+ammeter current of a transistor circuit.
+
+But what do I mean by that?
+
+Well, transistors beta can vary by large amounts from transistor to transistor, even if they are the
+
+same exact type from the same batch.
+
+There is no way to replicate the same exact bittar across transistors.
+
+And therefore, when we are designing transistors, circuits where we want roughly the same gain in
+
+all of them, we must design them in a way that produces the same gain despite fluctuations in the beta
+
+values.
+
+Right.
+
+And we do this by carefully choosing the Šemeta Resistance R.E., which provides stability against differences
+
+in BITA.
+
+If we look closely to the equation, we will notice that R is usually much larger than B divided by
+
+beta plus one, which means that are essentially overrides it and allows for stability against these
+
+fluctuations.
+
+For this transistor, we assumed that the beta is equal to 100.
+
+Right.
+
+But let's say we have to swap out the transistor and the new transistor has a beta of one hundred and
+
+fifty.
+
+What will the new calculation be?
+
+And will the output current of the transistors being largely in changes to the beta, or will it very
+
+little or still be stable there?
+
+Or is the transistor output current?
+
+Doesn't very much, despite a large difference in the values of the transistors, even though there
+
+is a difference of 50 of Beita in the transistors, there is less than a half of million per difference
+
+in the output current.
+
+If wanted an even larger value of our E can be used so that there is even more stability against the
+
+beat of the transistors.
+
+However, I realize that the larger R.E. is, the more gain that is lost for amplification in the circuit.
+
+So there must be a balance in the design of the value of R.E..
+
+Again, what is divided by us is the most popular and used way to buyers' production transistors.
+
+The resistors have to give complete control over the voltage and current that each region receives in
+
+the transistor and daym resistor or allows for stability of the gain of the transistor despite fluctuations
+
+in the BITA values.

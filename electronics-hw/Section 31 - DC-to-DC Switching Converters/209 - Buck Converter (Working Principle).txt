@@ -1,0 +1,173 @@
+The first type of switching voltage regulator that we talk about in more detail is the converter with
+
+power big a key parameter in many designs stared down or back.
+
+Regulators are widely used, although a resistor would enable voltage to be dropped.
+
+Power is lost.
+
+Add in applications such as the many battery powered items used.
+
+The power consumption is a crucial element.
+
+The most basic form of a step down transition is to use a register as a potential divider or voltage
+
+drop, or in some cases as a diode may also be used to stabilize the voltage.
+
+The issue with this form of what is dropper or step down convertor is that it is very wasteful in terms
+
+of power.
+
+Any voltage dropped across the resistor will be dissipated as heat at any current flowing through the
+
+dial will also dissipate heat.
+
+Both of these elements result or the loss of valuable energy.
+
+The linear voltage regulators are a good choice in almost all cases.
+
+However, the problem with them is that they have this drop out voltage which will result in power waste.
+
+For example, we may need to power a three point three words microcontroller from A to airballs supply
+
+real.
+
+The solution is simple.
+
+We just add a three point three was linear voltage regulator.
+
+I like the Helda 11 17 with the 12 words real and it regulates the voltage down to three point three.
+
+What we have already learned the working of what the regulators in previous courses.
+
+Now, suppose we have to power an LSD trip from the same three point three, what's real and it is easily
+
+consume around 20 million each.
+
+So a long trip would easily eat up an empire or so if you calculate the power dissipated by the regulator,
+
+which is the input voltage minus the output voltage times, the output current, the power dissipated,
+
+comes out to be around eight point seven watts.
+
+Now, this is a lot of power for a little linear regulator to dissipate.
+
+If we calculated the efficiency, which is just output power divided by input power, it comes out to
+
+be a pathetic 38 percent.
+
+Normally linear voltage regulator has very low efficiency compared with switching regulators.
+
+Now we feel the pressing need to find something that can step D.C. warriors down and do it efficiently,
+
+where power consumption is crucial.
+
+We need to lower the input voltage in a more clever way.
+
+This is where Buck Converters comes into play.
+
+The fundamental circuit for a step down converter or converter consists of an inductor diode capacitor
+
+and the speech.
+
+Soon you will see that the switch is not actually a switch, but it's a transistor, a transistor that
+
+you turn on and off very fast using an oscillator.
+
+For now, let's just stick with this switch here, because it will be easier for you to understand the
+
+working principle of this power converter.
+
+So how does the circuit work, you might ask?
+
+The working of a converter can be broken down into a few steps.
+
+Step number one, the switch turns on and lets current flow to the output capacitor, charging it up
+
+since the voltage across the capacitor cannot rise instantly.
+
+And since the inductor limits the charging current, the voltage across the capacitor during the switching
+
+cycle is not the full voltage of the power source.
+
+Step number two, the switch now turns off since the current in an inductor cannot change, suddenly
+
+the inductor creates a voltage across it.
+
+This voltage is allowed to charge up the capacitor and power the load through the diode when the switch
+
+is turned off, maintaining output current throughout the switching cycle.
+
+These two steps keep repeating many thousands of times a second, resulting in continuous output.
+
+Turning on and off the switch at a high speed requires another circuit which can generate a PVM signal.
+
+In other words, a squarish signal with adjustable duty cycle, replacing the switch before and mosfet
+
+and driving its gait before squarish signal.
+
+It will work just like a switch.
+
+Why do you use mosfet instead of a beeper?
+
+Transistor will be explained soon.
+
+But again, let's try to go over the circuit one more time.
+
+Now, instead of a switch, let's use a beeper transistor and let's place a load at the end, the load
+
+is ultimately what we want to power.
+
+So when the transistor converts current the DC power supply, supplying the load with current initially
+
+current flow to the load is restricted as energy is also being stored in L1.
+
+Therefore, the current in the load and the charge on C1 builds up gradually during the on period.
+
+Notice that throughout the on period there will be a large positive voltage on the one cathode and so
+
+the diode will be reversed.
+
+So therefore play no part in the action.
+
+However, where the transistor is of the energy stored in the magnetic field around L1 is released back
+
+into the circuit, the voltage across the doctor, which is the back, IMF is now in reverse polarity
+
+to the voltage across L1 during the all period and sufficient stored energy is available in the collapsing
+
+magnetic field to keep current flowing for at least part of the time the switch is open.
+
+The back GMF from L1 now causes current to flow around the circuit via the load, added one, which
+
+is now forward BIA's.
+
+Was the inductor has returned a large part of its stored energy to the circuit and the lowered voltage
+
+begins to fall, the charge stored in C1 becomes the main source of current keeping current flowing
+
+through the load until the next on period begins.
+
+The theoretical D.C. output voltage is determined by multiplying the input voltage with the ratio of
+
+the on time of the PV and the time period of the PBM.
+
+So the on time is the time duration of the on state and capital T is the time period of the square signal,
+
+which as we know is equal to one over the frequency.
+
+Since the frequency is fixed, Capital T becomes a constant in the equation and the only thing that
+
+you can play with is the duty cycle, if we have a duty cycle or 50 percent, let's say, then the on
+
+time would be half of the time period.
+
+Right.
+
+As a result, the output voltage will be half the input voltage.
+
+Now, it's easy to see that this ratio cannot be more than one, and this is why the convertor is referred
+
+to as step down convertor.
+
+Now, let's try to build a circuit in our simulator and see how it works.

@@ -1,0 +1,249 @@
+All right, welcome back.
+
+In the previous course, we have seen the building blocks of a linear power supply, right?
+
+And in this chain, the most difficult block to design or build is the regulator block.
+
+The first three blocks are relatively easy.
+
+And I assume that you already know by now how to create from an AC voltage DC.
+
+So because of this in upcoming selkowitz, instead of creating these three blocks all the time, we
+
+will use a simple DC power supply that will be given as input to the regulator block.
+
+So we will solely focus on how to design a functional regulator.
+
+First, let's see how to not design a regulator circuit.
+
+Let's assume that we have a 50 Walls DC input and we want to create a 10 volt DC output.
+
+So what do we do?
+
+Well, we could use a voltage divider by using a four km V for one kilo resistor, we can generate a
+
+voltage of 10 words.
+
+There's only one problem with this so-called regulator, and that is if we want to power any load or
+
+circuit with these power supply, we realize that at the moment we collect a load.
+
+It can have any input, impedance or resistance.
+
+The output voltage of our power supply drops instantaneously.
+
+We for one km load.
+
+The output is not towards anymore, but it's five point six words.
+
+Now, if we change the resistance of the load to, let's say, five hundred on, the output drops further
+
+to three point eight, which is why.
+
+That's because if you have noticed, the load is exactly in parallel with this one km resistor.
+
+So by connecting a load to the output, we basically modify the overall resistance of the voltage divider.
+
+So are you in the equation?
+
+Will not be one km, but it will be one km in parallel with the output resistance.
+
+This is obviously a very bad design, so let's come up with a better one using a magical component called
+
+US Zehner Diode.
+
+All right, so the circuit didn't really change instead of a resistor, here we have a Zentner diode,
+
+as we know, as a..
+
+Diode is always operated in its reverse by its condition.
+
+So the cathodes terminal is connected to the positive rain.
+
+And these 500 already history series with a diode is used to limit the current through the ZEHNDER diode.
+
+So if you take this out and connect the supply directly to the Zehner diode.
+
+You can see that the simulator says that the maximum current is exceeded.
+
+So make sure that you connect resistor in series with the Zehner, otherwise you will destroy it for
+
+sure.
+
+Now, the stabilized output voltage is always selected to be the same as the breakdown voltage of the
+
+diode, since the breakdown voltage of DNA diodes that holds the voltage across it is terrible.
+
+And even if you change the value of the load, the voltage will always be the same, except if the load
+
+is very small, like 100 ohm.
+
+As you can see, the voltage has dropped to eight point three voids because the Zehner diode doesn't
+
+receive enough current to operate properly.
+
+The car necessary for the Zendaya to function well is called less than their current.
+
+This and this value can be found in a dataset of the particular Zeder diode.
+
+Now, let's change the laws back to one km.
+
+What do you think is the problem of this regulator circuit?
+
+Well, the problem is that if there is no load connected to the circuit, the load cars will be zero.
+
+And all the circuit current passes through this Henare diode, which in turn dissipates its maximum
+
+power.
+
+Also, a small value of the series resistor will result in a greater diode current than the load resistance
+
+is collected and large.
+
+This will increase the power dissipation requirement of the diode, so it must be taken in selecting
+
+the appropriate value of serious resistance so that the Zander's maximum power rating is not exceeded
+
+under this no load or high impedance condition.
+
+All right.
+
+So again, the problem with the circuit is that we had this resistor here in series, the power supply,
+
+whose resistance needs to be set precisely not too high if it's too high.
+
+The Aurora, Colorado, the circuit is reduced.
+
+If it's too low, plenty of current will flow through the child and they will both dissipate power.
+
+Right now, if we look at the power dissipated by this resistor, we will see it around three watts,
+
+which is very high.
+
+You will be required to use a power resistor like this one to handle this current.
+
+Another problem with the circuit, which is more subtle, is that is another diode can sometimes generate
+
+electrical noise on top of a DC supply as it tries to stabilize the voltage.
+
+Normally, this is not a problem for most applications, but the addition of a large value, the coupling
+
+capacitor across the Zina's output may be required to give additional smoothing.
+
+All right, so the next quarters we are going to look at will solve the problem of participation on
+
+the Senate diet.
+
+If we look at it right now, the diet dissipates around 700 milliwatts, which is quite high.
+
+The diet must be capable to dissipate.
+
+These power sees this serious resistance must be kept low so that the Lord receives it's necessary clearance
+
+to operate.
+
+Since we have a one kilometer zester on a 10 mile to D.C., there should be a 10 million current passing
+
+through the resistance.
+
+Right.
+
+However, if we increase the value of the resistance to, let's say, 10 km, the Zehner will not regulated
+
+the output voltage anymore.
+
+Since the current passing through, it is very low and also the output current has dropped to four point
+
+five millions.
+
+So let's solve these problems before better circuit.
+
+These circuit uses an LP transistor whose base is tied to the cathode of the Zenner diode.
+
+The resistor used to limit the current through the Zehner diodes Tarakanov this time and the power dissipation
+
+on the Zehnder has been reduced to around 40 million watts.
+
+And the reason why we could increase this resistance to thank you know, without dropping the output
+
+voltage is because the transistor has the high input impedance, meaning that the base current is very
+
+low.
+
+So the whole current in this path can be allocated for the center diode because there will be very tiny
+
+current escaping here.
+
+By knowing the inner current from its datasheet, we can choose an appropriate resistor here since the
+
+baseball Teej of the transistor is a turmoils because of those and a diode diameter voltage will be
+
+one dewdrop less.
+
+So it's nine point three words.
+
+These diode drop is one of the drawback of the circuit, since the output will always be one drop less
+
+than the reference voltage.
+
+And this also means that the output voltage cannot drop below zero points downwards because the transistor
+
+will not conduct a modern well made power supply can drop below zero points downwards so that it can
+
+even output a voltage of zero point one Walts if that's the case.
+
+All right, this resistance here is optional, it's a good practice, though, to have a very small
+
+resistance in series with the load, but this depends on what you're powering.
+
+If you were to power another circuit with these power supply and not a dummy resistance load like here,
+
+then you never know whether the circuit you are powering will work as expected.
+
+So to prevent creating a short circuit between the power supply and this ground, a 100 or resistor
+
+is used.
+
+Now the output current is equal to 50 volts, divided by 100 plus one km resistor, which is of course
+
+around ten millions.
+
+The beat of the transistor is 100.
+
+Since the transistor works in forward mode, the correct RAIM current is equal to Bay's current times.
+
+Beita.
+
+The transistor works in a forward active mode because the connector voltage is higher than the voltage
+
+and the base voltage is higher than the meter voltage.
+
+So we managed to solve the problem of participation on the ZEHNDER diode.
+
+Right.
+
+But this circuit has one major flaw.
+
+If the resistance is too small, let's say 100 on this load still seems to be supported since the output
+
+fell just a little bit.
+
+If we changed to, let's say, 10 ohm, notice that the output voltage has been reduced to 4.5 watts.
+
+So the circuit is basically unable to provide enough power to the load.
+
+The current is fine.
+
+It's fifty one millions, but the voltage has been drastically reduced.
+
+We need somehow to design a circuit in a way that it provides better current amplification.
+
+So what I mean is we need to increase the input impedance of the transistor, meaning that somehow there
+
+should be less current flowing on the base and the current amplification.
+
+In other words, the Beatles, the transistor should be increased.
+
+How can we do that?
+
+By using a darling Dompierre?

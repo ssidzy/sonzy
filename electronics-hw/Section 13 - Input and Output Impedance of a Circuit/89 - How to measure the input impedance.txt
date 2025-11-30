@@ -1,0 +1,53 @@
+Hello and welcome back.
+
+How can we measure the input or the output impedance of a certain circuit?
+
+Because impedance is an AC prop. It cannot be easily measured like resistance.
+
+Connecting an ohm meter across the input or output of any circuit only indicates the DC resistance.
+
+It is quite possible, however, to measure input and output impedance at any frequency using a signal
+
+generator, an oscilloscope and a variable resistor.
+
+The set up for measuring input impedance is illustrated in this figure here.
+
+A variable resistor is connected between the signal generator and the amplifier input, and its resistance
+
+is set to zero ohms.
+
+So we have this square here, which could be any circuit, and we want to measure its input impedance.
+
+Don't worry about this triangle.
+
+For the moment, it's there just to illustrate that our circuit circuit is a specific circuit, which
+
+can amplify the input signal typically used in audio circuits.
+
+An oscilloscope or AC volt meter is connected across the amplifier load, which can be, for example,
+
+in our case, a loudspeaker, isn't it?
+
+So the first step is to set the signal generator to provide the sine wave output at one kilohertz.
+
+The amplitude of the input signal should be adjusted so that the display on the oscilloscope is noise
+
+free and distortion free.
+
+The display on the oscilloscope screen should be as large as is practical and set, so it's amplitude
+
+and half its amplitude can be easily estimated.
+
+The resistance of the amplifier input should then be increased until the output wave form is exactly
+
+half its previously set value.
+
+But this setting the signal is shared equally between the test resistance and the input impedance of
+
+the amplifier, which means that the resistance and the impedance are equal.
+
+Now you can switch off everything and remove the resistance, and by measuring the variable resistor
+
+with an O meter gives the value equivalent to the input impedance of the amplifier.
+
+Thanks for watching, and in the next quarter, we'll see how to measure the output impedance of a circuit.

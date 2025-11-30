@@ -1,0 +1,61 @@
+All right, guys, what we are going to learn in this chapter is about precision rectifiers.
+
+What are active fires in the first place?
+
+I don't have to go into details about rectifiers because it's something that we have learned in the
+
+beginning of the course.
+
+Well, the basic idea is this rectifiers what they do, they turn an AC voltage into a DC voltage.
+
+So the output of the rectifier, the current will flow in only one direction.
+
+Even if it's pulsating.
+
+The current is flowing in one direction.
+
+So it's a DC voltage.
+
+They can be halfway ratifiers or full where rectifiers, a type of rectifier that converts only the
+
+half cycle of the alternating current into direct current is known as Hathway Rectifier.
+
+On the other hand, where rectifier converts both positive and negative half cycle of the AC into DC
+
+has it provides double output voltage compared to the halfway rectifier.
+
+Well, these rectifiers that we have learned so far are not precision rectifiers.
+
+OK, they are ordinary rectifiers, if you want to call it like that.
+
+However, precision rectifiers use open circuits.
+
+What are the advantages of precision rectifiers, you might ask.
+
+The first and the most important feature is that there is no dired voltage drop between input and output.
+
+So we know that ordinary rectifiers like these Hafidh Rectifier, the output here is smaller than the
+
+input with one diode drop, which is usually around zero point seven volts.
+
+Depending on the dialogue with a fully rectifier, the output is smaller to dewdrops because there's
+
+always two diode in conduction at each cycle of the AC voltage.
+
+Now, if precision rectifiers avoid this dial drop, it means that they can rectify very small voltages,
+
+even very much smaller than the diode forward voltage of zero point seven.
+
+What's the next advantage is that the rectified output can be amplified if required.
+
+The next advantage is that the output impedance is very low, right?
+
+And UPB has very high input impedance, so there is no current flowing into the upper end and very low
+
+output impedance, meaning that the output voltage will not drop when it needs to drive a load and its
+
+overall position rectifiers are close approximation of an ideal diode because of absence of forward
+
+voltage drop.
+
+Let's begin with looking at how a halfway procedure rectifier works.

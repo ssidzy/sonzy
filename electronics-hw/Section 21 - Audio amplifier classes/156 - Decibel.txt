@@ -1,0 +1,85 @@
+Hello.
+
+In this course, we are going to talk about this, but this is good to know, especially if you are
+
+dealing with audio amplifiers.
+
+And now my question is how do you compare amplitudes of two signals?
+
+You could say, for instance, that Signal A is twice as large as Signal B, and that's fine and useful
+
+for many purposes.
+
+But because we often deal with ratios as large as million, it is better to use a logarithmic measure.
+
+And for this, we present the decibel.
+
+By definition, the ratio of two signals in decibels is 10 times log base 10 of B2 or B1, where P1
+
+and P2 represents the power in the two signals.
+
+But because in electronics, we often derive signal amplitudes.
+
+We express the ratio of two signals by using this equation.
+
+So in this case, the decibel is equal to 20 times log based then of a two over A1, where A1 and A2
+
+are the two signal amplitudes.
+
+So, for instance, one signal of twice the amplitude of another is plus six decibel relative to it.
+
+Since log base 10 of two is equal to 0.3.
+
+If A2 is twice as large as A1, that means the ratio between these two signals will be two.
+
+And if you multiply 20 with zero point three, we will get six decibels.
+
+Now, let's take another example, if a signal is ten times as large as another signal, then it means
+
+that the corresponding signal is with 20 decibels higher than the other one.
+
+And if a signal is one half as large, this means that it's negative 20 decibels lower than the other
+
+signal.
+
+I advise you to do some calculations and find out how we reach that 20 and minus 20 decibels.
+
+OK.
+
+And now let's take a more practical example, OK?
+
+For instance, let's say we have a microphone that is giving out one milli vault when very speaking
+
+to it.
+
+We plug this microphone into a preamp, which is a microphone input on the camera, our mixer that has
+
+a gain of 60 decibel from the table.
+
+We can see the 60 decibel is equal to a linear ratio of 1000 and therefore a preemptive if a gain of
+
+60 decibels is going to elevate our one million watt microphone level signal by a factor of 1000, giving
+
+us a level of 1000 milliwatts or what would.
+
+So basically, when we are dealing with audio amplifiers, the output voltage is always greater than
+
+the input voltage, which means that there must be a gain between and these gain can be expressed in
+
+decibel.
+
+In our example, you can say that the output voltage is greater with one thousand than the input wattage,
+
+but sometimes is more practical, and it's easier to just say that our amplifier has a gain of 60 decibel.
+
+Speaking of audio amplifiers, how loud is actually a decibel?
+
+If you happen to be in a completely empty room void of all sound, that would be zero decibels.
+
+And the following chart provides some general noise levels to give you an idea of what a different decibels
+
+sound like.
+
+Thanks for watching.
+
+See you in the next course.

@@ -1,0 +1,153 @@
+Now, let's move further and see how to calculate the charge, the voltage and the current flowing through
+
+the capacitor.
+
+I want to point out that this course is not mandatory to understand in order to actually use capacitors.
+
+So if you feel like you can skip this, however, I do recommend you to stay till the end.
+
+So a capacitors capacitance, which means how many Farad's it?
+
+S tells you how much charge it can store, how much charge a capacitor is currently storing depends
+
+on the potential difference between its plates.
+
+This relationship between charge, capacitance and voltage can be modeled with this equation.
+
+So the capacitance of a capacitor should always be a constant, a known value so we can adjust voltage
+
+to increase or decrease the capacitors charge more voltage means more charge, less voltage means less
+
+charge.
+
+This equation also gives us a good way to define the value of one Ferid.
+
+So long, Ferid, is the capacity to store one unit of energy in KM's for every one vote.
+
+All right.
+
+So the charge stored in a capacitor is a product of its capacitance and the voltage applied to it.
+
+We can take the charge of voltage capacitance equation a step further to find out how the capacitors
+
+and voltage effect current.
+
+Because current is the rate of flow of charge.
+
+The biggest of a capacitor relationship to voltage and current is this.
+
+So the amount of current through a capacitor depends on both the capacitance and how quickly the voltage
+
+is rising or falling.
+
+So again, the amount of current that flows through the capacitor depends on both the capacitors and
+
+how quickly the water is rising or falling.
+
+In order to understand this, let's compare three different scenarios.
+
+So the upper graphs shows the voltage across the capacitor and the bottom was the current flowing through
+
+the capacitor in the fourth scenario, where the voltage is steady constant.
+
+So it's a DC voltage.
+
+The current through the capacitor is zero.
+
+So if the voltage is constant and it doesn't change the Robinho current flow through the capacitor,
+
+we could see this scenario in the previous course when once the capacitor was charged up, no more current
+
+was flowing through the capacitor and the voltage on the capacitor remained constant.
+
+However, right at the beginning, when the voltage changed from zero to five watts, the amount of
+
+current was maximum because there was a sudden change in wattage.
+
+However, after that, the current was fading away as the capacitor charged up.
+
+Now, in the second scenario, you can notice that the voltage across the capacitor rises linearly.
+
+In this case, there's a constant rise in voltage, which causes a constant current to flow through
+
+the capacitor.
+
+In the third scenario, however, the voltage across the capacitor rises inconsistently, meaning that
+
+firstly the voltage increases linearly, causing a constant car to flow, then swiftly rises, which
+
+causes a sudden change in current and higher notice.
+
+Something interesting.
+
+So even though the voltage on this portion is higher than previously, the current drops.
+
+Why?
+
+Because the current through the capacitor depends on how quickly the voltage is rising or falling and
+
+not on the amount of voltage applied across it.
+
+If the voltage across the capacitor swiftly arises, a large positive current will be induced through
+
+the capacitor as lower rise in voltage across the capacitor equates to a smaller current through it.
+
+If the voltage across the capacitor is steady and unchanging, no current will go through it.
+
+So this is ugly and gets into calculus.
+
+It's not all that necessary until you get into the time domain analyses like or filter design and other
+
+gnarly stuff.
+
+So skip ahead to the next course if you are not comfortable with this equation.
+
+So the equation for calculating Corinda through a capacitor is this one.
+
+And this is an equation to calculate the current, which flows through a Cabaser based on the capacitor
+
+s. and the voltage we that builds up on the capacitor plates.
+
+However, this equation only applies if the voltage increases or decreases linearly.
+
+If you want to calculate the current through the capacitor, when an AC voltage is applied, then you
+
+will deal with reactants is something that we will learn very soon and you will most probably be interested
+
+in an effective value, which basically it's an average current flow through the capacitor over a period
+
+of time.
+
+The divi over DETI part of that equation is a derivative, a fancy way of saying instantaneous rate
+
+of voltage over time.
+
+It's equivalent to saying how fast is voltage going up or down at this very moment.
+
+The big takeaway from this equation is that if voltage is steady, the derivative is zero, which means
+
+current is also zero.
+
+And this is why current cannot flow through a capacitor holding a steady DC voltage.
+
+Now, the truth is, you will most probably never have to use this equation to calculate current through
+
+a capacitor, you should probably use this, for example, to calculate the current through the capacitor
+
+where the voltage rises from zero was to what's the voltage change from zero to five.
+
+Watts is not instantaneous only in fairy tales.
+
+So here you could apply this equation, but even here you would rather calculate the time for the capacitor
+
+to charge up hennaed the current through it.
+
+We will discuss about something called Arcy Time Constant in another chapter, which is much more interesting
+
+and has much more use in electronics than this equation here.
+
+But now let's see how the capacitor behaves when an AC current is passing through the capacitor and
+
+Nardizzi.
+
+See you next course.

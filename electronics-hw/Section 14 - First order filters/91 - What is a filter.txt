@@ -1,0 +1,139 @@
+All right, guys, in this chapter, we'll be talking about filters, more specifically about passive
+
+filters, there are passive and active filters, and the major difference between active and passive
+
+filter is that an active filter uses active components like transistor and hemp for the filtering of
+
+electronic signals against a passive filter, uses passive components like resistor, inductor and capacitor
+
+to generate a signal of a particular band.
+
+So both passive and active filters are used for the same purpose is just that active filters are a bit
+
+better in doing it.
+
+However, since we haven't learned about transistors nor about options in this chapter, we will deal
+
+only with passive filters.
+
+So let's start by discussing first what is actually a filter or filtering a signal.
+
+Well, you see, it is sometimes desirable to have surrogates capable of selectively filtering one frequency
+
+or radio frequencies out of a mix of different frequencies in.
+
+Let's say we have some audio signal at the frequency of around five kilohertz.
+
+If you have played around with a spectrum analyzer, you have probably seen graphs like this where a
+
+spectrum analyzer, if you don't know what it is, it looks like an oscilloscope.
+
+But instead of plotting out the variations of voltage over time, it measures the magnitude which is
+
+measured in what of an input signal versus frequency within the frequency range of the instrument.
+
+So we don't know the amplitude of these audio waveform, but let's assume that it's amplitude which
+
+is measured in what is quite low and we want to amplify it and drive a loud speaker.
+
+So you set yourself up, you amplify this audio waveform and you realize that the quality of the audio
+
+is bad, meaning that you hear some undesirable high frequency noise on top of the audio waveform.
+
+What you don't realize is that somewhere in the circuits, like, for example, switching more power
+
+supply generated a noise that somehow got induced in your audio waveform.
+
+So by mistake, you have amplified the desired waveform along with undesirable noise signal and what
+
+you got in the end.
+
+These are noisy audio waveform.
+
+In order to solve this problem, we can't place a filter between the input and the amplifier.
+
+And this filter will basically allow the desired audio waveform to pass through and will block, or
+
+in other words, it will filter out the noise.
+
+A circuit designed to perform this frequency selection is called a filter circuit or simply a filter.
+
+A filter is a circuit capable of passing certain frequencies while attenuating other frequencies as
+
+a result of filter can extract important frequencies from signals that also contain undesirable or irrelevant
+
+frequencies.
+
+In the field of electronics, there are many practical applications for filters, examples include in
+
+radio communications, like, for example, filters Aniba radio receivers to only see the desired signal
+
+while rejecting all other signals, assuming that the other signals have different frequency content.
+
+Filters are also extensively used in D.C. power supplies, so filters are used to eliminate undesired
+
+high frequencies.
+
+That is noise that are present on the D.C. input lines in all the electronics we usually use across
+
+crossover network, which is a network of filters, and they are used to channel low frequency audio
+
+to woofers, mid-range frequencies to mid-range speakers and high frequency sounds to tweeter's.
+
+Now the four primary types of filters include the Lopez filter, the hype's filter, the band pass filter
+
+and the NAHJ filter, or the band reject or bandsaw filter.
+
+Take note, however, that the terms low and high do not refer to any absolute values or frequency,
+
+but rather they are relative values of respect to the cutoff frequency.
+
+Well, more cutoff.
+
+Rachman's later.
+
+Now, this figure here gives a general idea of how each of these four fighters works, so we have our
+
+input signal, which we get by summing up three different signals.
+
+The first one is a low frequency signal.
+
+The last one is a high frequency signal, and the second one is somewhere between the two frequencies.
+
+Now, if you pass this original signal through a Lopez filter, what you get ideally is only the low
+
+frequency part of the original waveform.
+
+If you pass it through a high pass filter, ideally the low frequency and the middle frequencies will
+
+be removed, leaving only the high frequency signal to pass through a banters filter is a device that
+
+passes frequencies within a certain range and rejects, or, in other words, attenuates frequencies
+
+outside that range.
+
+A notch filter, on the other hand, which is also called the bad stop filter, is a filter that passes
+
+most frequencies and altered.
+
+But Attenuates does in a specific range to very low levels.
+
+It is the opposite of a pass filter.
+
+A large filter is a band style filter with a narrow band.
+
+So what you have to know is that filters in general are electronic circuits which perform signal processing
+
+functions specifically to remove unwanted frequency components from the signal or to enhance what it
+
+wants or both.
+
+In other words, they are designed to be frequency selective so that they can reduce the signal amplitude
+
+at some frequencies but do not effect signals at others.
+
+So let's start discussing in more detail about a Lopez filter, like how it is constructed, how it
+
+works, et cetera, but we will do that in the next course.
+
+So see you there.

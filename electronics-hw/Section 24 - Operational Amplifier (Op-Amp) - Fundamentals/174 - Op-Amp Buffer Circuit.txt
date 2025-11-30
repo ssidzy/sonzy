@@ -1,0 +1,257 @@
+Hello, when we come back, so as we have seen in the previous course, the fundamental function of
+
+an op ed is to greatly amplify the difference between the two inputs and outputs.
+
+The result.
+
+So if input three plus is greater than at V minus the OP amp will amplify and output a positive signal
+
+if we minus is greater.
+
+The OP every output an amplified negative signal.
+
+Right now we can see that the OP amp works as a competitor.
+
+Well, not the best competitor in the world indeed.
+
+Rather a crude one.
+
+And you can't use an op ed as a competitor in a pinch, but they aren't quite as good as a proper competitor
+
+that you can actually buy, which are designed to be competitors.
+
+But hey, you can use an all purpose competitor.
+
+I mean, if the output voltage is high, that the voltage on the plus is higher than the voltage on
+
+the minus.
+
+And if the output is low, we know that the voltage on the inverting pin is higher than the voltage
+
+on the nonemergency been because the upper gain is so high, even the small differences in the inputs
+
+rapidly drive the output voltage to its maximum or minimum value.
+
+So that's what happens if you connect an op amp with no feedback at all.
+
+And what that's called, what we have here actually is an open loop configuration because there is no
+
+loop, so there is no loop.
+
+The loop is open and we will close the loop in a minute.
+
+But we an open configuration like this, an op ed is just a comparator.
+
+So now let's have a look at what we're up Ms.
+
+Calm, really useful, and that's a proper amplifier.
+
+Now to do that, as I said, we need to go from the Opala configuration with no feedback to add in what's
+
+called negative feedback.
+
+And once you do that, options become incredibly useful and powerful devices.
+
+Now, there are two rules with arms.
+
+That's all you have to remember.
+
+It's fantastic.
+
+This is how easy ops are.
+
+If you know these two rules, if you remember these two rules, you can analyze practically any UPM
+
+circuit.
+
+You can get into the real nitty gritty details of the performance of it, perhaps, but you can look
+
+at the schematic and you can understand how it works so that the rules are very simple.
+
+Rule number one, no current flows in or out of the inputs.
+
+So there is nothing flowing in or out of these two input beans ever.
+
+That's it.
+
+Nothing nothing flows in or out regardless how you connect the circuit, whether it was the operator
+
+compared to the configuration we saw earlier or whether or not it's a closed loop configuration and
+
+inverting or not inverting amplifiers we are going to look at.
+
+So nothing flows in or out.
+
+Rule about you now, this rule only applies when you have a closed loop like this, it doesn't apply
+
+at all to the open loop that we just saw with the computer.
+
+That's why we did the computer first, even though it might have been a little bit confusing to start
+
+that way.
+
+Most people thought up an explanation with these EU rules, but I want to show you compared her first
+
+to highlight that rule number two does not apply or only applies to closed loop configurations with
+
+negative feedback.
+
+Now, rule number two is the OP does whatever it can internally, right, so internally it does whatever
+
+it can to keep these dual voltages the same.
+
+Now, the OPM can't actually change its input voltage, so it has no way to actually drive a voltage
+
+out and keep them the same.
+
+But it can do it with feedback.
+
+And that's why this rule only applies to closed loop configurations.
+
+So the OP amp only has control over its output, but if you have a feedback, it will change this output
+
+voltage to make sure that this input equals this input here.
+
+And that's a very powerful rule of options.
+
+And if you see a closed loop configuration like this, you can be pretty sure that rule number two is
+
+going to apply.
+
+So using these two rules, let's look at the simplest UPM configuration possible and it's not is it
+
+actually has no external components.
+
+So what it has is the output tied back to the inverting input like this and you feed your signal or
+
+your voltage into the non-convertible positive input like this.
+
+And the circuit is called an up buffer.
+
+So using our two rules, very easy to analyze this up buffer circuit.
+
+Let's say let's let's just do this, because the other thing is our palms are decoupled amplifiers so
+
+they can amplify DC as well as AC signals, very important property.
+
+So let's do that in case we are feeding one world into our non inverting input here.
+
+What do we got on the output of our EMP where, look, rule number two always applies when you got feedback
+
+in a circuit in the upper tries to keep these two input voltage is identical.
+
+So because of the rule, this inverting input here is going to be equal to this being up here.
+
+The append will ensure that by driving this output to get this input to match this one.
+
+So we got one word here, then we got one word here.
+
+And because it's just connected by a bit of a wire, we are going to get one word out here.
+
+That's why it's called a buffer.
+
+It's not an amplifier because there is no gain.
+
+One within in one without minus two, world in minus two without.
+
+Of course, the input voltage has to be within the limits of the power supply voltage.
+
+All right, here we are, so this is a simple demonstration of negative feedback using OPAP since the
+
+OP's output is fed back into the emerging pin, the mine has been it attempts to keep its output at
+
+the same level as the positive spin or the nonee bean been.
+
+So right now the input is fed veev three point three walls and notice that the inverting pin is exactly
+
+the same voltage as this one.
+
+If you increase the input voltage, the output will increase to by the same amount so that it can keep
+
+the inverting pin at exactly the same voltage as the voltage on the nonee wording.
+
+In rule number two, OPSB tries to keep both its inputs the same voltage.
+
+So what's the use of the circuit?
+
+You might as well rule number one, no current flow in or out of the inputs.
+
+So nothing, no current flows in.
+
+As you can see, the current is equal to zero on both inputs.
+
+So if you got a load over here, I don't know, it could be some sort of sensor or whatever.
+
+It could be a Lopez filter, for example, like you are feeding a person with a modulated signal from
+
+your microcontroller or something like that.
+
+And then you want to buffer that voltage off there because no current flows into the input.
+
+This up does not disturb your sensor or your circuit that you are actually trying to do.
+
+And this is what it's called, this very high input impedance, essentially open liquid.
+
+So it doesn't disturb anything.
+
+You hook up to it.
+
+But the EMP has what's called low impedance output so we can drive in a reasonable amount of current,
+
+you know, like millions, tens of millions, that sort of thing.
+
+Some can go as high as a couple hundred million for your power amps, but it can drive a reasonable
+
+amount of current.
+
+So that's why it's buffering the signal.
+
+A high speed signal and giving you a low impedance output just allows you to drive things before sensitive
+
+input like that.
+
+Pretty easy, very useful configuration.
+
+The op ed buffer.
+
+So I will repeat this again, an upper buffer like this one is used when the silk with which supplies
+
+the input pin cannot provide much current like sensors.
+
+For example, they output a voltage, but they cannot provide enough current.
+
+So the OpEx output will be the same as its input.
+
+But now the opposite can supply significantly more current to the load or to another circuit or whatever
+
+is connected to its output.
+
+So basically you can call this as a Corot amplifier.
+
+Great.
+
+So let's review what we have learned today, because the OpEx gain is so high, even small differences
+
+in the inputs, we rapidly drive the output qualities to its maximum or minimum value.
+
+For this reason, albums are usually connected to a negative feedback connecting the output of the EMP
+
+back to its inverting.
+
+We get what is called us or Pente buffer.
+
+The up EMP will do whatever it takes to keep both its do inputs the same voltage.
+
+So since the output is connected back with a piece of wire, the output voltage will be equal to the
+
+input voltage on the non inverting been.
+
+We have seen that the input currents are zero, which tells us that the input impedance of an up is
+
+very high while the input impedance is enormously high, the output impedance is very low, ideally
+
+zero.
+
+These two traits of an OP be something that you should remember, and because of them, this configuration
+
+is treatable and it's very often used as a buffer circuit.

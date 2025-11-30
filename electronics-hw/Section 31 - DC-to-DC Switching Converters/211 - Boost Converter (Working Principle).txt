@@ -1,0 +1,151 @@
+We'll come back, switched more supplies can be used for many purposes, including D.C. to D.C. commuters
+
+often, although an easy supply such as a battery may be available, it's available.
+
+Voltage is not suitable for the system being supplied.
+
+For example, the motors used in driving electric automobiles require much higher voltages in the region
+
+of 500 volts.
+
+Then it could be supplied by a battery alone.
+
+Even if bags of batteries were used, the extra weight and space taken up would be too great to be practical.
+
+The answer to this problem is to use fewer batteries and to boost the available DC.
+
+What is the required level by using a boost converter?
+
+Another problem is batteries.
+
+Large or small is that their output voltage varies as the available charge is used up and at some point
+
+in the battery voltage becomes too low to power the circuit being supplied.
+
+However, if this low output level can be boosted back up to a useful level again by using a boost converter,
+
+the life of the battery can be extended.
+
+The DC input to a converter can be from many sources as well as batteries such as rectified AC from
+
+the main supply or ADC from solar panels, fuel cells, dynamo's and the DC generators.
+
+The converter is different to the converter in that its output voltage is equal to or greater than its
+
+input voltage.
+
+However, it is important to remember that as power, which is equal to voltage times current, if the
+
+output voltage is increased, the available output current must decrease.
+
+So let's say if the converter works at a 100 percent efficiency, this would mean that all the power
+
+supplied by the DC Disembody source would be transferred to the node.
+
+Right?
+
+If the converter boosts the voltage up, then the current must decrease so that the output power remains
+
+equal to the input power.
+
+This is just something to keep in mind.
+
+This figure illustrates the basics of a book called Water, or in this example, the switching transistor
+
+is a power mosfet.
+
+Both people are power transistors and most folks are used to in power, switching the choice being determined
+
+by the current voltage, switching speed and cost considerations.
+
+The rest of the components are the same as adieus used in the converter, except that their positions
+
+have been rearranged.
+
+So let's demystify the working principle of a boost converter.
+
+Step number one, the mosfet is turned on during the time the MOSFET conducts, placing a short circuit
+
+from the right hand side of L1 to the negative input supply terminal.
+
+Therefore, a current flows between the positive and negative supply terminals through L1, which stored
+
+energy needs the magnetic field.
+
+There is virtually no current flowing in the remainder of the circuit as the combination of Daewon C1
+
+and the load represents a much higher impedance than the path directly through the heavily conductive
+
+mosfet.
+
+All right, and now comes step number two.
+
+Now, the mass for this turned off as the mass, what is rapidly turned off, the sudden drop in current
+
+causes and one to produce a bank, IMF in the opposite polarity to the voltage across one during the
+
+on period to keep current flowing.
+
+And this results into wattages, the supply voltage we're in and the bank IMF across at one in series
+
+with each other.
+
+This higher voltage, which is now we're in, plus the back yard footage now that there is no current
+
+path through the mosfet forward bias is the one the resulting current through the yuan charges up one
+
+to the input voltage plus the back GMF of the inductor, minus the small forward voltage drop across
+
+the one and also supplies the load.
+
+Step number three, the mosfet again conducts current.
+
+Each time the mosfet conducts the method of the one is more positive than it's another due to the charge
+
+on C one, D, one is therefore turned off.
+
+So the output of the circuit is isolated from the input.
+
+However, the load continues to be supplied with the input voltage plus the back half of the inverter
+
+from the charge on C one.
+
+Although the charge C1 drains away through the load during this period, C one is recharged each time
+
+the mosfet switches off.
+
+So maintaining an almost steady output voltage across the load.
+
+Now the theoretical is the output voltage is determined by the input voltage divided by one minus the
+
+duty cycle of the switching waveform, which will be some figure between zero and one corresponding
+
+to zero percent to 100 percent.
+
+So let's take an example.
+
+If the switching square wave has a period of 10 microseconds, the input voltage is nine miles and on
+
+is half of the period time that is five microseconds.
+
+Then the output voltage will be nine, divided by one minus zero point five, which is equal to eighteen
+
+volts, of course, minus the output of dired voltage drop because the output voltage is dependent on
+
+the duty cycle.
+
+It is important that this is accurately controlled.
+
+For example, if the duty cycle increased from zero point five to zero point ninety nine, let's say
+
+the output voltage produced would be nine, divided by one minus zero point ninety nine, which is equal
+
+to 900 volts before this level of output voltage was reached.
+
+However, there would be, of course, be some serious damage and smoke caused.
+
+So in practice, unless the circuit is specifically designed for very high voltages, the changes into
+
+the cycle are kept much lower than indicated in this example.
+
+Great, now let's simulate a boost converter in our simulator.

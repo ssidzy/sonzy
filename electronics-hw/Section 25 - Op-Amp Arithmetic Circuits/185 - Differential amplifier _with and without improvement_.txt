@@ -1,0 +1,203 @@
+An op ed with no feedback, he's ordered the defense to have the fire right after five years worth of
+
+difference between the two evils.
+
+However, its game cannot be controlled and it is generally too high to be of any practical use.
+
+So far, our application of negative feedback to Ops has resulted in the practical loss of one of the
+
+inputs, the resulting amplifier only good for amplifying a single voltage signal input.
+
+With a little ingenuity, however, we can construct an open secret, maintaining both worked cheap
+
+shots.
+
+Yet if a control game set by external resistors.
+
+If all the resistor values are equal, this amplifier will have a differential voltage gain of one.
+
+The analysis of the circuit is essentially the same as that of an inverting amplifier, except that
+
+the nonemergency input, which is the plus of the UPB, is at a voltage equal to a fraction of RETO.
+
+Rather than being connected directly to ground, US would stand to reason with two functions as the
+
+non-voting input.
+
+And we want functions as the inverting input of the final amplifier circuit and therefore the output
+
+voltage is equal to minus one.
+
+If we wanted to provide the financial gain of anything other than one, we would have to adjust the
+
+resistances in both upper and lower voltage dividers, necessitating multiple resistor changes and balancing
+
+between the two dividers for symmetrical operation.
+
+So again, if all the resistors have the same value, so R-1 equal to R2 equal to our three and equal
+
+to our four, then the circuits will become a unit to gain differential amplifier and the voltage gain
+
+of the amplifier will be exactly one or unity.
+
+Then the output expression would simply be without equal to V to minus B one.
+
+Also note that if input B one is higher, that input B to the output voltage, some will be negative.
+
+And if Rita is higher than one, the output, what?
+
+It will be positive.
+
+Now what if you want the gain of this amplifier to be different than unity?
+
+In this case, we have to tweak the resistors value.
+
+But how?
+
+Usually when designing a circuit like this, we try to keep our one equal to our two and our three equal
+
+to our four in this case.
+
+So if this condition is met, then the output voltage can be calculated using this formula.
+
+So the output voltage is equal to our three divided by R1 or multiplied by V to minus V one.
+
+All right, here we are.
+
+Let's see all the resisters have the same value, so the overall game is equal to what the output voltage
+
+is simply equal to the voltage on the non inverting been minus the voltage on the inverting been.
+
+So Edwards minus firewall's is equal to three words and indeed the output wattages.
+
+Three What the second input signal is driving two resistors which act as a voltage divider and the plus
+
+input of the up is connected between them, where the voltage is equal to half the second input signal.
+
+Right.
+
+So this one KMB with the other one KMB forms of what is divider.
+
+And since both resistances are equal, the output voltage of the voltage divider, which is also the
+
+input voltage of the inverting as well, will be equal to half the input voltage.
+
+We know that the OPAP attempts to keep its minus input are the same voltage as the plus input.
+
+The two resistors here on top acts as well as a voltage divider, making the minus input halfway between
+
+the first input signal and the APEP output.
+
+If the voltage on the non-convertible input is equal to half the second input voltage, which in turn
+
+is equal to the voltage on the inverting input, which is equal to half the first input voltage plus
+
+the output voltage, then the output is simply equal to the second input voltage, minus the first input
+
+voltage or the difference between the two inputs.
+
+Now, what if instead of a gain of one, you want a gain of two?
+
+Well, in that case, our three divided by one has to be equal to two.
+
+So let's make this six km and the other one, two, three km.
+
+And surprisingly, the output, it was supposed to be twice as big.
+
+It's even smaller.
+
+It's all it avoids.
+
+But why is that?
+
+Because we didn't obey the collision.
+
+So this equation is only valid if our one is equal to our two and our three is equal to our four.
+
+So let's make this resistor equal to three km.
+
+And the other one to see Skydome.
+
+Now, notice that the output wattage is indeed six wards, so eight votes, minus five also is three
+
+words times and again, which is now two.
+
+So they'll put wattages six votes.
+
+What is this good use for in my desk?
+
+I mean, just obstructing one DC voltage from another one is not very interesting, isn't it?
+
+Well, in the last course we will talk about it in more detail.
+
+But now let me show you another circuit which might trigger your imagination.
+
+So this year with Output's, the difference in what is between the two signals, right, in this case,
+
+the first input is a 60 year signal and the second input is a 60 year signal with 120 hertz square with
+
+added in.
+
+Well, here in the simulator, the two signals are added simply by connecting the two sources in series,
+
+which is convenient but unfortunately unrealistic.
+
+So what happens now is that the output voltage is only comprised of the 120 hertz squarish signal.
+
+But why is that?
+
+Because the signals that are common between the two inputs, voltages, common, meaning that they are
+
+identical in frequency and voltages, cancel each other out.
+
+So these 60 her signal is identical to the other one.
+
+And basically the output voltage equation would be this voltage, these 60 hertz plus this square with
+
+minus the signal on the inverting per unit.
+
+So overall, the signals that are common on both inputs cancel each other out, leaving only the square
+
+wave to pass through.
+
+Hmm, that's interesting.
+
+Could be use the circuit to cancel noise out.
+
+We will see that in the next course.
+
+But now there's a little problem here.
+
+It's not a problem, but it's a limitation of the circuit.
+
+So why limitation of the circuit is that its input impedance are rather low compared to that of the
+
+some other option configurations, most notably the non inverting single input amplifier that we can
+
+see.
+
+Each input voltage source has to drive current through a resistance which constitutes far less impedance
+
+than the bare input of an OP alone.
+
+And the solution to this problem, unfortunately, is quite simple.
+
+Or we need to do is for each input, for the signal through a voltage follower like this.
+
+Now the V1 and V2 input lines are connected straight to the inputs of the two voltage follower up amps
+
+giving very high impedance.
+
+The input sources don't have to drive any resistances anymore.
+
+And thanks to the very high input impedance of the EMP, the input current can be very close to zero
+
+amps.
+
+So now, instead of the input source is driving the resistance's, the upper hand, the driving of current
+
+through the resistors instead of letting the input voltage source do it.
+
+The increased complexity to our circuit is minimal for a substantial benefit.
+
+I got this song, remember that?

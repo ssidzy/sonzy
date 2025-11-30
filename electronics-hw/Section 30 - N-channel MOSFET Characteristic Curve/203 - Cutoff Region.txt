@@ -1,0 +1,131 @@
+Hello and welcome back, guys.
+
+As I have mentioned in the previous course, we start discussing about the operating regions of her
+
+father and sister.
+
+In order to understand this better, we will take a look at the fat cat, this curve which looks like
+
+this.
+
+As you can see, there are four operating regions we have the cutoff region or region separation and
+
+finally the breakdown region.
+
+Don't worry, it's very easy to understand this is a curve.
+
+So let's jump straight into it and start with the Qatar region as it is the easiest one to understand.
+
+The cut off region for Masterfoods is similar to the cut off region of the people's transition, one
+
+where the transistor acts like an open circuit.
+
+So right now, the transistor works in the forward act.
+
+The original right.
+
+The transistor is biased properly, meaning that the base voltage is around the threshold voltage and
+
+current flows from collector to emdur.
+
+When we hover over the transistor, the simulator is kind enough to tell us that right now the transistor
+
+is in the forward active mode, however, was the base voltage is low enough, the transistor shuts
+
+down and the transistor enters the cutoff region and no more current flows through the transistor.
+
+Before we jump into the simulation part of Maxford, I want to give you a brief overview of what the
+
+threshold voltage means for mosfet, more specifically for an engine on a has been mosfet where you
+
+see people transistors have a threshold voltage of around zero point six to zero point seven words.
+
+This is the threshold voltage above which the collective current appears to increase rapidly in the
+
+forward active region.
+
+The base to enter voltage is typically zero point six to zero point seven words.
+
+So just like before transistors, Masterfoods also have a threshold voltage.
+
+But the catch here is that different lawsuits have a different threshold voltage.
+
+The reason why the threshold voltage for people transistors is around zero point seven.
+
+What is because basically there's a diode between the base and ammeter, which has to be forward, biased
+
+and usually a small signal diodes needs around zero point seven words to start the conduction.
+
+Now, Moskovitz, on the other hand, are constructed differently.
+
+However, the working principle is similar to threshold voltage, commonly abbreviated as with the edge
+
+of a field effect.
+
+Transistor is the minimum gate to source voltage that is needed to create a conducting path between
+
+the source and train terminals.
+
+In and general, it has been more devices.
+
+A conductive channel does not exist naturally between the transistor and a positive datasource.
+
+Source voltage is necessary to create one such.
+
+So I guess this is pretty clear.
+
+Again, the threshold voltage is the voltage applied between gate.
+
+A source of a mosfet that is needed to turn the device on a mosfet enters the cutoff region when the
+
+gate to source voltage is lower than the threshold voltage.
+
+So when the mosfet operates in the Qatar region, the mosfet is turned off and there is no conduction
+
+between Iranian source.
+
+So let's see this behaviour in the simulator.
+
+All right.
+
+So this particular Maspeth has a threshold voltage of one point five watts right now is in the separation
+
+mode, which we haven't talked about yet.
+
+And since the gate voltage is about the threshold voltage of one point five, what's the most for this
+
+turned on and conduct's current?
+
+However, notice what happens when this gate voltage gets lower.
+
+So once it falls below one point five words, as you can see, the mosfet is turned off.
+
+So basically this means that the mosfet is in the Qatar region.
+
+So right now, the gate voltages one point four walls and walls.
+
+It exceeds the threshold voltage of one point five.
+
+What the mosfet is in separation and start conducting current, but then it falls below that point.
+
+The mosfet is in the cutoff mode.
+
+Of course, in reality, there won't be such a quick transition here.
+
+But you get the point.
+
+So the conduction through the channel stopped.
+
+You can now lower the gate voltage as much as you want.
+
+It won't effect the drain current level, even though it says here that there's some Netherlanders.
+
+In reality, when the mosfet is in the cutoff mode, no current flows through the mosfet.
+
+All right.
+
+So I hope this was clear.
+
+If not, please leave a comment below.
+
+And in the next course, let's talk about the next operating region, Korda's the Omec region.

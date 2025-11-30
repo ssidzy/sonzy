@@ -1,0 +1,147 @@
+Once you graduate from the simple basic components that are resistors, capacitors and inductors, it's
+
+time to step on up to the wonderful world of semiconductors.
+
+One of the most widely used semiconductor components is the diode.
+
+So what is a diode and how does it work?
+
+Well, the key function of an ideal diode is to control the direction of current flow.
+
+You see, current passing through a diode can only go in one direction called the forward direction.
+
+Current trying to flow.
+
+The reverse direction is blocked.
+
+If the voltage across the diode is negative, no current can flow.
+
+And the ideal dial looks like an open secret.
+
+In such a situation, the diode is said to be off or reverse bias.
+
+As long as the voltage across a diode isn't negative, it will turn on and conduct current.
+
+Ideally, a diode would act like a short circuit, which means that there would be zero walls across
+
+it.
+
+If it was conducting current, then diode is conducting current its forward bias.
+
+So this is the current voltage relationship of an ideal diode.
+
+Again, this is for an ideal diode, which of course doesn't exist.
+
+If there would be such an ideal diode, the current voltage relationship would look something like this.
+
+This graph shows that any negative voltage produces zero current.
+
+Basically the diode acts like an open circuit.
+
+As long as the voltage is non-negative, the diode would look like a short circuit, meaning that it
+
+would act like a piece of wire and no voltage would be dropped across it, of course, in real life.
+
+This is not the case because you will see in a moment that when Diaconu its current, there will be
+
+a voltage drop across it caldas forward voltage drop.
+
+Now every diode has two terminals, which are connections on each end of the component, and those terminals
+
+are polarized, meaning that the two terminals are distinctly different.
+
+It's important not to mix the connections on a dial up the positive and of a diode is called the A.
+
+And the negative end is called the cathode current cash flow from the anode and to the cathode, but
+
+not the other direction.
+
+The sacred symbol of a standard diode is, uh, triangle butting up against the line, as we recall
+
+in the light, of course, there are a variety of diode types, but usually there are circuits.
+
+Zimbabwe looks like this.
+
+Now, the terminal entering the flat edge of a triangle represents the anod current flows in the direction
+
+that the triangle or arrow is pointing, but it can't go the other way.
+
+Here you can see a couple of simple dial circuit examples on the left diode.
+
+The one is forward, biased and allowing current to flow through the circuit.
+
+In essence, it looks like a short circuit on the right diode.
+
+The two is reverse bias, so current cannot flow through the circuit and it essentially looks like an
+
+open circuit.
+
+As I said, unfortunately, there is no such thing as an ideal diode.
+
+But don't worry, diodes really are real.
+
+They just got the -- three sticks which make them operate as a little less than our ideal model.
+
+Ideally, diodes will block any and all current flowing the reverse direction or just act like a short
+
+circuit if current flow is forward.
+
+Unfortunately, actual diode behavior isn't quite ideal.
+
+Diodes do consume some amount of power they're conducting for with current and they won't block out
+
+all reverse.
+
+Current real world diodes are a bit more complicated and they all have unique characteristics which
+
+define how they actually operate the most important that it is its current voltage relationship.
+
+This device, what the current running through a component is given what voltage is measured across
+
+it.
+
+Resistors, for example, have a simple linear current voltage relationship.
+
+Right?
+
+This is purely Ohm's Law.
+
+The current voltage curve of a diode, though, is entirely nonlinear.
+
+It looks something like this now, as you can see, depending on the voltage applied across it, a diode
+
+will operate in one of the three regions.
+
+The first region is the forward bias region.
+
+Then the voltage across the diode is positive.
+
+The diode is on and current.
+
+Run through, so the voltage should be greater than the forward voltage in order for the current to
+
+be anything significant, the next operating region is the reverse bias region.
+
+So this is the off mode of the diode where the voltage is less than the forward voltage, but greater
+
+than the miners break down voltage.
+
+In this mode, current flow is mostly blocked and the diode is of a very small amount of current.
+
+Well, in order of nanobots called reverse saturation, current is able to flow in reverse through the
+
+diode.
+
+The last region is a break down region when the voltage applied across the dial is very large and the
+
+negative, so lots of current will be able to flow in the reverse direction from cathode to a..
+
+So these are all the three regions the diode can work in.
+
+In the next course, we will go through each of the operating regions in more detail.
+
+So we will get a better understanding of how that works.
+
+See you there.
+
+

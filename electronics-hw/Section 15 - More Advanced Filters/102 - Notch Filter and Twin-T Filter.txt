@@ -1,0 +1,229 @@
+In the previous course, we have seen that we can create a better future by combining a hypers and robust
+
+future.
+
+But as I explained before, there are situations where this is not a good option, especially if you
+
+want to build a very narrow perspective.
+
+The best filter came to the rescue, and using this configuration, we could create a very narrow path,
+
+but at the same time keeping the series resistance very low.
+
+The RNC basically had the capacitor in parallel with Dr. Doctor.
+
+But have you ever wondered what's going to happen if instead of placing the two components in parallel,
+
+the museum is, well, let's find out how this new configuration will effect the frequency response
+
+of the filter or.
+
+All right, this time we start with the end of the course and we jump straight into the simulator,
+
+so let's play a game.
+
+I will start the simulator and you have to guess the frequency response of the filter.
+
+Before I start, let me explain what these two graphs are.
+
+So the first one shows the input signals voltage, which will start from 20 hertz, and it will go up
+
+to 60 hertz.
+
+And the second graph shows the output signal, which is taken after the filter.
+
+All right, so let me start the simulator and notice how the output signal differs from that of the
+
+input signal.
+
+So these frequencies that both signal is is the same as the input signal.
+
+But it's not quite five words because but this is significant right now.
+
+Oops.
+
+Notice how that poor signal is getting attenuated and at around 40 hertz, the output signal is fully
+
+attenuated.
+
+And as the frequency increases further toward 60 hertz, Dogbert signal is getting back to normal.
+
+So the question is, how does this frequency response of this particular filter looks like?
+
+Well, it looks like this.
+
+If you have guessed it, congratulations, if not, well, better luck next time.
+
+So this is called this notch filter, but I prefer to call it as a band style filter, like events where
+
+there is a range of frequencies situated between the two minus three decibel points.
+
+The band Stop Filter attenuates all the frequencies.
+
+So it's quite the opposite of a band pass filter.
+
+All right.
+
+All right.
+
+Hold on a little bit.
+
+Exactly why are the signals attenuated inside of a band?
+
+Well, let's try to look at the filter as a voltage, a divider.
+
+In the previous course, we saw that when an answer is placed in parallel with a capacitor, there will
+
+be a resonance frequency which is situated exactly in the middle of the band.
+
+And the equation for that was the following.
+
+When the signal's frequency matched that of the resonant frequency, the impetus of the Arcy pair was
+
+the highest, which means that based on the what is the weather equation, not with voltage was also
+
+the highest in our current situation.
+
+The doctor is placed a series with the capacitor, but this doesn't mean that there is no resonant frequency.
+
+There is, but the equation of it is different.
+
+Before we jump into the equation.
+
+Let's see an interesting thing about Ceres resonance.
+
+This example shows serious resonance, so three identical oracy circuits are being driven by three different
+
+frequencies.
+
+The middle one is being driven to the resonance frequency.
+
+The top one is being driven at a slightly lower frequency, and the bottom one has a slightly higher
+
+frequency.
+
+As you can see, the peak voltage in the middle, a circuit is very high because it is resonating with
+
+the source.
+
+The easy signal generator is set to output the maximum voltage of only firewalled.
+
+And notice that close to the resonant frequency, the voltage is actually amplified.
+
+How interesting it is, right?
+
+So make sure that when you design a circuit, the easy signal as frequency is not close to the series
+
+resonant frequency of the SC pair because it's so it will ruin your day.
+
+Believe me.
+
+The series residents just like the Aperol, what happens when the reactions of the inductor is equal
+
+to the reactions of the competitor?
+
+I hope you know what reactors supercapacitor and the doctor is.
+
+If not, well, imagine reactors as a resistance.
+
+In fact, both are measured in homes, but reactors varies with the frequency.
+
+So based on this equation, the resonance frequency will be equal to one divided by Tupi square root
+
+of L.C.
+
+We can see that threateners.
+
+The new reactors is cancel each other out and thereby making a series Arcy combination act as a short
+
+circuit.
+
+If the only opposition to current flowing series Resonance Circuit being the resistors are.
+
+All right, seems at resonance frequency that you references cancel each other out acting as a short
+
+circuit, this means that the importance of the SC pair is close to zero.
+
+Right.
+
+Based on the voltage divided equation, e f is that two is close to zero.
+
+Well, the output voltage will be close to zero two.
+
+And this is how a few other attenuates signals at Resonant Frequency.
+
+Whoops.
+
+Sorry.
+
+So one more thing.
+
+Looking at the frequency response of a star that filter and sees the first half of the frequency response
+
+of the best operator resembles that of a law passed and the other half resembles that of a hypers.
+
+You might have wondered if we could build this frequency response using First Lopez in Series V for
+
+high pass filter.
+
+Well, that's a good thought.
+
+But the thing is, no matter what order you combine, the law passed with the high test, you will always
+
+get the band pass filter.
+
+If you insist and you really want to build your best later using a law passed at the high pass filter,
+
+you actually have to place them in parallel.
+
+This is also a good option and we eliminated the need of a doctor.
+
+This configuration is called us doing the filter.
+
+And if you find out where that comes from, leave your Asfour in the comments section.
+
+But regardless of this, if you have any type of question related to the course, feel free to ask it
+
+and I will come back to the shortest amount of time.
+
+So one of the disadvantage of using this type of filter is that, well, as you can see, it requires
+
+plenty of components, right?
+
+Second, it cannot create such a narrow band as the RC Notch Filter is capable of.
+
+If you are wondering how to calculate the frequency of these filter, well, you could calculate the
+
+frequency of these hypers.
+
+Therefore, Lopez and they're doing the difference between the high cutoff and low cutoff.
+
+You will get the stop band frequency.
+
+Another way of doing it is to calculate directly the middle frequency of the starbound, which is given
+
+by the following equation.
+
+So the frequency at which these basic 20 notch filter design offers maximum attenuation is called the
+
+notch frequency and is given by this equation.
+
+Now that we know why this notch frequencies, we can proceed to the next disadvantage that this weather
+
+has.
+
+So being a passive RC network.
+
+The third disadvantage of these basic 20 notch filter design is that the maximum value of the output
+
+below the notch frequency is generally less than the maximum value of the output above the notch frequency
+
+due in part to the two series resistances in the Lopez, with the section having greater losses than
+
+the reactor size of the two series capacitors in the high power section.
+
+There's actually another disadvantage, but it's related to the quality factor, a.k.a. Q factor of
+
+the filter, which is something that we didn't learn yet.
+
+But don't worry because you will find out what cool factor is when we talk about active.

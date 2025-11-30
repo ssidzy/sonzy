@@ -1,0 +1,159 @@
+Here in the simulator, there are three circuits which are identical, except for the frequency of the
+
+source, each circuit has the same capacitor where the frequency of the signal in the first year it
+
+is 15 hertz, then 40 hertz, and lastly, 80 hertz.
+
+What is capacitive reactance?
+
+Again, capacity reactance is a measure of a capacitors opposition to alternating current.
+
+So the highest opposition to current happens in the First Circuit since the reactors with the capacitor
+
+is the highest compared to the other two in the Second Circuit with the frequency of the source is higher,
+
+which will result in lower reactors.
+
+Hence the amount of current flow is higher than in the First Circuit.
+
+Last but not least in the Third Circuit, the frequency of the signal is the highest.
+
+As a result, the opposition of current flow will be the lowest since the reactors of the capacitor
+
+is the lowest.
+
+Hence the current will be the highest compared to the other two.
+
+So the big takeaway from this simulation is that capacitors are able to pass higher frequencies more
+
+easily than lower ones for high frequencies.
+
+The reactors, the capacitor, which is measured in ohms, is lower as a result, more current flows
+
+in the circuit.
+
+Remember what I have just said?
+
+It will be very useful once we get into analog filter resize.
+
+Now, basically, the course here is over, however.
+
+I see.
+
+Want something to explain for you?
+
+These currents that you see here are the peak currents of the sinusoidal waveform.
+
+So if I start the simulation, you can see that the coral that is measured is the peak.
+
+In other words, is the maximum current that flows in this area with these corals.
+
+Sometimes might be useful, sometimes not.
+
+However, if you are interested in a time average current, then you can go with.
+
+Show our Ms.
+
+Average of the current.
+
+So the root mean square value of the current is around sixteen point seven million.
+
+We already talked about voltage arms, right?
+
+Current arms is basically the same thing in the sense that it's the equivalent steady DC current, which
+
+gives the same effect on the load that is passing through.
+
+Now, my question to you is, how do we find out this average current?
+
+So why is there 16 millions of rmx currently in the circuit and how to calculate it?
+
+Well, this is where impedance comes into play.
+
+The equation to calculate the arms current is this one.
+
+It's we are a mess over impedance.
+
+We are.
+
+And this is zero point seven times the peak voltage.
+
+So it's zero point seven times five words, which is three point five words, great.
+
+So we know we are a mess, but what is this impedance we know from Ohm's Law that is equal to voltage
+
+divided by resistance.
+
+And this equation here is kind of similar to that, meaning that this impedance, as you might have
+
+guessed, is measured in ohms as well.
+
+Impedance is a measure of the overall opposition of a circuit to current.
+
+In other words, how much the circuit impedes the flow of charge.
+
+It is like resistance, but it also takes into account the effects of capacitance and inductance.
+
+Now, to understand what this impedance is, let's imagine that in place of this capacitor we have a
+
+resistor.
+
+In order to find the arms current, we have to calculate the total resistance to the circuit.
+
+Right.
+
+So it would be we are a mess divided by this resistance plus this resistance.
+
+Right.
+
+Since they are a series.
+
+So the total impedance of the circuit is a sum of these two resistors.
+
+Now, because we have a capacitor, one might say that the total opposition of Corot in the circuit
+
+would be this resistance, plus the reactors of the capacitor, they can be added up together since
+
+both are measured in homes and this is actually not very wrong, sees the result would be very close
+
+to the correct one.
+
+The problem, however, is that since the capacitor causes a phase shift between the current and voltage
+
+resistance and reactors cannot be simply added up to give impedance, instead, they must be added as
+
+vectors with reactors at right angles to resistance as shown here.
+
+So the overall impedance is equal to the square root of, ah, of the power of two plus the total reactors
+
+or the power of two where the other reactors is equal to the reactors of the inductor minus the reactors
+
+of the capacitor.
+
+Since we don't have any doctors in the circuit, this is actually zero.
+
+So the final impetus would be square root of our or the power of two plus minus the reactor and sort
+
+of capacitor or the power of two.
+
+Not raising a negative number of the power of two will be a positive number.
+
+Right.
+
+So we might as well get rid of this minus sign.
+
+And finally, we get the equation that we were looking for.
+
+The only thing left to do is to calculate the reactors of the capacitor for a frequency of 80 hertz.
+
+So it will be one or two P times, eight times, 30 times then at the power of minus six, which is
+
+equal to sixty six point three ohms.
+
+As a result, the total impetus will be square root of 200 homes or the power of two plus sixty six
+
+point three ohms and the power of two, which is equal to two hundred ten point seven ohms.
+
+As a result, three point five volts divided by two hundred ten point seven is sixteen point six million,
+
+which is exactly the current that the simulator measured for us.

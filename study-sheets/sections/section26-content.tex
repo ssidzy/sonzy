@@ -1,0 +1,552 @@
+\section{Section 26 -- Op-Amp Based Precision Rectifiers}
+
+This section explores precision rectifier circuits utilizing operational amplifiers to overcome fundamental limitations of passive diode rectifiers. Traditional diode rectifiers suffer from forward voltage drop (typically 0.7V for silicon diodes), making them unsuitable for low-amplitude signal processing. Precision rectifiers (active rectifiers) employ op-amp feedback to eliminate diode voltage drop, enabling accurate rectification of signals well below diode threshold voltage. These circuits provide controlled gain, extremely low output impedance, high input impedance, and near-ideal diode behavior essential for instrumentation, signal processing, and measurement applications.
+
+%--------------------------------------------------------------
+\subsection{Precision Rectifier Fundamentals}
+%--------------------------------------------------------------
+
+%--- Topic 190: Regular Rectifier vs Precision Rectifier ---
+\subsubsection{Comparison: Passive vs Active Rectification}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Traditional passive rectifiers (diode-based) convert AC to DC but suffer 0.7V voltage drop per diode, limiting minimum signal amplitude. Half-wave rectifier: output = input $-$ 0.7V (one diode drop). Full-wave rectifier: output = input $-$ 1.4V (two diode drops). Precision rectifiers use op-amps with diodes in feedback loop to eliminate voltage drop through negative feedback compensation. Advantages: (1) No voltage drop (rectify signals $<$ 0.7V), (2) Amplification capability, (3) Very low output impedance, (4) High input impedance, (5) Near-ideal diode characteristics. Essential for low-level signal processing.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Passive Rectifier Review:}
+
+\textit{Rectification Concept:} Converting alternating current (AC) to direct current (DC). Current flows in one direction only (may be pulsating, but unidirectional). Output maintains same polarity regardless of input polarity changes.
+
+\textit{Half-Wave Rectifier:} Converts only one half-cycle (positive or negative) of AC input to DC. Other half-cycle blocked. Output frequency equals input frequency. Single diode implementation. Efficiency approximately 40.6\%.
+
+\textit{Full-Wave Rectifier:} Converts both positive and negative half-cycles to DC (same polarity). Output frequency doubles (120Hz from 60Hz input). Bridge rectifier uses four diodes, center-tap transformer uses two diodes. Efficiency approximately 81.2\%. Provides twice the average output voltage compared to half-wave.
+
+\textbf{Fundamental Limitation: Diode Voltage Drop}
+
+Silicon diode forward voltage drop: $V_f \approx 0.7$V (depends on current, temperature, diode type). Schottky diode: $V_f \approx 0.3$V (lower but still significant for small signals).
+
+\textit{Half-Wave Passive Rectifier:}
+
+One diode in series with signal path. Output voltage:
+\[
+V_{out} = V_{in} - V_f \approx V_{in} - 0.7\text{V}
+\]
+
+For $V_{in} = 5$V peak AC: $V_{out} = 4.3$V peak DC (acceptable loss).
+
+For $V_{in} = 0.5$V peak AC: Diode barely conducts, severe distortion, output $\approx 0$V (unusable).
+
+Cannot rectify signals smaller than diode threshold voltage.
+
+\textit{Full-Wave Passive Rectifier (Bridge):}
+
+Two diodes conduct simultaneously (series path through signal). Output voltage:
+\[
+V_{out} = V_{in} - 2V_f \approx V_{in} - 1.4\text{V}
+\]
+
+Double voltage drop compounds small-signal problem.
+
+\textbf{Precision Rectifier Solution: Op-Amp Compensation}
+
+Operational amplifier drives diode(s) in feedback loop. Negative feedback ensures op-amp output compensates for diode voltage drop automatically.
+
+\textit{Key Principle:} Op-amp Golden Rule 2 (negative feedback forces inputs to same voltage). Feedback sampled after diode, so op-amp increases output voltage by exactly one diode drop to maintain input voltage equality. Diode drop absorbed internally, external circuit sees no voltage loss.
+
+\textbf{Advantages of Precision Rectifiers:}
+
+\textit{1. Zero Effective Voltage Drop:}
+
+Op-amp compensates diode forward voltage. Output voltage equals input voltage (during conduction half-cycle). Can rectify signals much smaller than 0.7V—millivolt-level signals accurately processed. No threshold voltage limitation.
+
+Example: 50mV AC signal perfectly rectified (impossible with passive diode rectifier).
+
+\textit{2. Amplification Capability:}
+
+Precision rectifier core typically based on inverting or non-inverting amplifier configuration. Gain easily adjustable by resistor ratios: $A_v = R_f/R_{in}$ (inverting) or $A_v = 1 + R_f/R_{in}$ (non-inverting).
+
+Single circuit performs rectification and amplification simultaneously. Reduces component count, simplifies signal conditioning chains.
+
+Example: Rectify and amplify 10mV sensor signal to 1V for ADC input (gain = 100).
+
+\textit{3. Very Low Output Impedance:}
+
+Op-amp output impedance typically $< 100\Omega$ (often $< 10\Omega$ for low-power op-amps, $< 1\Omega$ for power op-amps). Load variations minimally affect output voltage. Can drive low-impedance loads without voltage drop or distortion.
+
+Contrast: Passive rectifier output impedance includes diode dynamic resistance plus source impedance (can be high).
+
+\textit{4. High Input Impedance:}
+
+Non-inverting configurations: Input impedance approaches op-amp input impedance ($10^{12}\Omega$ for FET-input op-amps, $10^9\Omega$ for BJT-input). Minimal source loading, preserves signal integrity.
+
+Inverting configurations: Input impedance = $R_{in}$ (input resistor value), still controllable and predictable.
+
+\textit{5. Near-Ideal Diode Behavior:}
+
+Ideal diode characteristics: Zero forward voltage drop, infinite reverse resistance, zero forward resistance, instantaneous switching. Precision rectifier closely approximates ideal diode through active compensation. Limited only by op-amp slew rate and bandwidth (typically adequate for audio and instrumentation frequencies).
+
+\textbf{Applications Requiring Precision Rectification:}
+
+\begin{itemize}
+    \item \textit{Low-Level Signal Processing:} Sensor outputs (thermocouples, strain gauges, photodiodes), biomedical signals (ECG, EEG—microvolt to millivolt range)
+    \item \textit{Instrumentation:} RMS-to-DC converters, AC voltmeters, true RMS meters, peak detectors
+    \item \textit{Signal Conditioning:} Envelope detection, amplitude demodulation (AM radio), absolute value circuits
+    \item \textit{Measurement:} Precision diode replacement in test equipment, oscilloscope peak hold, waveform analysis
+    \item \textit{Audio Processing:} Compressor/limiter circuits, VU meters, audio level detection
+    \item \textit{Power Electronics:} Low-voltage energy harvesting, battery charging control, solar panel MPPT
+\end{itemize}
+
+\textbf{Trade-offs and Limitations:}
+
+Increased complexity compared to passive rectifiers. Requires power supply for op-amp (often dual supply for bipolar signals). Bandwidth limited by op-amp specifications (slew rate, gain-bandwidth product). Small-signal rectification at high frequencies challenging. Cost higher than simple diode rectifier. For high-voltage, high-current applications, passive rectifiers often more practical.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Voltage Drop Comparison:}
+
+Input signal: 1V peak AC sine wave.
+
+\textit{Passive Half-Wave Rectifier:}
+
+Silicon diode ($V_f = 0.7$V). Output peak: $V_{out} = 1 - 0.7 = 0.3$V. Voltage loss: 70\%. Unacceptable for precision applications.
+
+\textit{Precision Half-Wave Rectifier:}
+
+Op-amp with diode in feedback. Op-amp output: $V_{op} = V_{in} + V_f = 1 + 0.7 = 1.7$V. After diode: $V_{out} = V_{op} - V_f = 1.7 - 0.7 = 1$V. Output equals input, zero effective drop.
+
+\textbf{Small Signal Rectification:}
+
+Input: 100mV peak AC (typical sensor signal).
+
+\textit{Passive Rectifier:} 
+
+100mV $<$ 700mV diode threshold. Diode barely conducts, severe non-linearity. Output $\approx 0$V (signal lost).
+
+\textit{Precision Rectifier:}
+
+Op-amp compensates automatically. Output: 100mV peak DC. Perfect rectification maintained even at millivolt levels.
+
+\textbf{Amplification Example:}
+
+Input: 20mV AC sensor signal. Requirement: Rectify and amplify to 2V DC for ADC (gain = 100).
+
+\textit{Passive Approach (fails):}
+
+Rectifier cannot process 20mV. Even if amplified first, requires separate amplifier stage plus rectifier (two circuits, complexity).
+
+\textit{Precision Rectifier with Gain:}
+
+Single precision rectifier with $R_f/R_{in} = 100$. Input: 20mV AC. Output: 2V rectified DC. Single stage achieves both functions.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Passive rectifiers: voltage drop 0.7V (half-wave) or 1.4V (full-wave bridge), limits small signal processing
+    \item Precision rectifiers: op-amp compensates diode drop through negative feedback, zero effective voltage loss
+    \item Can rectify signals well below 0.7V threshold (millivolt-level signals accurately processed)
+    \item Advantages: no voltage drop, gain capability, low output impedance, high input impedance, ideal diode behavior
+    \item Op-amp Golden Rule 2 forces compensation: output = input + $V_f$ so feedback point = input voltage
+    \item Applications: instrumentation, low-level sensors, biomedical signals, RMS conversion, peak detection
+    \item Trade-offs: complexity, power supply required, bandwidth limitations, cost
+    \item Essential for precision measurement and signal conditioning in modern electronics
+    \item Full-wave precision rectifiers provide both half-cycles rectified with same zero-drop advantage
+    \item Gain adjustable by resistor ratios: single circuit performs rectification and amplification
+\end{itemize}
+\end{keypointsbox}
+
+
+%--------------------------------------------------------------
+\subsection{Half-Wave Precision Rectifier Circuits}
+%--------------------------------------------------------------
+
+%--- Topic 191: Basic Half-Wave Precision Rectifier ---
+\subsubsection{Basic Non-Inverting Half-Wave Precision Rectifier}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Basic precision half-wave rectifier: op-amp in non-inverting configuration with diode in feedback path. Input to non-inverting input, feedback sampled after diode. Op-amp compensates diode drop by outputting $V_{out} = V_{in} + V_f$ so feedback point matches input (Rule 2). Positive input half-cycle passes with zero effective drop. Negative half-cycle blocked (op-amp saturates low, diode reverse-biased, output = 0V). Can operate with single positive supply (no negative rail needed for this configuration). Rectifies signals well below 0.7V accurately.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration:}
+
+Input signal applied to non-inverting input ($V_{+}$). Op-amp output connected to diode anode. Diode cathode connected to: (1) output terminal, (2) negative feedback path back to inverting input ($V_{-}$). Inverting input has no other connections (feedback only). Load resistor typically at output node (diode cathode).
+
+\textit{Key Topology Feature:} Feedback sampled \textit{after} diode (at cathode), not before. This placement critical for compensation mechanism.
+
+\textbf{Single Supply Operation:}
+
+Unlike many op-amp circuits requiring dual supply ($\pm 15$V), basic precision rectifier can operate with single positive supply.
+
+Reasoning: Input signal positive half-cycle requires op-amp output positive (to forward-bias diode). Negative half-cycle: op-amp output goes to 0V (or slightly above ground), diode reverse-biased, output 0V. Op-amp never needs to output negative voltage for this half-wave rectification.
+
+Power connections: $V_{CC}$ = positive supply (e.g., +15V, +12V, +5V—choose based on input signal amplitude + headroom), $V_{EE}$ or $V_{-}$ = ground (0V).
+
+Supply voltage selection: Must exceed maximum input voltage plus diode drop plus op-amp headroom. Example: For 5V peak input signal, use $V_{CC} \geq 7$V (5V + 0.7V diode + 1.3V op-amp headroom).
+
+\textbf{Operation During Positive Half-Cycle:}
+
+Input voltage positive: $V_{in} = +V$ (where $0 < V < V_{CC}$).
+
+Op-amp Golden Rule 2: Negative feedback forces $V_{-} = V_{+}$. Since $V_{+} = V_{in}$, op-amp must make $V_{-} = V_{in}$.
+
+Inverting input connected to diode cathode (output). To achieve $V_{cathode} = V_{in}$, and knowing diode voltage drop:
+\[
+V_{cathode} = V_{anode} - V_f
+\]
+
+Therefore:
+\[
+V_{in} = V_{op\text{-}amp\text{ }output} - V_f
+\]
+
+Solving for op-amp output:
+\[
+\boxed{V_{op\text{-}amp\text{ }output} = V_{in} + V_f}
+\]
+
+Op-amp automatically outputs voltage higher by exactly one diode drop than input voltage.
+
+Output voltage (at cathode, after diode):
+\[
+V_{out} = V_{op\text{-}amp\text{ }output} - V_f = (V_{in} + V_f) - V_f = V_{in}
+\]
+
+Perfect transfer: Output equals input during positive half-cycle. Zero effective voltage drop.
+
+\textbf{Example Calculation:}
+
+Input: $V_{in} = +0.5$V. Diode forward voltage: $V_f = 0.7$V (typical silicon diode at low current).
+
+Op-amp output: $V_{op} = 0.5 + 0.7 = 1.2$V.
+
+After diode: $V_{out} = 1.2 - 0.7 = 0.5$V.
+
+Output perfectly matches input, even though signal well below diode threshold.
+
+\textbf{Small Signal Capability:}
+
+For $V_{in} = 50$mV (50 millivolts):
+
+Op-amp outputs: $V_{op} = 0.05 + V_f$. Diode conducts (op-amp provides forward voltage). Output: $V_{out} = 0.05$V.
+
+Passive diode rectifier would fail completely at 50mV (far below 0.7V threshold). Precision rectifier works flawlessly.
+
+\textbf{Operation During Negative Half-Cycle:}
+
+Input voltage negative: $V_{in} = -V$ (negative value).
+
+Op-amp attempts to force $V_{-} = V_{+} = -V$ (negative voltage at inverting input). To make cathode negative, anode must be even more negative (by $V_f$). Op-amp tries to output negative voltage.
+
+With single positive supply (ground at negative rail), op-amp cannot output negative voltage. Output saturates at ground potential (0V, or slightly above—typically tens of millivolts).
+
+Diode anode at 0V, cathode at 0V (connected to inverting input via feedback). Diode reverse-biased or zero-biased (not conducting). No current flows. Output voltage: $V_{out} = 0$V.
+
+Result: Negative half-cycle completely blocked. Output remains at 0V throughout negative input excursion.
+
+\textbf{Half-Wave Rectification Achieved:}
+
+Positive half-cycle: $V_{out} = V_{in}$ (passes with zero drop). Negative half-cycle: $V_{out} = 0$V (blocked). Classic half-wave rectification characteristic without passive diode voltage drop penalty.
+
+\textbf{Waveform Transformation:}
+
+Input: Sine wave AC, $\pm V_{pk}$ amplitude, centered at 0V.
+
+Output: Pulsating DC, 0 to $+V_{pk}$ (positive peaks preserved, negative portions clipped to 0V). Frequency equals input frequency. Average DC value: $V_{avg} = V_{pk}/\pi \approx 0.318 \times V_{pk}$ (same as passive half-wave rectifier).
+
+\textbf{Diode Selection and Forward Voltage:}
+
+Diode type affects compensation accuracy. Silicon diode: $V_f \approx 0.6$ to $0.7$V (current-dependent). Schottky diode: $V_f \approx 0.3$ to $0.4$V (lower drop, faster switching). Germanium diode: $V_f \approx 0.3$V (rare in modern designs).
+
+Op-amp compensates regardless of diode type. Works with any forward voltage. Even LED could theoretically be used ($V_f \approx 2$V—op-amp compensates, though impractical).
+
+Current affects $V_f$: Higher current increases forward voltage slightly. Op-amp tracks this variation automatically through feedback.
+
+\textbf{Practical Considerations:}
+
+\textit{Speed and Slew Rate:} Op-amp must respond quickly to input changes. Slew rate (V/$\mu$s) limits maximum frequency. For sine wave $V_{pk}$ amplitude at frequency $f$: required slew rate $\geq 2\pi f V_{pk}$. Low slew rate causes distortion at high frequencies.
+
+Example: 10V peak, 10kHz sine requires SR $\geq 2\pi \times 10k \times 10 \approx 0.63$ V/$\mu$s. Most general-purpose op-amps adequate.
+
+\textit{Output Current:} Op-amp drives diode and load. Output current capability must exceed load requirements. Typical op-amp: 20-30mA max. For higher currents, use buffer stage or power op-amp.
+
+\textit{Accuracy:} Op-amp offset voltage and bias current introduce small errors. Precision op-amps (low offset) recommended for accurate low-level rectification.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{500mV Sine Wave Rectification:}
+
+Input: 500mV peak sine wave (1kHz). Op-amp: Powered with +15V and 0V (single supply). Diode: General-purpose silicon (e.g., 1N4148), $V_f = 0.5$V at low current.
+
+\textit{Positive Peak (+500mV):}
+
+Op-amp output: $V_{op} = 500\text{mV} + 500\text{mV} = 1$V (1 volt).
+
+After diode: $V_{out} = 1\text{V} - 0.5\text{V} = 500\text{mV}$.
+
+Output matches input exactly.
+
+\textit{Negative Peak (-500mV):}
+
+Op-amp attempts negative output, saturates at 0V (ground rail). Diode reverse-biased. Output: $V_{out} = 0$V.
+
+\textit{Result:} Half-wave rectified signal, 0 to 500mV, no voltage drop. Passive diode rectifier would fail (500mV $<$ 700mV threshold).
+
+\textbf{Verification of Op-Amp Compensation:}
+
+Simulator measurement at positive peak:
+
+\begin{itemize}
+    \item Input (non-inverting pin): +500mV
+    \item Op-amp output (diode anode): +1.0V
+    \item Output (diode cathode, feedback point): +500mV
+\end{itemize}
+
+Voltage across diode: $1.0 - 0.5 = 0.5$V = $V_f$. Op-amp increased output by exactly diode drop amount. Feedback point equals input (Rule 2 satisfied). Compensation mechanism verified.
+
+\textbf{Extremely Small Signal (50mV):}
+
+Input: 50mV peak. Diode $V_f \approx 0.5$V (depends on current, approximately constant at low currents).
+
+Op-amp output: $50\text{mV} + 500\text{mV} = 550\text{mV}$.
+
+Output: $550 - 500 = 50$mV.
+
+Perfect rectification at 1/10th of diode threshold voltage. Demonstrates precision rectifier capability impossible with passive circuits.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Basic precision half-wave: input to non-inverting pin, diode in feedback (after diode to inverting pin)
+    \item Op-amp compensates diode drop: outputs $V_{in} + V_f$ so feedback point = $V_{in}$ (Rule 2)
+    \item Positive half-cycle: $V_{out} = V_{in}$ (zero effective voltage drop)
+    \item Negative half-cycle: op-amp saturates at 0V, diode reverse-biased, $V_{out} = 0$V (blocked)
+    \item Single positive supply operation sufficient (op-amp never outputs negative voltage in this config)
+    \item Rectifies signals well below diode threshold (millivolt-level signals accurately processed)
+    \item Feedback sampled after diode (critical for compensation mechanism)
+    \item Op-amp automatically tracks diode $V_f$ variations (current, temperature, diode type)
+    \item Speed limited by op-amp slew rate: SR $\geq 2\pi f V_{pk}$ for sine waves
+    \item Output current limited by op-amp capability (typically 20-30mA)
+    \item Works with any diode type: silicon, Schottky, germanium—op-amp compensates any $V_f$
+    \item Applications: low-level signal rectification, peak detection, envelope detection, instrumentation
+\end{itemize}
+\end{keypointsbox}
+
+
+%--- Topic 192: Gain-Controllable Precision Half-Wave Rectifier ---
+\subsubsection{Inverting Precision Half-Wave Rectifier with Gain}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Inverting precision half-wave rectifier with gain: input to inverting input through $R_{in}$, dual-diode feedback network with $R_f$. Rectifies and amplifies simultaneously. Gain: $A_v = -R_f/R_{in}$ (inverting amplifier formula). Negative input half-cycle passes (becomes positive output after inversion). Positive input blocked. Dual supply required (op-amp outputs negative voltage during blocking cycle). Voltage divider ($R_{in}$, $R_f$) maintains virtual ground at inverting input (Rule 2). One diode conducts during pass cycle, other conducts during block cycle (steering output current path). Single-stage rectification and amplification ideal for low-level sensor signal conditioning.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Circuit Configuration:}
+
+Input signal applied through input resistor $R_{in}$ to inverting input. Non-inverting input grounded (0V). Two diodes in feedback network:
+
+\begin{itemize}
+    \item Diode D1: Anode to op-amp output, cathode to inverting input (through feedback resistor $R_f$)
+    \item Diode D2: Cathode to op-amp output, anode to inverting input (through $R_f$)—reverse direction relative to D1
+\end{itemize}
+
+Feedback resistor $R_f$ connects diode network to inverting input. Output taken from diode cathode (D1) or op-amp output depending on design variation.
+
+\textit{Core Topology:} Inverting amplifier with diode-steering feedback network. Two diodes conduct alternately depending on input polarity, creating rectification while maintaining amplifier gain.
+
+\textbf{Fundamental Principle: Virtual Ground Maintenance}
+
+Op-amp Golden Rule 2: Inverting input (virtual ground) maintained at 0V (since non-inverting input grounded). Regardless of input signal polarity or amplitude, op-amp adjusts output voltage to keep inverting input at 0V.
+
+Voltage divider formed by $R_{in}$ (input to virtual ground) and $R_f$ (virtual ground to output via diode). For virtual ground to remain at 0V with one end at $V_{in}$ and other end at $V_{out}$:
+\[
+\frac{V_{in}}{R_{in}} + \frac{V_{out}}{R_f} = 0 \quad \text{(current balance at virtual ground)}
+\]
+
+Solving for output:
+\[
+V_{out} = -\frac{R_f}{R_{in}} V_{in}
+\]
+
+Standard inverting amplifier gain relationship, but implemented with diode steering for rectification.
+
+\textbf{Operation During Negative Input Half-Cycle (Pass Cycle):}
+
+Input voltage negative: $V_{in} = -V$ (negative value, e.g., -0.5V).
+
+To maintain virtual ground at 0V, and given voltage divider with $V_{in}$ negative on one end, output must be positive on other end.
+
+Calculation: If $V_{in} = -0.5$V and $R_f = R_{in}$ (unity gain magnitude):
+
+Virtual ground at 0V requires: $V_{out} = -(-0.5) = +0.5$V (after inversion and rectification).
+
+Actually, output becomes positive: $V_{out} = (R_f/R_{in}) \times |V_{in}|$.
+
+Op-amp output goes positive (e.g., +0.5V plus diode drop). Diode D1 conducts (forward-biased). Current path: Input $\to$ $R_{in}$ $\to$ virtual ground $\to$ $R_f$ $\to$ D1 $\to$ output. Diode D2 reverse-biased (off).
+
+Output voltage (at D1 cathode): Positive value, proportional to negative input, inverted and rectified.
+
+\textbf{Operation During Positive Input Half-Cycle (Block Cycle):}
+
+Input voltage positive: $V_{in} = +V$ (positive value, e.g., +0.5V).
+
+To maintain virtual ground at 0V with positive voltage on input side, output side of divider must be negative.
+
+Op-amp output goes negative. Diode D2 conducts (forward-biased—cathode at negative op-amp output, anode toward virtual ground). Diode D1 reverse-biased (off).
+
+Current path: Input $\to$ $R_{in}$ $\to$ virtual ground, but instead of going to output through $R_f$ and D1 (blocked), current diverts through D2 back to op-amp output.
+
+Output voltage (at D1 cathode): Remains at or near 0V (D1 not conducting, no forward current path). Positive input blocked from output.
+
+Op-amp output: Negative voltage approximately equal to negative diode drop (to turn on D2). Typically around -0.4V to -0.7V.
+
+\textbf{Dual Supply Requirement:}
+
+Unlike basic non-inverting precision rectifier (single supply), inverting version requires dual supply (e.g., $\pm 15$V, $\pm 12$V, $\pm 5$V).
+
+Reason: During positive input (block cycle), op-amp outputs negative voltage (to conduct D2 and shunt current). Negative supply rail necessary for op-amp to output negative voltage.
+
+Power connections: $V_{CC}$ = positive supply, $V_{EE}$ or $V_{-}$ = negative supply (equal magnitude or asymmetric based on signal range).
+
+\textbf{Gain Control and Amplification:}
+
+Gain determined by resistor ratio (standard inverting amplifier):
+\[
+\boxed{A_v = -\frac{R_f}{R_{in}}}
+\]
+
+Negative sign indicates inversion (negative input produces positive output). Magnitude of gain sets amplification.
+
+For $R_f = R_{in}$: $|A_v| = 1$ (unity gain, rectification without amplification).
+
+For $R_f = 2 \times R_{in}$: $|A_v| = 2$ (double amplitude, gain of 2).
+
+For $R_f = 10 \times R_{in}$: $|A_v| = 10$ (tenfold amplification).
+
+\textbf{Example: Unity Gain Configuration}
+
+$R_{in} = 10$k$\Omega$, $R_f = 10$k$\Omega$. Gain magnitude = 1.
+
+Input: -0.5V (negative). Output: +0.5V (positive, inverted, rectified).
+
+Input: +0.5V (positive). Output: 0V (blocked).
+
+\textbf{Example: Gain = 2 Configuration}
+
+$R_{in} = 10$k$\Omega$, $R_f = 20$k$\Omega$. Gain magnitude = 2.
+
+Input: -0.5V (negative). Output: $+2 \times 0.5 = +1$V (amplified).
+
+Input: +0.5V (positive). Output: 0V (blocked).
+
+Output amplitude doubled compared to input (rectification with 2$\times$ gain).
+
+\textbf{Current Flow Analysis:}
+
+\textit{Negative Input (D1 Conducting):}
+
+Input current: $I_{in} = V_{in}/R_{in}$ (flows from input to virtual ground).
+
+Feedback current: $I_f = I_{in}$ (Rule 1: no current into op-amp, so input current equals feedback current).
+
+Feedback current through $R_f$ and D1 to output.
+
+Output sources current: $I_{out} = I_f = V_{in}/R_{in}$.
+
+\textit{Positive Input (D2 Conducting):}
+
+Input current: $I_{in} = V_{in}/R_{in}$ (flows from input toward virtual ground).
+
+This current diverts through D2 back to op-amp output (not to external output node). D1 blocked, so no current to output terminal. Output current: $I_{out} = 0$.
+
+\textbf{Diode Roles:}
+
+D1: Output diode—conducts during pass cycle, delivers rectified signal to output.
+
+D2: Shunt diode—conducts during block cycle, provides low-impedance path for input current to op-amp output, prevents D1 conduction, keeps output at 0V.
+
+Both diodes essential for proper half-wave precision rectification with gain.
+
+\textbf{Applications:}
+
+Low-level sensor signals requiring both rectification and amplification. Example: 10mV AC sensor output needs rectification and 100$\times$ gain (1V DC output). Single precision rectifier stage achieves both.
+
+Signal conditioning chains: Reduces component count (eliminates separate amplifier and rectifier stages). Photodiode signal processing (light intensity detection). Audio envelope detection (amplitude modulation demodulation). Instrumentation amplifiers with rectified output.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Unity Gain Rectifier Analysis:}
+
+Circuit: $R_{in} = 10$k$\Omega$, $R_f = 10$k$\Omega$, gain = 1. Input: 500mV peak AC sine wave (negative and positive half-cycles). Dual supply: $\pm 15$V.
+
+\textit{Negative Half-Cycle (Input = -500mV):}
+
+Virtual ground maintained at 0V. Voltage divider: $V_{in} = -0.5$V on one end, output on other end, center at 0V. For symmetry: Output = +0.5V.
+
+Op-amp output: +0.5V + diode drop (e.g., +1.0V assuming $V_f = 0.5$V). D1 conducts. Output after D1: +0.5V. Perfect inversion and rectification without voltage drop.
+
+\textit{Positive Half-Cycle (Input = +500mV):}
+
+Op-amp output goes negative (approximately -0.5V to -0.7V) to conduct D2. D2 shunts input current back to op-amp. D1 reverse-biased, blocks. Output: 0V.
+
+\textit{Result:} Negative half-cycles become positive output (inverted, rectified). Positive half-cycles blocked (output = 0V). Half-wave rectification with inversion.
+
+\textbf{Gain = 2 Amplification:}
+
+Circuit: $R_{in} = 10$k$\Omega$, $R_f = 20$k$\Omega$, gain = 2. Input: 500mV peak AC.
+
+\textit{Negative Input (-500mV):}
+
+Gain = $R_f/R_{in} = 20k/10k = 2$. Output: $2 \times 0.5 = 1$V (positive, amplified).
+
+Op-amp output: 1V + diode drop $\approx$ 1.5V. D1 conducts. Output: 1V.
+
+\textit{Positive Input (+500mV):}
+
+D2 conducts, output blocked. Output: 0V.
+
+\textit{Result:} Output amplitude 1V (doubled from 500mV input). Simultaneous rectification and amplification in single stage.
+
+\textbf{Small Signal with High Gain:}
+
+Application: Thermocouple output 10mV, need 1V rectified DC (gain = 100).
+
+Circuit: $R_{in} = 1$k$\Omega$, $R_f = 100$k$\Omega$, gain = 100.
+
+Input: 10mV AC (small thermocouple signal).
+
+Negative input (-10mV): Output = $100 \times 10\text{mV} = 1$V (rectified, amplified).
+
+Positive input (+10mV): Output = 0V (blocked).
+
+Single precision rectifier achieves 100$\times$ gain and rectification—ideal for low-level sensor interfacing.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Inverting precision half-wave rectifier: input to inverting pin via $R_{in}$, dual-diode feedback network
+    \item Gain controllable: $A_v = -R_f/R_{in}$ (standard inverting amplifier formula)
+    \item Negative input half-cycle passes, becomes positive output (inversion + rectification)
+    \item Positive input half-cycle blocked (output = 0V)
+    \item Dual supply required: op-amp outputs negative voltage during block cycle
+    \item Virtual ground at inverting input (0V) maintained by voltage divider ($R_{in}$, $R_f$)
+    \item Diode D1: conducts during pass cycle, delivers rectified signal to output
+    \item Diode D2: conducts during block cycle, shunts input current, prevents output conduction
+    \item Single stage performs rectification and amplification simultaneously
+    \item Applications: low-level sensor conditioning, photodiode amplification, envelope detection
+    \item For unity gain: $R_f = R_{in}$; for gain = 10: $R_f = 10 \times R_{in}$
+    \item Ideal for signals requiring both rectification and significant amplification (eliminates separate stages)
+\end{itemize}
+\end{keypointsbox}

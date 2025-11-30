@@ -1,0 +1,273 @@
+We are going to take a look at the operation amplifier, or better known as the old Papp's operation
+
+amplifiers are one of the most useful circuit blogs for analog electronic circuit design.
+
+They are easy to use and can provide some near perfect and unacceptable.
+
+So it's a really important building block.
+
+Absolutely essential that you understand how they work.
+
+So let's get started.
+
+So what is an open or an operation amplifier where the name Operation An Amplifier comes from the fact
+
+that when they first developed, they were developed to do mathematical operations, hence the name
+
+operation amplifier.
+
+And back then we didn't have digital computers.
+
+So we use up amps for analog mathematical operations like additions, subtractions, integration, differentiation,
+
+stuff like that, even that hard calculus stuff, or perhaps could actually do these operations in hardware.
+
+Although nowadays all these calculations can be made by the software running on the CPU and we don't
+
+have any other computers anymore, we still use up arms for the use mathematical operations.
+
+You can turn an iPad into an integrator, for example.
+
+We could turn it into a summer, which is just an order and things like that.
+
+So they are really useful circuit building blocks.
+
+But the main thing we are going to look at is operation an amplifier as an actual amplifier, because
+
+that's what they are most commonly used for and probably what you will mostly use them for as well.
+
+So an up amp is essentially just an amplifier.
+
+Yes, it can be used for doing mathematical operations, but essentially what it comes down to is this
+
+differential amplifier.
+
+And what it means is that it's got two inputs over here, which we'll talk about and an output and it's
+
+got some gain in there because amplifiers have a gain.
+
+Right.
+
+And what it does is it takes the difference between these two input signals, amplifies it by its internal
+
+gain or what's called an open looking and gives you an output voltage.
+
+But up amps really can be used as different amplifiers on their own, even though that's what they are.
+
+Rather confusing, but an important aspect that you should understand.
+
+So why can't these be used just as a differential amplifier input signal here outputs in and out with
+
+some gaine there?
+
+Well, they are not designed to be used as differentiate amplifiers, as strange as they may seem,
+
+even though they are essentially differential amplifiers.
+
+If we look inside of an of them, you will understand why they are basically differentiated by fires.
+
+Another amp has a differential amplifier input stage.
+
+So the two inputs of a of the op amp is this one and this one.
+
+And he's got an ATM follower output stage.
+
+I have already covered the flash amplifiers in the course intended for beginners, so please check that
+
+out if you have trouble understanding how the circuit works.
+
+So this circuit that we see here is a super simplified circuit of an up amp practical op amp circuits
+
+are much more complicated than the circuit.
+
+And I will show you how it looks in a minute.
+
+So transistors, Q1 and Q2 forms a differential amplifier where input voltages is applied to the base
+
+terminals of Q1 and Q2 transistor.
+
+Q3 operates as an ATM follower and provides low output impedance.
+
+So this is how a practical shop is built up in real life, and no, I have absolutely no idea Sirikit
+
+on my own, I actually found this already done in the simulator, Korda's seven four one internals.
+
+So zero for one is the name of the op amp.
+
+And if you are curious, Checketts datasheet out.
+
+Now, probably I shouldn't have even showed the circuit I don't want to scare you out at the beginning
+
+of the course, in reality, you will be surprised how easy it is to use up arms.
+
+So, hey, let's forget about the differential amplifiers.
+
+I shouldn't even mention it, but it is important to understand the operation of how an op ed actually
+
+works.
+
+Now, the reason they don't work differential amplifiers is because the gain, the natural gain, the
+
+internal natural gain of the APEP is enormous.
+
+And that's the first thing you need to know about OP amps is it's almost, well, not quite infinite,
+
+but you can't think of it as infinitely large.
+
+It's like millions of times and where the data sheet won't even tell you.
+
+So if you just tried to use an app like this with no external circuitry and just fed, you know, like
+
+one millivolts on one off the input here, the open loop gain is so large that the output voltage is
+
+going to be so huge.
+
+That is just not a practical device at all.
+
+All right, here we have an op up and notice that the power pins of an op ed are not shown here.
+
+If you want to use any options, you need to power them with positive and negative voltage.
+
+So if you want to use them in the simulator is naturally assume that it is powered and visually it's
+
+much more appealing to look at it without the power supply pins.
+
+So as we said, in order to use an op amp, it must receive positive and the negative voltage on its
+
+power pins.
+
+If we double click on it, we can see this OP amp is actually powered with positive 15 volts and negative
+
+15 volts.
+
+And notice here that the gain is super large, it's 100 k this gain, remember, is better known as
+
+open gain or personal gain refers to the absence of a feedback loop from the output to the input.
+
+Don't worry, we will talk about feedback soon and we will see why they are so useful.
+
+Now, you might probably wonder what's the relationship between the output and the input signals where
+
+the missing piece of the puzzle is this equation here that states that the output voltage is equal to
+
+the open loop game times the difference between the two inputs.
+
+So which inputs?
+
+Which you might ask.
+
+So the amplifiers, differential inputs consist of an only vertical input, which is noted as V plus
+
+and an inverting input, not V minus, we will talk about why they are called as such soon.
+
+But now let's just focus on the circuit.
+
+So ideally, the OP amp amplifies only the difference in voltage between the two, which is called the
+
+differential input voltage.
+
+The output voltage is given by this equation and if we replace the known values in the equation, so
+
+the gain is 100k times for minus three.
+
+This gives us an output of 100 kilowatts.
+
+Now, obviously the OP amp is not the magical component that could output more voltage than it is supplied
+
+with the output.
+
+Voltage is limited by the positive and negative power supplies.
+
+And here the upper limit that the output can swing to is maximum 15 watts.
+
+And that's how much of the amplifiers power vif.
+
+So hypothetically, if we were to change the upper limit to, let's say 200 kilowatts, then we can
+
+see that the output is indeed 100 kilowatts.
+
+So this equation is a valid one.
+
+Now what happens when the inverting pin, which is noted as the minus pin, is higher than the non inverting
+
+pin, which is Nautilus plus?
+
+Well, let's increase the voltage on the inverting pin until it's equal to the voltage on the non inverting
+
+pin.
+
+So when both inputs are equal, the output ideally is zero because this difference is equal to zero,
+
+the moment this voltage is slightly higher than the other one, the output voltage bumps into the lower
+
+limit of the open, which is the negative power voltage that the OP is power V..
+
+So now the difference is minus zero point one and amplifying this by it's all part of gain.
+
+We get an output voltage of minus 10 kilowatts.
+
+So if we, again, hypothetically feed this up and we've minus 200 kilowatts, I'll never do that in
+
+your life, OK?
+
+Notice that the output is indeed minus 10 kilowatts.
+
+So this huge gain is not something that I have said to be this big in real life, this could be even
+
+higher.
+
+We don't know how much it is, and even though that it won't provide this information.
+
+So you just safe to assume that it's infinite.
+
+All right.
+
+So let's review what we have learned so far.
+
+First up, has to empathies, the positive spin is called the non inverting the input and the negative
+
+pin is called inverting input.
+
+The OP amp is powered with a positive and negative voltage.
+
+So most of amps require both positive and negative power supply to operate.
+
+Though we will see in the future that there are situations when the negative spin is connected to ground.
+
+Don't worry about this for the moment.
+
+And lastly, it has an output pin.
+
+Another thing we've learned is that an operational amplifier is a very high gain DC differential amplifier.
+
+This high gain is called US Open Loop Gain and it is often about 10 of the power of five or even 10
+
+of the power of six.
+
+Also, we have seen the future video.
+
+This high, ideally infinite gain is extremely important, not because we frequently need to increase
+
+the amplitude of a signal by five or six order magnitude, but because an amplifier that combines high
+
+gain with a differential input stage provides a convenient means of exploiting the beneficial properties
+
+associated with negative feedback, and we soon learn about negative feedback as well.
+
+And lastly, we learned that since the operation amplifier is essentially a defense amplifier, even
+
+if it doesn't work exactly like one, it amplifies the difference between the two input voltages where
+
+the gain is called an open loop gain.
+
+Why do you think it's called this open again?
+
+Is there something like a closed loop?
+
+Really?
+
+Let's find out.
+
+Norman.
+
+Oh, my God, if I die on my legs and when they lay me down to.

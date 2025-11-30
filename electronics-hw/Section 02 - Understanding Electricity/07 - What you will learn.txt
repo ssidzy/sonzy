@@ -1,0 +1,41 @@
+All right, guys.
+
+In this chapter, basically, we will learn about four important things.
+
+First, we will be unraveling the deep mysteries of the matter and energy.
+
+Well, only a little bit after that, we will be learning about three important aspects of electric circuits,
+
+which are current, voltage and power.
+
+After that, we will be looking at the difference between direct and alternating current.
+
+And finally, you will be learning your first electrical equation.
+
+Don't worry.
+
+It's very simple.
+
+Now, frankly speaking, the title of this chapter is a bit ambitious.
+
+Before you can do much, that's very interesting,
+
+with electronics,
+
+you need to have a basic understanding of what electricity is and how it works.
+
+But unfortunately, understanding electricity is a little bit difficult.
+
+But don't let this discourage you.
+
+Even the smartest physicists in the world don't really understand it. Now, at the start of this chapter,
+
+we will be examining the very nature of electricity, what it is and what causes it?
+
+The first part of this chapter will remind you of a 7th or 8th-grade science class, as you delve
+
+into the insides of atoms and learn about protons, neutrons and electrons.
+
+The second part of this chapter introduces you to three things you have to know about electricity,
+
+if you want to design and build circuits. These are namely called current, voltage, and power.

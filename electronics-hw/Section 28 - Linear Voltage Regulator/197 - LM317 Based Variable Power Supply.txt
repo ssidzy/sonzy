@@ -1,0 +1,283 @@
+Hello and welcome back.
+
+In this course, you will find out how to build a variable power supply using an alarm 317, well,
+
+you should highly pay attention to this course because these elements are very popular and they are
+
+often used in other ways.
+
+So let's get started on
+
+the theory that you see here is nothing else but what is inside of the alarm 317.
+
+And as you can see, it has plenty of components.
+
+And I guess you don't want to get into how the circuit works, right?
+
+If you take a step back and instead we look at the functional block diagram, the complexity of the
+
+circuit is drastically reduced.
+
+So this block is basically a summary of the circuit.
+
+If I can express myself like this, which shows the principal parts or functions that are connected
+
+by lines to understand how this block diagram works is still challenging for us since we didn't learn
+
+about operational amplifiers yet.
+
+But don't worry, because starting with the next chapter, we will only focus on this magical and highly
+
+appreciated component.
+
+And we will also build the power supply, which will very much resemble to this block diagram, despite
+
+the fact that internally the Alarm 370 looks difficult to understand, you will be surprised how easy
+
+it is to use.
+
+And that's one of the reasons why people use it all of the time.
+
+Of course, it has its drawbacks, which will be discussed towards the end of the course.
+
+Now, the alleged 317 voltage regulator is a three term adjustable voltage regulator, which can supply
+
+an output voltage adjustable from one point to what do 37 watts and it can supply more than one point
+
+five amps to a load looking from the front of the voltage regulator.
+
+The first being from the left is the adjustable pin.
+
+The middle one is the output voltage.
+
+And the thing is the input voltage viene is the pin which receives the incoming voltage, which is to
+
+be regulated down to specific voltage.
+
+So for example, they put voltage in can be fed like tablets, which the regulator will regulate down
+
+to five words they put in receives the incoming unregulated voltage.
+
+The next one is the adjustable pin and this is the pin used to set the desired output voltage.
+
+And so we will see how to do that.
+
+The Lespinasse is the way out and this is a pin which outputs the regulated voltage.
+
+So it's quite easy, right?
+
+The input pin receives the voltage that has to be regulated down the just about being reset the desired
+
+output voltage that will appear on V out.
+
+Now that you know the pins, how do we modify the voltage to that which we want output.
+
+We do this by changing the value of the resistor connected to the adjustable pin of the voltage regulator.
+
+So let's see how the schematic is set up here.
+
+You can see that we connect to resistors, to the voltage regulator, and these registers determine
+
+the voltage that the voltage regulator adjusts to and outputs.
+
+So the voltage that the adjustable regulator outputs is determined by the following equation.
+
+And therefore, you can see based on the formula that the more the value of resistor are to increases,
+
+the greater the voltage output in our set up.
+
+Now, these are the values we are going to use and we are going to put swearwords into the voltage regulator
+
+and the regulated down to five words.
+
+So based on this equation, in order for the alarm 317 to output thyroids, the value of R2 must be
+
+720 ohm.
+
+I want to mention that unfortunately we can't simulate the circuits since the simulator doesn't provide
+
+us with this type of ISIS.
+
+So just paying attention and I would like you to build this secret for real, or we might find another
+
+simulator which provides this regulator.
+
+So set this record up and then use the multimeter to check the output voltage by placing it across the
+
+one microwave capacitor now changed the order to register and place a one point five kilometers in its
+
+place.
+
+Now the voltage output should be near 10 volts.
+
+So you can see this is the advantage of adjustable deregulators.
+
+You can adjust it to any voltage within the range that the voltage regulators support.
+
+Now, you might wonder what the purpose of C1 and C2 well see what is needed if the device.
+
+So this circuit is far from any filter capacitors.
+
+This information you can find as well in the dataset of the 317.
+
+So if you go to typical applications, you can see that they use a capacitor here as well.
+
+And down here it says that these capacitor is recommended, particularly if the regulator is not in
+
+close proximity to the power supply filter capacitors.
+
+So if you have the AC DC converter and these capacitor is physically placed far away from the alarm
+
+317, you should place this capacitor so that the noise that picks up down the line can be filtered
+
+down to ground so that it won't be fed into the regulator.
+
+However, if they are close to each other, you can get rid of it.
+
+Now the purpose of C2 is more subtle, it is optional and it is used to clean up the transient response.
+
+In the datasheet, it says that this capacitor is used to improve transient response, but it is not
+
+needed for stability.
+
+So what is transient response?
+
+Well, transient responses, the response of a system to a change from an equilibrium or a steady state.
+
+So, for example, if the scene with Output's fireballs see, and suddenly the voltage at the adjust
+
+being is changed so that now the output becomes 15 watts, then some oscillations can occur at the beginning
+
+until it calms down and gets into equilibrium.
+
+The most common instance of a transient response in a circuit occurs when a switch is turned on or off
+
+a rather common event in any electric circuit.
+
+Now, of course, in this circuit, there's nothing that could potentially change the output superfast
+
+only if you can change this resistance or the other one in less than like one microsecond, which you
+
+can't, of course.
+
+But if you combine the circuit with four little circuit, which uses a microcontroller, one of the
+
+pin could control the pin.
+
+Right.
+
+And that would happen very fast.
+
+Now, there's actually a reference to transient response in a data sheet of the regulator.
+
+And we can see that when the input voltage of the regulator changes, for whatever reason, the output
+
+voltage will suddenly increase or decrease.
+
+There's kind of a spike that is generated at the output which shouldn't be there.
+
+Right.
+
+A well-designed regulator should keep its output voltage constant, even if there are some fluctuations
+
+in the input voltage on the second plot.
+
+We can see that when the load suddenly demands more current from the regulator, again, the output
+
+suddenly drops for a little time and then it comes back to equilibrium.
+
+So you should be aware of these things since this is an adjustable regulator.
+
+Placing constant value resistors is counterintuitive, right?
+
+We cannot change the voltage only if we change manually the value of the resistor.
+
+And this is how an Alarm 370 regulator would look then connected to a circuit so that it supplies a
+
+constant these high voltage output.
+
+In this year, we add these high voltage supply to the input pin of the regulator.
+
+This is the PIN which again receives incoming voltage, which the regulator will the regulator down
+
+the voltage which enters the spin, must be larger than the voltage it is filling out.
+
+Remember, voltage regulators are just devices that regulate voltage down to a certain level.
+
+They do not and cannot create voltage on their own.
+
+Therefore, the input voltage must be greater than the output voltage in this circuit.
+
+We want to regulate five of this year's output and therefore the input voltage must be greater than
+
+five points generally with regulators unless they are low dropout regulators, which will be explained
+
+soon.
+
+You want the input voltage to be about to voice higher.
+
+So therefore, since you want five voices output, we will feed into this regulator seven voice.
+
+So what's a Laudrup regulator?
+
+As you might have observed, one of the drawbacks of this regulator is that it cannot create a voltage
+
+lower than one point two woods because the internal reference voltage is set at one point two words.
+
+And this also means that the input voltage has to be at least one point, two words higher than the
+
+output voltage that we want to regulate down.
+
+Now, more expensive regulators that has more features like better temperature stability, higher current
+
+handling, less noisier battery projections, et cetera, are low dropout regulators.
+
+So a low dropout regulator can regulate the output voltage even when the supply voltage is very close
+
+to the output voltage.
+
+And this feature comes very handy, especially when you are dealing with low voltages.
+
+So now that we have said that the input voltage will be seven words and the output will be five words,
+
+we must now deal with the adjustable pin.
+
+This is the pin, which allows us to adjust the voltage to the level we want.
+
+Since we want words to be output, we must calculate which value of art you will yield an output of
+
+five words.
+
+So by using the formula for the output voltage and knowing that our one is equal to 240 on which, by
+
+the way, is a value that the datasheet recommends, the equation is now the following and resolving
+
+four are two or two will be equal to 720 ohm.
+
+So if all two being a value of 720 on the island, 317 will output fireballs if fed an input voltage
+
+greater than five.
+
+Oh, it's all right.
+
+So by now you know how to use these voltage regulator.
+
+And what I want to measure is one of the major drawback, which is not quite a drawback because it really
+
+depends where you use the circuit.
+
+So what makes this voltage regulator weak?
+
+Is that the maximum current that it can output is three point four arms and one point eight amps, respectively.
+
+If using this type of package, however, I wouldn't recommend you to power any circuit that requires
+
+around three amps because the regulator will heat up very fast and it might get destroyed.
+
+So you should mounted on a heating or or there are some tricks actually that you could use to increase
+
+this output current.
+
+So the next course will go a little bit more in depth with the dataset.
+
+And I will show you what are the different configurations that you can build.

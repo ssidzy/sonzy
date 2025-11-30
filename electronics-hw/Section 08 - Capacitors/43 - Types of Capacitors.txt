@@ -1,0 +1,195 @@
+There are all sorts of capacitor types out there, each with certain features and drawbacks, which
+
+make it better for some applications than others when deciding on capacitor types, there are a handful
+
+of factors to consider, like, for example, size, size, both in terms of physical volume and capacitors.
+
+It's not uncommon for a capacitor to be the largest component in a circuit.
+
+They can also be very tiny.
+
+So more capacitors typically requires a larger capacitor.
+
+The other factor to consider is the maximum voltage.
+
+You see, each capacitor is rated for a maximum voltage that can be dropped across it.
+
+Some capacitors might be rated for firewalled, others might be ready for 100 watts.
+
+Exceeding the maximum voltage will usually result in destroying the capacitor.
+
+The other factor is the leakage.
+
+Current capacitors are in perfect.
+
+Every capacitor is prone to leaking some tiny amount of current through the dielectric from one terminal
+
+to the other.
+
+These tiny kernels, usually Dunlap's or less, is called leakage.
+
+Leakage causes energy stored in the capacity to slowly but surely drain away.
+
+The other factor is the equivalent series resistance.
+
+The turbulence of a capacitors are at 100 percent conductive.
+
+They will always have a tiny amount of resistance, usually less than zero point zero one ohm.
+
+And this resistance becomes a problem when a lot of current runs through the capacitor producing heat
+
+and power loss.
+
+So I advise you to remember this equivalent series resistance because it may come handy in the next
+
+course.
+
+The other factor to consider is the tolerance.
+
+Capacitors also can be made to have an exact, precise capacitance.
+
+Each capacitor will be arrested for their nominal capacitance, but depending on the type, the exact
+
+value might vary anywhere from plus minus one percent to plus minus 20 percent of the desired value.
+
+All right, so the most commonly used and produce competitor out there is the ceramic capacitor.
+
+The name comes from the material from which they are dielectric is made.
+
+Ceramic capacitors are usually both physically and capacitors wise, small.
+
+It's hard to find the ceramic capacitor much larger than their micro.
+
+Farad's a surface bounce.
+
+A capacitor is commonly found in a tiny zero four zero two zero six zero three or zero eight zero five
+
+package through Húsavík.
+
+Capacitors usually look like small Comolli yellow or light bulbs with of course, two terminals.
+
+Now, compared to the equally popular quality capacitor, ceramics are more near ideal capacitor, which
+
+means that they have much lower ESR and leakage currents.
+
+But there's small capacitors can be limiting.
+
+They are usually the least expensive option to do so.
+
+These capacitors are better suited for high frequency coupling and KOPLIK applications, which we will
+
+talk about in our future course.
+
+Now, the next type of capacitor, which is also very famous, is the aluminum and tantalum electrolytic
+
+electrolytic are great because they have a lot of capacitors into a relatively small volume.
+
+If you need a capacitor in the range of one micro Farad's to one million Herrod, you are most likely
+
+to find it in the athletic form.
+
+They are especially well suited to high voltage applications because of their relatively high maximum
+
+voltage ratings.
+
+Aluminum excellente capacitors, which are the most popular of the athletic family, usually look like
+
+little tin cans, with both leads extending from the bottom.
+
+Unfortunately, athletic capacitors are usually polarized.
+
+They have a positive spin, which is the energy and a negative being called the cathode.
+
+Then a voltage is applied to the resulting capacitor.
+
+The anode must be at a higher voltage than the cathode, so the cathode often actually capacitor is
+
+usually identified with a minus marking and a coloured strip on the case.
+
+The leg of the anode might also be slightly longer as another indication now, if voltage is applied
+
+in reverse for the equality capacitor, they will fail spectacularly, making a pop and bursting open
+
+and permanently being damaged.
+
+After popping unathletic, they will behave like a short circuit, meaning that current will flow through
+
+it without a problem.
+
+This is exactly the opposite behavior of a normal working capacitor which blocks NCDC current to flow
+
+through it.
+
+Also, I want to point out that these quality capacitors are also notorious for leakage, which means
+
+that they allow small amounts of current well in the order of Nederlands to run through the dielectric
+
+from one terminal to the other.
+
+This makes electrolytic capacitors less than ideal for energy storage, which is unfortunate given their
+
+high capacity and voltage rating right in the first course.
+
+We mentioned supercapacitors.
+
+If we are looking for a capacitor made to store energy, look no further than supercapacitors.
+
+These capacitors are uniquely designed to have a very high capacitance in the range of Farad's.
+
+While they can store a huge amount of charge, supercapacitors can't deal with very high voltages.
+
+So this 10 ferid capacitor is only rated, as you can see, for two point five words maximum.
+
+Any more than that will destroy it.
+
+Supercapacitors are commonly placed in series to achieve a higher voltage rating well, while reducing
+
+the total capacitance.
+
+Now the main application for supercapacitors is is touring and releasing energy, just like batteries,
+
+which are their main competition.
+
+While supercapacitors can't hold as much energy as an equally sized battery, they can release it much
+
+faster and they usually have a much longer lifespan.
+
+All right.
+
+So Politica ceramic capacitors cover about 80 percent of the capacitor types out there and supercops
+
+only about two percent.
+
+Another common capacitor type is the field capacitor, which features very low parasitic losses, making
+
+them great for dealing with very high currents.
+
+Now, another common Cabaser type is the mycar capacitor.
+
+So, Michael, capacitors can work in high temperature environments.
+
+The maximum ambient temperature can reach 237 degrees Celsius, far more than the general ceramic capacitors
+
+and the general aluminum electricity capacitor, which can only work at up to 40 degrees Celsius.
+
+The long term storage capacity of the michot capacitance changes between zero point zero one percent
+
+to zero point zero two percent, which is also better than the average capacitor.
+
+If you want to do high quality, high precision, high stability of the analog circuit where you are
+
+dealing with high frequencies, Michael Capacitor is the only choice.
+
+So, for example, in higher circuits such as high end, high fi audio, the basic issues are also mycar
+
+capacitors as the Michael capacitor production process is more complex, costly, bulky, limited capacity.
+
+So the price in the market is also higher than the average capacitor.
+
+All right, folks, and now we are ready to do our first simulation with capacitors where we will see
+
+what happens when a DC current passes through a capacitor.
+
+It doesn't matter which type of capacitor we are using, sees the behavior is the same for all of them.
+
+See you next course.

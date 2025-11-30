@@ -1,0 +1,183 @@
+All right, welcome back.
+
+So we already talked about our CIHI past filters, right?
+
+And we know that an RC hypocenter Parsees high frequency signals while blocking the low ones with a
+
+sine wave input, only the amplitude phase of the wave changes.
+
+However, if the input wave is a complex wave such as a square or triangular wave, the effect of the
+
+sympathetic with appears to be quite different.
+
+So when we feed the circuit before a signal other than a sine wave, we call this as a differentiator.
+
+Well, the second is called US differentiator because its effect is similar to the mathematical function
+
+of differentiation, which means mathematically finding a value that depends on the rate of change of
+
+some quantity, the output wave of a differentiator.
+
+It is ideally a graph of the rate of change of the voltage or its input.
+
+This figure shows how the output of a differentiator relates to the rate of change of its input, and
+
+that actually the actions of the high pass filter and the differentiator are the same because the differentiated
+
+output is effectively a graph showing the rate of change of the input.
+
+Whenever the input is changing rapidly, a large voltage is produced.
+
+The output, the polarity of the output.
+
+What it is depends on whether the input is changing in a positive or a negative direction.
+
+All right, so we already know that when the cyclist passes through a capacitor, the tidal wave undergoes
+
+a 90 degree phase shift with the output wave leading the input wave.
+
+However, when we feed the differentiator before square wave, then an idea, a representation of the
+
+output is shown here.
+
+So the awkward way was you can see here is nothing like the input wave, but consists of narrow, positive
+
+and negative spikes, the positive spike coincides in time with the rising edge of the input square
+
+wave and the negative spike of the output, where it coincides with the filing or negative going edge
+
+of the square.
+
+We notice that the DC level of the square wave is also changed by the differentiator.
+
+Why?
+
+Because of the DC blocking effect of the capacitor.
+
+Where do you think this output voltage appears in the circuit?
+
+I mean, where would you hook your voltmeter to release value where the output voltage is equal to the
+
+voltage across the resistor?
+
+OK, so the output voltage that you see here is not the voltage across the capacitor, but it's across
+
+the resistor.
+
+Sees the output world is equal to the voltage across the register and sees resistor is a passive component.
+
+The output voltage can change instantaneously.
+
+However, the voltage across the capacitor cannot change instantly, but depends on the value of the
+
+capacitors, which is see as it tries to store an electrical charge, which is kule across its plates.
+
+Duse, the capacitor current is not proportional to the voltage, but to its variation.
+
+As the amount of charge across the capacitors plates is equal to Capstone's Times voltage, we can derive
+
+the equation for the capacitors current as it is shown here.
+
+Therefore, the capacitor current can be written three times.
+
+Divi over the t usque out equals to we are.
+
+Where we are, according to our law, is equal to the current through the resistor times resistance.
+
+The current that flows through the capacitor must also flow through the resistance right as they are
+
+both connected together in series.
+
+And as a result the output voltage is equal to our C times V or word.
+
+So this is the standard equation and given for an RC differentiator.
+
+And then we can see that the output voltage is the derivative of the input voltage within which is weighted
+
+by the constant of our C, where our C represents what represents the time constant of the series circuit.
+
+I hope you know by now what our time constant is.
+
+I have covered it in my previous course, intended for beginners.
+
+Now let's have a look at how the output waveform changes with the change of the time constant here we
+
+can see that the shape of the output waveform depends on the ratio of the pulse rate to the RC time
+
+constant.
+
+Then ours is much larger, which means greater than 10 or C, then the pulse with the output waveform
+
+resembles the square wave of the input signal.
+
+Then our C is much smaller, which means less than zero point one, or C then the pause with the output
+
+waveform takes the form of a very sharp and narrow spikes.
+
+So by varying the time constant of the circuit from Tennessee to zero point one or C, we can produce
+
+a range of different wave shapes.
+
+Generally, a smaller time constant is always using our differentiator circuits to provide good sharp
+
+pulses, the output across the resistor.
+
+All right.
+
+Now, what happens if a triangular wave is passing through the C differentiator?
+
+Well, a triangular wave has a steady, positive going rate of change as the input voltage rises so
+
+produces a steady positive voltage at the output as the input what it was at a steady rate of change.
+
+A steady negative voltage appears that the output, the graph of the rate of change of a triangular
+
+wave is there for a square wave.
+
+A wave shaping using a simple hype's filter or differentiator is a very widely used technique using
+
+many different electronic circuits.
+
+Although the ideal situation is shown here, how closely the output resembles perfect differentiation
+
+depends on the frequency of the input wave and the time constant of the component.
+
+You'll remember that the high filter works as a differentiator when the input is first unknown, sinusoidal
+
+wave.
+
+Second, the time constant of the input wave is much greater than the time constant of the circuit,
+
+like, for example, at relatively low frequencies.
+
+So when the time constant of the input wave is less than or equal to the time cost of the circuit,
+
+then the output wave shape will be less than an ideally differentiated wave shape be more or less like
+
+the waveforms shown in the bottom row.
+
+Now let's try to do a simulation of differentiator where the signal is a square wave and the triangular
+
+wave.
+
+All right.
+
+This shows that the capacitor can act as a differentiator, which means what it means.
+
+It means that its tracking changes in the input signal here, then the input quality suddenly increases.
+
+The output is a positive spike.
+
+When the input decreases, the output is a negative spike.
+
+And I notice that the output voltage is taken across the resistor and not across the capacitor.
+
+And now let's change the input waveform to triangle.
+
+As you can see, the output voltage resembles more of a spirit, which is high when the input signal
+
+is increasing and changes to low when the input signal is decreasing.
+
+So although passive differentiators are cheap and efficient where it is necessary to control the amplitude
+
+of the output, active differentiators using compression amplifiers are also used.

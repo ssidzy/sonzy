@@ -1,0 +1,95 @@
+Before you can understand even the simplest concepts of electronics, you must first understand what
+
+electricity is. After all,
+
+the whole purpose of electronics is to get electricity, to do useful and interesting things.
+
+The concept of electricity is both familiar and mysterious.
+
+We all know what electricity is, or at least have a rough idea, based on practical experience. In particular,
+
+consider these points:
+
+We are very familiar with the electricity that flows through wires like water flows through a pipe.
+
+That electricity comes from power plants that burn coal, catch the wind or harness nuclear reactions.
+
+It travels from the power plants to our houses in big cables hung high in the air or buried in the ground.
+
+Once it gets to our houses, it travels through wires through the walls until it gets to electrical
+
+outlets.
+
+From there, we plug in power cords to get the electricity into the electrical devices we depend on
+
+every day, such as ovens and toasters, and vacuum cleaners.
+
+Unfortunately, we know, that because the electric company bills us for it every month that electricity
+
+is not free.
+
+If you don't pay the bill, the energy company turns off our electricity, and as a result, we know
+
+that electricity is valuable.
+
+We also know that electricity can be stored in batteries, which contain a limited amount of electricity
+
+that can be used up.
+
+When the batteries die, all their electricity is gone.
+
+We know that some kind of batteries, like the ones in our cell phones are rechargeable, which means
+
+that when they've been drained of all the electricity, more electricity can be put back into them by
+
+plugging them into a charger, which transfers electricity from one electrical outlet into the battery.
+
+Rechargeable batteries can be filled and drained over and over again, but eventually they lose their
+
+ability to be recharged and you have to replace them with new batteries.
+
+We also know that electricity is a stuff that makes lightning strike in a thunderstorm. In grade school,
+
+we were thought that Ben Franklin discovered this by conducting an experiment involving a kite and a
+
+key which we should not attempt to repeat at home.
+
+We also know that electricity can be measured in Volts.
+
+Household electricity is 120 volts.
+
+Abbreviated 120 volts, flashlight batteries are 1.5V
+
+Car batteries are 12V.
+
+We also know that electricity can be measured in watts.
+
+Traditional incandescent light bulbs are typically 60, 75 or 100 watts.
+
+Modern, compact fluorescent lights have somewhat smaller wattage ratings.
+
+On the other hand, microwave ovens and hair dryers are 1000 or 1200 watts.
+
+The more watts, the brighter the light or the faster your pizza heats and your hair dries.
+
+We also know that there's a third way to measure electricity called amps.
+
+A typical household electrical outlet is 15 amps.
+
+Now, the truth is, most of us don't really know the difference between volts, watts and amps.
+
+But don't worry, by the time you finish a second or the third chapter, you will.
+
+We also know that there's a special kind of electricity called static electricity that just sort of
+
+hangs around in the air.
+
+But that can be transferred to us by dragging our feet on the carpet, rubbing a balloon against our
+
+hairy arms, or forgetting to put an anti-static sheet in the dryer.
+
+And finally, we also know that electricity can be very dangerous.
+
+In fact, dangerous enough that for almost 100 years, electricity was used to administer the death penalty.
+
+Every year, hundreds of people die in the United States from accidental electrocution.

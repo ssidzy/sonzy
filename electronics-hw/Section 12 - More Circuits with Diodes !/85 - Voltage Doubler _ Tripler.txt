@@ -1,0 +1,211 @@
+Hello, so let's say we have an AC voltage, OK, and this AC voltage is the input voltage to our circuit
+
+and we suddenly realize that it's actually too low for for the circuit.
+
+So we have to increase these AC voltage in some way, for example, where we wish to double this wattage
+
+or in the worst case, triple it.
+
+Well, one way of doing it is by using a transformer.
+
+Right.
+
+But the problem with the transformer is that it's too big in size and heavy and costly.
+
+So we need to find some alternatives.
+
+Well, in this course, we will learn how to double the input AC voltage or even a triple using just
+
+a few components.
+
+So buckle up and let's get started.
+
+Oh.
+
+All right, so the first issue that we are going to talk about is Caldas, the voltage doubler of what
+
+is the circuit is a circuit in which the output voltage is double the amplitude of the input voltage,
+
+as you can see here, in order to double the input AC voltage, we only need to diodes and to the capacitors.
+
+But why, electrolytic?
+
+Because we need relatively big capacitors that will be able to power the circuit that will be connected
+
+to it.
+
+As you will see shortly, when we connect a random load like a transistor, the circuit, basically
+
+the capacitors will provide the current to the load a load that can be anything, a circuit, a matter,
+
+whatever.
+
+But we usually use a resistor to simulate a real circuit.
+
+So how can this circuit double the input AC voltage?
+
+Well, very easy.
+
+I will explain it shortly then.
+
+If you don't get it, no problem.
+
+We will go through it one more time.
+
+So this voltage doubling effect is achieved through the use of capacitors.
+
+We use individual capacitors to charge up to the input voltage, so the first capacitor charges up to
+
+the input voltage of the circuit.
+
+The second capacitor has a successive effect.
+
+It charges up to the value of the input voltage, but also sees the voltage from the first capacitor
+
+having an additive effect.
+
+The result is double the input voltage and we use diodes to block capacitors from discharging once they
+
+are charged.
+
+So it's a series of capacitors and diodes that allows this multiplying effect.
+
+The circuit intakes and AC 130 signal and outputs a larger DC voltage signal.
+
+A CBC News.
+
+The circuit is a type of easy to DC converter.
+
+Actually, it's an AC DC boost converter.
+
+So all that is required for this circuit are diodes and capacitors.
+
+Really, any dial can be used.
+
+It's probably better to use a diode that has a lower wattage drop across a diode than a higher one.
+
+If you can, in order for a diet to work, it needs sufficient voltage drop across it.
+
+So, for example, silicone diodes typically use about zero point seven words, but other diodes such
+
+as the germanium use less about zero point three words in order to operate.
+
+Therefore, using a lower body drop, the output voltage is more accurately double the input voltage.
+
+However, it is significant, especially if you are using a large input voltage.
+
+So we use silicon diodes.
+
+Perfect.
+
+Now let's see the circuit in action.
+
+So this circuit receives power from an AC 130 source, an AC voltage cycle consists of a positive cycle
+
+for one half of the AC voltage and the negative cycle of the other half of the AC voltage right on the
+
+positive half of the AC cycle, current travels from the diode one and charges up the capacitor.
+
+C1 then fully charged C1 equals the same voltage as the input voltage on the negative half of the AC
+
+cycle.
+
+Current travels through diode D2 and charges up capacitor C2 capacitor C2 charges up to the same voltage
+
+as the input voltage.
+
+And if you did a kilowatt voltage low loop around the two capacitors, you see that each of the voltages
+
+across the capacitors add up to give the full output voltage.
+
+And this is how the output voltage is double or two times the input voltage.
+
+The capacitor that we use are 100 micro ferid electrolytic capacitors, lower values can be used such
+
+as 20 or 50 micro, but these are hard to find.
+
+So we simply use 100 micro ferrat.
+
+But you can experiment live with other values of the capacitor.
+
+The other specification you must take into account with capacitors is the input.
+
+I mean the voltage rating.
+
+Depending on the input voltage you are using, you must choose the voltage ratings of the capacitors
+
+in accordance with the capacitors should be a little greater than twice the peak of the input voltage.
+
+OK, since the voltage will be double in the circuit.
+
+I hope you understand how the circuit works.
+
+Again, the diodes in the circuit are configured just so that during each half cycle of the eye of the
+
+input AC voltage one is forward biased to allow the capacitor to charge up.
+
+So during the positive cycle, diode one is forward biased, which allows current to flow through it
+
+and charges capacitor C1.
+
+The capacitor will be charged up to the peak voltage of the half cycle, which is 15 volts during the
+
+negative half cycle diode.
+
+D2 is forward, biased and allows current to flow through it and charges up the capacity to do so that
+
+you will be charged up again to the peak of the negative half cycle.
+
+So the sum of the voltage drop across each capacitor is the actual output voltage perfect now.
+
+So the output voltage is actually directly determined by the number of capacitors in this circuit.
+
+We want to double the voltage, so we use two capacitors.
+
+So if you want to triple the input voltage, we should use three capacitors.
+
+It would require a different circuit configuration, though, as you will see right now.
+
+By adding an additional a single diode capacitor stage to the voltage circuit, we can create another
+
+voltage multiplier that increases its input voltage by a factor of three and producing what is called
+
+the voltage tripler circuit.
+
+Well, this voltage multiplier circuit gives the DC voltage equal to three times the peak voltage value
+
+of the sinusoidal input signal.
+
+As with the previous voltage knobler, the diodes within the voltage circuit charge and block the discharge
+
+of the capacitors depending upon the direction of the input hive cycle.
+
+Then one weepie is dropped across C three and to sweep across C2 and other two capacitors are in a series.
+
+These results in the load seeing a voltage equivalent to three VPE, but a note that the real output
+
+voltage will be three times the peak input voltage, minus the voltage drops across the diodes used.
+
+All right.
+
+Just very shortly I want to show you the voltage drop across the capacitors.
+
+So the voltage drop across this capacitor is less C, it's double the input peak voltage because our
+
+peak voltage is 15 world and this is charged to 30 volts minus two diode drops.
+
+Note that the voltage drop across the capacitor is equal to the voltage at this point relative to ground
+
+minus this voltage relative to ground.
+
+OK, now let's move forward.
+
+The voltage drop across the capacitor is 14 watts.
+
+So it's charged at the peak of the input voltage.
+
+And now let's see the voltage drop across this capacitor is twenty eight words.
+
+Since these two capacitors are in series, the voltages add up, right?
+
+So one big voltage plus two peak voltage is equal to 380 wattages.

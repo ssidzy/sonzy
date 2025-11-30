@@ -1,0 +1,217 @@
+Hello and welcome back.
+
+So as I mentioned in the previous caller, there are many types of diodes, right?
+
+And the secret symbol is for the most popular diodes that we use are these buy here.
+
+Actually, I forgot to include the shiny LCD this popular that it in almost all cases, is not a critical
+
+piece of component with you anyway.
+
+The basic and most use diode is the general purpose diode.
+
+Then we have the Schottky diode, which is used to for high frequency applications.
+
+More on that later.
+
+And finally, we have the Zenner diode, which I have to say it's a very fun component to use a xenon
+
+diode in the silicon semiconductor device that permits current to flow in either a forward or reverse
+
+direction.
+
+Hmm.
+
+That sounds interesting.
+
+If you ask me.
+
+So let's see.
+
+What does the Zenner has to hide?
+
+Oh.
+
+Now, discussing about the diet secrets, we should look through the graphical representation of the
+
+operation of the Zenner diet.
+
+Normally it is called the voltage current characteristics, offers and diet, so those in our diet operate
+
+just like a normal diet.
+
+Then in the forward bias mode and has a turn on the voltage of between 0.3 0.7 what's so often interesting
+
+here?
+
+However, when connected in the reverse mode, which is usually in most of its applications, a small
+
+leakage current may flow.
+
+The Zenner diet has a well-defined reverse breakdown voltage to which it starts conducting current and
+
+continues operating continuously in the reverse bias mode without getting damaged.
+
+So as the reverse voltage increases to the predetermined breakdown voltage, a current starts flowing
+
+through the diode and the current crisis to a maximum which is determined by the series resistor, after
+
+which it stabilizes and remains constant over a wide range of applied voltage.
+
+What is very important for you to understand is that the voltage drop across the diode remains constant
+
+over a wide range of shortages, a feature that makes Zehnder diode suitable for use in voltage regulations.
+
+All right, but what is the voltage regulator?
+
+Well, the purpose of a voltage regulator is to keep their voltage in the circuit relatively close to
+
+a desired value.
+
+So let's say if the redone voltage of the Zanardi is firewalled, then no matter how much is the source
+
+voltage, the voltage drop from this point to this point will be always firewalls.
+
+Of course, the voltage of the power source has to be higher than the breakdown voltage of the Zenner,
+
+because otherwise there is no point in using those diode and does in a diode will be able to basically
+
+reduce the power supply voltage to a desired voltage.
+
+So I say, let's see a then there diode in action.
+
+So just like how I did in the previous course before doing a simulation, I want to show you something
+
+in this data sheet.
+
+So again, there is a breakdown voltage can be seen in its data sheet, right?
+
+And so for this particular, then a diode, the breakdown voltage where there is 3.3 to 100.
+
+This means that the what is drop across the diode will always be 3.3 volts, no matter how much is the
+
+voltage of the power supply.
+
+But if it's higher than 100, then you will damage the poles and a diode.
+
+So how does this water show Little Circuit work?
+
+Well, this resistor here is connected, these series does an audio to limit the current flow through
+
+the diode.
+
+The stabilized output voltage v out is taken from across the general diode, and there's no diode is
+
+connected with its cathode terminal to the positive rail of the DC supply, which means that it is reverse
+
+biased and will be operating in its breakdown condition.
+
+As you can see, the load is connected in parallel, which does an audio.
+
+So the voltage across the load is always the same as the general voltage.
+
+You have to know that there is a minimum of Zenner current for which the stabilization of the voltage
+
+is effective, which means that if there's too little current going through the Zenner diode, the output
+
+voltage might be less than 5.6 volts.
+
+So by looking at the data sheet of the then radio that you can find a recommended current for, which
+
+does not operate well and also it doesn't heat up the upper limit of current is, of course, dependent
+
+upon the power rating of the device.
+
+So as you can see, the supply voltage must be greater than the breakdown voltage of the diode.
+
+And the magic here is that no matter how much is the power supply voltage, the output voltage will
+
+always be the breakdown voltage of the Zenner diode.
+
+What's more, problem with the stabilizer circuit is that the diet can sometimes generate electrical
+
+noise or on top of the DC supply as it tries to stabilize the voltage.
+
+Well, normally this is not a problem for most applications, but the addition of a large value decoupling
+
+capacitor across the general output may be required to give additional smoothing.
+
+Then to summarize a little bit.
+
+Well, then the diode is always operated in.
+
+It's a reverse bias condition, right?
+
+And such a simple voltage regulator circuit can be designed using goods in their diode to maintain a
+
+constant DC output voltage across the load in spite of variations in the input voltage or changes in
+
+the load current and the stabilized output voltage is always selected to be the same as the breakdown
+
+voltage of the diode.
+
+So this might be good for some applications, right, but it has a huge drawback.
+
+What happens if I change this load to, let's say, $100?
+
+Aha.
+
+Look, what happened?
+
+Well, the regulated output was it is not regulated anymore, and it has dropped from five point six
+
+balls to just 2.5 volts.
+
+Hmm.
+
+How is this possible?
+
+Well, as I said, the general diode needs a minimum current through it to operate well, and this time
+
+the load registers steals the current from the standard diode because the clock is always following
+
+the path of least resistance.
+
+So in order to solve this problem.
+
+Also, the other problem is the noise added on the top of the DC voltage is the following circuit.
+
+Well, well, what do we have here?
+
+This is the very, very famous device called the transistor, which is the core and the heart of digital
+
+electronics, and which also has tons of applications in analog circuits.
+
+We didn't learn about this component yet.
+
+I know.
+
+So when we learn about it, you can come back and check the circuit out for the load.
+
+Here is again, thank you know.
+
+But this time, when I reduce its value to one hundred, the voltage doesn't drop at all.
+
+I just remembered that this circuit has another huge disadvantage, and that is this transistor here,
+
+which is used to limit the current borders and a diode is not only limiting the current for there's
+
+no diode.
+
+It also limits the current for the whole circuit.
+
+So the maximum current that can flow to the load is basically 15 volts divided by 500.
+
+And from this sum goes to the Zenner PS. To the load, right?
+
+If you designed this resistor to a small the current through the, then there will be too high and you
+
+will damage those and a diode.
+
+And on the other hand, if this value is too high, the current that goes to the load will be small.
+
+So as you see, it's all about the compromise.
+
+So this could solve all the problems, the resistor value, as you can see, can be much higher, so
+
+it reduces the power dissipation designer also allowing a higher output current.

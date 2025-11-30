@@ -1,0 +1,75 @@
+In the previous course, we talked about the circuit where a step input produces a rectangular pools
+
+who is with can be set by.
+
+These are the time constant which is equal to the product of this resistance and these capacitance.
+
+I made a mistake saying that the time consent of this RC pair is 100 microseconds, which is wrong because
+
+it's zero 0.1 seconds or 100 milliseconds.
+
+So what does this 100 millisecond means?
+
+It means that the on the state of this pause will last for around 100 milliseconds.
+
+If you want the longer pause, just increase the value of one of the components or both.
+
+Now this circuit works just fine, but there is only one problem where you want to produce a pulse of
+
+the output.
+
+And if you accidentally pull yuan's base to ground before the pause is done, we can observe that the
+
+pause will go to ground earlier than it should.
+
+It would be nice to eliminate this restriction and the next year it will just resolve this little inconvenience.
+
+To the original circuit, we've added a third transistors, which which is Q three, whose job is to
+
+hold the cue was collected at the ground.
+
+Once the output pause begins, regardless of what the input signal does.
+
+So let's see how it works.
+
+First, let's see if it's here can generate one simple pulse.
+
+All right.
+
+Everything works and the polls is generated now, I will slow down the simulation time and let's do
+
+the simulation again, but this time I will press the button down to ground before the polls is terminated.
+
+Before I press the button note is that the left part of this capacitor is more positive than the right
+
+part of it.
+
+So obviously there's a voltage drop across this capacitor, which is around four point four words.
+
+The capacitor is fully charged right and all of the charge has to go somewhere and where we go.
+
+Since it was charged from this direction, it will discharge the opposite direction, right?
+
+We learned that when we talked about the capacitors.
+
+So this time it will discharge through Q1 or Q3, and the charge will go down to ground.
+
+While this capacitor is discharging the right side of the capacitor has negative voltage, keeping Q2
+
+off in a short time, which depends on the time constant of this RC, the voltage will rise back to
+
+641 milliwatts.
+
+All right.
+
+Here we are.
+
+The porter started and I will poke Yuan's bass back down to ground, even though Q1 one is in cutoff
+
+mode.
+
+The output is keeping Q3 saturation, so the capacitor has a path to this charge.
+
+Now, any positive input pulls, whether longer or shorter than the desired output pulse, which produces
+
+the same output both with.

@@ -1,0 +1,608 @@
+\section{Section 14: First Order Filters}
+
+% Topic 1: What is a Filter & Low-Pass Filters (RC and RL)
+\subsection{Filter Fundamentals and Low-Pass Filters}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{Filters} are frequency-selective circuits that pass desired frequencies while attenuating (blocking) unwanted ones. Four main types: \textbf{Low-pass} (passes low f, blocks high f), \textbf{High-pass} (passes high f, blocks low f), \textbf{Band-pass} (passes specific band), \textbf{Band-stop/notch} (blocks specific band).
+
+\textbf{Low-pass RC filter:} Resistor in series, capacitor to ground. Capacitive reactance $X_C = \frac{1}{2\pi fC}$ decreases with frequency, shunting high frequencies to ground. Cutoff frequency: $f_c = \frac{1}{2\pi RC}$. At $f_c$: output = 0.707$\times$ input ($-3$~dB), output power = half input power.
+
+\textbf{Low-pass RL filter:} Inductor in series, resistor to ground. Inductive reactance $X_L = 2\pi fL$ increases with frequency, blocking high frequencies. Cutoff: $f_c = \frac{R}{2\pi L}$. Same $-3$~dB point behavior.
+
+\textbf{Roll-off:} First-order filters attenuate at $-20$~dB/decade (10$\times$ frequency = 1/10 voltage) beyond cutoff.
+
+\textbf{Key equations:} RC: $f_c = \frac{1}{2\pi RC}$; RL: $f_c = \frac{R}{2\pi L}$; Output: $V_{out} = V_{in} \times \frac{X_C}{\sqrt{R^2 + X_C^2}}$
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. Filter Concept:}
+
+Filters perform \textbf{frequency-selective signal processing}—removing unwanted frequency components while preserving desired ones.
+
+\textbf{Common Applications:}
+\begin{itemize}
+    \item Radio receivers: Select desired station, reject others (different frequencies)
+    \item DC power supplies: Remove AC ripple noise from DC output
+    \item Audio crossovers: Route bass to woofers, midrange to mids, treble to tweeters
+    \item Noise removal: Filter out high-frequency switching noise from analog signals
+    \item Anti-aliasing: Remove frequencies above Nyquist limit before ADC sampling
+\end{itemize}
+
+\textbf{Four Filter Types:}
+\begin{itemize}
+    \item \textbf{Low-pass:} Passes $f < f_c$, blocks $f > f_c$ (removes high-frequency noise)
+    \item \textbf{High-pass:} Passes $f > f_c$, blocks $f < f_c$ (AC coupling, removes DC)
+    \item \textbf{Band-pass:} Passes $f_{c1} < f < f_{c2}$, blocks outside (radio tuning, audio EQ)
+    \item \textbf{Band-stop (notch):} Blocks $f_{c1} < f < f_{c2}$, passes outside (60~Hz hum filter)
+\end{itemize}
+
+\textbf{Passive vs Active Filters:}
+\begin{itemize}
+    \item \textbf{Passive:} Only R, L, C components. No gain, signal attenuated. Simple, cheap, no power needed
+    \item \textbf{Active:} Use op-amps, transistors. Can provide gain, sharper roll-off, no inductors needed. Require power supply
+\end{itemize}
+
+\textbf{2. Low-Pass RC Filter Construction:}
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item Resistor R in series with input
+    \item Capacitor C from output node to ground (parallel with load)
+    \item Forms voltage divider with frequency-dependent impedance
+\end{itemize}
+
+\textbf{Operating Principle (Capacitive Reactance):}
+\begin{itemize}
+    \item Capacitor reactance: $X_C = \frac{1}{2\pi fC}$ (inversely proportional to frequency)
+    \item \textbf{Low frequencies:} $X_C$ very high (capacitor nearly open circuit), acts like infinite resistor, signal passes to output unattenuated
+    \item \textbf{High frequencies:} $X_C$ very low (capacitor nearly short circuit), shunts signal to ground, little voltage at output
+    \item DC (f = 0): $X_C = \infty$, capacitor blocks completely, full DC voltage at output
+    \item Transition smooth, not abrupt (roll-off region)
+\end{itemize}
+
+\textbf{Cutoff Frequency $f_c$:}
+\begin{itemize}
+    \item Defined as frequency where $X_C = R$ (reactance equals resistance)
+    \item Formula: $f_c = \frac{1}{2\pi RC}$ (derived from $X_C = R$)
+    \item At $f_c$: Output voltage = $0.707 \times$ input ($\frac{1}{\sqrt{2}}$ exactly)
+    \item Output power = $0.5 \times$ input (half power point)
+    \item Also called $-3$~dB point: $20\log(0.707) = -3.01$~dB
+\end{itemize}
+
+\textbf{Frequency Response:}
+\begin{itemize}
+    \item $f \ll f_c$: Pass band (minimal attenuation, ~0~dB)
+    \item f = $f_c$: $-3$~dB point (0.707$\times$ voltage)
+    \item $f \gg f_c$: Stop band (roll-off at $-20$~dB/decade)
+    \item Ideal filter: brick wall transition. Real filter: gradual roll-off
+\end{itemize}
+
+\textbf{3. Low-Pass RL Filter Construction:}
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item Inductor L in series with input (opposite position from RC filter)
+    \item Resistor R from output node to ground
+    \item Reactance increases with frequency, blocking high frequencies
+\end{itemize}
+
+\textbf{Operating Principle (Inductive Reactance):}
+\begin{itemize}
+    \item Inductor reactance: $X_L = 2\pi fL$ (directly proportional to frequency)
+    \item \textbf{Low frequencies:} $X_L$ very low (inductor nearly short circuit), signal passes to output easily
+    \item \textbf{High frequencies:} $X_L$ very high (inductor blocks), most voltage dropped across L, little at output
+    \item DC (f = 0): $X_L = 0$, inductor acts like wire, full DC voltage at output
+    \item Opposite behavior from capacitor but same low-pass result
+\end{itemize}
+
+\textbf{Cutoff Frequency:}
+\begin{itemize}
+    \item Occurs when $X_L = R$ (inductive reactance equals resistance)
+    \item Formula: $f_c = \frac{R}{2\pi L}$ (derived from $X_L = R$)
+    \item Same $-3$~dB characteristic as RC filter
+    \item Same roll-off: $-20$~dB/decade beyond cutoff
+\end{itemize}
+
+\textbf{RC vs RL Filters:}
+\begin{itemize}
+    \item RC filters more common: capacitors smaller, cheaper, no magnetic field
+    \item RL filters useful in power applications: inductors handle high current
+    \item Both achieve same frequency response shape
+    \item Component positions swapped: reactive element determines filter type
+\end{itemize}
+
+\textbf{4. Roll-Off and Decade Concept:}
+
+\textbf{Decade (Frequency):}
+\begin{itemize}
+    \item One decade = 10$\times$ frequency increase (order of magnitude)
+    \item Examples: 100~Hz to 1~kHz, 1~kHz to 10~kHz, 10~kHz to 100~kHz
+    \item Logarithmic scale (not linear): 1, 10, 100, 1k, 10k, 100k...
+    \item Frequency response plots use log scale for x-axis
+\end{itemize}
+
+\textbf{First-Order Roll-Off ($-20$~dB/decade):}
+\begin{itemize}
+    \item Beyond $f_c$, attenuation increases at constant rate
+    \item $-20$~dB/decade = voltage drops to 1/10 every 10$\times$ frequency increase
+    \item Equivalently: $-6$~dB/octave (octave = 2$\times$ frequency)
+    \item Example: $f_c$ = 1~kHz, $V_{out}$ at 10~kHz = $0.1\times V_{out}$ at 1~kHz
+    \item Gentle slope—significant signal energy persists in stop band
+\end{itemize}
+
+\textbf{Improving Roll-Off:}
+\begin{itemize}
+    \item Cascade multiple filter stages for sharper transition
+    \item Second-order (two stages): $-40$~dB/decade
+    \item Nth-order: $-20N$~dB/decade roll-off
+    \item Tradeoff: complexity, component count, cost
+\end{itemize}
+
+\textbf{5. Calculating Filter Response:}
+
+Output voltage using voltage divider with frequency-dependent impedance:
+
+\textbf{RC Low-Pass:}
+\begin{itemize}
+    \item Impedance: $Z_{total} = \sqrt{R^2 + X_C^2}$
+    \item Output: $V_{out} = V_{in} \times \frac{X_C}{Z_{total}} = V_{in} \times \frac{X_C}{\sqrt{R^2 + X_C^2}}$
+    \item Substitute $X_C = \frac{1}{2\pi fC}$ to find voltage at any frequency
+\end{itemize}
+
+\textbf{RL Low-Pass:}
+\begin{itemize}
+    \item Impedance: $Z_{total} = \sqrt{R^2 + X_L^2}$
+    \item Output: $V_{out} = V_{in} \times \frac{R}{Z_{total}} = V_{in} \times \frac{R}{\sqrt{R^2 + X_L^2}}$
+    \item Substitute $X_L = 2\pi fL$ to find voltage at any frequency
+\end{itemize}
+
+\textbf{At Cutoff ($f = f_c$):}
+\begin{itemize}
+    \item RC: $X_C = R$, so $Z_{total} = \sqrt{R^2 + R^2} = R\sqrt{2}$
+    \item $V_{out} = V_{in} \times \frac{R}{R\sqrt{2}} = \frac{V_{in}}{\sqrt{2}} = 0.707 V_{in}$ \checkmark
+    \item Same derivation for RL filter when $X_L = R$
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Designing RC Low-Pass Filter}
+
+\textbf{Requirement:} Remove 500~kHz noise from 5~kHz audio signal
+
+\textbf{Design approach:} Set $f_c$ well above audio (preserve it) but below noise (attenuate it). Choose $f_c = 100$~kHz (20$\times$ above audio, 5$\times$ below noise).
+
+\textbf{Component selection:}
+\begin{itemize}
+    \item Choose R = 1~k$\Omega$ (standard, reasonable impedance)
+    \item Calculate C from $f_c = \frac{1}{2\pi RC}$:
+    \item $C = \frac{1}{2\pi f_c R} = \frac{1}{2\pi \times 10^5 \times 10^3}$
+    \item $C = \frac{1}{6.28 \times 10^8} = 1.59 \times 10^{-9}$~F
+    \item Use C = 1.5~nF (closest standard value, gives $f_c \approx 106$~kHz)
+\end{itemize}
+
+\textbf{Verification at audio frequency (5~kHz):}
+\begin{itemize}
+    \item $X_C = \frac{1}{2\pi \times 5 \times 10^3 \times 1.5 \times 10^{-9}} = 21.2$~k$\Omega$
+    \item $Z_{total} = \sqrt{(1k)^2 + (21.2k)^2} = \sqrt{1 + 449.44} \times 10^3 = 21.2$~k$\Omega$
+    \item $V_{out} = V_{in} \times \frac{21.2k}{21.2k} \approx 0.999 V_{in}$
+    \item Audio preserved: 99.9\% voltage passed $\checkmark$
+\end{itemize}
+
+\textbf{Verification at noise frequency (500~kHz):}
+\begin{itemize}
+    \item $X_C = \frac{1}{2\pi \times 5 \times 10^5 \times 1.5 \times 10^{-9}} = 212$~$\Omega$
+    \item $Z_{total} = \sqrt{(1k)^2 + (212)^2} = \sqrt{10^6 + 44944} = 1.02$~k$\Omega$
+    \item $V_{out} = V_{in} \times \frac{212}{1020} = 0.208 V_{in}$
+    \item Noise attenuated to 20.8\% (79.2\% reduction) $\checkmark$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: RL Low-Pass Filter Design}
+
+Given: L = 470~mH, R = 10~k$\Omega$, find $f_c$ and verify response
+
+\textbf{Cutoff frequency:}
+\begin{itemize}
+    \item $f_c = \frac{R}{2\pi L} = \frac{10 \times 10^3}{2\pi \times 470 \times 10^{-3}}$
+    \item $f_c = \frac{10^4}{2.95} = 3.39$~kHz
+\end{itemize}
+
+\textbf{At $f_c$ = 3.39~kHz:}
+\begin{itemize}
+    \item $X_L = 2\pi \times 3.39 \times 10^3 \times 0.47 = 10$~k$\Omega$ (equals R \checkmark)
+    \item $Z_{total} = \sqrt{(10k)^2 + (10k)^2} = 10k\sqrt{2} = 14.14$~k$\Omega$
+    \item $V_{out} = V_{in} \times \frac{10k}{14.14k} = 0.707 V_{in}$ \checkmark
+    \item Confirms $-3$~dB point
+\end{itemize}
+
+\textbf{At $10\times f_c$ = 33.9~kHz (one decade up):}
+\begin{itemize}
+    \item $X_L = 2\pi \times 33.9 \times 10^3 \times 0.47 = 100$~k$\Omega$
+    \item $Z_{total} = \sqrt{(10k)^2 + (100k)^2} \approx 100.5$~k$\Omega$
+    \item $V_{out} = V_{in} \times \frac{10k}{100.5k} = 0.0995 V_{in}$
+    \item Attenuation: $20\log(0.0995) = -20.04$~dB from $f_c$
+    \item Confirms $-20$~dB/decade roll-off $\checkmark$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: $-3$~dB Point Calculation}
+
+Given: RC filter, R = 1~k$\Omega$, C = 100~nF, $V_{in}$ = 5~V
+
+\textbf{Find $f_c$:}
+\begin{itemize}
+    \item $f_c = \frac{1}{2\pi \times 10^3 \times 100 \times 10^{-9}} = \frac{1}{6.28 \times 10^{-4}} = 1.59$~kHz
+\end{itemize}
+
+\textbf{At $f_c$, verify voltage and power:}
+\begin{itemize}
+    \item $V_{out} = 0.707 \times 5 = 3.54$~V
+    \item Power in: $P_{in} = \frac{V_{in}^2}{R_{load}}$ (assume $R_{load} \gg R$)
+    \item Power out: $P_{out} = \frac{V_{out}^2}{R_{load}} = \frac{(0.707 V_{in})^2}{R_{load}} = 0.5 \times \frac{V_{in}^2}{R_{load}}$
+    \item $P_{out} = 0.5 P_{in}$ (half power point $\checkmark$)
+    \item Decibels: $10\log(0.5) = -3.01$~dB $\checkmark$
+\end{itemize}
+
+\textbf{Physical meaning:} At cutoff, half the input power delivered to load, half dissipated in filter components. Voltage reduced by factor $\sqrt{2}$ because power proportional to $V^2$.
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Filter Purpose:} Frequency-selective signal processing. Passes desired frequencies, attenuates unwanted. Essential for noise removal, band selection, DC blocking, anti-aliasing
+    
+    \item \textbf{Low-Pass Filter:} Passes low f, blocks high f. RC: cap to ground shunts high f. RL: inductor in series blocks high f. Both achieve same response with different reactive elements
+    
+    \item \textbf{Cutoff Frequency:} $f_c$ where output = $0.707 \times$ input ($-3$~dB voltage, half power). RC: $f_c = \frac{1}{2\pi RC}$. RL: $f_c = \frac{R}{2\pi L}$. Defines transition from pass band to stop band
+    
+    \item \textbf{$-3$~dB Point Significance:} Half-power point ($P_{out} = 0.5 P_{in}$). Voltage = $\frac{V_{in}}{\sqrt{2}}$ because $P \propto V^2$. Standard reference for bandwidth specification. Reactance equals resistance at this frequency
+    
+    \item \textbf{Roll-Off Rate:} First-order filter: $-20$~dB/decade ($-6$~dB/octave). Voltage drops to 1/10 per 10$\times$ frequency increase. Gradual transition—not brick wall. Nth-order: $-20N$~dB/decade for sharper cutoff
+    
+    \item \textbf{Decade:} 10$\times$ frequency change on log scale. Examples: 1~kHz to 10~kHz, 100~Hz to 1~kHz. Logarithmic scaling natural for audio (octaves) and frequency response analysis
+    
+    \item \textbf{Q: Why 0.707 voltage equals half power?} A: Power $P = \frac{V^2}{R}$. If $V = 0.707 V_{in}$, then $P = \frac{(0.707)^2 V_{in}^2}{R} = 0.5 \frac{V_{in}^2}{R} = 0.5 P_{in}$. Factor $\sqrt{2}$ squared gives 2
+    
+    \item \textbf{Q: RC vs RL filter—when use each?} A: RC more common (caps smaller, cheaper, no EMI). RL for high-current power applications, motor noise filtering. Both achieve same frequency response
+    
+    \item \textbf{Q: How choose cutoff frequency?} A: Place $f_c$ between desired signal and noise. Rule: $f_c \geq 10\times$ highest signal frequency for minimal signal attenuation. Roll-off provides gradual rejection above $f_c$
+\end{itemize}
+\end{keypointsbox}
+
+\newpage
+
+% Topics 2-5: Consolidated
+\subsection{High-Pass Filters, Second-Order Filters, and Band-Pass Filters}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{High-pass filters} pass high frequencies, block low frequencies (opposite of low-pass). \textbf{RC high-pass:} Cap in series (blocks DC), resistor to ground. \textbf{RL high-pass:} Inductor to ground (shorts low f), resistor in series. Cutoff formulas same as low-pass: RC: $f_c = \frac{1}{2\pi RC}$, RL: $f_c = \frac{R}{2\pi L}$. Common use: AC coupling (remove DC bias), microphone circuits. Roll-off: $+20$~dB/decade below $f_c$.
+
+\textbf{Second-order filters} cascade two identical first-order stages for steeper roll-off: $-40$~dB/decade (vs $-20$~dB). Cutoff shifts: $f_{c(2nd)} = f_{c(1st)} \times 2^{1/(2-1)} = f_{c(1st)} \times \sqrt{2}$. Nth-order: $-20N$~dB/decade, $f_{c(N)} = f_{c(1st)} \times 2^{1/(N-1)}$. Sharper transition but more components, phase shift increases.
+
+\textbf{Band-pass filters} pass frequencies between $f_{c1}$ and $f_{c2}$, block outside band. Cascade high-pass ($f_{c1}$) + low-pass ($f_{c2}$) where $f_{c1} < f_{c2}$. Bandwidth: $BW = f_{c2} - f_{c1}$. \textbf{RLC band-pass:} Resonant circuit, center frequency $f_0 = \frac{1}{2\pi\sqrt{LC}}$. At resonance: LC impedance maximum, output peaks. Applications: radio tuning, audio EQ, wireless receivers.
+
+\textbf{Key equations:} High-pass same as low-pass; 2nd-order: $f_c = f_{c1} \times 2^{1/(N-1)}$; RLC: $f_0 = \frac{1}{2\pi\sqrt{LC}}$
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. High-Pass RC Filter:}
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item Capacitor C in series with input (position swapped from low-pass)
+    \item Resistor R from output node to ground
+    \item Blocks DC and low frequencies, passes high frequencies
+\end{itemize}
+
+\textbf{Operating Principle:}
+\begin{itemize}
+    \item Capacitor blocks DC ($f = 0$, $X_C = \infty$, open circuit)
+    \item Low frequencies: High $X_C$, most voltage dropped across C, little at output
+    \item High frequencies: Low $X_C$ (nearly short), signal passes through capacitor to output
+    \item Cutoff frequency: $f_c = \frac{1}{2\pi RC}$ (same formula as low-pass!)
+    \item At $f_c$: output = $0.707 \times$ input, same $-3$~dB point
+    \item Below $f_c$: roll-off at $+20$~dB/decade (attenuation increases going lower)
+\end{itemize}
+
+\textbf{AC Coupling Application:}
+\begin{itemize}
+    \item Removes DC component from AC signal
+    \item Microphones: Block DC bias, pass audio AC
+    \item Amplifier coupling: Prevent DC shift between stages
+    \item Choose $f_c$ well below lowest signal frequency to pass
+    \item Example: Audio (20~Hz--20~kHz), set $f_c = 2$~Hz to preserve bass
+\end{itemize}
+
+\textbf{2. High-Pass RL Filter:}
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item Resistor R in series with input
+    \item Inductor L from output node to ground (position swapped from low-pass)
+\end{itemize}
+
+\textbf{Operating Principle:}
+\begin{itemize}
+    \item DC and low frequencies: $X_L$ very low (inductor shorts to ground), minimal output
+    \item High frequencies: $X_L$ very high (inductor blocks), signal goes through R to output
+    \item Cutoff: $f_c = \frac{R}{2\pi L}$ (same as RL low-pass formula)
+    \item Less common than RC (inductors bulkier)
+\end{itemize}
+
+\textbf{Component Swap Pattern:}
+\begin{itemize}
+    \item Low-pass: Reactive element to ground (shunts high f)
+    \item High-pass: Reactive element in series (blocks low f)
+    \item Capacitor and inductor positions swapped between filter types
+    \item Same cutoff formulas, opposite frequency response
+\end{itemize}
+
+\textbf{3. Second-Order Filters:}
+
+Cascading multiple identical first-order filter stages creates higher-order filters with steeper roll-off.
+
+\textbf{Why Second-Order:}
+\begin{itemize}
+    \item First-order: $-20$~dB/decade roll-off (gradual)
+    \item Significant signal energy persists in stop band
+    \item Ideal filter: brick wall (vertical transition). Real: need sharper slope
+    \item Solution: Add more filter stages in cascade
+\end{itemize}
+
+\textbf{Roll-Off Improvement:}
+\begin{itemize}
+    \item Two identical stages: $-40$~dB/decade (10$\times$ frequency = 1/100 voltage)
+    \item Three stages: $-60$~dB/decade
+    \item N stages: $-20N$~dB/decade
+    \item Much sharper transition between pass band and stop band
+\end{itemize}
+
+\textbf{Cutoff Frequency Shift:}
+\begin{itemize}
+    \item Each stage has same $f_{c1}$ when standalone
+    \item Cascaded system cutoff: $f_{c(total)} = f_{c1} \times 2^{1/(N-1)}$
+    \item For N = 2: $f_{c(2nd)} = f_{c1} \times 2^{1/(2-1)} = f_{c1} \times 2 \approx 1.414 f_{c1}$
+    \item Cutoff shifts lower for low-pass, higher for high-pass
+    \item Must account for this when designing to meet spec
+\end{itemize}
+
+\textbf{Example Calculation:}
+\begin{itemize}
+    \item Single RC stage: $f_c = 530$~Hz
+    \item Add identical second stage
+    \item New cutoff: $f_c = 530 / \sqrt{2} = 375$~Hz (low-pass shifts lower)
+    \item Roll-off: $-40$~dB/decade instead of $-20$~dB/decade
+\end{itemize}
+
+\textbf{Tradeoffs:}
+\begin{itemize}
+    \item Pros: Sharper roll-off, better stop-band rejection
+    \item Cons: More components, cost, phase shift increases (90° per stage), $f_c$ shifts
+    \item Passive filters: Signal attenuation accumulates (each stage loses energy)
+    \item Active filters (op-amp): Can add gain to offset losses
+\end{itemize}
+
+\textbf{4. Band-Pass Filters:}
+
+Pass frequencies within specific band, block frequencies outside band.
+
+\textbf{Cascade Method (Wide Band):}
+\begin{itemize}
+    \item High-pass stage + Low-pass stage in series
+    \item High-pass blocks low f, cutoff at $f_{c1}$
+    \item Low-pass blocks high f, cutoff at $f_{c2}$
+    \item Pass band: $f_{c1} < f < f_{c2}$
+    \item Bandwidth: $BW = f_{c2} - f_{c1}$
+    \item Requirement: $f_{c1} < f_{c2}$ for pass band to exist
+    \item Example: $f_{c1} = 300~Hz$, $f_{c2} = 3~kHz$, passes audio voice band
+\end{itemize}
+
+\textbf{Design Considerations:}
+\begin{itemize}
+    \item $f_{c1}$ high-pass cutoff: $\frac{1}{2\pi R_1 C_1}$
+    \item $f_{c2}$ low-pass cutoff: $\frac{1}{2\pi R_2 C_2}$
+    \item Adjust R and C values to set desired band edges
+    \item Roll-off: $\pm 20$~dB/decade at each edge (first-order)
+\end{itemize}
+
+\textbf{5. RLC Resonant Band-Pass Filter:}
+
+Uses LC resonance for narrow-band filtering (tuned circuits).
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item Series RLC: R in series, LC in series or parallel configuration
+    \item Parallel LC tank: Impedance maximum at resonance
+    \item Output taken across LC (high impedance at $f_0$)
+\end{itemize}
+
+\textbf{Resonance Principle:}
+\begin{itemize}
+    \item At resonance: $X_L = X_C$ (reactances cancel)
+    \item $2\pi f_0 L = \frac{1}{2\pi f_0 C}$
+    \item Solve for $f_0$: $f_0 = \frac{1}{2\pi\sqrt{LC}}$ (resonant frequency)
+    \item At $f_0$: LC combination has maximum impedance, output voltage peaks
+    \item Below/above $f_0$: Impedance drops, signal attenuated
+\end{itemize}
+
+\textbf{Bandwidth and Q Factor:}
+\begin{itemize}
+    \item Bandwidth: $BW = \frac{f_0}{Q}$ where Q is quality factor
+    \item Q = $\frac{X_L}{R} = \frac{2\pi f_0 L}{R}$ (higher Q = narrower bandwidth)
+    \item High Q: Sharp, narrow peak (selective tuning)
+    \item Low Q: Broad, wide peak (less selective)
+    \item Applications: Radio receivers (Q = 10--100), crystal filters (Q > 10,000)
+\end{itemize}
+
+\textbf{Frequency Response:}
+\begin{itemize}
+    \item Phase shift: 0° at $f_0$, +90° below (capacitive), $-90°$ above (inductive)
+    \item Roll-off: Second-order characteristic ($\pm 40$~dB/decade from center)
+    \item Symmetric response around $f_0$ on log scale
+    \item Geometric mean: $f_0 = \sqrt{f_{c1} \times f_{c2}}$ where $f_{c1}$, $f_{c2}$ are $-3$~dB points
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Radio tuning: Select station frequency, reject adjacent channels
+    \item Wireless receivers: IF (intermediate frequency) filtering
+    \item Audio equalizers: Boost/cut specific frequency bands
+    \item Oscillators: Frequency-selective feedback
+    \item Signal processing: Extract specific frequency component from complex signal
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: High-Pass RC Filter (AC Coupling)}
+
+\textbf{Requirement:} Block DC, pass audio starting at 20~Hz
+
+\textbf{Design:} Set $f_c$ well below 20~Hz to minimize bass attenuation. Choose $f_c = 2$~Hz.
+
+\textbf{Component selection:}
+\begin{itemize}
+    \item Choose R = 10~k$\Omega$ (typical for audio)
+    \item $C = \frac{1}{2\pi f_c R} = \frac{1}{2\pi \times 2 \times 10^4} = 7.96$~µF
+    \item Use C = 10~µF (larger than calculated for safety margin)
+    \item Actual $f_c = \frac{1}{2\pi \times 10^4 \times 10^{-5}} = 1.59$~Hz $\checkmark$
+\end{itemize}
+
+\textbf{Verification at 20~Hz (lowest audio):}
+\begin{itemize}
+    \item $X_C = \frac{1}{2\pi \times 20 \times 10 \times 10^{-6}} = 796$~$\Omega$
+    \item $Z_{total} = \sqrt{(10k)^2 + (796)^2} \approx 10.03$~k$\Omega$
+    \item $V_{out} = V_{in} \times \frac{10k}{10.03k} = 0.997 V_{in}$
+    \item Only 0.3\% attenuation at 20~Hz, bass preserved $\checkmark$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Second-Order Low-Pass Filter}
+
+Given: Single RC stage with R = 300~$\Omega$, C = 1~µF. Add identical second stage.
+
+\textbf{First-order cutoff:}
+\begin{itemize}
+    \item $f_{c1} = \frac{1}{2\pi \times 300 \times 10^{-6}} = 530$~Hz
+    \item Roll-off: $-20$~dB/decade
+\end{itemize}
+
+\textbf{Second-order cutoff:}
+\begin{itemize}
+    \item $f_{c2} = f_{c1} \times 2^{1/(N-1)} = 530 \times 2^{1/(2-1)}$
+    \item $f_{c2} = 530 \times 2^1 = 530 \times 1.414 = 375$~Hz
+    \item Cutoff shifted lower by factor $\sqrt{2}$
+    \item Roll-off: $-40$~dB/decade (steeper!)
+\end{itemize}
+
+\textbf{Attenuation comparison at $10\times f_c$:}
+\begin{itemize}
+    \item First-order at 5.3~kHz: $-20$~dB (voltage = 0.1)
+    \item Second-order at 3.75~kHz: $-40$~dB (voltage = 0.01)
+    \item 100$\times$ better rejection at one decade above cutoff
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Band-Pass Filter (Cascade Method)}
+
+\textbf{Requirement:} Pass 300~Hz to 3~kHz (voice band), block outside
+
+\textbf{Design:}
+\begin{itemize}
+    \item High-pass stage: $f_{c1} = 300$~Hz (blocks below)
+    \item Low-pass stage: $f_{c2} = 3$~kHz (blocks above)
+    \item Bandwidth: $BW = 3000 - 300 = 2700$~Hz
+\end{itemize}
+
+\textbf{High-pass component selection:}
+\begin{itemize}
+    \item Choose C = 1~µF
+    \item $R = \frac{1}{2\pi f_c C} = \frac{1}{2\pi \times 300 \times 10^{-6}} = 530$~$\Omega$
+    \item Use R = 560~$\Omega$ (standard value)
+\end{itemize}
+
+\textbf{Low-pass component selection:}
+\begin{itemize}
+    \item Choose R = 10~k$\Omega$
+    \item $C = \frac{1}{2\pi f_c R} = \frac{1}{2\pi \times 3000 \times 10^4} = 5.3$~nF
+    \item Use C = 4.7~nF (standard value, gives $f_c \approx 3.4$~kHz)
+\end{itemize}
+
+\textbf{Result:} Cascade both stages. Frequencies 300~Hz--3~kHz pass with minimal attenuation. Below 300~Hz and above 3~kHz attenuated at $-20$~dB/decade from each cutoff.
+
+\vspace{0.15cm}
+
+\textbf{Example 4: RLC Band-Pass Filter (Radio Tuning)}
+
+Given: L = 500~µH, C = 32~pF, R = 250~$\Omega$
+
+\textbf{Resonant frequency:}
+\begin{itemize}
+    \item $f_0 = \frac{1}{2\pi\sqrt{LC}} = \frac{1}{2\pi\sqrt{500 \times 10^{-6} \times 32 \times 10^{-12}}}$
+    \item $f_0 = \frac{1}{2\pi\sqrt{16 \times 10^{-15}}} = \frac{1}{2\pi \times 4 \times 10^{-7.5}}$
+    \item $f_0 = \frac{1}{2.51 \times 10^{-5}} = 39.8$~kHz $\approx$ 40~kHz
+\end{itemize}
+
+\textbf{Quality factor:}
+\begin{itemize}
+    \item $X_L = 2\pi f_0 L = 2\pi \times 40 \times 10^3 \times 500 \times 10^{-6} = 125.6$~$\Omega$
+    \item $Q = \frac{X_L}{R} = \frac{125.6}{250} = 0.5$ (low Q, wide bandwidth)
+\end{itemize}
+
+\textbf{Bandwidth:}
+\begin{itemize}
+    \item $BW = \frac{f_0}{Q} = \frac{40k}{0.5} = 80$~kHz (very wide)
+    \item $-3$~dB points: $f_{c1} \approx 0$~kHz, $f_{c2} \approx 80$~kHz
+    \item Broad filter, not very selective
+    \item For narrow tuning: need higher L/C ratio or lower R (higher Q)
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{High-Pass Filter:} Blocks DC/low f, passes high f. RC: cap in series (blocks DC). RL: inductor to ground (shorts low f). Cutoff formulas identical to low-pass. Common for AC coupling, removing DC bias
+    
+    \item \textbf{Component Position Rule:} Low-pass: reactive element to ground. High-pass: reactive element in series. Same formulas, opposite frequency response. Swap positions to change filter type
+    
+    \item \textbf{Second-Order Filters:} Cascade N identical stages $\rightarrow$ roll-off = $-20N$~dB/decade. Sharper transition between pass/stop bands. Cutoff shifts by $2^{1/(N-1)}$ factor. Two stages: $-40$~dB/decade, cutoff moves by $\sqrt{2}$
+    
+    \item \textbf{Second-Order Tradeoff:} Pros: 10$\times$ better stop-band rejection per decade. Cons: More components, cost, phase shift accumulates (90° per stage), signal loss in passive designs. Active filters offset loss with gain
+    
+    \item \textbf{Band-Pass Cascade:} High-pass + Low-pass in series. $f_{c1}$ from high-pass, $f_{c2}$ from low-pass. Bandwidth = $f_{c2} - f_{c1}$. Requires $f_{c1} < f_{c2}$. Good for wide-band applications
+    
+    \item \textbf{RLC Resonant Band-Pass:} Resonance at $f_0 = \frac{1}{2\pi\sqrt{LC}}$ where $X_L = X_C$. LC impedance peaks, output maximum. Quality factor $Q = \frac{X_L}{R}$ determines bandwidth: $BW = \frac{f_0}{Q}$. High Q = narrow, selective; low Q = wide, broad
+    
+    \item \textbf{Q: Why use second-order filter?} A: First-order roll-off ($-20$~dB/decade) too gradual for many applications. Second-order ($-40$~dB/decade) gives 100$\times$ better rejection one decade from cutoff. Critical for separating close frequencies
+    
+    \item \textbf{Q: Band-pass: cascade vs resonant?} A: Cascade (high-pass + low-pass) for wide bandwidth, easy design. Resonant (RLC) for narrow bandwidth, sharp tuning (radio). Resonant has higher Q, better selectivity, fewer components
+    
+    \item \textbf{Q: How does Q affect band-pass filter?} A: Higher Q $\rightarrow$ narrower bandwidth $\rightarrow$ more selective $\rightarrow$ better adjacent channel rejection. Lower Q $\rightarrow$ wider bandwidth $\rightarrow$ less selective $\rightarrow$ easier to tune. Radio AM: Q ~10--20; FM: Q ~50--100; Crystal: Q > 10,000
+\end{itemize}
+\end{keypointsbox}

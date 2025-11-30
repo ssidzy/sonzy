@@ -1,0 +1,229 @@
+Understanding what input and output appearances, it's a very important concept for you to understand,
+
+since it's often used in electronics when we want to define a particular circuit.
+
+If you have any sort of questions after this course, please leave your question below, and I would
+
+be more than happy to help you out.
+
+So every circuit that has an input in some way and output will have what's called an input and output
+
+impedance.
+
+This box represents a circuit, right, that has an input and an output.
+
+Let's be more specific.
+
+Let's say that the circuit is an amplifier circuit.
+
+What does an amplifier circuit do?
+
+It takes the input signal, which can be a voice, a song, whatever.
+
+This AC signal is, a low power or with a signal and is amplified.
+
+A circuit, which, of course is powered by some external DC source, will take this AC signal and amplify
+
+it in voltage and current.
+
+So overall in power.
+
+But that's not the point.
+
+The point is, as I have said, everything that has an input and an output in some sort of way, we
+
+have an input and output impedance.
+
+The input impedance of the circuit can be represented as a resistor that gets connected to ground and
+
+the output impedance can be represented also as a resistor, but this time in series with the circuit.
+
+Now, even though they are represented as being outside the circuit, they are not.
+
+They are inside this box.
+
+But this is the easiest way to show what inputs and outputs impedance is.
+
+First of all, it's important to realize for understanding, of course, that the input and output impedance
+
+are a concept and do not represent any physical resistor that can be removed or changed.
+
+Indeed, they represent a value in ohms that takes into consideration the design of the amplifier circuit.
+
+We will detail later of these different Conexion arrangements.
+
+So they put impetuses connected across the terminals of the amplifier while the Arpatepe is connected
+
+in series with the amplifier, a representation of this configuration is shown here now, even though
+
+these two resistors that represent input and the pedals are seen to be connected outside the amplifier
+
+circuit.
+
+They are actually inside of it.
+
+This is just a convenient way to illustrate how input and output impedance effects in the circuit.
+
+In fact, if you don't like this representation, we could use this one.
+
+Where, again, we have a circuit represented by this dotted box and inside we have that in which is
+
+the input evidence and that out, which is the output impedance we are talking about the same circuit
+
+is just that.
+
+Now we have divided the two concepts so we can talk about them separately.
+
+So let's talk about this important evidence first.
+
+Now, what is this important evidence of a secret?
+
+We know that it's measured in arms, but what exactly is this impedance?
+
+Well, this is impetus is the impetus seen by anything connected to the input of a circuit or device
+
+such as this amplifier.
+
+So it is the combined effect of all the resistance's capacitor CS and inductance is connected to the
+
+input inside the circuit or device.
+
+It is normal to use the term input impedance evil for simple cases where there is only resistance and
+
+the term input resistance could be used instead.
+
+As we have mentioned, they put a pittance of Basilicata represents the combined effect of all the resistance's
+
+capacities and inductance is connected to the input side of the circuit or device.
+
+We also know that competitors and doctors have what's called reactance right.
+
+Capacitors have capacity reactors and the doctors have inductive reactors.
+
+And these reactors is very with the frequency of the applied signal.
+
+Right.
+
+The effects of capacitors and inductors vary the frequency.
+
+So if these are present, the input impedance will vary the frequency, the effects of capacitors and
+
+inductors are generally more significant at high frequencies.
+
+Now, what's very important for you to know is that usually input impetuses should be high at least
+
+10 times the output, the appearance of the circuit.
+
+This ensures that the input will not overload the source of the signal and reduce the strength.
+
+In other words, the voltage of the signal by a substantial amount.
+
+All right.
+
+So let's go to the simulator to understand this concept better.
+
+Now, this white box here represents our circuit.
+
+Of course, we don't have one, but let's imagine that it's an amplifier stage that receives the song
+
+signal coming from a microphone, for example, the microphone in our case is represented by these 10
+
+volts AC source, and the signal has to be amplified by this amplifier stage.
+
+Now, this amplifier stage circuit, we have an input impedance represented by this one megawatt resistance.
+
+So we don't know what's inside of the circuit.
+
+But the combined effect of all the resistance's capacity, reactor size and endarterectomy, this will
+
+result in an impedance, which is the impedance that the microphone or better say the signal sees when
+
+it enters the circuit.
+
+Well, in order to understand why the import impedance of a circuit should be high, let's actually
+
+change this AC source to a DC one you will see in a minute why?
+
+On the other hand, we know that any water source like a battery or even a microphone, we have a tiny
+
+resistance in series we've hit.
+
+Since nothing is ideal in this world.
+
+We have already talked about this, so I will go through it again.
+
+All right, so we have two different circuits now.
+
+The first one outputs a signal to the Second Circuit, which will amplify it and will drive a loud speaker,
+
+for example.
+
+Now, this series, registers of the voltage source, actually should be lower in value.
+
+Right.
+
+But this time, let's just leave it like this.
+
+So right now, everything looks good.
+
+The First Circuit outputs attaboys signal and the Second Circuit receives this entire 10 void's.
+
+What happens if the input impedance of the amplifier circuit is lower than one?
+
+I go home.
+
+Well, let's change this value to, let's say, 500 km.
+
+All right, so the amplifier stage still receives steroids if we go lower to, say, 50 km.
+
+I notice that from towards the signal has been reduced to nine point eight words.
+
+If we go with a lower value to, say, 10 km.
+
+The voltage reduces further to nine point one woods.
+
+We mentioned that the reason why the importance of the circuit should be high is because this will ensure
+
+that the circuit in this case, the amplifier stage, will not reduce the strength or in other words,
+
+the voltage of the incoming signal.
+
+Right now, since the input impedance is quite low, the amplifier stage, instead of receiving the
+
+entire Tannenwald signal, receives only nine point one words.
+
+So instead of amplifying a Tamil signal, it will amplify only the nine point one watts.
+
+The reason why the signal dropped in voltage is because if you look attentively, this register with
+
+this one actually forms a symbol of what is divider.
+
+Using the voltage divider equation, we can easily calculate or realize why this output voltage dropped
+
+to nine point one watts.
+
+Now you might say, what's the big deal?
+
+The voltage has dropped with only zero point nine void's.
+
+That's true.
+
+But if this were a microphone, for example, that you talk to it, the output voltage that the microphone
+
+generates usually ranges between zero point zero zero one world and zero point one words.
+
+And we are talking only about microphones.
+
+What if we have a sensor that outputs a very, very weak AC signal that has to be amplified so that
+
+it can be further processed?
+
+If the input impedance of the amplifier stage is low, the amplifier will basically overload the source
+
+signal so it will lose from its strength even before it gets amplified.
+
+And that's something we want to avoid.
+
+All right, in the next course, let's go to the other end of the circuit where we will deal with the
+
+output impedance.

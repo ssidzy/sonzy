@@ -1,0 +1,147 @@
+All right.
+
+So we have this illiquid and the task is to calculate the current flowing in this path which is i3 as
+
+well as the voltage drop across R2.
+
+First, let's try to analyze the circuit a little bit.
+
+So we have two nodes A and B and three independent loops.
+
+So keep voltage law can only be applied around the closed loop.
+
+But how many loops do we have?
+
+But one might say we have two loops, when in fact we have three loops.
+
+Very important to understand this.
+
+So there's one closed loop here that we have another closed loop here, and which is the third loop.
+
+That is the outer loop.
+
+So we have two in loops and one outer loop.
+
+For each loop we will write down the equation.
+
+But first, let's apply the first law of kickoff, which is kickoffs, current law.
+
+It states that the current entering a node is equal to the current leaving the node.
+
+So I1 is entering the node and I two and i3 are leaving the node.
+
+So i1 is equal to high two plus i3 great for node bi3 and I too is entering the node while I1 is leaving
+
+the node.
+
+So again, i1 is equal to i2 plus i3 since the both nodes have the same equation.
+
+These are we can get rid of one.
+
+Now in order to apply a kilo of salt is law, we have to choose the direction of the current flow,
+
+which can be either clockwise or anti-clockwise in the first loop.
+
+Current flows in the clockwise direction, so we choose a clockwise direction as well.
+
+This means that we can write down the equation as ten words minus A1, times R one minus a three times
+
+or three equal to zero.
+
+Great.
+
+So we have our first equation.
+
+Now let's move to the next loop.
+
+Here we can choose either a clockwise or anticlockwise.
+
+It doesn't really matter.
+
+So let's try the anti-clockwise direction.
+
+Well, since we have chosen an anti-clockwise direction and since the actual current flow is opposite
+
+to our anti-clockwise direction, there is a rise in potential across this resistive element as we are
+
+moving from a negative potential to a more positive potential, giving us a two times or two of voltage
+
+drop.
+
+Now what's the voltage drop across our three?
+
+The actual current flow matches the direction that we have chosen, which was anti-clockwise, and as
+
+a result there's a fall in voltage across it, so the sign for it will be negative.
+
+As a result, I two times are two minus I three times r three is equal to zero.
+
+All right.
+
+Now let's move to the outer loop, which is our third loop.
+
+So let's choose a clockwise direction for this so we can write down directly that ten words minus A1,
+
+times R, one minus I two times are two is equal to zero.
+
+So this is the equation of the outer loop and thus you can see the equation doesn't contain anything
+
+related to i3 or ST.
+
+That's because we strictly focus on our outer layer of the circuit.
+
+Great.
+
+Now we have four equations in our disposal and using these four equations, we can't calculate anything
+
+we want.
+
+From this equation we can extract I do as a function of I three so I do is equal to I three times are
+
+three divided by r two.
+
+Now plugging in the values I do is equal to five times I three divided by two.
+
+We know that I one is equal to I two plus I three.
+
+Right?
+
+So let's replace I want in this equation.
+
+So we get ten worlds minus I two plus I three times r one minus I three times are three, which is equal
+
+to zero.
+
+And we know that I two is equal to five times I three divided by two.
+
+So replacing I two in this equation we get only one unknown variable which is a high three.
+
+So ten minus five divided by two times i three plus I three times are one minus I three times are three
+
+is equal to zero.
+
+I always pair some time because I already made these calculations here in the paper.
+
+So this equation resolves to a current.
+
+So I three will be equal to 170 milliamps.
+
+And let's see, the current is indeed 117 milliamps.
+
+Nice.
+
+Now we have to calculate the voltage drop across our two.
+
+For that let's just find out I two as well.
+
+So i2 is equal to five times eight three divided by two.
+
+From this equation I two will be 294 milliamps.
+
+So the voltage drop across this resistor is I two times or two so 294 milliamps times 20 is equal to
+
+5.88 volts.
+
+And congratulations.
+
+We just successfully managed to find out that the current and the voltage drop across this resistor.

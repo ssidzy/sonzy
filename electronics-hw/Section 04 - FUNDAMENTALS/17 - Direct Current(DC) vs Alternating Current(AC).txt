@@ -1,0 +1,143 @@
+All right, welcome back!
+
+So in the previous course, we could see that the symbol of a DC power source, which was a battery in
+
+our case, look like this.
+
+Actually, there was another symbol that we used, such as this one.
+
+And now you might wonder, what's the difference between the two?
+
+Well, the actual symbol of a battery is this one, while the other one represents a battery cell.
+
+The difference between cell and battery is that a cell is a single unit that converts chemical energy
+
+into electrical energy, and a battery is a collection of cells.
+
+So a single AA battery, for example, that outputs 1.5V is made up of one cell.
+
+A 12V battery, for example, has six single cells in series, producing a fully charged output voltage
+
+of 12.6V.
+
+Anyway, people usually use these two symbols interchangeably, both producing a constant DC output
+
+voltage.
+
+What is a DC voltage in the first place?
+
+Well, DC, which stands for direct current, is a bit easier to understand than alternating current.
+
+We will look at alternating current as well in a minute.
+
+So a DC voltage, rather than oscillating back and forth, DC provides a constant voltage and current.
+
+Remember that DC is defined as the unidirectional flow of current.
+
+So current only flows in one direction. Voltage and current can vary over time, so long as the direction of flow
+
+does not change.
+
+Now let's try to visualize the flow of current in our simulator.
+
+All right, so we have a DC voltage source that outputs a voltage of 1.5V.
+
+Of course, you could change the output voltage of the source by just double clicking on it and rewriting
+
+this value to the one you want.
+
+And we have a resistance in this close up circuit to prevent causing a short circuit between the two
+
+leads of the voltage source or power supply, you name it.
+
+Now, if we want to visualize the shape of the output voltage at a certain point in the circuit, so
+
+let's see the voltage that our voltage source outputs just right click on it and click view in scope.
+
+So as you can see, our voltage source outputs a simple, constant voltage of 1.5 volts.
+
+These unchanging positive DC voltage causes an electrical current to flow in one direction.
+
+So notice that the voltage difference between the positive lead and the negative lead causes electrical
+
+current to flow in one direction, coming out from the positive lead and going towards the negative lead.
+
+:)
+
+Well, this might be confusing for a beginner in reality, electrical charge or simply current, moves from
+
+the point of low potential, which is the negative terminal to the point of high potential, which is
+
+the positive terminal.
+
+So actually, the currents should flow in the opposite direction.
+
+Now, when electricity was discovered for the first time, scientists thought that it was the flow of
+
+positive charges that generated electricity.
+
+This theory went on for quite a long time, hence, even when it was correctly discovered that it was the
+
+negative charges that actually flowed.
+
+The scientists decided to keep considering the same theory of positive charge is flowing.
+
+So the conventional direction of electricity is opposite to the actual directional flow of electricity.
+
+As a result, conventional flow of electricity is from the positive terminal to the negative terminal, in a circuit.
+
+:)
+
+Great.
+
+More on this later.
+
+All right.
+
+So both AC and DC describe types of current flow in a circuit. In direct current,
+
+the electric charge only flows in one direction.
+
+Electric charge in alternating current, on the other hand, changes direction periodically.
+
+The voltage in AC circuits also periodically reverses because the current changes direction.
+
+Let's see this behavior in the simulator.
+
+Here we are.
+
+Now, notice that the symbol of an AC power source is different from the one we were used to.
+
+There's a little sine wave in there, which indicates a time varying waveform with the most common of all
+
+being called a sinusoidal waveform.
+
+Sine waves are by far one of the most important types of AC waveform used in electrical engineering.
+
+The shape obtained by plotting the instantaneous ordinate values of either voltage or current against
+
+time is called an AC waveform.
+
+An AC waveform is constantly changing its polarity every half cycle, alternating between a positive
+
+maximum value and a negative maximum value, respectively,
+
+with regards to time, with a common example of this
+
+being the domestic mains voltage supply we use in our homes.
+
+Now, we won't go into how AC voltage is generated or how AC voltage is transmitted over wires and then
+
+reaches your home, or how is AC voltage from the mains converted into DC?
+
+That's an off topic right now.
+
+I just wanted to show you that compared to DC Voltage here, electrons change direction periodically.
+
+So when the voltage is positive, the current flows in the clockwise direction.
+
+And when the voltage goes negative, the current flows in the opposite direction.
+
+It all looks complicated at first.
+
+But don't worry, because as we progress, we will get a good understanding of how these things work.

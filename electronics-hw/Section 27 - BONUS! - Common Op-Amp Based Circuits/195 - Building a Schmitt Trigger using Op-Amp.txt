@@ -1,0 +1,235 @@
+Hello, guys, and welcome back.
+
+In this course, we learn about how to design a trigger using an app amp.
+
+If you remember back, we already talked about Trigger, right?
+
+But that wall was built using transistors if you didn't like the circuit for some reason.
+
+Well, I have good news.
+
+The trigger can be built using a single option for some external resistors around.
+
+So let's revise briefly what Ashmead triggers and then we can jump into the GUSTAAF search trigger is
+
+a form of comparator circuit that has hysteresis or different inputs switching levels to change the
+
+output between the two states.
+
+What is hysteresis?
+
+That hysteresis occurs in many instances to our.
+
+But in the case of the trigger, hysteresis means that a circuit triggers at different voltages to switch
+
+the output from one state to the other.
+
+To explain this in more detail data.
+
+Example where the input signal is, let's say the five words this voltage rises and passes the upper
+
+threshold voltage, which is at six words.
+
+The output voltage will switch from high to low.
+
+And here comes the magic we first met Trigger.
+
+In order to switch the output back, the input signal must fall not below the upper threshold voltage,
+
+but below the lower threshold voltage, which is at four walls in this case.
+
+And in this way there is a two volts difference between the switching in either direction.
+
+And this provides some significant noise immunity.
+
+The problem of not using hysteresis with your computer is that if the input signal rises slowly, that
+
+noise on the waveform will cause multiple switches of state of the output of the computer.
+
+So by using hysteresis, this issue is overcome unless the noise levels are very high and the trigger
+
+circuit is ideal for many applications in overcoming this issue.
+
+So again, by using the hysteresis, the effect of noise at the input which Michael Severals, which
+
+is that the output as the input voltage nears, the switching voltage is significantly reduced.
+
+And this issue of multiple switches of the output due to noise can give rise to many issues.
+
+And electronic circuit design engineers has spent many hours debugging circuits with this type of issue
+
+so they can be difficult to track down sometimes.
+
+Unfortunately, a straight computer can be converted into a trigger by the addition of a single electronic
+
+component in most cases.
+
+So a standard computer circuit can normally be converted into a trigger by introducing what is called
+
+a positive feedback and by adding some resistors around.
+
+I think this is the first time we use positive feedback, right?
+
+Like the negative feedback here, the output terminal is connected to the non-convertible and in this
+
+scenario, the effect of the positive feedback or better side effect of the new resistor, which is
+
+R three, is to give the circuit different switching thresholds dependent upon the output state of the
+
+computer or operation amplifier.
+
+So we know that ASMI Trigger has two thresholds.
+
+Right.
+
+But how does this all three different switching thresholds that let's think about it.
+
+So without input voltage being applied to the circuit, there's already a voltage set at the non-convertible
+
+by the voltage divider formed by R-1 and or to write.
+
+Now, of course, we don't care about the output voltage yet, so are one or two sets of voltage on
+
+the non inverting pin, which we call a threshold.
+
+So our one is connected to a positive power supply and is what it is used to power this voltage divider.
+
+We don't care about the values of the resistances right now.
+
+We just use a pure theoretical approach in analyzing this circuit.
+
+All right, so what did I say?
+
+All right.
+
+This voltage set by our one in our two will be called US Threshold.
+
+Now, let's analyze the scenario when the voltage on the non-convertible pin is higher than the voltage
+
+on the inverting beam.
+
+If this is true, then the output of the competitor is high, right?
+
+If the output voltage is high, well, this voltage is fed back to the non-working input of the operation
+
+amplifier.
+
+And as a result, the switching threshold becomes higher by how much?
+
+Well, we will see that later.
+
+Now, what happens when the voltage on the inverting pin is higher than the voltage on the inverting
+
+pin?
+
+Well, in this case, the output is switched in the opposite sense.
+
+So it becomes negative.
+
+And as a result, the switching threshold is lowered.
+
+And this gives the circuit what is termed as hysteresis.
+
+All right.
+
+I hope you got the point.
+
+Now let's go to our simulator.
+
+So here we are now without the input signal being applied and let's take this positive feedback out
+
+a little bit.
+
+Notice that the voltage on the non inverting pin is five fibroids.
+
+Why?
+
+Because both resistors are equal in value.
+
+So the voltage will be half of the world's power supply, right.
+
+Now, the voltage on the non-convertible pin is higher than the voltage on the inverting pin, so the
+
+output is high.
+
+Let's see, it's 15 watt because the upper end is powered with plus minus 15 words.
+
+When I add this 100 km back, what happens when the threshold voltage that was set at five would is
+
+rise at 5.5 OIDs?
+
+So by default, without input voltage, this is set at four I mean, five point firewalls.
+
+Great.
+
+Now, in order for the output voltage to switch in the opposite sense, the voltage on the inverting
+
+pin has to be higher.
+
+So let's make this pin higher.
+
+Let's set the voltage at eight.
+
+Edwards.
+
+Now, the opera's output is at minus 15 words, which sets the new threshold voltage to four words.
+
+So what does this mean?
+
+Well, this means that the two thresholds are set at five point five words and four words for the output
+
+voltage to switch back to positive the input voltage.
+
+Instead of going lower than the 5.5 words, it has to go lower than four.
+
+And now, in order for the output to switch back to negative, the input voltage has to be higher than
+
+the new threshold voltage, which is five point five words.
+
+Now, let's see a more realistic approach of using Ashmead Trigger.
+
+All right.
+
+So the input voltage is a 40 hertz sine wave, which is very sensitive to external noises.
+
+And as a result, the one kilohertz signal is added in series in order to simulate a very noisy AC signal.
+
+Now, of course, there's really no point in adding a pure sine wave with the input.
+
+Imagine this time it was a signal coming from a sensor whose output voltage is changing depending on
+
+the output temperature, for example.
+
+So what we want to achieve is to turn on this fan, depending on the output temperature, if it's too
+
+hot inside the room, the Fed will turn on and if the temperature drops below a certain temperature,
+
+the fan will turn off.
+
+Now, the temperature in a room isn't something that changes very fast, right?
+
+It might go up to 23 degrees Celsius, then back to twenty two point five, then up to 24.
+
+They're back.
+
+So it's not something that changes gradually in a linear fashion.
+
+And certainly it's not changing fast.
+
+Now, the voltage provided by the sensor might not be noise itself, but since the temperature in a
+
+room changes randomly because probably someone just opened the window.
+
+Right, or something like that, the output voltage might seem like noisy.
+
+And so these sensors output is connected to our inverting terminal.
+
+If we were to use only one threshold, then when the output voltage of the sensor approaches the threshold
+
+voltage, it might trigger the fan multiple times because in a moment is higher, the next moment is
+
+lower, then again, higher, you get the point.
+
+So in order to avoid doing unnecessarily triggering a Schmitz's there, you know.
+
+Oh, my God, if I die on my legs and when they lay me down to rest.

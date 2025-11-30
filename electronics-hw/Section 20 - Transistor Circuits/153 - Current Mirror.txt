@@ -1,0 +1,333 @@
+Hello and welcome back in this course, the thinkwe that we are going to talk about is called US Car
+
+and murder.
+
+This record is called US murder because if we were to have the circuit, the left part looks similar
+
+to the right part.
+
+Current mirroring is an important principle in integrated circuit energy.
+
+All the connected transistors in and I see work in the principle of car and mirroring from all the amplifier
+
+circuits to operation amplifiers and all sorts of ices that exist have at least one car and mirrors
+
+circuit.
+
+So what I'm trying to say is that there are plenty of applications in which a car a mirror is required.
+
+But what exactly makes this configuration so useful and special?
+
+Decorum, you know, sacred gains its name because it copies or mirrors the current flowing in one act,
+
+inviting in another.
+
+Keeping the output card and constant regardless of loading if the circuit has the ability to mirrored
+
+the current.
+
+Then there has to be an input terminal where the desired current comes in and that current words will
+
+be copied on the other branch where the load is connected.
+
+The input of the circuit is represented by a DC power supply before registering a series.
+
+Try to look at these two as a different circuit.
+
+We somehow provide the current to this branch.
+
+Your imagination is the only limitation.
+
+The register here is used to limit the current, which means, in this case, without it, we would
+
+blow up this transistor.
+
+And why is that?
+
+Because the base voltage would be on fire, which means that the base emitter diode will turn on and
+
+practically there is nothing to limit the current.
+
+Only the the emit a resistance, which, as we know, it's very low.
+
+So the basic horror middle configuration is shown here, which comprises two transistors, one of which
+
+has the base and collector connected and the other does not.
+
+The base connection of both transistors are then linked.
+
+US are diameters which are also taken to ground.
+
+So let's call.
+
+The coroner comes from the input as programming current because this current, we said the current flow
+
+through our load, as we see here, the current on the connector is point three millions.
+
+And how can we calculate that?
+
+It's very important for you to understand that because the base of this transistor is tied to the collector?
+
+These transistor practically acts just like a simple diode.
+
+So if you replace this transistor with a simple diode?
+
+You will notice that the current didn't really change.
+
+Well, the current is higher with zero point two million because of this particular diode is not exactly
+
+the same as the base emit a diode.
+
+It has a slightly lower voltage drop across it using the second law of kickoff.
+
+We can easily calculate the current US.
+
+It's firewalls minus the voltage drop across the diode, which is 500 million volts or divided by this
+
+resistance.
+
+Now, the same equation applies when the transistor is back, but this time the current will be firewalls
+
+minus the base emitter voltage drop, all divided by one kilogram.
+
+However, this equation does not take into account the fact that both transistors draw a certain amount
+
+of base current and the current for both bases also flows through this resistance.
+
+Does the current equation is the programming current is equal to the current flowing when the collector
+
+plus two times the base current, assuming that both transistors are exactly the same, the same currently
+
+flow on these transistors base has the same current on the collector because the creator current is
+
+equal to the base current times beta.
+
+This means that even if we change the value of the load, it won't have any effect on the current flowing
+
+on the collector.
+
+So using this configuration, we can successfully mirrored the current from one branch to another.
+
+These two transition parameter is often adequate for most applications.
+
+However, it has some noticeable limitations under many circumstances.
+
+For example, the current or the second branch can vary with the change in the output voltage.
+
+And this means that if it's the voltage to some other value in real world, this current will vary a
+
+little bit.
+
+This is because there is a slight variation of basic meter voltage with the collector voltage at a given
+
+current.
+
+Another noticeable limitation is that the color matching is dependent on transistor matching, so the
+
+color of the mirroring is dependent upon the matching of the transistors.
+
+Often, the transistors need to be on the same substrate if they are to accurately mirror the current.
+
+So if the two transistors having the same port number are not manufactured side by side at the same
+
+time, they will have slightly different characteristics.
+
+Of course, in the simulator, we won't see this type of problem since both transistors are perfectly
+
+the same.
+
+The third problem is the base current required by any bipolar junction transistor.
+
+This base currently small for high gain transistors, but it is still present and is still a source
+
+of error.
+
+So in order to overcome some of these issues, more advanced parameter circuits can be developed and
+
+used.
+
+As we mentioned before, there is a mismatch between the programming current and the output mirrored
+
+current caused by the unavoidable presence of the base current for the two transistors flowing through
+
+this resistance.
+
+The problem is that we can't really see this mismatch right now because in this simulator, both transistors
+
+are exactly the same, but in real world, that is very hard to find.
+
+We have high gear transistors, though the difference is small and sometimes negligible, but sometimes
+
+it must be recognized and minimized.
+
+So the base current is provided by the current coming from the inputs, right, which is the current
+
+passing through this resistance.
+
+And as you said, the base current is a source of error in the calculations, and we want it to reduce
+
+this.
+
+A simple way to reduce the current flowing through this resistance is to add a third transistor to the
+
+circuit.
+
+Now, the base clock for Q1 and Q2 is also the emitter current of Q3, right?
+
+And only the base current for Q3 must still flow through this resistance.
+
+This effectively reduces the base current error by a factor of beta plus one.
+
+Adding Q3 to the circuit will change the programming.
+
+Current little bit sees Q1 no longer has its collector and base connected together.
+
+Instead, we have an extra bizmeter voltage to account for for this circuit.
+
+With the programming, current is equal to the power supply voltage minus two time is based 10-meter
+
+voltage, all divided by this resistance.
+
+If we add a Namita register to a single transistor amplifier, we get negative feedback or what is called
+
+us degeneration in the previous course, we have seen that by adding the limited resistor to the transistor,
+
+we could said the gain of this amplifier because the gain of the circuit is equal to the collector assistance
+
+divided by Amitai resistance.
+
+So even though the transistor has a maximum gain of 100 hours, the rocket will not amplify the input
+
+signal by 100.
+
+Because the emitter register impedes that, we wanted a gain of 10.
+
+So we have chosen the values correspondingly.
+
+It's very important for you to understand that the diameter assistance has purposes other than stabilizing
+
+the gain.
+
+Then meter resistance improves many properties of the common emitter amplifier.
+
+Of course, for the expense of gain.
+
+This resistance acts like a negative feedback for the circuit, a feedback that we notice the transistor
+
+whenever the current flowing from collected emitter rises.
+
+And what do I mean by that?
+
+Let's imagine a scenario where the current flowing on the collector emitter is rising for some reason.
+
+And what happens if the emitter current starts rising?
+
+The what is drop across the emit, the resistance starts increasing to right.
+
+And what happens then?
+
+Well, if the voltage across the emitter resistance rises, it means that the base emit a voltage starts
+
+decreasing right.
+
+The base voltage is constant.
+
+So if the emitter worth it is increasing, the base meter voltage will decrease, which means nothing
+
+else.
+
+But a transistor will start slowly to turn off in order to prevent the current to rise.
+
+So I hope you got the idea.
+
+If you have any doubts, don't hesitate to leave a comment below.
+
+One of the reason the current flowing from the connector to emit are can potentially arise is because
+
+of temperature.
+
+The temperature of the transistor increases.
+
+The kinetic current will increase to the presence of the emit.
+
+The resistance provides negative feedback, which stabilizes the circuit against changes in temperature,
+
+supply, voltage, etc. The only downside of using a limited resistance is that the gain is reduced.
+
+But the advantages exceeds the downsides, since it gives a better game control temperature stability.
+
+It also improves the frequency response like, for example, it gives a flatter past boundaries, past,
+
+etc. In digital circuits, where you are operating the transistor from cutoff to full saturation emitter,
+
+the generation is.
+
+It is rarely used.
+
+All right.
+
+So as I have explained before, emit the resistors provide a negative feedback while coronavirus without
+
+emit a resistors work well in integrated circuits because the parameter differences of the neighboring
+
+transistors are insignificant and so is the difference in temperature.
+
+Their performance is not satisfactory, then built from discrete elements.
+
+If this resistance is removed, the bias current will grow, with temperature causing a nickel increase
+
+in the output current.
+
+So exclusion they resistance has the function to stabilize the current mirror current against the temperature
+
+changes.
+
+All right.
+
+So the last thing I want to show you is a popular configuration of Clara Miller.
+
+In fact, this configuration got the name of your son, Karen Miller.
+
+I don't know why it's quite like that.
+
+Probably the guy called us.
+
+Wilson came up with this idea to add a third transistor here, as you might have noticed.
+
+Wilson Clara Miller doesn't have omitted resistances, and the reason of that these third transistors
+
+already provides a negative feedback for the circuit.
+
+So how does it work?
+
+A small amount of current flowing through this resistance provides a base current for Q3, enabling
+
+Q3 to conduct current the bulk of this current Earth with any transistor flows from collector to at
+
+meter.
+
+At the same time, the meter current of Q3 becomes the programming current for the current meter formed
+
+by Q1 and Q2.
+
+As we have already seen when studying the basic parameter circuit, the quality current of Q1 is equal
+
+to the quality of current of Q2, and so the meter current of Q3 is equal to the quarter current of
+
+Q2, plus two times the base current.
+
+This arrangement provides a form of negative feedback loop, if for any reason, the collective current
+
+of Q3, which is the output current driving the load right.
+
+So if this starts to increase, the quality of current of Q2 must likewise increase, and the quarter
+
+current of Q1 will mirrored that increase.
+
+This will increase the voltage drop across this resistance, which will in turn reduce the base voltage
+
+of Q3.
+
+So this Q3, which provides a negative feedback, prevents the output current rise, which gives a better
+
+stability for the circuit.

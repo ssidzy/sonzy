@@ -1,0 +1,277 @@
+In this video, I'm going to show you what happens with the output voltage when you connect this voltage
+
+divider to another circuit.
+
+As I mentioned in the previous course, this circuit is pretty useless if the output voltage is not
+
+connected to anything.
+
+There are thousands of things that the voltage divider could be feeding, but whatever it is, we can
+
+abstract that circuit away by replacing it with a simple resistor.
+
+So let's assume that the voltage divider is feeding a resistor, and we will call this resistor as
+
+the load resistance or simply load. In electronics
+
+the device, which takes electrical energy is known as the electrical load.
+
+In other words, the electrical load is a device that consumes electrical energy in the form of current
+
+and transforms it into other forms like heat, light work, etc. The resistor consumes electrical energy
+
+and will transform that energy into heat.
+
+So the more current is passing through a resistor, the hotter it will get.
+
+All resistors have a power rating, which defines how much current can pass through the resistor without
+
+damaging it.
+
+This is really an off topic right now, but we will talk about this in more detail in another course.
+
+For now, let's just name this resistor as 'load'.
+
+All right ?
+
+As we have seen in the previous course, the output voltage of the divider with two 1k ohm
+
+resistors is 2.5 volts.
+
+And based on the voltage divider equation, as long as both resistances are equal, the output voltage
+
+will always be half the input voltage coming from the DC voltage source.
+
+So a rule of thumb, when both resistors are equal, the output voltage is half the input.
+
+Now let's connect the load.
+
+To the circuit.
+
+And my question to you right now is, are these two resistors still in a series connection?
+
+What do you think?
+
+Well, the answer is not really.
+
+They were indeed in series when the load was not connected to the divider.
+
+But the thing is, once the voltage divider is supplying current to a load, as it is the case right now
+
+:)
+
+The current that is passing through R1 is not equal to the current passing through R2.
+
+And why is that?
+
+Well, that's because some of the current passing through R1 is going through R2, and some of the
+
+current passing through R1 is going towards the load.
+
+The load requires current and the voltage source supplies it through R1. The voltage divider equation
+
+only works if the current passing through R1 and R2 are equal, meaning that they are connected
+
+in series.
+
+What do you think the value of the output voltage is right now?
+
+Is it still 2.5V?
+
+Let's double click on the wire and click Show Voltage.
+
+Surprise.
+
+The voltage is no more 2.5V, and this equation is not valid anymore.
+
+You can already see one of the big disadvantages of this simple voltage divider circuit.
+
+Imagine that you have a circuit that for any reason, you need to power it with 2.5V
+
+But once you connected the input of your circuit to the output of the voltage divider, the output voltage
+
+suddenly drops and your circuit won't work as intended.
+
+So let's try to find out why the output voltage has been reduced from 2.5V to 1.9V.
+
+As I have mentioned, when a load is connected to the circuit, the current passing through R1 and R2
+
+will not be equal.
+
+And the reason of it is because the load demands some current. How much of current will demand?
+
+Well, that depends on its resistance.
+
+The lower the value of the load resistance, the more current will demand.
+
+This is basic ohms law and the higher the value of the load resistor, the lower amount of current
+
+will flow through it.
+
+If, let's say we have a 1M ohm resistor instead, which is a very high resistance, right, just
+
+a very tiny amount of current will flow through the load and notice that the output voltage suddenly
+
+came back to 2.5V as the voltage divider was supposed to do.
+
+But notice that as the load resistance decreases
+
+More current will pass through it.
+
+And the output voltage of the voltage divider is decreasing, so there must be some explanation why
+
+this happens.
+
+What we have found out until now is that if there is no load attached to the circuit, the voltage divider
+
+equation is valid.
+
+But once the voltage divider needs to supply current to a circuit, this formula does not apply and
+
+we have to do something about it.
+
+What we have also noticed is that if we were to have a load with a huge resistance, in the range of mega
+
+ohms, the voltage divider works as intended.
+
+That's because a load with a relatively high resistance, relative to the DC voltage source and the two
+
+resistances requires only 2.5 micro amps of current.
+
+This is literally nothing.
+
+It's like this load would not even be connected to the circuit.
+
+Now here's the deal. If we have a load than this current flowing out of the voltage divider is not zero
+
+anymore.
+
+It will be some other, you know, some other current value.
+
+And all of the sudden R1 and R2 are no longer in series.
+
+So what happens when
+
+we have a loaded voltage divider? As I have explained
+
+the load will be in the form of another resistor, and I'm going to call this resistor us RL.
+
+So now, what do we have?
+
+We now have R2 and RL in parallel.
+
+The parallel equivalent of them is in series with our R1 because all of the current going through R1
+
+must go through either R2 or RL and R2 and RL can be replaced by a parallel equivalent resistance.
+
+So now what does our voltage divider equation looks like?
+
+Well, instead of R2 over R1 plus R2 now, the output voltage equals to R2 in parallel with RL over
+
+R1 plus R2 in parallel with RL.
+
+All of this multiplied by the input voltage.
+
+So this is now the new voltage divider equation.
+
+And of course, we know that the parallel equivalent resistance is 1 over R equivalent equal to
+
+one or two plus one over RL, from which results the R equivalent, is the product over the sum of
+
+both resistances.
+
+So the lesson to be taken from this is the new equation is obviously different from the original one.
+
+Right?
+
+So you must look for if you think you may see a voltage divider, you must look for current being
+
+drawn by the load.
+
+If there is a significant amount of current flow through the load, the original voltage divider
+
+equation does not apply anymore.
+
+If you recall, we have seen that with a 1M ohm load, the original voltage equation was valid.
+
+Let us do some calculations, so R2 is in parallel with RL
+
+So the equivalent resistance of R2 in parallel with RL is now 99.99 ohms.
+
+You can do the calculations on your own and see that the equivalent resistance of this parallel connection
+
+is indeed 99.99 ohms.
+
+-
+
+So do you notice how close the equivalent resistance is compared to the original value of R2?
+
+It's almost the same.
+
+The equivalent resistance is almost the same as the value of R2, which explains why the original voltage
+
+divider equation works.
+
+And now let's do the same calculation with a lower load, let's say 150 ohms. This time, 100 Ohm
+
+is in parallel with 150 ohms and the equivalent resistance would be 60 ohms.
+
+So even though you have placed a 100-ohm resistance here, in reality, from the circuit point of view,
+
+it behaves like a 60-ohm resistor and you could use the original voltage divider equation.
+
+But R2 in this equation should be now 60 ohms instead of 100 ohm, and the output voltage would
+
+be around 1.9V.
+
+Now, the thing is, in practice, once you do a number of voltage dividers, you will see few popular
+
+values for the voltage divider resistors.
+
+You see, many people just pick one of them and don't bother too much with calculations, unless there
+
+is a problem with the choice.
+
+For example, for smaller loads, you can pick resistors in the 100k ohm range, while for bigger
+
+loads you can use 10 ohm or even 1k ohm resistors, if you have enough current to spare.
+
+Now I could go on and on me trying to explain how to choose the values of R1 and R2, but I believe
+
+that it would be a waste of time.
+
+The only time you would actually use this voltage divider circuit is if the load you are connecting
+
+does not demand any current meaning that it has a relatively high resistance.
+
+We could see that the moment you connect a load with a relative low resistance, which actually demands
+
+some serious current from the voltage divider, the output voltage of the divider drops and the circuit
+
+will not work anymore.
+
+One solution from the many is to add a unit to gain buffer between the voltage divider and the load.
+
+In general, an op amp has a very high input resistance.
+
+This circuit will allow you to supply a rather high current at least several mA, even with a
+
+small current through the divider.
+
+It may be tempting, especially in battery power systems, where every mA counts to choose a value
+
+like 1M ohm for the resistors.
+
+Don't worry if you don't understand this just yet.
+
+We will build this circuit later on.
+
+I just wanted to show you that there are solutions to almost every problem in electronics.
+
+We will also talk about voltage regulator circuits. A voltage regulator is a circuit that creates and
+
+maintains a fixed output voltage irrespective of the load resistance.
+
+So there are many other circuits that work much better than a simple voltage divider circuit, and we
+
+will talk about all of them as we progress with the courses.

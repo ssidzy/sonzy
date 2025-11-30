@@ -1,0 +1,317 @@
+So now we get on to the second of our two major configurations, we already looked at the first one,
+
+which was the non inverting amplifier, the butler was just a variation of that.
+
+Now we have instead of the inverting amplifier, we have the inverting amplifier.
+
+How can you tell it's an inverting amplifier?
+
+Well, just like before we could tell it was a non inverting one by the signal going into the positive
+
+input here, the non inverting input, hence the name non-convertible amplifier.
+
+Our signal now goes into our inverting pin.
+
+So hence it's called an inverting amplifier.
+
+And don't worry about the amplifiers symbol.
+
+I mean, the positive and the negative symbol is interchangeable, depending on how it's more convenient
+
+for you to to draw the schematic so the upper doesn't change.
+
+It's just about visually to, you know, to make it a bit easier.
+
+And that's what you will commonly find, these kinetics and care packages and all sorts of stuff.
+
+You might find them flipped around upside down, back to front.
+
+It's exactly the same apap.
+
+He's just visually different.
+
+You can draw it any way you want.
+
+Now, our inverting amplifier that this one is we have our feedback resistor, we have our negative
+
+feedback going to, in this case, into the inverting pin instead of our non inverting one.
+
+So now we are feeding our input into through the resistor here.
+
+So it's a different configuration.
+
+Our signal is not going directly into the non inverting pin.
+
+And this brings up our next really important concept with up amps that you really need to understand.
+
+And here's where rule number one really comes into play in trying to analyse this thing.
+
+It's called Virtual Ground.
+
+Stick with me.
+
+So once again, how do we analyze this thing?
+
+Always go back to your turow's.
+
+What's our second rule here?
+
+The OP arm tries to keep the input voltages the same.
+
+In fact, it will if you got this negative feedback configuration and you haven't hit the res yet.
+
+So if the amplifier is working normally within normal bounds of your power supply, really these two
+
+inputs will always be the same.
+
+So we actually connected our non inverting input down to ground here.
+
+It's connected to ground, so it's never going to change.
+
+So what is the inverting input here going to do?
+
+Well, of course, rule number two, it's going to be identical.
+
+It's going to be the same.
+
+So this point is also going to be ground or zero volts.
+
+So this seems like almost like a pointless circuit because look at rule number one, no current flows
+
+in or out.
+
+So there is no current flowing in or out of the pin and it's ground.
+
+So we've got both pins grounded and no current flows in or out.
+
+It's almost is that what's the point of having another EMP?
+
+It's a very confusing concept, but once you grasp it, you go, oh, that's easy and it's quite brilliant.
+
+So the OPAP, remember, does whatever it needs to on the output, drives it, whatever voltage positive
+
+and negative in order to make sure that this inverting pin here is equal to the non working people down
+
+here.
+
+So the upper back and forth is pin.
+
+What it can do is to change the output voltage to make this been zero.
+
+And trust me, we will do a practical measurement on this in a minute.
+
+And this note here will actually be zero volts.
+
+This confuses the heck out of a lot of beginners.
+
+They build up their circuit, they start probing around and they got their input signal here.
+
+You know, it's one kilohertz, one more time, for example.
+
+And they measure this side of the resistor and the signal is, is there.
+
+And then they measure this side of the resistor and it's ground.
+
+The signal vanished.
+
+Where is it gone?
+
+Strange, but true.
+
+So let's follow this through and use our rules and see if you can analyze the circuit once again, the
+
+D.C. case to make it easy.
+
+So we've got one word on the input here positive, one word with respect to ground.
+
+Of course.
+
+Now, we've said before that, trust me, we will measure it later.
+
+But this is going to be ground.
+
+It is going to be zero words there always.
+
+So all we've got is one word across our our eye here, which is one km.
+
+So we are going to have one million flowing through there.
+
+Where does it flow?
+
+Well, it doesn't flow here down to ground.
+
+How can it?
+
+Because no current rule number one, no current flows in or out of the inputs so it can flow through
+
+the ground here.
+
+So it's going through here.
+
+It's going somewhere.
+
+There's one word across that one kilometer Zisser Onslow always must be obeyed.
+
+So current is flowing, trust me, but it can flow into the pin.
+
+We know it's high impedance, so it must be flowing up here like this through the 10 kilometers there.
+
+And it's being sourced from the output.
+
+Remember, these UPB has internal circuitry.
+
+It's cutting out the buffer so it can actually drive currents into and out of the various supplies back
+
+into there.
+
+And that's where it's sinking currents, too.
+
+And that's a sneaky part about this.
+
+Our current has now been forced up this north here and in this case, our feedback resistor RF, which
+
+is a km.
+
+I've made it 10 times higher.
+
+You will see why in a minute.
+
+So it must be flowing through there.
+
+So we must have a what is drop across the resistor.
+
+Right.
+
+Once again, ohms law always must be obeyed.
+
+So if you got that one millions flowing through our ten K there, we are going to have 10 volt drop
+
+across this resistor with positive here and negative here.
+
+So these voltages are with respect to ground here.
+
+Now, this is where it gets a little bit tricky, this positive wattage here is we are going to get
+
+the plus 10 wards across that register there.
+
+But because the spin is positive.
+
+But but but we are fourth, we know that the spin is OK because of the rule number two.
+
+This means that if this is ground and it is positive, then we've got minus 10 votes coming out of here.
+
+Bingo.
+
+There is our inverting amplifier, one 113 minus 10 votes out.
+
+So our gain, our formula is V, which is gain equals RF sorry, minus R.F. divided by our eye.
+
+There's no plus one with the inverting amplifier.
+
+The plus one only applies to the other non inverting configuration.
+
+So this point here is what's called a neutral ground, because typically this configuration, it is
+
+actually grounded because we grounded this spin.
+
+It doesn't have to be we can't feed other voltages into the spin and offset and do all sorts of other
+
+stuff.
+
+But it's still called even if you do feed other voltage in here, it's still called neutral ground because
+
+it's virtual, it's not real.
+
+It's not hard to hide.
+
+If it was hard to get to out, if we actually tried to spin around, this thing wouldn't work because
+
+all of our current would flow through here through this resistor down to ground.
+
+So where this point here becomes a virtual ground by the nature of the APEP action, it will magically
+
+work.
+
+I hope that makes sense because once you get it, it's really easy.
+
+So functionality wise is pretty much exactly like the non inverting amplifier, except it inverts and
+
+that's it.
+
+And the key formula is slightly different.
+
+But apart from that, pretty much everything works exactly the same.
+
+But the magic virtual grant is at play in this configuration.
+
+So compared to the non inverting amplifier, the circuit inverts, meaning that the output is 180 degrees
+
+out of phase with respect to the input.
+
+This means that when the input voltage increases, the output voltage is decreasing.
+
+And if we look at the scope, you can see that the output voltage is increasing up to six words and
+
+down to minus six volts.
+
+So the gain is minus three.
+
+Three or one.
+
+K is three.
+
+But since this is an inverted amplifier is negative three, what I wanted to show you is that if we
+
+actually ground the negative power supply, so we connect the negative power to zero.
+
+We can notice that the output is not going down to negative anymore.
+
+How could it in order for the output voltage to go negative?
+
+You need to feed the Opeth with negative voltage.
+
+So remember, the output voltage always has to be within the boundaries of the two power supplies.
+
+Otherwise it would be kept just like we see in the computer.
+
+The output voltage was limited by the power supply wattages.
+
+Now, let's change this AC voltage input to these high voltage so that it's easier to analyze the circuit.
+
+What do you have to understand, is that an option, any attempts can move source current, meaning
+
+that current flows out of the open into the load or whatever, and it can also sink current, meaning
+
+that current is flowing into the open up from the load.
+
+If we place the pointer on the upper on the up, you can see that the output current is negative to
+
+millions.
+
+All right, so when connected in a negative feedback configuration, the up attempts to keep its two
+
+inputs, the same wattage one is on the ground.
+
+So for the other one to be a ground, we can see that it's at ground level.
+
+It's a couple of micro volts.
+
+There is basically zero voids.
+
+So in order for this point to be on the ground, there must be a voltage drop across this one km resistor,
+
+which has to be equal to the input voltage.
+
+The three km resistor has the same current across it.
+
+So notice that the current across this one km resistor is two millions right to vote, divided by one
+
+kilometer, two millions and declarant across the three km is two millions as well.
+
+So rule number one, no current flows in or out of the speeds since the current across the three km
+
+resistor has the same current across it.
+
+The voltage drop must be three times as large by onslaught, making the output equal to minus three
+
+times the input voltage.

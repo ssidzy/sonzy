@@ -1,0 +1,159 @@
+If there is something to really keep in mind about why input and output dependencies are so important
+
+is matching impedance matching, you see, is a simple concept that states that the power transfer from
+
+last year to another is maximized first.
+
+In the previous course, we have this cost that if you have two circuits, one that outputs a signal
+
+to the next circuit, the output impedance of the First Circuit should be much lower than the input
+
+impedance of the next circuit.
+
+This maximizes the voltage drop across the input impedance of the Second Circuit rather than in the
+
+output impedance of the first.
+
+So if the output impedance of the First Circuit is low, the voltage or the signal will be dropped in
+
+a bigger proportion on the input impedance of the Second Circuit and very little on the output impedance.
+
+Ideally, no voltage should be dropped on the output impedance.
+
+Nowadays, as a general rule, high input and low output dependencies are the norm, even if it does
+
+not lead to an impedance match.
+
+However, there are cases when we want the output of the First Circuit to be equal to the input impedance
+
+of the Second Circuit.
+
+Let's assume that we have an amplifier stage that will drive an antenna.
+
+Everybody knows what an antenna is.
+
+At least I hope so.
+
+Why do you have to know about it?
+
+Is that usually an antenna is designed to have a resistance of 50 on these 50 ohmes, nothing else but
+
+the input impedance of the antenna.
+
+So this is the resistance that the signal will see when it enters the antenna.
+
+The question is, why would we want the output impedance of the first to be equal to these 50 ohms?
+
+The reason of it is because in this way we can achieve what is called us maximum power transfer.
+
+In simple terms, we make both impedance is equal so that the maximum power transfer, which is the
+
+combined effect of voltage and current, can be transferred from the First Circuit to the other circuit.
+
+This time we are talking about power and not about voltage.
+
+So why is the power delivered to the antenna maximum, you might ask?
+
+The transmitter output is usually connected to the antenna via a transmission line, which is typically
+
+a quicks cable.
+
+In other applications, the transmission line may be a twisted pair or some other medium.
+
+Now what?
+
+Here to know about a quiffs cable is that it has a carrier impedance which is also measured in arms
+
+to achieve maximum parts for transmission line.
+
+The line impedance must also match at the source and lower the impetuses.
+
+If the impedance is around matched, maximum power will not be delivered.
+
+In addition, standing waves will develop along the line.
+
+This means the load doesn't absorb all of the power said down the line.
+
+Consequently, some of that power is reflected back towards the source and is effectively lost.
+
+The reflected power could even damage the source.
+
+All right.
+
+So it is is hard to grasp.
+
+Let's go to our simulator to see why impedance matching is important.
+
+This is a simple circuit showing various ways to terminate transmission lines.
+
+We have four different circuits.
+
+Each one has a source which generates a square wave signal and where normally it would be an actual.
+
+But for this experiment, the source generates a simple square reverse signal.
+
+Every five seconds, the source and the load is connected together via a transmission line, which is
+
+a simple coax cable, which has an impedance of 55 ohms in each of the circuit.
+
+The transmission line is terminated with different resistors value, and you can clearly see that if
+
+the line is not properly terminated, a phenomenon called reflection will happen.
+
+The reflection of the signal, as the name implies, means that the person in our case is not absorbed
+
+entirely by the load and part of the energy is reflected back to the source.
+
+All right, so let's take the first liquid.
+
+The impetus of the source is 55 ohms.
+
+The transmission line has an impedance of 55 ohms and the transmission line is terminated before 55
+
+ohms resistance.
+
+Since both ends are equal and the transmission line is also equal to 55 ohms, all the energy that the
+
+source generates is absorbed by the load and no reflections will happen.
+
+As a result, the pulse travels across and is absorbed the right.
+
+And this is the most efficient way to terminate the line since it minimizes reflections that waste energy.
+
+The second line is terminated with a resistor that is too large, causing the wave to be reflected and
+
+absorbed at the other end, which is properly terminated.
+
+The third line is terminated before assister that is too small, causing the wave to be reflected negatively.
+
+And the fourth line is terminated the improperly at both ends, causing the wave to be reflected back
+
+and forth for a while.
+
+Now, if you were to measure the power absorbed by the Lord, let me stop the simulator the moment the
+
+purse reaches the Lord.
+
+All right, now let's check the first load dissipates a power of 83 milliwatts, the second one around
+
+to milliwatt.
+
+So the power absorbed is much lower, which is quite logical since the load has a much higher resistance
+
+value than the first one.
+
+The third load absorbs the power of 34 milliwatts and the Fourth Circuit around seven milliwatts.
+
+What's interesting to note here is that even though in the Third Circuit the load has a much lower impedance
+
+than in the first one, the power dissipation is ironically lower.
+
+It should be the highest.
+
+But since it's improperly terminated, a big part of the energy will be reflected back and get absorbed
+
+by the source.
+
+In the last year, with nothing matches the source impetus, the transmission lines impedance and the
+
+impetus of the load is different, causing the wave to be reflected back and forth a couple of times.

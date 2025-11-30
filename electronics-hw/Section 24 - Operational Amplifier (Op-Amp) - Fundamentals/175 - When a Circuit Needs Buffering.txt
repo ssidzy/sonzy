@@ -1,0 +1,115 @@
+So let's try to look from a different angle of the purpose of a buffer circuit, what is a buffer?
+
+A buffer is basically a high impedance device that accepts a voltage input and output the same wattage
+
+as output.
+
+The advantage of a buffer is that it has a high input impedance.
+
+But why is a high input impedance advantageous?
+
+Because if you go to Ohm's Law, what it gets allocated to a circuit in accordance to the resistance
+
+or impedance of a device.
+
+So voltage equals to current times resistance.
+
+Right.
+
+And therefore, if a device has a high input impedance, it consumes most of the voltage from a given
+
+source.
+
+If a device has a low impedance, the voltage for, for instance, from a power source may not fall
+
+across.
+
+It sees the impedance is so low.
+
+This is especially true if there is a resistance increase with this load making the voltage be divided
+
+between the load and the other resistance.
+
+Therefore, to make sure the voltage falls across the device we use above our sees above Buffer has
+
+extremely high input impedance.
+
+It consumes practically all of the voltage from a voltage divided circuit and to the output of the buffer.
+
+We simply connect to the output device.
+
+This output device usually, which is usually a low impedance, now gets the full voltage.
+
+And this is why a buffer is so important for devices that have low impedance.
+
+It allows us to get the full voltage from a given source and fully power that low impedance device.
+
+So buffering a circuit is common practice for this reason.
+
+But let's go for two specific examples of circuits.
+
+So we had this circuit, we have a voltage divider that divides the voltage and that voltage is given
+
+to our Lord, so our Lord requires fireballs and we divided the input voltage, which is 10 volts using
+
+a voltage divider, since the resistors are equal in value and the power source is then holds the voltage
+
+at the output where the load is connected to is five.
+
+So let's assume that the Lord needs about five words in order to turn on.
+
+If we connected the load to the output of this voltage divider which produces fireballs, the Lord wouldn't
+
+receive anywhere near five words.
+
+In fact, it would get around to 98 millivolts, which means it wouldn't turn on at all.
+
+But why is this?
+
+Well, this is because in this circuit there are actually two voltage dividers.
+
+The first, as we stated, is between the two 10 killens resistors and the second voltage divider is
+
+now between the bottom 10 km resistor and the 100 onload.
+
+And this forms a second voltage divider.
+
+All right.
+
+So there we have a voltage divide there without lowed connected to it, the output voltage can be calculated
+
+using this equation.
+
+However, when we connect a load to the circuit, this equation does not apply anymore.
+
+The new equation is this one.
+
+And I want to try to derive this equation here.
+
+But if we plug in the values, the output voltage on the load is only 98 milliwatts.
+
+How crazy is that?
+
+This voltage divide, the circuit is not suitable to power load.
+
+The load would only receive firewall's if it has a high bidders.
+
+More precisely, as I have calculated, it needs to be around 200 km to receive five from the voltage
+
+divider.
+
+And obviously this is not a practical circuit to use if you want to power loads.
+
+Now, let's fix the circuit using a muffler, we will now buffer the circuit.
+
+Now, with the buffer added to the silk, with the silk, it will work because the buffer being of extremely
+
+high impedance consumes most of the voltage produced from the voltage divider circuit, which is a five
+
+foot.
+
+It then passes these fireworks to the output which powers on the load, which needs about fireboats.
+
+Right.
+
+So this is how a buffer works to power on devices.

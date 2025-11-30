@@ -1,0 +1,67 @@
+This circuit shows a nice example of an amateur follower saving an awkward circuit.
+
+We are trying to switch a really bright white light.
+
+The kind you use for IRA Lightning, which drops about three point six wall at its desired 500 million,
+
+so forward current.
+
+And we also got a zero to three point three worth digital logic signal available to control the switch.
+
+Now, if you are familiar with microcontroller programming and you have heard about Arduino owner,
+
+you know that the hope is can generate either 3.3 volts or firewalls, depending on the power supply
+
+voltage.
+
+So the software running on the microcontroller, which is on the Arduino board right, could control
+
+this every turning it on or off, depending on how the user programs the microcontroller.
+
+The First Circuit uses a single NPI saturated switch, which will be resistor sized to produce 10 million
+
+amps of base current and a 2.5 ohms current limiting resistor in series with the idea.
+
+My question to you is where does this Tamilians come from and how to calculate it?
+
+We can basically form an imaginary loop here, because the that comes from this simple pin flows into
+
+the base down the middle ground and back to the input, so we know that they put voltages 3.3 volt.
+
+But we also know that there is a diode drop between the base of the meter, right?
+
+So the total voltage will be 3.3 watt, minus 0.7 world, which is equal to 2.6 wolf.
+
+And now, if you divide the 2.6 volt with 250 ohms, we will get the current of approximately 10 mg.
+
+So I hope you understand where these Tamilians come from.
+
+I just applied the second law of kickoff this year equities, OK, sort of, but it draws an uncomfortably
+
+large current from the control input, and it requires Q1 to have plenty of current gain, which let's
+
+see, it's 200 a the full load current of 0.5 amps.
+
+The question is, how can we reduce the base current, which is Tamilians, so that the microcontroller
+
+doesn't have to supply this much current to control this?
+
+What happens if we cascades to transistors so the emitter of the first transistor controls the base
+
+of the second transistor?
+
+Hmm.
+
+Let's see.
+
+Indie circuit limited follower has come to the rescue, greatly reducing the input current.
+
+Those who can't see the MCU had to supply only one hundred eighty eight micrograms from its and Gilpin
+
+to turn these high current LCD on.
+
+At the same time, the minimum beta requirement of Q3 speech is greatly reduced.
+
+If you remember in the previous year with the transistor had to have a high beta of 200.
+
+While in this case, it has only forty two.

@@ -1,0 +1,201 @@
+To build our first 'Hello Word' circuit, I have chosen to work with the LED called TLUR6400.
+
+Yes, I agree.
+
+Electrical components have horrible names.
+
+I say.
+
+Let's start by opening up its data sheet.
+
+If you are wondering how or where to find it, just Google up the name of the component, followed by
+
+datasheet.
+
+Usually, these documents are in PDF format.
+
+So I clicked on the first link and this is where it brought me.
+
+The link to the same document can be found here.
+
+All right.
+
+So why are we here?
+
+Ohh right.
+
+The find the forward voltage drop.
+
+If we scroll down a little bit, we will see somewhere
+
+the forward voltage drop.
+
+Here it is.
+
+It says that the forward voltage when 20mA of current is flowing through it
+
+is typically 2V
+
+and the maximum is 3V.
+
+You see, no component is made to perfection.
+
+Instead of giving a fixed value, they give us a range which in this particular case is between two
+
+and three volts.
+
+The voltage drop across the LED will be somewhere around 2V or maximum 3V as long as
+
+there's enough current running through the LED.
+
+Which brings us to the next question.
+
+What is the recommended or maximum amount of current that should flow through the LED without damaging it?
+
+In the absolute maximum rating table,
+
+the recommended current flow is specified in the form of DC forward current.
+
+The DC forward current specifies how much current should flow through the LED during its operation.
+
+And it says that 20mA of current is maximum.
+
+So no more than 20mA should flow through it.
+
+Otherwise, you risk damaging the component.
+
+Of course, this doesn't mean that if, let's say 21mA is flowing through it, you
+
+are screwed.
+
+But you should keep this in mind and design your circuit so that the current flow won't exceed 20mA.
+
+All right, guys.
+
+So we have seen that there is a specification for LEDs called the forward voltage, and you must reach
+
+this forward voltage to turn on the LED.
+
+But as you exceed this voltage, the LED's intrinsic resistance quickly drops off.
+
+Therefore, the LED will begin to draw a bunch of current and in some cases burn up.
+
+So a resistor is used in series with the LED to keep the current at a specific level called the forward current.
+
+-
+
+If you recall, the forward voltage mentioned was between was around 2V, and the current through
+
+the LED should not exceed 20mA.
+
+The question is what should be the voltage of our voltage source and what should be the value of our current
+
+limiting resistor?
+
+Well, as a rule of thumb, the voltage source should always be higher than the forward voltage drop
+
+specified in the datasheet of your particular LED.
+
+I mean, this makes sense, right?
+
+If your voltage source is lower than the forward voltage drop specified
+
+How on earth are you going to drop that amount of voltage across the LED?
+
+You can't.
+
+So as long as the voltage source is higher than the forward voltage drop specified, it's all good.
+
+Now, let's assume that we are working with a 9V battery.
+
+All right.
+
+9V batteries are quite popular in electronics anyway.
+
+The only thing left for us to calculate is the value of the resistor, and the value of the resistor
+
+will be calculated based on how much current the LED can handle.
+
+And we know that 20mA is the maximum amount of current that can flow through to LED.
+
+So the value of the resistor will be calculated accordingly.
+
+So how do we calculate the resistance?
+
+Well, using Ohm's Law.
+
+But this time we use the resistance equation, so resistance is equal to the voltage drop across the
+
+resistor divided by the current flowing through it.
+
+Since the resistor and the LED are connected in series, the same amount of current will flow through
+
+both of them.
+
+So let's assume that we want 20mA of current to flow in the circuit.
+
+In this case, the equation becomes R is equal to voltage drop, divided by 20mA
+
+And the question is what's the voltage drop across the resistor?
+
+Well, if you recall, the entire voltage coming from a voltage source has to be dropped on something
+
+anything until it reaches ground.
+
+Otherwise, a short circuit will happen.
+
+Since we have two components in a series connection
+
+there are going to be two voltage drops. One across the resistor and one across the LED.
+
+The sum of the two voltage drops must be equal to the voltage source.
+
+And the great thing about LEDs and diodes, in general, is that you will always know what voltage will
+
+be dropped across them.
+
+The forward voltage drop specifies how much voltage will be dropped across the LED during its operation.
+
+And we know it will be somewhere around 2V. If let's say, 2V is dropped across the LED
+
+OK?
+
+How much voltage will be dropped across the resistor?
+
+The remaining voltage.
+
+Right?
+
+9V - 2V
+
+So 7V will be dropped across it.
+
+So 7V divided by 20mA gives us a resistance of 350 ohms.
+
+The actual equation that you could use for calculating the value of the current limiting resistor in
+
+an LED circuit is this one. The input voltage of the circuit minus the forward voltage of the LED,
+
+all divided by current, gives you the resistance. Here in the simulator
+
+I have already built the circuit and if you double click on the LED and click Create New Simple Mode.
+
+You can change the forward voltage drop of the LED to any value you want.
+
+For me, it's already set to 2V. Using a 350-ohm resistor in series that we have just calculated the
+
+current flowing through the LED
+
+is going to be
+
+21mA. Plus minus some milliamps don't matter at all.
+
+So remember when you are dealing with an LED, just Google up its data sheet in which you will find
+
+how much voltage will be approximately dropped across it during its normal operation and the recommended
+
+current flowing through it.
+
+When you have these two values, and you know your voltage source
+
+Plug the values into this equation and you are ready to go.

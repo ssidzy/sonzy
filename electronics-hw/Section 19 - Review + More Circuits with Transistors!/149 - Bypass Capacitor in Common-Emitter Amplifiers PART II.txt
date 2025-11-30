@@ -1,0 +1,137 @@
+Now that, you know, conceptually what the bipeds capacitor is, the next step is to know how to select
+
+the value of the bipeds capacitor and selecting the value is pretty straightforward.
+
+The value of the episcopacy.
+
+There should be at least one tenth of the resistance across the Šemeta resistance, which is R.E. at
+
+the lowest frequency intended to be bypassed because capacitors are reactive devices, they have different
+
+resistances to signals based on the signal frequency.
+
+This is referred to as the capacitors reactors, which can be seen as the resistance it offers.
+
+We wanted to get better to have one tenth of the resistance to the flow of current than what the resistance
+
+offers for the frequency signal that we want to bypass.
+
+If you visualize the current moving through the transistor, it can take one of two paths once it passes
+
+the collector and moves through the emitter.
+
+So current can either go through the resistor Ari or current can flow through the bypass capacitor and
+
+current always takes the path of least resistance and therefore current will take the path of the lower
+
+registers.
+
+And this is why you want the value of the resistance of the bipeds capacitor to be at least one tenth
+
+the value of the šemeta register or even better, less than one tenth.
+
+And we want the AC current to flow through the least resistance path, which is the bypass capacitor.
+
+If the correct value is chosen.
+
+However, these signals do not see us ac to DC.
+
+The capacitor has infinite resistance, so this will automatically go through the r e resistor, which
+
+offers lower resistance by far to the infinite resistance of the capacitor.
+
+AC, however, does not see if it resistors for the capacitor, right?
+
+If we choose the value correctly for the capacitor, we can make the capacitor a much lower resistance
+
+path to ground and as a result shorting out the AC signal to ground.
+
+So let's go over a practical example of how we would select the bypass capacitor value.
+
+Let's say we want to bypass the lowest possible frequency of 50 hertz because the frequency of AC voltage
+
+worldwide are 50 to 60 hertz, right.
+
+And therefore, this frequency can be a very problematic because often there is a at this frequency.
+
+So remember that we want to choose the value of our bypass capacitor based on the lowest frequency that
+
+we want to bypass.
+
+So by selecting the frequency of 50 hertz, this blocks frequencies from 50 hertz and higher.
+
+So it covers 60 hertz.
+
+Right.
+
+Frequency of an easy signal increases the resistance of the capacitor, decreases and decreases with
+
+each increase and therefore all the frequencies above the frequency value that we chose get bypassed
+
+easier and easier.
+
+We will demonstrate this all mathematically.
+
+All right.
+
+So we decided that we want to bypass AC signals of 50 hertz or higher to ground.
+
+The typical value of an empty resistor is usually 40 and sorry, 400 to 500 owns.
+
+The resistance is kept low, so that gain of the transistor isn't lowered to much.
+
+So let's say we choose an ATM resistor or 470 ohm.
+
+This means that we want the reactants of the capacitor to be one tenth of 470 or more or less, which
+
+is 47 ohm or lower.
+
+So this is our target.
+
+The reactors of a capacitor can be calculated using this formula.
+
+So the retina is equal to one or two BFC, which is equal to one divided by two times three point forty
+
+times 50 hertz and timezone, which is equal to forty seven ohm.
+
+Now solving for the capacitance, see if we get the value of approximately sixty seven micro Farad's.
+
+So we need a capacitor of at least 67 microarrays to get the resistance of one tenth the value of 470
+
+ohm resistor.
+
+A 67 microfiber capacitor isn't readily available.
+
+We can round it up to 100 microflora, which is readily available and easy to obtain.
+
+And this is even better because we for larger capacitors, the capacitor offers even less resistance
+
+to the AC signal.
+
+If we plug a 100 microworld capacitor into the same capacitor reactants formula, we get reactance of
+
+thirty one point eight ohms and this is much lower than one tenth of the 470 on resistor that we have
+
+in parallel.
+
+So it will act effectively to short all AC signals, 50 hertz or higher to grant to clean up the DC
+
+signal.
+
+You could even increase the capacity even more to allow for less AC noise on the signal.
+
+But a lot of times this will not be done for cost er size constraints.
+
+The reasons, the larger the size a capacitor is, the more it costs per unit also the larger the size
+
+of a capacitor, the larger physical is.
+
+And therefore if a company is designing a product the size of the capacitor could be a problem.
+
+If there are size constraint issues, the way things are going in.
+
+Electronics companies want product to be a small and concise as possible.
+
+So due to reasons such as these larger value, capacitors won't always be chosen.
+
+But theoretically they would increase the purity of the disk signal by allowing more AC to grant.

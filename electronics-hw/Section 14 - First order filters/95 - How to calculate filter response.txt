@@ -1,0 +1,93 @@
+In the previous course, we had designed a Lopez filter, which has a cutoff frequency of 100 kilohertz
+
+right.
+
+We chose this frequency in the belief that this will be good enough to remove these 500 kilohertz noise
+
+signal.
+
+But how do we know if our filter has any success in removing this noise?
+
+And how do we know that our filter doesn't attenuate the voltage of this audio signal?
+
+Well, let's find out.
+
+We can calculate the theoretical behavior of a low pass filter by using a frequency dependent version
+
+of a typical voltage divider calculation.
+
+The output of a resistive voltage divider is shown here.
+
+If you don't remember this equation, please check the voltage divider, of course, that can be found
+
+in the first chapter.
+
+The RCA filter uses an equivalent structure, but instead of R2, we have a capacitor, right?
+
+First, we replace R2 only in the numerator with the reactors of the capacitor.
+
+Next, we need to calculate the magnitude of the total impedance and plays that in the denominator.
+
+As a result, we will get this equation here.
+
+The reluctance of a capacitor indicates the amount of opposition to current flow, isn't it?
+
+But unlike resistance, the amount of opposition depends on the frequency of the signal passing through
+
+the capacitor.
+
+As a result, we have to calculate the reactors at a specific frequency and the equation that we use
+
+for this will be this one.
+
+I have to repeat this again, but if you don't remember this equation, please check the reactors course.
+
+Now, when we tried in the previous course to design a Lopez filter before cutoff frequency of 100 kilohertz,
+
+we chose a capacitor for value of 10 nano ferrets.
+
+And after a little calculation, we got a resistor with a value of approximately 100 60 ohms, right?
+
+We will assume that the amplitude of the input voltage is one world so that we can simply remove this
+
+from the calculation.
+
+First, let's calculate the amplitude of the output voltage or the audio signal frequency, which is
+
+five kilohertz right.
+
+In order to calculate the output voltage first, we need to calculate the reactants of the capacitor
+
+at five kilohertz and inserting all the values in this equation.
+
+We will get a reactants of three thousand one hundred eighty three ohms.
+
+Now that we know this, the output voltage at five kilohertz will be zero point nine nine nine.
+
+What's the amplitude of designer babies essentially unchanged?
+
+And that's good, since our intention was to preserve the sine wave while suppressing the noise.
+
+When I say sine wave, I mean the audio signal, which is present at five kilohertz, right?
+
+This one word here is not the voltage of this battery.
+
+Don't confuse yourself.
+
+It's the amplitude of the audio signal.
+
+This circuit is here just to help you to understand where this equation came from.
+
+Now, let's see how successful the filter will attenuate the noise component.
+
+First, let's calculate the reactors of the competitor at 500 kilohertz.
+
+And as you can see, we will get a value of thirty one point eight ohms.
+
+After inserting this value into the equation, we will get an output voltage of zero point one hundred
+
+ninety five volts.
+
+So this means that we successfully managed to reduce the noise amplitude with about 20 percent of its
+
+original value.

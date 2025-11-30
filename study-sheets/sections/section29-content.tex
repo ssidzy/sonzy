@@ -1,0 +1,353 @@
+\section{Section 29 -- MOSFETs}
+
+\subsection{Transistor Classification and Types}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+Transistors are classified into two main categories: Bipolar Junction Transistors (BJT) and Field Effect Transistors (FET). FETs include JFETs and MOSFETs, with MOSFETs further divided into enhancement-mode and depletion-mode types. Each transistor type has distinct circuit symbols and operational characteristics, making them suitable for different applications in switching and amplification.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Fundamental Transistor Functions:}
+
+Transistors perform two critical functions in electronic circuits:
+\begin{itemize}
+    \item \textbf{Switching:} Controlling current flow on/off enables complex circuit implementations. Applications include telephone switching systems (connecting millions of users via 10-digit dialing), internet routing (accessing websites across continents), computers, traffic lights, and electric power grids.
+    \item \textbf{Amplification:} Boosting weak electrical signals to useful levels. Radio receivers amplify tiny radio wave signals to drive speakers, converting low-energy voltage signals into higher voltage or current outputs.
+\end{itemize}
+
+\textbf{Transistor Classification Hierarchy:}
+
+\textbf{1. Bipolar Junction Transistors (BJT):}
+\begin{itemize}
+    \item NPN transistors (current flows collector to emitter when base is positive)
+    \item PNP transistors (current flows emitter to collector when base is negative)
+    \item Three terminals: Emitter, Base, Collector
+    \item Made of solid semiconductor material with three connection terminals
+\end{itemize}
+
+\textbf{2. Field Effect Transistors (FET):}
+
+\textbf{2a. Junction FET (JFET):}
+\begin{itemize}
+    \item N-channel JFET
+    \item P-channel JFET
+\end{itemize}
+
+\textbf{2b. Metal-Oxide-Semiconductor FET (MOSFET):}
+
+\textbf{Depletion Mode:}
+\begin{itemize}
+    \item N-channel depletion MOSFET (conducts with zero gate voltage, depleted by negative gate)
+    \item P-channel depletion MOSFET (conducts with zero gate voltage, depleted by positive gate)
+\end{itemize}
+
+\textbf{Enhancement Mode:}
+\begin{itemize}
+    \item N-channel enhancement MOSFET (requires positive gate voltage to conduct)
+    \item P-channel enhancement MOSFET (requires negative gate voltage to conduct)
+\end{itemize}
+
+\textbf{Circuit Symbol Identification:}
+
+Each transistor type has a unique schematic symbol for circuit representation. The differences in symbols reflect fundamental operational differences. Memorizing these symbols is essential for reading circuit diagrams and understanding device behavior. The arrow direction, terminal configurations, and additional elements (like the substrate connection in MOSFETs) distinguish between types.
+
+From the late 1960s onward, MOSFET technology became widespread as semiconductor materials and processing improved (early development struggled with insulating oxide layer fabrication). Today, MOSFETs are one of the most widely used semiconductor techniques and a principal element in integrated circuit technology.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Transistor Classification Example:}
+
+Consider identifying transistors in a power supply circuit:
+\begin{itemize}
+    \item \textbf{BJT (NPN):} Used in discrete linear regulators with emitter-follower configuration for high current capability. Symbol shows arrow pointing outward from emitter.
+    \item \textbf{Enhancement N-channel MOSFET:} Used in switching power supplies (DC-DC converters) for high-efficiency on/off control. Symbol shows broken channel line indicating no conduction at zero gate voltage.
+    \item \textbf{Depletion N-channel MOSFET:} Used in constant-current sources or analog switches. Symbol shows solid channel line indicating conduction at zero gate voltage.
+\end{itemize}
+
+The circuit designer selects transistor type based on application requirements: BJTs for linear amplification with moderate input impedance, enhancement MOSFETs for efficient switching with very high input impedance, depletion MOSFETs for normally-on operation with voltage control.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item Transistors perform two fundamental functions: switching (controlling current flow) and amplification (boosting signal levels)
+    \item Two main transistor families: Bipolar Junction Transistors (BJT) and Field Effect Transistors (FET)
+    \item BJTs classified as NPN or PNP with terminals: emitter, base, collector
+    \item FETs divided into JFETs and MOSFETs
+    \item MOSFETs categorized by mode: enhancement (requires gate voltage to conduct) vs depletion (conducts at zero gate voltage)
+    \item Each transistor type has unique circuit symbol reflecting operational characteristics
+    \item MOSFET technology became widespread in late 1960s and is now fundamental to integrated circuits
+    \item Proper transistor type selection depends on application requirements (switching vs amplification, input impedance, efficiency)
+\end{itemize}
+\end{keypointsbox}
+
+\newpage
+
+\subsection{MOSFET Fundamentals and Voltage Control}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+MOSFETs (Metal-Oxide-Semiconductor Field Effect Transistors) are voltage-controlled devices with three terminals: Source, Gate, and Drain. Unlike BJTs where base current controls collector current, MOSFETs have virtually no gate current due to an insulating oxide layer, resulting in extremely high input impedance. The gate voltage controls channel conductivity through an electric field across the insulating dielectric, making MOSFETs ideal for low-power control applications.
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{MOSFET Terminal Configuration:}
+
+MOSFETs have three terminals with different names from BJT equivalents:
+\begin{itemize}
+    \item \textbf{Source (S):} Similar to BJT emitter, current entry/exit point for channel
+    \item \textbf{Gate (G):} Similar to BJT base, control terminal (but with no current flow)
+    \item \textbf{Drain (D):} Similar to BJT collector, current exit/entry point for channel
+\end{itemize}
+
+A fourth terminal, the \textbf{substrate (bulk)}, is often internally connected to the source or brought out separately. Circuit symbols indicate substrate with an arrow showing the bulk material type (N-type or P-type).
+
+\textbf{Voltage Control vs Current Control:}
+
+\textbf{BJT Operation (Current-Controlled):}
+$$I_C = \beta \times I_B$$
+
+Bipolar transistors require base current to control collector current. The base-emitter junction must be forward-biased (typically $\sim 0.7$\,V for silicon), and the base current directly determines the collector current through the current gain $\beta$ (typically 100-300).
+
+\textbf{MOSFET Operation (Voltage-Controlled):}
+
+MOSFETs have almost zero gate current ($I_G \approx 0$\,A) because the gate is physically isolated from the channel by a thin oxide insulating layer (typically silicon dioxide, SiO$_2$). This dielectric prevents DC current flow while allowing electric field penetration.
+
+The gate voltage $V_{GS}$ controls channel conductivity through capacitive coupling:
+\begin{itemize}
+    \item Electric field induced across the insulating oxide layer
+    \item Field modulates charge carrier density in the channel
+    \item Channel conductivity varies with carrier concentration
+    \item Drain current $I_D$ controlled by $V_{GS}$ without requiring gate current
+\end{itemize}
+
+\textbf{Input Impedance Comparison:}
+
+The negligible gate current results in extremely high input impedance:
+$$Z_{in,\text{MOSFET}} \gg Z_{in,\text{BJT}}$$
+
+Typical values:
+\begin{itemize}
+    \item BJT input impedance: $1$\,k$\Omega$ to $100$\,k$\Omega$ (varies with operating point)
+    \item MOSFET input impedance: $10^{12}$\,$\Omega$ to $10^{15}$\,$\Omega$ (essentially infinite for DC analysis)
+\end{itemize}
+
+\textbf{Operational Amplifier Application:}
+
+Op-amps use MOSFETs in their input stages to achieve very high input impedance, ensuring virtually zero current draw from the signal source. This high input impedance:
+\begin{itemize}
+    \item Prevents loading the signal source
+    \item Enables accurate voltage measurement without current drain
+    \item Allows op-amp to convert low-energy voltage signals to higher voltage/current outputs
+    \item Avoids dangerous high-current draw in low-impedance circuits
+\end{itemize}
+
+\textbf{MOSFET Circuit Symbol Variations:}
+
+Enhancement mode symbols show a broken channel line (no conduction at $V_{GS} = 0$), while depletion mode symbols show a solid channel line (conduction at $V_{GS} = 0$). The substrate arrow indicates channel type: arrow pointing toward channel = N-channel (NMOS), arrow pointing away = P-channel (PMOS).
+
+\textbf{Structure Difference:}
+
+The key structural difference between enhancement and depletion mode MOSFETs lies in the fabrication of the channel region. Enhancement mode has no physical channel at zero gate voltage (must be induced), while depletion mode has a pre-existing doped channel that can be enhanced or depleted by gate voltage.
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Voltage Control Demonstration:}
+
+Consider controlling a $10$\,mA load current:
+
+\textbf{Using BJT (NPN):}
+\begin{itemize}
+    \item Required collector current: $I_C = 10$\,mA
+    \item Transistor current gain: $\beta = 100$
+    \item Required base current: $I_B = I_C / \beta = 10\,\text{mA} / 100 = 0.1$\,mA = $100$\,$\mu$A
+    \item Base-emitter voltage: $V_{BE} \approx 0.7$\,V
+    \item Input power to base: $P_{in} = V_{BE} \times I_B = 0.7 \times 0.1\,\text{mA} = 0.07$\,mW
+\end{itemize}
+
+\textbf{Using N-channel Enhancement MOSFET:}
+\begin{itemize}
+    \item Required drain current: $I_D = 10$\,mA
+    \item Gate-source voltage: $V_{GS} = 3$\,V (above threshold)
+    \item Gate current: $I_G \approx 0$\,A (typically $< 1$\,pA)
+    \item Input power to gate: $P_{in} = V_{GS} \times I_G \approx 0$\,W
+\end{itemize}
+
+The MOSFET requires essentially zero input power for control, making it ideal for:
+\begin{itemize}
+    \item Battery-powered devices (minimal control power consumption)
+    \item High-frequency switching (no base charge storage delays)
+    \item Interfacing with logic circuits (CMOS outputs have limited current capability)
+    \item Precision instrumentation (no current drawn from measurement source)
+\end{itemize}
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item MOSFETs have three main terminals: Source (S), Gate (G), Drain (D), plus substrate connection
+    \item \textbf{Critical difference from BJT:} MOSFETs are voltage-controlled ($I_D$ controlled by $V_{GS}$), BJTs are current-controlled ($I_C$ controlled by $I_B$)
+    \item Gate has virtually zero current ($I_G \approx 0$) due to thin oxide insulating layer separating gate from channel
+    \item Gate voltage controls channel conductivity through electric field induced capacitively across oxide dielectric
+    \item MOSFET input impedance ($10^{12}$-$10^{15}$\,$\Omega$) vastly exceeds BJT input impedance ($1$-$100$\,k$\Omega$)
+    \item Op-amps use MOSFET input stages to achieve high input impedance and zero current draw
+    \item Enhancement mode: broken channel symbol, no conduction at $V_{GS} = 0$
+    \item Depletion mode: solid channel symbol, conduction at $V_{GS} = 0$
+    \item Zero gate current enables low-power control and prevents signal source loading
+\end{itemize}
+\end{keypointsbox}
+
+\newpage
+
+\subsection{N-Channel Enhancement MOSFET Operation}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+N-channel enhancement MOSFETs require a positive gate-source voltage above a threshold voltage ($V_{TH}$) to conduct current. Below $V_{TH}$, the MOSFET remains off with no drain current. Once $V_{GS} > V_{TH}$, drain current increases with gate voltage. The drain-source voltage ($V_{DS}$) affects current only when below a critical value, similar to BJT saturation, defining two operating regions: linear (ohmic) and saturation (active).
+\end{tldrbox}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Threshold Voltage Concept:}
+
+The threshold voltage $V_{TH}$ (also denoted $V_{GS(th)}$ or $V_T$) is the minimum gate-source voltage required to form a conductive channel between source and drain.
+
+\textbf{Channel Formation:}
+\begin{itemize}
+    \item \textbf{$V_{GS} < V_{TH}$:} No channel exists, MOSFET is OFF, $I_D = 0$\,A (similar to BJT cutoff region with $V_{BE} < 0.7$\,V)
+    \item \textbf{$V_{GS} = V_{TH}$:} Channel begins to form, minimal current flows (threshold condition)
+    \item \textbf{$V_{GS} > V_{TH}$:} Conductive channel established, drain current flows and increases with higher $V_{GS}$
+\end{itemize}
+
+Typical threshold voltage values: $V_{TH} = 1$-$4$\,V for enhancement N-channel MOSFETs (varies by device, specified in datasheet). The example MOSFET has $V_{TH} = 1.5$\,V.
+
+\textbf{Gate Voltage Control Behavior:}
+
+As gate voltage increases above threshold:
+$$V_{GS} \uparrow \Rightarrow \text{Channel conductivity} \uparrow \Rightarrow I_D \uparrow$$
+
+The electric field from the positive gate voltage attracts electrons (in N-channel) to the channel region beneath the gate oxide, forming a conductive path. Higher $V_{GS}$ creates stronger field, attracts more electrons, increases conductivity, and allows greater drain current.
+
+\textbf{Operating Regions - Drain Voltage Effect:}
+
+Similar to BJT active and saturation regions, MOSFETs have distinct operating regions based on drain voltage:
+
+\textbf{1. Cutoff Region:}
+$$V_{GS} < V_{TH} \Rightarrow I_D = 0\,\text{A}$$
+No channel exists regardless of drain voltage.
+
+\textbf{2. Linear (Ohmic/Triode) Region:}
+$$V_{GS} > V_{TH} \text{ and } V_{DS} < (V_{GS} - V_{TH})$$
+
+In this region, drain current is approximately proportional to drain voltage (MOSFET acts like voltage-controlled resistor):
+$$I_D \propto V_{DS} \text{ (approximately linear relationship)}$$
+
+As $V_{DS}$ decreases, $I_D$ decreases nearly linearly. This is analogous to BJT saturation where $V_{CE}$ is small and limits current flow.
+
+\textbf{3. Saturation (Active) Region:}
+$$V_{GS} > V_{TH} \text{ and } V_{DS} \geq (V_{GS} - V_{TH})$$
+
+In this region, drain current is nearly independent of drain voltage:
+$$I_D \approx \text{constant (determined primarily by } V_{GS}\text{)}$$
+
+Changing $V_{DS}$ (as long as it remains above the critical value) does not significantly affect $I_D$. This is analogous to BJT active region where $I_C = \beta I_B$ regardless of $V_{CE}$ (as long as $V_{CE}$ is sufficiently large).
+
+The critical drain voltage separating regions is:
+$$V_{DS,\text{crit}} = V_{GS} - V_{TH}$$
+
+For the example with $V_{GS} = 3$\,V and $V_{TH} = 1.5$\,V:
+$$V_{DS,\text{crit}} = 3 - 1.5 = 1.5\,\text{V}$$
+
+However, the observation showed critical voltage $\approx 2$\,V, which accounts for additional device characteristics and non-ideal effects.
+
+\textbf{Analogy to BJT Behavior:}
+
+\textbf{BJT Active Region:}
+\begin{itemize}
+    \item $V_{BE} > 0.7$\,V (transistor ON)
+    \item $I_C = \beta I_B$ (independent of $V_{CE}$ when $V_{CE}$ is sufficient)
+    \item Changing $V_{CE}$ (in active region) does not change $I_C$
+\end{itemize}
+
+\textbf{MOSFET Saturation Region:}
+\begin{itemize}
+    \item $V_{GS} > V_{TH}$ (transistor ON)
+    \item $I_D$ determined by $V_{GS}$ (independent of $V_{DS}$ when $V_{DS}$ is sufficient)
+    \item Changing $V_{DS}$ (in saturation region) does not change $I_D$
+\end{itemize}
+
+\textbf{Key Observation from Simulation:}
+
+The drain current $I_D$ is determined by gate voltage $V_{GS}$ when operating in the saturation region. Changes in drain voltage $V_{DS}$ do not affect drain current as long as $V_{DS}$ remains above the critical value. Once $V_{DS}$ falls below this threshold (entering linear region), drain current begins decreasing with decreasing drain voltage.
+
+This behavior is essential for amplifier design (operate in saturation region for constant-current source behavior) and switch design (operate in linear region for low on-resistance, cutoff for zero current).
+\end{detailbox}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{N-Channel Enhancement MOSFET Operating Points:}
+
+Consider an N-channel enhancement MOSFET with $V_{TH} = 1.5$\,V:
+
+\textbf{Case 1: Cutoff Region}
+\begin{itemize}
+    \item Gate-source voltage: $V_{GS} = 1.0$\,V
+    \item Drain-source voltage: $V_{DS} = 10$\,V
+    \item Analysis: $V_{GS} = 1.0\,\text{V} < V_{TH} = 1.5\,\text{V}$
+    \item Result: $I_D = 0$\,A (no channel, MOSFET OFF)
+\end{itemize}
+
+\textbf{Case 2: Saturation Region (Active)}
+\begin{itemize}
+    \item Gate-source voltage: $V_{GS} = 3.0$\,V
+    \item Drain-source voltage: $V_{DS} = 5.0$\,V
+    \item Analysis: $V_{GS} = 3.0\,\text{V} > V_{TH} = 1.5\,\text{V}$ (ON)
+    \item Critical voltage: $V_{DS,\text{crit}} = V_{GS} - V_{TH} = 3.0 - 1.5 = 1.5$\,V
+    \item Check: $V_{DS} = 5.0\,\text{V} > 1.5\,\text{V}$ (saturation region)
+    \item Result: $I_D$ determined by $V_{GS}$, independent of $V_{DS}$
+    \item Use case: Current source, amplifier active region
+\end{itemize}
+
+\textbf{Case 3: Linear Region (Ohmic)}
+\begin{itemize}
+    \item Gate-source voltage: $V_{GS} = 3.0$\,V
+    \item Drain-source voltage: $V_{DS} = 1.0$\,V
+    \item Analysis: $V_{GS} = 3.0\,\text{V} > V_{TH} = 1.5\,\text{V}$ (ON)
+    \item Critical voltage: $V_{DS,\text{crit}} = 1.5$\,V
+    \item Check: $V_{DS} = 1.0\,\text{V} < 1.5\,\text{V}$ (linear region)
+    \item Result: $I_D$ proportional to $V_{DS}$, acts as resistor
+    \item Use case: Analog switch, low on-resistance switching
+\end{itemize}
+
+\textbf{Case 4: Region Boundary}
+\begin{itemize}
+    \item Gate-source voltage: $V_{GS} = 3.0$\,V
+    \item Drain-source voltage: $V_{DS} = 1.5$\,V
+    \item Analysis: $V_{DS} = V_{GS} - V_{TH}$ (boundary condition)
+    \item Result: Transition between linear and saturation regions
+    \item Note: Exact boundary varies with device characteristics
+\end{itemize}
+
+These operating regions determine circuit design choices: amplifiers use saturation region for constant transconductance, switches use linear region (ON state) and cutoff region (OFF state) for minimal power dissipation.
+\end{examplebox}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item N-channel enhancement MOSFET requires $V_{GS} > V_{TH}$ to conduct current
+    \item Threshold voltage $V_{TH}$ (typically $1$-$4$\,V) is minimum gate voltage to form conductive channel
+    \item Below threshold ($V_{GS} < V_{TH}$): MOSFET OFF, $I_D = 0$\,A (cutoff region, similar to BJT with $V_{BE} < 0.7$\,V)
+    \item Above threshold ($V_{GS} > V_{TH}$): MOSFET ON, higher $V_{GS}$ increases $I_D$
+    \item \textbf{Saturation region:} $V_{DS} \geq (V_{GS} - V_{TH})$, drain current $I_D$ independent of $V_{DS}$, determined by $V_{GS}$ alone (similar to BJT active region)
+    \item \textbf{Linear region:} $V_{DS} < (V_{GS} - V_{TH})$, drain current proportional to $V_{DS}$, MOSFET acts as voltage-controlled resistor
+    \item Critical drain voltage: $V_{DS,\text{crit}} = V_{GS} - V_{TH}$ separates linear and saturation regions
+    \item Amplifier applications use saturation region (constant-current source behavior)
+    \item Switch applications use linear region (low on-resistance) and cutoff region (zero current)
+    \item Voltage control (zero gate current) enables efficient interfacing with logic circuits and low-power operation
+\end{itemize}
+\end{keypointsbox}

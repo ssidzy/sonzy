@@ -1,0 +1,237 @@
+Hello, it's great to see you back.
+
+This chapter will be about people, transistors, so our brain contains around 100 billion sets called
+
+neurons, the tiny switches that let you think and remember things.
+
+Computer contains billions of miniature brain cells as well.
+
+They are called transistors and they are made from silicon, which is a chemical element commonly found
+
+inside.
+
+Transistors have revolutionized electronics since they were first invented over a century ago by John
+
+Bardhan, Walter Barton and William Shockley.
+
+But what are they and how do they work on?
+
+A transistor is really simple and really complex.
+
+Let's start with a simple part.
+
+So a transistor is a miniature electronic component that can do two different jobs.
+
+It can work either as an amplifier or as a switch.
+
+Then it works as an amplifier, it takes in a tiny electric current at one end, which is also called
+
+as input current and produces a much bigger electric current.
+
+The other in other words, it's a kind of current booster that comes in really useful in things like
+
+hearing aids, which is one of the first things people use transistors for.
+
+So hearing aid has a tiny microphone in it, right.
+
+That takes up sounds from the world around you and turns them into fluctuating electric currents.
+
+These are fed into a transistor that boosts them and powers a tiny loudspeaker.
+
+So you hear a much louder version of the sound around you.
+
+On the other hand, transistors can also work, which is a tiny electric current flowing through.
+
+One part of a transistor can make a much bigger current flow through another part of it.
+
+In other words, the small current switches on the larger one.
+
+This is essentially how all computer chips work.
+
+For example, a memory chip contains hundreds of millions or even billions of transistors, each of
+
+which can be switched on or off individually.
+
+Since each transistor can be in two distinct states, it can store two different numbers, which is
+
+zero and one.
+
+Right.
+
+And imagine that if you have like billions of transistors, a chip can store billions of zeros and ones.
+
+Now you have to know that transistors are of two types.
+
+They can be either NPN or PBP.
+
+Before we talk about the differences between a pen and paper transistors for these costs, what they
+
+are and they are similarities.
+
+So above and beyond people, Zhongxun transistors, people are Russian transistors are current controlled
+
+transistors that allow for current amplification.
+
+So these devices are current controlled and not voltage control devices.
+
+Don't worry, if you don't understand it right now, it will be clear once we do some simulations.
+
+So a current at the base on the transistor allows for a much larger current across the meter and collector
+
+leads.
+
+MBNA pumps are exactly the same in their function.
+
+They provide the amplification and or switching capability, so technically they achieve and do the
+
+same thing.
+
+How they differ is how power must be allocated to the terminal piece for them to provide this amplification
+
+or switching since they are internally constructed very differently, which will see soon.
+
+Current and voltage must be allocated differently in order for them to work.
+
+And NPM Transistor receives positive royalties to the collector terminal and positive voltage at the
+
+base terminal for proper operation.
+
+However, a transistor receives positive voltage to the ammeter terminal and the negative voltage at
+
+the base terminal sees voltage allocation is different.
+
+How current flow works to turn them on is different and that transistor is powered on.
+
+Then a sufficient current is applied to the base of the transistor.
+
+Therefore, the base of an NPM transistor must be connected to positive voltage for current.
+
+To flow into the base per transistor is the opposite in a patronises their current flows out of the
+
+base by giving a base terminal a more negative or a lower voltage than what is applied to the ammeter
+
+terminal.
+
+As long as the voltage at the base terminal is lower than at the SM terminal in a transistor, the correct
+
+biasing and the negative current effect will be achieved.
+
+So by doing this with an open transistor, current needs to be sourced to the base of the transistor
+
+for operation, this means current needs to flow into the base in a patronises are currently sourced
+
+away or seeing from the base of the transistor to ground for operation.
+
+This means current needs to flow out of the base.
+
+So a simple approach of thinking about it is NPR transistor requires positive car to the base, while
+
+a PMP requires negative current to the base by a negative current, which means that the direction of
+
+the current is the opposite.
+
+So it flows out of the base to ground.
+
+Another important concept is differentiating and pinpointing transistors is that since voltage is allocated
+
+differently, they have opposite current flows of the output in the transistor output current flows
+
+from the collector to the ATM.
+
+However, in a pure transistor output, current flows from the emitter to the collector.
+
+There is a Y and Bienen P transistors are biased differently.
+
+It's because of their construction.
+
+So PNB transistors are made up of two layers of B material sandwiching a layer of Anna-Teresa, while
+
+Albian transistors are made up of two layers of material, sandwiching one layer of material.
+
+And as you can see, they are really opposite well and are from theory three.
+
+See first an LP and transistor in action.
+
+All right, so this is a demonstration of an end point transistor, the meter is at the ground and the
+
+base and collector voltages can be controlled using the sliders on the right and then patronizes receives
+
+positive voltage or the correct or terminal D positive voltage to the collector allows current to flow
+
+across from the connector to a meter, given that there is a sufficient base current to turn the transistor
+
+on.
+
+But what do I mean by sufficient base current?
+
+Well, now the voltage of the base is zero point seven.
+
+All right.
+
+But if I start decreasing this, notice that the base current is decreasing along with the collector
+
+ammeter current.
+
+In the next course you will understand the relationship between the base current and correct RAIM current.
+
+You will understand how much baseball is required to turn this transistor on and its operation modes.
+
+But for now, just look at how current is flowing in a transistor and which terminal to what potential
+
+is connected.
+
+So if you notice, a small current of the base controls a much higher current flowing between connecter
+
+and limiter.
+
+This tiny base current will be amplified by an amount that depends on the transistor in this case or
+
+by how the biasing network of the transistor is constructed.
+
+But right now, the collector ATM current is exactly 100 times bigger than the base current.
+
+And check this out.
+
+Even if you change the collector voltage, the current still remains the same.
+
+How interesting is that?
+
+Right.
+
+We will see why it is working in this way in the next course.
+
+But for now, let's see the current flow in a pump transistor.
+
+A pump transistor receives positive voltage at the SM terminal.
+
+The positive voltage to the emitter allows current to flow from the emitter to the collector.
+
+Given that there is negative current to the base.
+
+So current flowing out of the base to ground by negative current will mean that the base current is
+
+flowing out of the base and not into it.
+
+As long as the base voltage of the transistor is lower than the emitter voltage, the transistor will
+
+turn on and current will flow from the emitter towards the collector.
+
+However, if we narrow down the difference in potential between bass and emitter, you can see that
+
+the ammeter connector current is decreasing, whereas a bigger difference in voltage results in more
+
+current flowing at the output, the difference in voltage between meter and base should be around 0.01
+
+watt.
+
+And if there is at least 0.01 volts, normal small power transistors will fully turn on and conduct
+
+current.
+
+But more on this later.
+
+Again, the output current is 100 times higher than the current.
+
+And notice that the greater voltage doesn't have any impact upon the current as long as the collector
+
+voltage is lower than that of the emitter.

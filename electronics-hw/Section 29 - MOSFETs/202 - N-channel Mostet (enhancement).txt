@@ -1,0 +1,117 @@
+So let's jump straight into simulating how an RN channel assessment mode works.
+
+Unfortunately, the simulator doesn't provide us with depression mode mosfet.
+
+There's only enhancement mode Moskovitz that you can play with here in the simulator.
+
+But don't worry, whilst we fully understand how these types of muscles work, understanding depression
+
+mode, Masterfoods will be a piece of cake, as we had mentioned previously, mulford's our voltage
+
+control devices, meaning that in order to control the amount of khorram flow, you have to apply some
+
+voltage on the terminal.
+
+How much voltage do you need to apply to the gate to turn the mosfet on?
+
+We will see that in a minute.
+
+But now if we take a look here on the right hand side, we have to control bars that can increase or
+
+decrease the voltage on the gate and drain, respectively.
+
+So let's play with the great voltage to see what happens.
+
+Let's start from a zero world.
+
+So the voltage applied on the gate is zero woods.
+
+Now, in this situation, as you can see, there is no current flow from the source.
+
+And this behavior is similar to the bipolar junction transistors, one where a zero words applied on
+
+the base will turn.
+
+The NPR transistor of note is that as I increase the voltage on the gate.
+
+More and more current starts to flow through the mosfet, so the higher the voltage on the gate, the
+
+more current will flow.
+
+Easy, right?
+
+But probably you haven't noticed that from zero words until around one point five volts, the mosfet
+
+is turned off.
+
+So as long as the voltage is below one point five fireballs, no current will flow through the mosfet.
+
+But once the voltage is higher than one point five, what's the mosfet starts opening up more and more.
+
+So what's this one point five words you might ask?
+
+Well, you got to think of these specific voltage as the base and meter voltage of zero point five.
+
+What's required for NPM transistors to turn on if we Double-Click on this mosfet?
+
+You can see here that there is a threshold voltage specified and it's one point five words so different
+
+Moffat's have different threshold wattages for this particular Molesworth, it's one point five words.
+
+So basically no current flows.
+
+If the voltage is below the threshold voltage and then you raise it about that current begins to flow.
+
+Great.
+
+So that's about the threshold voltage.
+
+All right, so let's go back a little bit to our good old friend, Diprotodons sister, and I want to
+
+show you here something so usually the threshold voltage for people transistors is around zero point
+
+seven volts.
+
+And as long as we are in the active region, remember, we had the separation cutoff region and active
+
+region.
+
+So as long as we are in the active region like now, the collector current is equal to better times
+
+based current.
+
+Since the beta of the transistor is 100, the collector current is 100 times the best current.
+
+And this means that as long as we are in the active region, even if we change the collector voltage,
+
+the current through the transistor won't change a bit.
+
+And it's almost similar here as well.
+
+So the drain current is determined by the voltage applied on the gate and we will understand soon how
+
+to calculate the drain current.
+
+But now notice that a change in DRAINE voltage doesn't effect the drain current whatsoever.
+
+So this behavior is similar to the transistor one.
+
+Right, however, and I'll pay attention.
+
+There's a specific drain voltage that once it goes below that voltage, the drain current starts decreasing
+
+nearly linearly with the drain voltage.
+
+So if you noticed, as long as the drain voltage is about to words, the change in drain voltage won't
+
+effect the drain current whatsoever.
+
+But once it falls below two worlds, the drain current starts decreasing linearly with the drain voltage.
+
+All right, so this was just a broad overview of how an engineering assessment works, because I believe
+
+that jumping straight into theory and then into practical experiment is not the right approach, starting
+
+with the next chapter where we will learn about all the operating regions of the mosfet and you will
+
+fully understand why the mustaffa behaves in a certain way for different voltages applied on its terminal.

@@ -1,0 +1,279 @@
+Hello and welcome back.
+
+The last type of arithmetic operation that an operator can perform you just a few passive components
+
+around is differentiation not to be confused with differential.
+
+What is differentiation?
+
+Well, differentiation is in mathematics is the process of finding the derivative or the rate of change
+
+of a function.
+
+So basically, differentiation is the action of computing a derivative.
+
+It does exactly the opposite of the APEP integrator.
+
+While the operator integrates the input signal, the opposite differentiator computes the derivative
+
+of the input signal.
+
+Integration can be seen as differentiation in reverse.
+
+That is, we thought before giving function ethics and ask which functions capital F of X would have
+
+F of X us there derivative.
+
+This is just basic calculus stuff.
+
+And you know, if you have missed this class in high school or university, I advise you to learn about
+
+integration and derivatives from external sources since it would be very useful for you in long term.
+
+Before we get into the hard stuff, which is not that hard either, I want to show you this Erwitt.
+
+We have a DC power supply whose voltage can be set and the capacitor.
+
+We know that capacitors have capacitors is right.
+
+But what is capacitors exactly?
+
+Capacitors can be defined as the measure of capacitors, opposition to changes in voltage.
+
+So the greater the capacitors, the more the opposition capacitors oppose voltage change by creating
+
+current in the circuit.
+
+That is, they either charge or discharge in response to a change in the applied voltage.
+
+So the more Capstone's a capacitor has, the greater its charge or discharge current will be for any
+
+given rate of voltage change across it.
+
+The equation for this is quite simple.
+
+So the current through the capacitor is equal to the derivative of the voltage across the capacitor.
+
+Where I want to get that with this is to explain what divi over means.
+
+So the debate over diffraction is a calculous expression representing the rate of voltage change over
+
+time.
+
+If this this is apply in the circuit were steadily increased from a voltage of fifteen volts to avoid
+
+each of 16 volts over time span of one hour, let's say the current through the capacitor would most
+
+likely be very small because of the very low rate of voltage change.
+
+So the divi over DETI is equal in this case to one world over three thousand six hundred seconds.
+
+However, if we steadily increased the supply from 15 to 16 words again.
+
+But now over a shorter time span of, let's say one second, the rate of all this change would be much
+
+higher and thus the charging current would be much higher, 3600 times higher to be exact.
+
+Same amount of changing voltage, but vastly different rate of change, resulting in vastly different
+
+amounts of current in the circuit.
+
+To put some definite numbers in this formula, if the voltage across forty seven microfossils capacitor
+
+was changing at a linear rate of three watts per second, the current through the capacitor would be
+
+forty seven macropods times three volts per second, which is equal to one hundred forty one micro amps.
+
+All right.
+
+Now that we hopefully understand what the over is, let's move further.
+
+So why is an upward differentiator useful?
+
+Because the circuit outputs a voltage which is directly proportional to the input.
+
+Voltage is rate of change with respect or time.
+
+In other words, the faster or larger the change to the input, what the signal, the greater the input
+
+current, the greater will be the output.
+
+What is change response?
+
+We can build an up circuit which measures change voltage by measuring current through a capacitor and
+
+outputs a voltage proportional to the current.
+
+It can be seen that the opposite circuit for integrator is very similar to that of the differentiator.
+
+The difference is that the positions of the capacitor and resistors are changed before expanding how
+
+this could work, I want to show you how the circuit changes the share of different input signals.
+
+So as a differentiator circuit that has an output that is proportional to the input change, some of
+
+the standard waveforms, such as sine wave squares and triangular waves, give very different waveforms.
+
+The output of the differentiated circuit.
+
+For these waveforms, it can be seen that the greater the rate of change of the waveform, the input,
+
+the higher the.
+
+Output voltage at that point, in fact, for the summary of input, only very short spikes should be
+
+seen.
+
+The spikes will be limited by the slope of the edges of the input waveform and also the maximum output
+
+of the circuit.
+
+And it's a slow rate and bandwidth.
+
+The spikes should also decay swiftly.
+
+So again, this may be limited by the circuit and on diagram.
+
+The decay is not shown to be infinitely fast, representing better what a real life waveform may look
+
+like.
+
+So again, the output voltage is directly proportional to the input voltages rate of change with respect
+
+to time.
+
+This means when we input a squarish signal out here, the square of input will have a sudden change
+
+in voltage from low to high.
+
+Right.
+
+And the sudden change will generate an output spike.
+
+But then after the sudden change, the input stays constant.
+
+And since there is no change in the input voltage, the output voltage starts to fall down to zero.
+
+The triangular way the input transforms to a square is in line with the rising and falling levels of
+
+the input waveform.
+
+The sine wave is converted to a cosine waveform giving ninety degree of phase shift of the signal.
+
+This can be useful in some circumstances.
+
+All right, so how does this work with work, you might ask?
+
+I don't want to just throw the output voltage equation and tell you to remember that you are not here
+
+to memorize things.
+
+We are here to understand the core functionality of circuits.
+
+So the input signal of the differentiator is applied to the capacitor.
+
+Right.
+
+And we know that capacitor blocks any DC content, so there is no current flow to the amplifier.
+
+Some point which is noted as X resulting in zero output voltage, the capacitor only allows AISI type
+
+input voltage changes to pass through and whose frequency is dependent on the rate of change of the
+
+input signal.
+
+This year resembles very much on inverting amplifier, right?
+
+The only difference is that here we have a capacitor and another resistor.
+
+Anyhow, the closed loop gain of the circuit is minus RF divided by the reactors of the capacitor.
+
+So again, a reactants of the capacitor can be associated with the resistance because basically the
+
+higher the reactants for capacitor, the greater impedes the flow of current.
+
+We can't calculate the reactors of the capacitor using this equation.
+
+And from this we can see that at low frequencies, the reactors of the capacitor is high, resulting
+
+in a low gain, hence low output voltage from the EMP at higher frequencies.
+
+The reactors of the capacitor is much lower, resulting in a higher gain and higher output voltage from
+
+the differentiator amplifier.
+
+However, at high frequencies, an open differentiator circuit becomes unstable and will start to oscillate,
+
+this is due mainly to the first order effect, which determines the frequency response of the open circuit,
+
+causing a second order response, which at higher frequencies gives an output voltage far higher than
+
+what would be expected.
+
+And to avoid this, the higher frequency gain of the circuit needs to be reduced by adding an additional
+
+small value capacitor across the feedback resistor RF.
+
+But anyway, let's not get into that now.
+
+Let's use mathematics to explain what's going on here.
+
+Since the node voltage of the operation amplifier of its inverting input terminal is zero.
+
+The current AI flowing through the capacitor will be equal to the current flowing through the feedback
+
+resistance.
+
+Right?
+
+We know that because there's no current flow into the APEP rule number one.
+
+And so the current flowing through the feedback resistor is basically equal to the output voltage divided
+
+by RF, of course, with minus sign at the beginning.
+
+Why is we out divided by RF equal to the current?
+
+Because this point is that the ground, it's the virtual ground.
+
+So this is just basic on slow.
+
+Now, the charge on the Cabaser is equal to the capacitance time's voltage across the capacitor, and
+
+as a result, the rate of change of this charge is dequeue over DETI, which is equal to C times D,
+
+the input voltage divided by DETI.
+
+But we know that the dequeue over that is nothing else but the current through the capacitor.
+
+So we can rewrite this equation as the input voltage equals to this and it's equal to the current flowing
+
+through the feedback register.
+
+These current through the resistor is equal to minus without divided by RF, right.
+
+So by plugging in this into the equation, we can find out the output voltage very easily.
+
+Therefore the output voltage is a constant minus R.F. times C times the derivative of the input voltage.
+
+With respect to time, the minus sign here indicates a 180 degree phase shift because the input signal
+
+is connected to the inverting input terminal of the operational amplifier.
+
+Finally, let's cross-check with our simulator if the upper differentiator really does what we have
+
+learned.
+
+Don't worry, we will keep it very short.
+
+So by applying a triangular input waveform, we obtain, as you can see, a square wave.
+
+In the beginning of the course.
+
+I said that differentiation is the opposite of integration.
+
+Well, if you remember back, we if the OP had been the greater than the input waveform was a query,
+
+we got a triangular wave and now we have a triangular wavelength input and we got back the same basic
+
+math doesn't like.

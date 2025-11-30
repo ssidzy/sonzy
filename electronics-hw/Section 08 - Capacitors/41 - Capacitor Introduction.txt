@@ -1,0 +1,87 @@
+Hello, beautiful people in this course, or better say it is chapter, we will look at one of the most
+
+famous passive component called US Capacitor, along with resistors and the doctors.
+
+They are one of the most fundamental passive components we use.
+
+You would have to look very hard to find the circuit which did not have the capacity need.
+
+A capacitor is a two term electrical component.
+
+What makes capacitors special is their ability to store energy.
+
+They are like a fully charged electric battery.
+
+So in a way, a capacitor is a little like a battery, although they work in completely different ways.
+
+Capacitors and batteries both store electrical energy.
+
+A battery uses chemicals to store electrical energy and release it very slowly through a circuit.
+
+Sometimes in case of a quartz watch, it can take several years.
+
+On the other hand, a capacitor generally releases its energy much more rapidly, often in seconds or
+
+less.
+
+If you are taking a flash photograph, for example, you need your camera to produce a huge burst of
+
+light in a fraction of a second.
+
+A capacitor attached to the flash gun charges up for a second using energy from your cameras batteries.
+
+Once the capacitor is fully charged, it can release all the energy in an instant through the xenon
+
+flash mob.
+
+So now there are two common ways to draw a capacitor in a schematic.
+
+They always have two terminals which go on to connect to the rest of the circuit.
+
+The capacitor symbol consists of two parallel lines, which are either flat or curved.
+
+Both lines should be parallel to each other.
+
+Close, but not touching.
+
+It's hard to describe, easier to show.
+
+The symbol with the curve line, which is a second one, indicates that the capacitor is polarized,
+
+meaning it's probably an athletic capacitor.
+
+But more on that in the types of capacitor course between this chapter.
+
+Now, each capacitor should be accompanied by a name like C one, C two, etc. and a value.
+
+The value should indicate the capacitors of the capacitor.
+
+How many Farad's it has.
+
+Now, speaking of Arad's not all capacitors are created equal.
+
+Each capacitor is built to have a specific amount of capacitors.
+
+The capacitors of a capacitor tells you how much charge it can store.
+
+More capacitance means more capacity to store charge.
+
+The standard unit of capacitance is called the Ferid, which is abbreviated as F.
+
+Now it turns out that a Faraday is a lot of capacitors, even zero point zero zero one Ferid, which
+
+is what Middleford Well this is a big capacitor.
+
+Usually you will see capacitors rated the Peko to microflora Ferid range, then you get into the ferid
+
+to kill off the range of capacitors.
+
+You start talking about special capacitors called super or ultra capacitors.
+
+These super or ultra capacitors are quite rare in electronics.
+
+What you will most often find are capacitors rated in the Picardo Microflora range.
+
+All right, so this was an introduction course for capacitors in the next course.
+
+Let's see how a capacitor is made.

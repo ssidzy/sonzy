@@ -1,0 +1,135 @@
+Hello, and welcome back to the course.
+
+We are going to talk about three circuit applications of diodes.
+
+The first one is signal rectifier diode gate and the last one is diode clamps.
+
+There are occasions when you use a diode to make away form of one polarity only if the input waveform
+
+isn't a sine wave.
+
+You usually don't think of it as a rectification in the sense of a power supply.
+
+For instance, you might want a train of -- corresponding to the rising edge of a square wave.
+
+The easiest way is to rectify the differentiated wave like you figure here.
+
+Always keep in mind, the 0.6 volts approximately form a drop of the diode.
+
+The circuit, for instance, gives no output for square waves smaller than 0.6 volts pick to pick.
+
+And the reason is because if the input square wave is less than 0.6 would speak to peak.
+
+This diode won't reach the conducting point, which is the forward diode drop, so it will block all
+
+the current trying to pass through it.
+
+If this is a problem, there are various tricks to circumvent this limitation.
+
+One possibility is to use hot carrier diodes like Schottky diodes, with a forward drop of about zero
+
+point twenty five volts.
+
+Before showing you another possible solution, I want to explain why the signal looks like this here,
+
+as you know, a capacitor will never conduct this current right.
+
+You can try in the simulator to build a DC power source in Series B for capacitor.
+
+And you will see that current will not flow through it.
+
+What we have to keep in mind is that capacitor only conducts DC current until it charges up, and that
+
+these spikes here are the signals that made through the capacitor until it charged up.
+
+And the reason why we have positive and negative spikes is because these square wave, when it's high,
+
+let's say it is a five volts and when it is low, it is minus fireballs.
+
+So the zero world should be in the middle.
+
+The output will contain only the positive spikes because that's the only time when the die on this form
+
+of bias.
+
+But of course, as you can see, the positive spike got a little smaller due to the forward drop of
+
+0.6 walls.
+
+A possible solution to this problem of finite drop is shown in figure here in this rocket diode, the
+
+yuan compensates details for a drop by providing 0.6 walls of bias to hold to the threshold of conduction.
+
+Using a diode like this, too, provided the bias has several advantages.
+
+The first one is that there is nothing to adjust.
+
+The second one is that the compensation will be nearly perfect and changes of the forward drop will
+
+be compensated properly.
+
+Later, we will see other instances of fair compensation of forward drops in diodes transistors efforts.
+
+It is a simple and powerful trick.
+
+Another application of diodes, which we will recognize later under the general heading of logic, is
+
+to pass the higher of two voltages without affecting the lower.
+
+A good example is battery backup, a method of keeping something running, for example, the real time
+
+clock chip in a computer which keeps running count of date and time, right?
+
+That must be continue running even when the device is switched off.
+
+This figure here shows a circuit that does the job.
+
+The battery does nothing until the +5 or its power is switched off.
+
+Then it takes over without interruption.
+
+So again, when the computer is running, the real time clock chip gets the power from these five watts
+
+power supply diode.
+
+D1 will not conduct because its cathode is a plus firewalls.
+
+So these three world is not enough for the diode to make it conduct after the computer is switched off.
+
+Diode the D1 start conducting.
+
+Alright, I hope you understood.
+
+Now let's move to the next one.
+
+Sometimes it is desirable to limit the range of a signal, for example, to prevent it from exceeding
+
+certain voltage limits somewhere in a circuit.
+
+The circuit shown here will accomplish this.
+
+The diode prevents the output from exceeding about plus 5.6 volts, with no effect on voltage less than
+
+that.
+
+The only limitation is that the input must not go so negative that the reverse breakdown voltage of
+
+the diode is exceeded.
+
+For example, for a 41 48 diode, it's reverse breakdown voltage is at minus 75.
+
+With this resistor limits the diode current during clamping action.
+
+However, a side effect is that it adds one kilogram of serious resistance to the signal, so its value
+
+is a compromise between maintaining a desirable low source.
+
+Turning resistance and the desirable low clamping current diode claims are standard equipment on all
+
+inputs in contemporary CMOS digital logic.
+
+Without them, the delicate input circuits are easily destroyed by static electricity discharges during
+
+handling.
+
+

@@ -1,0 +1,129 @@
+The simplest regulated supply of wattage is simpler than the resistor one is connected in series the
+
+Zenner diode to limit the current flow through the diode.
+
+The stabilized output voltage is taken from across the Zenner diode does enter.
+
+Diode is connected with its cathode terminal connected to the positive rail of the DC supply.
+
+So it is reverse biased and will be operating in its breakdown condition.
+
+The resistor R1 is selected, so to limit the maximum current flowing in the circuit with no load connected
+
+to the circuit.
+
+The load current will be zero right and all the silk with current passes through the xenon diode, which
+
+in turn dissipates its maximum power.
+
+Also, a smaller value of the series resistor are one result in a greater diode current than the load
+
+resistance is connected and large, as this will increase the power dissipation requirement of the diode,
+
+so care must be taken when selecting the appropriate value of serious resistance so that the Xenos maximum
+
+power rating is not exceeded under this no load or high impedance condition.
+
+The load is collected in parallel with the laminar diode, so the voltage across our air is always the
+
+same as the xenon voltage, right?
+
+There is a minimum level current for which the stabilization of the voltage is effective and Azamgarh
+
+corridor must pay above this value.
+
+The upper limit of current is, of course, dependent upon the power rating of the device.
+
+This simple is then a regulated supply is sometimes used for non-critical circuits or circuits using
+
+lethal supply current.
+
+However, it has limited usefulness for several reasons.
+
+The first reason is that the output voltage isn't adjustable or stable to a precise value.
+
+The next problem is that Zenner diodes we've only moderated Reaper rejection and regulation against
+
+changes of input or load owing to their finite, dynamic impedance.
+
+The next reason is that for widely varying load currents, a high power is often necessary to handle
+
+the dissipation at low load current.
+
+Another problem is NATO stabilizer circuits.
+
+Is that the diet can sometimes generate electrical noise on top of the busy supply as it tries to stabilize
+
+the voltage.
+
+Normally, it is not a problem for most applications, but the addition of a large value.
+
+The company capacitor across the Xenos output may be required to give additional morphing.
+
+So what can we do to solve all these issues?
+
+By using an amateur follower to isolate the themor, you get the improved circulators as shown here
+
+now, the situation is much better than their current can be made relatively independent of Lord current,
+
+which means that even if you change the value of the load, the current passing the Zenner diode won't
+
+change very much.
+
+We can say almost nothing.
+
+We have increased the value of R1 at a much higher value in the previous year created.
+
+This was one kilogram, but now it's 10 times bigger.
+
+The reason is because the base current of the transistor doesn't require very much current right, and
+
+we use this transistor to amplify this current so that we can drive our load with enough current.
+
+The base current is 17 microns.
+
+The beta of the transistor.
+
+Let's see, it's 100.
+
+So if you multiply the beta, which is 100 with the base current, we will get the lowest current of
+
+1.7 million amps.
+
+The only downside of this circuit is that if you want to have a 3.3 volt output, regulated power supply,
+
+which in turn will drive this simulated load right then the voltage has to be higher with a dire drop.
+
+As you can see, the xenon voltage is 3.9 world, and if we decrease from this value, the base emitting
+
+diode drop, we get an output voltage of 3.3 volts.
+
+Anyway, the advantage is that the circuit offers exceeds the downsides in real world, if you put the
+
+oscilloscope on the output voltage.
+
+You will see a much cleaner, smoother 3.3 volts DC compared to the output voltage from the previous
+
+year.
+
+With the collector register, RCA can be added to protect the transistor from momentary output short
+
+circuits by limiting the contract, even though it is not essential to the emitter failover function.
+
+So I hope you understand what are the advantages the participation of the Zenner diode is greatly reduced
+
+thanks to the low current required on the base of the transistor, which will provide enough current
+
+amplification to drive this load.
+
+The general current is relatively constant, so even if we take the load out or we modify its value,
+
+the current will be approximately the same.
+
+Later, you will see better voltage regulators ones in which you can vary the output easily and continuously
+
+by using feedback.
+
+There are also better voltage sources with output impedance is measured in millions and other desirable
+
+features.

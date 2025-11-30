@@ -1,0 +1,81 @@
+Now, have you ever taken apart an electronic device that no longer works? like an old clock radio or
+
+VHS tape player just to see what it looks like on the inside?
+
+Inside most electronic devices, you will find a circuit board or circuit card, it's all the same.
+
+Which is a flat, thin board that has electronic gizmos mounted on it.
+
+In most cases, one side of the circuit board is populated with tiny devices that look like little buildings.
+
+These are the components that make up the electric circuit.
+
+The resistors, capacitors, diodes, transistors and integrated circuits that do the work that the
+
+circuit is destined to do.
+
+The other side is painted with little lines of silver or copper that look like streets.
+
+These are the conductors that connect all the components so that they can work together.
+
+An electronic circuit board looks like a little city.
+
+For example, have a look at a typical circuit board pictured here.
+
+The top of the card is shown on the left, and as you can see, it has a variety of common electronic
+
+components.
+
+The underbelly of the circuit card is shown on the right.
+
+It has the typical silver streaks of conductors that connect the components topside so that they can
+
+perform useful work.
+
+Now here's the essence of what's going on with these two sides of the circuit card or PCB.
+
+The component side of the card, the side with the little buildings, holds a collection of electronic
+
+components whose sole purpose in life is to bend, turn and twist electric current, to get it, to
+
+do interesting and useful things.
+
+Some of those components restrict the flow of current like speed bumps on the road.
+
+Others make the current stronger, some work like one way street signs that allow current to flow in
+
+only one direction.
+
+Still, others try to smooth out any ripples or variations in the current, resulting in smoother traffic flow.
+
+.
+
+The circuit side of the card, the side of the roads, provides the conductive pathways for the electric current
+
+to flow from one component to the other in a certain order.
+
+The whole trick of designing and building electronic circuits is to connect all the components together
+
+in just the right way so that the current that flows out of one component is passed on to the next component.
+
+OK.
+
+I couldn't even get through the first chapter of this course without having to give you the first of
+
+many warnings about the dangers of working with electronics.
+
+So here it goes.
+
+Do not, under any circumstances, plunge carelessly into the disassembly of all the electronic circuits,
+
+until you are certain you know what you are doing.
+
+You see the little components on a circuit card such as shown in this figure can be dangerous.
+
+Even when they are unplugged !
+
+In fact, the two tall cylindrical components near the back edge of the circuit card are called capacitors.
+
+They can contain stored electrical energy that can deliver a powerful, even fatal shock long after
+
+you've unplugged the power cord.

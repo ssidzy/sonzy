@@ -1,0 +1,215 @@
+Hello, guys, what's up?
+
+This chapter is dedicated solely about D.C. power, a place where we will examine some important work
+
+that everyone has to know.
+
+As we progress through the courses, we examine more and more complex circuits.
+
+Knowing how to design a power supply is an essential skill for everyone who's interested in electronics
+
+because there is no electronic circuit that operates on DC without having at least one AC to DC converter.
+
+So in its course we are going to look at the main building blocks of DC power source.
+
+So we will have a generalized understanding of what are the critical parts that are necessary to build
+
+a functional power supply or.
+
+Depending on its design, a D.C. power supply may be powered from D.C. source like DC to DC converter
+
+or from an easy source such as the power mains, a DC power supply, nothing else but a circuit that
+
+is used to supply a constant DC voltage to its load.
+
+DC power supplies can be categorized in various ways, including by functional features.
+
+For example, a regulated power supply is one that maintains constant output, voltage or current,
+
+despite variations in low current or input voltage.
+
+Conversely, the output of an unregulated power supply can change significantly when its input voltage
+
+or lowered current changes about unregulated power supplies will be talked more in the next course,
+
+where we'll examine some very bad practices that you should avoid when designing a power supply.
+
+So we will begin by a very poorly made D.C. power source and we will try to improve it so that from
+
+an unregulated power supply, we create a regulated one.
+
+All right.
+
+Another type of power supply is the adjustable one that allows the output voltage or current to be programmed
+
+by mechanical controls, like the parameters on a power supply from panel or by means of a control input
+
+or both.
+
+An adjustable regulated power supply is one that is both adjustable and regulated.
+
+The other type is the isolated power supply, where the output is electrically independent of its input.
+
+This is in contrast to other power supplies that share a common connection between power, input and
+
+output.
+
+Isolated power supplies provide a clear barrier across which dangerous voltages on pass.
+
+This provides a safety right.
+
+And when a power supply is listed as isolated, it is normally referring to input, to output, isolation.
+
+This isolation is typically achieved by the use of a transformer.
+
+If we look at this diagram, you can see what are the main building blocks of an isolated power supply.
+
+Why do you have to know right now?
+
+Is that all the switching mode power supplies are isolated and so the output is not connected whatsoever
+
+to the input.
+
+In other words, the grounds are separated or switching more power supply.
+
+Convert the AC input power directly into ADC by using a rectifier circuit and a DDC voltage is then
+
+converted into a higher frequency AC signal by using a switching circuit, which is then used in the
+
+regulator circuit to produce the desired voltage and current.
+
+These power supplies require what is known as and driver that controls the switching block.
+
+And by changing the width of the PVM you can increase or decrease the output voltage.
+
+The great advantage of using switching more power supplies is that the size of the transformer is indirectly
+
+proportional to the frequency.
+
+Switching mode has complex circuitry and noise, high efficiency, small size, lighter weight and low
+
+heat dissipation are the advantages of switching more power supply.
+
+For example, all the mobile phone chargers or laptop chargers are made using switching more power supplies
+
+because they can be fitted into a smaller case.
+
+All right.
+
+So as we mentioned, power supplies can be classified by their functional feature like unregulated,
+
+regulated, adjustable, regulated and finally isolated power supplies.
+
+But they can also be classified by their power conversion method.
+
+So as with these, they are switching more power supplies and the other one is linear power supplies.
+
+From now on, we will focus on how to design a linear power supplies.
+
+And after we understood how they work, we will start exploring in more depth about the switching mode.
+
+Power supplies.
+
+A regulated power supply is also known as a linear power supply.
+
+It is an embedded circuit and consists of various blocks.
+
+The regulated power supply will accept an AC input and give a constant ADC output.
+
+The figure shows the block diagram of a typical regulated DC power supply.
+
+The basic building blocks of a regulated DC power supply are the following a standard transformer,
+
+a rectifier, a DC filter and finally a regulator.
+
+Great.
+
+So these are the main building blocks of a regulated linnear power supply and let's say a few words
+
+about each block like what they are and what they do.
+
+So the first block is a step down transformer.
+
+Step down, Transformer will set down the voltage from the AC mains to the required voltage level,
+
+the turn, the ratio of the transformer is adjusted, such as to obtain the required voltage value as
+
+the output of the transformer, as you can see, is given as an input to the rectifiers.
+
+Ill-Equipped actually, or these steps like standing transformer rectification, are filtering a regulation
+
+was explained the volume one.
+
+That's why I try to be as brief as possible.
+
+So as we know, Rectifier is an electronic circuit consisting of diodes, which carries all the ratification
+
+process.
+
+So ratification is a process of converting and alternating voltage or current into corresponding direct
+
+current.
+
+The input to a rectifier is azy, whereas its output is unidirectional, pulsating DC.
+
+Although a halfway rectifier could technically be used if power losses are significant compared to a
+
+full way rectifier, such a four way rectifier or Predictify is used to rectify both the half cycle
+
+of the AC supply.
+
+The rectifies voltage from the rectifier is a positive DC voltage having very high rippa content.
+
+But this is not what we want, right?
+
+We want a pure repoll free DC waveform.
+
+Hence a filter is used for different types of filters are used such as capacitor filter, L.C, filter,
+
+tokin put filter or betye filter.
+
+This figure shows a capacitor filter connected along the output of the rectifier and the resultant output
+
+waveform.
+
+As the instantaneous voltage starts increasing the capacitor charges it charges onto the waveform reaches
+
+its peak value.
+
+Then the instantaneous value starts reducing.
+
+The capacitor starts discharging exponentially and slowly through the load has an almost constant DC
+
+value.
+
+Having very less Rippa content is obtained and the last stages the regulation part dysregulation part
+
+is used to because the output, voltage or current will change or fluctuate when there is a change in
+
+the input from ACMD or due to change in load current the output of the regulated power supply or due
+
+to other factors like temperature changes.
+
+This problem can be eliminated by using a regulator.
+
+A regulator will maintain the output constant equal event changes, the input or any other changes occured.
+
+Many times you will see that DC power supplies use an integrated circuit like the popular L.M. 317 and
+
+723, which is a simple.
+
+I see that we will do the whole job for you, that these elementary circuits to flavor one, it can
+
+output just the specified voltage given in its datasheet.
+
+And there are the other types that can output a range of voltages depending on the voltage on the adjust
+
+pin.
+
+Now, of course, I won't try to teach you how to work with these.
+
+I see that would be like cheating at an exam.
+
+Instead, I try to teach you how to build one.
+
+See you next course.

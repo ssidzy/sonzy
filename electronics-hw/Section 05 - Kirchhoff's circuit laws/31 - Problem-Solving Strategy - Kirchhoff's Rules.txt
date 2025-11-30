@@ -1,0 +1,169 @@
+By applying kickoffs rules, we generate a set of linear equations that allow us to find the unknown
+
+values in the circuits.
+
+These may be currents, voltages or resistances.
+
+You see, each time a rule is applied, it produces an equation.
+
+And if there are many independent equations plus unknowns, then the problem can be solved.
+
+Using key cost methods of analyses requires several steps as listed in the following procedure.
+
+So whenever we want to analyze the circuit using kickoff rules, the first step is to label the points
+
+in the circuit diagram using lowercase letters like A, B, C, D, etc. These labels simply help with
+
+orientation.
+
+The second step is to locate the notes in the circuit.
+
+The notes or junctions are points where three or more wires connect, label each node with the currents
+
+and directions into and out of it.
+
+But make sure at least one current points into the node and at least one current points out of the node.
+
+Since we are going to use a simulator, it's going to be quite easy or very easy to see what currents
+
+are flowing in and out of a node.
+
+The third step is to choose the loops in the circuit.
+
+Every component must be contained in at least one loop, but the component may be contained in more
+
+than one loop.
+
+And we will see how this is done when we do an experiment.
+
+The fourth step is to apply kickoffs, current law.
+
+As I was saying in the previous course, some notes should not be included in the analyses.
+
+You only need to use enough nodes to include every current.
+
+And the final step is to apply kickoffs with this law.
+
+With the help of this map.
+
+So what does this map tell us?
+
+Well, it shows us how to deal with the sign of the voltage drop across the component.
+
+Once we apply key across this law, it will all make sense once we actually go through an exercise.
+
+But if we look at this diagram more attentively, we can notice that then the direction of travel is
+
+the same as the direction of current flow.
+
+The voltage drop across this resistor will have a negative sign in front of it.
+
+So we will have to subtract it.
+
+The second figure shows that if the direction of travel is the opposite of the direction of current
+
+flow, we will have to add the voltage drop so it will have a positive sign in front of it.
+
+The third figure shows that if we are moving from the negative terminal to the positive terminal, we
+
+have to add the voltage of the battery.
+
+And then we are moving across the voltage source from the positive terminal to the negative terminal.
+
+We have to subtract the voltage.
+
+Now, you might be asking, what do we mean by directional travel?
+
+Let's take a quick example.
+
+And the circuit is actually the one that we used in the previous course to write down kickoff voltage
+
+law.
+
+The loop of travelling is chosen arbitrarily.
+
+So instead of a, b, c, d, e, it could have been a d, c, b, eight.
+
+It doesn't matter because the end result will be the same for this demonstrative exercise.
+
+Let's leave the lupus.
+
+A.
+
+B.
+
+C, d.
+
+E.
+
+So the direction of travelling is clockwise and we use the conventional car flow model which says that
+
+current flows from the positive terminal towards the negative terminal.
+
+Overall, the direction of travelling is clockwise and the current flow is also clockwise.
+
+Knowing this, let's apply kickoffs.
+
+Second rule again first we go from A to B and based on this map, the voltage of the battery will have
+
+a positive sign.
+
+Then we encounter a resistor.
+
+Since the direction of travelling is the same as the direction of current flow, we will need to subtract
+
+the voltage drop across it.
+
+As you can see, nothing is left between points A and B, so we travel further and continue our analysis
+
+between points B and C.
+
+Again, we are travelling from B to C.
+
+The current is flowing in the same direction, so the voltage drop across or two will have to be subtracted.
+
+Then we move on to Points C and D and we will have to do a subtraction again.
+
+We are done and based on course what is ruled, this equation has to be equal to zero.
+
+Now, what happens if instead of choosing the loop ABC the E, we go in the opposite direction from
+
+a d, c, b, e, where this time the direction of travelling is anticlockwise.
+
+However, the current still flows from the positive terminal towards the negative terminal.
+
+So what will the equation look like from a 2D?
+
+Nothing is done since there's no component from D to see.
+
+We stumble across all three and now the direction of travel doesn't match the direction of current flow.
+
+So based on this map, the voltage drop will have a positive sign.
+
+From sea to be the same story.
+
+So we will be adding the word is drop.
+
+Then we continue our analysis going from B to A CS.
+
+We go from right to left and the current flows from left to right.
+
+We will have to add the voltage drop across R one, but then we reach the battery and our map says that
+
+then we are moving from the positive terminal toward the negative terminal.
+
+We need to subtract the voltage and that's what we will do.
+
+We will insert the voltage of the battery before a negative sign in front of it.
+
+And this equation is again equal to zero.
+
+Now placing side by side the two equations obtained previously.
+
+We can notice right away that they are exactly the same equation.
+
+And hopefully with this little exercise I could prove to you that the direction of travelling can be
+
+chosen arbitrarily.
+
+It won't change the end result.

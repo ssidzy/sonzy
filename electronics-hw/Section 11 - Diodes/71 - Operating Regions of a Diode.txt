@@ -1,0 +1,149 @@
+Welcome back.
+
+In the previous courses, so in the current Worthy's relationship graph, that diet can work in three
+
+different operating regions, these three operating regions are the bradon region, then reversed by
+
+region and a forward bias region.
+
+So based on this graph, we can see that in order to turn on and conduct current in the forward direction,
+
+a diet requires a certain amount of positive voltage to be applied across it.
+
+The typical voltage required to turn the dial on is called the forward voltage.
+
+Typically, a silico diode will have a forward voltage of around zero point six and one Wolds germanium
+
+based diode might be lower around zero point three.
+
+What's the type of diode also has some importance in defining the forward voltage drop.
+
+For example, light emitting diodes can have a much larger forward voltage drop, while short diodes
+
+are designed specifically to have a much lower than usual for voltage.
+
+But more on short cardioverter for now.
+
+Remember that the general-purpose silicon diode usually will have a forward voltage between zero point
+
+six and one more.
+
+This means that was the voltage across the dial is around zero point six volts.
+
+The diode starts to conduct.
+
+And starting from that point, little increasing voltage will mean a large increase in current flow
+
+through the diode.
+
+Now, let's try to simulate this behavior in our simulator and here we are.
+
+So this is a simple demonstration of a diode sees the DC power supply we are using is set zero words.
+
+No current will flow in the circuit.
+
+Obviously, right now here in the simulator, we only care about one property of the diet and that is
+
+the forward voltage drop.
+
+Soon we will go through the leadership of a diode to see all the electrical properties that it has.
+
+But for now, what we are all interested in is the forward voltage drop.
+
+By default, if you draw a diode like this so you can just press down these and drag a diode, this
+
+diode by default will have a forward voltage drop of zero point six watts.
+
+On the other hand, we have a slider on the right which can increase or decrease the voltage of the
+
+power source.
+
+Now notice what happens with the current that flows in the circuit, why I'll increase this power supply
+
+voltage.
+
+So as long as the power supply voltage is below zero point six volts, the current flowing in the circuit
+
+is very little.
+
+Fortunately, the behavior of the diode here in the simulator acts similarly before a real bore diode,
+
+meaning that even if the voltage across diode is less than the forward voltage drop of zero six volts,
+
+there will be some tiny amount of current flow as the current approaches zero point six votes.
+
+Of course, more and more current will flow in the circuit.
+
+Now, we have reached the zero point six voids and starting from this point, the voltage increases
+
+beyond the.
+
+The current increases exponentially, and now we can safely say that diode operates in the forward by
+
+region since its forward bias at this point, the resistance of the diet has dropped significantly and
+
+Corot is allowed to pass through more easily in the reduction of a diode.
+
+We will see that there is a maximum amount of current flow through the diet specified.
+
+This is an important political prop. which basically tells or worries you about the maximum amount of
+
+current that is allowed to flow through the diet.
+
+The next operating region that we have talked about is the reverse bias region, and this happens when
+
+the voltage across a diet is negative.
+
+In other words, the voltage on the cathode is higher than the voltage on the anad.
+
+So we say that the diode is reverse biased when the voltage on the catus here is more positive than
+
+the anode, where the diode is reverse biased as it is right now, of course, no current will flow
+
+through it now, of course, in reverse, nothing is perfect and the diode will still conduct some amount
+
+of current when it is reverse bias.
+
+But that amount of current is really insignificant since usually it's in the range of Nannerl.
+
+Ms.
+
+Now, the last operating region is the break down region.
+
+So if a large enough negative voltage.
+
+Is applied to the diode.
+
+The diet will basically give up and allow current to flow in the reverse direction.
+
+Now here in the simulator, no matter how big the reverse mortgage is, the diet will act as an ideal,
+
+perfect diet and will not allow current to flow through it, despite of the big reverse voltage applied.
+
+What a bummer.
+
+So in real world, if, let's say the breakdown region of the diet is 40 words and we apply 40 votes
+
+or sorry, minus 40 void's or more in reverse, of course, the diet will break down and allow current
+
+to flow in river.
+
+Note that the braider itself does not damage the diet.
+
+If and only if the current is limited, what is important is that if there is no current limiting resistor,
+
+for example, the diet will heat until it would burn and you will have a short circuit or open circuit
+
+and it won't work in the future.
+
+Of course, we will learn about Zenner diets, which are like general-purpose diets or in fact any other
+
+diets.
+
+Zenner diets are used in the breakdown region instead of the forewords region.
+
+All right.
+
+That's called.
+
+Let's have a look inside of the datasheet of General-Purpose Normal Diet.

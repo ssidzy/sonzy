@@ -1,0 +1,373 @@
+\documentclass[a4paper,9pt]{article}
+
+% Packages
+\usepackage[margin=0.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
+\usepackage{graphicx}
+
+% ====================================================================
+% CONFIGURATION - Section 04: Fundamentals
+% ====================================================================
+\newcommand{\topicname}{Ohm's Law}
+\newcommand{\sectionnumber}{Section 04}
+\newcommand{\sectionname}{FUNDAMENTALS}
+% ====================================================================
+
+% Color definitions
+\definecolor{headercolor}{RGB}{13,71,161}        % Deep Blue - Main header
+\definecolor{sectioncolor}{RGB}{26,115,232}      % Bright Blue - Section borders
+\definecolor{tldrcolor}{RGB}{255,245,230}        % Light Orange - TL;DR background
+\definecolor{tldrborder}{RGB}{255,152,0}         % Orange - TL;DR border
+\definecolor{detailcolor}{RGB}{232,245,233}      % Light Green - Detail background
+\definecolor{detailborder}{RGB}{56,142,60}       % Green - Detail border
+\definecolor{examplecolor}{RGB}{255,243,224}     % Light Amber - Example background
+\definecolor{exampleborder}{RGB}{245,124,0}      % Deep Orange - Example border
+\definecolor{keypointcolor}{RGB}{227,242,253}    % Light Blue - Key Points background
+\definecolor{keypointborder}{RGB}{25,118,210}    % Blue - Key Points border
+\definecolor{boxcolor}{RGB}{240,248,255}         % Light blue for decorative boxes
+
+% Custom box styles
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{tldrbox}{
+    colback=tldrcolor,
+    colframe=tldrborder,
+    fonttitle=\bfseries\large,
+    title=1. TL;DR (The Gist),
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+\newtcolorbox{detailbox}{
+    colback=detailcolor,
+    colframe=detailborder,
+    fonttitle=\bfseries\large,
+    title=2. Detailed Explanation,
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+\newtcolorbox{examplebox}{
+    colback=examplecolor,
+    colframe=exampleborder,
+    fonttitle=\bfseries\large,
+    title=3. Practical Example \& Numerical,
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+\newtcolorbox{keypointsbox}{
+    colback=keypointcolor,
+    colframe=keypointborder,
+    fonttitle=\bfseries\large,
+    title=4. Key Points (Interview Focus),
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+% Section formatting
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{sectioncolor}}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{sectioncolor}}
+  {\thesubsection}{1em}{}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Compact lists
+\setlist{nosep, leftmargin=15pt, itemsep=2pt}
+
+% Table of Contents formatting
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforesecskip}{5pt}
+\renewcommand{\cftsecfont}{\normalsize\bfseries\color{sectioncolor}}
+\renewcommand{\cftsecpagefont}{\normalsize\color{sectioncolor}}
+
+% Document start
+\begin{document}
+
+% ====================================================================
+% TITLE PAGE
+% ====================================================================
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    % Title
+    {\Huge\bfseries\color{headercolor} ELECTRONICS\\[0.3cm] STUDY SHEET\par}
+    \vspace{1cm}
+    
+    % Decorative line
+    {\color{sectioncolor}\rule{0.8\textwidth}{2pt}\par}
+    \vspace{1.5cm}
+    
+    % Topic and Section
+    {\LARGE\color{headercolor}\topicname\par}
+    \vspace{0.5cm}
+    {\Large\color{sectioncolor}\sectionnumber~--~\sectionname\par}
+    \vspace{2cm}
+    
+    % Description box
+    \begin{tcolorbox}[
+        colback=boxcolor,
+        colframe=sectioncolor,
+        width=0.8\textwidth,
+        arc=3mm,
+        boxrule=1.5pt
+    ]
+    \centering
+    \large
+    \textbf{Comprehensive One-Page Study Guide}\\[0.3cm]
+    \normalsize
+    Covering fundamental concepts, formulas, examples,\\
+    and interview-focused key points
+    \end{tcolorbox}
+    
+    \vfill
+    
+    % Bottom information
+    {\large\color{headercolor}
+    Electronics Engineering Reference Series\\[0.2cm]
+    \normalsize
+    \today
+    \par}
+    
+\end{titlepage}
+
+% Reset geometry for content page
+\newgeometry{margin=0.4in}
+
+% ====================================================================
+% TABLE OF CONTENTS
+% ====================================================================
+\begin{center}
+    {\LARGE\bfseries\color{headercolor} TABLE OF CONTENTS}
+    \vspace{0.3cm}
+    \hrule height 2pt
+\end{center}
+\vspace{0.3cm}
+
+\tableofcontents
+\vspace{0.5cm}
+
+\begin{center}
+\hrule height 1pt
+\end{center}
+
+\newpage
+
+% ====================================================================
+% MAIN CONTENT PAGE
+% ====================================================================
+
+% Suppress section numbering
+\setcounter{secnumdepth}{0}
+
+% Header
+\begin{center}
+    {\Huge\bfseries\color{headercolor} ELECTRONICS STUDY SHEET}
+    \vspace{0.2cm}
+    \hrule height 2pt
+    \vspace{0.3cm}
+\end{center}
+
+% Topic and Section Information
+\noindent
+\begin{tabular}{@{}ll}
+    \textbf{\large TOPIC:} & \textcolor{headercolor}{\large \topicname} \\[0.1cm]
+    \textbf{\large SECTION:} & \textcolor{headercolor}{\large \sectionnumber~--~\sectionname} \\
+\end{tabular}
+
+\vspace{0.25cm}
+
+% 1. TL;DR Section
+\section{TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item Ohm's Law states the relationship between voltage, current, and resistance: $V = I \times R$
+    \item It's the fundamental principle for analyzing most electrical circuits
+    \item Works for linear, ohmic materials under constant temperature
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.25cm}
+
+% 2. Detailed Explanation Section
+\section{Detailed Explanation}
+\begin{detailbox}
+
+\textbf{Working Principle:}
+\begin{itemize}
+    \item Voltage (V) across a conductor is directly proportional to current (I) flowing through it
+    \item Resistance (R) is the constant of proportionality between voltage and current
+    \item Higher resistance means more voltage needed to push the same current
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Key Components \& Their Roles:}
+\begin{itemize}
+    \item \textbf{Voltage (V):} Electrical pressure measured in Volts (V) - the driving force
+    \item \textbf{Current (I):} Flow of electrons measured in Amperes (A) - the charge flow
+    \item \textbf{Resistance (R):} Opposition to current flow measured in Ohms ($\Omega$) - the restrictor
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Step-by-Step Operation:}
+\begin{enumerate}
+    \item Voltage source creates electric potential difference across conductor
+    \item Electric field established causes free electrons to drift
+    \item Resistance in material impedes electron flow
+    \item Steady-state current established based on $V = I \times R$ relationship
+\end{enumerate}
+
+\vspace{0.15cm}
+
+\textbf{Important Formulas \& Theory:}
+\begin{align*}
+    \text{Ohm's Law:} \quad & V = I \times R \\
+    \text{Current:} \quad & I = \frac{V}{R} \\
+    \text{Resistance:} \quad & R = \frac{V}{I} \\
+    \text{Power:} \quad & P = V \times I = I^2 R = \frac{V^2}{R}
+\end{align*}
+
+\textbf{Key relationships:}
+\begin{itemize}
+    \item Voltage and current are directly proportional (constant R)
+    \item Current and resistance are inversely proportional (constant V)
+\end{itemize}
+
+\end{detailbox}
+
+\vspace{0.25cm}
+
+% 3. Practical Example & Numerical Section
+\section{Practical Example \& Numerical}
+\begin{examplebox}
+
+\textbf{Practical Application:}
+\\[0.1cm]
+LED circuit design: Calculating the current-limiting resistor needed to protect an LED when powered by a battery.
+
+\vspace{0.2cm}
+
+\textbf{Numerical Problem:}
+\\[0.1cm]
+\textit{Problem Statement:} 
+A 12V battery is connected across a resistor, and 2A of current flows through it. Calculate the resistance value and power dissipated.
+
+\vspace{0.15cm}
+
+\textbf{Solution:}
+\begin{align*}
+    \text{Given:} \quad & V = 12\,\text{V} \\
+                        & I = 2\,\text{A} \\
+    \text{Find:} \quad  & R = ?\,, \quad P = ?
+\end{align*}
+
+\textbf{Step 1:} Apply Ohm's Law to find resistance
+\begin{equation*}
+    R = \frac{V}{I} = \frac{12\,\text{V}}{2\,\text{A}} = 6\,\Omega
+\end{equation*}
+
+\textbf{Step 2:} Calculate power using $P = V \times I$
+\begin{equation*}
+    P = V \times I = 12\,\text{V} \times 2\,\text{A} = 24\,\text{W}
+\end{equation*}
+
+\textbf{Step 3:} Verify using alternate power formula
+\begin{equation*}
+    P = I^2 R = (2)^2 \times 6 = 24\,\text{W} \quad \checkmark
+\end{equation*}
+
+\textbf{Answer:} \boxed{R = 6\,\Omega, \quad P = 24\,\text{W}}
+
+\end{examplebox}
+
+\vspace{0.25cm}
+
+% 4. Key Points Section
+\section{Key Points (Interview Focus)}
+\begin{keypointsbox}
+
+\textbf{Essential Facts to Remember:}
+\begin{enumerate}
+    \item Ohm's Law: $V = I \times R$ - fundamental circuit analysis equation
+    \item Only applies to ohmic materials (linear V-I relationship)
+    \item Temperature affects resistance; most materials increase R with temperature
+    \item Can be rearranged: $I = V/R$ or $R = V/I$ depending on what you're solving for
+    \item Combined with power formulas: $P = VI = I^2R = V^2/R$
+    \item Used in series/parallel circuit analysis with Kirchhoff's laws
+    \item Essential for component selection (resistor values, current ratings)
+\end{enumerate}
+
+\vspace{0.15cm}
+
+\textbf{Common Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q1:} What is Ohm's Law and when does it apply?
+    \item \textbf{Q2:} What happens to current if resistance doubles while voltage stays constant?
+    \item \textbf{Q3:} Why doesn't Ohm's Law apply to semiconductors like diodes?
+    \item \textbf{Q4:} How do you calculate power dissipation using Ohm's Law?
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Typical Applications:}
+\begin{itemize}
+    \item Current-limiting resistor calculations for LEDs
+    \item Voltage divider circuits
+    \item Power supply design and load calculations
+    \item Sensor interface circuits
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item Doesn't apply to non-ohmic devices (diodes, transistors, LEDs)
+    \item Assumes constant temperature (resistance changes with heat)
+    \item Not valid for AC reactive components (capacitors, inductors) without complex impedance
+\end{itemize}
+
+\end{keypointsbox}
+
+% Footer
+\vspace{0.15cm}
+\hrule height 1pt
+\begin{center}
+    \small\textit{Electronics Study Sheet | Generated on \today}
+\end{center}
+
+\end{document}

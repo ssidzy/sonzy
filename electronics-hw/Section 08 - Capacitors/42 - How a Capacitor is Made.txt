@@ -1,0 +1,51 @@
+All right, so this dramatic symbol for a capacitor actually closely resembles how it's made.
+
+A capacitor is created out of two metal plates and an insulating material called us Dielectric.
+
+The metal plates are placed very close to each other in parallel, but the dielectric sits between them
+
+to make sure they don't touch.
+
+The dielectric can be made out of all sorts of insulating materials like paper, glass, rubber, ceramic,
+
+plastic or anything that will impede the flow of current.
+
+And due to this insulating layer that sits between the two plates, DC current cannot flow through the
+
+capacitor as it blocks it, allowing instead of voltage to be present across the plates in the form
+
+of an electric charge.
+
+But more on this later.
+
+Now the plates are made of conductive material like aluminum, tantalum, silver or other metals.
+
+They are each connected to a terminal wire, which is what eventually connects to the rest of the circuit.
+
+The capacitance of a capacitor like how many Farad's it has depends on how it's constructed.
+
+So more capacitors requires a larger capacitor plate with more overlapping surface area, provide more
+
+capacitors while more distance between the plates means less capacitors.
+
+The material of the dielectric even has an effect on how many Farad's a capacitor has.
+
+So the total capacitance of a capacitor can be calculated with this equation where Epsilon R is the
+
+dielectric relative perpetuity, which is the constant value determined by the dielectric material.
+
+A is the amount of area the plates overlap each other and this is a distance between the plates.
+
+So from this equation you can see that the larger the conductive plate is, the bigger the capacitance
+
+and the bigger the distance between the two plates, the lower the capacitors.
+
+Last but not least, the type of material which separates the two plates called the dielectric.
+
+So the higher the activity of the dielectric, the greater the capacitors.
+
+Great.
+
+So that was it in the last course, let's see what are the different types of capacitors that you will
+
+stumble upon in electronics?

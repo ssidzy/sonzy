@@ -1,0 +1,1636 @@
+% ====================================================================
+% SECTION 07: Alternating Current (AC)
+% ====================================================================
+
+\section{Section 07 -- Alternating Current (AC)}
+
+% --------------------------------------------------------------------
+\subsection{Why We Get AC Signal from the Wall Socket}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{AC for transmission:} Much more efficient than DC for long distances
+    \item \textbf{Transformers:} Can easily step up/down AC voltage (not DC)
+    \item High voltage transmission $\rightarrow$ Lower current $\rightarrow$ Smaller cables $\rightarrow$ Less power loss
+    \item Example: AC system has 10$\times$ less power loss than DC for same power delivery
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{Historical Context - The War of Currents:}
+
+\vspace{0.15cm}
+
+\textbf{DC Discovered First:}
+
+\textit{Natural sources of DC:}
+\begin{itemize}
+    \item \textbf{Lightning:} High-voltage DC discharge
+    \item \textbf{Static electricity:} Spark when touching charged material
+    \item \textbf{Electric eels:} Produce 50-200V DC at 30A when threatened
+    \item \textbf{Solar storms:} Charged particles interacting with Earth's magnetic field
+\end{itemize}
+
+\textit{Early investigations:}
+\begin{itemize}
+    \item DC voltage found in nature first
+    \item Scientists studied DC electricity initially
+    \item Batteries produce DC voltage
+    \item Early electrical systems used DC
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{The Late 1880s - Battle Between AC and DC:}
+
+\textbf{Edison's DC System:}
+
+\textit{Limitations of DC:}
+\begin{itemize}
+    \item DC voltage cannot be easily converted to higher voltages
+    \item Even today, DC-DC conversion is complex (requires switching converters)
+    \item No simple way to step up/down DC voltage
+\end{itemize}
+
+\textit{Edison's solution:}
+\begin{itemize}
+    \item Small local power plants for each neighborhood
+    \item Three-wire distribution: +110V, -110V, Ground (neutral)
+    \item Lights/devices connected between $\pm$110V and ground
+    \item 110V chosen to allow for voltage drop in transmission
+\end{itemize}
+
+\textit{Critical limitation:}
+\begin{itemize}
+    \item Power plants needed within \textbf{1 mile of end user}
+    \item Made rural electrification extremely difficult/impossible
+    \item Required many small power plants
+    \item Not economically viable for widespread use
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Westinghouse and Tesla's AC System:}
+
+\textit{Key advantage - Transformers:}
+\begin{itemize}
+    \item \textbf{Transformers work only with AC} (not DC)
+    \item Can easily step voltage up to thousands of volts
+    \item Can step voltage back down to usable levels
+    \item Inexpensive and reliable technology
+\end{itemize}
+
+\textit{Why transformers revolutionized power distribution:}
+\begin{itemize}
+    \item High voltage transmission = low current
+    \item Low current = smaller wires (less copper)
+    \item Smaller wires = lower cost
+    \item Less power loss in transmission
+    \item Power plants can be far from users
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Modern Reality:}
+
+\textit{Today's situation:}
+\begin{itemize}
+    \item Every home/business wired for AC
+    \item All appliances plugged into AC outlets
+    \item Wall socket provides AC voltage (varies by region)
+    \item North America: 120V RMS, 60Hz
+    \item Europe/Asia: 230V RMS, 50Hz
+\end{itemize}
+
+\textit{But most devices use DC internally!}
+\begin{itemize}
+    \item TV, computer, phone chargers all convert AC$\rightarrow$DC
+    \item Use \textbf{rectifiers} (AC to DC converters)
+    \item Almost all electronics operate on DC internally
+    \item AC used only for distribution efficiency
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why AC is More Efficient - Detailed Analysis:}
+
+\textbf{Scenario Setup:}
+\begin{itemize}
+    \item Two houses, each 1,000 feet from power plant
+    \item Each house demands: 100A at 480V
+    \item Power required: $P = 480 \times 100 = 48{,}000W = 48kW$
+    \item One system DC, one system AC
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{DC System Analysis:}
+
+\textbf{Cable requirements:}
+\begin{itemize}
+    \item Must carry 100A over 1,000 feet
+    \item Large diameter cable needed (low resistance)
+    \item Resistance inversely proportional to cross-section area
+    \item $R = \rho \times \frac{L}{A}$ (resistivity $\times$ length / area)
+    \item Typical: 0.15$\Omega$ per 1,000 feet for 100A conductor
+\end{itemize}
+
+\textbf{Voltage drop calculation:}
+\begin{align*}
+    V_{drop} &= I \times R_{cable} \\
+    &= 100A \times 0.15\Omega \\
+    &= 15V
+\end{align*}
+
+\textbf{Generator must supply:}
+\begin{equation*}
+    V_{gen} = V_{house} + V_{drop} = 480V + 15V = 495V
+\end{equation*}
+
+\textbf{Power loss in cable:}
+\begin{align*}
+    P_{loss} &= V_{drop} \times I \\
+    &= 15V \times 100A \\
+    &= \boxed{1,500W}
+\end{align*}
+
+\textbf{Efficiency:}
+\begin{equation*}
+    \eta = \frac{48{,}000}{48{,}000 + 1{,}500} \times 100\% = 97\%
+\end{equation*}
+
+\vspace{0.15cm}
+
+\textbf{AC System Analysis (with Transformers):}
+
+\textbf{Transformer at power plant:}
+\begin{itemize}
+    \item Step up voltage: 480V $\rightarrow$ 4,800V (10$\times$ increase)
+    \item Step down current: 100A $\rightarrow$ 10A (10$\times$ decrease)
+    \item Power conservation: $P_{in} = P_{out}$ (transformer is passive)
+    \item $480V \times 100A = 4{,}800V \times 10A = 48{,}000W$ $\checkmark$
+\end{itemize}
+
+\textit{Key principle:}
+\begin{itemize}
+    \item Transformer increases voltage at expense of current
+    \item NOT a power generator (passive component)
+    \item Output power = Input power (minus small losses)
+    \item $V_{out} \times I_{out} = V_{in} \times I_{in}$
+\end{itemize}
+
+\textbf{Cable requirements:}
+\begin{itemize}
+    \item Only 10A current (10$\times$ less than DC)
+    \item Smaller diameter cable sufficient
+    \item Higher resistance acceptable (less current)
+    \item Typical: 1.5$\Omega$ per 1,000 feet for 10A conductor
+\end{itemize}
+
+\textbf{Voltage drop:}
+\begin{align*}
+    V_{drop} &= I \times R_{cable} \\
+    &= 10A \times 1.5\Omega \\
+    &= 15V \text{ (same as DC!)}
+\end{align*}
+
+\textbf{Power loss in cable:}
+\begin{align*}
+    P_{loss} &= V_{drop} \times I \\
+    &= 15V \times 10A \\
+    &= \boxed{150W}
+\end{align*}
+
+\textbf{Transformer at house:}
+\begin{itemize}
+    \item Step down voltage: 4,800V $\rightarrow$ 480V
+    \item Step up current: 10A $\rightarrow$ 100A
+    \item Delivers required power to house
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Comparison - AC vs DC:}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Parameter} & \textbf{DC System} & \textbf{AC System} \\
+\hline
+Transmission voltage & 480V & 4,800V \\
+Transmission current & 100A & 10A \\
+Cable resistance & 0.15$\Omega$ & 1.5$\Omega$ \\
+Voltage drop & 15V & 15V \\
+Power loss & 1,500W & 150W \\
+Cable size & Large (100A) & Small (10A) \\
+Efficiency & 97\% & 99.7\% \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Result:}
+\begin{itemize}
+    \item AC system: \textbf{10$\times$ less power loss} than DC
+    \item AC uses smaller, cheaper cables
+    \item AC allows long-distance transmission
+    \item DC requires power plant within 1 mile
+    \item AC wins for power distribution!
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why Voltage Matters for Transmission:}
+
+\textit{Power loss formula:}
+\begin{equation*}
+    P_{loss} = I^2 R_{cable}
+\end{equation*}
+
+\textit{Key insight:}
+\begin{itemize}
+    \item Power loss proportional to $I^2$ (square of current)
+    \item Halving current reduces loss by 4$\times$
+    \item 10$\times$ less current = 100$\times$ less loss (but cable R also changes)
+    \item High voltage = low current = low loss
+\end{itemize}
+
+\textit{Why high voltage helps:}
+\begin{itemize}
+    \item For same power: $P = V \times I$
+    \item Higher V $\rightarrow$ lower I (inversely related)
+    \item Lower I $\rightarrow$ much less $I^2R$ loss
+    \item Can use smaller cable (cheaper)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Real-World AC Transmission:}
+
+\textit{Typical voltage levels:}
+\begin{itemize}
+    \item Power plant generation: 10-25kV
+    \item Long-distance transmission: 110-765kV (very high!)
+    \item Regional distribution: 10-35kV
+    \item Local distribution: 4-15kV
+    \item Residential service: 120/240V (North America), 230V (Europe)
+\end{itemize}
+
+\textit{Multiple transformer stages:}
+\begin{enumerate}
+    \item Step up at power plant (to hundreds of kV)
+    \item Transmission over long distances
+    \item Step down at substations (to tens of kV)
+    \item Step down at local transformers (to household voltage)
+\end{enumerate}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: DC vs AC Power Loss Calculation}
+
+\textit{Given:} Transmit 50kW over 2,000 feet
+
+\textbf{DC System (480V):}
+\begin{align*}
+    I &= \frac{P}{V} = \frac{50{,}000}{480} = 104.2A \\
+    R_{cable} &= 0.15\Omega/1000ft \times 2 = 0.3\Omega \\
+    P_{loss} &= I^2 R = (104.2)^2 \times 0.3 = 3{,}258W
+\end{align*}
+
+\textbf{AC System (4,800V with transformer):}
+\begin{align*}
+    I &= \frac{50{,}000}{4{,}800} = 10.42A \\
+    R_{cable} &= 1.5\Omega/1000ft \times 2 = 3\Omega \\
+    P_{loss} &= I^2 R = (10.42)^2 \times 3 = 326W
+\end{align*}
+
+\textbf{Comparison:}
+\begin{equation*}
+    \frac{P_{loss(DC)}}{P_{loss(AC)}} = \frac{3{,}258}{326} = \boxed{10\times}
+\end{equation*}
+
+AC has 10$\times$ less power loss!
+
+\vspace{0.2cm}
+
+\textbf{Example 2: Why Double Voltage Helps So Much}
+
+\textit{Same power (10kW) transmitted at different voltages:}
+
+\textbf{At 100V:}
+\begin{align*}
+    I &= \frac{10{,}000}{100} = 100A \\
+    P_{loss} &= I^2 R = (100)^2 \times 1 = 10{,}000W
+\end{align*}
+
+\textbf{At 200V (doubled):}
+\begin{align*}
+    I &= \frac{10{,}000}{200} = 50A \\
+    P_{loss} &= I^2 R = (50)^2 \times 1 = 2{,}500W
+\end{align*}
+
+\textbf{At 1,000V (10$\times$):}
+\begin{align*}
+    I &= \frac{10{,}000}{1{,}000} = 10A \\
+    P_{loss} &= I^2 R = (10)^2 \times 1 = 100W
+\end{align*}
+
+Doubling voltage reduces loss by 4$\times$; 10$\times$ voltage reduces loss by 100$\times$!
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Transformer Power Conservation}
+
+\textit{Step-up transformer:}
+\begin{itemize}
+    \item Input: 120V, 10A
+    \item Turns ratio: 1:10 (step up 10$\times$)
+\end{itemize}
+
+\textbf{Input power:}
+\begin{equation*}
+    P_{in} = 120V \times 10A = 1{,}200W
+\end{equation*}
+
+\textbf{Output (assuming ideal transformer):}
+\begin{align*}
+    V_{out} &= 120V \times 10 = 1{,}200V \\
+    I_{out} &= 10A / 10 = 1A \\
+    P_{out} &= 1{,}200V \times 1A = 1{,}200W
+\end{align*}
+
+Power conserved: $P_{in} = P_{out}$ $\checkmark$
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Regional AC Voltage Differences}
+
+\textbf{North America:}
+\begin{itemize}
+    \item Voltage: 120V RMS (single phase)
+    \item Also 240V available (split phase)
+    \item Frequency: 60Hz
+    \item Outlets: Type A/B (two or three prong)
+\end{itemize}
+
+\textbf{Europe/Asia/Africa/Australia:}
+\begin{itemize}
+    \item Voltage: 230V RMS (single phase)
+    \item Frequency: 50Hz
+    \item Outlets: Various types (C, D, E, F, G, I, etc.)
+\end{itemize}
+
+\textbf{Why different voltages?}
+\begin{itemize}
+    \item Historical decisions (Edison vs European systems)
+    \item 230V more efficient for high-power appliances
+    \item 120V considered safer (lower shock risk)
+    \item Both work well for modern electronics
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Why Most Devices Need DC Internally}
+
+\textit{Devices that convert AC to DC:}
+\begin{itemize}
+    \item \textbf{Laptop:} AC adapter converts 120V AC $\rightarrow$ 19V DC
+    \item \textbf{Phone charger:} 120V AC $\rightarrow$ 5V DC (USB)
+    \item \textbf{TV:} Internal power supply converts AC $\rightarrow$ multiple DC voltages
+    \item \textbf{LED bulbs:} Rectifier + regulator converts AC $\rightarrow$ DC for LEDs
+    \item \textbf{Computer:} PSU converts 120V AC $\rightarrow$ 12V, 5V, 3.3V DC rails
+\end{itemize}
+
+\textit{Why DC needed:}
+\begin{itemize}
+    \item Semiconductors (transistors, ICs) require DC
+    \item Logic circuits need stable voltage
+    \item Microprocessors operate on DC only
+    \item LEDs are DC devices
+    \item Motors in fans/drives use DC (or rectified AC)
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Cable Resistance and Diameter}
+
+\textit{Resistance formula:}
+\begin{equation*}
+    R = \rho \frac{L}{A}
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $\rho$ = resistivity (material property)
+    \item $L$ = length
+    \item $A$ = cross-sectional area
+\end{itemize}
+
+\textbf{For circular wire:} $A = \pi r^2 = \pi (d/2)^2$
+
+\textit{Key insight:}
+\begin{itemize}
+    \item Doubling diameter $\rightarrow$ 4$\times$ area $\rightarrow$ 1/4 resistance
+    \item Larger diameter = lower resistance
+    \item Lower resistance = less voltage drop
+    \item But larger cable costs more (more copper)
+\end{itemize}
+
+\textbf{Trade-off:}
+\begin{itemize}
+    \item High current $\rightarrow$ need large cable (expensive)
+    \item Low current $\rightarrow$ small cable works (cheaper)
+    \item AC with transformers $\rightarrow$ low current $\rightarrow$ cheap cables!
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{AC for transmission:} 10$\times$ more efficient than DC for long distances
+    \item \textbf{Transformers:} Easily step AC voltage up/down (impossible with DC)
+    \item \textbf{High voltage advantage:} Less current $\rightarrow$ less $I^2R$ loss
+    \item \textbf{Edison's DC:} Limited to 1 mile radius (impractical)
+    \item \textbf{Tesla/Westinghouse AC:} Enabled long-distance power distribution
+    \item \textbf{Modern reality:} AC for distribution, DC for device operation
+    \item \textbf{Power conservation:} Transformer changes V and I but not P
+    \item \textbf{Cable size:} High voltage = low current = smaller/cheaper cables
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} Why use AC for power distribution instead of DC? \\
+    \textit{A:} Transformers can easily change AC voltage; high voltage transmission has much lower losses.
+    
+    \item \textbf{Q:} What was the main limitation of Edison's DC system? \\
+    \textit{A:} Power plants had to be within 1 mile of users; impractical for rural areas.
+    
+    \item \textbf{Q:} Why does high voltage reduce transmission losses? \\
+    \textit{A:} Higher voltage = lower current for same power; loss is $I^2R$, so lower I drastically reduces loss.
+    
+    \item \textbf{Q:} Do transformers create power? \\
+    \textit{A:} No - they're passive; output power = input power (minus small losses).
+    
+    \item \textbf{Q:} If transformer steps up voltage 10$\times$, what happens to current? \\
+    \textit{A:} Current steps down 10$\times$ (power conservation: $V_{in}I_{in} = V_{out}I_{out}$).
+    
+    \item \textbf{Q:} Do most electronics use AC or DC internally? \\
+    \textit{A:} DC - semiconductors, ICs, LEDs all require DC; AC only used for distribution.
+\end{itemize}
+
+\textbf{AC vs DC Comparison:}
+\begin{itemize}
+    \item \textbf{Transmission:} AC wins (transformers, efficiency)
+    \item \textbf{Storage:} DC wins (batteries are DC)
+    \item \textbf{Electronics:} DC wins (semiconductors need DC)
+    \item \textbf{Long distance:} AC wins (10-100$\times$ less loss)
+    \item \textbf{Simplicity:} DC wins (no frequency, no transformers needed)
+    \item \textbf{Cost:} AC wins (smaller cables, fewer power plants)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item AC: Power grids, household distribution, large motors
+    \item DC: Batteries, electronics, solar panels, electric vehicles
+    \item Hybrid: Modern HVDC transmission (AC$\rightarrow$DC$\rightarrow$AC for very long distances)
+\end{itemize}
+
+\textbf{Common Misconceptions:}
+\begin{itemize}
+    \item "AC is always better than DC" - No, each has advantages
+    \item "Transformers amplify power" - No, passive devices (power in = power out)
+    \item "Higher voltage always dangerous" - Danger depends on current through body
+    \item "All household devices run on AC" - No, most convert to DC internally
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{AC - Important Characteristics}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{AC signal:} Sinusoidal waveform, alternates positive/negative
+    \item \textbf{Frequency (f):} Cycles per second (Hz); $f = 1/T$
+    \item \textbf{Period (T):} Time for one complete cycle (seconds); $T = 1/f$
+    \item \textbf{Amplitude/Peak:} Maximum voltage; Peak-to-peak = $2 \times$ amplitude
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{AC Signal Representation:}
+
+\vspace{0.15cm}
+
+\textbf{Graphical Form - Sinusoidal Waveform:}
+
+\textit{What is AC?}
+\begin{itemize}
+    \item \textbf{Alternating Current:} Current flows one way, then reverses
+    \item Voltage continuously changes: positive $\rightarrow$ zero $\rightarrow$ negative $\rightarrow$ zero
+    \item Represented by sine wave (sinusoid)
+    \item Most common and natural AC waveform
+\end{itemize}
+
+\textit{How AC flows:}
+\begin{itemize}
+    \item When voltage positive: Current flows in one direction
+    \item When voltage negative: Current flows in opposite direction
+    \item Voltage and current go "hand-in-hand"
+    \item Direction reverses every half cycle
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Zero Crossing:}
+
+\textit{Definition:}
+\begin{itemize}
+    \item Point where waveform crosses zero volts
+    \item Transitions between positive and negative
+    \item Two zero crossings per cycle (up and down)
+    \item Critical for timing and synchronization
+\end{itemize}
+
+\textit{Significance:}
+\begin{itemize}
+    \item Marks direction reversal
+    \item Used for frequency measurement
+    \item Important for phase control circuits
+    \item Zero-crossing detection common in AC applications
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Frequency (f) - Cycles Per Second:}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item Number of complete cycles in one second
+    \item Unit: \textbf{Hertz (Hz)}
+    \item 1 Hz = 1 cycle per second
+    \item Determines how fast signal oscillates
+\end{itemize}
+
+\textbf{Mathematical expression:}
+\begin{equation*}
+    f = \frac{1}{T}
+\end{equation*}
+
+Where $T$ = period (time for one cycle)
+
+\vspace{0.15cm}
+
+\textbf{Common AC Frequencies:}
+
+\textbf{Power line frequencies:}
+\begin{itemize}
+    \item \textbf{60 Hz:} North America, parts of South America, Japan
+    \item \textbf{50 Hz:} Europe, Asia, Africa, Australia
+    \item These are standard worldwide power frequencies
+    \item Choice historical (no technical advantage either way)
+\end{itemize}
+
+\textbf{Other frequency ranges:}
+\begin{itemize}
+    \item Audio: 20 Hz - 20 kHz (human hearing range)
+    \item Radio AM: 530 kHz - 1.7 MHz
+    \item Radio FM: 88 MHz - 108 MHz
+    \item WiFi: 2.4 GHz, 5 GHz
+    \item Microwave: 2.45 GHz (microwave ovens)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Frequency Effect on Waveform:}
+
+\textbf{Low frequency (e.g., 1 Hz):}
+\begin{itemize}
+    \item Slow oscillation (1 cycle per second)
+    \item Long time for complete cycle
+    \item Waveform appears "stretched out"
+    \item Easy to see individual cycles
+\end{itemize}
+
+\textbf{Medium frequency (e.g., 60 Hz):}
+\begin{itemize}
+    \item 60 complete cycles per second
+    \item Each cycle takes 16.67 ms
+    \item Typical power line frequency
+    \item Causes flicker in some lights (perceptible)
+\end{itemize}
+
+\textbf{High frequency (e.g., 1 kHz):}
+\begin{itemize}
+    \item 1,000 cycles per second
+    \item Each cycle only 1 ms
+    \item Waveform appears "compressed"
+    \item Many oscillations in short time
+\end{itemize}
+
+\textit{General rule:}
+\begin{itemize}
+    \item Higher frequency $\rightarrow$ faster oscillation $\rightarrow$ shorter period
+    \item Lower frequency $\rightarrow$ slower oscillation $\rightarrow$ longer period
+    \item Frequency and period inversely related
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Period (T) - Time Per Cycle:}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item Time for signal to complete \textbf{one full cycle}
+    \item Measured in seconds (or ms, $\mu$s)
+    \item From zero $\rightarrow$ positive peak $\rightarrow$ zero $\rightarrow$ negative peak $\rightarrow$ zero
+    \item Complete repetition of waveform pattern
+\end{itemize}
+
+\textbf{Mathematical expression:}
+\begin{equation*}
+    T = \frac{1}{f}
+\end{equation*}
+
+\textit{Relationship to frequency:}
+\begin{itemize}
+    \item Period and frequency are reciprocals
+    \item If period increases $\rightarrow$ frequency decreases
+    \item If frequency increases $\rightarrow$ period decreases
+    \item \textbf{Inversely proportional}
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{What Constitutes One Cycle:}
+
+\textit{Complete cycle includes:}
+\begin{enumerate}
+    \item Start at zero volts
+    \item Rise to positive peak
+    \item Return to zero (first zero crossing)
+    \item Fall to negative peak
+    \item Return to zero (second zero crossing)
+    \item Back to starting point
+\end{enumerate}
+
+\textit{Alternative description:}
+\begin{itemize}
+    \item One complete wavelength
+    \item 360° or $2\pi$ radians
+    \item Positive half-cycle + negative half-cycle
+    \item Pattern that repeats continuously
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Amplitude - Maximum Voltage:}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item Maximum voltage reached by signal
+    \item Distance from zero to peak (positive or negative)
+    \item Also called \textbf{peak voltage} ($V_{peak}$)
+    \item Measured in volts
+\end{itemize}
+
+\textit{Positive vs negative amplitude:}
+\begin{itemize}
+    \item Positive peak: Maximum positive voltage
+    \item Negative peak: Maximum negative voltage
+    \item For symmetrical AC: Both have same magnitude
+    \item Sign indicates direction only (not "less than zero")
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Peak-to-Peak Voltage ($V_{p-p}$):}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item Total voltage swing from negative peak to positive peak
+    \item Twice the amplitude (for symmetrical waveform)
+    \item $V_{p-p} = 2 \times V_{peak}$
+    \item Easy to measure on oscilloscope
+\end{itemize}
+
+\textit{Why peak-to-peak useful:}
+\begin{itemize}
+    \item Oscilloscope displays peak-to-peak naturally
+    \item Shows total voltage excursion
+    \item Useful for component voltage rating checks
+    \item Common measurement in practice
+\end{itemize}
+
+\textbf{Example:}
+\begin{itemize}
+    \item If $V_{peak} = 170V$
+    \item Then $V_{p-p} = 2 \times 170 = 340V$
+    \item Signal swings from -170V to +170V
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Important Distinctions:}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Term} & \textbf{Meaning} \\
+\hline
+Amplitude & Maximum value from zero (same as peak) \\
+Peak voltage & Maximum voltage (positive or negative) \\
+Peak-to-peak & Total swing (2$\times$ amplitude) \\
+RMS voltage & Effective value (covered next topic) \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.15cm}
+
+\textbf{AC Waveform Properties Summary:}
+
+\textbf{Continuous variation:}
+\begin{itemize}
+    \item Voltage never constant (always changing)
+    \item Smoothly transitions through zero
+    \item Sinusoidal shape most common
+    \item Periodic (repeats regularly)
+\end{itemize}
+
+\textbf{Symmetrical (typical):}
+\begin{itemize}
+    \item Positive half matches negative half
+    \item Average voltage = 0 (positive cancels negative)
+    \item Peak positive = Peak negative (magnitude)
+    \item Center line at 0V
+\end{itemize}
+
+\textbf{Key parameters:}
+\begin{itemize}
+    \item \textbf{Frequency:} How fast it oscillates
+    \item \textbf{Period:} How long one cycle takes
+    \item \textbf{Amplitude/Peak:} How high it goes
+    \item \textbf{Peak-to-peak:} Total voltage range
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Frequency Prefixes:}
+
+\textit{Common in electronics:}
+\begin{itemize}
+    \item Hz (Hertz): Base unit
+    \item kHz (kilohertz): $10^3$ Hz = 1,000 Hz
+    \item MHz (megahertz): $10^6$ Hz = 1,000,000 Hz
+    \item GHz (gigahertz): $10^9$ Hz = 1,000,000,000 Hz
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: 60 Hz Power Line}
+
+\textit{North American household power:}
+
+\textbf{Frequency:}
+\begin{equation*}
+    f = 60\text{ Hz}
+\end{equation*}
+
+\textbf{Period:}
+\begin{equation*}
+    T = \frac{1}{f} = \frac{1}{60} = 0.01667\text{ s} = \boxed{16.67\text{ ms}}
+\end{equation*}
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item One complete cycle takes 16.67 milliseconds
+    \item 60 cycles occur in one second
+    \item Voltage crosses zero 120 times per second (2 per cycle)
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 2: 50 Hz European Power}
+
+\textbf{Frequency:}
+\begin{equation*}
+    f = 50\text{ Hz}
+\end{equation*}
+
+\textbf{Period:}
+\begin{equation*}
+    T = \frac{1}{50} = 0.02\text{ s} = \boxed{20\text{ ms}}
+\end{equation*}
+
+\textbf{Comparison to 60 Hz:}
+\begin{itemize}
+    \item 50 Hz period: 20 ms
+    \item 60 Hz period: 16.67 ms
+    \item 50 Hz is 20\% slower oscillation
+    \item Both work fine for power distribution
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Audio Frequency - Middle A Note}
+
+\textit{Musical note A above middle C:}
+
+\textbf{Frequency:}
+\begin{equation*}
+    f = 440\text{ Hz}
+\end{equation*}
+
+\textbf{Period:}
+\begin{equation*}
+    T = \frac{1}{440} = 0.002273\text{ s} = \boxed{2.273\text{ ms}}
+\end{equation*}
+
+\textbf{Meaning:}
+\begin{itemize}
+    \item Sound wave vibrates 440 times per second
+    \item Each vibration takes 2.273 ms
+    \item Human ear perceives this as the note "A"
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 4: FM Radio Station}
+
+\textit{FM radio at 100.7 MHz:}
+
+\textbf{Frequency:}
+\begin{equation*}
+    f = 100.7\text{ MHz} = 100{,}700{,}000\text{ Hz}
+\end{equation*}
+
+\textbf{Period:}
+\begin{align*}
+    T &= \frac{1}{100{,}700{,}000} \\
+    &= 9.93 \times 10^{-9}\text{ s} \\
+    &= \boxed{9.93\text{ ns (nanoseconds)}}
+\end{align*}
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item Extremely fast oscillation
+    \item Over 100 million cycles per second
+    \item Each cycle only ~10 nanoseconds
+    \item Radio waves travel at speed of light
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Peak and Peak-to-Peak}
+
+\textit{Household AC voltage (North America):}
+
+\textbf{Peak voltage:}
+\begin{equation*}
+    V_{peak} = 170\text{ V}
+\end{equation*}
+
+\textbf{Peak-to-peak voltage:}
+\begin{equation*}
+    V_{p-p} = 2 \times V_{peak} = 2 \times 170 = \boxed{340\text{ V}}
+\end{equation*}
+
+\textbf{Meaning:}
+\begin{itemize}
+    \item Voltage swings from -170V to +170V
+    \item Total excursion: 340V
+    \item This is for 120V RMS (covered next topic)
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Comparing Three Frequencies}
+
+\textit{Same amplitude, different frequencies:}
+
+\textbf{Signal A: 1 Hz}
+\begin{itemize}
+    \item Period: $T = 1/1 = 1$ second
+    \item Very slow oscillation
+    \item One cycle per second
+\end{itemize}
+
+\textbf{Signal B: 10 Hz}
+\begin{itemize}
+    \item Period: $T = 1/10 = 0.1$ second = 100 ms
+    \item 10 times faster than Signal A
+    \item 10 cycles per second
+\end{itemize}
+
+\textbf{Signal C: 100 Hz}
+\begin{itemize}
+    \item Period: $T = 1/100 = 0.01$ second = 10 ms
+    \item 100 times faster than Signal A
+    \item 100 cycles per second
+\end{itemize}
+
+\textbf{Observation:}
+\begin{itemize}
+    \item Higher frequency $\rightarrow$ more compressed waveform
+    \item Lower frequency $\rightarrow$ more stretched waveform
+    \item All have same amplitude (height)
+    \item Differ only in oscillation rate
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 7: Frequency Unit Conversions}
+
+\textbf{Convert 5 kHz to Hz:}
+\begin{equation*}
+    5\text{ kHz} = 5 \times 10^3 = 5{,}000\text{ Hz}
+\end{equation*}
+
+\textbf{Convert 2.4 GHz to MHz:}
+\begin{equation*}
+    2.4\text{ GHz} = 2.4 \times 10^3 = 2{,}400\text{ MHz}
+\end{equation*}
+
+\textbf{Convert 500 kHz to MHz:}
+\begin{equation*}
+    500\text{ kHz} = 500 / 1000 = 0.5\text{ MHz}
+\end{equation*}
+
+\textbf{Find period of 20 kHz:}
+\begin{equation*}
+    T = \frac{1}{20{,}000} = 0.00005\text{ s} = 50\text{ $\mu$s}
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 8: Oscilloscope Measurement}
+
+\textit{Oscilloscope display shows:}
+\begin{itemize}
+    \item Peak-to-peak voltage: 10V
+    \item 4 complete cycles in 20 ms
+\end{itemize}
+
+\textbf{Find amplitude:}
+\begin{equation*}
+    V_{peak} = \frac{V_{p-p}}{2} = \frac{10}{2} = \boxed{5\text{ V}}
+\end{equation*}
+
+\textbf{Find period:}
+\begin{equation*}
+    T = \frac{20\text{ ms}}{4\text{ cycles}} = \boxed{5\text{ ms per cycle}}
+\end{equation*}
+
+\textbf{Find frequency:}
+\begin{equation*}
+    f = \frac{1}{T} = \frac{1}{0.005} = \boxed{200\text{ Hz}}
+\end{equation*}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{AC waveform:} Sinusoidal, alternates positive/negative continuously
+    \item \textbf{Frequency (f):} Cycles per second (Hz); $f = 1/T$
+    \item \textbf{Period (T):} Time per cycle (seconds); $T = 1/f$
+    \item \textbf{Amplitude/Peak:} Maximum voltage from zero
+    \item \textbf{Peak-to-peak:} $V_{p-p} = 2 \times V_{peak}$ (total swing)
+    \item \textbf{Zero crossing:} Points where voltage = 0 (direction reversal)
+    \item \textbf{One cycle:} Zero $\rightarrow$ peak+ $\rightarrow$ zero $\rightarrow$ peak- $\rightarrow$ zero
+    \item \textbf{Inverse relationship:} Higher f $\rightarrow$ shorter T; Lower f $\rightarrow$ longer T
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What is frequency? \\
+    \textit{A:} Number of complete cycles per second, measured in Hertz (Hz).
+    
+    \item \textbf{Q:} What is the period of 60 Hz AC? \\
+    \textit{A:} $T = 1/60 = 16.67$ ms.
+    
+    \item \textbf{Q:} If peak voltage is 100V, what is peak-to-peak? \\
+    \textit{A:} $V_{p-p} = 2 \times 100 = 200V$.
+    
+    \item \textbf{Q:} What is one complete AC cycle? \\
+    \textit{A:} Zero $\rightarrow$ positive peak $\rightarrow$ zero $\rightarrow$ negative peak $\rightarrow$ zero (complete waveform repetition).
+    
+    \item \textbf{Q:} Relationship between frequency and period? \\
+    \textit{A:} Inversely proportional: $f = 1/T$ and $T = 1/f$.
+    
+    \item \textbf{Q:} How many zero crossings per cycle? \\
+    \textit{A:} Two - one going positive, one going negative.
+    
+    \item \textbf{Q:} What's the difference between amplitude and peak-to-peak? \\
+    \textit{A:} Amplitude is max from zero; peak-to-peak is total swing (2$\times$ amplitude).
+\end{itemize}
+
+\textbf{Common Frequencies:}
+\begin{itemize}
+    \item 50 Hz: European power line
+    \item 60 Hz: North American power line
+    \item 20 Hz - 20 kHz: Audio (human hearing)
+    \item 530 kHz - 1.7 MHz: AM radio
+    \item 88 MHz - 108 MHz: FM radio
+    \item 2.4 GHz, 5 GHz: WiFi
+\end{itemize}
+
+\textbf{Formulas:}
+\begin{itemize}
+    \item $f = 1/T$ (frequency from period)
+    \item $T = 1/f$ (period from frequency)
+    \item $V_{p-p} = 2 \times V_{peak}$ (peak-to-peak voltage)
+    \item $V_{peak} = V_{p-p} / 2$ (peak voltage)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Power distribution (50/60 Hz)
+    \item Audio signals (20 Hz - 20 kHz)
+    \item Radio communications (kHz to GHz)
+    \item Oscilloscope measurements
+    \item Signal processing
+    \item Frequency synthesis
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Confusing amplitude with peak-to-peak
+    \item Forgetting frequency and period are reciprocals
+    \item Thinking negative voltage is "less than zero" (it's just direction)
+    \item Confusing cycle count with zero-crossing count
+\end{itemize}
+\end{keypointsbox}
+
+% --------------------------------------------------------------------
+\subsection{Root Mean Square Voltage (V\textsubscript{rms})}
+
+\noindent\textbf{\color{accentcolor} TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item \textbf{RMS voltage:} Effective AC voltage = equivalent DC for same power
+    \item \textbf{Formula:} $V_{rms} = 0.707 \times V_{peak}$ or $V_{peak} = 1.414 \times V_{rms}$
+    \item \textbf{Meters show RMS:} Multimeter displays RMS, not peak
+    \item 120V AC means 120V RMS (peak is actually 170V)
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{The Problem with AC Voltage Values:}
+
+\vspace{0.15cm}
+
+\textbf{AC is constantly changing:}
+\begin{itemize}
+    \item Voltage goes from zero $\rightarrow$ peak+ $\rightarrow$ zero $\rightarrow$ peak- $\rightarrow$ zero
+    \item Always varying (never constant)
+    \item Most of the time, voltage is \textbf{less than peak}
+    \item Peak voltage not good measure of "real effect"
+\end{itemize}
+
+\textbf{Average doesn't work either:}
+\begin{itemize}
+    \item Positive half-cycle and negative half-cycle
+    \item Positive values exactly cancel negative values
+    \item Mathematical average of sine wave = \textbf{0 volts}
+    \item Useless for comparing to DC!
+\end{itemize}
+
+\textit{Need better measure:}
+\begin{itemize}
+    \item Represents "effective" power delivery
+    \item Allows comparison with DC
+    \item Practical and meaningful
+    \item Solution: \textbf{Root Mean Square (RMS)}
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{What is RMS Voltage?}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item \textbf{Effective value} of varying voltage/current
+    \item Equivalent steady DC value giving \textbf{same power}
+    \item Represents heating effect or power delivery capability
+    \item The voltage that "matters" for real work
+\end{itemize}
+
+\textbf{Physical meaning:}
+\begin{itemize}
+    \item AC at 120V RMS delivers same power as 120V DC
+    \item Lights up bulb to same brightness
+    \item Produces same heat in resistor
+    \item Does same amount of work
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Mathematical Relationship (For Sine Waves):}
+
+\textbf{RMS from Peak:}
+\begin{equation*}
+    \boxed{V_{rms} = 0.707 \times V_{peak}}
+\end{equation*}
+
+Or more precisely:
+\begin{equation*}
+    V_{rms} = \frac{V_{peak}}{\sqrt{2}} = \frac{V_{peak}}{1.414}
+\end{equation*}
+
+\textbf{Peak from RMS:}
+\begin{equation*}
+    \boxed{V_{peak} = 1.414 \times V_{rms}}
+\end{equation*}
+
+Or:
+\begin{equation*}
+    V_{peak} = \sqrt{2} \times V_{rms}
+\end{equation*}
+
+\textit{Important note:}
+\begin{itemize}
+    \item These factors (0.707 and 1.414) are \textbf{only for sine waves}
+    \item Different waveforms (square, triangle) have different factors
+    \item Sine wave most common in power systems
+    \item Always assume sine wave unless stated otherwise
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Same Formulas for Current:}
+
+\begin{align*}
+    I_{rms} &= 0.707 \times I_{peak} \\
+    I_{peak} &= 1.414 \times I_{rms}
+\end{align*}
+
+\vspace{0.15cm}
+
+\textbf{RMS - The "Equivalent DC" Concept:}
+
+\textbf{Example comparison:}
+
+\textit{Circuit 1: DC powered}
+\begin{itemize}
+    \item 120V DC battery
+    \item Light bulb
+    \item Steady, constant brightness
+\end{itemize}
+
+\textit{Circuit 2: AC powered}
+\begin{itemize}
+    \item 170V peak AC source (120V RMS)
+    \item Same light bulb
+    \item Same brightness as DC circuit!
+\end{itemize}
+
+\textbf{Why same brightness?}
+\begin{itemize}
+    \item RMS voltage represents effective power
+    \item 170V peak AC delivers same average power as 120V DC
+    \item Brightness depends on power, not instantaneous voltage
+    \item Bulb responds to average heating effect
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{What Your Meter Shows:}
+
+\textbf{Multimeter on AC mode:}
+\begin{itemize}
+    \item \textbf{Always displays RMS value}
+    \item NOT peak voltage
+    \item NOT average voltage
+    \item NOT peak-to-peak
+    \item Shows the "effective" AC voltage
+\end{itemize}
+
+\textbf{Example - North American outlet:}
+\begin{itemize}
+    \item Actual peak voltage: 170V
+    \item Meter reading: 120V (RMS)
+    \item Peak-to-peak: 340V
+    \item But you see: 120V on meter
+\end{itemize}
+
+\textit{Why RMS on meters?}
+\begin{itemize}
+    \item Allows direct comparison with DC
+    \item Represents actual power capability
+    \item Industry standard
+    \item More meaningful for practical use
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{When AC Voltage is Specified:}
+
+\textbf{Convention:}
+\begin{itemize}
+    \item "120V AC" means 120V \textbf{RMS} (unless stated otherwise)
+    \item "230V AC" means 230V RMS
+    \item If peak voltage meant, clearly stated as "peak"
+    \item Example: "170V peak" or "120V RMS"
+\end{itemize}
+
+\textbf{Always assume RMS for AC specifications:}
+\begin{itemize}
+    \item Wall outlet ratings
+    \item Power supply specifications
+    \item Component voltage ratings
+    \item Electrical code requirements
+    \item Everyday usage
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Why "Root Mean Square"?}
+
+\textit{The name comes from the calculation method:}
+
+\begin{enumerate}
+    \item \textbf{Square} all instantaneous values (makes negative positive)
+    \item Find the \textbf{Mean} (average) of the squared values
+    \item Take the square \textbf{Root} of the mean
+\end{enumerate}
+
+\textit{Mathematical formula (general):}
+\begin{equation*}
+    V_{rms} = \sqrt{\frac{1}{T} \int_0^T v^2(t) \, dt}
+\end{equation*}
+
+For sine wave, this simplifies to:
+\begin{equation*}
+    V_{rms} = \frac{V_{peak}}{\sqrt{2}} = 0.707 \times V_{peak}
+\end{equation*}
+
+\textit{Why squaring helps:}
+\begin{itemize}
+    \item Power proportional to $V^2$ (in resistor: $P = V^2/R$)
+    \item Squaring accounts for power delivery
+    \item Makes all values positive
+    \item Taking root returns to voltage units
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{RMS Represents Power Accurately:}
+
+\textbf{Power in resistor with AC:}
+\begin{equation*}
+    P_{avg} = \frac{V_{rms}^2}{R} = I_{rms}^2 \times R = V_{rms} \times I_{rms}
+\end{equation*}
+
+\textit{Same formulas as DC!}
+\begin{itemize}
+    \item Using RMS values, power formulas identical to DC
+    \item No need for special AC power formulas
+    \item Direct substitution works
+    \item This is why RMS is so useful!
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{RMS vs Peak vs Peak-to-Peak Summary:}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Measurement} & \textbf{Formula} & \textbf{Example (120V RMS)} \\
+\hline
+RMS & $0.707 \times V_{peak}$ & 120V \\
+Peak & $1.414 \times V_{rms}$ & 170V \\
+Peak-to-Peak & $2 \times V_{peak}$ & 340V \\
+Average & 0 (for sine wave) & 0V \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.15cm}
+
+\textbf{Different Waveforms Have Different Factors:}
+
+\textbf{Sine wave:}
+\begin{itemize}
+    \item $V_{rms} = 0.707 \times V_{peak}$
+    \item Most common (power lines)
+\end{itemize}
+
+\textbf{Square wave:}
+\begin{itemize}
+    \item $V_{rms} = V_{peak}$ (factor = 1.0)
+    \item RMS equals peak!
+\end{itemize}
+
+\textbf{Triangle wave:}
+\begin{itemize}
+    \item $V_{rms} = 0.577 \times V_{peak}$
+    \item Different factor
+\end{itemize}
+
+\textit{Standard assumption:}
+\begin{itemize}
+    \item Unless specified, assume sine wave
+    \item Use 0.707 and 1.414 factors
+    \item Power systems always sinusoidal
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Example \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: North American Household Outlet}
+
+\textit{Wall socket rated "120V AC"}
+
+\textbf{This means:}
+\begin{equation*}
+    V_{rms} = 120V
+\end{equation*}
+
+\textbf{Actual peak voltage:}
+\begin{equation*}
+    V_{peak} = 1.414 \times 120 = \boxed{169.7V \approx 170V}
+\end{equation*}
+
+\textbf{Peak-to-peak voltage:}
+\begin{equation*}
+    V_{p-p} = 2 \times 170 = \boxed{340V}
+\end{equation*}
+
+\textbf{What meter shows:} 120V (RMS)
+
+\vspace{0.2cm}
+
+\textbf{Example 2: European Household Outlet}
+
+\textit{Wall socket rated "230V AC"}
+
+\textbf{RMS voltage:}
+\begin{equation*}
+    V_{rms} = 230V
+\end{equation*}
+
+\textbf{Peak voltage:}
+\begin{equation*}
+    V_{peak} = 1.414 \times 230 = \boxed{325V}
+\end{equation*}
+
+\textbf{Peak-to-peak:}
+\begin{equation*}
+    V_{p-p} = 2 \times 325 = \boxed{650V}
+\end{equation*}
+
+\vspace{0.2cm}
+
+\textbf{Example 3: Equivalent DC Comparison}
+
+\textit{Two circuits with identical light bulbs:}
+
+\textbf{Circuit A (DC):}
+\begin{itemize}
+    \item 120V DC battery
+    \item Light bulb: 100W
+    \item Brightness: Reference level
+\end{itemize}
+
+\textbf{Circuit B (AC):}
+\begin{itemize}
+    \item AC source: 170V peak (120V RMS)
+    \item Same light bulb: 100W
+    \item Brightness: \textbf{Identical to Circuit A!}
+\end{itemize}
+
+\textbf{Power calculation (both):}
+\begin{align*}
+    P &= \frac{V^2}{R} \\
+    R &= \frac{120^2}{100} = 144\Omega \text{ (bulb resistance)}
+\end{align*}
+
+Circuit A: $P = 120^2 / 144 = 100W$
+
+Circuit B: $P = V_{rms}^2 / R = 120^2 / 144 = 100W$
+
+Same power $\rightarrow$ same brightness!
+
+\vspace{0.2cm}
+
+\textbf{Example 4: Finding RMS from Oscilloscope}
+
+\textit{Oscilloscope shows:}
+\begin{itemize}
+    \item Peak voltage: 50V
+    \item Sine wave
+\end{itemize}
+
+\textbf{Calculate RMS:}
+\begin{equation*}
+    V_{rms} = 0.707 \times 50 = \boxed{35.35V}
+\end{equation*}
+
+\textit{If multimeter measured same signal:}
+\begin{itemize}
+    \item Oscilloscope displays: 50V (peak)
+    \item Multimeter displays: 35.35V (RMS)
+    \item Both correct, different measurements!
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 5: Power Calculation with AC}
+
+\textit{Given:}
+\begin{itemize}
+    \item AC voltage: 120V RMS
+    \item Resistor: 10$\Omega$
+\end{itemize}
+
+\textbf{Current (RMS):}
+\begin{equation*}
+    I_{rms} = \frac{V_{rms}}{R} = \frac{120}{10} = 12A \text{ (RMS)}
+\end{equation*}
+
+\textbf{Power dissipated:}
+\begin{align*}
+    P &= V_{rms} \times I_{rms} \\
+    &= 120 \times 12 = 1{,}440W
+\end{align*}
+
+Or using $P = V^2/R$:
+\begin{equation*}
+    P = \frac{120^2}{10} = \frac{14{,}400}{10} = 1{,}440W
+\end{equation*}
+
+Or using $P = I^2R$:
+\begin{equation*}
+    P = 12^2 \times 10 = 144 \times 10 = 1{,}440W
+\end{equation*}
+
+All formulas work with RMS values!
+
+\vspace{0.2cm}
+
+\textbf{Example 6: Peak Current from RMS}
+
+\textit{Given:} Circuit draws 5A RMS
+
+\textbf{Peak current:}
+\begin{equation*}
+    I_{peak} = 1.414 \times 5 = \boxed{7.07A}
+\end{equation*}
+
+\textbf{Implication:}
+\begin{itemize}
+    \item Circuit breaker must handle 7.07A peak
+    \item But rated in RMS (5A)
+    \item Component ratings usually specify RMS
+    \item Peak current 41\% higher than RMS
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example 7: Lower RMS Voltage, Lower Power}
+
+\textit{Two AC sources powering identical bulbs:}
+
+\textbf{Source A: 170V peak (120V RMS)}
+\begin{itemize}
+    \item Bulb power: $P = 120^2 / 144 = 100W$
+    \item Warm-up time: 5 seconds
+    \item Brightness: Reference
+\end{itemize}
+
+\textbf{Source B: 120V peak (85V RMS)}
+\begin{itemize}
+    \item Bulb power: $P = 85^2 / 144 = 50W$
+    \item Warm-up time: Much longer
+    \item Brightness: Dimmer (half power)
+\end{itemize}
+
+Lower RMS $\rightarrow$ lower power $\rightarrow$ less brightness!
+
+\vspace{0.2cm}
+
+\textbf{Example 8: Converting Between Values}
+
+\textit{Given:} Peak-to-peak voltage = 200V (sine wave)
+
+\textbf{Peak voltage:}
+\begin{equation*}
+    V_{peak} = \frac{V_{p-p}}{2} = \frac{200}{2} = 100V
+\end{equation*}
+
+\textbf{RMS voltage:}
+\begin{equation*}
+    V_{rms} = 0.707 \times 100 = \boxed{70.7V}
+\end{equation*}
+
+\textbf{Verification (RMS to peak to p-p):}
+\begin{align*}
+    V_{peak} &= 1.414 \times 70.7 = 100V \quad \checkmark \\
+    V_{p-p} &= 2 \times 100 = 200V \quad \checkmark
+\end{align*}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{enumerate}
+    \item \textbf{RMS:} Effective AC value = equivalent DC for same power
+    \item \textbf{Formula:} $V_{rms} = 0.707 \times V_{peak}$ (sine wave only)
+    \item \textbf{Reverse:} $V_{peak} = 1.414 \times V_{rms}$
+    \item \textbf{Meters:} Always show RMS on AC mode
+    \item \textbf{Convention:} "120V AC" means 120V RMS (peak is 170V)
+    \item \textbf{Power formulas:} Use RMS values ($P = V_{rms} I_{rms}$)
+    \item \textbf{Not average:} Average of sine wave = 0 (useless)
+    \item \textbf{Factors vary:} 0.707 only for sine waves; square wave = 1.0
+\end{enumerate}
+
+\textbf{Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q:} What does RMS voltage mean? \\
+    \textit{A:} Effective AC voltage - equivalent DC value delivering same power.
+    
+    \item \textbf{Q:} 120V AC outlet - what is peak voltage? \\
+    \textit{A:} $V_{peak} = 1.414 \times 120 = 170V$.
+    
+    \item \textbf{Q:} Why not use average voltage for AC? \\
+    \textit{A:} Average of sine wave = 0 (positive and negative cancel out).
+    
+    \item \textbf{Q:} What does multimeter show for AC? \\
+    \textit{A:} RMS value (not peak, not average).
+    
+    \item \textbf{Q:} Convert 100V peak to RMS. \\
+    \textit{A:} $V_{rms} = 0.707 \times 100 = 70.7V$.
+    
+    \item \textbf{Q:} Why is RMS useful? \\
+    \textit{A:} Allows direct comparison with DC; power formulas work the same.
+    
+    \item \textbf{Q:} Do RMS formulas apply to square waves? \\
+    \textit{A:} No - factors differ (0.707 only for sine waves).
+\end{itemize}
+
+\textbf{Key Formulas (Sine Wave):}
+\begin{itemize}
+    \item $V_{rms} = 0.707 \times V_{peak} = V_{peak}/\sqrt{2}$
+    \item $V_{peak} = 1.414 \times V_{rms} = \sqrt{2} \times V_{rms}$
+    \item $I_{rms} = 0.707 \times I_{peak}$
+    \item $I_{peak} = 1.414 \times I_{rms}$
+    \item $P = V_{rms} \times I_{rms}$ (same as DC formulas)
+\end{itemize}
+
+\textbf{Memory Aids:}
+\begin{itemize}
+    \item 0.707 $\approx$ 0.7 $\approx$ 70\% (RMS is ~70\% of peak)
+    \item 1.414 $\approx$ 1.4 $\approx$ 140\% (peak is ~40\% higher than RMS)
+    \item $\sqrt{2} = 1.414...$ (exact factor)
+    \item $1/\sqrt{2} = 0.707...$ (exact factor)
+\end{itemize}
+
+\textbf{Common Values:}
+\begin{itemize}
+    \item 120V RMS $\rightarrow$ 170V peak (North America)
+    \item 230V RMS $\rightarrow$ 325V peak (Europe/Asia)
+    \item 240V RMS $\rightarrow$ 340V peak (Australia, parts of Asia)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Power supply specifications
+    \item Component voltage ratings
+    \item Meter readings interpretation
+    \item Power calculations
+    \item Circuit design and safety
+\end{itemize}
+
+\textbf{Common Mistakes:}
+\begin{itemize}
+    \item Using peak voltage in power calculations (use RMS!)
+    \item Thinking multimeter shows peak (it shows RMS)
+    \item Applying sine wave factors to non-sinusoidal signals
+    \item Confusing RMS with average (average of sine = 0)
+\end{itemize}
+\end{keypointsbox}
+

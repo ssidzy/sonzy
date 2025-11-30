@@ -1,0 +1,367 @@
+Before we start calculating all the components necessary for this adequate work, let's just understand
+
+at the beginning what is this work we're doing?
+
+We have the two inputs in one in the interview and output is taken off the collector.
+
+The output is equal to the voltage difference between the two inputs, right?
+
+This is the common Maude case where both inputs are the same in voltage as well as in fees.
+
+This is just like the case when the noise is induced in both inputs, having the same wattage a phase.
+
+So in this application, there is more useful information that we want to transmit and amplify because
+
+the purpose of this application is to show you how the output behaves when both inputs are the same.
+
+As you mentioned previously, there are two types of gain that we have to account for.
+
+The first type of gain is the differential gain.
+
+And the second type is the common gain.
+
+There is no point in talking about the financial gain right now because we don't have differential signals.
+
+The inputs, the other type of gain is the common gain, which is the gain of the circuit where both
+
+inputs are the same.
+
+So how big should the common gain or common amplification, if you want to say like that?
+
+Well, since the main property of a differential amplifier is to get rid of the noise induced remove
+
+inputs, the common gain in ideal case would be zero.
+
+The common law of change in output is much less than in differential mode, but as shown here, the
+
+output still fluctuates more than we would like.
+
+The output signal is one will pick to pick, and the input signal is to walls peak to peak.
+
+So as you can see, the common gain is basically zero point five since the output picked up.
+
+Amplitude is half of the input.
+
+If we change one of the input voltage to, let's say, two walls instead of one, then we can start
+
+talking about differential again.
+
+We will shortly see how to calculate the differential gain.
+
+But if we look at the output, the differential gain is so high that the voltage starts clipping the
+
+power supply voltage and ground.
+
+So in conclusion, we can say that differential gain is much, much higher than common, more gain.
+
+Now let's put the voltage of this back to one world, and as you can see, the output is almost like
+
+a DC voltage.
+
+The problem that we are facing right now is that the output voltage still has some fluctuations.
+
+Ideally, this should be a clean DC voltage, if not fluctuations whatsoever.
+
+In order to solve this problem, a more clever circuit has to be designed.
+
+But for that, we have to understand the purpose of each component in our.
+
+Before we do that.
+
+Let's see a much practical, real world use case where an information is added along with the noise
+
+that is already present in the circuit.
+
+All right.
+
+The same circuit.
+
+The only difference is that we feed one of them put before 200 her signal that has a voltage of 100
+
+million miles.
+
+The input signal input one looks like this, and that input two looks like a mixture of 200 hertz and
+
+the 40 year signal.
+
+The form part starts here because as you can see the output, the only clean two hundred hertz is present
+
+without any noise.
+
+So the input two is a mixture of noise and information.
+
+And if you want to get rid of this noise, just feed the first input with the same noise, and the output
+
+will be a noise free signal, of course.
+
+Area of world.
+
+The noise will be induced in both inputs without human intervention.
+
+And also, you won't see applications where the information is fielded only at one input.
+
+In real world applications, information is fed both inputs, but one is out of phase with 180 compared
+
+to another.
+
+So this is how a real world application might look like.
+
+Both inputs contain the same information, but one has opposite feeds.
+
+If the transmission is happening over long distances, noise can be induced in both inputs.
+
+But since the phase and amplitude will be the same, the differential amplifier will get rid of them,
+
+leaving only the noise free information to pass through.
+
+The second advantage is that our two hundred hertz, which has a voltage of 100 million volts, got
+
+amplified very well.
+
+We can talk about a gain of around 130, so the output voltage is 130 times bigger than the input voltage.
+
+All right.
+
+Let's see how the circuit works in more detail.
+
+There are two cases, so we'll treat them separately.
+
+The first cases differential a mild case, which is the case where an input one right is the input two
+
+falls by the same amount.
+
+Where an input one rises, they put two falls.
+
+There is more voltage across the left one ketone resistor as or more current.
+
+This means that there is less voltage and current across the right one kilometers east to right.
+
+It adds up the same voltage and current through the 75km receptor.
+
+It adds up to the same amount of current because this resistance is trying to sink the same amount of
+
+current.
+
+So if I go over this resistance, you can notice that the current is almost constant.
+
+But there are still some fluctuations in current.
+
+Now, if there is a reduced current flowing through this right transistor, this means nothing else,
+
+but the output will start to rise, right?
+
+There will be less voltage drop across this resistance, so the output will start to rise towards the
+
+power supply voltage.
+
+Now, when input one force and inputs to rise is the right transistor is turning on more and more,
+
+pointing the output being two towards round.
+
+Or, in this case, to minus 15 volts.
+
+So when you put one force and input you raises, the output falls.
+
+There's a second case, which is the Commonwealth case that he put one and people to rise together.
+
+We already know that if both inputs are on the same voltage and face, the good voltage should be zero,
+
+right?
+
+But why?
+
+So if input one and input do rise together, this means that more voltage and current flows across both
+
+1km resistor, which in turn means more voltage and current across the 75 kilometres as well.
+
+But the 75 kms is a large resistor, right?
+
+And so a small increase in current produce is a large increase in voltage.
+
+So the changing current through the right transistor and the voltage change not put is much less in
+
+common mode than in the financial mode.
+
+Even though the common gain is much less than the differential would gain, unfortunately, the Commonwealth
+
+gain is still not zero.
+
+As you can see here, the output still fluctuates more than we would like.
+
+But no problem because the Silkwood can be improved using a current source in place of the 75km disaster.
+
+One more thing how to calculate the common, more rejection ratio of the circuit.
+
+We can't use this formula here where all one is this or these does little r e is the internal emitter
+
+a resistance of this transistor, which as we know, it's very small and capital r e is the emitter
+
+resistance.
+
+If we assume the emitter intrinsic resistance is zero, then the common mode rejection ratio is equal
+
+to 75 kms divided by one gilham, which is equal to seventy five.
+
+Now try to remember this value because we will compare this value to the common mode rejection ratio
+
+of our improved circuit.
+
+All right.
+
+So this is a very simple resource, but one that doesn't provide current workload or something else.
+
+But this time it seems a constant one point nine million current, so current resources can provide
+
+a constant current, but they can also seeing a constant current.
+
+This is a much better and cleaner design.
+
+As you can see, we got rid of the two meter resistances and we replaced the big 75kg resistance FIFA
+
+colonizers.
+
+Now, if you remember where we studied, the most basic resource, also a big resistance had to be used
+
+compared to the Lord's Resistance.
+
+So a change in lower resistance won't be able to change the current that is provided by the current
+
+source.
+
+But the problem is that the current will always fluctuate a little bit to no matter how big the value
+
+of the register is unless you design a currency like here.
+
+So how did we set these 1.9 million current?
+
+Hmm.
+
+I'm glad you asked.
+
+Don't be afraid by this minus 15 what's here this time?
+
+Look at it like a positive 50 models.
+
+If we look at this as a positive 50 models, then we will notice right away that actually there's a
+
+wattage divider formed by these two resistances.
+
+The output voltage of these voltage divider is minus twelve point four words, so that meter voltage
+
+is one they drop less than the base voltage, right?
+
+So it's minus twelve point four minus 0.6, which will be minus 13 woods.
+
+Now, the voltage drop across this resistance is to avoid scenes.
+
+From this point to this point, there is two was difference.
+
+Now, if this voltage difference, which is a little bit less than two volts, is divided with the value
+
+of diameter resistance, we will get the current of 1.9 million flowing on the emitter.
+
+But since they it'll clarity is equal to the current current, the current will have the same current
+
+on it.
+
+So this is how these current sources are seeing a constant 1.9million because the base voltage will
+
+be always constant, which in turn means the diameter of voltage will be constant, too.
+
+Alright, but why is this kind of thing necessary here, after all?
+
+How does it help us?
+
+Well, let's apply the same signal on both bases.
+
+So I will take this out and connect to the 40 year signal to the base.
+
+Do you observe how better the output signal looks compared to the one that had a 75 km distance here?
+
+The output voltage doesn't change at all.
+
+So we completely got rid of any common signal, so we can say that the common, more rejection ratio
+
+of the circuit is much better than on the previous example.
+
+The 40 year sine wave is not visible at all in the output.
+
+The equation of the Commonwealth rejection ratio is the same, but this time the resistance of our current
+
+source is much higher than the previous 75 kilometres distance here.
+
+In fact, an ideal current source has infinite resistance, right?
+
+So you can imagine that our one is much larger than the 75 kms.
+
+Let me put this fancy puzzle generator back to its place and notice that this time you are using a pulse
+
+generator just to show you how clean the pulse is, are the output.
+
+We use pulse generator instead of sine wave generator like we used to, because these tiny pulses are
+
+more sensible to noises and you would clearly see the distortion of the pulses if the circuit is poorly
+
+designed.
+
+In other words, the common mode ejection ratio would be too low.
+
+So the higher the common more rejection ratio, the better.
+
+In real world application, but I already mentioned that these 300, her signal, which represents our
+
+information, should be president or the other input do the opposite phase, but is just easier to visualize
+
+things like this if the same information is presented with opposite phase or the other input.
+
+It means that an input while rises input your fourth right.
+
+This is what opposite phase means.
+
+Now in differential mode case, which means when input air rises and input your forced by the same amount.
+
+There is more bass chorus through transistor one and less through Transistor two.
+
+There's also a corresponding increase in quick or current.
+
+The total current through the current source does not change, right?
+
+The reduced current to the right transistor causes the output rise so that input one falls.
+
+The input two raises.
+
+The output falls in the Commonwealth case, where an input one and input to rise together.
+
+The current source resists any change in bass currents.
+
+So the emitter voltages rise to match the input changes.
+
+Since Transistor two is collector, current hasn't changed.
+
+The output stays the same as well.
+
+Now you might ask yourself how to choose the value of this connector resistance while connected resistor
+
+is chosen as usual so that we put a quarter at half of the power supply voltage in order to get the
+
+large dynamic range.
+
+In other words, to get the maximum excursion, I already explained what maximum excursion for a signal
+
+means in my previous courses.
+
+So I assume you get it.
+
+If I stop the simulator, we can see that we don't have any pulse.
+
+The voltage is fixed between power supply voltage and ground, which allows the signal to move up to
+
+power supply voltage and down to zero.
+
+All right.
+
+So this is the end of the course.
+
+Thanks for watching.
+
+See you next, course.

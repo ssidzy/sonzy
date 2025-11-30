@@ -1,0 +1,43 @@
+So how do we check if a diet works and it's not broken, or how can we verify using a meter which leg
+
+is which?
+
+Let's say you are holding a diode in your hand.
+
+I don't know which leg is the anad or the kettle.
+
+Trust me, it happens quite often.
+
+Well, a good way to verify the identity of the terminals is using an o meter to figure out the forward
+
+current direction on the resistance.
+
+Setting the meter puts a smaller voltage on it test leads, which is why an o meter needs a battery
+
+and you use that small voltage to see which way current flows.
+
+So the diode is flipped in each image.
+
+If the o meter reads a finite resistance, that means the diode is conducting a small current in the
+
+forward direction and the red probe of the meter is touching the anode.
+
+If the meter reads or L, which comes from out of limits.
+
+The diode is not conducting Corren, which means that the red probe is touching the cathode.
+
+Now your meter might also have a diode setting, a little diode symbol.
+
+If it does, it will display the forward voltage when the red probe is touching the anode.
+
+So if you have a diode setting, the meter will display.
+
+Well, a typical reading is between about zero point two and zero point six or zero point seven.
+
+If you see some voltage appearing on the display of the meter, it means that the red probe is touching
+
+the anode and the black probe is touching the cathode.
+
+If you flip the two probes, the meter will show or well, again.
+
+

@@ -1,0 +1,113 @@
+Now that we understood the basics of Band Pass filter, let's see how to build a band pass filter using
+
+a register and inductor and the capacitor.
+
+The circuit design for such a Belfast filter is shown here.
+
+The center frequency of events filter, which is also termed the resonant peak, can be formulated by
+
+using the below equation.
+
+Where else is that in terms of the inductor and see is the capacitance of the capacitor?
+
+The frequency response curve of the band pass filter is shown here.
+
+The signal is attenuated at low frequencies, with the output increasing at a slope of 20 decibels per
+
+decade until the frequency reaches the lower cutoff frequency.
+
+After the lower cutoff frequency, the output will increase with the increase or frequency before rate
+
+of minus 20 decibel per decade and attains maximum gain.
+
+And this gain is constant until it reaches the higher cutoff frequency.
+
+After the higher cutoff frequency, the output decreases at a slope of minus 20 decibel per decade.
+
+Previously, we have seen that the phase shift of First Order filter is 90 degree.
+
+We know that the Band Pass filter is a second older filter, so the phase shift is twice of the first
+
+order filter that is 180 degree.
+
+The phase angle will vary with the increase of the frequency at the center frequency, the output and
+
+input signals are in phase with each other below the resonance frequency.
+
+The output signal leads the input signal and about resonant frequency.
+
+The output signal lags they would signal.
+
+The amplitude of the input signal is always greater than the output signal.
+
+The center frequency or resonant frequency at which the output gain is maximum can also be obtained
+
+by calculating the geometric mean of lower and upper cutoff frequency.
+
+Where F r is the resonant frequency or central frequency.
+
+F age is the upper minus three decibel cutoff frequency and f l is the lower minus three decibel cutoff
+
+frequency.
+
+Bent, as filters are widely used in wireless transmitters and receivers.
+
+The main function of such a filter in a transmitter is to limit the banned beef of the output signal
+
+to the band allocated for the transmission.
+
+This prevents the transmitter from interfering with other stations in a receiver.
+
+A bent best filter allows signals the final selected range of frequencies to be heard or decoded while
+
+preventing signals at unwanted frequencies from getting to.
+
+In both transmitting and receiving applications where design meant that filters having the optimum bandwidth
+
+maximize the number of signal transmitters that can exist in a system while minimizing the interference
+
+or competition among signals.
+
+Now an offer on the theory, and let's try to simulate an RLC band pass filter in our simulator.
+
+All right, here we are.
+
+Our Band Pass filter is composed of a resistor of 250 ohms and inductor of 500 million.
+
+And a capacitor of 32 micro threads.
+
+We also have a function generator that will generate a sound wave starting from 11 hertz, and we'll
+
+go all the way up to 150 hertz before we start the simulation.
+
+We need to know that based on the value of the components, the center frequency or the rhythm of the
+
+frequency of this band, that filter is 45 hertz.
+
+This means that this filter will pass a range of frequency close to the original frequency of the SC
+
+pair.
+
+When it gets close to the resonant frequency, the impedance of the SC pair increases, keeping the
+
+output closer to the input.
+
+All right, let's start the simulation and see if this filter does the job and really allows only the
+
+signals to pass through viva frequency close to this resonant frequency of 45 hertz.
+
+Note that the input voltage is a constant firewalled, so when the frequency gets closer to 45 hertz,
+
+the amplitude of the output signal has to be close to five volts.
+
+All right.
+
+The simulation has started, and as you can see, the signal below 45 hertz is attenuated.
+
+But as the frequency gets closer to 45 hertz, the amplitude starts increasing.
+
+After the frequency passes 45 hertz, the signal starts to get attenuated again, so this means that
+
+our bents filter works just fine.
+
+

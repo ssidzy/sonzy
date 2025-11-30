@@ -1,0 +1,329 @@
+Welcome back, guys.
+
+So a while ago, we mentioned about rectifiers, right, a rectifier is a crucial circuit in almost
+
+any device since most devices work on DC Current.
+
+However, the electricity that we get from the wall socket is AC voltage.
+
+Now, of course, depending on where you live, this AC voltage can be higher or lower.
+
+But however, it would be it's an AC voltage.
+
+And since most devices work on the AC, we need somehow to convert these AC voltage to a DC one so that
+
+we can power our electronic device.
+
+For example, if you have a mobile phone or a laptop, we have seen these charger that you plug into
+
+the wall socket and charges up your laptop or phone.
+
+Now, with AC voltage, of course, you cannot charge a battery.
+
+So every charger has a rectifier circuit inside of it which will convert this high voltage to a lower
+
+DC voltage, which is firewall's or trowels, whatever.
+
+This is basically done using a transformer which will lower the AC voltage coming from the worst of
+
+it.
+
+And then there will be a rectifier circuit which will convert the AC voltage to a DC one.
+
+And finally, we will have a voltage regulator circuit which will output a constant five words to or
+
+whatever, but more on voltage regulators later in the course.
+
+Now, converting AC to DC can be done by using a single diode or a group of diodes.
+
+Halfway rectifiers, for example, use a single diode while a four way rectifier uses multiple diodes.
+
+The working of a halfway rectifier takes advantage of the fact that the diodes only allow current to
+
+flow in one direction.
+
+A halfway rectifier is a seamless form of rectifier available.
+
+We will look at the complete halfway rectifier circuit later, but let's first understand exactly what
+
+this type of rectifier is doing.
+
+Now, this diagram that you can see here shows the basic principle of a halfway rectifier.
+
+When a standard AC waveform is passed through a halfway rectifier, only half of the AC waveform remains
+
+halfway.
+
+Rectifiers only allow one half cycle of the AC voltage through every block the other half cycle.
+
+Ursin here, only one diode is required to construct a halfway rectifier.
+
+In essence, this is whole that the halfway rectifiers doing since these systems are designed to have
+
+current flowing in a single direction, which is a constant voltage which we will describe later.
+
+Putting an AC waveform with positive and negative cycles through a DC device can have destructive and
+
+dangerous consequences.
+
+So we use half rectifiers to convert the AC input power into DC output power.
+
+But the diode is only part of it.
+
+A complete halfway ratifiers would consists of three main parts a transformer, a resistive load and
+
+diode a halfway rectifier circuit diagram looks like this.
+
+We will now go through the process of how halfway rectifier converts an AC voltage to a DC output.
+
+First, a high voltage is applied to the primary side of the adult transformer and we will get a low
+
+voltage on the secondary widing, which will be applied to the diode during the positive half cycle
+
+of the AC voltage.
+
+The diode will be forward by us and the current flows through the diamond during the negative half cycle.
+
+The AC voltage, the diode will be reversed by us and the flow of current will be blocked.
+
+The final output voltage waveform on the second side is shown here.
+
+This can be confusing on first glance.
+
+So let's dig into the theory of this a bit more.
+
+We will focus on the secondary side of the circuit.
+
+If we replace the secondary transformer cause before source voltage, we can simplify the circuit diagram
+
+of the halfway rectifier as shown here.
+
+Now, we don't have the transformer part of the circuit distracting us for the positive half cycle of
+
+the AC source voltage, the equivalent circuit effectively becomes as shown here.
+
+This is because the diode is forward biased and it has allowing current to pass through so we have a
+
+closed circuit, but for the negative half cycle of the AC source voltage, the equivalent circuit becomes
+
+as shown here because the diode is now in reverse bias mode.
+
+No current is able to pass through it.
+
+As such, we now have an open circuit since current cannot flow through the load during this time,
+
+the output voltage is equal to zero and this all happens very quickly since an AC waveform will oscillate
+
+between positive and negative many times each second, depending on the frequency of the aquifer.
+
+So here is what the halfway rectifier waveform looks like on the input side and what it looks like on
+
+the output side after ratification.
+
+That is the conversion from AC to D.C..
+
+This graph here shows a positive half where rectifier.
+
+This is a halfway rectifier, which only allows the positive half cycle through the diode and blocks
+
+the negative half cycle.
+
+So let's see how this works out in our simulator.
+
+Now, here, instead of using a standard transformer which we lower the AC voltage coming from the wall
+
+socket, we use a simple AC power supply, which is a 40 hertz, five words, AC power supply.
+
+And as you can see here, we have a diode and a load.
+
+Now, we already know that they are not currently only one direction, which is when the anode is more
+
+positive than the cathode.
+
+So there is a forward voltage drop across it.
+
+This means that when the AC voltage is in the positive half cycle, the diode will be forward, biased
+
+and allow the positive half cycle to be passed through.
+
+However, during the negative half cycle, the diet is reversed by us, so the method is more positive
+
+than the Senate, which will block the current through the diet.
+
+As a result, we can say that the diet takes the easy input and ratifies it so that the negative portion
+
+of the output is removed.
+
+And essentially, even if it's a pulsating voltage, it's a DC voltage.
+
+So the load receives a DC voltage because the current is passing through it in only one direction.
+
+The peak voltage of the output voltage is.
+
+Four point four words, because there's a zero point six words, bodies drop across the dial.
+
+Remember, there will always be a voltage diode when it's conducting current.
+
+Now, the obvious problem that we have here is that DC voltage, even if it's a DC voltage, it's a
+
+DC pulsating voltage.
+
+And the devices just cannot work with pulsating DC voltages.
+
+We somehow need to convert this DC pulsating voltage into a clean, constant DC voltage.
+
+But how are we going to do that?
+
+Well, here comes the filter.
+
+Filters are components used to convert or smooth out pulsating DC waveforms into constant or relatively
+
+constant DC waveforms.
+
+Although halfway rectifiers without filters are theoretically possible, they just can be used for any
+
+practical applications as DC equipement requires a constant waveform.
+
+We need to smooth out this pulsating waveform for it to be any use in the real world.
+
+And this is why in reality we use half a ratifiers with a filter, a capacitor or an inductor can be
+
+used as a filter, but halfway rectifiers with capacitor filter is the most commonly used.
+
+And this shows how a capacity filter can be used to smooth out a pulsating DC waveform into a constant
+
+DC waveform by placing us moving capacitor across the output of the rectifier and in parallel with our
+
+load, we can't get away from that.
+
+We re more to a DC voltage.
+
+The smoothing works because the capacitor charges up where the voltage from the rectifier rises above
+
+that of the capacitor, and then as the rectifier voltage falls, the capacitor provides the required
+
+Corot from its stored charge.
+
+In this way, the capacitor is able to provide charge when it is not available from the rectifier,
+
+and accordingly the voltage varies considerably less than if the capacitor were not present.
+
+So basically the capacitor will charge up to the peak voltage of the DC pulsating voltage.
+
+And then when this positive, pulsating voltage starts to fall, the capacitor will start discharging
+
+through the load.
+
+And here we are now, let's place a capacitor in parallel with the load and see what happens.
+
+Well, as you can see, the output waveform is not the one that we have expected.
+
+Why?
+
+Because the value of the capacitor is just too low since the value it's too low, the capacitor just
+
+cannot hold enough charge to maintain a constant DC voltage.
+
+Basically, it will discharge too fast since the current required by the load is high.
+
+So let's boost its value up to, let's say, 100 microworld.
+
+And now, as you can see, the output waveform is in a much better shape, if you look at the current
+
+passing through the load, the current is almost like a DC current.
+
+I said almost because there is a triple voltage on our D.C. voltage.
+
+So in simple terms, rieper voltage means the amount of AC voltage that appears on a DC voltage.
+
+So these kind of fluctuations that you see here is called us ripple.
+
+How can we completely eliminate that?
+
+Yes, one method is to increase the value of the capacitor to, let's say, 500 micro microflora.
+
+Now, as you can see, we have successfully eliminated DOS, big repairs and the voltage that our Lord
+
+received is almost a constant four point three words.
+
+Now, the question you might ask is, how can we calculate the value of the capacitor?
+
+Now, the thing is, there's no plant formula for a capacitor calculation.
+
+The choice of the capacitor value needs to fulfill a number of requirements.
+
+In the first case, the value must be chosen so that it's time.
+
+Constant is very much longer than the time interval between the successive peaks of the rectifier waveform
+
+where overload load is the overall resistance of the load for the supply sees the value of the capacitor
+
+in Farad's and F is the Reaper frequency.
+
+You remember about our time constant right?
+
+Multiplying the resistance of the load with the capacitor.
+
+We get a value in seconds.
+
+But what is the ripple frequency?
+
+If the frequency of the AC voltage that you get from your means is 50 hertz, that the radio frequency
+
+will also be 50 hertz?
+
+If you were using a fully ratified report, frequency will be double.
+
+But more on this later.
+
+In our example, we use a 40 hertz AC signal.
+
+So the radio frequency is as well 50 hurt.
+
+I mean, 40 hertz.
+
+Sorry.
+
+So we use a 500 microphone capacitor for a 640 or resistor.
+
+Right.
+
+And multiply these two values.
+
+We get a time constant of around zero point thirty two seconds.
+
+Now, the time interval between the successive peaks is one over frequency, which in our case is one
+
+over 40 hertz, which is zero point zero 25 seconds.
+
+So indeed, zero point thirty two seconds is much greater than zero point zero twenty five seconds,
+
+which means that the capacitor we are using is good enough.
+
+Now, the thing is, you don't really need to worry about calculating the value of the capacitor.
+
+I mean, it just doesn't need to be perfect.
+
+Why?
+
+Because you see it usually or all the time.
+
+We use a voltage regulator circuit after the filter capacitor.
+
+Basically a voltage regulator circuit is a circuit designed to automatically maintain a constant voltage.
+
+The voltage regulator will output a constant DC voltage, which can be three point three words, five
+
+words to avoid, etc. depending on the voltage regulator I see who are using.
+
+And this will basically take this filtered output voltage from the rectifier and convert it to a pure
+
+DC output voltage.
+
+We're going to learn about voltage regulators soon.
+
+Basically, the easiest voltage regulator can be done using just a single ZEHNDER diode.
+
+However, we are going to learn about more complex one using transistors now in the next course.
+
+Let's see how a full way rectifier works and see their.

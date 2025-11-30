@@ -1,0 +1,87 @@
+Now, if you think about it, the information that we want to send can be an either analog format like
+
+maybe talking to a microphone, but it can also be in digital format like was zeroes.
+
+So scientists were eager to find out how on earth could we broadcast ones and zeroes?
+
+And they came up with modulation techniques such as Ask FCC pesky KUNM Ask is the acronym for amplitude
+
+shift keying.
+
+FCC comes from frequency shift king.
+
+Then we have Perth shift keying and finally quadrature amplitude modulation.
+
+This time, the data transmitted is just a bunch of ones and zeros, and the carrier wave that will
+
+transport these ones and zeros is again a simple, high frequency sine wave.
+
+Now, the main reason why these type of migrations are so great is because they allow data to be multiplexed.
+
+An essential part of our telecommunications and telecommunications is the ability to share the channel.
+
+This is true regardless of whether the channel is copper wire, optical fibre or free space.
+
+If it's not shared, then there can only ever be one person transmitting on it at a time.
+
+Now think about the implications of this for a moment without the ability to share.
+
+There could only be one radio or TV station in each area.
+
+Only one mobile phone owner could use their phone in each cell, but any one time.
+
+And there would only be the same number of phone calls between any two cities as the number of copper
+
+wires or optical fibers that connected them.
+
+So sharing the channel is essential, and there are several methods of doing so.
+
+One is called time division multiplexing and involves giving the users exclusive access to the channel
+
+for short periods of time.
+
+On the face of it, this type of sharing might seem impractical.
+
+Imagine giving all mobile phone users in a cell just a minute or so to make their call than having to
+
+wait until their turn comes around again.
+
+However, time division multiplexing works well, then the access time is extremely short, usually
+
+less than a second, and the rate of the sharing is fast.
+
+This allows multiple users to appear to have access all at the same time.
+
+The way Amplitude Shift King works is relatively easy.
+
+Yes, he requires two input signals.
+
+First, input is a binary sequence signal, which is the message signal, and the second input is the
+
+carrier signal that would transport the message from one place to another.
+
+After modulation, we can notice that the strength or the amplitude of the carrier signal varies to
+
+represent binary one and binary zero data inputs.
+
+When the message signal is one, the carrier will stay the same.
+
+But when the data is zero, the amplitude of the carrier wave becomes zero.
+
+Frequency shifting is similar, but instead of the amplitude, we now vary the frequency of the carrier
+
+wave when the data transmitted is one.
+
+The frequency of the carrier wave does not modify, but when the data is zero, the frequency of the
+
+carrier wave changes.
+
+Following are the benefits or advantages of shift key modulation techniques.
+
+First and foremost, it offers a high bandwidth efficiency higher than if we were using simple aim or
+
+formulation.
+
+The modulation can be used to transmit digital data over optical fiber and finally shift keying.
+
+Modulation and demolition processes are comparatively inexpensive and easy to implement

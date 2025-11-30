@@ -1,0 +1,147 @@
+Hello.
+
+In this course, we will be discussing about a very important piece of electronics circuit, which is
+
+called us amateur follower.
+
+What do we see here?
+
+We see a signal generator which produces a firewalled sine wave with a frequency of 40 hertz.
+
+We have a NPRM transistor and a resistor on the emitter, which is used to limit the current and the
+
+transistor is turned on.
+
+So we don't make a short between the thin world power supply and ground, right?
+
+It is called the Scimitar follower because the output terminal is the emitter and not the collector.
+
+And this output terminal follows the input signal, which is a signal on the base.
+
+But the output signal is less than the input signal.
+
+If one diode drop, which as we already know, it's around zero point six or seven would.
+
+So the output is a replica of the input, but the 0.6 to 0.7 or less positive.
+
+The first cup represents the input signal from the signal generator, and the next call up represents
+
+the output signal.
+
+Let's start the simulation and notice that the output signal contains only the positive part of the
+
+input sign me right?
+
+Why do you think?
+
+Is that so?
+
+Our sine wave is actually towards peak to peak.
+
+So it goes up to positive firewalls, and after that it goes down to minus firewalls.
+
+You can see here as well that the color on the base is green, the voltage is positive and when it's
+
+read the work, it is negative.
+
+The wattage of the output signal is 4.3 volts, because as we said, there's a dire draw between the
+
+base and the meter.
+
+Unfortunately, the circuit has a deficiency and that is the output signal cannot go more negative than
+
+zero world because zero world, which is the ground, is the lowest point in the circuit.
+
+In this case, our output signal very only between these two limits, which is zero volt and then watts.
+
+So what can we do to solve this problem?
+
+Well, there are two possibilities.
+
+One possible solution is to add a biasing network for the transistor, which classes from these two
+
+resistors, which, after all, form a voltage divider, right?
+
+Since the value of these two resistors are equal, the output voltage of this voltage divider is about
+
+the half of the power supply to be more exact.
+
+It's 4.6 Walt.
+
+If the base voltage is a four point six volt, the emitter voltage will be one day a drop less.
+
+So 4.6 volt minus around 0.7 world is 3.9 volts.
+
+This means that even if the signal generator is taken out, there will be always a positive voltage
+
+on the base, which keeps the transistor in conduction mode, right?
+
+So why is this good for us?
+
+Well, we basically add together two different signals.
+
+We add the easy signal, which is our sine wave.
+
+We have the DC signal.
+
+This will rise the AC voltage automatically to three point nine wolf.
+
+So the easy signal will start its journey up and down from this point and on the ground, like in the
+
+previous circuit.
+
+And this is exactly what we wanted to be able to transmit our signal from one point to another without
+
+any loss of information.
+
+I forgot to mention that this capacitor here is a blocking capacitor, so it allows only the signal
+
+of interest to enter the circuit.
+
+In this case, the signal of interest is the sine wave, while any DC signal is blocked.
+
+The other possible solution, which is also widely used, is to add to the emitter a negative power
+
+supply.
+
+Now the output signal can have any voltage between these two values minus 10 volts and plus 10 volts.
+
+This allows us to transfer the sine wave, which can represent an audio signal or whatever information
+
+from the base to the emitters, as that's fully.
+
+At first glance, this circuit may appear quite thoroughly useless until you realize that the input
+
+impedance is much larger than the output impedance.
+
+This means that the circuit requires less power from the signal source to drive a given load than it
+
+would be the case if the single source were to drive the low directly.
+
+Or a signal of some internal impedance can now drive a load of comparable or even lower impedance without
+
+loss of amplitude from the usual voltage divider effect.
+
+In other words, a net meter follower has current gain, even though it has no voltage gain, it has
+
+power gain.
+
+Wattage gain isn't everything.
+
+In the last course, we will be discussing about this important output impedance.
+
+So you will understand why I said that a signal that has some internal impedance cannot drive a load
+
+of comparable or even lower impedance without loss of amplitude.
+
+So don't forget that all these signal generators in real world have some internal impedance, OK?
+
+In the simulator.
+
+It can be perfectly represented hooking a registering series with the signal generator.
+
+The output impedance of a single generator is small, and you have to take this value in consideration,
+
+especially when you connect this part of the circuit to another circuit.
+
+And we will see why in the next course.

@@ -1,0 +1,215 @@
+All right, so in these course, let's try to find out the input and output impedance of this emetophobia
+
+circuit, these transistor is biased using a voltage divider formed by our one and or to the resultant
+
+base voltage is then six point firewall's.
+
+So the ammeter voltage will be one diode drop less.
+
+Right, which is five point eight void's.
+
+Since the middle voltage is five point eight volts, the collector ammeter voltage will be to Edwards,
+
+which is the connector voltage minus five point eight void's.
+
+Right.
+
+So it's six point two words.
+
+Now, how to calculate the meter current.
+
+I know it says here one point twenty three millions.
+
+But why?
+
+Well, using Ohm's Law current is equal to voltage divided by resistance.
+
+Right?
+
+The meter voltage at this point is five point eight volts and šemeta resistance is four point seven
+
+km.
+
+As a result, five point eight was divided by a four point seven km is equal to one point twenty three
+
+million's great now compared to a common emitter amplifier.
+
+A common collector, in other words.
+
+And a meter follower is not very good at being a voltage amplifier because as we have seen, it's more
+
+signal voltage gain is approximately equal to one.
+
+So instead of amplifying the voltage, it amplifies in current, the greatest feature of an ATM follower
+
+is that it can provide current gain as long as it is conducting.
+
+That is, it can't pass a large current flowing from collector to the emitter in response to a small
+
+change to its base current.
+
+All right.
+
+So let's see how we can calculate the input impedance of this circuit.
+
+In order to find it out, you have to ask yourself, what does the input AC signal sees when it enters
+
+the circuit?
+
+Consider this circuit instead without displaying the values of the components.
+
+And beside that, a load is connected to the end before copying capacitor in between.
+
+Now for AC analysis of the circuit.
+
+The capacitors are shorted because AC pass through a capacitor without a problem, right?
+
+Whereas these signals are blocked.
+
+But since this is AC analysis, the capacitor are considered as shorted.
+
+They are nothing else but a piece of wire.
+
+Now, using this term we will find out that these two resistors are one and are two are actually in
+
+parallel.
+
+And also notice that these two resistors are in parallel.
+
+This means that the bass resistance is equal to or one in parallel to R2 and the equivalent Šemeta resistance
+
+is equal to or even in parallel to the Lord's Resistance.
+
+Now, the input impedance, which is that in of the common connector configuration and looking into
+
+the base, is given US air bias in parallel with base impedance.
+
+The base impedance is actually equal to better times are e plus little r e.
+
+Well, there are a lot of calculations actually to get to this point, but I really don't want to bore
+
+you out.
+
+And on the other hand, I don't think it's necessary to go through all those calculations.
+
+But what is this?
+
+R.E. Well, this little R.E. is nothing else but the equivalent AC resistance value of the ammeter diode.
+
+Usually people don't pay attention to it because it's very small compared to the actual šemeta resistance.
+
+But this time is necessary to know in order to find the input impedance.
+
+So the Amita's P and Junction effectively acts as a forward bias diode.
+
+And for small AC input signals, these ammeter diode junction has a resistance given by 25 millivolts
+
+divided by the meter current, where the 25 millivolts is a thermo voltage of the junction at room temperature.
+
+So as room temperature at 25 degrees Celsius to be more exact.
+
+This might be confusing, but Ari is not the šemeta resistance, but it's the equivalent Lord's Resistance,
+
+which is equal to the Šemeta resistance being in parallel with the Lord's Resistance, replacing the
+
+values in the equation, we get an equivalent Lord's Resistance of three point two kms.
+
+Now we have everything in order to calculate a transistor basic impedance except the BITA.
+
+Let's assume that the beat of the transistor is 100.
+
+If the Beita is 100, the evidence will be equal to 320 to Killens.
+
+Great.
+
+Now, let's try to find out that our bias, well, our bias is nothing else but the equivalent of bias,
+
+for instance, which is formed by our one being in parallel to argue.
+
+So the human resistance is then three thousand seventy ohm.
+
+Now that we know the bias resistance and the base impedance they put impedance of the circuit will be
+
+two point eight km.
+
+If we look fully to this equation, we can't notice an important thing.
+
+Actually, the basic paedos doesn't have very much influence on the overall input.
+
+Embitters 2.8 km is very close to the value of the equivalent biased resistance, which is three thousand
+
+seventy ohm.
+
+Right.
+
+So the transistors baozi impedance of 322 km is much higher than the amplifiers input impedance of only
+
+two point eight km.
+
+Thus the input impedance of the common collected amplifier is determined by the ratio of two biasing
+
+resistors, which are our one and or two.
+
+And that's it.
+
+They put the pittances 2.8 km.
+
+Now what about the input.
+
+Sorry, the output impedance.
+
+To determine the ammeter follower's output impedance, looking from the lowered back into the amplifiers
+
+ATM terminal, we must first remove the load as we want to see the effective resistance of the amplifier
+
+that is driving the load.
+
+The equation to determine the output impedance is the following, and we can see that the Šemeta resistor
+
+is effectively in parallel with the whole impedance of the transistor.
+
+Looking back into its ammeter terminal.
+
+If we calculated the output impedance of our common emitter amplifier circuit using the component values,
+
+it would give us an output impedance of less than 50 ohms, which is much smaller than the higher input
+
+impedance which was calculated previously.
+
+As a result, we can see that the common Claitor amplifier configuration has from calculation a very
+
+high input impedance and a very low output impedance, allowing it to drive a load that requires high
+
+current.
+
+And since it has a high input impedance, the amplifier will draw very little current from the source,
+
+which is very good in cases.
+
+Then, for example, the source signal is weak and it cannot provide current to the amplifier.
+
+Having determined that R20 paedos of our example amplifier is approximately 50 ohm by calculation,
+
+if we now connect the 10 km load resistor back into the circuit, the resulting output impedance will
+
+be the output impedance that we just calculated in parallel with the Lord's Resistance.
+
+And now the new output impedance is equal to forty nine point three ohm.
+
+Although the lower resistance is 10 km, the equivalent output resistance is still very low at forty
+
+nine point three ohm.
+
+And this is because Orell is very large compared to the output impedance of the SM follower.
+
+All right.
+
+So as a summary, we have seen that the input impedance of an immediate follower is high y its output
+
+impedance is low, which makes it useful for impedance matching purposes or as a buffer circuit between
+
+a wealthy source and a low impedance load.
+
+And to avoid any confusion, a low impedance load is nothing else but a load, like, for example,
+
+a motor or a speaker that requires high current to operate.

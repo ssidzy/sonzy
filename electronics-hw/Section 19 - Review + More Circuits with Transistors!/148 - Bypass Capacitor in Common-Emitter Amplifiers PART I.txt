@@ -1,0 +1,123 @@
+Hello when we come back.
+
+So in my first course intended for beginners, I have explained how to build a common šemeta rapid fire
+
+from scratch so I would not cover it again here.
+
+Instead, we will understand why engineers place a capacitor in parallel with the Šemeta resistor.
+
+I'm sure you stumbled upon this before.
+
+So in this course we will see the effect of this capacitor on the overall self-willed behavior on.
+
+First, why are bipeds competitors using optronics?
+
+Well, the main purpose of a bypass competitor is to shunt the undesirable high frequency components
+
+of a power supply while passing the desirable D.C. Circuit without bypass.
+
+Cabaser or improper bypassing can create severe power disturbances and may lead to a circuit failure.
+
+Hence, an appropriate bypass capacitor must be used in the circuit.
+
+Almost all analog and digital devices use bypass capacitors.
+
+So in both these devices, a bypass capacitor, usually a capacitor of value zero point one micro is
+
+placed very closely to the power pinions.
+
+Power supply sources also use bypass capacitors, and they are usually a larger than micro capacitors.
+
+The value of bypass capacitor is dependent on the device.
+
+Like, for example, in case of power supplies, it is between 10 to 100 microworld and in case of ices
+
+it is usually zero point one microworld or determined by the frequency of operation.
+
+If the bandwidth of the device is approximately one megahertz, one microworld bipeds capacitors used,
+
+if the bandwidth is approximately 10 megahertz or above zero point one microflora capacitor is used.
+
+But in some applications, a network of bypass capacitors in parallel is used to filter a wide range
+
+of frequencies.
+
+Great.
+
+Now what about the emitter Cabaser?
+
+Let's remove the capacitor for a second.
+
+All right.
+
+So a transistor is an active device and in order to work, it needs DC power, right?
+
+This power source is VXI.
+
+In this case, VXI is equal to 15 volts.
+
+These 15 volts provides power to the transistor so that the transistor can amplify signals.
+
+If we wanted this signal to be us purely a DC as possible.
+
+Right.
+
+Although we obtain our DC voltage VXI from a DC power source such as a power supply, the voltage isn't
+
+always purely DC.
+
+In fact, many times the voltage is very noisy and contains a lot of AC reports on it, especially the
+
+50 or 60 hertz frequency, because this is the frequency at which AC signals are on in many countries.
+
+So although we want a pure DC signal such as this one, many times we get a noisy signal that looks
+
+like this.
+
+These signal such as this is actually very common and this is undesired because it adds noise to the
+
+transistor circuit and therefore this noisy DC signal will be imposed on the AC signal.
+
+So the AC signal, which may have music or some type of recording, will now have much more noise.
+
+This noise, which is on the signal, is a skripal.
+
+Many times when using a DC power supply connected to an AC power outlet, it will have some of the AC
+
+noise transfer to the DC power voltage.
+
+AC Reaper can also appear from other sources, like, for example, even batteries can produce noise
+
+to eliminate these AC people use a bypass capacitor.
+
+A capacitor, as you already know, is a device that offers a tremendously high resistance for signals
+
+of low frequencies.
+
+Therefore, signals at low frequencies will not go through them.
+
+And this is because signals always take the path of least resistance.
+
+Therefore, they will instead go through the resistor r e.
+
+And remember, again, this is for low frequency signals, which is basically the easy signals.
+
+However, capacitors offer much less resistance at higher frequencies, so AC signals will go through
+
+the capacitor and then to ground.
+
+Therefore these signals will go through the resistor.
+
+Ari, while AC signals will go through the capacitor getting shunted to ground so AC signals get shunted
+
+around.
+
+This is how we have a clean DC signal across our circuit while AC noise imposed on it is bypassed to
+
+ground.
+
+So a bypass capacitor blocks the DC from entering it by the great resistance it offers to the signal,
+
+but accepts the AC noise that may be on the DC line and shantz or bypasses it to ground.
+
+And this is how by Best Capacitor works.

@@ -1,0 +1,85 @@
+You might have probably heard about a root mean square voltage.
+
+Well, we have this time of year, and we know that the value of an AC voltage is continually changing
+
+from zero up to that positive peak through zero to the negative peak and back to zero again.
+
+Clearly, for most of the time, it is less than the peak voltage.
+
+So this is not a good measure of its real effect.
+
+Instead, we use the root mean square voltage, which is zero point seven of the peak voltage.
+
+So the Irma's voltage is equal to zero point seven times the peak voltage and the B what is equal to
+
+one point four times the erroneous voltage.
+
+These two equations also apply to current.
+
+It is important to note that these equations are only true for same Aves, which is the most common
+
+type of AC because the 0.7 and 1.4 factors are different values for other shapes.
+
+So the armées value is the effective value of a varying voltage or current.
+
+It is the equivalent steady DC value, which gives the same effect.
+
+So, for example, we have here two idea almost identical circuits.
+
+The only difference is that the first lightbulb is driven by a 120 volt DC power source and the other
+
+one from a 170 volts AC power source.
+
+So even though the voltage of this AC power source is higher than the DC power source, the effective
+
+power that it gives to this light bulb is the same with the power given by this 120 volt DC power source.
+
+And that's because the Oremus value of this one hundred seventy volts is one hundred twenty volts.
+
+So if I started the simulator, you can notice that the amount of time for both lightbulbs to warm up
+
+is identical.
+
+And also the brightness of both of them is the same.
+
+So how or if I change the voltage of the AC to 120 volts, the Oremus value will be around 18 voltage
+
+for 80 volts, if I'm not mistaken.
+
+And if I reset the simulator and start again, you can notice the difference.
+
+This gives less power to the light bulb right now, and this light bulb needs much more time to warm
+
+up than this one here.
+
+You might find it helpful to think of the Oremus value you sort of average, but please remember that
+
+it is not really the average.
+
+In fact, the average voltage of a typical AC signal is zero because the positive and negative parts
+
+are exactly cancel out.
+
+Now the question is if you have a work meter or a multi meter, for example, and you want to check
+
+the AC voltage of your outlet with your altimeter showed the peak voltage or the R-Miss. voltage.
+
+Well, your work better than it is positioned on the AC and not DC.
+
+We always show you the Oremus value.
+
+For example, in North America, the peak voltage provided by the outlet is 170 volts, and when you
+
+check it with your meter, you will see the value of one hundred twenty volts.
+
+The following question that I often hear is that what does six with AC really mean?
+
+Is it the Aruba's or the peak voltage where if the peak value is meant, it should be clearly stated
+
+otherwise assume it is the oremus value in everyday use.
+
+AC voltages and currents are always given us oremus value because this allows a sensible comparison
+
+to be made.
+
+We've studied these voltages and currents, of course, such as from a battery.

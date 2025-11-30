@@ -1,0 +1,151 @@
+Consider an RACC liquid in which a resistor inductor and capacitor are connected in a series across
+
+the AC water supply.
+
+This series, Oracy Circuit, has a distinguishing property of resonating at a specific frequency called
+
+resonant frequency.
+
+So let me explain.
+
+It is a liquid containing inductor and capacitor.
+
+The energy is stored in two different ways.
+
+First, and current flows in another, energy gets stored in a magnetic field.
+
+Second, when a person is charged, energy gets stored in static electric field.
+
+The magnetic field in the doctor is built by the current, which is provided by the discharging capacitor.
+
+Similarly, the capacitor is charged by the current produce by collapsing the magnetic field of doctor.
+
+And this process continues on and on, causing electrical energy to oscillate between the magnetic field
+
+and the electric field.
+
+In some cases, a certain frequency called resonant frequency, the inductive reactor.
+
+So the circuit becomes equal to capacity reactants, which causes the electrical energy to oscillate
+
+between the electric field of the capacitor and magnetic field of the inductor.
+
+This forms a harmonic oscillator for current.
+
+So if you find it difficult to understand, don't worry, because we will do a simulation soon now.
+
+So how do we find out the frequency, that particular frequency that the circuit starts resonating?
+
+First, we know that inductive reactors is directly proportional to frequency.
+
+This means that the higher the frequency, the higher the inductive reactors.
+
+On the other hand, the capacity of reactors is inversely proportional to frequency.
+
+As the frequency increases, capacity of reactors decreases the plot of the reactor size versus frequencies
+
+shown here based on these two graphs.
+
+It can't be concluded that the endarterectomy is directly proportional to the frequency and capacity
+
+of reactors is inversely proportional to frequency.
+
+That is a low frequency.
+
+Inductive reactants is low and capacity reactors is high.
+
+But there must be a frequency where the value of inductive reactors becomes equal to capacity reactors.
+
+So now if you plot a single graph of inductive reactors versus the frequency and capacity, reactants
+
+versus frequency, then there must occur a point where these two graphs caught each other.
+
+At that point of intersection, the inductive and capacity reactors becomes equal, and the frequency
+
+at which these two reactors become equal is called resonant frequency.
+
+A resonant frequency endarterectomy is equal to capacity.
+
+Reactance frequency or F in this equation is the resonant frequency and it can be calculated as follows.
+
+So there is a frequency is equal to one or two p times square root of inductance times capacitance.
+
+So what's interesting here are the resonant frequencies that this particular frequency that you reactance
+
+is become equal and cancel each other out.
+
+So resonant series is circuit.
+
+The opposition to the flow of current is due to resistance only at resonance, the total impedance of
+
+serious Orestis here, which is equal to resistance.
+
+Ah, so you might say, what's the big deal?
+
+Well, the thing is that as resonance, the circuit acts purely as a resistive circuit, causing a large
+
+amount of coral to circulate through the circuit.
+
+If it happens that you have an art circuit and somehow the circuit starts resonating, you can destroy
+
+some components around due to the high current that circulate in the circuit.
+
+At Resonance in a series Oreste Circuit, both inductive acrobats, directors cancel each other, and
+
+we know that in series circuit, the current flowing through all the elements is seen same.
+
+So the voltage across inductor and capacitor is equal in magnitude and opposite in direction, and thereby
+
+they cancel each other.
+
+So in a series resonant circuit, voltage across resistor is equal to supply voltage and the current
+
+will be equal to voltage divided by impedance.
+
+But resonance current will be equal to voltage divided by R, and therefore the current at resonant
+
+frequency is maximum.
+
+Now let's head to our simulator.
+
+And here we are, as you can see, we have three identical selkowitz, only the frequency of the AC
+
+source differs, not very much, just slightly.
+
+The middle one is being driven by the resonance frequency and thus you can see the peak voltage in the
+
+middle.
+
+Circuit is very high because it is resonating with the source.
+
+So the top one is being driven at a slightly lower frequency and the bottom one has a slightly higher
+
+frequency.
+
+If you want to find out the resonance frequency of these RACC, every circuit, you can use this formula.
+
+And if you do the math, you will get exactly forty one point one hertz.
+
+Notice that this particular frequency, the peak voltage, is around one hundred twenty eight points,
+
+which is much higher than the voltage at the other two circuits, which is quite interesting since only
+
+the frequency of the AC source differs slightly.
+
+On the other hand, the current should be firewalled, divided by 10 ohms, which is five hundred millions.
+
+And if you check it.
+
+Indeed, it's around five hundred millions, so that currently the first year is only 59 millions while
+
+in the Third Circuit, one hundred millions.
+
+So there is quite a big difference between the voltage and current resonant frequency.
+
+If you don't pay attention, you could aswell destroy your circuit and you don't necessarily need an
+
+here in real world.
+
+Even Treacy's have some small, tiny nocturnes and that tiny inductance with the capacitor you see could
+
+start resonating, which is something very undesirable.

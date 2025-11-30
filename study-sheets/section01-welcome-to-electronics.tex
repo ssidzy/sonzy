@@ -1,0 +1,397 @@
+\documentclass[a4paper,9pt]{article}
+
+% Packages
+\usepackage[margin=0.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
+\usepackage{graphicx}
+
+% ====================================================================
+% CONFIGURATION - Section 01: Welcome to Electronics I
+% ====================================================================
+\newcommand{\topicname}{Introduction to Electronics}
+\newcommand{\sectionnumber}{Section 01}
+\newcommand{\sectionname}{Welcome to Electronics I}
+% ====================================================================
+
+% Color definitions
+\definecolor{headercolor}{RGB}{13,71,161}        % Deep Blue - Main header
+\definecolor{sectioncolor}{RGB}{26,115,232}      % Bright Blue - Section borders
+\definecolor{tldrcolor}{RGB}{255,245,230}        % Light Orange - TL;DR background
+\definecolor{tldrborder}{RGB}{255,152,0}         % Orange - TL;DR border
+\definecolor{detailcolor}{RGB}{232,245,233}      % Light Green - Detail background
+\definecolor{detailborder}{RGB}{56,142,60}       % Green - Detail border
+\definecolor{examplecolor}{RGB}{255,243,224}     % Light Amber - Example background
+\definecolor{exampleborder}{RGB}{245,124,0}      % Deep Orange - Example border
+\definecolor{keypointcolor}{RGB}{227,242,253}    % Light Blue - Key Points background
+\definecolor{keypointborder}{RGB}{25,118,210}    % Blue - Key Points border
+\definecolor{boxcolor}{RGB}{240,248,255}         % Light blue for decorative boxes
+
+% Custom box styles
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{tldrbox}{
+    colback=tldrcolor,
+    colframe=tldrborder,
+    fonttitle=\bfseries\large,
+    title=1. TL;DR (The Gist),
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+\newtcolorbox{detailbox}{
+    colback=detailcolor,
+    colframe=detailborder,
+    fonttitle=\bfseries\large,
+    title=2. Detailed Explanation,
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+\newtcolorbox{examplebox}{
+    colback=examplecolor,
+    colframe=exampleborder,
+    fonttitle=\bfseries\large,
+    title=3. Practical Example \& Numerical,
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+\newtcolorbox{keypointsbox}{
+    colback=keypointcolor,
+    colframe=keypointborder,
+    fonttitle=\bfseries\large,
+    title=4. Key Points (Interview Focus),
+    breakable,
+    rounded corners,
+    boxrule=2pt,
+    top=6pt,
+    bottom=6pt,
+    left=8pt,
+    right=8pt
+}
+
+% Section formatting
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{sectioncolor}}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{sectioncolor}}
+  {\thesubsection}{1em}{}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Compact lists
+\setlist{nosep, leftmargin=15pt, itemsep=2pt}
+
+% Table of Contents formatting
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforesecskip}{5pt}
+\renewcommand{\cftsecfont}{\normalsize\bfseries\color{sectioncolor}}
+\renewcommand{\cftsecpagefont}{\normalsize\color{sectioncolor}}
+
+% Document start
+\begin{document}
+
+% ====================================================================
+% TITLE PAGE
+% ====================================================================
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    % Title
+    {\Huge\bfseries\color{headercolor} ELECTRONICS\\[0.3cm] STUDY SHEET\par}
+    \vspace{1cm}
+    
+    % Decorative line
+    {\color{sectioncolor}\rule{0.8\textwidth}{2pt}\par}
+    \vspace{1.5cm}
+    
+    % Topic and Section
+    {\LARGE\color{headercolor}\topicname\par}
+    \vspace{0.5cm}
+    {\Large\color{sectioncolor}\sectionnumber~--~\sectionname\par}
+    \vspace{2cm}
+    
+    % Description box
+    \begin{tcolorbox}[
+        colback=boxcolor,
+        colframe=sectioncolor,
+        width=0.8\textwidth,
+        arc=3mm,
+        boxrule=1.5pt
+    ]
+    \centering
+    \large
+    \textbf{Comprehensive One-Page Study Guide}\\[0.3cm]
+    \normalsize
+    Covering fundamental concepts, formulas, examples,\\
+    and interview-focused key points
+    \end{tcolorbox}
+    
+    \vfill
+    
+    % Bottom information
+    {\large\color{headercolor}
+    Electronics Engineering Reference Series\\[0.2cm]
+    \normalsize
+    \today
+    \par}
+    
+\end{titlepage}
+
+% Reset geometry for content page
+\newgeometry{margin=0.4in}
+
+% ====================================================================
+% TABLE OF CONTENTS
+% ====================================================================
+\begin{center}
+    {\LARGE\bfseries\color{headercolor} TABLE OF CONTENTS}
+    \vspace{0.3cm}
+    \hrule height 2pt
+\end{center}
+\vspace{0.3cm}
+
+\tableofcontents
+\vspace{0.5cm}
+
+\begin{center}
+\hrule height 1pt
+\end{center}
+
+\newpage
+
+% ====================================================================
+% MAIN CONTENT PAGE
+% ====================================================================
+
+% Suppress section numbering
+\setcounter{secnumdepth}{0}
+
+% Header
+\begin{center}
+    {\Huge\bfseries\color{headercolor} ELECTRONICS STUDY SHEET}
+    \vspace{0.2cm}
+    \hrule height 2pt
+    \vspace{0.3cm}
+\end{center}
+
+% Topic and Section Information
+\noindent
+\begin{tabular}{@{}ll}
+    \textbf{\large TOPIC:} & \textcolor{headercolor}{\large \topicname} \\[0.1cm]
+    \textbf{\large SECTION:} & \textcolor{headercolor}{\large \sectionnumber~--~\sectionname} \\
+\end{tabular}
+
+\vspace{0.25cm}
+
+% 1. TL;DR Section
+\section{TL;DR (The Gist)}
+\begin{tldrbox}
+\begin{itemize}
+    \item Electronics is the field that manipulates electrical current to perform useful and interesting tasks, going beyond simple electrical devices that just convert energy to heat, light, or motion
+    \item The Edison Effect in 1883 marked the birth of electronics when Edison discovered current flow from a heated filament, creating the world's first electronic device
+    \item Electronic circuits use components (resistors, capacitors, diodes, transistors, ICs) mounted on circuit boards to control and manipulate electric current flow in meaningful ways
+\end{itemize}
+\end{tldrbox}
+
+\vspace{0.25cm}
+
+% 2. Detailed Explanation Section
+\section{Detailed Explanation}
+\begin{detailbox}
+
+\textbf{Working Principle:}
+\begin{itemize}
+    \item Electronics manipulates electrical current by adding meaningful information (audio, video, control signals) rather than just converting electrical energy into other forms
+    \item Electric current is the flow of free electrons through conductors (like copper) when motivated by voltage
+    \item Electronic components work together on circuit boards to bend, twist, restrict, strengthen, or direct current flow to achieve specific functions
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Key Components \& Their Roles:}
+\begin{itemize}
+    \item \textbf{Atoms \& Electrons:} Foundation of electricity - atoms (especially copper) have loosely bound valence electrons that can move freely
+    \item \textbf{Voltage:} The pushing force (like pressure in a water pipe) that motivates electrons to flow
+    \item \textbf{Electronic Components:} Resistors (restrict flow like speed bumps), capacitors (smooth variations/store energy), diodes (one-way flow), transistors (amplify/switch), ICs (complex functions)
+    \item \textbf{Circuit Boards (PCBs):} Provide pathways (copper/silver traces) connecting components in specific order
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Step-by-Step Operation:}
+\begin{enumerate}
+    \item Voltage source applies pressure to free electrons in conductor material
+    \item Electrons begin to flow from negative to positive terminal, creating electric current
+    \item Current flows through circuit board traces to various electronic components
+    \item Each component manipulates the current in specific ways (restricting, amplifying, directing, storing)
+    \item Components work in sequence to add meaningful information or perform control functions
+    \item Final output delivers useful result (sound, images, control signals, computation)
+\end{enumerate}
+
+\vspace{0.15cm}
+
+\textbf{Important Formulas \& Theory:}
+
+\textit{Atomic Structure:}
+\begin{itemize}
+    \item Nucleus (protons + neutrons) + orbiting electrons
+    \item Atomic Number = number of protons (defines element)
+    \item Copper: 29 protons, 29 electrons, 1 valence electron
+\end{itemize}
+
+\textit{Electrical Units:}
+\begin{align*}
+    \text{Voltage:} \quad & \text{Measured in Volts (V)} \\
+    \text{Current:} \quad & \text{Measured in Amperes (A)} \\
+    \text{Power:} \quad & \text{Measured in Watts (W)}
+\end{align*}
+
+\textbf{Key Relationships:}
+\begin{itemize}
+    \item Higher voltage $\rightarrow$ more electrons can flow (like higher water pressure)
+    \item Free valence electrons in conductors enable current flow
+    \item Electronic devices manipulate current vs. electrical devices convert energy
+\end{itemize}
+
+\end{detailbox}
+
+\vspace{0.25cm}
+
+% 3. Practical Example & Numerical Section
+\section{Practical Example \& Numerical}
+\begin{examplebox}
+
+\textbf{Practical Application - Edison's First Electronic Device (1883):}
+\\[0.1cm]
+Edison's team noticed carbon particles from the heated filament darkened one end of the light bulb. They inserted a third wire to test if electric charge was flowing from the filament. This discovery led to a voltage monitoring and regulation device - the first practical electronic circuit that could automatically adjust voltage levels.
+
+\vspace{0.2cm}
+
+\textbf{Circuit Board Analysis:}
+\\[0.1cm]
+When examining a typical circuit board:
+\begin{itemize}
+    \item \textbf{Component Side:} Contains resistors, capacitors, diodes, transistors, ICs arranged like ``little buildings in a city''
+    \item \textbf{Trace Side:} Silver/copper conductive pathways connect components like ``streets connecting buildings''
+    \item \textbf{Function:} Components manipulate current while traces route it in correct sequence
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Numerical Analysis - Copper as Conductor:}
+
+\begin{align*}
+    \text{Atomic Number:} \quad & 29 \text{ protons} \\
+    \text{Electrons:} \quad & 29 \text{ (equal to protons in neutral atom)} \\
+    \text{Valence Electrons:} \quad & 1 \text{ (loosely bound in outer shell)}
+\end{align*}
+
+\textbf{Why Copper?} That single valence electron is very easy to move, making copper an excellent conductor.
+
+\vspace{0.15cm}
+
+\textbf{Voltage Comparison:}
+\begin{align*}
+    \text{Household electricity:} \quad & 120\,\text{V} \\
+    \text{Flashlight battery:} \quad & 1.5\,\text{V} \\
+    \text{Car battery:} \quad & 12\,\text{V}
+\end{align*}
+
+\textbf{Power Ratio Calculation:}
+\begin{equation*}
+    \text{Ratio} = \frac{120\,\text{V}}{1.5\,\text{V}} = \boxed{80\times \text{ more voltage}}
+\end{equation*}
+
+\end{examplebox}
+
+\vspace{0.25cm}
+
+% 4. Key Points Section
+\section{Key Points (Interview Focus)}
+\begin{keypointsbox}
+
+\textbf{Essential Facts to Remember:}
+\begin{enumerate}
+    \item \textbf{Electronics vs. Electrical:} Electrical devices convert energy (light, heat, motion); Electronic devices manipulate current to add information and perform complex functions
+    \item \textbf{Edison Effect (1883):} Birth of electronics - discovered current flow from heated filament to third wire, creating first electronic device for voltage regulation
+    \item \textbf{Electric Current:} Flow of free electrons through conductors, motivated by voltage pressure
+    \item \textbf{Atomic Foundation:} Valence electrons (outer orbit) can escape atoms and become free electrons for conduction
+    \item \textbf{Circuit Board Components:} Resistors (restrict), capacitors (smooth/store), diodes (one-way), transistors (amplify/switch), ICs (complex tasks)
+    \item \textbf{Voltage as Motivation:} Like water pressure - higher voltage pushes more electrons through conductor
+    \item \textbf{Safety Warning:} Capacitors can store lethal electrical energy even when device is unplugged
+\end{enumerate}
+
+\vspace{0.15cm}
+
+\textbf{Common Interview Questions:}
+\begin{itemize}
+    \item \textbf{Q1:} What is the fundamental difference between electrical and electronic devices? \\
+    \textit{A:} Electrical devices convert electrical energy into other forms (heat, light, motion). Electronic devices manipulate the electrical current itself to add information and perform complex functions.
+    
+    \item \textbf{Q2:} What was the Edison Effect and why is it significant? \\
+    \textit{A:} In 1883, Edison discovered current flow from a heated filament to a third wire in a light bulb. This is considered the birth of electronics and led to the world's first electronic device.
+    
+    \item \textbf{Q3:} What is electric current at the atomic level? \\
+    \textit{A:} Electric current is the flow of free valence electrons through conductor materials, motivated by voltage (electrical pressure).
+    
+    \item \textbf{Q4:} Why is copper commonly used as a conductor? \\
+    \textit{A:} Copper atoms have one loosely bound valence electron in their outer shell that is very easy to move, making it an excellent conductor.
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Typical Applications:}
+\begin{itemize}
+    \item Audio electronics: Adding sound information to current (phones, music players, speakers)
+    \item Video electronics: Adding image information to current (TVs, cameras, displays)
+    \item Control electronics: Monitoring and adjusting voltage/current levels automatically
+    \item Communication: Telegraph (1830s), transatlantic cable (1866), modern cell phones
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Limitations \& Safety:}
+\begin{itemize}
+    \item Electrical safety: Can deliver fatal shocks (100+ years of electric chair use)
+    \item Capacitors store dangerous energy even when unplugged - major safety hazard
+    \item Component sensitivity: Damage from heat, moisture, static electricity
+    \item Complexity: Requires understanding of voltage, current, watts, amps relationships
+\end{itemize}
+
+\end{keypointsbox}
+
+% Footer
+\vspace{0.15cm}
+\hrule height 1pt
+\begin{center}
+    \small\textit{Electronics Study Sheet | Section 01 | Generated on \today}
+\end{center}
+
+\end{document}

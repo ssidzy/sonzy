@@ -1,0 +1,213 @@
+Welcome, welcome, welcome.
+
+In this course, I'm going to introduce you to the 'hello world' of electronics. If 'hello world' in programming
+
+is the first program that you write to display a message to the terminal
+
+'Hello world' in electronics is like building a circuit to light up an LED.
+
+So what is an LED?
+
+You see, LEDs are all around us, in our phones, our cars and even our homes.
+
+Any time something electronic lights up, there's a good chance that an LED is behind it.
+
+They come in huge variety of sizes, shapes and colors
+
+But no matter how they look, how they work under the hood is all the same.
+
+In short, LEDs are like tiny light bulbs.
+
+However, LEDs require a lot less power to light up
+
+by comparison. They're also more energy-efficient, so they don't tend to get hot like conventional
+
+light bulbs do unless you are really pumping some serious power into them.
+
+This makes them ideal for mobile devices and other low power applications, but don't count them out of
+
+the high power game though.
+
+High-intensity LEDs have found their way into accent lighting, spotlights, and even automotive
+
+headlights.
+
+Are you getting the craving yet ?
+
+The craving to put LEDs on everything ?
+
+Good.
+
+Stick with me and I will show you how. In the real world, a typical LED will look like this.
+
+In this particular case, I'm showing you a red light LED, but there are other colors of LED out there.
+
+Commonly available colors are red, green, blue, yellow, amber and white.
+
+But for now, let's just stiick with our red light LED because it is the most common one.
+
+The circuit symbol for an LED looks like this. A triangle with some arrows pointing out.
+
+LEDs are a particular type of diode that convert electrical energy into light.
+
+In fact LEDs stands for light-emitting diode, and this is reflected in the similarity between the diode
+
+and LED schematic symbol.
+
+If you understand how LEDs work, you will understand how diodes work as well, because both behave
+
+similarly.
+
+So let's put diodes apart, and let's just focus on LEDs. The first thing that you have to understand
+
+about LEDs or diodes, in general, is that they have polarities.
+
+In electronics, polarity indicates whether a circuit component is symmetric or not.
+
+LEDs being diodes will only allow current to flow in one direction.
+
+And when there is no current flow
+
+there is no light.
+
+Luckily, this also means that you can't break an LED by plugging it in backward.
+
+Rather, it just won't work.
+
+The positive side of the LED is called the anode and is marked by having a longer lead or leg.
+
+The other, negative side of the LED is called the cathode, and as a rule of thumb, current flows from
+
+the anode to the cathode and never in the opposite direction.
+
+A reversed LED can keep an entire circuit from operating properly by blocking current flow.
+
+So don't freak out if adding an LED breaks your circuit.
+
+Try flipping it around! Here in the simulator
+
+I want to show you something.
+
+We have a 12V DC power source, a 1k ohm resistor and an LED in series with it.
+
+If you want to add an LED to your circuit, you can find it under outputs and labels.
+
+Notice that when I hover over the LED, the circuit symbol shows up as a normal diode.
+
+But when I leave the cursor, the LED shows up as a red light bulb.
+
+How awesome is that!
+
+Now, as I have mentioned, an LED has two terminals
+
+The positive side is called the anode and the negative one is called the cathode.
+
+Now what was our rule of thumb?
+
+The current always flows from the anode to the cathode and never in the opposite direction.
+
+If I were to flip the LED
+
+Notice that the LED is turned off and no current is flowing in the circuit.
+
+Essentially the LED blocks all the current flow.
+
+Remember, the current through an LED can only flow from the anode to the cathode, which would explain
+
+why it's important for an LED to be connected in the correct direction.
+
+LEDs or diodes certainly aren't the only polarized component.
+
+There are tons of parts out there that won't work if connected incorrectly.
+
+Fortunately, resistors are not polarized and you can connect them however you wish.
+
+All right.
+
+So we know that LEDs are polarized and they conduct current in only one direction.
+
+What else do we want to know about them?
+
+We want to know how they work.
+
+You see, an LED behaves very differently from a resistor in a circuit.
+
+Resistors behave linearly, according to Ohms Law, which says that voltage is equal to current times resistance.
+
+For example, increase the voltage across a resistor
+
+the current will increase proportionately as long as the resistor's value stays the same.
+
+Simple enough, unfortunately, LEDs do not behave this way.
+
+They behave like a diode with a characteristic current-voltage curve that is different than a resistor.
+
+Don't be afraid, it's not that hard to understand.
+
+So every LED has what's called the characteristic or recommended forward voltage, which is usually between
+
+1.5V and 4V.
+
+This forward voltage is noted as Vf and it's nothing else but the voltage that is dropped across
+
+the LED.
+
+Now this graph tells you everything about how an LED works
+
+so take some time to examine it in more detail.
+
+As I have mentioned in the previous courses, once current is flowing through a component
+
+there's going to be a voltage drop across it.
+
+For resistors, this voltage drop depends on the current flowing through it.
+
+Right ?
+
+The more current flows through a resistor, the higher the voltage drop across it.
+
+And this is not the case for LEDs.
+
+The voltage drop
+
+in other words, the forward voltage drop across an LED is always specified
+
+in its datasheet.
+
+And for those who don't know, each component in electronics has a data sheet that is just a document
+
+providing the specifications and information related to a particular component.
+
+So as we can see from the current-voltage characteristic if the voltage drop across the diode is lower than
+
+the forward voltage drop specified in its data sheet
+
+the current through the LED is very small.
+
+It's almost insignificant, however, once the voltage drop across the LED reaches the forward voltage
+
+the LED opens up and will let current flow through it.
+
+Once the forward voltage drop across the LED has been met
+
+the LED turns on and the current will escape to the sky.
+
+and all of the sudden a huge amount of current will flow through the LED.
+
+But we can't let the current flow through the LED to escape to the sky.
+
+We have to control the amount of current so that we don't burn the LED out, and this is why you will
+
+always see a resistor in series with the LED.
+
+The series resistor will limit the amount of current flow through the LED, which will prevent it from
+
+burning out or catching fire.
+
+Although LEDs do not burn as resistors do, they will simply pop and won't work anymore.
+
+In the next course, we will pick a real LED
+
+we will then look into its datasheet and we will try to build our first 'Hello World' circuit.
+
+I will see you next course.

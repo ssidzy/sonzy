@@ -1,0 +1,297 @@
+Hey guys, in this video, I will show you how to use the circuit simulator that we are going to use
+
+along the course.
+
+This is by far the most amazing and easy-to-use circuit simulator.
+
+And if you understand how to use it and its limitations, it will make your life much, much easier
+
+in understanding how electronics work.
+
+So again, this is my favorite simulator, and
+
+some people will argue that, well, it's not very complex and you can do only basic stuff in it.
+
+Well, that's true.
+
+You want to use it for designing big and complex circuits.
+
+However, for a beginner, I can't think of anything else that it's better than this.
+
+Its so straightforward and easy to see what's going on.
+
+That is just mind blowing.
+
+I personally love using this very much.
+
+So how to get started?
+
+First thing, you will have to navigate to this website.
+
+It's completely free.
+
+You don't have to create an account.
+
+Just access this website and this circuit will pop up right away.
+
+As you have noticed this secure simulator runs in the browser and you can use Chrome, Safari, Firefox,
+
+Internet Explorer whatnot to access it.
+
+Just make sure you have the JavaScript enabled, which by default should be enabled.
+
+This platform, as you can see, can be divided into four sections.
+
+We have menu tab on the upper left corner, which gives you different options.
+
+If you go to the file, you can create a new blank circuit.
+
+You can open a file.
+
+Save it, export it and other options.
+
+What's great is that you can actually save the circuit that you have built on your machine and open
+
+it later when you want to continue working on it.
+
+Now, the Edit submenu does not have much of an importance for us.
+
+You can undo, cut, copy, find a component, center the circuit, and zoom in or out.
+
+If you want to copy and paste,
+
+you can use the keyboard shortcuts, like click on a component CTRL+C and then CTRL+V.
+
+The "Draw" submenu will list all the components that you can use in the simulator, and they are categorized
+
+as:
+
+Well, first we have wires and resistors, then we have the passive components category where we have
+
+capacitors, inductors, transformers, fuse, photoresistors, thermistors, and so on.
+
+I will show you immediately how to place components.
+
+I just want to run quickly through the options available for us.
+
+Then we have inputs and sources where you can add ground DC or AC voltage sources.
+
+You can place square wave sources, clock, antenna, current sources.
+
+Then we have outputs and labels, which allows you to add LED, lamp, text, voltmeter, ohmmeter, ammeter,
+
+wattmeter, etc..
+
+Then we have the active components category, which includes diodes, zener-diodes, NPN and PNP transistors,
+
+N-channel and P-channel MOSFET, JFET, Darlington Pair, etc. Then we have the "Active Building Block" category,
+
+which includes op-amps, analog switch, Schmit Trigger, etc. Then we have
+
+logic gates and digital chips.
+
+We won't use any of the components here because this would imply me to teach you about digital electronics.
+
+And this course is solely about analog electronics.
+
+If you do want to learn about the digital side of electronics, you can check out my other course where
+
+I teach just about that. Then we have the scopes, which refers to these scopes here.
+
+"Scopes" or "Oscilloscope" are the same things.
+
+And if you have already worked with Oscilloscope, you already know why we use them.
+
+But for those who are new to this oscilloscope are used to display the electrical signals and show how
+
+these signals change over time. Oscilloscopes are quite expansive.
+
+Of course, depends on the quality, but here in the simulator, we get it for free.
+
+So here right now we have a demo circuit and we have three scopes attached to three different components
+
+If I hower over one of the graph,
+
+You can see that one of the components light up, meaning that this scope is attached to this component.
+
+So this is an indicator.
+
+And actually, if I press the button.
+
+You can see how the voltage and the current develops on the inductor over time.
+
+The green line indicates the voltage across the component, while the yellow one shows the current.
+
+And by the way, you may have noticed these yellow dots, hard to not see them.
+
+These are basically the electrons or simply the current that is flowing in the circuit.
+
+All right.
+
+So I was talking about these scopes here and now that we have three scopes, one for the inductor, one
+
+for the capacitor and one for the resistor.
+
+You can stack them up, as shown here.
+
+And this is just a personal preference.
+
+You want to really see me stacking scopes on one another.
+
+Then you have the options where you can set different things.
+
+I might come back to this later and finally, have the circuits.
+
+Here are some circuits out of the box that you can use for practicing purposes.
+
+So if I go to basics and click on Ohms Law.
+
+This circuit will show up. Here, we have a 5V DC power source, two resistors, and two grounds.
+
+Ohms Law basically tells us that the larger the resistor or the higher the value of the resistor, the
+
+lower the current and vice versa.
+
+We have two branches on one branch.
+
+We have a 100 Ohm resistor, and on the second branch, we have a 1k ohm resistor.
+
+We can then immediately see that the current is much higher on the branch that has a lower resistance,
+
+and the current is lower on the branch that has a higher resistance.
+
+Don't worry, everything will make much more sense as you progress with the courses.
+
+Now, on the right-hand side, we have a reset button and a run stop button. The reset button,
+
+will basically just reset the circuit.
+
+It doesn't do very much for this particular circuit.
+
+And we can stop the circuit if we want to.
+
+Again, not very useful for the moment.
+
+Then we have a simulation speed which can speed or slow down your simulation.
+
+As you can see, it doesn't really do much.
+
+Again, in this particular case.
+
+But let me change the circuit to, let's say, a capacitor circuit.
+
+Now we have an AC source, a resistor and a capacitor.
+
+And we have a scope attached to the capacitor.
+
+Now, if I were to speed the circuit up, you can see that everything runs much faster and I can
+
+also slow it down, depending on my preference.
+
+The next slider, which is the current speed, will speed up the current flowing.
+
+In particular, the yellow dots will move much faster.
+
+I want to note that these sliders do not have any effect on the functionality of the circuit.
+
+It's just a personal preference on how fast or slow you want to examine your circuit.
+
+Now let me show you how I usually create a circuit.
+
+And let me delete this first.
+
+So actually, there are two ways in which you can build the circuit.
+
+You can either go to the draw option and pick the components you you would like to use and repeat the
+
+same process over and over again or just use a keyboard shortcut.
+
+So if I click on add resistor.
+
+Now I have a resistor selected and I can draw it in the simulator like this ...
+
+Hold your left, click down, draw it and release it.
+
+But there's an easier way.
+
+Notice that almost all the components have a corresponding letter attached to it, which indicates a
+
+shortcut.
+
+Resistor has the shortcut "r".
+
+So I can just press the "r" button on my keyboard and then I can simply draw the resistor like this.
+
+If you want to place wires, let's say you can't press the "w" letter and you are ready to draw it.
+
+If you want to place a battery, you can go to draw, inputs and sources and add voltage source.
+
+Or you can just press "v", which is what I'm going to do.
+
+I will press the "v" button, drag it and drop it.
+
+Awesome.
+
+Now, if you want to change the value of any component, you can double click on the respective component
+
+and change its value.
+
+So instead of 1k ohm resistor, I want the 500 ohm resistor user and instead of a 5V battery,
+
+I want a 12V battery.
+
+Notice that when my mouse is positioned on one of the components on the bottom right corner, there's
+
+a list of information about the component itself and about the circuit.
+
+So we can see that 24mA of current is flowing in this closed-loop circuit.
+
+The power source voltage is 12V, and if you were just to hover over one wire, we can see the
+
+amount of current flowing through it.
+
+But you can also double click on a wire and check show current and show voltage.
+
+This is again a personal preference, but it's good to know that we have these options as well.
+
+One more thing is that the wires that are colored as green indicates that there's a positive voltage
+
+applied to them.
+
+So if I were to add a wire here,
+
+And double click, show voltage, and we can see 12V, which is the same as if I were to use a voltmeter
+
+and place the red probe here and the black probe on the ground.
+
+Remember that the voltages here are always compared to ground. Regarding ground,
+
+You could either close the circuit with a wire as in the case here, or you could delete them and press
+
+the "g" keyword and place two grounds like this.
+
+The circuit is exactly the same, but with less wires.
+
+One more thing, if you want to attach a scope to a component, just right click on it.
+
+And click on "View in New Scope". The scope will pop up, and we can see that the voltage across the
+
+battery is 12V, which is correct because we have set it to 12V, and the current flowing through it
+
+is 24mA.
+
+Now, the scope isn't really helpful in DC circuits because, well, everything is flat and nothing
+
+interesting is going on here.
+
+But as soon as we use AC or reactive components, we will use this feature a lot.
+
+Awesome.
+
+I hope you like this little tutorial.
+
+I advise you to play around with the simulator a little bit to get familiarized and then proceed further
+
+with the courses.
+
+Have fun and I will see you in the next video.

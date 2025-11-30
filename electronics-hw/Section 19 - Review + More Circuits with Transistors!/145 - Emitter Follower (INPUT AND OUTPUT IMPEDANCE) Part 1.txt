@@ -1,0 +1,155 @@
+Hello, when we come back, in the previous course, we have seen how to buy a transistor, which is
+
+the process of providing these high voltage, which helps in the functioning of the circuit.
+
+But this is kind of useless, right?
+
+It doesn't do anything other than conducting Coran from collector Daym.
+
+So what if we connect a capacitor in series with the base?
+
+Now, let's give a value of three microworld to it and then connect firewall's AC power supply.
+
+And finally, let's add an output pin to the meter so that we can view the signal being present on the
+
+meter leg.
+
+Great, so I notice that the input signal resembles to that of the output signal, right.
+
+The only difference between the input signal and the output signal is that the output signal is less
+
+than the input signal with zero point seven words.
+
+Why?
+
+Because 0.01 voltage dropped from the base to ammeter.
+
+This circuit is Caldas Amytal follower or buffer amplifier circuit where the output is simply equal
+
+to the input minus Adaiah drop, which is about seven hundred million is the advantage of the circuit
+
+is that the transistor can provide current and power gain.
+
+The transistor draws very little current from the input and provides low output impedance to any circuit
+
+using the output of the follower, meaning that the output will not drop on the load.
+
+The purpose of this course is to understand why an EDM follower needs to have a high input impedance
+
+and low output impedance so we won't go into much details like how the circuit works, because I think
+
+that would be a waste of time since I already covered a million followers where I have explained what
+
+impedance matching is, how to build an ATM follower, and I have also made videos give you some useful
+
+applications where ammeter follow what is needed.
+
+The most difficult part of this is actually to understand what input and output impedance is and why
+
+we should care about it.
+
+This information will be also useful to analyze future circuits, so we will focus on that now.
+
+Unlike a common EDM amplifier, which amplifies the input signal, the Amitav follower, which is also
+
+known as Common Connector, has a gain of one, which means that the input signal is equal to the output
+
+signal.
+
+In fact, the opposite is even less with one dial drop.
+
+So why is the circuit useful at all?
+
+First, we have to know that ammeter follower provides high input impedance and low output impedance.
+
+This concept of high input impedance and low output impedance is mostly used in amplifier circuits,
+
+but not only there.
+
+So let's take a look at this image.
+
+Alright, so what do we see here?
+
+First we have a source and destination, right?
+
+These can be totally two different circuits that are all connected by a signal line and ground no matter
+
+at circuit.
+
+We are looking at it must have an input and output impedance.
+
+So, for example, let's assume that the source is an MP three player or let's just assume first because
+
+it's easier.
+
+The source is just an AC voltage generator.
+
+As we hopefully know, power supplies, no matter if they are DC or AC, have an intrinsic output impedance.
+
+The destination will be the circuit that receives the signal, so it must have an input impedance,
+
+this destination will be our emetophobia circuit that receives the input signal from a source.
+
+Great.
+
+Now, you will often hear in optronics that when you transfer a relatively weak signal from one part
+
+of a circuit to another one, you should design the circuit so that the input impedance is much higher
+
+than the output impedance.
+
+But why is that?
+
+That's because we want to transfer our signal without any power loss.
+
+In other words, we want to transfer the signal without its voltage being decreased.
+
+If we look carefully, the output and input impedance forms of voltage divider, if the input impedance
+
+of the destination circuit is low because of the voltage, the effect, the input signal, we lose from
+
+its power and nobody wants to lose power just because you send a signal from one part of the circuit
+
+to another one.
+
+Right now, based on this equation, if the input impedance is much greater than the output impedance,
+
+then what is division will not effect our signal considerably.
+
+Now, in the context of an amateur follower.
+
+This also provides high input impedance and low output impedance.
+
+But it's not that noticeable at first glance.
+
+Let's try to draw this circuit in a different way.
+
+When a signal source and load are connected to an amplifier, the corresponding electrical properties
+
+of an amplifier circuit can be modeled as shown here.
+
+You can imagine that this voice is your MP three player, which has an internal resistance address and
+
+there is an amplifier in the middle that will amplify this audio and our is a high power speaker.
+
+Then an amplifier is connected to a signal source.
+
+The source sees the input impedance of the amplifier as a load.
+
+Likewise, the input voltage within is what the amplifier sees across the input impedance.
+
+The same idea applies for the output impedance of the amplifier.
+
+Then allow the resistance or L is connected to the output of the amplifier.
+
+The amplifier becomes the source feeding the load.
+
+Therefore the output voltage and the impedance automatically becomes the source voltage and source impedance
+
+for the load.
+
+Then we can see that the input and output characteristics of an amplifier can both be modelled as a
+
+simple, voltage divided network that BlueFire itself can be connected in common ammeter, a common
+
+collector or in common base configurations.

@@ -1,0 +1,235 @@
+Hello, hello, hello.
+
+In the previous course, we saw that we could create a stock filter using an RSA configuration, which
+
+is good for applications where an all star band is required.
+
+But we have also seen that we could create the best filter using a 20 configuration, which is basically
+
+a law passed before high pass filter in parallel.
+
+But wait a little bit.
+
+Isn't this law passed in high pass filter weird?
+
+A little bit.
+
+It's not the one we were used to before.
+
+Right.
+
+The hyperspeed that actually has an additional capacity series and the Lopez filter has an additional
+
+registry series.
+
+Hmm.
+
+That's weird.
+
+So it is cause we will try to demystify this and see the difference in the quantities of Bassi Filter
+
+or.
+
+All right, so passive implementations of linear filters are based on the combinations of resistors,
+
+inductors and capacitors, these types are collectively known as passive filters because they do not
+
+depend upon an external power supply and or they do not contain active components such as transistors.
+
+We already know that the simplest passive filters, which are CNRS filters, include only one reactive
+
+element except as C filters, which are characterized by inductors and capacitors.
+
+These Ursy peers, whether it's Lopez or high pass filter fores inside of the first apology, which
+
+is called US Air Filter, so an air filter consists of two reactive elements, one in series and one
+
+in parallel.
+
+Then to use our C and when to use RL depends on the situation.
+
+For example, if the signal is of very low power, then our C is often the best.
+
+It's the cheapest and smallest in many cases.
+
+However, if it's a Lopez filter for the output of a transmitter or the output of a large power supply,
+
+you want to have very low losses in the past.
+
+And so you always use an air filter.
+
+So even though our C is cheap and easy, it weighs this power due to the resistor, which is in series
+
+with a signal and also introduces thermal noise.
+
+All right.
+
+So we saw that El Topology has dual reactive elements, right?
+
+Three element filters can have a P or a apology.
+
+And the either geometries Lopez Hypers band pairs or band characteristics is possible.
+
+The truth is in majority P filters are used for Lopez filter applications, while T filters are used
+
+for high test filter applications.
+
+And that's why we'll focus more on the Lopez filter and high pass the filter.
+
+So let's start with P filter as a Lopez filter.
+
+The design of a Lopez filter using the P configuration is pretty straightforward, the p filter circuit
+
+consists of two capacitors connected in parallel, followed by an inductor in series forming a P shape.
+
+As you can see, it consists of two capacitors which are connected to Ground V for an in-between series
+
+inductor.
+
+This is a Lopez filter.
+
+It produces high impedance at high frequencies, which means that high frequency signals will have a
+
+much harder time to pass through the filter.
+
+Seeing as the filter provides high impedance for them, low frequency signals will pass through the
+
+filter without problem because the filter will have a very low impedance, which means, therefore,
+
+low frequency signals.
+
+The filter will be like a short circuit.
+
+Anyway, looking at this filter, you might have wondered, well, all right, but how to calculate
+
+the cut off frequency of this filter?
+
+In the majority of cases, the two competitors have equal capacities, and if so, the frequency of
+
+this filter can be calculated using the following equation.
+
+It's almost the same equation that the simple or C filter uses, except that it's for P and not your
+
+P.
+
+All right, but then what's the advantage of using such a filter?
+
+Well, the first advantage is that, as you can see, the capacitors and the doctors of a P network,
+
+Lopez Filter are arranged such that a capacitor is connected between the input and ground.
+
+Another capacitor is connected between the output and ground, and then another is connected between
+
+input and output.
+
+The reason the circuit acts this way is that as the frequency of a signal increases capacity, reactance
+
+decreases and inductive reactants increases, meaning that higher frequency signals are more likely
+
+to be shunted to ground.
+
+The second advantage is that the output voltage across that filter is quite high, making it suitable
+
+for the most power related applications where high voltage DC filters are required.
+
+Remember, and I hope you know this by now, there's no DC voltage drop across any indicator, basically
+
+voltage across any doctor when DC is applied these theoretically zero.
+
+But due to the resistance offered by the coil material, well, there will be some voltage drop and
+
+ideally a doctor would have zero resistance.
+
+But anyway, it's really, really small.
+
+So the DC voltage drop is minimal.
+
+Knowing this the second, the third or the third advantage of using a P filter is that this filter is
+
+very efficient in filtering out and wanted AC arepas coming from a bridge rectifier.
+
+The capacitance provides low impedance in AC, but the high resistance in DC, which is due to the effect
+
+of capacitance and reactance right due to these low impedance across AC, the first capacitor of the
+
+P filter bypasses the AC Reaper coming from the breach rectifier.
+
+Then the bypassed AC repo goes into the doctor.
+
+The inductor resist the changes of current flow and blocks the AC arepas, which is further filtered
+
+by the second capacitor.
+
+So these multiple stages of filtering have to produce a very low ripple, smooth output across the filter,
+
+again, be filters are an excellent DC filter to suppress the AC replays and this behavior.
+
+Beefeaters are extensively used in electronic designs like AC to DC converter frequency converter,
+
+etc..
+
+Let's take a real example of using a filter.
+
+This is a power supply circuit that converts high voltage to a constant 12 volt DC.
+
+The inductor that is between the two competitors is not just simply simple, as you can see, is actually
+
+a one to one transformer.
+
+One of the advantage of using a one to one transformer in this case instead of a simple inductor, is
+
+that we can isolate mainlines from the high switching frequency across the driver circuit.
+
+So this part of the circuit can create plenty of noise due to the switching behaviour.
+
+And by using a transformer, we impede do high frequency noise to disturb our mainlines.
+
+As I explained before, Beefeater is excellent in removing the AC repairs that are generated after the
+
+bridge rectifier providing smooth DC for the repair free operation of the overall driver circuit, resulting
+
+in a low output repeller from the final output of the power supply.
+
+Other advantage of using a filter is that in a controlled radio frequency environment where higher frequency
+
+transmission is required, for example, in the gigahertz band, high frequency filters are easy and
+
+flexible to make in the PCB using just PCB traces.
+
+So the filters made using the passive components have much more immunity in terms of seargent and harsh
+
+industrial environments than the silicon based filters which uses active components.
+
+All right, now let's take a look at the apology in the previous course, I ask you to comment where
+
+this tea actually comes from.
+
+Well, as you can see, the filter is shaped as a tea letter O as I mentioned, you usually find high
+
+filters in the topology.
+
+So we will focus on this.
+
+A high pass filter using tea configuration has one inductor to ground and either side there is a series
+
+in line capacitor similar to the topology.
+
+Further elements can be cascaded for improved Roloff performance.
+
+Usually the two capacitors have the same capitalises and the equation to calculate the minus.
+
+The three decimal point is the following.
+
+Note again that it's four P instead of Tupi, as we were used to with the simple C circuit.
+
+So a T network with series capacitors and the parallel Shantee inductor has the property of it being
+
+a high pass filter.
+
+In this type of hypers filter, additional capacitor is added to improve the filtering action.
+
+The reason the circuit acts this way is that as a frequency of the signal increases, capacity of reactors
+
+decreases and inductive reactors increases, meaning that lower frequency signals are more likely to
+
+be shouted to ground.

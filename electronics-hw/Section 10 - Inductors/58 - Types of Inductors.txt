@@ -1,0 +1,91 @@
+Capacitors have capacitors, inductors have inductance, the formula for calculating the inductance
+
+of a coil of wire is given by this formula where L is the inductance in Aries.
+
+MUE is the permissibility constant that is a coefficient of how easily the magnetic field can be created
+
+in a given medium and is the number of turns A is the area of the coil and L is the length of the coin.
+
+Again, the Harry is a very large unit, so practically inductors are measured in microarrays or millionairess,
+
+which is a thousandth of a very occasionally you you might even find very small inductance is measured
+
+in Nat'l Herries, which are a thousandth of a microarray.
+
+Now the MMU in this equation has some interesting implications.
+
+It suggests that a magnetic field inside inductor can be manipulated like Mattea before.
+
+Sometimes the magnetic field created even by a solenoid, falls short of requirements.
+
+Sometimes that is why in almost all cases you find inductors formed around the core.
+
+Material cores are materials that support the creation of a magnetic field.
+
+They are generally made of iron and its components, such as ferrite, which is an oxide of iron.
+
+You can get a greater magnetic field using a core than without one.
+
+So the first type of inductor is the most basic one, which is áR core inductor.
+
+Like the name suggests, this kind of inverter has no core.
+
+The core material is er since eher has a relatively low permeability.
+
+The inductance offer of a near Koreen doctor is quite low, really about five microarray since they
+
+have a low inductance, the rate of current rise is quite fast for an applied voltage and that makes
+
+them capable of handling high frequencies.
+
+They are mostly used in radio frequency circuits, but don't worry, we will understand this shortly.
+
+The next type of inductor is the iron core inductor.
+
+Irun is perhaps the most recognisable magnetic material, which makes it an ideal choice for enactors.
+
+These take the form of ihram coordinators.
+
+They are usually used for low frequency line filtering since they can be rather beefy and have large
+
+inductance is they are also using audio equipment.
+
+Ironhorse are using Transformers, which we will learn about in the future.
+
+A transformer is similar to this ion doctor.
+
+However, a transformer is made from two columns of wire sitting very close to each other.
+
+The prime use of a transformer is to increase or decrease the input AC voltage, however.
+
+More on this later.
+
+Now, the next set of inductor is the ferrite core inductor ferrite is just a powder of oxides of Eira.
+
+This powder is mixed with an epoxy arisan and molded to form cause around which wires can be wound.
+
+Ferrite core inductors are easily the most recognizable because of their dual gray black color.
+
+They also are very brittle and to break easily.
+
+They are the most widely used kinds of inductors, since the permeability can be finely controlled by
+
+controlling the ratio of ferrite to epoxy in the mix or so.
+
+Actually, there are more types of inductors out there.
+
+I just listed out the most used ones.
+
+As you could see, different types of doctors have different types of core material.
+
+Using these core inductors can have a much greater inductance that otherwise they would have without
+
+one.
+
+And the most use core is the ferrite core, since the permeability can be finely controlled by controlling
+
+the ratio ferrite to EPOXI in the mixed grade in the next course, let's see what happens then.
+
+Multiple inductors are placed either in series or in parallel.
+
+See you there.

@@ -1,0 +1,91 @@
+All right, so the most basic Hathway procedure, rectifier, is made up of just an iPad and the diode
+
+that sort it.
+
+These two components are connected in such a clever way that we can rectify input energy signals even
+
+smaller than these diodes forward, what is drop?
+
+We will see that in a simulator in a minute.
+
+So if we look at this circle carefully, we can notice that the negative feedback of the EMP is connected
+
+after the diode.
+
+So it's connected after the voltage drop.
+
+What does rule number two says?
+
+The app will do whatever it can to keep both its inputs are the same voltage.
+
+In his case, the up will output the voltage that is with one diode drop higher than the input wattage
+
+so that after the diode the negative feedback we have the same voltage, then the voltage on the non
+
+inverting pin.
+
+It makes sense, right?
+
+So if the forward voltage drop of the diode is zero point zero watts, then the opposite will output
+
+a voltage that is equal to the input voltage plus the forward voltage drop of the diode.
+
+This is not magic.
+
+This is just how an option works.
+
+I call you the upper will do whatever it can to keep both inputs the same voltage.
+
+And in this case, because there's a dial drop here and the negative feedback is connected after the
+
+dialed, the OP amp will have to output of wattage.
+
+That is one dial drop higher than the input with it.
+
+Of course, the open part powered well in this case with only positive voltage because the upper will
+
+never have to output a negative voltage.
+
+Right.
+
+So in this case, the negative power can be simply grounded and the voltage on the positive power pin
+
+has to be chosen so that the output voltage doesn't exceed its value.
+
+All right, here we are, the up here is powered wi we've plus 15 volts and zero volts.
+
+Well, there there's really no need to power these 15 words since our input voltage is just 500 millivolts.
+
+Wave signal the result after the ratification, since this is just a halfway rectifier or the positive
+
+cycle will pass through.
+
+Right.
+
+And so this positive cycle naughties has the same voltage, the positive cycle of our sine wave.
+
+Amazing.
+
+We avoided this dial drop.
+
+Now using the circuit, we can rectify signals even smaller than 700 million volts.
+
+And just for the record, I will show you that the opposite indeed outputs a voltage that is higher
+
+with one drop.
+
+Since this diode is a general-purpose diode, it starts conducting at 500 millivolts.
+
+And so the forward voltage drop of this diode is 512 watts.
+
+And notice that the signal at this point is one word.
+
+And after the diode, it's 500 million watts.
+
+So this is how the UPM keeps both inputs the same voltage.
+
+How clever this option is.
+
+Right.
+
+

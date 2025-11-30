@@ -1,0 +1,61 @@
+Several times in this chapter, I use the term "element" without explaining it.
+
+So here's the deal. An element is a specific type of atom defined by the number of protons in its nucleus.
+
+:)
+
+For example, hydrogen atoms have just one proton in the nucleus.
+
+An atom with two protons in the nucleus is helium.
+
+Atoms with three protons are called lithium and so on.
+
+The number of protons in the nucleus of an atom is called the atomic number.
+
+As a result, the atomic number of hydrogen is one.
+
+The atomic number of helium is two, lithium is three and so on.
+
+Copper, an element that plays an important role in electronics, is atomic number 29.
+
+And as a result, it has 29 protons in its nucleus.
+
+All right.
+
+But what about neutrons?
+
+The other particle found in the nucleus of an atom?
+
+You see, neutrons are extremely important to chemists and physicists, but they don't really play that
+
+big of a role in the way electric current works.
+
+So we can safely ignore them in this chapter.
+
+Suffice it to say that in addition to protons, the nucleus of each atom except hydrogen contains neutrons,
+
+and in most cases, there are few more neutrons than protons.
+
+So the third particle that makes up atoms is the electron.
+
+You see, electrons are what we are most interested in when we work with electricity because they are
+
+the source of electric current.
+
+They are unbelievably small.
+
+A single electron is about 200.000 times smaller than a proton.
+
+So what you have to remember right now is that atoms usually have the same number of electrons as protons.
+
+And as a result, an atom of an element
+
+Copper has 29 protons in the nucleus that is orbited by 29 electrons.
+
+When an atom picks up an extra electron or finds itself short of an electron,
+
+things get interesting because of a special property of protons and electrons called charge, which
+
+I will explain in the next course.
+
+

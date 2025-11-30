@@ -1,0 +1,237 @@
+Hello, when we come back in this course, we will learn about what a moving capacitor is and we will
+
+also build a circle with it because theory by itself means nothing if we can't apply it in real world.
+
+So it's moving.
+
+Capacitors are frequently used in power supply circuits where we want to convert an AC signal to a DC
+
+signal.
+
+Basically, without capacitors, you couldn't convert any voltage to DC voltage.
+
+Then a steady DC voltage is needed and is necessary as moving capacitor is the right component needed
+
+in order to smooth out the fluctuation, I mean the fluctuating signal to make it more steady.
+
+So a prime example of when it's moving capacity is used is in conjunction with a rectifier circuit.
+
+But what is the rectifier circuit, you might ask?
+
+Well, a rectifier circuit is an electrical circuit that converts alternating current, which, as we
+
+know, periodically reverses direction to the current, which flows in only one direction.
+
+There are more types of rectifiers, OK, such as halfway rectifiers, footway rectifiers, bridge rectifiers,
+
+etc. Don't worry, we will go through all of them once we learn about diodes.
+
+Why?
+
+Because each and every rectifier is built using diodes, an electrical component that we haven't learned
+
+yet.
+
+So in order to understand how this moving Cabaser works, we have no other choice but understand, at
+
+least a little bit how a rectifier works in the first place.
+
+So let's pick the most easiest one, which is the half way rectifier.
+
+A halfway rectifier consists of only a single diode in series with the AC power source.
+
+A resistor is used to limit the current flow, but the main focus here is this diode.
+
+So what is a diode and how does it work?
+
+Where you see diodes are one of the simplest but the most useful of all semiconductor devices.
+
+Diode is a terminal electrical component that converts current primally in one direction.
+
+So the most basic feature of a diode and also the most important one is that it conducts current in
+
+only one direction.
+
+So it has low, ideally zero resistance in one direction and high, ideally infinite resistance in the
+
+other direction.
+
+So let's go to our simulator and see a diode in action.
+
+All right.
+
+Here we are.
+
+So in this circuit, we have an AC power source and a load.
+
+The load receives the entire AC signal and notice that the current periodically reverses direction.
+
+Obviously, since we have an AC what here, how fast the current changes direction in one second depends
+
+on the frequency of the power source.
+
+Now, the final goal of this circuit or lecture is to convert this a signal into a DC signal so that
+
+our Lord here will receive instead of an AC voltage, a DC voltage.
+
+In order to achieve this first, we have to place a diode in our Sirikit like shown here.
+
+Now, notice that the singer that the Lord receives has been changed, basically the negative part of
+
+the AC signal has been removed entirely.
+
+Why?
+
+Because as we have just said, a diode converts current in only one direction.
+
+The diode will only conduct current when it's forward, biased.
+
+In other words, it will open up and conduct current when the anode terminal of the diode is higher
+
+than the cathode with around zero point six.
+
+So that's something else you have to know about diodes a diode depending on the diode.
+
+Okay, because there are many types of diodes out there, signal diodes, shote, diodes, power diode,
+
+etc..
+
+But a general rule of thumb, if I can say like that, an ordinary diode we cannot current when the
+
+voltage on the anode here is higher before around zero point six volts than the cathode.
+
+Now, if I stop the simulator.
+
+You can see that the positive peak voltage of the signal has been reduced by around zero point firewall's,
+
+which is the voltage that is dropped across the diode, each and every diode will have a voltage drop
+
+across it.
+
+And the magnitude of this voltage drop will depend on the forward voltage drop specified in the datasheet
+
+of the specified higher.
+
+So, again, our goal is to convert this AC voltage coming from this power AC power source to a DC voltage.
+
+We are already halfway through it because we got rid of the negative part of the AC signal.
+
+So basically and practically, of course, the current already flows in only one direction.
+
+So we can already say that we have achieved what we wanted, because even though the voltage here is
+
+a pulsating voltage, this will result in a pulsating DC current.
+
+Now, obviously, this this is pulsating.
+
+Voltage is not what we want in the end, is not suitable to power any load or an integrated circuit.
+
+For example, we want a DC voltage as clean as possible without big fluctuations in voltage.
+
+This is where moving capacitors comes into play.
+
+But how do we place these capacitor?
+
+Well, we place it in parallel with the load or with the AC power source.
+
+This moving capacitor always has to be placed after the diode, otherwise it won't work.
+
+Now, usually when choosing a moving capacitor, an equality capacitor is used from anywhere from 10
+
+micro Farad's to a few thousand micro Farad's.
+
+If you've played enough with the simulator, you know that there is no electrolytic capacitors here
+
+in the simulator and actually there is no point in adding them in a simulator since we can modify the
+
+value of the non polarized capacitor as high as you want.
+
+So the point is, the greater the amplitude of the fluctuations and the greater the waveform, the larger
+
+capacitor will be necessary.
+
+Now, this 10 microworld capacitor is obviously too low for our five words AC voltage.
+
+So let's increase its value to say 100 microworld.
+
+All right.
+
+Well, the signal that the Lord receives starts resembling to an actual DC voltage that we are familiar
+
+with.
+
+Right.
+
+Of course, there are some fluctuations, but it's not that bad.
+
+If you want a much smoother DC voltage, you should increase further up the value of the capacitor.
+
+Now, understanding how this movie Cabaser works is very easy, as we already know, capacitors have
+
+this ability to store charge, right?
+
+They can charge up to the supply voltage, which in this case is firewall's.
+
+And so in this case, the capacitor is fully charged up when the voltage across it is five words.
+
+So when the input AC voltage reaches its peak value, which is five words, the capacitor is said to
+
+be fully charged once the input voltage goes below firewalled so it starts decreasing from five volts,
+
+the charge in the capacitor will be released through the load itself.
+
+And in this way the capacitor is able to provide charge when it is not available.
+
+I mean available from the rectifier and accordingly the voltage varies considerably less than if the
+
+capacitor were not present.
+
+However, note that in real life the smoothing capacitor will not provide total voltage stability.
+
+So there will always be some variations in the voltage.
+
+In fact, the higher the value of the capacitor, the greater the smoothing and also the less current
+
+that is drawn by this load here, the better the smoothing.
+
+So a further point to remember is that capacitor smurfing does not give any form of regulation and the
+
+voltage will vary according to the load and any input variations.
+
+What does this mean?
+
+Well, let's increase the value of the capacitor to, say, 500 microworld.
+
+Now, you might say, well, this this is what it is, almost perfect and we can just leave it like
+
+that, even if in theory this will work in practice.
+
+This is a very bad practice.
+
+Why?
+
+Because the voltage is not regulated.
+
+What does that mean?
+
+If I now lower the value of the load, which can be an ISP or another circuit?
+
+In that case, we will talk about an input impedance.
+
+So if I lower this value.
+
+You can notice that the D.C. voltage that we had before is not that smooth anymore, Duse, nasty,
+
+undesirable voltage fluctuations came back and in a real world application, you would want a power
+
+source that keeps the output of this voltage as constant as possible, regardless of the load that it
+
+drives or the input impedance of the circuit that it powers.
+
+And this is where voltage regulators comes into play.
+
+But that's something we will learn in the future once we learn about people or transistors.
+
+Thank you for watching and see you.
+
+And of course.

@@ -1,0 +1,125 @@
+In this course, we will learn how an inductor behaves inadequate before we get into the simulation
+
+part.
+
+I want to lay down some theory.
+
+So if you are comfortable with the basic concepts of capacitors, you are well on your way to understanding
+
+inductance, because these dual phenomena are very similar.
+
+They might be described as equal, but opposite.
+
+So a capacitor thors energy in the electric field and inductors towards energy in a magnetic field.
+
+Then a capacitor is connected to a voltage source.
+
+Its voltage gradually increases at its current, gradually decreases.
+
+When an industry is connected to avoid the source, its current gradually increases and its voltage
+
+gradually decreases.
+
+If a competitive circuit is disconnected from a power supply, the capacitor will temporarily maintain
+
+voltage if an inactive circuit is disconnected from a power supply.
+
+The inductor will temporarily maintain current.
+
+Another way of saying that is that capacitors resist changes in wattage and enactors resist changes
+
+in current.
+
+Now with these remarks.
+
+Let's go to our simulator.
+
+And here we are right now, since the switch is open, no current flows in the circuit, the power source
+
+we are using is a five world power source and we have a three Harry Potter and the resistor here, which
+
+is necessary to limit the current flow once the switch is closed.
+
+So let me slow down the simulation speed a little bit and then let's close the switch, what we can
+
+notice that right at the beginning, the voltage drop across the inductor is five words, while the
+
+current is zero.
+
+This is why we say that inductors try to resist sudden changes in current.
+
+The inductor just cannot change rapidly in current.
+
+And this is exactly the opposite behavior of capacitors where the current in the beginning is very high,
+
+while the voltage across it is zero.
+
+That's why we say that capacitors resist changes in voltage since they cannot change in voltage very
+
+fast.
+
+Now, as time passes, the voltage across the inverter decreases, allowing the flow of current to slowly
+
+increase until the conductor acts just like a piece of wire, it's like it wouldn't be even here.
+
+So over time, when the voltage across the inductor drops, current flows freely across it.
+
+So when a voltage is applied across the two terminals of any doctor, the current flowing creates a
+
+magnetic field around it.
+
+This magnetic field creates an induced current in the inductor.
+
+So unlike Absa's that store charge by creating an electric field between its two plates and inductors
+
+towards charge by creating this magnetic field around it.
+
+Once we hit the switch, all the energy that was stored inside of Inductor is released, but notice
+
+that the direction of current hasn't changed.
+
+Like in the case of capacitor, when we had a capacitor here, the charge that was released went in
+
+the opposite direction of the charging direction.
+
+The definition of a doctor is that it resists any change in current.
+
+It always tries to make current go in the same direction and the same intensity.
+
+Of course, the intensity of current will slowly fade away.
+
+Sees in real world traces have some resistance.
+
+Also, we have a resistance here that will dissipate power.
+
+Hence the current slowly decreases back to zero.
+
+But notice something interesting here.
+
+When the current is switched off, the magnetic field is now collapses.
+
+Instead of growing as it did, a switch on this collapsing magnetic field now returns its energy into
+
+the inductor coil and induces a voltage, which in engineering terms is called back M.F. into the doctor.
+
+But because the change in magnetic field strength is in the opposite direction to the expanding field,
+
+a switch on the induced voltage is now in the opposite polarity.
+
+As shown here, the induced back EMF now opposes the reduction current cause by switch off.
+
+Slowing down the decay of current earths can be seen here.
+
+This rapid collapse of the magnetic field as the switch opens can cause very large voltage spikes because
+
+the amount of voltage induced is dependent on the rate of change of the magnetic field.
+
+Here in the simulator, the peak voltage is negative five words.
+
+However, in real life, this could be much, much greater, possibly destroying other components that
+
+are connected to it.
+
+So let's talk about this back here, Buffi.
+
+More detail in the next course, because this is something that you must be aware of.

@@ -1,0 +1,159 @@
+Hello, so in the previous course, we talked about the similarities and differences between an NBN
+
+and PMP transistor, and we mentioned that the point that these devices are current controlled and not
+
+what is controlled, that's true, but only for people are Zhongxun transistors because there's another
+
+type of transistor called Field Effect Transistor that we talk about the receptor.
+
+So other people are Russian transistors.
+
+These 55 transistors are voltage controlled.
+
+OK.
+
+All right.
+
+So why are people transistors uncontrolled?
+
+Well, these transistors are current control devices because the base current controls the flow of current
+
+from the collector to ammeter and transistors are referred to as formerly of devices because when you
+
+connect an NPR transistor to a circuit, it does not conduct across the collector to ammeter unless
+
+a sufficiently large enough current is applied to the base.
+
+In other words, the ambient transistor does not conduct current without a current apply to the base.
+
+It is normally off in the absence of any base current.
+
+This is in contrast to European transistors, which are referred to as formally on devices.
+
+PNB transistors conduct current across the meter to collector.
+
+Without any current being applied to the base of the transistor, there are sufficient voltage is applied
+
+to the emitter terminal current flows in the absence of any applied based current.
+
+So, again, an NPR translator is called Normally of device because it does not conduct current across
+
+the collateral damage.
+
+If there is no base voltage or current apply to the base, if we remove the two words from the base,
+
+the ambient resistor will turn off.
+
+On the other hand, a PNB transistor is called us normally on a device because the bass doesn't require
+
+any DC power source to open up the transistor.
+
+Yes, there is current flowing in the base indeed.
+
+But the base, as you can see, can be tied to ground and the transistor will still conduct.
+
+All right.
+
+Now, the question is how exactly these transistors work.
+
+Let's start with the transistor, how transistor work is probably the hardest concept for you to understand.
+
+As a beginner, at least it was for me.
+
+The problem is that almost everyone is trying to teach that the transistor is a semiconductor device.
+
+And instead of just telling you what it does, they explain that, well, it consists of and doped and
+
+B, the materials.
+
+I don't know about you, but the statement that had me so much.
+
+So let me tell you in the simple way how an MBA is a work.
+
+The NBN transistor works because of something called a semiconducting material, a current flowing from
+
+the base.
+
+The emitter opens the flow of current from the collector to the emitter.
+
+So if a small current flows at the base, it will allow for a larger current to flow from connecter
+
+to ammeter.
+
+And here comes the magic.
+
+In a standard NPN transistor, you need to apply a voltage of about 0.01 volts in between a base and
+
+Daym to get the current flowing from base to EDM.
+
+Then you apply zero point seven words from base to ammeter.
+
+You will turn the transistor on and allow a current to flow from collector to ammeter.
+
+Now let's take a look at an example.
+
+In this example, you can see how an NBN transistor works.
+
+So an animal's battery connects to an eyelid and a transistor, but it connects through the transistor,
+
+too.
+
+And this means that an all current will flow in this part of the circuit until a transistor is turned
+
+on.
+
+To turn the transistor on, we need to apply at least zero point seven holes from base to emitter of
+
+the transistor.
+
+Now, imagine you have a smaller zero point seven words battery, and then we apply the zero point seven
+
+words battery from the base daym the transistor turns on and now the differential voltage between base
+
+limiter, as you can see, is six hundred forty one millivolts or zero point six voids.
+
+This allows current to flow from the connector to the emitter.
+
+But the question you might ask here is that where does the zero point six watts comes from?
+
+Well, I mean, why do we need to apply exactly zero point six volts and ask two or five words to turn
+
+a transistor on?
+
+Well.
+
+Transistors are kind of like an extension of another semiconductor component called diodes.
+
+In a way, transistors are just two diodes, which they are cathodes tie together the diode.
+
+Connecting base to ammeter is the important one here.
+
+It matches the direction of the arrow on the schematic symbol and it shows you which way current is
+
+intended to flow through the transistor.
+
+The dual representation is a good place to start, but it's far from accurate.
+
+For example, current from the base will have a flow to the collector only towards Daym.
+
+So don't base your understanding of the transistors operation on this model and definitely don't try
+
+to replicate it on a breadboard.
+
+It won't work.
+
+There's a whole lot of weird quantum physics level stuff controlling the interactions between the three
+
+terminals.
+
+So a standard normal diode kainaz current through it.
+
+If there is a zero point seven drop across it, then there is zero point seven words across this diode,
+
+which means there is a zero point seven words between the base and the amateur, the transistor we turn
+
+on and conduct current from collector to ammeter.
+
+So I hope you got the idea.
+
+And in Damascus, we will talk about how a P transistor works.

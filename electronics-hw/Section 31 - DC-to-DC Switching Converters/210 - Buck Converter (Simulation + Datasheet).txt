@@ -1,0 +1,333 @@
+And here we are, so we have a firewall's power supply that is stepped down to around three point three
+
+words, let us suppose that the law requires three point three words to operate and the circuit takes
+
+the incoming fire was this voltage and steps it down to the required three point three words.
+
+Here, as you can see, we use an engineer mosfet instead of a transistor, usually DC to DC converter
+
+uses Masterfoods and people transistors, and that's because of some advantages that Masterfoods offer
+
+over the B purwanto.
+
+So Masterfoods are preferred for the following reasons lower power consumption, then B out and transistors.
+
+This is one of the biggest advantages.
+
+The reason why they offer lower power consumption is because then they are turned on.
+
+So when they conduct current, the resistance between the train and source is much lower than for a
+
+transistor.
+
+So let me pause the simulator for a moment, alright.
+
+And notice that when the Moskva is turned on, only 15 millions is dropped across the drain.
+
+Our source, if you were to use a beeper transistor instead of this mosfet, the voltage across the
+
+collector and ammeter would be much higher.
+
+So mosfet is perfect when we use it as a switch because of its very low turn on resistance.
+
+The second advantage is that when you see biasing a mosfet is much simple.
+
+While by a single Russian transistor is a pain, the threshold voltage of this mosfet is one point five
+
+miles.
+
+So this means that when the voltage rises about this voltage current begins to flow from the source
+
+itself, using another circuit that generates this square voltage which is supplied to the gate of this
+
+mosfet, we use a simple square wave generator that outputs a square wave that has a voltage of then
+
+volts.
+
+In order for the mosfet work in the most efficient way, the mosfet should be fully turned on and then
+
+fully turned off.
+
+As you can see here, the mosfet switches between off state and linear state.
+
+This is the pattern you should try to achieve when you are using a mosfet as a speech in the linear
+
+region.
+
+The mosfet will be biased so that the maximum amount of Gaith voltage is applied to the device which
+
+results in the channel resistance.
+
+In other words, the resistance between Draine and source being as small as possible within the maximum
+
+DRAINE current flowing through the MOSFET suite.
+
+All right.
+
+So again, we use Moscovitz here because they have a much lower return on the resistance than the people
+
+are ones, and biasing them is very easy, as you can see here.
+
+Now, let's move further.
+
+Now, why this simulator is so great is because you can actually see how carbon flows, let me slow
+
+down the simulator and see what happens when the mosfet is turned on.
+
+All right.
+
+So the Fed is turned on and current flows from five words to the load.
+
+Meanwhile, the inductor is building up its magnetic field.
+
+So the plus sign is here and the minus sign here, it seems like the capacity is discharging through
+
+the load.
+
+But in fact, during the on period, this capacitor is gradually building up energy into it.
+
+The deal right now doesn't have any purpose.
+
+It is reverse biased.
+
+During the off period, so the master doesn't conduct any current, the magnetic field of the inductor
+
+is collapsing, but this time the polarity of the inductor is reversed.
+
+So the voltage across the doctor is now in reverse polarity and this energy is now released back into
+
+the circuit.
+
+The capacitor is discharging and thanks to the diode, which is now forward by the current, will flow
+
+around the circuit.
+
+And was the doctor has returned a large part of its stored energy to the circuit and the load voltage
+
+begins to fall, the charge stored in the capacitor becomes the main source of current keeping current
+
+flowing through the load until the next on period begins.
+
+OK, now you might be wondering how to change the output voltage.
+
+The output voltage is controlled not by the frequency of the squarish, but by light duty cycle.
+
+Notice how the shape of the square of signal changes when I'm changing the duty cycle of the signal
+
+here.
+
+And also notice how the output voltage changes when I'm changing the duty cycle.
+
+Now let me decrease the duty cycle.
+
+So the answer period of the square is low compared to the off period and notice that the output voltage
+
+is gradually decreasing until it reaches a certain voltage.
+
+Of course, in real life, this would happen in an instant.
+
+Now, let me increase the duty cycle back.
+
+And as you can see, the output voltage is gradually increasing back.
+
+Great other thing to point out is that the reason why this converter has high efficiency is because
+
+there is no voltage drop down on this line.
+
+There is almost no voltage drop across the datasource.
+
+So there is no participation and there is no active participation on the inductor as well.
+
+The efficiency of these type of converters can reach up to 90 percent.
+
+OK, so I know that this might all seem complex at first glance.
+
+I advise you to play the circuit a little bit and go with your own pace.
+
+The good news is that in real life you will almost never find the convertors in this forum where nobody
+
+uses the convertors as shown here, because first of all, you have to design another circuit that generates
+
+these PVM signal.
+
+And another major problem is that there is no feedback in the circuit.
+
+So the circuit that outputs three point three words doesn't have a clue whether it really outputs three
+
+point three words or not.
+
+If I change the low value, the output voltage that the converter outputs changes as well and there
+
+is no any sort of feedback for the square wave generators here with these square generator should change
+
+the duty cycle automatically when he sees that the output voltage tries to fall below or rise above
+
+a predefined voltage.
+
+So doing all this stuff by yourself is quite hard.
+
+It's also hard to calculate the values of the components and the output voltage based on the duty cycle
+
+and the value of the components.
+
+That's why almost all of the time we use DC to DC converter ICS that are cheap, reliable.
+
+They have a small footprint and they are easy to use.
+
+Let's look at the data sheet of about converter.
+
+I see the Alem 25 Ninety-Six is a popular DC to DC converter that uses a one hundred fifty kilohertz
+
+internal oscillator and can supply up to three amps to load.
+
+These devices are available in fixed output voltage of three point three words, five words to airballs
+
+and an adjustable output version.
+
+In this dataset, we find out how to set up the circuit so that it can output these fixed voltages.
+
+And you can also set this regulator up so that the output voltage becomes adjustable.
+
+Here it says that requiring a minimum number of external components, these regulators are simple to
+
+use and include internal frequency compensation and a fixed frequency oscillator.
+
+So basically, if we go lower, we will see a typical application of how you should set up the converter.
+
+As you can see, there is no external PVM generator that is fed into the AC.
+
+That's because the oscillator is built inside of it.
+
+How great is that?
+
+We don't have to worry about building your own external oscillator because that's already built inside
+
+of it.
+
+There is an input improving, by the way, the input voltage can range up to 40 volt, and this example
+
+basically shows you how to build up yourself with so that it outputs a regulated five volts.
+
+This part is actually similar to the one we have built in the simulator.
+
+Another great thing about these converter boxes is that they have a feedback pin, the feedback pin.
+
+Basically what it does, it takes the voltage from the output and compares that voltage to a reference
+
+voltage which is built inside of the AC by comparing the output voltage with this reference voltage
+
+that again is built inside of it.
+
+The regulator, or better say the oscillator, knows how to adjust the duty cycle of the PVM signal
+
+so that it can maintain the output at the fixed value.
+
+So the function of a feedback loop in a DC to DC converter is to maintain the output at a fixed value.
+
+Here, even if you change the resistance of the load, the output voltage won't change a bit.
+
+So that's about the feedback.
+
+Been awesome.
+
+The regulator has been called on and off, and this line above on means that it's active low.
+
+Basically, spin can turn on and off the regulator by pulling this pin too low.
+
+In other words, the ground the regulator is turned on because it's active.
+
+No other thing I want to mention is about the external components.
+
+Whatever DC to DC converter are using, the value of the external components will be given even if they
+
+are not shown like here on the schematic, you will find the values in a table or somewhere else in
+
+the description, or they will give you a simple equation so that you can find out the value of these
+
+components.
+
+All right, so this is how you set up the converter to output a regulated fireballs when the input,
+
+voltages, swearwords, words.
+
+Now if we go lower.
+
+We will find the function block diagram of this, I see, as you can see, the circuitry inside of it
+
+is quite complex, but fortunately, the ice is very easy to use.
+
+As you can see, it has a built in 150 kilohertz oscillator which outputs a sort of signal.
+
+There are many techniques to generate a PVM signal, and this is one method of doing it so the oscillator
+
+doesn't generate a square signal.
+
+As you can see here, it's the computer that will output a pivot signal which will ultimately drive
+
+the switch.
+
+The switch is comprised of multiple transistors in a Darlington configuration.
+
+So that's a small current in the base can drive a large amount of current through it.
+
+Now, I won't go into detail how generating a signal is done, but basically what happens is that the
+
+output voltage here is stepped down using this voltage divider.
+
+This operational amplifier amplifies the difference between a reference voltage, which is a constant
+
+one point thirty three words.
+
+So it amplifies the difference between these constant voltage and the output of the voltage divider.
+
+And the output of this amplifier, which is a DC voltage, is compared with the instantaneous value
+
+of this sort of signal.
+
+Basically, the higher the voltage on the inverting pin, the lower the duty cycle of the signal and
+
+the lower the voltage on the inverting pin.
+
+The higher will be the duty cycle.
+
+By feeding back the output voltage, the internal circuitry will know if it has to lower or increase
+
+the duty cycle of the premium signal so that it can maintain a constant regulated output voltage.
+
+One more thing about this feedback being the beauty of feedback is that changes of input voltage will
+
+be compensated for as well as any changes in the output.
+
+What is due to changes in the load?
+
+The same feedback loop corrects for both situations.
+
+One more thing I want to show you is how to configure this AC so that the output becomes adjustable,
+
+the configuration can be found here.
+
+And so what is required is to add two resistors.
+
+This capacitor here is optional, but good to have so R one and R two forms of voltage divider or one,
+
+as you can see, is tied to ground.
+
+The output voltage can be calculated using this equation where the reference voltage is equal to one
+
+point twenty three words.
+
+Also, the value of the components are given here.
+
+So using a DC to DC converter I see is always a go to when you need a bar converter or a converter in
+
+general.
+
+If you really want to build your own converter, of course you can do it.
+
+But these ices offer solutions out of the box and they have everything built in which in the end they
+
+reduce the cost, the complexity.
+
+You can see here how easy it is to calculate the output voltage and the overall size of the converter
+
+becomes much smaller.

@@ -1,0 +1,61 @@
+Welcome to the amazing world of electronics.
+
+You see.
+
+Ever since I was a kid, I've been fascinated with electronics.
+
+When I was about 10 years old, my dad bought me electronic experimenters kit from the local store.
+
+I still have it and it's pictured here.
+
+I have incredible memories of evenings spent with my dad wiring the sample circuits to make squawking
+
+police sirens, flashing lights, radio receiver and even a telegraph machine.
+
+The best part was dreaming that when I grew up, I would have a job in the field of electronics that
+
+someday I would understand exactly how those resistors, capacitors, inductors, transistors and integrated
+
+circuits actually worked, and I would use that knowledge to design televisions or computers or communication
+
+satellites.
+
+This course is an introduction to electronics for people who have always been fascinated by electronics, but
+
+did not make a career out of it.
+
+In this course, you will find the clear and concise explanations of the most important concepts that
+
+form the basis of all electronic devices concepts such as the nature of electricity.
+
+If you think you really know what it is, you are kidding yourself.
+
+The difference between voltage, amperage and wattage and how basic components such as resistors, capacitors,
+
+diodes and transistors work, not only you will gain an appreciation for the electronics devices that
+
+are part of everyday life, but we also learn how to build simple circuits that will not only impress
+
+your friends but may actually be useful.
+
+Throughout this course, I make very few assumptions about what you may know about the subject of electronics.
+
+.
+
+I certainly don't assume that you've ever taken a class in electronics, have ever assembled a circuit
+
+or are well-versed in advance science or math.
+
+In fact, there are only two things I do assume you are curious about the fascinating world of electronics.
+
+For example, if you are ever wondered how radio works or what makes a computer possible.
+
+Well, this course is for you.
+
+And finally, you like to build things.
+
+You see, the best way to learn about electronics is to do electronics.
+
+And this course has plenty of simple projects for you to build and back your knowledge up with first
+
+hand experience using a really powerful simulator that you will soon see.

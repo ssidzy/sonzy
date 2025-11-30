@@ -1,0 +1,89 @@
+Every analyst designer's nightmare would be to deal with noise in his circuit when it comes to switching
+
+circuits or audio amplifiers or frequency signal circuits.
+
+There's a very good chance for the circuit to be affected by noise signals out of the many ways to remove
+
+noise from a circuit.
+
+The most used one is called the filter circuit.
+
+As the name suggests, the circuit will filter out the unwanted signals, which is the noise from the
+
+actual signal.
+
+There are many types of filter circuit, but the most commonly used and efficient one is the Band Pass
+
+filter, which can be easily constructed using a pair of resistor and capacitors.
+
+So in this material, we will learn about this bad pass filter.
+
+The theory behind it and how it can be used in practical circuits.
+
+We can say that the Band Pass filter is a combination of both low pass filter and the high best filter.
+
+The name of the filter itself indicates that it allows only a certain band of frequencies and blocks
+
+all the remaining frequencies in audio applications.
+
+Sometimes it is necessary to pass only a certain radio frequencies.
+
+This frequency range does not start at zero hertz or end, but very high frequency.
+
+But these frequencies are female certain range, either wide or narrow.
+
+These bands or frequencies are commonly termed as band vif.
+
+A band pass filter can be obtained by cascading both high and low pass filters.
+
+It has a huge application in audio amplifier circuits.
+
+As I mentioned where the speaker has to play only the desired set of frequencies and ignore the rest.
+
+There are two types of bents filters.
+
+If the Tsilhqot'in involves some kind of external source of power like transistors, operation amplifiers,
+
+etc., then the circuit is called Active Band Pass Filter.
+
+And if the circuit does not involve any active components and consists only passive components like
+
+resistor, capacitor and the doctor, then the circuit is called a passive band pass filter.
+
+As told earlier, we this cause the passive banters filter, which is constructed using resistors and
+
+capacitors.
+
+It is a combination of a hyper filter and Lopez filter.
+
+The first half of the circuit is a high pass filter, which filters the low frequencies and allows only
+
+the frequency that is higher than the set high cutoff frequency.
+
+The value of these high cutoff frequency can be calculated using this formula here.
+
+The second half of the circuit is the Lopez Filter circuit, which filters the high frequencies and
+
+allows only the frequency that is lower than the set low cutoff frequency.
+
+The value of low cutoff frequency can be calculated using this formula here by adjusting the cutoff
+
+frequencies of the hippies and Lopez filters, we can obtain the appropriate width of the past band
+
+for the Band Pass filter.
+
+Since these filter passes are band of frequencies, this filter contains two cutoff frequencies, right?
+
+Lower cutoff frequency and higher cutoff frequency.
+
+As a result, the range of the frequencies which are passed through the filter is called US bandwidth
+
+over the filter.
+
+In general, the bandwidth of the circuit can be calculated by doing the difference between the higher
+
+cutoff frequency and the lower cutoff frequency.
+
+The Band Pass filter will pass the frequencies higher than the cutoff frequency of the Lopez filter
+
+and lower than the cutoff frequency of the high pass filter.

@@ -1,0 +1,223 @@
+Now, as I said, some time back, you might see some other components around here, livestock investors
+
+and things like that around the world.
+
+That is to change the bandwidth before this is effectively an ideal that has an infinite bandwidth that
+
+each of these pregnancies and signals.
+
+But in practice and no, of course not your practical options might have a one megahertz band, five
+
+or 100 kilohertz band bandwidth or something like that.
+
+You know, you know, it could be a nice first hundred megahertz, but it's always going to have a bandwidth
+
+which changes with your gain or gain bandwidth product.
+
+So it is let's see how the input signals frequency affects the overall gain of the iPad, which is one
+
+of the important limitations of any practical all that that you must be aware of.
+
+So let's get started.
+
+It's all about speed in an ideal world, an op responds accurately and instantly to an audio or video
+
+signal, but in the real world, there is a limit on the highest frequency.
+
+So what do we mean exactly by optimise bandwidth, you might ask.
+
+Let's take a typical up, open looking configuration.
+
+And as we know, we can't feed DC or AC into the EP with.
+
+Let's just do a dummy applications here so we grant the inverting pin.
+
+So this will be at zero worlds and we feed into the non-working a sine wave which goes from positive
+
+piebald to negative five volts.
+
+Well, in this case, when the time is about zero volts, the computer output will hit the positive
+
+rate.
+
+So if you powered the up MPF 15 volts, the output will be 15 words.
+
+And when the time drops below zero, what the computer's output will hit the negative real, which is,
+
+let's say, minus 15 words.
+
+I hope this is clear.
+
+Until here we have seen how a competitor works in the first course.
+
+Now, of course, the output hits both positive and negative because the open loop gain is so huge that
+
+the output just bumps into the true power is.
+
+Of course, this only happens if you have a real to real input OPAP.
+
+Otherwise the output will be slightly lower than the positive or negative power supply.
+
+But anyway, there's an interesting thing happening here, or it would happen if we increase gradually
+
+the frequency of the input signal.
+
+So as the frequency of the input signal increases the gain.
+
+So the open loop gain, the internal open gain of the up decreases gradually with the increase of the
+
+input signal frequency.
+
+So if you were to plot this, it would look something like this.
+
+The horizontal axis is the frequency of the input signal and the vertical axis is the open loop voltage
+
+gain.
+
+We can see here based on this graph that, well, until 10 hertz, which is nothing very low, the gain
+
+of the up is fairly constant.
+
+It's 10 at the power of five.
+
+But after just ten hertz, the gain drops significantly and around 100 kilohertz, the gain is just
+
+ten.
+
+So although operators have a fairly high gain, this level of gain starts to fall at a low frequency.
+
+The open loop breakpoint, like, for example, the frequency of speech, the gain has fallen by three
+
+decimal.
+
+So, again, what do we mean by bandwidth?
+
+Well, the operational amplifiers bandwidth is the frequency range over which the voltage gain of the
+
+amplifier is about 70 percent or minus three decibel of its maximum output value.
+
+One of the main reasons why UPS generally have a low breakpoints is that a feature called compensation
+
+is incorporated into virtually all options.
+
+This frequency compensation is used to ensure that the option remains stable under all operating conditions.
+
+The very earliest albums were prone to instability and as a result, compensation was introduced into
+
+virtually all op ed designs.
+
+As a matter of course, the effect of the compensation on the upper bandwidth is to reduce the breakpoint.
+
+This means that if no compensation had been incorporated, the breakpoint and there would be greater.
+
+But are the cost of instability.
+
+Anyway, you might probably won't even hear he options in this configuration.
+
+Well, you can see how volatile the gain is as the frequency increases.
+
+Oh, it's horrible when designing a real circuit using an OP.
+
+Negative feedback is used to give controlled levels of gain.
+
+Applying this feedback enables the very high gain to be traded for bandwidth.
+
+In this way, very flat frequency response curves can be achieved within the required bandwidth.
+
+It's amazing.
+
+So we have a fairly high gain, around 100, which is more than enough, and the bandwidth of the OP
+
+amp has been increased tremendously.
+
+So until 10 kilohertz, the gain is constant and after 10 kilohertz, the gain starts to drop.
+
+Now we can see how important it is to know why the end game bandwidth is so important.
+
+You might build your circuit at home, you know, and on inverting amplifier with a gain of 10 and you
+
+feed in a signal of, I don't know, 20 kilohertz and you will go mad because you will not understand
+
+why your gain is just eight when you desire to be ten.
+
+Well, it's because of the apparent limitation.
+
+If you check the data, stofan up EMP.
+
+In this case, I open the data of the popular seven four one up.
+
+And you want to check the bandwidth of this.
+
+Then somewhere down, there should be a parameter called bandwidth.
+
+Here you are, so the bandwidth of this up under 25 degrees Celsius is one point five megahertz.
+
+Hmm.
+
+Isn't that too high?
+
+And does this mean that we can feed the op ed with an input signal from one hertz up to one point five
+
+megahertz?
+
+So does it mean that until one point five megahertz, the gain of our amplifier is constant?
+
+No, of course not, what you see here is what is called the gain bandwidth product here is only bandwidth,
+
+but it's actually the gain by the product.
+
+So this frequency, this one point five megahertz is the frequency where the amplifiers gain becomes
+
+unity, whether it's open loop or close the configuration.
+
+So it's the frequency when the gain is equal to one.
+
+So the specification that you will see in the data set the gain bandwidth product might be a megahertz.
+
+You might think, great, I can use it in megahertz.
+
+Well, only opportunity gain.
+
+So for example, when we short the output with the inverting input, we get a circuit Korda's buffer
+
+circuit.
+
+And we know that the buffer circuit like this has a gain of one.
+
+So yeah, if you are using a buffer, then your signal can go up to one point five megahertz and the
+
+gain will still be one.
+
+But you know, after that frequency, your gain will start decreasing.
+
+If you start adding resistors and your gain becomes two or five or 100, whatever, your bandwidth will
+
+going to drop accordingly in a linear relationship.
+
+So you might ask, why are we interested in this game?
+
+Better the product, after all?
+
+Well, we can use this to calculate the bandwidth of our attempt at higher gains.
+
+The gain bandwidth product, as the name implies, is equal to gain times bandwidth.
+
+So, for example, if we have an option that has a gain bandwidth product of one megahertz and you're
+
+not inverting amplifier amplifiers by 100, so the gain is 100, you know, and based on this equation,
+
+the bandwidth becomes 10 kilohertz.
+
+This means that up until 10 kilohertz, you can amplify signals by 100.
+
+But after that frequency, unfortunately, your gain will start decreasing.
+
+I hope I could make this gain bandwidth clear.
+
+So using this parameter, we can calculate the bandwidth of our amp based on the desired gain we want
+
+in the next course.
+
+Let's see how we can increase the bandwidth of our OP amp so we can amplify a signal that higher frequencies.
+
+See you next course.

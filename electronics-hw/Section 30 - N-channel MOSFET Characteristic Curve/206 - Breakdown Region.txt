@@ -1,0 +1,59 @@
+Last but not least, we have the break down region, the Breeda region of a federal transistor is the
+
+region where the drain of the transistor receives too much voltage, which causes a drain source channel
+
+to break down and the drain current drastically increases.
+
+The Breeda region is the last section to the right of the conclusive curve in which the drain source
+
+voltage width increase is too much for the channel to handle.
+
+And at this point, the Fed loses its ability to resist current because too much voltage is applied
+
+across the drain source terminal.
+
+Looking at the catastrophic curve, we can see that the lower the gate source voltages, the earlier
+
+the breakdown which occurs.
+
+So for a lower WGS, a lower drain source voltage is needed for the Mossler to enter the BREEDA region.
+
+All right.
+
+So the breakdown region happens when the voltage between the drain and the source is high enough to
+
+cause the fats resistive channel to break down and pece uncontrolled amount of current.
+
+Now, if you want to simulate the breakdown region here in the simulator, well, you can't.
+
+Usually the breakdown of the fat is tested with the gate being tight ground, just like the source.
+
+And the reason why you can test the breakdown is because, first of all, we are in a virtual world
+
+here where almost everything is ideal.
+
+Second of all, there is no parameter here which specifies when these breakdown voltage occurs.
+
+So here in the simulator, no matter how big the drain voltage is.
+
+The feds channel will never break down, which in real life, this is not true at all because was the
+
+drain wattage increases too much, the Fed loses its ability to resist current.
+
+So an uncontrolled amount of current will flow through the channel, which will burn out the fat and
+
+cause irreversible damages.
+
+Now, you might ask, what is the drain voltage that when exceeded the mosfet, enters the brain region?
+
+And that's a good question for that.
+
+I made a separate video, which is the next one, where we will take a look at the data of an engine
+
+that has been blown mosfet.
+
+And we will check out some important energy characteristics that you can understand so far.
+
+See you next course.
+
+

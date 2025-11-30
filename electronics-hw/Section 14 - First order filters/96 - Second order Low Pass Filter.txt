@@ -1,0 +1,151 @@
+So what happens if you have a Lopez filter and you place an identical filter easier to defeat?
+
+This is what we call a second order Lopez filter.
+
+Now, why would you do something like this?
+
+You see, sometimes a single stage may not be enough to remove all the unwanted pregnancies.
+
+What I mean by that, we already seen the frequency response of a Lopez filter.
+
+Right.
+
+And we know that the cutoff frequency is situated here.
+
+However, what about the slope?
+
+In many electronics textbooks, you will see that a first order filter like this one has a slope which
+
+is equal to minus 20 decibels per decade.
+
+What does this mean?
+
+First, you have to understand that in the frequency response graph of a first order, Lopez filter
+
+the x axis, which is the frequency increases logarithmic.
+
+So instead of one, two, three, four, five, etc, it increases like one, 10, 100, 1000, etc..
+
+Here's another frequency response of a Lopez filter.
+
+And here you can clearly see that the frequency on the x axis increases logarithmic.
+
+So each frequency point is a multiply of ten of the previous one.
+
+Now, just like any other first order filter slope, this one two is equal to minus 20 decibels per
+
+decade.
+
+But what is a decade in this case?
+
+Well, a decade is a unit for measuring frequency ratios on a logarithmic scale, with one decade corresponding
+
+to a ratio of ten between two frequencies.
+
+I mean, an order of magnitude difference.
+
+So one decade is the ratio between these dual frequencies.
+
+Actually, that is the Latin word for 10.
+
+In this case, decade means 10 multiplies on the frequency axis.
+
+When the plot shows minus 20 decibels per decade, it means that over a range of ten multiplies in frequency.
+
+The gain will drop by 20 decibels.
+
+So between one kilohertz and thank you notes, there's a minus 20 decibel difference in the game between
+
+10 kilohertz and 100 kilohertz.
+
+Again, there is a difference of minus 20 decibels in the game.
+
+So I hope now you can see where this minus 20 decibel per decade comes from.
+
+Now, sometimes it happens that we are not really satisfied with the steepness of the slope.
+
+Again, an idea Lopez filter would have a frequency response as shown here before the cut off frequency
+
+or the frequencies are passed through without attenuation and signallers with frequency higher than
+
+the cutoff are completely attenuated.
+
+So what can we do in order to increase the steepness of the slope?
+
+Ha, this is where a second order Lopez filter comes into play if two or three stages are cascaded together,
+
+as shown here, the resulting RC filter circuit would be known as an add order filter with a slope of
+
+end times minus 20 decibel per decade, where N is a number of our stages.
+
+Since we have two stages, the slope will be equal to two times minus 20 decibels per decade or minus
+
+40 decibel per decade.
+
+Now the frequency response of a second order Lopez filter compared to a first order, one can be seen
+
+here.
+
+The blue line shows the frequency response of a single RC Lopez filter, and the purple one shows the
+
+frequency response of a second order Lopez filter having two or three stages in series.
+
+The slope, as you can see, is much steeper, which means that frequency is higher than the cutoff
+
+frequency will be greater attenuated then for a first order.
+
+Lopez Filter.
+
+One more thing I want to tell you is that as you can see on this graph, the minus three decibel point
+
+of a second on the Lopez filter has been moved.
+
+It's at a different frequency than if you would have only one single or C Lopez filter.
+
+So how do we calculate it?
+
+It's very easy.
+
+By using this formula, you can calculate the overall cutoff frequency regardless of how many stages
+
+you have in series.
+
+And in this equation is the number of filters.
+
+You have a series.
+
+Again, the filters must be identical.
+
+Otherwise, this formula will not be valid, nor this formula which calculates the slope of end stages.
+
+So the cutoff frequency of any stages in a series is equal to the cut off frequency of one filter times
+
+square root of two or the power of one or N minus one.
+
+Now let's do a simple exercise.
+
+We have this RC filter and based on these two values, the filter will have a cutoff frequency of around
+
+five hundred thirty hertz.
+
+If we place an identical filter in series with the first one, the slope of the overall filter becomes
+
+minus 40 decibels per decade instead of minus 20 decibels per decade as it was before.
+
+So the attenuation will be greater after the cutoff frequency.
+
+But where is the cutoff frequency situated?
+
+Let's use this formula so the cut off frequency of these second order filter is equal to 530 square
+
+root of two of the power of one or two since we have two filters, minus one.
+
+Now, if you do the math, the final result is 341 hertz.
+
+So even though the original cutoff frequency was five hundred thirty hertz, by cascading one more in
+
+series, the cutoff frequency has decreased to 341 hertz.
+
+This is not a problem is just something that you have to remember when you cascade two or more filters
+
+a series.

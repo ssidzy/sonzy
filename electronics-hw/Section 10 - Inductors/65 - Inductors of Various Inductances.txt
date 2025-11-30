@@ -1,0 +1,33 @@
+Welcome back.
+
+Here are again, three circuits which are identical except for the size of the inductor in them.
+
+So this time the frequency is the same for all of the three circuits, only the size of the inductor
+
+changes.
+
+What I want to show you here is that the size of the doctor has an effect on the overall current flow.
+
+Alagiri doctor, as you can see, has more opposition to changes in Canada and the inductor on the top
+
+is the largest.
+
+So the current flow is smallest in that circuit.
+
+But why is that?
+
+If you forgot, the endarterectomy is equal to two P times F times inductance, so the returns not only
+
+varies with the applied signal frequency, but also with the size of the inductor.
+
+And it's quite obvious from this formula that the larger the inductance, the larger the I mean, the
+
+higher the inductive reactants in the Third Circuit, the maximum current is the highest compared to
+
+the other two.
+
+And that's because the returns of the inductor is the smallest.
+
+So the main takeaway from this simulation is that the source is constantly trying to change the current
+
+and the large inductor is best at opposing those changes.

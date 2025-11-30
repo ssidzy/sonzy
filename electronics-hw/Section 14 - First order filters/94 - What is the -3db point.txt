@@ -1,0 +1,177 @@
+All right, in the previous courses, we saw that the cut off frequency, the output signal is 70 percent
+
+lower than the input signal, or we can also say that the output is three decibels lower than the input.
+
+So what is this minus three decibel and where does it come from?
+
+You see, they're designing or working with amplifier and filter circuits, some of the numbers used
+
+in the calculations can be very large or very small.
+
+For example, if we cascade to amplifier stages together with power or voltage gains of, say, 20 and
+
+36 respectively, they're the total gain would be 20 times 36, which is seven hundred twenty.
+
+Likewise, if you cascade together to first order Archerfield a circuits with automations of zero point
+
+seven each, then the total attenuation would be zero point seven times zero point seven, which is
+
+equal to around zero point five.
+
+Now, unlike voltage or current, which is measured in volts and emperors, respectively, the decibel
+
+or simply debe for short is just a ratio of two values.
+
+Well, actually the ratio of one value against another known or fixed value.
+
+So therefore the decibel is a dimensionless quantity but does have the bell as its unit after the telephone
+
+inventor Alexander Graham Bell.
+
+The ratio of any to values where one is fixed or known and of the same quantity of units, whether power,
+
+voltage or current, can be represented using decimals where Dessy means one tenth of a bell.
+
+Clearly there are ten decibels per bell, or we can say that one bell is equal to 10 decibels.
+
+Now, what you have to know is that the decibel is commonly used to show the ratio of power change and
+
+is defined as the value, which is ten times the base, ten logarithm of two power levels.
+
+So for example, one what to ten?
+
+What is the same ratio as 10 what to 100 watts?
+
+That is ten to one.
+
+So while there is a large difference in the number of Watts nine compared to 90, the decimal ratio
+
+would be exactly the same.
+
+Hopefully that we can see that the decibel is a ratio used for comparing and calculating levels of power
+
+change and not the power itself.
+
+As a result, if you have two quantities of power like P1 and P2, the ratio of these two values is
+
+represented by this equation.
+
+Where P1 represents the input power and PITU represents the output power.
+
+So let's do an exercise to understand these decibels better.
+
+Let's say that an audio amplifier delivers 100 watts into an eight on speaker load when fed by a 100
+
+milliwatt input signal.
+
+Calculate the power of the amplifier in decibels.
+
+So we write down that the power gain measured in decibels is equal to 10 times log base than of Peter
+
+Overby, one where P2 is the output power and P one is the input power.
+
+Now we know that the output power is 100 watts and the input power is 100 million watts.
+
+So let's place these values into the equation so we get ten times like base ten of 100, over zero point
+
+one because 100 milliwatt is zero point one watts.
+
+Now, if you do the math, this equation will be equal to 30, 30, what, 30 decimal, we can express
+
+the power gain of the amplifier in units of decibels regardless of its input or output values as an
+
+amplifier delivering 40 watts output for 40 milliwatts input.
+
+We also have a power gain of 30 decibels and so on.
+
+One of the advantages of using the bass to logarithm ratio of two powers is that they're dealing with
+
+multiple amplifiers or filter or attenuate or stages cascaded together.
+
+We can simply add or subtract.
+
+They are decimal values instead of multiplying or dividing their linear values.
+
+So if you have two amplifier stages in a series where the first one amplifies the signal in power by
+
+100 and the second one by four, then the total amplification of these two circuits combined is 100
+
+times four, which is four hundred.
+
+Now an amplification of 100 inpower is equivalent to a power gain of 20 decibels, while an amplification
+
+of four is equivalent to a power gain of six decibels.
+
+As a result, the total amplification of these two circuits combined is 280 decibels plus six decibel
+
+or 26 decibels.
+
+So this is clearly an advantage of using decibel instead of multiplying these linear values.
+
+Now let's get to our Lopez filter in Tony textbooks, you will often read that the cut off frequency,
+
+the output power is half the input power.
+
+This means that the ratio of the output power over the output power is zero point five.
+
+Right.
+
+So the power, again, invisible is equal to ten times larger base than of zero point five, which if
+
+you do the math, is exactly minus three decimal.
+
+So at minus three decibels, which is the cut off frequency, the output power will be exactly half
+
+the input power.
+
+But what about voltage?
+
+Why is the output voltage equal to zero point seven times the input voltage?
+
+Well, let's start from this equation.
+
+So instead of power again, we calculated the voltage gain.
+
+The power can be expressed as voltage and resistance.
+
+Right.
+
+So we get ten times log base, 10 of we to add the power of the two divided by resistance all over.
+
+We won by the power of two over the same resistors.
+
+Now the two are in the equation, can disappear.
+
+So we get that log base turn off with you at the power of two over.
+
+We won the power of two.
+
+If you know basic math, this equation is actually equal to 20 times log base, 10 of which over every
+
+one.
+
+As we already know, the cut off frequency, the output voltage is zero point seven times the input
+
+voltage, so this ratio here should be equal to zero point seven.
+
+If you do the math, you will get a voltage gain of minus three decimal.
+
+So we have learned that the cut off frequency, the upward power is half the people power and the voltage
+
+is 70 percent of the input voltage.
+
+Decibels represents a logarithmic change in terms of power, voltage or current, we can construct a
+
+table to show the specific gaze and their equivalent decibel values as shown here.
+
+From this table, we can see that a zero decibel, the ratio gain of power, voltage and current is
+
+equal to one.
+
+This means that the circuit produces no gain or loss between the input and the opposing us.
+
+So zero decimal corresponds to a unity gain that is equal to one and not zero gain at minus three decimal.
+
+The output power ratio is zero point five, so the output power is half the output power, while the
+
+output voltage is around 70 percent of the input voltage.

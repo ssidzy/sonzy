@@ -1,0 +1,115 @@
+Hello, it's great to see you back, the next operating region that we look at is the saturation region.
+
+The saturation region of a transistor is the region where the drain current flowing from the drain to
+
+the source of the transistor is the highest for the gate source voltage that is applied.
+
+This is why it is referred to as the saturation region, because the drain current output is a saturation
+
+or maximum output for the given voltage.
+
+Then you take a look at the risk curve for this particular transistor, which in this case is an antenna
+
+enhancement mode.
+
+MOSFET, the largest drain current occurs when the great source voltage supply is six.
+
+So in order for the Fed to work in a saturation region, due conditions need to met.
+
+The first one is that the gate to source voltage is higher than the threshold voltage.
+
+And the second one is that the drain to source voltage is higher or equal to get to source voltage minus
+
+the threshold voltage.
+
+However, if the drain voltage increase is too high, the Fed will enter in the breakdown region.
+
+But we will see that in the next course, where we will also take a look inside of a data sheet of a
+
+real Arjan assessment of.
+
+Now, as you can see in the separation region, the transistor is strongly influenced by Gaith Source
+
+voltage, but hardly at all by the Transource voltage.
+
+An increase in the drain voltage won't really have any effect on the current.
+
+If you want to increase the current flow through the channel, you will have to increase the gate voltage.
+
+All right, so the drain voltage right now is zero volts and the threshold voltage is still one point
+
+five volts, not as long as the drain voltage is below to what the fact is in the omega linnear region.
+
+Right.
+
+But once the drain voltage exceeds this wattage, the Fed enters the saturation region and the drain
+
+current is no longer dependent on the drain voltage.
+
+So now if you want to increase the drain current, what you have to do is to increase the gate voltage.
+
+So as I increases, voltage noticed that the drain current increases as well.
+
+Make sure you don't increase the drain on too high because you risk burning all the fat.
+
+But we will talk about the Fed's important ethical characteristics that you must be aware of when choosing
+
+one for your application in another course.
+
+What's really interesting here in the simulator is that no matter how high the drain voltage is, the
+
+effort will never enter the breakdown region, which is again, I guess, another design mistake.
+
+Now, one more thing regarding saturation.
+
+Do not confuse the saturation region for mosfet with the saturation region for people transistors.
+
+So if we take a look at both the curve, we can see that the active region of a Russian transistor corresponds
+
+to the saturation region of a mass foot.
+
+What's important to understand is that both Monforton people transistors have different use cases depending
+
+on the region they operate.
+
+So usually saturation mode is used for the production transistors when we want it to act as a simple
+
+switch.
+
+And if you've forgotten this, I advise you to go back to the course where I have explained this concept
+
+in more detail than you want to amplify a signal before a transistor, you would need to use it in the
+
+active region.
+
+Field effect transistors are an excellent choice for small signal linear amplifiers as their input impedance
+
+is extremely high, making them easy to buy us both.
+
+For a mass effort to produce linear amplification, it has to operate in its saturation region, unlike
+
+the bipolar junction transistor.
+
+Now, some might say that the wait a minute.
+
+For me, this just doesn't sound right.
+
+Why would I use a mosfet for signal amplification in the saturation region and not in the linear region
+
+where you see in region is unfortunately the most inconsistently used term when it comes to Masterfoods,
+
+it can mean exactly the opposite, depending on the author.
+
+Now, I really don't want to confuse you, but I would personally avoid using linear region as an equivalent
+
+for omic region when it comes to Masterfoods.
+
+Just avoid using linear region at all.
+
+Just say omic region, OK?
+
+And I will end the course here because explaining this further will go beyond the scope of this lecture.
+
+But once we do more exercises Moffat's you will understand why we use the mosfet a small signal amplifiers
+
+in the saturation region and not in the Omec region.

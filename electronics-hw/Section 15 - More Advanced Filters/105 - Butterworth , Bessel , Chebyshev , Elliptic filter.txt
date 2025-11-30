@@ -1,0 +1,217 @@
+You should bear in mind that there is no ideal filter, each filter is good in some areas, but poor
+
+in others, and there's a reason why some smart guys came up with different filters that has different
+
+benefits and drawbacks.
+
+So it's time for a good old fashioned battle royale between the greats of the 25th world in his.
+
+We will take a closer look at the most popular era figure that apologies that are Butterballs TV show
+
+Bessel and Elliptic.
+
+Each of those times had its own strengths, depending on the application.
+
+We will take a deeper look at each one and then do a final comparison between them to see if you can
+
+crown a winner in this battle for the ages.
+
+So let's get started.
+
+Oh.
+
+Before we start, I want to talk about some basic concepts so that we avoid any confusion in a purely
+
+resistive circuit, the current and voltage both change in the same way and at the same time.
+
+Right.
+
+This relationship is through whether the applied voltage is direct or alternating.
+
+The main difference in Azeez here, which is that the voltage continues to change in a way that depends
+
+on the shape of the input wave.
+
+When a sine wave voltage is applied to a purely resistive circuit, it produces a sine wave current.
+
+Both waveforms reach their peak values at the same time and pass through zero or the same time.
+
+Wattage and current in a purely resistive circuit are therefore said to be in phase with each other.
+
+In a purely inductive circuit, the voltage and current waveforms are not in phase.
+
+Inductors opposes change in current due to the back EMF effect.
+
+This causes the current to reach its peak value some time after the voltage.
+
+So in an industrial circuit, current lags voltage so in OK with containing both inductors and resistance,
+
+which is usually the case as the doctor will have some internal resistance.
+
+Right.
+
+The current will lack the voltage by an amount between practically zero degree and almost minus 90 degree.
+
+Since voltage and current no longer rise and fall together, a phase shift is occurring in the circuit.
+
+On the other hand, competitors had the property of delaying changes in wattage, that is the high voltage
+
+3GS steady state only after a time dictated by the time constant in AC circuits, voltage and current
+
+are changing continuously.
+
+And in a purely competitive aesthetic with the peak value of the voltage waveform occurs a quarter of
+
+a cycle after the peak value of the current.
+
+Therefore, a phase shift is occurring in the capacitor.
+
+The amount of shift between voltage and current is plus 90 degree for a purely competitive circuit,
+
+with the current leading the voltage, the opposite phase shift to an inductive circuit.
+
+Now that we know what it is, it's kind of obvious that passive filters using weathercaster or inductor
+
+will introduce our phase shift, for example, as the filter contains a capacitor.
+
+The phase angle of the output signal lags behind that of the input and the minus three decibel cutoff
+
+frequency is minus 45 degrees out of phase.
+
+This is due to the time taken to charge the plates of the capacitor as the input voltage changes resulting
+
+in the output voltage lagging behind that of the input signal.
+
+The higher the imperfections you apply to the filter, the more the capacitor lags and the circuit becomes
+
+more and more out of phase.
+
+On the other hand, in an RC high pass filter, the fees angle of the output signal leads that of the
+
+input and is equal to plus 45 degree or the cutoff frequency.
+
+All right.
+
+So both Lopez and Hypers introduces some face shift, and this face shift is different at a different
+
+frequencies.
+
+I hope I could make this clear, if not leave a comment below, the next thing you should be aware of
+
+is the frequency domain repoll.
+
+So repos are the fluctuations in the band or starbound of a filters frequency magnitude response curve.
+
+Reppas, in a suitable response are called us out of band repoll.
+
+And these ripples in the past band band can be caused by several reasons like poor design of the filter,
+
+poor PCB design or the transfer function of the filter is built in a way that there is a compromise
+
+between a very steep Roloff and High has been repoll.
+
+Every single filter in the world has a what is called a transfer function.
+
+So the transfer function looks like this and is the ratio of its output to its input, which depends
+
+upon the frequency.
+
+In other words, a transfer function is a mathematical function which theoretically models the devices
+
+output for each possible input.
+
+This equation will exactly calculate the output voltage of the filter when the input voltage and the
+
+frequency of the signal is known.
+
+So based on these transfer functions, some smart people try to create better and better transfer functions
+
+to reach the ultimate goal of an ideal filter, but each time they created a transfer function, they
+
+realized that they always had to do some compromises.
+
+The transfer function that they created were very good in one thing, but less good is something else.
+
+So let's start with the first one, which is called Bottled Water Filter.
+
+The Butterball filter is commonly referred to as the maximum flight option because the possible response
+
+offers the steepest Roloff without inducing a pass by the ripple.
+
+In addition to the flap passed by the response, the selectivity of the Butterball feature is better
+
+than many other Froedtert apologies, such as the Basil or a Galson.
+
+The flip side of this improves.
+
+The activity is greater delay and poorer phase linearity.
+
+So bardawil filters offer solid performance.
+
+Considering the number of components needed to implement the filter.
+
+The Bessel filter has the response of the group.
+
+Even though it doesn't have a sharp cutoff, it offers superior shift compared to the other filters
+
+in the group.
+
+The better filter requires the most stage's meaning that it requires the most components.
+
+However, it offers excellent characteristics like, for example, low sensitivity to component tolerance
+
+and superior step response.
+
+The best filter is ideal for applications that require a minimal facelift, and due to the gentle frequency
+
+response of the best filter, it can only be used in applications where there is enough space between
+
+the president and spot that the third filter that we are going to look at is going to be your filter.
+
+And it's named after the Russian mathematician called us PADF Nuti Chebbi Chambishi.
+
+The issue of theater is known for its response, this response can be designed to be present in the
+
+passement or in the sub, and the amplitude of the ripple is directly proportional to steepness of the
+
+role of.
+
+So the issue of theater is also called equal filter.
+
+It gives a sharper cut off than or filter in the passement.
+
+And both Butterball Chambishi filters exhibit large phase shifts near the cut off frequency.
+
+The typical filter is used where a very sharp Roloff is required.
+
+However, this is achieved at the expense of, again, ripple in the lower frequency president.
+
+But we are going to talk about this caldas elliptic filter, well, Darity filter is characterized by
+
+a that exist in both the president as well as the sub, that the repeal of the elliptic filter is similar
+
+to the typical filter.
+
+However, the selectivity is greatly improved.
+
+The downside for this improved selectivity is a more complex filter network that requires more components.
+
+The elliptic filter also has the sharpest roll off of all the filters in this group.
+
+This sharp Roloff comes with the unintended consequence of ripples in both the president and Starbound.
+
+Despite the past Sobell report, the filter is best used in applications where selectivity is a key
+
+driver in the filter design, the rating filters amplitude of the past bad it's not bad can be adjusted
+
+separately to fit the application.
+
+And the Rehnert.
+
+It depends on the application, that may be an unsatisfying answer, but it really does depend on many
+
+different elements that must be treated during the filter design process, such as frequency response,
+
+selectivity, number of stages, Fazeli and the ability to put the policy properly.
+
+

@@ -1,0 +1,123 @@
+Now, the next configuration we are going to look at is what's called the non inverting amplifier,
+
+and this is where we tame our ops beast, that huge, unwieldy gain that changes everywhere with temperature.
+
+And it's horrible anyway.
+
+So it's got these massive unusable gaining in there as a differential amplifier, but as a single and
+
+an amplifier, that's what singlehanded means.
+
+You feed the input here and it's always reference to what we can use this as a single handed amplifier
+
+and we can tame that game by adding negative feedback on it.
+
+And I want to play a negative and positive feedback in the mechanisms and how it works because, well,
+
+that's for a more advanced topic.
+
+But anyway, we feed in a feedback resistor here, just like we did before it was shorted out.
+
+But we put a resistor in there and we put a resistor back down to ground.
+
+So what it's doing now is this input, the inverting input is taking a small portion area where this
+
+feedback resistor will call RF is always bigger than our one here.
+
+So we just got the voltage divided here that feeds back a smaller part of the output.
+
+And that's essentially what negative feedback is.
+
+You are taking a part of the output and you are feeding it back to the input.
+
+And there's a very simple formula you need to remember for this non inverting amplifier configuration.
+
+And I want to try to derive it.
+
+But again, of this amplifier or what's called a V, that's the actual terminology used.
+
+So Avey is just gain.
+
+Gain equals RF, the feedback resistor divided by Auri, which goes down to ground here plus one.
+
+So you've got to add that plus one on there.
+
+So easy if you've got a nine Keylong feedback resistor and one KMB resistor down to ground, our gain
+
+is well nine K on one K, which is nine plus one.
+
+So our gain is equal to ten.
+
+This means that if you feed one volt into the input here, we will get ten volts or the output easy.
+
+And because we've got positive and negative results, which we will get into, we can feed AC or DC
+
+signals into here.
+
+So for example, we can feed minus one watt here and we get negative 10 volts out.
+
+So there you go.
+
+This is the basic configuration of Anani working amplifier and you might see weird configuration.
+
+There might be a capacitor across here or something like that, which we won't get into into this one.
+
+But, you know, the configuration is the same.
+
+If you see your input being fed into the non inverting input and the feedback going back to the inverting
+
+input, you know, that's a non inverting amplifier.
+
+This formula here applies.
+
+And from this formula, you can also see why our buffer amplifier had the gain of one before, because
+
+our feedback resistor is zero with zero homes.
+
+And Auri, which didn't exist, was infinite ohm.
+
+So one ohms or infinity or a very large value is zero plus one.
+
+So our gain is one.
+
+That's why our buffer had a gain of one.
+
+Easy.
+
+The math doesn't lie.
+
+All right, so the circuit is the same, so we got nine KMEL were here, one KMD on the ground.
+
+So the gain is then this means that if we feed one vote or here they are with voltages 10 times bigger,
+
+so it downwards.
+
+So the positive and negative real is set at positive and negative 15 volts.
+
+And as you mentioned, this configuration is perfectly suitable for AC signals as well.
+
+So if we feed one world AC signal over here, so let me change it to AC.
+
+OK, so we have one word AC signal here.
+
+Tannenwald A.M. out here, pretty easy, very powerful amplifier.
+
+My question to you is, why do you think this configuration is called us non inverting amplifier?
+
+Well, the reason it's called Nanae inverting is because let me max scale this out.
+
+So because the output signal is exactly in phase with respect to the input.
+
+So the output is a non inverted in terms of phase amplified version of input.
+
+In a future course where we learn about inverting amplifiers, where the input signal is fed into the
+
+inverting pin and not into the not inverting being like here, we will see that the output will also
+
+be electrified version of the input, but this time the output will be out of phase with respect to
+
+its input by a 180 degree.
+
+So remember, in an on inverting amplifier, the input signal is fed into the nine pin and the output
+
+is in phase with respect to its input.

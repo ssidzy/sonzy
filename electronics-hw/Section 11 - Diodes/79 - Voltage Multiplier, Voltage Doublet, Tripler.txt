@@ -1,0 +1,169 @@
+Hello, and welcome back to New Course in the tutorial about Rectify errors.
+
+We saw that the DC output voltage being controlled by the rectifier is at a value below that of domains
+
+input voltage, and this is because of the forward voltage drop caused by the diodes.
+
+The voltage multiplier, however, is a special type of diode rectifier circuit, which can potentially
+
+produce an output voltage many times greater than the applied input voltage, although it is usually
+
+in the adjoining circuit to use a voltage transformer to increase the voltage.
+
+Sometimes a switchable step up transformer, or a specially insulated transformer required for high
+
+wattage applications may not always be available.
+
+One native approach is to use a diode voltage multiplier circuit, which increases or steps up the voltage
+
+without the use of a transformer.
+
+What is multipliers are similar in many ways to rectify errors in that they convert AC to DC voltages
+
+for use in many electrical and electronic circuit applications, such as in microwave or words, strong
+
+electric field coils for cathode ray tubes, electrostatic and high voltage test equipment, where it
+
+is necessary to have a very high DC voltage generated from a relatively low AC supply.
+
+Generally, the DC output voltage of the rectifier circuit is limited by the peak value of its sinusoidal
+
+input voltage.
+
+But by using combinations of rectifier diodes and capacitors together, we can effectively multiply
+
+this input peak voltage to give a DC output equal to some multiple of the peak voltage value of the
+
+AC input voltage.
+
+Now, let's consider these basic voltage multiplier circuit.
+
+These circuit shows a basic, symmetrical voltage multiplier circuit made up from two halfway rectifier
+
+circuits by adding a second diode and capacitor to the output of a standard half way rectifier.
+
+We can increase its output voltage by a set amount.
+
+This type of what is multiplier configuration is known as a full web series multiplier because one of
+
+the diodes is conducting in each hive cycle.
+
+The same goes for a full way rectifier circuit.
+
+So then the sinusoidal input voltage is positive, capacitor sea water charges up to die or the D1 and
+
+then the Cenozoic, the voltage is negative capacitor AC to charges up to Diode D to the dogwood voltage,
+
+which is the double of the input voltage is taken across the two series connected capacitors.
+
+Now that we understand how a full day of voltage multiplier works, let's see another zero grid, which
+
+is called voltage Doppler.
+
+Both its name suggests what is Deabler is a voltage multiplier circuit, which has a voltage multiplication
+
+factor of two.
+
+The circuit consists of only two diodes, two capacitors and an oscillating AC input voltage.
+
+This simple diet capacitor pumps circuit gives a DC output voltage equal to the peak to peak value of
+
+the sinusoidal input.
+
+In other words, double the peak voltage value because the diodes and the capacitors work together to
+
+effectively double the voltage.
+
+So how does it work?
+
+During the negative half cycle of the signals, the input waveform diode D1 is forward biased and conducts
+
+charging at the pump capacitor, see one to the peak value of the input voltage because there is no
+
+return path for capacitors you want to discharge into.
+
+It remains fully charged, acting as a storage device in series with the voltage supply.
+
+At the same time, D.O.D. Do conducts a wired one charging up capacitor, Setu.
+
+During the positive whole cycle diode, D1 is reverse biased, blocking the discharging of C1 y diode
+
+D2 is forward biased charging up capacitor C2, but because there is a voltage across Capacitor C one
+
+already equal to the peak input voltage capacitor, C2 charges to twice the peak voltage value of the
+
+input signal.
+
+In other words, it charges up to the positive peak voltage plus negative peak voltage.
+
+So on the negative half cycle, Deewana charges see one to a peak voltage and on the positive half cycle,
+
+the two at the peak voltage to the voltage on the C one and transfers it all to see to the voltage across
+
+capacitor c two discharges to the load ready for the next half cycle.
+
+Then the voltage across Capacitor C two can be calculated as two times the peak value of the input voltage
+
+minus.
+
+Of course, the voltage drops across the diodes used both capacitor C to only charges up during the
+
+half cycle of the input wave form.
+
+The resulting output voltage discharged into the load has a repoll frequency equal to the supply frequency,
+
+hence the name half wave voltage double.
+
+The disadvantage of this is that it can be difficult to smooth out these large repair frequency in much
+
+the same way as for a halfway rectifier circuit.
+
+Also, capacitors capacitor, you must have a DC voltage rating at least twice the value of the peak
+
+input voltage.
+
+The advantage of what is multipliers here, which is that it allows higher voltages to be created from
+
+a low voltage power source without a need for an expensive high voltage transformer, as the what is
+
+Doppler circuit makes it possible to use the transformer with a lower step up ratio, that would be
+
+neat if an ordinary full weight supply were used.
+
+However, while voltage multipliers can boost the voltage, they can only supply low currents to a high
+
+resistance load because the generated output voltage quickly drops off low current increases.
+
+Also note that by reversing the direction of the diodes and capacitors in the circuit, we can also
+
+reverse the direction of the output voltage, creating a negative voltage output.
+
+And now let's have a look at these high voltage Tripler Circuit.
+
+By adding an additional a single diode capacitor stage to a halfway voltage doubler, we can create
+
+another voltage multiplier circuit that increases its input voltage by a factor of three and producing
+
+what is called a voltage three power circuit.
+
+This voltage multiplier circuit gives ADC output equal to three times the peak voltage value of the
+
+signal, so the input signal was with the previous voltage Doppler.
+
+The diodes within the voltage triple circuit charge and block the discharge of the competitors depending
+
+upon the direction of the input half cycle.
+
+Then one big voltage is dropped across three and two peak voltages across C2, and as the two capacitors
+
+are in series, this results in the load seeing a voltage equivalent to three peak voltages.
+
+Note that the real output voltage will be three times the peak input voltage minus the voltage drops
+
+across the diodes used.
+
+Thanks for watching.
+
+See you in this course!
+
+

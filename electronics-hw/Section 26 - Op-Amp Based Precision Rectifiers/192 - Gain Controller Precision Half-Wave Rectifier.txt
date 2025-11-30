@@ -1,0 +1,197 @@
+I will come back in the previous course, we have seen how to design a basic hotfix procedure rectifier,
+
+right.
+
+But now what happens if you want to rectify our reporting all in the same time?
+
+We want to amplify it.
+
+Usually procedure rectifiers deal with very low wattages, OK?
+
+And they often have to be amplified in order to be processed further.
+
+Is it possible to configure an option to rectify our position and to amplify it in the same time?
+
+The result is possible before a little ingenuity.
+
+This time, the input signal will be applied to the inverting input.
+
+Don't be scared by this secret.
+
+It's not complicated at all.
+
+What is required is basically it's an inverting amplifier.
+
+But by connecting the studios in this way, we get the halfway procedure rectifier that can even amplify
+
+the input signal.
+
+Why is it called this precision rectifier?
+
+Because there is no 700 millivolts dial drop, even though the inputs only swings 500 millivolts.
+
+Let's say it can still be rectified.
+
+Now, you might wonder how this report works.
+
+Let's start by examining what happens when the input signal is negative.
+
+So we are in the negative cycle.
+
+All right.
+
+I have paused the simulator.
+
+That's why the input signal is not oscillating anymore.
+
+There's actually one thing you have to know to be able to analyze the circuit, and that is rule number
+
+two, the OP tries to keep both inputs are the same voltage since the 1930s.
+
+Input is on the ground.
+
+So it's a zero at this point here.
+
+Has to be always at the ground as well.
+
+Right.
+
+So the upper has to play with the output voltage in such a way so that it can keep this point always
+
+the the ground, regardless of the input voltage.
+
+Now, the two 10 km resisters acts as a voltage divider with one end of the input and the other end
+
+at the output and the middle ground, you know what?
+
+Let's change this input wattage for a moment to a DC voltage, which outputs a voltage of minus 500
+
+million plus or minus zero point five would probably you will get it easier.
+
+The question is, how can we keep this middle point of the ground than one end of the resistor?
+
+Is that input and the other end is that output very easy?
+
+If this point is at minus zero, point five at this point has to be plus zero point five words.
+
+But since there is a diode here, the output voltage will be zero point five volts plus one diode drop.
+
+So in order to keep the middle point at ground and if this end is powered with minus zero point fireballs,
+
+the OP has to output a voltage of zero point firewalled plus the forward voltage drop of the diode so
+
+that after the diode we get plus zero point five wood.
+
+So if this end is a zero point firewall's, at the other end is at minus zero point five, this will
+
+be at ground, of course.
+
+Now the input voltage is DC, but then it's AC.
+
+The output voltage will vary with the input, but it will vary in a way so that this point is always
+
+at the ground.
+
+Great.
+
+Now let me change this back to AC.
+
+OK.
+
+Now, note here that since the input signal is applied to the inverting pin, it's the negative cycle
+
+that we pass through and not the positive, it is bothering us that the negative cycle passes and not
+
+the positive one.
+
+Hmm, I don't think so.
+
+Now, let's examine what happens during the positive half cycle, so let me pause the simulator somewhere
+
+around the peak.
+
+All right.
+
+When the input signal is positive, what happens?
+
+Well, the UPS output goes negative to keep the inverting pin on the ground.
+
+So unlike the basic halfway precision rectifier that we have seen in the previous course, this time
+
+the OP amp has to be powered with negative voltage as well.
+
+Why?
+
+Because during the positive half cycle, notice that the output goes negative in order to turn this
+
+diode on.
+
+And by this, the OP amp will keep this point here at ground zero.
+
+Current flows through the upper resistor or diode.
+
+So the output is around again.
+
+Why is the output negative?
+
+Because in this way the OP amp turns this diode on the output voltage is determined by the forward voltage
+
+drop of this diode.
+
+So if the forward what is drop?
+
+It's a 400 millivolts, let's say the upper P output, minus 400 milliwatt.
+
+If this diode has a forward wattage drop of 700 millivolts, the upper will output minus 700 milliwatts.
+
+I know this is a tricky part.
+
+You can either place diode in conduction by applying a positive voltage on the ANOD, which is, of
+
+course, higher than the forward voltage of the diode.
+
+Or you can apply a negative voltage on the cathode like here.
+
+So why does the option do that?
+
+Because in this way, the whole input signal will take this path and not this one.
+
+So the output will be unaffected.
+
+As we know, current always takes the path of least resistance.
+
+Right.
+
+And this path obviously has smaller resistance than this one here.
+
+Right.
+
+The diode has close to zero resistance and the upper amp has low output impedance as well.
+
+In this way, by outputting a negative voltage, the op ed prevents the positive cycle to pass through,
+
+which is exactly what we wanted because this is just a halfway rectifier.
+
+Oh, and I almost forgot to show you that besides, ratification this year could get even amplify the
+
+signal how since the core of the circuit is an inverted amplifier, the gain is equal to minus this
+
+resistance divided by this one.
+
+So right now, the gain is one, right?
+
+Thank you.
+
+I think it's one.
+
+But if you change this to, let's say, 20 K.
+
+The gain will be minus two, so as you can see, the upward with wattages, one would and not 500 millivolts
+
+as it was before.
+
+All right, thank you for watching.
+
+In the next course, we'll see how a full array of rectifier works.
+
+See you there.

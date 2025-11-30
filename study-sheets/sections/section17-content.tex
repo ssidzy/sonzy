@@ -1,0 +1,811 @@
+\section{Section 17: Miscellaneous Topics}
+
+% Topic 1: Relays and RC Differentiator
+\subsection{Relays and RC Differentiator}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{Mechanical relay:} Electrically operated switch using electromagnetic coil to control high current with low current. \textbf{Components:} Coil (electromagnet), armature (movable part), contacts (switch terminals). \textbf{Operation:} Current through coil $\rightarrow$ magnetic field $\rightarrow$ attracts armature $\rightarrow$ closes contacts $\rightarrow$ completes circuit. No current $\rightarrow$ spring returns armature $\rightarrow$ opens contacts. \textbf{Types:} SPST (Single Pole Single Throw, 2 contacts), SPDT (Single Pole Double Throw, 3 contacts + common), DPST (Double Pole Single Throw, 4 contacts), DPDT (Double Pole Double Throw, 6 contacts). \textbf{Key specs:} Rated coil voltage (nominal), set/operate voltage (minimum to close), switching capacity (max current through contacts), power rating (coil consumption in mW).
+
+\textbf{MOSFET relay (Solid-State):} Semiconductor relay using LED, photodiode, and MOSFET instead of mechanical contacts. \textbf{Operation:} Input current $\rightarrow$ LED lights $\rightarrow$ photodiode receives light $\rightarrow$ generates voltage $\rightarrow$ drives MOSFET gate $\rightarrow$ MOSFET switches load. \textbf{Advantages:} No moving parts (silent, long life), compact, no maintenance, faster switching. \textbf{Disadvantages:} Higher cost, voltage drop when ON, leakage when OFF.
+
+\textbf{RC Differentiator:} High-pass filter that outputs rate of change of input signal. \textbf{Circuit:} Capacitor series, resistor to ground, output across R. \textbf{Equation:} $V_{out} = RC \frac{dV_{in}}{dt}$ (derivative of input weighted by RC time constant). \textbf{Square wave input:} Produces positive spike on rising edge, negative spike on falling edge (DC blocked by capacitor). \textbf{Triangle wave input:} Produces square wave (constant slope $\rightarrow$ constant output). \textbf{Design rule:} Small time constant ($\tau = RC \ll T_{pulse}$, typically $\tau < 0.1T$) for sharp spikes. Large $\tau$ ($> 10T$) resembles original square wave.
+
+\textbf{Key equations:} Relay control: Low current coil controls high current load; Differentiator: $V_{out} = RC \frac{dV_{in}}{dt}$; Time constant: $\tau = RC$
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. Mechanical Relay Fundamentals:}
+
+Relay is electrically operated switch allowing small current to control much larger current.
+
+\textbf{Relay Analogy:}
+\begin{itemize}
+    \item Like relay race: Team members pass baton to complete race
+    \item Electrical relay: Receives signal from one circuit, passes control to another
+    \item Example: TV remote button $\rightarrow$ sends signal to relay $\rightarrow$ relay switches main power ON
+    \item Isolation: Input circuit (low voltage control) electrically separated from output (high voltage load)
+\end{itemize}
+
+\textbf{Structure Components:}
+\begin{itemize}
+    \item \textbf{Coil (Electromagnet):} Wire wound around iron core, receives control current
+    \item Creates magnetic field when current flows (DC current for steady field)
+    \item Strength proportional to current: More current $\rightarrow$ stronger field
+    \item \textbf{Armature:} Movable iron piece attracted by electromagnet
+    \item Spring-loaded to return to rest position when coil de-energized
+    \item \textbf{Contacts:} Metal terminals that close/open under armature movement
+    \item Fixed contact (stationary) and moving contact (attached to armature)
+    \item \textbf{Return Spring:} Pulls armature back when magnetic force removed
+\end{itemize}
+
+\textbf{Operating Principle:}
+\begin{itemize}
+    \item \textbf{Switch CLOSED (energized):}
+    \item Current flows through coil $\rightarrow$ magnetizes iron core
+    \item Magnetic force attracts armature to core
+    \item Moving contact touches fixed contact $\rightarrow$ relay ON
+    \item Load circuit completes $\rightarrow$ lamp/motor/device powered
+    \item \textbf{Switch OPEN (de-energized):}
+    \item No current through coil $\rightarrow$ no magnetic field
+    \item Spring pulls armature back to rest position
+    \item Contacts separate $\rightarrow$ relay OFF
+    \item Load circuit breaks $\rightarrow$ device unpowered
+\end{itemize}
+
+\textbf{Key Characteristic (Isolation):}
+\begin{itemize}
+    \item Physical spacing between coil and contacts
+    \item Input circuit (coil side) electrically isolated from output (contact side)
+    \item Allows low-voltage DC to control high-voltage AC safely
+    \item Example: 5~V DC Arduino controls 120~V AC lamp via relay
+    \item No electrical connection, only magnetic coupling
+\end{itemize}
+
+\textbf{2. Relay Types (Contact Configuration):}
+
+Classification based on number of poles (circuits) and throws (positions).
+
+\textbf{SPST (Single Pole Single Throw):}
+\begin{itemize}
+    \item \textbf{Poles:} 1 circuit controlled
+    \item \textbf{Throws:} 1 position (ON or OFF)
+    \item \textbf{Terminals:} 2 contacts + 2 for coil = 4 total
+    \item Function: Simple ON/OFF switch
+    \item Use: Turn single load ON/OFF (lamp, motor)
+\end{itemize}
+
+\textbf{SPDT (Single Pole Double Throw):}
+\begin{itemize}
+    \item \textbf{Poles:} 1 circuit controlled
+    \item \textbf{Throws:} 2 positions (common connects to either terminal)
+    \item \textbf{Terminals:} 3 contacts (common + 2 positions) + 2 for coil = 5 total
+    \item Function: Changeover switch (select between two circuits)
+    \item Use: Switch load between two sources, reversing motor direction
+    \item Common terminal alternates between two fixed contacts
+\end{itemize}
+
+\textbf{DPST (Double Pole Single Throw):}
+\begin{itemize}
+    \item \textbf{Poles:} 2 circuits controlled simultaneously
+    \item \textbf{Throws:} 1 position per pole (both ON or both OFF)
+    \item \textbf{Terminals:} 4 contacts (2 pairs) + 2 for coil = 6 total
+    \item Function: Two independent SPST switches actuated together
+    \item Use: Switch both hot and neutral in AC circuit, control two separate loads together
+\end{itemize}
+
+\textbf{DPDT (Double Pole Double Throw):}
+\begin{itemize}
+    \item \textbf{Poles:} 2 circuits controlled simultaneously
+    \item \textbf{Throws:} 2 positions per pole
+    \item \textbf{Terminals:} 6 contacts (2 commons + 4 positions) + 2 for coil = 8 total
+    \item Function: Two independent SPDT switches actuated together
+    \item Use: Reversing polarity, complex switching (motor forward/reverse with two circuits)
+\end{itemize}
+
+\textbf{3. Relay Specifications:}
+
+Critical parameters for selecting and using relays.
+
+\textbf{Rated Coil Voltage:}
+\begin{itemize}
+    \item Nominal voltage relay coil designed for
+    \item Example: 5~V, 12~V, 24~V DC relays common
+    \item Operating coil at rated voltage ensures proper operation
+    \item Too low voltage $\rightarrow$ may not close (weak magnetic field)
+    \item Too high voltage $\rightarrow$ overheating, coil damage
+\end{itemize}
+
+\textbf{Set/Operate Voltage:}
+\begin{itemize}
+    \item Minimum voltage needed to close contacts reliably
+    \item Typically 70--80\% of rated voltage
+    \item Example: 12~V relay may close at 9~V (75\%)
+    \item Below operate voltage: Contacts may chatter or not close
+\end{itemize}
+
+\textbf{Release Voltage:}
+\begin{itemize}
+    \item Voltage below which contacts open (armature releases)
+    \item Hysteresis: Operate voltage > Release voltage
+    \item Prevents chattering when voltage fluctuates
+\end{itemize}
+
+\textbf{Coil Power Rating:}
+\begin{itemize}
+    \item Power consumed by coil when energized (mW or W)
+    \item Example: 12~V relay, 50~mA coil $\rightarrow$ $P = 12 \times 0.05 = 0.6$~W
+    \item Important for calculating driver circuit power dissipation
+    \item Low-power relays: 100--500~mW typical
+\end{itemize}
+
+\textbf{Switching Capacity (Contact Rating):}
+\begin{itemize}
+    \item Maximum current contacts can switch safely
+    \item Specified for resistive, inductive, capacitive loads separately
+    \item Example: 10~A at 250~V AC (resistive), 3~A at 30~V DC (inductive)
+    \item \textbf{Inductive loads:} Motors take surge current at startup (2--5$\times$ running current)
+    \item Design rule: Relay rating $\geq$ 2$\times$ motor running current for safety
+    \item Contact material: Silver alloy (low resistance, arc-resistant)
+\end{itemize}
+
+\textbf{4. Relay Applications:}
+
+Using small current to control large loads.
+
+\textbf{Example 1: DC Control of AC Load:}
+\begin{itemize}
+    \item Control circuit: 5~V DC (microcontroller, Arduino)
+    \item Load circuit: 120~V AC lamp
+    \item Relay coil: 5~V DC, 70~mA (350~mW)
+    \item Contacts: 10~A at 250~V AC rating
+    \item Operation: MCU output HIGH (5~V) $\rightarrow$ energizes coil $\rightarrow$ contacts close $\rightarrow$ lamp ON
+    \item MCU output LOW (0~V) $\rightarrow$ coil de-energized $\rightarrow$ contacts open $\rightarrow$ lamp OFF
+    \item Safety: Complete electrical isolation between DC and AC circuits
+\end{itemize}
+
+\textbf{Example 2: Low Current Controlling High Current:}
+\begin{itemize}
+    \item Control: 50~mA through coil (low current, safe for electronics)
+    \item Load: 5~A motor (100$\times$ coil current)
+    \item Power amplification: Small control power switches large load power
+    \item Without relay: Would need transistor rated for full 5~A (expensive, complex)
+\end{itemize}
+
+\textbf{Example 3: Multiple Independent Circuits:}
+\begin{itemize}
+    \item One coil can control multiple contact sets (DPDT, multi-pole relays)
+    \item Single input signal switches several independent loads simultaneously
+    \item Example: Turn ON heater + fan + indicator lamp together
+\end{itemize}
+
+\textbf{5. MOSFET Relay (Solid-State Relay):}
+
+Semiconductor-based relay with no moving parts.
+
+\textbf{Structure:}
+\begin{itemize}
+    \item \textbf{Input:} LED (light-emitting diode)
+    \item \textbf{Coupling:} Optical isolation (light transmission)
+    \item \textbf{Detector:} Photodiode array
+    \item \textbf{Output:} Power MOSFET (switches load)
+\end{itemize}
+
+\textbf{Operating Principle:}
+\begin{itemize}
+    \item Input current applied $\rightarrow$ LED lights up
+    \item LED emits light (infrared or visible)
+    \item Photodiode receives light $\rightarrow$ generates voltage (photovoltaic effect)
+    \item Photodiode voltage drives MOSFET gate
+    \item MOSFET turns ON $\rightarrow$ conducts between drain-source $\rightarrow$ load powered
+    \item No input current $\rightarrow$ LED OFF $\rightarrow$ photodiode generates no voltage $\rightarrow$ MOSFET OFF
+\end{itemize}
+
+\textbf{Advantages of MOSFET Relay:}
+\begin{itemize}
+    \item \textbf{No mechanical parts:} No wear, unlimited switching cycles (vs 100k--1M for mechanical)
+    \item \textbf{Silent operation:} No audible click (mechanical relays make noise)
+    \item \textbf{Fast switching:} µs switching time (vs ms for mechanical)
+    \item \textbf{Compact:} Smaller footprint (no coil, armature, spring)
+    \item \textbf{No maintenance:} Contacts don't wear, corrode, or arc
+    \item \textbf{Long life:} 10--100$\times$ longer than mechanical (no contact degradation)
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item \textbf{Higher cost:} More expensive than equivalent mechanical relay
+    \item \textbf{Voltage drop:} MOSFET has $R_{DS(on)}$ (10--100~m$\Omega$), small voltage drop when ON
+    \item Mechanical relay: Contact resistance ~10--50~m$\Omega$, similar but better
+    \item \textbf{Leakage current:} Small OFF-state current (µA--mA) through MOSFET
+    \item Mechanical relay: Zero current when OFF (true open circuit)
+    \item \textbf{Heat dissipation:} Power MOSFET generates heat ($P = I^2 R_{DS(on)}$)
+\end{itemize}
+
+\textbf{6. RC Differentiator (High-Pass as Rate-of-Change Detector):}
+
+RC high-pass filter outputs derivative of input signal (rate of change).
+
+\textbf{Circuit Configuration:}
+\begin{itemize}
+    \item Capacitor in series (input to capacitor)
+    \item Resistor to ground (capacitor to resistor junction)
+    \item Output taken across resistor (not capacitor)
+    \item High-pass filter becomes differentiator for non-sinusoidal inputs
+\end{itemize}
+
+\textbf{Why Called Differentiator:}
+\begin{itemize}
+    \item Effect similar to mathematical differentiation
+    \item Differentiation: Finding rate of change of quantity
+    \item Output proportional to $\frac{dV_{in}}{dt}$ (how fast input changes)
+    \item Rapid input change $\rightarrow$ large output voltage
+    \item Slow input change $\rightarrow$ small output voltage
+    \item No change (DC) $\rightarrow$ zero output (capacitor blocks DC)
+\end{itemize}
+
+\textbf{Differentiator Equation Derivation:}
+\begin{itemize}
+    \item Capacitor current: $I_C = C \frac{dV_C}{dt}$ (current proportional to voltage rate of change)
+    \item Voltage across capacitor cannot change instantly (needs time to charge)
+    \item Current through C must equal current through R (series circuit): $I_C = I_R$
+    \item Voltage across R: $V_R = I_R \times R = I_C \times R$
+    \item Substitute: $V_{out} = V_R = RC \frac{dV_{in}}{dt}$
+    \item Output is derivative of input weighted by time constant $\tau = RC$
+\end{itemize}
+
+\textbf{Square Wave Input Response:}
+\begin{itemize}
+    \item \textbf{Rising edge:} Input voltage jumps positive instantly
+    \item Rate of change very high ($\frac{dV}{dt} \to \infty$ ideally)
+    \item Output: Positive spike (narrow pulse)
+    \item \textbf{Falling edge:} Input voltage jumps negative instantly
+    \item Output: Negative spike (narrow pulse, opposite polarity)
+    \item \textbf{Flat top:} Input constant (no change)
+    \item $\frac{dV}{dt} = 0$ $\rightarrow$ output zero (capacitor fully charged, no current)
+    \item Result: Positive + negative spikes at edges only
+    \item DC level removed (capacitor blocks DC component)
+\end{itemize}
+
+\textbf{Triangle Wave Input Response:}
+\begin{itemize}
+    \item \textbf{Rising slope:} Constant positive rate of change
+    \item $\frac{dV}{dt} = +k$ (constant) $\rightarrow$ output constant positive voltage
+    \item \textbf{Falling slope:} Constant negative rate of change
+    \item $\frac{dV}{dt} = -k$ (constant) $\rightarrow$ output constant negative voltage
+    \item Result: Square wave output (derivative of triangle is square)
+    \item Perfect mathematical relationship: Triangle slope $\rightarrow$ square level
+\end{itemize}
+
+\textbf{Time Constant Effect:}
+
+Shape of output depends on ratio of pulse width $T$ to time constant $\tau = RC$.
+
+\begin{itemize}
+    \item \textbf{Large $\tau$ ($\tau > 10T$):} Output resembles input square wave
+    \item Capacitor charges/discharges slowly, follows input
+    \item High-pass characteristic weak, passes low frequencies
+    \item \textbf{Small $\tau$ ($\tau < 0.1T$):} Output is sharp spikes
+    \item Capacitor charges/discharges quickly, only edges create voltage
+    \item True differentiation: Only fast changes produce output
+    \item \textbf{Intermediate $\tau$:} Range of waveforms between spikes and square
+    \item Design rule: Use $\tau \ll T$ for good differentiation (sharp pulses)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Edge detection: Trigger on rising/falling edges of digital signals
+    \item Wave shaping: Convert square to spikes for timing circuits
+    \item High-pass coupling: Remove DC, pass AC changes
+    \item Pulse generation: Create narrow trigger pulses from slow transitions
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Relay Coil Power Calculation}
+
+\textbf{Given:} 12~V DC relay, coil resistance 240~$\Omega$
+
+\textbf{Calculate coil current and power:}
+\begin{itemize}
+    \item Coil current: $I = \frac{V}{R} = \frac{12}{240} = 0.05$~A = 50~mA
+    \item Coil power: $P = VI = 12 \times 0.05 = 0.6$~W = 600~mW
+    \item Or: $P = \frac{V^2}{R} = \frac{144}{240} = 0.6$~W $\checkmark$
+\end{itemize}
+
+\textbf{Driver circuit considerations:}
+\begin{itemize}
+    \item Need transistor/driver capable of sinking 50~mA
+    \item 2N2222 transistor: Max 600~mA collector current $\checkmark$ (12$\times$ safety margin)
+    \item Power dissipation in transistor: $P = V_{CE(sat)} \times I_C \approx 0.3 \times 0.05 = 15$~mW (negligible)
+    \item Flyback diode required across coil (inductive load, voltage spike when turned OFF)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Motor Relay Selection}
+
+\textbf{Requirement:} Control DC motor, running current 2~A, startup surge 8~A
+
+\textbf{Relay selection criteria:}
+\begin{itemize}
+    \item Running current: 2~A
+    \item Surge current: 8~A (4$\times$ running, typical for motors)
+    \item Design rule: Relay rating $\geq$ 2$\times$ surge current for safety
+    \item Minimum relay rating: $2 \times 8 = 16$~A
+    \item Choose: 20~A relay (next standard size, provides margin)
+\end{itemize}
+
+\textbf{Why oversizing needed:}
+\begin{itemize}
+    \item Motor startup: High inrush current (low back-EMF initially)
+    \item Contact welding risk: High current creates arc when switching
+    \item Contact wear: Arcing erodes contact material over time
+    \item Derating for reliability: 2$\times$ factor ensures long relay life
+    \item Alternative: Use soft-start circuit to limit inrush (allows smaller relay)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: RC Differentiator Design}
+
+\textbf{Requirement:} Detect edges of 1~kHz square wave (period $T = 1$~ms)
+
+\textbf{Design for sharp spikes:}
+\begin{itemize}
+    \item Rule: $\tau = RC < 0.1T$ for good differentiation
+    \item Target: $\tau = 0.05T = 0.05 \times 1 \times 10^{-3} = 50$~µs
+    \item Choose C = 1~nF (small, typical)
+    \item Calculate R: $R = \frac{\tau}{C} = \frac{50 \times 10^{-6}}{1 \times 10^{-9}} = 50$~k$\Omega$
+    \item Use standard value: R = 47~k$\Omega$ (gives $\tau = 47$~µs, close enough)
+\end{itemize}
+
+\textbf{Expected output:}
+\begin{itemize}
+    \item Input: Square wave, 0--5~V, 1~kHz
+    \item Rising edge (0$\rightarrow$5~V): Positive spike, amplitude ~5~V, width ~5$\tau$ = 235~µs
+    \item Falling edge (5$\rightarrow$0~V): Negative spike, amplitude ~$-5$~V, width ~235~µs
+    \item Flat portions: Output decays to zero (capacitor charges/discharges)
+    \item Spike much narrower than pulse (235~µs vs 500~µs = 47\% of half-period)
+\end{itemize}
+
+\textbf{Verification:}
+\begin{itemize}
+    \item Ratio: $\frac{\tau}{T} = \frac{47}{1000} = 0.047$ $\checkmark$ (less than 0.1 threshold)
+    \item Good differentiation achieved
+    \item For sharper spikes: Reduce $\tau$ further (use R = 10~k$\Omega$ $\rightarrow$ $\tau = 10$~µs)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Differentiator Output Voltage}
+
+\textbf{Given:} Triangle wave, 0--10~V peak-to-peak, 100~Hz, RC = 1~ms
+
+\textbf{Calculate output:}
+\begin{itemize}
+    \item Period: $T = \frac{1}{100} = 10$~ms
+    \item Rising slope duration: $\frac{T}{2} = 5$~ms (0$\rightarrow$10~V in 5~ms)
+    \item Slope: $\frac{dV}{dt} = \frac{10 - 0}{5 \times 10^{-3}} = 2000$~V/s = 2~V/ms
+    \item Output voltage: $V_{out} = RC \frac{dV_{in}}{dt} = 1 \times 10^{-3} \times 2000 = 2$~V
+\end{itemize}
+
+\textbf{Output waveform:}
+\begin{itemize}
+    \item Rising slope (0$\rightarrow$10~V): Output = +2~V (constant)
+    \item Falling slope (10$\rightarrow$0~V): Slope = $-2000$~V/s $\rightarrow$ Output = $-2$~V (constant)
+    \item Result: Square wave, $\pm$2~V peak, 100~Hz
+    \item Derivative of triangle wave is square wave $\checkmark$
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Relay Purpose:} Small current controls large current via electromagnetic coupling. Coil (mA--100~mA) creates magnetic field, attracts armature, closes contacts switching load (A--100~A). Complete electrical isolation between control and load circuits. Example: 5~V 50~mA coil switches 120~V 10~A lamp (2400~W load controlled by 0.25~W input)
+    
+    \item \textbf{Relay Types:} SPST (1 circuit ON/OFF, 4 terminals). SPDT (1 circuit, 2 positions + common, 5 terminals). DPST (2 circuits ON/OFF together, 6 terminals). DPDT (2 circuits, 2 positions each, 8 terminals). Pole = number of independent circuits. Throw = number of positions per pole
+    
+    \item \textbf{Relay Specifications:} Rated coil voltage (nominal operation voltage). Set voltage (minimum to close, ~75\% rated). Switching capacity (max contact current, derate for inductive loads). Coil power (mW consumption). For motors: Relay rating $\geq$ 2$\times$ surge current (startup inrush 4--5$\times$ running)
+    
+    \item \textbf{Mechanical vs MOSFET Relay:} Mechanical: Moving contacts, audible click, 100k--1M cycles, true isolation when OFF, cheap. MOSFET (SSR): Optical coupling + semiconductor switch, silent, unlimited cycles, fast (µs), compact, expensive, small voltage drop and leakage. Use mechanical for cost/isolation, SSR for life/speed
+    
+    \item \textbf{RC Differentiator Principle:} Output = $RC \frac{dV_{in}}{dt}$ (derivative of input). Rapid change $\rightarrow$ large output, slow change $\rightarrow$ small output, DC $\rightarrow$ zero. Square wave input produces spikes at edges (positive on rising, negative on falling). Triangle wave input produces square wave (constant slope $\rightarrow$ constant output). Mathematically correct differentiation
+    
+    \item \textbf{Time Constant Effect:} $\tau = RC$ determines differentiation quality. Small $\tau$ ($<0.1T$) $\rightarrow$ sharp spikes, good differentiation. Large $\tau$ ($>10T$) $\rightarrow$ output resembles input, poor differentiation. Intermediate $\tau$ $\rightarrow$ partial differentiation. Design: Choose $\tau \ll T_{pulse}$ for edge detection, spike generation
+    
+    \item \textbf{Q: Why relay needs flyback diode?} A: Coil is inductor, stores energy in magnetic field. When turned OFF, current cannot stop instantly. Collapsing magnetic field induces large voltage spike ($V = -L \frac{dI}{dt}$, can reach 100s of volts). Damages transistor driver. Flyback diode (reverse across coil) provides path for induced current, clamps voltage to ~0.7~V, protects circuit. Always required for inductive relay coils
+    
+    \item \textbf{Q: How does RC differentiator work with square wave?} A: Rising edge: Input jumps 0$\rightarrow$5~V instantly, $\frac{dV}{dt}$ very high, capacitor cannot charge instantly, voltage difference appears across R, creates positive spike. Flat top: Input constant, $\frac{dV}{dt}=0$, capacitor charges to input voltage through R, current stops, output decays to zero. Falling edge: Input drops 5$\rightarrow$0~V, capacitor voltage higher than input, discharges through R in reverse, creates negative spike. Capacitor blocks DC, only passes changes
+    
+    \item \textbf{Q: Why MOSFET relay better for high-frequency switching?} A: Mechanical relay has mass (armature, contacts), inertia limits speed to ~1--10~ms switching time. Contacts bounce (multiple make/break cycles) during closure, ~1--5~ms settle. Max switching rate ~10--100~Hz. MOSFET relay: No moving parts, purely electronic, switching time 10--100~µs, no bounce, can switch at kHz--MHz rates. Used in PWM, high-speed control, data transmission
+\end{itemize}
+\end{keypointsbox}
+
+\newpage
+
+% Topic 2: Wheatstone Bridge and Series RLC Circuits
+\subsection{Wheatstone Bridge and Series RLC Circuits}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} TL;DR}
+\begin{tldrbox}
+\textbf{Wheatstone Bridge:} Circuit for measuring unknown resistance using three known resistors. \textbf{Structure:} Two voltage dividers in parallel, voltmeter between midpoints. \textbf{Balance condition:} $\frac{R_1}{R_2} = \frac{R_3}{R_4}$ when voltmeter reads 0~V (no current through meter). \textbf{To measure $R_2$:} Set $R_1$, $R_3$, adjust $R_4$ until balanced, then $R_2 = R_1 \frac{R_4}{R_3}$. \textbf{Applications:} Precision resistance measurement (down to m$\Omega$ range), sensor interfacing (strain gauges, RTDs, photocells with op-amps), detector circuits.
+
+\textbf{Series RLC circuit:} R, L, C in series across AC supply. \textbf{Impedance:} $Z = \sqrt{R^2 + (X_L - X_C)^2}$ where $X_L = 2\pi fL$ and $X_C = \frac{1}{2\pi fC}$. \textbf{Current:} $I = \frac{V_s}{Z}$. \textbf{Resonance:} When $X_L = X_C$ (reactances cancel), $f_0 = \frac{1}{2\pi\sqrt{LC}}$, impedance minimum = R, current maximum. \textbf{Phasor diagram:} $V_L$ leads current by 90°, $V_C$ lags by 90° (opposite directions), $V_R$ in phase. Supply voltage: $V_s = \sqrt{V_R^2 + (V_L - V_C)^2}$ (vector sum).
+
+\textbf{Oscillation vs damping:} When DC power applied then removed, LC oscillates at $f_0$ (energy alternates between magnetic and electric fields). \textbf{Damping:} Resistance dissipates energy, oscillations decay. Small R $\rightarrow$ underdamped (many oscillations before stopping). Large R $\rightarrow$ critically damped (fastest return to zero without overshoot). Very large R $\rightarrow$ overdamped (slow return).
+
+\textbf{Key equations:} Bridge balance: $\frac{R_1}{R_2} = \frac{R_3}{R_4}$; RLC impedance: $Z = \sqrt{R^2 + (X_L - X_C)^2}$; Resonance: $f_0 = \frac{1}{2\pi\sqrt{LC}}$
+\end{tldrbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Detailed Explanation}
+\begin{detailbox}
+\textbf{1. Wheatstone Bridge Fundamentals:}
+
+Precision circuit for measuring resistance by comparing with known values.
+
+\textbf{Historical Context:}
+\begin{itemize}
+    \item Developed by Charles Wheatstone for unknown resistance measurement
+    \item Calibration tool for ohmmeters, voltmeters, ammeters
+    \item Digital multimeters simpler today, but bridge still used for:
+    \item Very low resistance (m$\Omega$ range, contact resistance)
+    \item Sensor interfacing (strain gauges, temperature sensors)
+    \item High-precision measurements (4-wire sensing)
+\end{itemize}
+
+\textbf{Circuit Structure:}
+\begin{itemize}
+    \item \textbf{Configuration:} Two voltage dividers in parallel
+    \item First divider: $R_1$ series with $R_2$ (top to bottom)
+    \item Second divider: $R_3$ series with $R_4$ (top to bottom)
+    \item Voltage supply across both dividers (common top and bottom)
+    \item Voltmeter connected between divider midpoints (junction $R_1$-$R_2$ and $R_3$-$R_4$)
+    \item \textbf{Bridge:} Voltmeter connection is the "bridge" between two dividers
+\end{itemize}
+
+\textbf{Balance Condition:}
+
+Bridge is balanced when voltmeter reads exactly 0~V (no potential difference).
+
+\begin{itemize}
+    \item \textbf{Left divider voltage:} $V_1 = V_s \frac{R_2}{R_1 + R_2}$ (voltage at $R_1$-$R_2$ junction)
+    \item \textbf{Right divider voltage:} $V_2 = V_s \frac{R_4}{R_3 + R_4}$ (voltage at $R_3$-$R_4$ junction)
+    \item \textbf{Balance:} $V_1 = V_2$ (no voltage difference, meter reads 0)
+    \item $V_s \frac{R_2}{R_1 + R_2} = V_s \frac{R_4}{R_3 + R_4}$
+    \item Cancel $V_s$: $\frac{R_2}{R_1 + R_2} = \frac{R_4}{R_3 + R_4}$
+    \item Cross-multiply: $R_2(R_3 + R_4) = R_4(R_1 + R_2)$
+    \item Expand: $R_2 R_3 + R_2 R_4 = R_4 R_1 + R_4 R_2$
+    \item Cancel $R_2 R_4$: $R_2 R_3 = R_4 R_1$
+    \item \textbf{Balance equation:} $\frac{R_1}{R_2} = \frac{R_3}{R_4}$ (ratio equality)
+\end{itemize}
+
+\textbf{Measuring Unknown Resistance:}
+
+Assume $R_2$ is unknown, $R_1$, $R_3$ fixed, $R_4$ variable.
+
+\begin{itemize}
+    \item Set $R_1$ and $R_3$ to known values (e.g., 220~$\Omega$, 400~$\Omega$)
+    \item Adjust $R_4$ (variable resistor, potentiometer) until voltmeter reads 0~V
+    \item At balance: $\frac{R_1}{R_2} = \frac{R_3}{R_4}$
+    \item Solve for unknown: $R_2 = R_1 \frac{R_4}{R_3}$
+    \item Plug in known values, calculate $R_2$
+    \item Example: $R_1 = 220$~$\Omega$, $R_3 = 400$~$\Omega$, $R_4 = 1000$~$\Omega$ (adjusted to balance)
+    \item $R_2 = 220 \times \frac{1000}{400} = 220 \times 2.5 = 550$~$\Omega$ $\checkmark$
+\end{itemize}
+
+\textbf{Supply Voltage Independence:}
+
+Balance condition independent of supply voltage.
+
+\begin{itemize}
+    \item Balance depends only on resistance ratios, not absolute voltages
+    \item If $V_s$ doubled: Both $V_1$ and $V_2$ double equally
+    \item Difference $(V_1 - V_2)$ remains zero if balanced
+    \item Can use any stable supply (battery, regulated supply)
+    \item Advantage: Voltage drift doesn't affect measurement accuracy
+\end{itemize}
+
+\textbf{2. Wheatstone Bridge Applications:}
+
+Beyond simple resistance measurement.
+
+\textbf{Sensor Interfacing (with Op-Amp):}
+\begin{itemize}
+    \item Replace one resistor with sensor (strain gauge, RTD, LDR photocell)
+    \item Sensor resistance changes with physical quantity (force, temperature, light)
+    \item Bridge output voltage proportional to resistance change
+    \item Op-amp amplifies small voltage difference (high gain, high input impedance)
+    \item \textbf{Example:} Light detector using LDR (Light-Dependent Resistor)
+    \item Dark: LDR high resistance $\rightarrow$ bridge unbalanced one way $\rightarrow$ positive output
+    \item Bright: LDR low resistance $\rightarrow$ bridge unbalanced opposite $\rightarrow$ negative output
+    \item Op-amp output drives indicator, relay, or ADC
+\end{itemize}
+
+\textbf{Strain Gauge Measurement:}
+\begin{itemize}
+    \item Strain gauge: Resistance changes with mechanical strain ($\Delta R / R \approx 0.1$--2\%)
+    \item Four-arm bridge: All four resistors are strain gauges (temperature compensation)
+    \item Balanced at zero strain, unbalanced proportional to applied force
+    \item Used in: Load cells, pressure sensors, torque sensors
+\end{itemize}
+
+\textbf{3. Series RLC Circuit Basics:}
+
+R, L, C connected in series across AC supply, impedance depends on frequency.
+
+\textbf{Component Reactances:}
+\begin{itemize}
+    \item \textbf{Resistance R:} Constant with frequency, dissipates power
+    \item \textbf{Inductive reactance:} $X_L = 2\pi fL = \omega L$ (increases with frequency)
+    \item At DC ($f=0$): $X_L = 0$ (inductor acts as short circuit)
+    \item At high f: $X_L$ large (inductor blocks AC)
+    \item \textbf{Capacitive reactance:} $X_C = \frac{1}{2\pi fC} = \frac{1}{\omega C}$ (decreases with frequency)
+    \item At DC ($f=0$): $X_C = \infty$ (capacitor acts as open circuit)
+    \item At high f: $X_C$ small (capacitor passes AC easily)
+\end{itemize}
+
+\textbf{Angular Frequency:}
+\begin{itemize}
+    \item $\omega = 2\pi f$ (radians per second)
+    \item One cycle = $2\pi$ radians
+    \item Frequency $f$ = cycles per second (Hz)
+    \item Angular frequency = radians per second (rad/s)
+    \item Simplifies equations: $X_L = \omega L$, $X_C = \frac{1}{\omega C}$
+\end{itemize}
+
+\textbf{4. Series RLC Impedance and Phasor Diagram:}
+
+Total impedance combines resistance and reactance (vector addition).
+
+\textbf{Voltage-Current Phase Relationships:}
+\begin{itemize}
+    \item \textbf{Resistor:} Voltage and current in phase (0° phase shift)
+    \item \textbf{Inductor:} Voltage leads current by 90° (current lags voltage)
+    \item Memory: "ELI" $\rightarrow$ E (voltage) Leads I (current) in Inductor
+    \item \textbf{Capacitor:} Voltage lags current by 90° (current leads voltage)
+    \item Memory: "ICE" $\rightarrow$ I (current) Comes before E (voltage) in Capacitor
+\end{itemize}
+
+\textbf{Phasor Diagram (Current as Reference):}
+\begin{itemize}
+    \item Current $I$ same through all components (series circuit) $\rightarrow$ use as reference (horizontal)
+    \item $V_R = IR$ in phase with current (horizontal, same direction as $I$)
+    \item $V_L = IX_L$ leads current by 90° (vertical, upward from $I$)
+    \item $V_C = IX_C$ lags current by 90° (vertical, downward from $I$)
+    \item $V_L$ and $V_C$ point opposite directions (cancel partially or fully)
+\end{itemize}
+
+\textbf{Supply Voltage (Vector Sum):}
+\begin{itemize}
+    \item Cannot simply add $V_R + V_L + V_C$ (different phases)
+    \item Must use vector (phasor) addition
+    \item $V_L$ and $V_C$ opposite: Net reactive voltage = $V_L - V_C$
+    \item Supply voltage: $V_s = \sqrt{V_R^2 + (V_L - V_C)^2}$ (Pythagorean theorem)
+    \item Substitute $V = IZ$: $V_s = I\sqrt{R^2 + (X_L - X_C)^2}$
+    \item \textbf{Impedance:} $Z = \frac{V_s}{I} = \sqrt{R^2 + (X_L - X_C)^2}$ (total opposition to AC)
+\end{itemize}
+
+\textbf{Three Impedance Cases:}
+\begin{itemize}
+    \item \textbf{$X_L > X_C$:} Inductive dominant, $Z = \sqrt{R^2 + (X_L - X_C)^2}$, current lags voltage
+    \item \textbf{$X_C > X_L$:} Capacitive dominant, $Z = \sqrt{R^2 + (X_C - X_L)^2}$, current leads voltage
+    \item \textbf{$X_L = X_C$:} Resonance, reactances cancel, $Z = R$ (minimum), current maximum
+\end{itemize}
+
+\textbf{5. Resonance in Series RLC:}
+
+Special frequency where reactances cancel, impedance minimized.
+
+\textbf{Resonance Condition:}
+\begin{itemize}
+    \item $X_L = X_C$ (inductive and capacitive reactances equal)
+    \item $2\pi f_0 L = \frac{1}{2\pi f_0 C}$
+    \item Rearrange: $(2\pi f_0)^2 LC = 1$
+    \item \textbf{Resonant frequency:} $f_0 = \frac{1}{2\pi\sqrt{LC}}$
+    \item Depends only on L and C values, independent of R
+\end{itemize}
+
+\textbf{At Resonance:}
+\begin{itemize}
+    \item $X_L - X_C = 0$ (reactances cancel completely)
+    \item Impedance: $Z = \sqrt{R^2 + 0^2} = R$ (minimum possible, purely resistive)
+    \item Current: $I = \frac{V_s}{Z} = \frac{V_s}{R}$ (maximum current for given $V_s$)
+    \item Voltage across R: $V_R = IR = V_s$ (all supply voltage across R)
+    \item Voltage across L and C: Can be very large (Q times $V_s$), but cancel in phasor sum
+    \item Power factor: 1 (purely resistive, voltage and current in phase)
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Radio tuning: Select frequency $f_0$ by adjusting L or C (variable capacitor)
+    \item Impedance minimum at $f_0$ $\rightarrow$ maximum signal at resonance
+    \item Filter: Passes $f_0$, attenuates other frequencies
+    \item FM tuner: Vary C to change $f_0$ across 88--108~MHz band
+\end{itemize}
+
+\textbf{6. RLC Oscillation and Damping:}
+
+Energy exchange between L and C when DC power applied then removed.
+
+\textbf{Oscillation Mechanism:}
+\begin{itemize}
+    \item Initially: Capacitor charged, inductor de-energized
+    \item Capacitor discharges through inductor
+    \item Current builds magnetic field in inductor (stores energy)
+    \item Capacitor fully discharged, inductor fully energized
+    \item Magnetic field collapses, induces current (Lenz's law)
+    \item Current charges capacitor in opposite polarity
+    \item Process reverses: Energy oscillates L $\leftrightarrow$ C
+    \item Frequency: $f_0 = \frac{1}{2\pi\sqrt{LC}}$ (resonant frequency)
+\end{itemize}
+
+\textbf{Ideal LC (No Resistance):}
+\begin{itemize}
+    \item Energy conserved: $E_{total} = E_L + E_C$ constant
+    \item Magnetic energy: $E_L = \frac{1}{2}LI^2$
+    \item Electric energy: $E_C = \frac{1}{2}CV^2$
+    \item Oscillation continues forever (no damping)
+    \item Harmonic oscillator (like frictionless pendulum)
+\end{itemize}
+
+\textbf{Real RLC (With Resistance):}
+
+Resistance dissipates energy, oscillations decay.
+
+\begin{itemize}
+    \item Power loss: $P = I^2 R$ (resistance converts energy to heat)
+    \item Each cycle: Some energy lost, amplitude decreases
+    \item \textbf{Damping:} Gradual reduction in oscillation amplitude
+    \item Eventually: All energy dissipated, oscillation stops
+\end{itemize}
+
+\textbf{Damping Regimes:}
+
+Behavior depends on resistance value relative to critical damping.
+
+\begin{itemize}
+    \item \textbf{Underdamped ($R < R_{critical}$):} Small resistance
+    \item Many oscillations before stopping (10--100+ cycles)
+    \item Exponential envelope: Amplitude decays as $e^{-t/\tau}$ where $\tau = \frac{2L}{R}$
+    \item Typical: Small R (10--100~$\Omega$)
+    \item \textbf{Critically damped ($R = R_{critical}$):} Specific resistance value
+    \item $R_{critical} = 2\sqrt{\frac{L}{C}}$ (critical damping resistance)
+    \item No oscillation, fastest return to zero without overshoot
+    \item Optimal for control systems (door closer, suspension)
+    \item \textbf{Overdamped ($R > R_{critical}$):} Large resistance
+    \item No oscillation, slow exponential decay
+    \item Takes longer to settle than critically damped
+    \item Example: Very large R (k$\Omega$--M$\Omega$)
+\end{itemize}
+\end{detailbox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Practical Examples \& Numerical}
+\begin{examplebox}
+\textbf{Example 1: Wheatstone Bridge Measurement}
+
+\textbf{Given:} Bridge balanced with $R_1 = 220$~$\Omega$, $R_3 = 400$~$\Omega$, $R_4 = 1000$~$\Omega$
+
+\textbf{Find unknown $R_2$:}
+\begin{itemize}
+    \item Balance condition: $\frac{R_1}{R_2} = \frac{R_3}{R_4}$
+    \item Rearrange: $R_2 = R_1 \frac{R_4}{R_3}$
+    \item Substitute: $R_2 = 220 \times \frac{1000}{400} = 220 \times 2.5$
+    \item $R_2 = 550$~$\Omega$ $\checkmark$
+\end{itemize}
+
+\textbf{Verification:}
+\begin{itemize}
+    \item Check ratio: $\frac{R_1}{R_2} = \frac{220}{550} = 0.4$
+    \item $\frac{R_3}{R_4} = \frac{400}{1000} = 0.4$ $\checkmark$ (ratios equal)
+    \item Bridge balanced $\checkmark$
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 2: Series RLC Impedance Calculation}
+
+\textbf{Given:} R = 2~$\Omega$, L = 0.15~H, C = 100~µF, supply 100~V at 50~Hz
+
+\textbf{Calculate impedance and current:}
+\begin{itemize}
+    \item Inductive reactance: $X_L = 2\pi fL = 2\pi \times 50 \times 0.15$
+    \item $X_L = 47.12$~$\Omega$
+    \item Capacitive reactance: $X_C = \frac{1}{2\pi fC} = \frac{1}{2\pi \times 50 \times 100 \times 10^{-6}}$
+    \item $X_C = \frac{1}{0.0314} = 31.83$~$\Omega$
+    \item Net reactance: $X_L - X_C = 47.12 - 31.83 = 15.29$~$\Omega$ (inductive)
+    \item Impedance: $Z = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{4 + 233.78}$
+    \item $Z = \sqrt{237.78} = 15.42$~$\Omega$
+    \item Current: $I = \frac{V_s}{Z} = \frac{100}{15.42} = 6.49$~A
+\end{itemize}
+
+\textbf{Voltage drops:}
+\begin{itemize}
+    \item $V_R = IR = 6.49 \times 2 = 12.98$~V
+    \item $V_L = IX_L = 6.49 \times 47.12 = 305.8$~V
+    \item $V_C = IX_C = 6.49 \times 31.83 = 206.6$~V
+    \item Verify: $V_s = \sqrt{V_R^2 + (V_L - V_C)^2} = \sqrt{168.5 + (99.2)^2} = \sqrt{10007.1} = 100$~V $\checkmark$
+    \item Note: $V_L$ and $V_C$ individually exceed $V_s$ (resonance effect), but cancel in phasor sum
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 3: Resonant Frequency Calculation}
+
+\textbf{Given:} L = 0.15~H, C = 100~µF (same circuit as Example 2)
+
+\textbf{Find resonant frequency:}
+\begin{itemize}
+    \item $f_0 = \frac{1}{2\pi\sqrt{LC}} = \frac{1}{2\pi\sqrt{0.15 \times 100 \times 10^{-6}}}$
+    \item $f_0 = \frac{1}{2\pi\sqrt{1.5 \times 10^{-5}}} = \frac{1}{2\pi \times 3.873 \times 10^{-3}}$
+    \item $f_0 = \frac{1}{0.02433} = 41.1$~Hz
+\end{itemize}
+
+\textbf{At resonance (41.1~Hz):}
+\begin{itemize}
+    \item $X_L = 2\pi \times 41.1 \times 0.15 = 38.7$~$\Omega$
+    \item $X_C = \frac{1}{2\pi \times 41.1 \times 100 \times 10^{-6}} = 38.7$~$\Omega$ $\checkmark$ (equal)
+    \item $Z = R = 2$~$\Omega$ (minimum impedance)
+    \item $I = \frac{100}{2} = 50$~A (maximum current, 7.7$\times$ higher than at 50~Hz!)
+    \item Power: $P = I^2 R = 50^2 \times 2 = 5000$~W (all power dissipated in R)
+\end{itemize}
+
+\vspace{0.15cm}
+
+\textbf{Example 4: Critical Damping Resistance}
+
+\textbf{Given:} L = 0.15~H, C = 100~µF, want critically damped response
+
+\textbf{Calculate $R_{critical}$:}
+\begin{itemize}
+    \item $R_{critical} = 2\sqrt{\frac{L}{C}} = 2\sqrt{\frac{0.15}{100 \times 10^{-6}}}$
+    \item $R_{critical} = 2\sqrt{1500} = 2 \times 38.73 = 77.46$~$\Omega$
+\end{itemize}
+
+\textbf{Damping behavior:}
+\begin{itemize}
+    \item $R = 2$~$\Omega$ (Example 2): Underdamped (many oscillations, $R \ll R_{critical}$)
+    \item $R = 77.46$~$\Omega$: Critically damped (fastest settle, no overshoot)
+    \item $R = 500$~$\Omega$: Overdamped (slow settle, no oscillation, $R > R_{critical}$)
+\end{itemize}
+\end{examplebox}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\color{accentcolor} Key Points (Interview Focus)}
+\begin{keypointsbox}
+\begin{itemize}
+    \item \textbf{Wheatstone Bridge Balance:} $\frac{R_1}{R_2} = \frac{R_3}{R_4}$ when voltmeter reads 0~V. Two voltage dividers in parallel, bridge voltage = difference between divider midpoints. Balanced when ratios equal, independent of supply voltage. To measure unknown: Set 3 resistors, adjust 4th until balance, calculate from ratio. Precision method for low resistance (m$\Omega$), sensor interfacing
+    
+    \item \textbf{Series RLC Impedance:} $Z = \sqrt{R^2 + (X_L - X_C)^2}$ where $X_L = 2\pi fL$ (inductive reactance increases with f), $X_C = \frac{1}{2\pi fC}$ (capacitive reactance decreases with f). Phasor addition: $V_L$ leads current 90°, $V_C$ lags 90° (opposite), $V_R$ in phase. Supply voltage vector sum: $V_s = \sqrt{V_R^2 + (V_L - V_C)^2}$
+    
+    \item \textbf{Resonance Condition:} $X_L = X_C$ at $f_0 = \frac{1}{2\pi\sqrt{LC}}$. Reactances cancel, impedance minimum = R, current maximum $I = V_s/R$. All supply voltage across R, but $V_L$ and $V_C$ can exceed $V_s$ (high Q). Used in radio tuning: Adjust L or C to change $f_0$, select desired frequency. Power factor = 1 (resistive, voltage and current in phase)
+    
+    \item \textbf{LC Oscillation:} Energy oscillates between magnetic field (L) and electric field (C) at $f_0 = \frac{1}{2\pi\sqrt{LC}}$. Capacitor charges $\rightarrow$ discharges through L $\rightarrow$ builds magnetic field $\rightarrow$ field collapses $\rightarrow$ charges C opposite polarity $\rightarrow$ repeat. Ideal LC: Oscillates forever (energy conserved). Real RLC: Resistance dissipates energy ($P = I^2R$), oscillations decay
+    
+    \item \textbf{Damping Types:} Underdamped ($R < R_{crit}$): Many oscillations, exponential decay envelope. Critically damped ($R = 2\sqrt{L/C}$): No oscillation, fastest settle without overshoot, optimal for control. Overdamped ($R > R_{crit}$): No oscillation, slow exponential return. Small R $\rightarrow$ oscillates, large R $\rightarrow$ smooth decay
+    
+    \item \textbf{Frequency Dependence:} At low f: $X_C$ high (capacitor blocks), $X_L$ low (inductor passes), circuit capacitive. At high f: $X_L$ high (inductor blocks), $X_C$ low (capacitor passes), circuit inductive. At $f_0$: $X_L = X_C$ (resonance), circuit resistive. Impedance varies with frequency, minimum at resonance
+    
+    \item \textbf{Q: Why can $V_L$ and $V_C$ exceed supply voltage in RLC?} A: At resonance or near resonance, reactive voltages can be Q times supply voltage where $Q = \frac{X_L}{R}$ (quality factor). Example: If Q=20, $V_L = V_C = 20V_s$. They are 180° out of phase, cancel in phasor sum: $V_L - V_C = 0$ at exact resonance. Energy circulates between L and C, creating large voltages but no net reactive voltage. Supply only overcomes resistive drop
+    
+    \item \textbf{Q: How does Wheatstone bridge sensor work?} A: Replace one resistor with sensor (LDR, strain gauge, RTD). Sensor resistance changes with physical quantity (light, force, temperature). Bridge balanced at reference condition. Change in sensor $\rightarrow$ unbalances bridge $\rightarrow$ voltage appears between midpoints. Op-amp amplifies this voltage (µV--mV range) to usable level. Output proportional to sensor change. Temperature compensation: Use matched sensors in opposite bridge arms (cancel common effects)
+    
+    \item \textbf{Q: Why is critical damping important?} A: Critical damping ($R = 2\sqrt{L/C}$) gives fastest possible return to equilibrium without overshoot. Underdamped: Overshoots and oscillates (slow settling, ringing). Overdamped: No overshoot but slow (takes longer to reach final value). Critical: Perfect balance, reaches zero in minimum time with no overshoot. Used in: Door closers, shock absorbers, galvanometer damping, control systems requiring fast accurate response
+\end{itemize}
+\end{keypointsbox}

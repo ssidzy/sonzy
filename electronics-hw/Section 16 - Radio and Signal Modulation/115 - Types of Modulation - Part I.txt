@@ -1,0 +1,127 @@
+All right, guys, we'll come back.
+
+The truth is, we have barely scratched the surface regarding signal modulation techniques.
+
+Amplitude modulation was the first and most widespread modulation technique in the 90s.
+
+But with the advancement in technology, newer and newer techniques have appeared, which improved not
+
+only the efficiency in terms of power usage and data rate, but it also improved the distance of broadcasting
+
+and noise immunity.
+
+You see how people modulation is the worst when it comes to noise immunity.
+
+Because the noise is induced in the radio wave or in the antenna, the noise will obviously have an
+
+impact on the amplitude of the modulated wave.
+
+And since information is encoded based on the amplitude of the carrier wave, the information itself
+
+will get corrupted anyway.
+
+Here's a graph showing the types of population that exist, but it's not exhaustive.
+
+This is kind of like a broad classification illustrating how all these different techniques could be
+
+classified.
+
+I want to note that I really don't want to bore you out by me trying to explain all these techniques
+
+unless you are really interested in telecommunication.
+
+Sure, go ahead.
+
+But I really don't think it's necessary for you to understand in detail how these techniques work,
+
+but because they are not important, but because it's not our area of interest at this moment.
+
+Although a solid understanding of the fundamentals is crucial and not only Nov 20, but in almost everything.
+
+So this graph lays down the types of the data that exist based on data and carrier types.
+
+Modulation can be classified into analog carrier and digital carrier.
+
+So let's look at the analog carrier first.
+
+And the carrier can be further divided into analog data and digital data.
+
+Based on this graph, we can clearly see that AM A and PM uses analog carrier.
+
+In other words, a high frequency sine wave and the message signal is also analog.
+
+Let me talk you to a microphone.
+
+The input is an analog signal, right?
+
+We are not talking in ones and zeros.
+
+That would be crazy, as we already know, using amplitude modulation technique.
+
+The amplitude of the carrier wave changes according to the instantaneous amplitude of the message signal
+
+kipping phase and frequency constant.
+
+Now, if you were to apply frequency modulation, the story does not differ very much.
+
+It's just that instead of amplitude, it's the frequency of the carrier wave that will change according
+
+to the instantaneous amplitude of the modulating signal that the amplitude of the message signal is
+
+at its peak.
+
+The frequency increases, and as the amplitude of the message decreases, so does the frequency of the
+
+carrier wave.
+
+The great advantage of frequency modulation is that the noise in AFM is reduced to a large extent by
+
+employing amplitude limiters to remove the amplitude variations caused by noise.
+
+However, these amplitude limiters cannot be used in him.
+
+US information is contained in the amplitude variations of the signal.
+
+As a result, FM reception is more or less immune to noise.
+
+Ether broadcast operates in the upper, very high frequency and ultra high frequency band, where noise
+
+effects are minimal.
+
+On the other hand, AM broadcast operates in the medium frequency and high frequency, which are easily
+
+affected due to noise.
+
+Based on this graph, we can see that AMM radios usually operate between the frequency of 540 and 1600
+
+kilohertz, where each band.
+
+In other words, each radio channel accredited by the local government receives a tiny band of 10 kilohertz.
+
+So there is a whole pie, and each radio channel in a particular area or city receives a tiny slice
+
+from it.
+
+Unlike AM, FM operates in the range between eight 8.1 and 110 8.1 megahertz.
+
+And what's great is that each radio channel can now get a much higher bandwidth than previously, namely
+
+200 kilohertz.
+
+So Finkle bandwidth as the internet bandwidth in your home.
+
+The higher the band with, the greater the speed of the internet speed become in case of FM transmitters.
+
+A higher bandwidth allows for greater information to be sent in a signal, so the quality of the signal
+
+will be improved, and it also allows them to transmit stereo audio.
+
+A problem with them is the length of the transmission an am.
+
+Transmission and reception can go for longer distances, but at a smaller signal, that is the reason
+
+for most air is in mono, even if played on a stereo setup.
+
+So the main idea is that the quality of the audio is higher in AFM than in a.m. due to the larger allocated
+
+bed of each radio channel.

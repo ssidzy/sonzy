@@ -1,0 +1,185 @@
+One of the first things you will have to learn when dealing with resistors is calculating the total
+
+amount of resistance when two or more resistors are connected in series or in parallel.
+
+You see many times in electronics, especially when you are building your own circuit.
+
+There are situations when you want to place, let's say, a 500-ohm resistor somewhere in your circuit,
+
+but unfortunately you realize that you don't have a 500 ohm resistor.
+
+One solution would be that you go out and buy a 500 ohm resistor at your local store or you order it
+
+online.
+
+Or the other solution is by combining multiple resistors in a way that the total resistance will be
+
+500 ohms.
+
+If you have, let's say, two 1k ohm resistors, by connecting them in parallel, you would get an equivalent
+
+resistance of 500 ohms. Or if you have, let's say, two 250 ohms resistors by placing them in series,
+
+the equivalent resistance of this configuration would be again 500 ohms.
+
+So resistors can be connected in either series or parallel. When resistors are connected end-to-end
+
+in a circuit like it is shown here, they are said to be in "series". In order to find the total resistance
+
+of resistors in series,
+
+you basically just have to add up the value of each resistor.
+
+In this example, the total resistance would be R1 plus R2, which would be equal to 3k ohms.
+
+So we have a 1.5k ohm resistor in series with another 1.5k ohm resistor.
+
+So the total resistance will be the sum of these two resistances.
+
+Pretty easy, right?
+
+So here's another example of a number of resistors in series.
+
+The total value of the resistances across the voltage V is R1 plus R2 plus R3 plus R4 and plus R5.
+
+Now let's do a little exercise with Ohm's law in mind. Using this circuit diagram,
+
+let's solve for the value of the missing resistance R.
+
+So we have a DC power source of 50 volts, and the current flowing in the circuit is two amps.
+
+What would be the value of R in this case?
+
+Well, first and foremost, we have to figure out the equivalent resistance of the entire circuit.
+
+From Ohms Law,
+
+we know that resistance is equal to voltage divided by current.
+
+Therefore, the total resistance present in the circuit would be 50 volts divided by two amps, which
+
+is equal to 25 ohms.
+
+So we know that by adding up all the resistances, the result would be 25 ohms.
+
+So five ohms plus three ohms plus four plus seven plus R is equal to 25 ohms.
+
+And from this equation, we can calculate the value of R, which results to be six ohms.
+
+Now, the main takeaway from this little exercise was that if you have a fixed DC power source of 50V
+
+and you want no more than two amps of current to flow in your circuit, you can either connect
+
+bunch of resistors in series as shown here, or you could just use a single resistor with a value of
+
+twenty five ohms.
+
+Both circuits will work exactly the same way, and the same current will flow in both circuits.
+
+Try building both of these circuits in the simulator and see whether the current is identical.
+
+Now, as I have mentioned previously, resistors can be connected not only in series, but in parallel
+
+as well.
+
+You see, parallel resistors are resistors that are connected across from each other, in an electrical circuit.
+
+In this circuit R1, R2 and R3 are all connected in parallel to each other.
+
+When be calculated the series resistance,
+
+We added up the resistances of each resistor to get the equivalent resistance.
+
+This makes sense because the current of a voltage across the resistors will travel evenly across each
+
+resistor.
+
+In other words, the same amount of current will flow through each resistor.
+
+Remember that in a closed-loop circuit like this, the current will be the same,
+
+no matter at which point you are measuring it. When resistors are in parallel,
+
+this is not the case.
+
+Some of the current will travel through R1, some through R2, and some through R3. Each resistor,
+
+provides an additional path for the current to travel. So, in order to calculate the total resistance
+
+across the voltage V, we use the following formula:
+
+As you can see, the reciprocal of the total resistance is the sum of the reciprocal of each resistance
+
+in parallel.
+
+And now let's take an example. In this circuit, we have three resistors in parallel, one having a value
+
+of 4 ohms, the other 5 ohms and 20 ohms, respectively.
+
+The question is what's the total resistance? By applying this formula and replacing it with the actual
+
+values of the resistors,
+
+we get a total resistance of two ohms.
+
+I won't go through each step of the calculations.
+
+I guess it's pretty self-explanatory.
+
+Now, note that the total resistance is less than any of the resistors in parallel, and this will be
+
+always the case.
+
+The equivalent resistance will always be less than the smallest resistor in parallel.
+
+Now you might ask, what do you do when you have a circuit with both parallel and series resistors?
+
+The idea for solving these types of circuits is to break down smaller parts of the circuits into a series
+
+and parallel sections.
+
+First, do any sections that have only series resistors. Then, replace those with the equivalent resistance.
+
+Next,
+
+solve the parallel sections, and now replace those with equivalent resistors.
+
+Continue through these steps until you reach the solution.
+
+So let's take an example.
+
+The task is to solve the equivalent resistance across the voltage V, in this electrical circuit.
+
+First, we will total the two series resistors on the right and on the left, and now we have reduced
+
+the circuit.
+
+We see on the right that the total resistor 6 and the resistor 12 are now in parallel.
+
+We can solve for these parallel resistors to get the equivalent resistance of 4, and the new circuit
+
+diagram is shown here. From this circuit we solve for the series resistors 4 and 11 to get 15.
+
+And now we have two parallel resistors, 15 and 10, and we already know the formula for parallel resistors.
+
+In this case, we have only two resistors in parallel.
+
+So the formula will be: 1/R equal to 1/15 +1/10.
+
+And from this equation, the equivalent resistance across V is 6 ohms.
+
+So what now?
+
+What's the actual purpose of finding out the total resistance, you might ask?
+
+Well, if you think about it, now that we know that the total resistance of the circuit is 6 ohms,
+
+we can calculate the total amount of current flowing in the circuit.
+
+If you were to have a 12V battery for example,
+
+using ohms law, the total amount of current that would flow in the circuit is 2A.
+
+:)
+
+Knowing this, you could calculate how long the battery will last until it gets fully discharged.

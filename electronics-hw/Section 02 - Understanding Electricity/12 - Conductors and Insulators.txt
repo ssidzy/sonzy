@@ -1,0 +1,55 @@
+Some elements don't hold on to their outermost electrons very tightly.
+
+These elements frequently lose electrons or pick up extra electrons.
+
+And so they frequently get bumped off of neutral and become either negatively or positively charged.
+
+Such elements are called conductors.
+
+And the best conductors are the metal-silver, copper, and aluminum.
+
+Other elements hold on to their electrons very tightly. In these elements,
+
+it's hard to lose an electron or force another electron in. These elements almost always stay neutral,
+
+and they are called insulators. In a conductor,
+
+electrons are constantly skipping around between nearby atoms.
+
+An electron jumps out of one atom.
+
+Call it Atom A into a nearby atom, which I will call Atom B.
+
+But almost immediately, an electron will jump out of another nearby atom.
+
+Call it Atom C into Atom A.
+
+This skipping around of electrons in a conductor happens constantly.
+
+Atoms are in perpetual turmoil, giving and receiving electrons and constantly cycling
+
+their net charges from positive to neutral to negative and back to positive.
+
+Ordinarily, this movement of electrons is completely random.
+
+One electron might jump left, but another one jumps right.
+
+One goes up.
+
+Another goes down.
+
+One goes east.
+
+The other goes west.
+
+The net effect is that although all the electrons are moving, collectively, they aren't going anywhere.
+
+They are like keystone cops running around aimlessly in every direction, bumping into each other,
+
+falling down, picking themselves back up, and then running around some more.
+
+When this randomness stops and the keystone cops get organized, the result is electric current, as
+
+I will explain in the next course.
+
+

@@ -1,0 +1,237 @@
+In this course, we will learn about Lopez wielders, Lopez filter is a filter which passes low frequency
+
+signals and blocks or impedes high frequency signals.
+
+In other words, low frequency signals go through much easier and with less resistance and high frequency
+
+signals have a much harder time getting through.
+
+Which is why it's a Lopez filter.
+
+Lopez filters can be constructed using resistors with either capacitors or in others, a Lopez filter
+
+composed of a resistor.
+
+And the capacitor is called a Lopez or C filter and a Lopez filter before it.
+
+Resistor and inductor is called Lopez or El Filter.
+
+We will go through both of these type of circuits in this course and show how both our C and Si Lopez
+
+filters are constructed.
+
+Both circuits have the effect of passing through low frequency signals while impeding high frequency
+
+ones.
+
+So a Lopez or C filter again is a filter circuit composed of a resistor and capacitor which passes through
+
+low frequency signals while blocking high frequency signals to create a Lopez Arcy filter.
+
+The resistor is placed in a series to the input signal, and the capacitor is placed in parallel to
+
+the input signal such as shown here.
+
+So if this set up, this circuit is a Lopez filter.
+
+Now, let me ask you a question.
+
+Why do you think that the circuit passes the low frequency signals and filters out the high frequency
+
+signals by shunting them to ground?
+
+That's very easy.
+
+The reason of it is because the capacitor is a reactive device, which has something called capacity
+
+reactance.
+
+We already know what capacity reactance is, right?
+
+It is measured in ohms and it varies with the frequency a capacitor offers, deferring resistance to
+
+signallers of different frequencies entering through it.
+
+A capacity is a reactive device which offers very high resistance to low frequency or these signals,
+
+and it offers low resistance to high frequency signals as it offers very high resistance to these signals
+
+or low frequency signals in this circuit.
+
+It will block DC from entering and pass them off to an alternating part of the circuit which is shown
+
+to the right by this arrow.
+
+High frequency signals will go through the capacitor since the capacitor offers them a very low resistance
+
+path.
+
+Remember that current always takes the path of least resistance by saying that a capacitor represents
+
+a low resistance in a circuit for high frequency signals.
+
+They will take the path through the capacitor, while low frequency signals will take an alternative
+
+low resistance path.
+
+Now that we've gone through what Lopez Arcy filter is, let's go over a practical example of Building
+
+one.
+
+Let's say that we want to build a Lopez filter, which passes all frequencies below fifteen point nine
+
+kilohertz but blocks all the signals with a frequency higher than fifteen point nine kilohertz.
+
+So where shall we start?
+
+Well, in order to build a circuit, we first have to understand what the cut off frequency is for a
+
+filter for a Lopez filter.
+
+It is the frequency at which the output is three decibels lower than the input.
+
+Basically, the cut off frequency for a Lopez filter defines the frequency until which signals can pass
+
+through without being attenuated and signallers with frequencies higher than the frequency will be attenuated.
+
+By attenuated, I mean, they will be reduced inaptitude.
+
+And as you can see from this graph, the further away you go from the cut off frequency, the higher
+
+will be the attenuation.
+
+Now, in an ideal world, the graph ideally would look like this signals that their frequency is lower
+
+than the cut off frequency are passed through the filter and signals that have frequencies higher than
+
+the cut.
+
+Our frequency will be shunted to ground so they won't get passed through the filter.
+
+So the transition from Pazz Band and Stop Band happens in an instant.
+
+However, since we don't live in an ideal world, the graph looks something it is now important.
+
+Fact to remember is that the reason why this cut off frequency is so special is because this is the
+
+exact frequency than the reactors.
+
+So the capacitor, which is measured in homes, of course, becomes equal to.
+
+A resistance of the resistance, but this frequency, the output signal is attenuated to 70 percent
+
+of the signal value or minus three decibel of the input.
+
+In other words, the voltage after the Lopez filter will be equal to around zero point seven times the
+
+peak voltage of the input voltage.
+
+And as the signal frequencies goes beyond the cut off frequency, it will be more and more attenuated
+
+since the reactors of the capacitor gets lower and lower.
+
+So how do we calculate this cutoff frequency?
+
+Is there any formula for it?
+
+Yes, there is.
+
+And so the formula to find the cut off frequency point of an RC circuit is this one.
+
+So the frequency is equal to one or two P or see where F is the cutoff frequency or is the resistance
+
+of the resistor?
+
+And see, is the capacitors capacitance?
+
+What we wanted to achieve is to build a Lopez filter, which can pass all frequencies below fifteen
+
+point nine kilohertz and attenuate all frequencies about fifteen point nine kilohertz.
+
+This means that the cutoff frequency should be fifteen point nine kilohertz.
+
+Right now, usually when we design a Lopez filter, we first choose the value of the resistor.
+
+We don't want it to be too high as it will limit the current flow drastically as it is in series with
+
+the signal.
+
+Right.
+
+And we don't want it to be too low because then you would need to choose a capacitor that is perhaps
+
+too big and bulky.
+
+So that's a very common resistor, which has a value of one km's.
+
+Now, using this equation, the only thing is left to find out is the value of the capacitor, which
+
+is the only unknown value in the equation.
+
+Since I have already made the calculations, I will spare you some time.
+
+And the final value of the capacitor is 10 Farad's.
+
+So we have a Lopez filter before resister of Wallkill and the capacitor of 10 Denverites using these
+
+values, we get a cut frequency of fifteen point nine kilohertz.
+
+This means that all frequencies, about fifteen point nine kilohertz are attenuated.
+
+And as you get further, which means higher from the fifteen point eight kilohertz region, the attenuation
+
+will be greater and greater frequencies below fifteen point eight kilohertz are passed through without
+
+attenuation.
+
+So if we input an AC signal into the circuit from the function generator and make the signal a low frequency
+
+such as 10 hertz, the circuit will pass the signal to output almost completely attenuated.
+
+This is because low frequency signals do not take the path of the capacitor.
+
+You can check this if you have an oscilloscope.
+
+For example, if you will now increase the frequency of the signal to 30 kilohertz, the signal will
+
+pass through to output with great attenuation.
+
+This is because high frequency signals go through the capacitor and not to output because capacitor
+
+is low resistance to them.
+
+One more thing left for us to do is a simulation.
+
+So let's do that.
+
+But now with different values.
+
+All right, here we are.
+
+This time we are using a 187 on resistor along with a dual microworld capacitor.
+
+If you don't have the cut off frequency for the circuit is around four hundred twenty five hertz.
+
+The signal, a generator that we are using here will output an easy signal starting from 20 hertz and
+
+will go up to three kilohertz in a matter of seconds.
+
+So just notice how the output signal shown here will differ compared to the input as the frequency of
+
+the signal generator increases.
+
+All right, so the simulation has started, and as you can see, the output signals amplitude is equal
+
+to the input one.
+
+So there's not any attenuation.
+
+So right now, we have reached the cut off frequency where the output signals amplitude is around 70
+
+percent of the input one and starting from this point, as you can see.
+
+As pregnancy increases, the attenuation becomes greater and greater.
+
+Now, after the signal has reached the maximum of frequency, it will go back to 20 hertz.
+
+That's why you see that attenuation is getting weaker and weaker.

@@ -1,0 +1,251 @@
+Hello, and welcome back to a new chapter.
+
+I'm glad you made it out to here in this chapter, we discussed about various alternative circuits using
+
+bipolar transistors.
+
+There are so many ways to talk about, and as you may have noticed, the complexity of the circuits
+
+is gradually increasing, and I think that the beginning of threshold will be passed soon.
+
+And that's why I will create another course for intermediate level intended for people who acquire the
+
+basic knowledge necessary to understand the more complex liquids circuits that are necessary to know
+
+for everybody who is even just a little bit passionate about electronics.
+
+All right.
+
+So this course, we will talk about what is known as current source.
+
+As the name implies, a cardinal source is a secret element that maintains a constant current flow regardless
+
+of the voltage developed across its terminal earth.
+
+This voltage is determined by other circuit elements that is an ideal constant.
+
+Current source continually provides a specified amount of current, regardless of the impedance that
+
+it is driving.
+
+And as such, an ideal current source could, in theory, supply an infinite amount of energy.
+
+So just as a voltage source may be rated, for example, as five walls or 10 words, etc..
+
+A current source will also have a current rating, for example, three empires or 15 empires, or,
+
+in this case, 10 mg.
+
+Ideal coastal resources are represented in a similar manner to what resources?
+
+But this time, the current source symbol is that of a circle with an arrow inside to indicate the direction
+
+of the flow of the current.
+
+To understand the advantage that this current force brings to the circuit, let's look at this little
+
+circuit first.
+
+This is a five or DC power supply, which drives a simple load represented as a resistor.
+
+It can be a motor, an LCD.
+
+A size doesn't really matter.
+
+All these loads will have an internal resistance.
+
+Imagine a scenario.
+
+Then you have multiple loads that you want to plug in to the circuit, but you are to provided the same
+
+amount of current to each one of them.
+
+The current that is flowing in the circuit right now is 25 millions.
+
+And how to calculate that?
+
+Ohms Law says the current is equal to voltage divided by the resistance, and the total resistance in
+
+the circuit is to 100.
+
+Here you have heard this what exhaust would have a tiny internal impedance inside of it?
+
+But the simulator handles these as an idea of what is sauce.
+
+So five divided by 200 will be equal to 25 grams.
+
+Now imagine that we change the load to another one and we want these 35 millions to flow across our
+
+new load.
+
+The new load resistance will be five kms.
+
+Well, unfortunately, this is a tough workout because the crop has been reduced to one millions, and
+
+this is where constant current sauce will help us out.
+
+So what we see here, this current source provides a constant millions of current to this part of the
+
+circuit.
+
+We have several switches here, so we can't change the path of the current that is flowing down to ground
+
+and each resistor is different in value.
+
+So basically, we can change the loads more conveniently using these switches.
+
+We also have an oscilloscope hooked across the circuit where the Green Line measures the voltage and
+
+the yellow line measures the current.
+
+All right, the current flowing in the circuit right now is Tamilians, right?
+
+And let's change the loads using these switches.
+
+As you will notice, even though the voltage developed across the circuit is changing, no matter how
+
+I combine or switch the loads, the current flowing in the circuit is a thief that millions.
+
+That is perfect exactly what you wanted, right?
+
+But how does this magical component has the ability to do that?
+
+What does it has inside that it makes or special?
+
+Hmm.
+
+To understand that, first, we have to understand the difference between a real world and an ideal
+
+carbon source.
+
+An ideal source is a current source that supplies constant current to circulate, despite any other
+
+conditions present in this illiquid and ideal current source provides this constant current with 100
+
+percent efficiency dues.
+
+If an ideal current source is a 12 Million's current source, for example, the load we receive the
+
+entire 12 millions without any being lost.
+
+Unlike an idea of what the source that has zero internal resistance, an ideal current source has infinite
+
+internal resistance, and this allows it to act as a 100 percent efficient source of current.
+
+Why do you think an ideal current source has an infinite internal impedance before we see the reason?
+
+Let's understand disagreed.
+
+So what do we see here?
+
+We have our current laws, a advisory in parallel with it and then other resistance, which represents
+
+our load.
+
+What do you think this register is?
+
+If you guessed, congratulations.
+
+This is nothing gas, but the internal impedance of the current laws like a voltage source where the
+
+internal impedance is connected in series of it, the internal impedance of a current source can be
+
+represented as a resistance in parallel with it in our simulator, of course.
+
+You won't see this resistance anywhere because this resistance is basically inside of the current thoughts.
+
+But visualizing this resistance as an external component will help you understand why we strive so hard
+
+to meet this resistance to have an infinite impedance.
+
+Now we have to realize the power source, whether voltage or current is to supply power to a load in
+
+a fifth grade so that a load can be turned on and to do is operate.
+
+So we want to ideally supply 100 percent of the power from the power source for the load.
+
+This is power transfer in order to supply 100 percent of the power from the source to the load.
+
+We must allocate the resistances in the circuit approximately so that the load receives this power.
+
+This is called current division.
+
+Current always stays the path of least resistance dues in order for current to go to the path of least
+
+resistance.
+
+We must set up the source and load so that the source has much higher resistance than the load.
+
+This will ensure that the current travels from source to load.
+
+And this is why we constructed the idea a current source to have infinite internal resistance.
+
+This will ensure that current will flow out of it and take the path of least resistance, which will
+
+be the load since the load will not have infinite internal resistance when the current source has infinite
+
+internal resistance.
+
+The output current from the source will not change.
+
+Despite changes in resistance value from the load, the current will always want to escape out of its
+
+infinite resistance to a lower resistance.
+
+And this produces a current output graph, as shown here.
+
+Since the internal resistance of the current source is infinite, any changes in resistance value of
+
+the load have no effect on changing the steady current value.
+
+The evening's resistance is dominant and causes no current change, despite fluctuations in load resistance.
+
+Now, let's examine a circuit before an idea and thoughts, because the current source has infinite
+
+impedance.
+
+The current from the source is looking to escape and go through a path of least resistance, which is
+
+the eight ohms load all of the current from the current source, which is, as you can see, 100 millions
+
+flows through the eight ohms through this to load.
+
+And this is the ideal case and is 100 percent power efficient.
+
+Now, let's examine the circuit to a common source, this coral source has then make a form of resistance,
+
+which is high enough to give a very close current to the full value of the current source, which is
+
+100 millions.
+
+However, the current source will not give 100 percent of its power, and this is because the internal
+
+resistance of the current source will still eat up some of the current and lead to current waste.
+
+This can be calculated using current division.
+
+The thought gives out 100 millions, right, and Clarendon is divided up between the 10 the Golems Lord
+
+and the eight ohms Lord.
+
+The formula to calculate how much current goes through the eight ohms load is the following.
+
+Don't be scared.
+
+It's nothing new.
+
+It's just a simple voltage divider equation.
+
+But this time we are interested in the divided current and voltage.
+
+So the result will be ninety nine dot nine nine nine nine millions.
+
+If the result would be one hundred millions, we could say it's 100 percent power efficient.
+
+But this is not the case.
+
+Just think about how worse the result from the current division would be if the impetus of the current
+
+source is lower.
+
+So that's the reason why we should strive to be the current sources with less high impedance as possible.

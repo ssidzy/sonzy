@@ -1,0 +1,165 @@
+Electricity is all around us powering technology like our cell phones, computers, lights, soldering irons,
+
+air conditioners and so on.
+
+It's tough to escape in our modern world.
+
+Even when you try to escape electricity,
+
+it's still at work throughout nature. From the lightning in a thunderstorm to the synapses in our body.
+
+But what exactly is electricity?
+
+In this course, we will focus on current electricity, the stuff that powers our electric gadgets.
+
+All right.
+
+So the electricity is briefly defined as the flow through charge, but there's so much behind this simple
+
+statement. Where do the charges come from?
+
+How do we move them?
+
+Where do they move to?
+
+How does electric charge cause mechanical motion or make things light up?
+
+So many questions.
+
+So to begin to explain what electricity is, we need to zoom way in beyond the meter and molecules for
+
+the atoms that makeup everything we interact with in life. To understand the fundamentals of electricity,
+
+we need to begin by focusing in on atoms.
+
+One of the basic building blocks of life and matter. Atoms exist in over 100 different forms as
+
+chemical elements like hydrogen, carbon, oxygen and copper. Atoms of many types can combine to make
+
+molecules which build the matter we can physically see and touch.
+
+Atoms are tiny, stretching at the MAX to about 300 picometers long.
+
+Even though they are so small, they are not small enough to explain the working of electricity.
+
+We need to dive down one more level and look in on the building blocks of atoms, which are protons,
+
+neutrons and electrons.
+
+So an atom is built with a combination of three distinct particles electrons, protons and electrons.
+
+Each atom has a center nucleus where the protons and neutrons are densely packed together.
+
+Surrounding the nucleus are a group of orbiting electrons.
+
+Every atom must have at least one proton in it.
+
+The number of protons in an atom is important because it defines what chemical element the atom
+
+represents.
+
+So, for example, an atom with just one proton is hydrogen, and atom with 29 protons is copper.
+
+And an atom.
+
+If 94 protons is plutonium. This count of protons is called atoms atomic number.
+
+As in the Bohr atom model, a nucleus with 29 protons making it a copper atom is surrounded by an
+
+equal number of electrons.
+
+The atom's electrons aren't all forever bound to the atom.
+
+The electrons on the outer orbit of the atom are called valence electrons.
+
+With enough outside force, a valence
+
+electron can escape orbit of the atom and become free.
+
+Free electrons allow us to move charge, which is what electricity is all about.
+
+We usually use copper cables to form the circuit because the atoms that make copper have a loosely bound
+
+electron in their outer most or valence shell, which is free to move around inside the metal.
+
+And this free electron is very easy to move, which is why copper is so popular.
+
+To make use of this, we need lots of electrons to flow in the same direction along with it.
+
+We can then place things such as lamps in the way of these electrons so that they flow through it and
+
+generate light and heat, etc. To do this, we need to force the electrons to move, and we can do that
+
+by applying a voltage.
+
+Voltage is the motivation a pushing force.
+
+It's like a pressure in a water pipe.
+
+The more pressure we have, the more water can flow, the more voltage we have, the more electrons
+
+can flow.
+
+So we need a lot of electrons to flow along a circuit and through our lamps to get them to shine brightly.
+
+However, the cables and lamp can only handle a certain amount of electrons passing through them.
+
+People often refer to a river as having a strong current.
+
+It's very similar to electricity. A river with a lot of fast-flowing water is said to have a strong
+
+current.
+
+The same with electricity.
+
+A cable with a lot of electrons flowing also has a high current.
+
+A river is able to handle a certain amount of water flowing through it.
+
+But if more water enters than it can handle, then the river will burst its banks.
+
+The same with electricity, the cable will burst and burn out.
+
+Electrical wires are made of both conductors and isolators.
+
+Inside the wire is a conductor, such as a copper or aluminum.
+
+The conductor provides a channel for the electric current to flow through.
+
+Surrounding the conductor is an outer layer of isolator, such as plastic or rubber.
+
+The isolator serves two purposes.
+
+First, it prevents you from touching the wire, and current is flowing.
+
+And as a result, preventing you from being the recipient of a nasty shock.
+
+But just as importantly, the isolator prevents the conductor inside the wire from touching the conductor
+
+inside a nearby wire.
+
+If the conductors were allowed to touch, the result would be a short circuit.
+
+Which brings us to the third important concept. An electric circuit is a closed-loop made of conductors
+
+and other electrical elements through which electric current can flow.
+
+For example, this figure shows a very simple electrical circuit that consists of three elements a battery,
+
+a lamp and an electrical wire that connects the two.
+
+The circuit shown in this figure is, as I already said, very simple. Circuits can get much more complex, consisting
+
+of dozens, hundreds or even thousands or millions of separate components, all connected with conductors
+
+in precisely orchestrated ways so that each component can do its bit to contribute to the overall purpose
+
+of the circuit.
+
+But also, circuits must obey the basic principle of a closed loop.
+
+Remember that all circuits must create a closed loop that provides a complete path from the source of
+
+voltage, which in this case is the battery through the various components that make up the circuit.
+
+In this case, the lamp and back to the source, again, the battery.

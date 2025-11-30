@@ -1,0 +1,241 @@
+In this course.
+
+Let's keep the theory aside and let's try to build a simple circuit using a transistor so that at least
+
+you get the feeling of how it works.
+
+So in this course, we will be building a circuit that can turn an LED on and off using an NP transistor.
+
+Since NPN transistors are a little bit easier to understand than PMP transistors and since they are
+
+also more commonly found in electronic circuits, we will be focusing more on the transistor throughout
+
+the next courses.
+
+The transistor works like an electronic switch.
+
+It can turn a current on and off.
+
+A simple way to think about it is to look at the transistor as a relay without any moving parts.
+
+A transistor is similar to a relay in a sense that you can use it to turn something on and off.
+
+But a transistor can also be turned partly on, which is useful for building amplifiers.
+
+And we will see how to use a transistor as an amplifier.
+
+But for now, we want our transistor to act just like a simple switch.
+
+Now, as we already know, a bipolar junction transistor has three legs.
+
+It has a base, a collector and an emitter.
+
+If you turn it on, the current can flow through it from the collector to the emitter.
+
+And when it's off, no current can flow in the circuit.
+
+We have a battery in series V four resistor, an LED and a transistor.
+
+Since the base terminal of the transistor is not connected to anything, the transistor is off.
+
+That means no current can flow through it.
+
+So the LED is also off.
+
+Now to turn the transistor on, you need a voltage of about 0.7 volts between the base and the emitter.
+
+If you had a 0.7 volts battery, you could have connected it between the base and emitter as shown here
+
+and the transistor would have turned on.
+
+However, since most of us don't have a 0.7 volts battery, how do we turn on the transistor?
+
+Easy.
+
+The base to emitter part of a transistor.
+
+And this is quite important for you to understand.
+
+So the base diameter part of the transistor works just like a diode.
+
+A diode, as we already know, has a forward voltage that it grabs from the available voltage.
+
+If you add a resistor in series and you connect it to the battery, 0.0 volts will be dropped across
+
+the base emitter part and the rest of the voltage drops across the resistor.
+
+So you will automatically get around 0.7 volts by adding a resistor.
+
+And this is the same principle you use to limit the current through an LED to make sure it doesn't blow
+
+up.
+
+If you also add a push button, you can control the transistor and thereby the led on and off with a
+
+button.
+
+Now I know a lot of things might be confusing for you, but don't worry, because as you progress,
+
+everything will become more clearer.
+
+And now let's try to build the same circuit in our simulator.
+
+All right, in this circuit, we have a nine volts battery in series V for 330 ohm resistor and an LED.
+
+This 330 resistor is used to limit the current flow through the LED so that when the transistor is turned
+
+on so it conducts current, the LED won't burn out.
+
+Now, the base terminal, as you can see, is not connected to anything.
+
+So the transistor is off to turn a transistor on.
+
+You need around 0.6 volts to be dropped across the base and emitter.
+
+And why is that?
+
+Because the base to emitter part of the transistor works just like a diode.
+
+And we know how a diode works, right?
+
+If not, please go back and check out the courses related to diodes.
+
+So if it helps you imagine that between the base and emitter, there is a diode.
+
+And we know that when current is passing through a diode, there will be a voltage drop across it called
+
+the forward voltage drop.
+
+Now this forward voltage drop between the base and emitter is usually around 0.60.0 volts for a common
+
+bipolar junction transistor.
+
+This implies that if we want to turn this transistor on, we have to connect the base to a positive
+
+voltage that is at least higher than 0.6 volts.
+
+So that 0.6 volts can be dropped across the base and emitter diode.
+
+Now, question to you.
+
+Could we just connect the base terminal of this transistor to these nine volts?
+
+Power supply with a single wire.
+
+Hmm.
+
+Let's try it out.
+
+And by the way, don't try this at home.
+
+Why am I saying that?
+
+Because notice that the simulator right now is complaining that the maximum current is exceeded.
+
+So what?
+
+They just happen?
+
+Well, we created a nice short circuit.
+
+Now that we have connected the base terminal directly to the nine volts power supply, we basically
+
+shorted the battery.
+
+Remember, that current is always following the path of least resistance.
+
+And what is the path of least resistance?
+
+Well, it's this one.
+
+In fact, there is no resistance at all in this path except, well, the resistance of the wires, which
+
+do not count.
+
+So theoretically, an infinite amount of current is flowing from the battery through the base terminal,
+
+through the base emitter, port and ground.
+
+An ideal diode has no internal resistance.
+
+So in our case, we need to connect a resistor in series with this base emitter diode.
+
+If we don't want to burn this transistor out, and that's also the reason why we have a resistor in
+
+series with this LED and LEDs as we know our diodes by nature.
+
+So let's place a one kilo ohm resistor.
+
+And as you can see, the circuit is now working just fine and the lead is glowing.
+
+Now, you might be asking, what should be the value of this resistor?
+
+Well, that depends on how much current you want to flow into the base of the transistor.
+
+But I don't want to get into the rabbit hole right now at the beginning.
+
+So let's keep things simple for the moment.
+
+If I hover my mouse over the transistor in the bottom right corner, we can notice that the base emitter
+
+voltage is around 0.6 volts.
+
+Actually more like 0.7 volts.
+
+Even though the base terminal was connected to the nine volts battery, the voltage drop across the
+
+base and emitter will be always around 0.6 volts, which would be equivalent of a forward voltage drop
+
+across the diode that is specified in its datasheet.
+
+Now my question is, what is the voltage drop across this resistor?
+
+Well, we can simply apply kickoffs voltage low in this loop and if you haven't seen the course is about
+
+how to apply kickoffs rules, please check that chapter out.
+
+So we choose a clockwise direction because the current also flows in a clockwise direction.
+
+And so we can write down that the voltage of the battery minus the voltage drop across this resistor,
+
+minus the voltage drop across the base, and ammeter is equal to zero.
+
+So the base ammeter voltage is fixed at around 0.7 volts, which means that the rest of the voltage
+
+is dropped across this resistor.
+
+So nine volts -0.7 volts is equal to 8.3 volts, and indeed 8.3 volts is dropped across it.
+
+And now that we know the voltage drop across this resistor, we can also find out the current flowing
+
+into the base.
+
+8.3 volts divided by one kilogram is equal to 8.3 milliamps.
+
+So basically we can say that if we allow a small current to flow into the base, the transistor will
+
+allow a much larger current to flow from the collector to the ammeter.
+
+And if I however my mouse over the transistor again, we can see that the collector current is indeed
+
+much greater than the base current.
+
+The last thing I want to point out is that if you recall from the previous course, I said towards the
+
+end that in an NPN transistor, the ammeter is the negative side of the transistor and the collector
+
+and base are the positive sides.
+
+Now, if you look here, the ammeter is grounded while both the base and collector are connected to
+
+a positive voltage.
+
+So that's what I meant by negative and positive sides.
+
+The collector and base are more positive than the ammeter.
+
+And now let's try to build the same circuit, but this time using a PMP transistor instead of an NPN
+
+transistor.
+
+I will see you next course.

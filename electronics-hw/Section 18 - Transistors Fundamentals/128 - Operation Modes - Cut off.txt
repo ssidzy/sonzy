@@ -1,0 +1,79 @@
+The next operation mode, the transistor can working is called the cut off mode.
+
+Cut off mode is the opposite of saturation.
+
+A transistor in cut off mode is off, so there is no electric current and therefore no emitter current.
+
+It almost looks like an open circuit to get the transistor into cut off mode.
+
+The base voltage must be less than both the emitter and collector voltages.
+
+Well, at least this is what the textbook says.
+
+In reality, the base emitted voltage can be anywhere between zero volts and the threshold voltage,
+
+which is about 0.6 volt.
+
+To achieve cut off mode, the circuit that we have here is very similar to the one that we had in the
+
+previous course.
+
+Except the base terminal is connected to a single pull double throw switch that is connected to a 3.3
+
+world's power supply through a resistor and two ground respectively.
+
+Then the base of the transistor is connected to the 3.3 volts power supply.
+
+It works in the saturation mode, so the transistor is wide open and allows the maximum amount of color
+
+to flow through the collector and emitter.
+
+So when the transistor works in saturation, this collector emits resistance.
+
+You can think of it in this way is the smallest value possible.
+
+If the transistor would be an ideal component, this collector emitter resistance would be zero ohms.
+
+However, since nothing is ideal in this world, there will still be a little tiny resistance here,
+
+causing a tiny voltage drop across the collector and emitter.
+
+And that value is 49.7 millivolts.
+
+Now, if you want to place the transistor in cut off mode, the easiest way to do that is to ground
+
+the base terminal.
+
+So if I hit the switch, the base terminal is grounded and no more current flows through the transistor.
+
+And why is that?
+
+Because to turn on a transistor, you need a base voltage to be equal to or higher than a threshold
+
+voltage of about 0.6 volts.
+
+If I hover my mouse over the transistor, the simulator is telling us that indeed it's working in the
+
+cut off mode.
+
+As I mentioned before, the cutoff mode is the opposite of saturation.
+
+If during saturation, this collector emits resistance was the smallest value possible.
+
+Well, in cut off mode, this resistance is maximum.
+
+This resistance is so high, in fact, that this transistor acts as an open circuit forbidding any current
+
+to flow through it.
+
+In the next course, we will talk about the third operation mode called Active Mode, which puts the
+
+transistor somewhere between the cutoff and saturation mode.
+
+So cutoff and saturation are the two extremes.
+
+A transistor can work in, and the real magic starts when the transistor is biased to work between these
+
+two operation modes.
+
+I will see you next course.

@@ -1,0 +1,103 @@
+To understand why a group of Silkwood laws are so important in analyzing electronic circuits.
+
+Let's do a couple of exercises in this circuit.
+
+We have a51 battery in Series V for one kilogram resistor.
+
+And the task is to find out the current flow in this closed loop circuit, or, in other words, the
+
+current supplied by the battery.
+
+We apply Ohm's Law, which says that current is equal to five old divided by one Coulomb, which is
+
+equal to five milliamps.
+
+Simple enough.
+
+In this circuit we now have three resistors series and the task is the same.
+
+Find out the current flow.
+
+Firstly, we have to find out the total resistance of the circuit.
+
+So the total resistance is a sum of the three resistances.
+
+One kilo plus two kilo plus three kilo equals six kg.
+
+And now the current supplied by this battery will be 12 words divided by six kilo, which is equal to
+
+two milliamps.
+
+So two milliamps will flow in this circuit.
+
+Awesome.
+
+In this recruit, we have a five bullets battery in series with two 500 or more resistances which are
+
+in parallel before one kilogram resistor.
+
+The task is the same.
+
+Find out the current supplied by the battery.
+
+We have first observe that these two resistors are in a series, so the equivalent resistance of this
+
+series connection is one kilo.
+
+We now have one kilogram resistor in parallel before one kilogram resistor.
+
+Right.
+
+The total resistance of this parallel connection, if you do the math, is 500 ohm.
+
+And knowing this by applying Ohm's Law, the current is equal to five watts divided by 500 ohm, which
+
+is equal to ten milliamps.
+
+So far so good.
+
+What we have seen so far is that some secrets may be analyzed by reducing the circuit to an equivalent
+
+resistance, after which current can be determined.
+
+Many complex circuits, however, cannot be analyzed with the series parallel techniques developed in
+
+the preceding sections.
+
+For example, this circuit is known as a multi loop circuit, which consists of junctions.
+
+A junction, also known as a node, is a connection of three or more wires in the circuit.
+
+The previous methods cannot be used because not all the resistors are in clear series or parallel configurations
+
+that can be reduced.
+
+Give it a try.
+
+The resistors are one and or two are in a series and can be reduced to an equivalent resistance.
+
+The same is true for resistors are four and or five.
+
+But what do you do then?
+
+How can you reduce the circuit to a single equivalent resistance?
+
+You cannot.
+
+If you were to take the second battery out of the circuit.
+
+Yes.
+
+In that case, it is possible to find out the equivalent resistance.
+
+But what if, instead of finding out the current supplied by this battery, we want to find out the
+
+current flowing through this resistor?
+
+Or how would you find out the current flowing through this resistor?
+
+You see, even though this serve with cannot be analyzed using the methods already learned to selected
+
+analyses, rules can be used to analyze any selected, simple or complex.
+
+The rules are known as kill rules after their inventor, Gustaf Kirchhoff.

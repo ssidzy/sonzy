@@ -1,0 +1,157 @@
+Now that we hopefully understand why we receive AC voltage at home instead of the AC, let's analyze
+
+the most important characteristics of an AC signal.
+
+So as we know, AC signal is represented graphically by a sinusoidal or Siwei form.
+
+All right, so in this circuit, what we see here is that we have a firewall, AC signal generator and
+
+a resistor in series feet, which is placed here to limit the current flowing in the circuit.
+
+So basically to not create a short circuit.
+
+Now, let's have a closer look at this AC voltage.
+
+So as you can see here, alternating current flows one way, then the other way, continually reversing
+
+direction.
+
+Every time the voltage goes positive, the current will flow in one direction.
+
+And when the voltage goes negative, the current will flow in the opposite direction.
+
+So they go hand-in-hand.
+
+If I stop the simulator, we can notice that the AC voltage is continually changing between positive
+
+and negative.
+
+The zero point here is represented by this gray line and how many times the wave is passing this zero
+
+point in a certain amount of time.
+
+It's called the frequency.
+
+In other words, frequency is simply how many times per second the wave oscillates here in the simulator.
+
+Unfortunately, we don't know how much time has passed from this point until this point.
+
+So we can't derive the frequency based on this graph.
+
+However, since we have a 40 Hertz AC signal generator, this means that in one second the signal will
+
+pass the zero point forty times.
+
+All right.
+
+So the AC voltage is continually changing between positive and negative.
+
+And this is why it's called alternating current since it alternates between positive and negative.
+
+Let's take another example to understand this frequency better.
+
+Here we have three identical circuits, except that the frequency of the AC generator defers, the first
+
+AC source outputs a signal of 40 hertz, the next one output a signal of eight hertz and the third one,
+
+160 hertz.
+
+Do you see any difference between the three signals?
+
+To lower the frequency of the signal, the more time it needs to make an oscillation of one positive
+
+swing and one negative swing, the higher the frequency, the faster the signal oscillating one second.
+
+Now, let's check some of the most important properties of an AC signal.
+
+This voltage time graph shows various properties of an electrical signal.
+
+In addition to the properties labeled on the graph, there is frequency which we already know measures
+
+the number of cycles per second.
+
+So this diagram shows the same wave, but the properties apply to any signal before constantly repeating
+
+shape.
+
+The first property of an easy signal is its amplitude, which is the maximum voltage reached by the
+
+signal.
+
+This amplitude can be either positive or negative, where positive or negative refer only to the direction
+
+of current flow.
+
+A negative number does not mean that the voltage or current flow are less than zero.
+
+Only that the current flows in the opposite direction.
+
+Many people prefer to say peak voltage instead of amplitude.
+
+Well is the same thing.
+
+But keep in mind that we also have a peak to peak voltage.
+
+That's total different thing.
+
+So peak voltage is just another name of amplitude.
+
+On the other hand, peak to pick voltage is twice the amplitude.
+
+For example, when reading an oscilloscope trace, it is usual to measure peak to peak voltage.
+
+Now let's move to the next table, which is called US Time Period.
+
+What is this?
+
+Does it have any relevance to frequency?
+
+So again, a cycle is while a complete repetition of the sine wave pattern since the sine wave begins
+
+at zero goes positive through the positive peak, then negative through the zero and reaches the negative
+
+peak and then to zero.
+
+We say a full cycle has been completed.
+
+Now, regarding time period, this measure is the time to go for a signal to complete one cycle.
+
+It is measured in seconds, but time periods tend to be shorter than milliseconds microseconds depending
+
+on the frequency of the signal.
+
+Aha, depending on the frequency of the signal, this means that time period frequency are closely related
+
+to each other, right.
+
+So let's think about it.
+
+If the time period increases, those are frequency increases as well.
+
+Exactly, it decreases her because the signal needs more time to complete the cycle so we can say that
+
+the frequencies inversely proportional with the time period and the equation for frequency is the following.
+
+We can see here that the frequency is the inverse of time period, while the time period is the inverse
+
+of frequency.
+
+I hope it makes sense as a summary time period is a time taken for the signal to complete one cycle.
+
+While frequency measures, the number of cycles per second frequency is measured in Hertz.
+
+And as we have seen, electronics kilohertz megahertz are often used.
+
+Amplitude is the maximum value of the voltage and it is also referred to as the peak voltage.
+
+On the other hand, we have peak to be voltage, which is twice the peak voltage.
+
+Well, you see, that's not all about AC.
+
+We still have a characteristic.
+
+This we are a mess that was not represented on our diagram, which is important and complex enough to
+
+make a separate video for that.
+
+See you next course.

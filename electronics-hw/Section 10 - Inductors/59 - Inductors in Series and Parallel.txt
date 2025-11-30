@@ -1,0 +1,19 @@
+Inductors connected these series and parallel behaved the exact opposite way to capacitors, for example,
+
+to calculate the inductance of a group of inductor the series, you can simply sum up the values of
+
+the individual inductance is where L is the total inductance and L1 L2 and are the individual instances.
+
+So suppose you have to inductors one measuring Tamiko Henry and the other 15 microarray.
+
+Then by putting them in a series you obtain a total inductance of 25 microarray inductors in parallel
+
+behave the same way as resistors.
+
+In parallel, the inductance is given by the following formula where L is the total inductance and L1
+
+L2.
+
+And are the individual instances in this way, if you connect to 10 microarray doctors in parallel,
+
+for example, you will end up with an inductance of five microarray.

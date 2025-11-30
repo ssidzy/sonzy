@@ -1,0 +1,239 @@
+It is often necessary to know how to measure current using a multimeter. Current measurements are
+
+easy to make, but they are done in a slightly different way to the way in which voltage and other measurements
+
+are made.
+
+However, current measurements often need to be made to find out whether a circuit is operating correctly
+
+or to discover other facts associated with its current consumption.
+
+So current measurements can be made for a variety of test instruments.
+
+But the most widely used piece of test equipment for making current measurements is a digital multimeter.
+
+This test equipment is widely available and at very reasonable prices.
+
+If you don't have yet a digital multimeter, I would highly encourage you to buy one, as it's one of the most
+
+widely used piece of test equipment today, and they are almost invaluable in any electronics laboratory
+
+for the home, hobbyists, and professional electronics engineers.
+
+A typical multimeter may include features such as the ability to measure voltage, current and
+
+resistance.
+
+Often, they include several additional specialized features or advanced options.
+
+Alright, alright, but how to measure current anyway? Using our simulator, we can easily measure
+
+current and voltage at any point in our circuit.
+
+So let's find out how.
+
+So in this very basic circuit, we have a 5V battery, along with a resistor that will limit
+
+the current flowing in this path.
+
+So what we want is to measure the current that flows in this path.
+
+How to do that?
+
+Very easy.
+
+Just right click anywhere in the circuit, then go to output and labels.
+
+And then search for "ammeter". Well, ammeters are different than multi meters.
+
+They can only measure current.
+
+However, digital multimeters have this feature integrated inside of them along with many other things,
+
+which is the reason why people prefer to just buy a multimeter rather than a separate ammeter.
+
+So how can we use this ammeter?
+
+Well, if we think logically, in order to measure the current, the electrons that are flowing in this
+
+path has to go through our ammeter as well, right?
+
+As a result, we place it in series with our circuit,
+
+and for that, we have to break the circuit somewhere,
+
+doesn't matter where we break, since the same amount of electrons are flowing everywhere in this path.
+
+:)
+
+And then we insert our ammeter.
+
+Now, notice that around 50mA is flowing in the circuit. So if I haven't told you yet,
+
+A(amper) is the unit for measuring electricity. Just like volt for potential difference or simply voltage
+
+that we will soon see.
+
+I highly recommend you to learn the common metric prefixes since the unit for measuring electricity
+
+is ampere, all the equations that we will learn about that has current in it,
+
+so the current has to be converted in ampere for the equation to be valid.
+
+So let's take an example.
+
+We talked briefly about Ohm's Law, right? Which states that voltage is equal to current times resistance.
+
+From this equation,
+
+resistance is equal to voltage divided by current.
+
+We are doing some reverse engineering here to find out the value of this resistance, even though we
+
+know it's 100 Ohm.
+
+So let's plug the values in. 5V divided by and here instead of 50mA, we have to convert
+
+it in ampers.
+
+So 50mA is 0.05A.
+
+Once you have some more experience, you will do these conversions in your head.
+
+So 5V divided by 0.05A is 100 ohm.
+
+Now I'll show you a trick that you can use.
+
+So instead of bothering yourself to place this ammeter in your circuit, what you can simply do is to
+
+get rid of it,
+
+then close the circuit, and then double click on the wire where you want to measure the current and click
+
+show current. Notice, there's a show voltage as well,
+
+which as you will see I use that as well almost all the time.
+
+So the result is the same, but it's just more convenient.
+
+All right.
+
+So we know that in order to measure current, we have to place the ammeter in series with the path.
+
+and that's what you'll have
+
+to do as well in real life.
+
+The multimeter comes with two probes: red and black usually,
+
+And you must break your circuit and connect your two probes at both ends,
+
+so that current can pass through it.
+
+All right.
+
+Now that we know this, let us try to see how to measure the voltage.
+
+Now, in order to measure the voltage, we have to understand what voltage is in the first place.
+
+As stated, voltage is a potential difference between two points.
+
+So potential difference,
+
+to put it simply, is a difference in potential between two points.
+
+If this point is at 5V and this one is a 0V, then the potential difference between the
+
+two points is 5V-0V, which is, of course, 5V.
+
+Now, remember that every electronic circuit must have a ground. Even if the circuit is powered by a battery,
+
+>
+
+there still must be a ground.
+
+Ground is normally understood to be a place of return for electricity in a circuit.
+
+In a circuit, you have a certain voltage at different parts.
+
+Electric current moves through these places of voltage from highest to lowest,
+
+like a reverse connect the dots. Ground, in most circuits, is where the voltage is zero, and
+
+that's where everything ends its journey.
+
+Without it, no current would actually flow. It's called "ground" because the ground has an electric potential
+
+of just about zero.
+
+So you could really send any current you want back into the ground if you have nowhere else to send it.
+
+:)
+
+We can even place a ground symbol here for convenience.
+
+It won't change the circuit at all, but probably it's more visually appealing to see that here we have
+
+ground.
+
+Or what else we could do is to get rid of all these wires and place two grounds instead.
+
+Again, it's exactly the same thing. In most cases, the voltage is measured between a particular point
+
+and the ground or 0V line the circuit.
+
+So all the voltages that we'll measure are referenced to ground, which means that all the voltages that we
+
+measure are compared to ground.
+
+So this is a general rule that you must obey and you must be consistent in your measuring.
+
+If you decide to measure the voltage in a circuit, you must decide compare to which point you are measuring.
+
+So how to do that?
+
+Right-click again, go to outputs and labels and then click on "voltmeter".
+
+Just like a digital multimeter which has two probes, the voltmeter has two ends.
+
+So one end, which is labeled as plus, is the red probe,
+
+and you place this red probe at the point in the circuit where you want to measure the voltage.
+
+The other end is not a "must", but you should connect to ground.
+
+And voila! The voltage is 5V compared to ground.
+
+If you want to measure the voltage at this point, just disconnect it, and place it here.
+
+And you will see it's 2.5V.
+
+This means that 2.5V is dropped across this resistance, and the other 2.5V is dropped
+
+across this resistance.
+
+Remember that the voltage provided by the power source has to be dropped somewhere until reaches the
+
+ground.
+
+Otherwise, you create a short circuit.
+
+So ground is always at 0V potential.
+
+And since we have two equal resistances in series, 2.5V is dropped across the first one,
+
+and the other 2.5V is dropped across the second one.
+
+If we were to have only one resistance,
+
+then the whole voltage will be dropped across it.
+
+Now, of course, we won't bother ourself placing this voltmeter all the time, which is quite cumbersome
+
+and makes the circuit look messy.
+
+Instead, we just double click on the wire and click Show Voltage.
+
+This voltage that you see here is referenced to ground as well.
+
+So no matter at which point you measure the voltage, it will always be a relative to ground.

@@ -1,0 +1,281 @@
+Hello, when we come back in its course, we will be discussing what a cemetery is and how it works.
+
+So without further ado, let's get started on.
+
+The military is a logical type that provides hysteresis or two different threshold voltage levels for
+
+rising and falling.
+
+Gadge, the competitor, has a differential amplifier at its core and a competitor.
+
+Action means that the analog input is effectively changed to a digital output.
+
+Dependent upon the voltages are the input.
+
+By using the hysteresis, the effect of noise of the input which might cause several switches are the
+
+output of the input voltage nears, the switching voltage is significantly reduced.
+
+But what is hysteresis?
+
+Well, hysteresis occurs in many instances throughout science.
+
+But in the case of the CPU trigger, hysteresis means that the circuit triggers different voltages to
+
+switch the output from one state to the other.
+
+The problem of not using hysteresis with a competitor is that if the input signal rises slowly, then
+
+a noise on the waveform will cause multiple switches of state of the output of the computer.
+
+So, for example, if we have a noisy input signal like this that is meant to have two, Pearse's a
+
+device that has only one set point or threshold could get incorrect input and it could register more
+
+than two pulses as shown in this illustration.
+
+And if we use the Shmeat trigger for the same input signal, we will get a correct input of two pulses
+
+because of the two different thresholds.
+
+So that's the primary function of the trigger to convert noisy square rave's sound waves or slow Ajay's
+
+inputs into clean square Rape's Oshman trigger is used in a host of applications where a level needs
+
+to be sensed.
+
+Even if only a small amount of hysteresis is used.
+
+It reduces the multiple transitions that can occur around the point of switching.
+
+So, for example, I use Mitiga Circuit as well to turn my company advertising board on.
+
+At night.
+
+I use a photo diode that assesses the outside luminosity.
+
+So when the sun goes down and it's getting darker, there's a point where the advertising board will
+
+turn on.
+
+Fortunately, since I use a trigger, the advertising board will not flicker at the beginning.
+
+Since the lower threshold of the circuit is set much lower than the upper threshold.
+
+There are many logical, integrated circuits that have a built in triggers on their inputs, but also
+
+it can be built using transistors or easier using an operational amplifier or comparator and just adding
+
+some resistors to it.
+
+And a positive feedback building, which might trigger using integrated circuits or operation amplifiers,
+
+is very easy since it abstracts away a lot of details.
+
+A good engineer has to understand how things work under the hood, and that's why we look at how Ashmead
+
+Trigger works using transistors.
+
+All right, so this is what is known as Ashmead Trigger.
+
+The input signal consists of 280 sources in Ceres, and that's because we want to simulate or generate
+
+a noisy seismic signal as shown here.
+
+The second, called Power, shows the output signal taken from the collector of Q2.
+
+Let me take out these two kilohertz signal generator a bit so that we have a clean sine.
+
+Maybe I will slow down the simulation a little bit and then I hit reset.
+
+All right, so now the input voltage is at zero woods, by the way, the input signal, which is two
+
+words, Siwei is added on top of a DC signal, and that's why the input doesn't go in the negative region.
+
+Notice that the output right now is low, and when the signal reaches about one point five words, the
+
+output will go from low to high.
+
+So one point five words is the upper threshold and the lower threshold is about one point, one words.
+
+So when the signal goes below one point, one word, the output will go from high to low.
+
+So between the upper and lower threshold, there is a zero point four words gap, which is enough to
+
+prevent the output to trigger multiple times when the input noise signal is approaching, let's say
+
+the one point five volts, if there would be only one threshold like only the upper threshold because
+
+of the noise, the output could experience plenty of pulses because the noise would keep going above
+
+and below the threshold voltage.
+
+And we don't want that.
+
+Right.
+
+So until the input signal doesn't go below one point one volts, the output will not change its state.
+
+So how does it work?
+
+Where should we start?
+
+Let's say the input starts on the ground.
+
+So I will remove these and connect to the base of Q1 round.
+
+Now, obviously, Q1 is in cut off mode, sees its base ATM voltage is minus 877 millivolts, why is
+
+it negative?
+
+Because the ATM is at the higher potential than the base, which is tied to ground.
+
+So this ATM voltage can be dropped on only one component, which is this 100 almar zester.
+
+So the voltage drop across the Šemeta resistor is 877 millivolts.
+
+On the other hand, the collector voltage is at two point one voice, and why is that?
+
+If you look attentively, there is a voltage divider formed by these 500 ohm resistor and these two
+
+resistors combined.
+
+So these voltage divider puts key ones connector at about dewpoint one.
+
+Would that if you do the exact math, it will give you around two point two words actually.
+
+But since there's some little tiny bhaskaran that escapes here, the final voltage is dew point one
+
+walls.
+
+But what's the base voltage of Q2?
+
+Well, it's about one point five words.
+
+If you take the volt meter, you would put the probe on the base of Kittu and the black probe the ground.
+
+Right.
+
+Your one meter will read one point five words.
+
+But if you notice, these 300 resistor is actually in parallel if if your two probes.
+
+And that's why the voltage drop on this resistor is the same as the base voltage of Q2.
+
+Now going further, the meter of Q2 is one that will drop lower than its base.
+
+Right.
+
+So it could use a meter is at about 900 millivolts.
+
+Seems Kitto now is conducting it brings the collector or the output low towards the ground, the output
+
+voltage is at around 950 millivolts and that's because the output is not connected directly to ground.
+
+They are to voltage drops on the ground.
+
+So the first one is the collector meter voltage job and the other one is the voltage drop across this
+
+100 ohm resistor.
+
+And the sum of these two voltage drops is the output voltage.
+
+Right now, as we can see, a pure once meter is tied to use meter.
+
+So basically both meters are the same voltage levels at about 900 millivolts.
+
+So Q1 will be off until the input rises to about how much.
+
+So what's the required based voltage to turn on this one?
+
+It should be one point five.
+
+That's right, because the meter is already at 900 millivolts.
+
+So 900 millivolts plus zero point seven.
+
+What is equal to one point forwards?
+
+Around one point five volts.
+
+Now, I have placed back that you will sign me without the noise added on it because it's not necessary.
+
+So was the input rises at about one point, five words cue while we conduct.
+
+And now let me slow down the simulation so Q1 will conduct bringing it correct or no, which will lower
+
+the voltage of youchoose base and shut it off, bringing the output high.
+
+Now you remember previously that in order to turn Q1 on, it needed around one point five words on its
+
+base to turn it on.
+
+Right.
+
+And here comes the magic.
+
+When the input signal drops below one point five words, Q1 will still be conducting, even though it
+
+required one point five years to turn on.
+
+Q2 will only start conducting when the input signal falls below one point one woods.
+
+And why is that?
+
+In order for Q2 to turn on, which will bring the output back to low, the base voltage has to be one.
+
+They'll drop higher than its šemeta, right?
+
+Now, let me increase the simulation speed a little bit.
+
+And if we look at the voltages in slow motion, you will see that most of the time, Quddus base is
+
+lower than Daym, which means that Q2 is off.
+
+But as the input voltage approaches, this one point one would.
+
+The base meter voltage surpasses the meter voltage, and the moment you choose base voltage is higher
+
+of 700 millivolts than the meter cut you will turn on.
+
+So as he has seen most of the time, Quddus base was lower than the ammeter voltage, but why did the
+
+base voltage start to or pass the meter voltage as the input voltage approached one point one word?
+
+That's because when the input approached the lower threshold limit of one point one, what the collector
+
+ammeter current of Q1 was low enough that it actually came out of saturation and went into forward active
+
+mode and voltage across it became large enough to turn on YouTube.
+
+So there is a transition from saturation to forward mode, which, as we know, in a forward active
+
+mode, the collector ammeter voltage drop is much higher than when the transistor is in saturation mode.
+
+So the input has to drop below about one point one watt in order to turn off Q1 and turn on Q2.
+
+When this happens, the current Q1 is low enough that it comes out of saturation and goes into forward
+
+active mode and the voltage drop across it becomes large enough to turn on Q2.
+
+So the moment Q2 turns on, it brings the output low.
+
+Now, when the input voltage rises slightly above one point, one boils again, this will not change
+
+the output.
+
+The input has to rise above one point five votes to turn on Q1.
+
+And that's because the emitter of Q1 is already at eight hundred seventy eight millivolts.
+
+That's it.
+
+Now the cycle repeats over and over again.
+
+So this is the end of the course.
+
+Thank you for watching.
+
+And if you have any questions, just leave a comment below and I will get back to you in the shortest
+
+amount of time.

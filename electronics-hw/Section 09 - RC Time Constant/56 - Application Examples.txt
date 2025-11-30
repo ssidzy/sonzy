@@ -1,0 +1,159 @@
+Hello and welcome back.
+
+Let's have a look at some Real-Life examples where art is Hershkowitz can be applied.
+
+The first three quarters we are going to talk about is called time delays here with.
+
+So this help with has a pulse or greater rate of input voltage.
+
+The triangular symbols are symbols buffers and you are not going to talk about this in great detail
+
+because it's more of an advanced topic.
+
+But what we have to know is that symbols buffalo are used to amplify the current, so they are amplifying
+
+the current in this path and not the voltage.
+
+All right, but how do they do that?
+
+Well, their input resistor, which we see it's actually called impedance, is high, meaning that this
+
+component requires a very low current of the input and it has a low output impedance, meaning that
+
+the output current will be amplified.
+
+Also, these CMOS buffers are active devices, meaning that they require an external power supply,
+
+which is not represented here.
+
+Their symbol is just a simple triangle, so a point a the signal is just a simple pulse.
+
+At Point B, however, the signal looks like this.
+
+We are already familiar with this waveform, right?
+
+The competitor needs some time to charge up and also needs some time to discharge.
+
+What is interesting to note here is the signal at Point C, who you have to know that CMOS buffers are
+
+actually a pair of transistors, and although we will greatly cover them in the future, courses course
+
+is yet to know that they turn on only when they reach a certain voltage.
+
+And since input voltage of the second buffer is this way for them, the there is a gradual increase
+
+of voltage, right?
+
+And there's a certain voltage the buffer turns on and also turns off abruptly at a certain voltage.
+
+So using this circuit configuration, we managed to create a delay.
+
+Tools such as equity sometimes used to delay a pulse so that something else can happen first.
+
+In designing circuits, you try not too often to rely on tricks like this, but they are occasionally
+
+handy.
+
+This show shows another example of what can be done before simple, arty timing, so great.
+
+Here we have also a new component, which is called operational amplifier and well, we could talk a
+
+lot about this component.
+
+But what you have to know right now is that in this configuration, the operational amplifier works
+
+as a competitor, something that we will treat in detail later in our course, intended for people who
+
+already have the basic knowledge gained from these courses here.
+
+All you need to know for now is that it is an integrated circuit.
+
+It is powered from some positive DC voltage that you connect to the pin labelled V Plus, and it drives
+
+its output either to V Plus or to ground, depending on whether the input labelled plus is more or less
+
+positive than the input label minus, respectively.
+
+By the way, these are called money working and inverting inputs.
+
+He doesn't draw any current from its input, but it happily drives the load that requires up to 20 minutes
+
+or so.
+
+And the comparators output is either high, meaning it's three plus or low.
+
+In other words, ground.
+
+So here's how it works.
+
+The voltage divider formed by these two registers are three or four holes the minus input, but 37 percent
+
+of the supply wattage in this case, about plus one point eight volts.
+
+Let's call that the reference voltage.
+
+So if the circuit has been sitting there for a while, C one is fully discharged and the competitor
+
+is output is at the ground.
+
+Then you push the third button momentarily.
+
+C1 charges quickly two plus five volt, which makes the composer's output switch to plus a five watts
+
+do after the button is released.
+
+The capacitor discharges exponentially towards the ground with a time constant of our two times C one,
+
+which we have set to be one minute at that time.
+
+It's what it crosses the reference voltage, so the competitor's output switches rapidly back to ground.
+
+And the bottom line is that the output spans one minute plus five watts after the button is pushed.
+
+So just to prove that the still really works, I built the circuit here with the only difference that
+
+I reduce the time constant so that the output will not stay one minute high because we would have to
+
+wait quite a lot here until it switches to it again.
+
+So I just changed this resistor value to 20 kms and also I decrease the value of this resistor.
+
+So when I hit the switch, once the capacitor will charge up much faster than me for higher resistance
+
+here.
+
+Note that this is a simulation right where you can increase the speed of the simulation or decrease
+
+it.
+
+So this means that the output on time will be different here than in real world.
+
+So the emerging you pin.
+
+In other words, the minus leg is a constant one point eight volts defined by this voltage divider,
+
+while the plus leg is at zero would also, the output world is currently sits above the ground.
+
+When he does reach, this voltage here will be equal to the voltage across the capacitor, and the voltage
+
+here will gradually decrease them to this resistor here.
+
+If the voltage on the past leg is higher than the voltage on the minus leg, the output will switch
+
+automatically to plus firewalls and will stay there as long as this voltage is higher than one point
+
+eight volts anyway.
+
+Let's see if it works.
+
+All right.
+
+The capacitor is charged probably not fully the voltage here is higher than on the minus leg, so the
+
+output is high.
+
+This voltage here is gradually decreasing until the voltage is lower than one point eight walls.
+
+And when it's under one point eight world, the output will switch back to ground.
+
+So as you can see, it's working just fine.

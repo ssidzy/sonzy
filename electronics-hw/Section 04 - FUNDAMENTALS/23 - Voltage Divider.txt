@@ -1,0 +1,209 @@
+All right, guys.
+
+So we had this circuit composed of a 5V
+
+DC power source and two resistors in series.
+
+If you were to calculate the total amount of current flow in the circuit, how would you start?
+
+Well, first you need to calculate the total opposition to the current flow in the circuit.
+
+In other words, the total resistance or the equivalent resistance, however you want to call it right.
+
+There are two resistors in series, so the equivalent resistance will be the sum of both resistances,
+
+which is 2k ohms. Now using Ohm's Law
+
+The current is equal to voltage divided by resistance, so 5V divided by 2k ohms is
+
+2.5mA.
+
+And now let's do something fun.
+
+Let's try to find out the voltage with respect to ground, of course.
+
+So let's calculate the voltage between these two resistors.
+
+In the real world, you would pick your multimeter and you would then place the red probe here and the black
+
+probe to the ground. Here in the simulator
+
+We can use something called analog output.
+
+If I place the analog output between the two resistors.
+
+And then I double click on it and check, show voltage
+
+I can see the voltage at this point.
+
+The voltage that we are measuring between these two resistors is compared to ground and the ground
+
+is always, always at 0V potential.
+
+You can also name ground as a 'reference point' if you prefer, a reference point in which voltages are
+
+measured.
+
+And if you don't like this piece of wire here, remove it and connect two grounds.
+
+The circuit has not changed at all.
+
+All right, all right.
+
+I talked too much about ground when in fact, I wanted to ask you, why do you think the voltage between
+
+these two resistors is 2.5V?
+
+Have you heard about something called voltage drop?
+
+You see, just like any electronic component that you can imagine, whether it's diode, transistor
+
+inductor, capacitor, when current is running through a component which in our case is resistor
+
+There will be a voltage drop across the component, OK?
+
+In simple terms, a voltage drop is defined as the amount of voltage loss that occurs through the parts
+
+of a circuit due to resistance.
+
+So when current meets resistance, the current will say, OK, I'm carrying all this voltage on
+
+my shoulders
+
+I will have to drop some voltage here and actually the current needs to drop all of the voltage carrying
+
+until it reaches ground.
+
+Otherwise, you will create a short circuit.
+
+So let's call this voltage that we are measuring as the output voltage of the circuit.
+
+How can we calculate this output voltage without measuring it?
+
+By applying Ohm's Law. Ohm's Law is the only equation that you will ever need in electronics.
+
+I'm kidding, of course.
+
+You will need two more equations anyway.
+
+Ohm's law says that voltage is equal to current times resistors.
+
+This time we want to calculate the voltage that is dropped across this resistor.
+
+And fortunately, we already know that 2.5mA is flowing through it.
+
+So all we need to do is just a multiplication. 2.5mA times
+
+1k ohm is 2.5 volts.
+
+If 2.5 volts is dropped across the second resistor, how much voltage do you think it's dropped across
+
+the first resistor?
+
+2.5V, of course. We have a 5V DC source
+
+So this 5V has to be dropped across something, anything until the current reaches ground.
+
+You know what?
+
+Actually, let me show you what a short circuit is.
+
+Let's remove these resistors for a second
+
+and connect this with a wire.
+
+As you can see, the simulator has crashed and the battery would have exploded in your face if you were
+
+holding it down here, it says that voltage source slash wire loop with no resistance.
+
+So if you apply ohms law, current is equal to voltage divided by resistance.
+
+But since we have no resistance, the current flowing in this circuit would be 5V divided by
+
+zero and try dividing 5 by 0 and see how much current is going to flow.
+
+Believe me, you don't want that.
+
+So let's place everything back.
+
+All right.
+
+So 2.5V is dropped across the first resistor and 2.5V is dropped across the second resistor.
+
+Hence, the ground is at 0V potential.
+
+Now we have just built our first circuit that actually does something.
+
+We successfully halved the power source voltage. From 5V
+
+we have created 2.5V and this circuit is what we call a 'voltage divider'. A voltage divider circuit
+
+as
+
+the one we have here is a simple circuit, which turns a large voltage into a smaller one.
+
+Using just two or series resistors and an input voltage, we can create an output voltage that is a
+
+fraction of the input.
+
+Voltage dividers are one of the most fundamental circuits in electronics.
+
+If learning Ohm's Law was like being introduced to the ABC's, learning about voltage dividers would
+
+be like learning how to spell 'cat'.
+
+The voltage divider circuit cannot generate the higher voltage than the input voltage.
+
+That would be amazing if it could do that, but it can convert the input voltage to any voltage between
+
+zero volts and the input voltage.
+
+So instead of 2.5V, let's try to generate 3.3V.
+
+You see, many microcontrollers are running on 3.3V.
+
+So if you were to have nothing else but a battery of 5V, you would need to reduce that voltage
+
+a little bit to power to microcontroller.
+
+So how do we calculate the two resistances so that the output voltages 3.3V?
+
+This circuit, in fact, is so popular that it has its own equation, which says that the output
+
+voltage is equal to the input voltage
+
+times R2 divided by R1 plus R2.
+
+All right.
+
+So R2, divided by R1 plus R2, determines the scale factor.
+
+So 3.3V is equal to 5V times R2 divided by R1 plus R2.
+
+And here's the thing. We have an equation with two unknown variables, right?
+
+What should be the value of R1 and what should be the value of R2?
+
+You might ask.
+
+First thing that you have to understand is a voltage is divided by itself is useless, right?
+
+The divider needs to feed its output into something.
+
+Sometimes that something is a bias adjustment on an op-amp circuit or sometimes the feedback voltage
+
+on a voltage regulator.
+
+There are thousands of things that a divider could be feeding, like a microcontroller
+
+as I have said previously, although powering a microcontroller from a voltage divider is not really a wise
+
+choice.
+
+You will soon understand why.
+
+So whatever the divider is feeding, it's going to take current and how much of current the circuit
+
+you are feeding will consume will actually determine the value of R1 and R2, which we talk about
+
+in more detail in the next course.

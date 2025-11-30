@@ -1,0 +1,213 @@
+Now, before we get into the simulation part, I want to lay down some theory so it would be easier
+
+for you to understand the working principle of the capacitor than this current flow through it.
+
+We already know that there is an insulating layer between the capacitor, which is commonly called the
+
+dielectric.
+
+Due to this insulating layer, these secorun cannot flow through the capacitor that it blocks it, allowing
+
+instead of voltage to be present across the plates in the form of an electrical charge.
+
+When used in a direct current or DC Circuit, a capacitor charges up to its supply voltage but blocks
+
+the flow of current through it because the dielectric of a capacitor is non conductive and basically
+
+an insulator.
+
+When current flows into a capacitor, the charges get stuck on the plates because they can't get past
+
+the insulating dielectric.
+
+Electrons, which are negatively charged particles are sucked into one of the plates and it becomes
+
+overall negatively charged.
+
+The large mass of negative charges on one plate pushes away like charges on the other plate, making
+
+it positively charged.
+
+The positive and negative charges on each of these plates attract each other because that's what opposite
+
+charges do.
+
+But with the dielectric sitting between them, as much as they want to come together, the charges will
+
+forever be stuck on the plate.
+
+Well, of course, until they have somewhere else to go, then positive and negative charges coalesce
+
+on the capacitor plates.
+
+The capacitor becomes charged, a capacitor can retain its electric field, will hold its charge because
+
+the positive and negative charges on each of the plates attract each other but never reach each other.
+
+At some point, the capacitor plates will be so full of charges that they just can't accept anymore.
+
+There are enough negative charges on one plate that they can repel any others that try to join.
+
+And this is where the capacitance of a capacitor comes into play, which tells you the maximum amount
+
+of charge the cap can store.
+
+This also implies that the bigger the capacitance, the more time it needs to charge up for a given
+
+current.
+
+So if a perf in a circuit is created, which allows the charges to find another path to each other,
+
+they will leave the capacitor and it will discharge.
+
+So, for example, in this circuit, a battery can be used to induce an electric potential across the
+
+capacitor.
+
+This will cause equal but opposite charges to build up on each of the plates until they are so full
+
+they repel any more current.
+
+Following an energy placing series with capacitor could provide a path for the current, and the energy
+
+stored in a capacitor could be used to briefly illuminate the LSD.
+
+All right, here we are in this simple circuit.
+
+We have a firewall's battery along with a 200 microworld capacitor and a resistor in series.
+
+If it now is, see in the moment why we have this resistor here.
+
+But I want you to notice that the capacitor we are using here is a non polarized capacitor.
+
+So we have polarized capacitors such as the Athletica pastors and we have the non polarized ones.
+
+Since it's a non polarized capacitor, you can connect it however we want, meaning that if we flip
+
+the capacitor, there will be no problem whatsoever.
+
+So right now the is discharged, the switch is open and all current flows in this path.
+
+However, notice that once I close the switch, current will flow in the circuit, but only until the
+
+capacity starts up.
+
+Because the moment the capacity is fully charged, no more current will flow in this path, since the
+
+dielectric sitting between the two plates impedes the current flow.
+
+So how do we know that the capacity is charged up?
+
+Well, the voltage drop across the capacitor matches the power supply of voltage.
+
+So if I increase the power supply voltage to, let's say, 10 volts, notice that the capacitor will
+
+start charging up again until the voltage across its plate reaches the power supply voltage before you
+
+apply any voltage on the capacitor.
+
+I recommend it to check the datasheet of the particular capacitor that you are using, because the data,
+
+it will specify the maximum voltage that can be applied across the capacitor.
+
+Now, what do you think will happen when I release the speech?
+
+Well, the charge that is stored in a capacitor will be released at current will flow in this path until
+
+the capacitor is fully discharged.
+
+Now, I don't know if you noticed, but the current was flowing in the clockwise direction and not anticlockwise.
+
+So when the capacity is charging up current flows from top to bottom, but when the capacity is discharging
+
+current flows in the opposite direction.
+
+But why is that?
+
+Well, that's because when the capacity is charged up, positive charges will be stuck on the first
+
+plate and negative charges will be stuck on the second plate.
+
+Now, following the conventional current flow, which I know many people don't like for some reason,
+
+current flows from the positive terminal to the negative terminal.
+
+As a result, when the switch is released, current will flow in the opposite direction from the positively
+
+charged plate towards the negatively charged plate until the capacitor is discharged.
+
+All right, so let's wrap it up as current flows into the capacitor, the voltage across the capacitor
+
+increases as its voltage approaches the source voltage, the current flowing into the capacitor decreases.
+
+And I almost forgot to tell you why we have this resistor here where this resistor here is necessary
+
+to limit the current flow during the charging phase.
+
+Well, let's discharge the capacitor and take out the resistor.
+
+Now, as you can see, when I hit the switch again, the simulator will complain that this loopier does
+
+not contain any resistance.
+
+In other words, an infinite amount of current free flow in this path, which is the reason why we get
+
+this error.
+
+So why is there infinite amount of current flow?
+
+Well, that's because the simulator treats every component as ideal, towards which, of course, in
+
+the real world is not the case.
+
+An idea of what Esau's or simple battery does not have any resistance.
+
+As a result, it would be able to supply infinite amount of current.
+
+I would be short here.
+
+So we would talk about ideal voltage sources in another course.
+
+Normally in real life, batteries internally have some resistance, which could be illustrated simply
+
+as a tiny resistor in series with the battery.
+
+This resistor in series is the one that basically limits the amount of current that the power supply
+
+or a battery can deliver.
+
+Have you ever seen a power supply that can deliver infinite amount of current?
+
+Well, me neither.
+
+On the other hand, the simulator also treats the capacitor as ideal, one having no internal resistance
+
+whatsoever.
+
+A real capacitor, however, can be illustrated as a capacitor with some tiny resistor in series, also
+
+with a tiny inductance, actually.
+
+But let's not get into that right now, which would actually limit the current flow.
+
+So in theory, yes, the moment you close us reach an infinite amount of current, we will start to
+
+flow, since there's absolutely nothing to limit the current, however inevitable, scenario.
+
+This is not the case since world resources have some internal resistance that will limit the current
+
+flow and also the capacity leg provide some tiny resistance that will also limit the current.
+
+And as a result, you will never see in real life an infinite amount of current flow at the beginning
+
+of the charging phase.
+
+However, it can happen that if you charge the capacitor with a relatively high amount of current,
+
+the capacitor can get destroyed.
+
+So again, you should look into the datasheet where it says the maximum allowed current to flow through
+
+the capacitor.
+
+

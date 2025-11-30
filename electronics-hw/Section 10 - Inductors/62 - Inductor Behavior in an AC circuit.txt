@@ -1,0 +1,67 @@
+Then AC voltage is applied to resistor, both the voltage and current are in phase with each other.
+
+This means that as the voltage increases, so does the current and then the voltage starts decreasing,
+
+so does the current.
+
+So let's see the current voltage graph that AC voltages passing through and inductor.
+
+And here we are this year shows the response of any doctor who had driven by alternating current, the
+
+current yellow and vortigern green across the doctor are shown in this scope here.
+
+So notice that voltage and current are not in phase the current yellow legs of voltage.
+
+Actually, let me slow down the simulation a little bit.
+
+So current legs, the voltage.
+
+This means that their current starts to flow, the indata resisted and voltage across the daughter is
+
+at maximum.
+
+So when the voltage is at maximum, the current is zero.
+
+As the cycle progresses, the inductor voltage goes to zero, allowing current to reach its peak value.
+
+If you recall there, we had a DC power source here.
+
+The current reached the maximum value than the voltage across.
+
+The doctor was basically zero.
+
+So we have seen in the previous simulation that that AC is applied to only doctor voltage and current
+
+are not in phase, so not there creates a phase shift between the two so that the voltage will lead
+
+the current by 90 degree.
+
+Or we can say that the current lags the voltage by 90 degree.
+
+So notice that both capacitors as well as inductors introduce a fair shift between voltage and current,
+
+these new components are said to be reactive components.
+
+So a component is said to be reactive.
+
+If it tries to resist a change in voltage or current in a circuit, a capacitor will try to resist changes
+
+in voltage while an inductor tries to resist changes in current.
+
+In order to resist a change in current voltage, the component resisting must be able to store at least
+
+part of the energy applied.
+
+The components capable of doing this are, as I said, the capacitor which stores energy in the form
+
+of voltage, and the inverter which stores energy in the form of current.
+
+These two reactive components that are placed in an AC circuit will create a phase shift between voltage
+
+and current.
+
+Both components will create a phase shift of 90 degrees.
+
+However, in a purely capacity circuit, the voltage lags current by 90 degree, while in a purely inactive
+
+circuit, current lags the voltage by 90 degree.

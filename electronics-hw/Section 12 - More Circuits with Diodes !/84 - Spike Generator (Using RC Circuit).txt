@@ -1,0 +1,131 @@
+Hello and welcome back.
+
+So there are applications Wednesday for positives Pike is required while way of doing it is by applying
+
+a squarish signal US input to a circuit that will output a short positive spike.
+
+How does this work look like?
+
+Well, let's see.
+
+Oh.
+
+The easiest way to create a short positive spike is by using an RC differentiator, an RC differentiator
+
+is a series RACC liquid in which the input is applied to a capacitor and the output is taken from the
+
+resistor.
+
+The differentiator is a high pass filter type circuit that can convert a square with input signal into
+
+high frequencies picks up its output.
+
+The output signal from the differentiator is proportional to the rate of change of the input signal
+
+when the input signal arises or is positive or the input of the differentiator, the circuit generates
+
+a positive going spike when the input signal falls or goes negative or the input of the differentiator.
+
+The circuit generates a negative going spike where the input is constant or steady, the output is zero.
+
+We talked about this in great detail in the previous calls for beginners that the capacitor charges
+
+up to 50 when a voltage is applied and this charge is down to 550 when it is removed.
+
+The time constant is equal to the product between the resistance and capacitance in Arcy charging it
+
+is charging selkowitz these five times constant value always remains true unless it is fixed by the
+
+resistor capacitor combination.
+
+Right then the actual time required to fully charge or discharge a capacitor can only be changed by
+
+changing the value of either the capacitor itself or the resistor in the circuit.
+
+Now if we apply a continuous query voltage waveform to the RC circuit whose pulse with matches that
+
+exactly of the five hours, the time constant of the circuit, then the voltage waveform across the
+
+capacitor will look something like this.
+
+Why am I showing you these things?
+
+Because I want you to know how we can modify the duration of the output spike.
+
+Because when I was you might want a longer spike or a shorter wire, depending on your application.
+
+Now the what is drop across the capacitor alternates between charging up to C and D, charging down
+
+to zero according to the input voltage here.
+
+In this example, the frequency of the input query, what is waveform exactly matches twice that of
+
+the five or C time constant.
+
+These ten or C time constant allows the capacitor to fully charge during the on period of the input
+
+waveform and then fully discharge during the off period, resulting in a perfectly matched or c a waveform
+
+if the time period of the input waveform is made longer, for example, and on half period pause with
+
+equivalent to say eight or C, the capacitor would then stay fully charged longer and also stay fully
+
+discharge longer.
+
+If, however, we now reduce the total time period of the input waveform to say four or C, the capacitor
+
+would not have sufficient time to either fully charge during the ARM period or fully discharge during
+
+the off period.
+
+And therefore the resultant voltage drop across the capacitor would be less than its maximum input voltage.
+
+Then by wearing the RC time constant or the frequency of the input waveform, we can vary the voltage
+
+across the capacitor, producing a relationship between v.C and the time T and this relationship can
+
+be used to change the shape of various waveforms so that the output waveform across the capacitor barely
+
+resembles that of the input grade.
+
+So what is the criteria that we need to obey in order to generate a short spike for the output to resemble
+
+a sharp pause?
+
+We need our C to be one tenth of the pause with.
+
+So by having an RC value of one tenth the POOLESVILLE or lower, we can produce the required spikes
+
+or the output and the lower the hours, the time constant for a given pause with the sharper the spikes
+
+and use the exact shape of the output.
+
+Waveform depends on the value of the RC time constant.
+
+So in our case, the frequency of the square wave is 40 hertz, so the time period of the signal is
+
+one over 40, right.
+
+Which is equal to zero point zero twenty five seconds or twenty five milliseconds.
+
+The are time constant of our circuit is equal to the product between the capacitors and resistance,
+
+which gives us a time constant of zero point zero zero 11 seconds, which is 22 times less than the
+
+time period of the input square of signal.
+
+And that's why we have a short pulses.
+
+The output.
+
+Great, but what if we don't need these negative spikes and we want all the positive space to be present
+
+to the output?
+
+How could you do that?
+
+If you guessed it, congratulations indeed dialed in series with the RC circuit, we led the current
+
+to flow in only one direction, which in this configuration only the positive space would be able to
+
+pass through because that's the only time when the diode is forward by us.

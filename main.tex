@@ -1,0 +1,367 @@
+\documentclass[a4paper,9pt]{article}
+
+% Packages
+\usepackage[margin=0.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
+\usepackage{graphicx}
+
+% ====================================================================
+% CONFIGURATION - Document Title
+% ====================================================================
+\newcommand{\topicname}{Analog Hardware Design Cheat Sheet}
+\newcommand{\authorname}{Sonali B Sabawat}
+\newcommand{\sectionnumber}{01--31}
+\newcommand{\sectionname}{Complete Electronics Course}
+% ====================================================================
+
+% Color definitions - Professional minimal palette
+\definecolor{headercolor}{RGB}{33,33,33}         % Dark Gray - Main header
+\definecolor{accentcolor}{RGB}{41,128,185}       % Professional Blue - Accents
+\definecolor{lightgray}{RGB}{245,245,245}        % Light Gray - Subtle backgrounds
+\definecolor{boxborder}{RGB}{189,195,199}        % Medium Gray - Box borders
+
+% Custom box styles - Minimal professional design
+\tcbuselibrary{skins,breakable}
+\newtcolorbox{tldrbox}{
+    colback=lightgray,
+    colframe=accentcolor,
+    fonttitle=\bfseries\large\color{accentcolor},
+    title=1. TL;DR (The Gist),
+    breakable,
+    sharp corners,
+    boxrule=1pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\newtcolorbox{detailbox}{
+    colback=white,
+    colframe=boxborder,
+    fonttitle=\bfseries\large\color{headercolor},
+    title=2. Detailed Explanation,
+    breakable,
+    sharp corners,
+    boxrule=0.5pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\newtcolorbox{examplebox}{
+    colback=lightgray,
+    colframe=accentcolor,
+    fonttitle=\bfseries\large\color{accentcolor},
+    title=3. Practical Example \& Numerical,
+    breakable,
+    sharp corners,
+    boxrule=1pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\newtcolorbox{keypointsbox}{
+    colback=white,
+    colframe=boxborder,
+    fonttitle=\bfseries\large\color{headercolor},
+    title=4. Key Points (Interview Focus),
+    breakable,
+    sharp corners,
+    boxrule=0.5pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+% Section formatting
+\titleformat{\section}
+  {\normalfont\Huge\bfseries\color{accentcolor}}
+  {\thesection}{1em}{}
+  
+\titleformat{\subsection}
+  {\normalfont\Large\bfseries\color{headercolor}}
+  {\thesubsection}{1em}{}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Compact lists
+\setlist{nosep, leftmargin=15pt, itemsep=2pt}
+
+% Table of Contents formatting
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforesecskip}{8pt}
+\setlength{\cftbeforesubsecskip}{3pt}
+\renewcommand{\cftsecfont}{\large\bfseries\color{accentcolor}}
+\renewcommand{\cftsecpagefont}{\large\color{accentcolor}}
+\renewcommand{\cftsubsecfont}{\normalsize\color{headercolor}}
+\renewcommand{\cftsubsecpagefont}{\normalsize\color{headercolor}}
+\setlength{\cftsubsecindent}{1.5em}
+
+% Document start
+\begin{document}
+
+% ====================================================================
+% TITLE PAGE
+% ====================================================================
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    % Title
+    {\Huge\bfseries\color{headercolor} ANALOG HARDWARE\\[0.3cm] DESIGN CHEAT SHEET\par}
+    \vspace{0.3cm}
+    
+    % Author
+    {\Large\color{accentcolor}\authorname\par}
+    \vspace{1cm}
+    
+    % Decorative line
+    {\color{accentcolor}\rule{0.8\textwidth}{1.5pt}\par}
+    \vspace{1.5cm}
+    
+    % Description box
+    \begin{tcolorbox}[
+        colback=lightgray,
+        colframe=boxborder,
+        width=0.8\textwidth,
+        sharp corners,
+        boxrule=0.5pt
+    ]
+    \centering
+    \large
+    \textbf{Comprehensive One-Page Study Guide}\\[0.3cm]
+    \normalsize
+    Covering fundamental concepts, formulas, examples,\\
+    and interview-focused key points
+    \end{tcolorbox}
+    
+    \vfill
+    
+    % Bottom information
+    {\large\color{headercolor}
+    Electronics Engineering Reference Series\\[0.2cm]
+    \normalsize
+    \today
+    \par}
+    
+\end{titlepage}
+
+% Reset geometry for content page
+\newgeometry{margin=0.4in}
+
+% ====================================================================
+% TABLE OF CONTENTS
+% ====================================================================
+\begin{center}
+    {\LARGE\bfseries\color{headercolor} TABLE OF CONTENTS}
+    \vspace{0.3cm}
+    \hrule height 2pt
+\end{center}
+\vspace{0.3cm}
+
+\tableofcontents
+\vspace{0.5cm}
+
+\begin{center}
+\hrule height 1pt
+\end{center}
+
+\newpage
+
+% ====================================================================
+% MAIN CONTENT PAGE
+% ====================================================================
+
+% Suppress section numbering
+\setcounter{secnumdepth}{0}
+
+\vspace{0.25cm}
+
+% ====================================================================
+% INCLUDE SECTION CONTENT HERE
+% ====================================================================
+% All sections will be included below to create one comprehensive document
+% Each section appears as a chapter in the table of contents
+
+% Section 01: Welcome to Electronics I
+\input{study-sheets/sections/section01-content.tex}
+
+\newpage
+
+% Section 02: Understanding Electricity
+\input{study-sheets/sections/section02-content.tex}
+
+\newpage
+
+% Section 03: Simulator Tutorial
+\input{study-sheets/sections/section03-content.tex}
+
+\newpage
+
+% Section 04: FUNDAMENTALS
+\input{study-sheets/sections/section04-content.tex}
+
+\newpage
+
+% Section 05: Kirchhoff's circuit laws
+\input{study-sheets/sections/section05-content.tex}
+
+\newpage
+
+% Section 06: Electric Power P[W] Fundamentals
+\input{study-sheets/sections/section06-content.tex}
+
+\newpage
+
+% Section 07: Alternating Current (AC)
+\input{study-sheets/sections/section07-content.tex}
+
+\newpage
+
+% Section 08: Capacitors
+\input{study-sheets/sections/section08-content.tex}
+
+\newpage
+
+% Section 09: RC Time Constant
+\input{study-sheets/sections/section09-content.tex}
+
+\newpage
+
+% Section 10: Inductors
+\input{study-sheets/sections/section10-content.tex}
+
+\newpage
+
+% Section 11: Diodes
+\input{study-sheets/sections/section11-content.tex}
+
+\newpage
+
+% Section 12: More Circuits with Diodes!
+\input{study-sheets/sections/section12-content.tex}
+
+\newpage
+
+% Section 13: Input and Output Impedance of a Circuit
+\input{study-sheets/sections/section13-content.tex}
+
+\newpage
+
+% Section 14: First Order Filters
+\input{study-sheets/sections/section14-content.tex}
+
+\newpage
+
+% Section 15: More Advanced Filters
+\input{study-sheets/sections/section15-content.tex}
+
+\newpage
+
+% Section 16: Radio and Signal Modulation
+\input{study-sheets/sections/section16-content.tex}
+
+\newpage
+
+% Section 17: Miscellaneous Topics
+\input{study-sheets/sections/section17-content.tex}
+
+\newpage
+
+% Section 18: Transistors Fundamentals
+\input{study-sheets/sections/section18-content.tex}
+
+\newpage
+
+% Section 19: Review + More Circuits with Transistors
+\input{study-sheets/sections/section19-content.tex}
+
+\newpage
+
+% Section 20: Transistor Circuits
+\input{study-sheets/sections/section20-content.tex}
+
+\newpage
+
+% Section 21: Audio Amplifier Classes
+\input{study-sheets/sections/section21-content.tex}
+
+\newpage
+
+% Section 22: Other Circuits Using BJT
+\input{study-sheets/sections/section22-content.tex}
+
+\newpage
+
+% Section 23: Linear Power Supply Design
+\input{study-sheets/sections/section23-content.tex}
+
+\newpage
+
+% Section 24: Operational Amplifier (Op-Amp) - Fundamentals
+\input{study-sheets/sections/section24-content.tex}
+
+\newpage
+
+% Section 25: Op-Amp Arithmetic Circuits
+\input{study-sheets/sections/section25-content.tex}
+
+\newpage
+
+% Section 26: Op-Amp Based Precision Rectifiers
+\input{study-sheets/sections/section26-content.tex}
+
+\newpage
+
+% Section 27: Common Op-Amp Based Circuits
+\input{study-sheets/sections/section27-content.tex}
+
+\newpage
+
+% Section 28: Linear Voltage Regulator
+\input{study-sheets/sections/section28-content.tex}
+
+\newpage
+
+% Section 29: MOSFETs
+\input{study-sheets/sections/section29-content.tex}
+
+\newpage
+
+% Section 30: N-channel MOSFET Characteristic Curve
+\input{study-sheets/sections/section30-content.tex}
+
+\newpage
+
+% Section 31: DC-to-DC Switching Converters
+\input{study-sheets/sections/section31-content.tex}
+
+\newpage
+
+% ... Add remaining sections as they are created ...
+
+% ====================================================================
+
+% Footer
+\vspace{0.15cm}
+\hrule height 1pt
+\begin{center}
+    \small\textit{Electronics Study Sheet | Generated on \today}
+\end{center}
+
+\end{document}

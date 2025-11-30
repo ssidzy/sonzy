@@ -1,0 +1,99 @@
+All right.
+
+Now, you might be wondering, why do we care about the power dropped on a resistor or any other component
+
+for that matter?
+
+Remember that power is a transfer of energy from one type to another.
+
+And when that electrical energy running from the power source hits the resistor, the energy transforms
+
+into heat.
+
+Possibly more heat than the resistor can handle.
+
+Which leads us to power ratings.
+
+Now all electronic components transfer energy from one type to another.
+
+Some energy transfers are desired, like, for example, LEDs emitting light motors, spinning batteries
+
+charging.
+
+Other energy transfers are undesirable, but also unavoidable.
+
+These unwanted energy transfers are power losses, which usually show up in the form of heat.
+
+Too much power loss, too much heat on a component can become very undesirable.
+
+You see, even when energy transfers are the main goal of a component, there will still be losses to
+
+other forms of energy.
+
+LEDs and motors, for example, will still produce heat as a byproduct of their other energy transfers.
+
+Most components have a rating for maximum power.
+
+They can dissipate, and it's important to keep them operating under that value.
+
+This will help you avoid what we lovingly refer to as letting the magic smoke out.
+
+Now, resistors are some of the more notorious culprits of power loss.
+
+When you drop some voltage across the resistor, you are also going to induce current flow across it.
+
+More voltage means more current means more power.
+
+Remember back to our first power calculation example where we found that if nine volts were dropped
+
+across a ten ohm resistor, that resistor would dissipate 8.1W.
+
+You see, 8.1 is a lot of watts for most resistors.
+
+Most resistors are rated for anywhere from 0.125W to 0.5W.
+
+If you drop eight watts across a standard 0.5W resistor.
+
+Ready?
+
+A fire extinguisher.
+
+There are resistors built to handle large power drops.
+
+These are specifically called out as power resistors.
+
+If you ever find yourself picking out resistor value, keep its power rating in mind as well.
+
+And unless your goal is to heat something up, try to minimize power loss in a resistor.
+
+So resistor power ratings can come into play when you are trying to decide on a value for an LED current
+
+limiting resistor.
+
+Say, for example, you want to light up a ten millimeter super bright red led at maximum brightness
+
+using a nine volt battery.
+
+The LED has a maximum forward current of 80 milliamps and a forward voltage of about 2.2V.
+
+So to deliver 80 milliamps to the LED, you would need an 85 ohm resistor to do so.
+
+6.8V dropped on the resistor and 80 milliamps running through.
+
+It means around 0.5W of power lost on it and a half watt resistor isn't going to like that very much.
+
+It probably won't melt, but it will get hot.
+
+So play it safe and move up to a one watt resistor.
+
+All right, guys.
+
+As a final thought, resistors certainly aren't the only components where maximum power ratings must
+
+be considered.
+
+Any component with a resistive property to it is going to produce thermal power losses.
+
+Working with components that are commonly subjected to high power voltage regulators, diodes, amplifiers
+
+and motor drivers, for example, means paying extra special attention to power loss and thermal stress.

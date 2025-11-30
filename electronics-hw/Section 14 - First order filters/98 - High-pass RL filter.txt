@@ -1,0 +1,99 @@
+A high pass oral filter is a filter composed of her sister and inductor, which passes through high
+
+frequency signatures to build a high pass or air filter, the inductor is placed in parallel to the
+
+power source signals entering the circuit.
+
+As shown in this diagram.
+
+This circuit is a a high pass filter, which passes through high frequency signals, an inductor like
+
+a capacitor is a reactive device, right?
+
+Inductors offer different resistances to signals input into them of different frequencies.
+
+Inductors pass low frequency signals with very little resistance while offering great resistance to
+
+signals of high frequency.
+
+As a result, low frequency signals pass through very easily without any attenuation, and high frequency
+
+signals are either completely blocked or greatly attenuated as output.
+
+Off of this principle described which is in reactors, is how the circuit operates.
+
+Remember that quarantine circuit always takes the path of least resistance.
+
+Seniors in others offer such a high resistance to high frequency signals.
+
+Current signals of high frequency will not go through the inductor of the circuit.
+
+They will take an alternative path and go through another part of the circuit, which offers lesser
+
+resistance in this circuit, instead of the high frequency signals going through the inductor and down
+
+to ground.
+
+They go through to output and this is why the circuit is a high pass filter circuit, low frequency
+
+signals.
+
+However, we go through the inductor because insurers offer very low resistance to low frequency or
+
+DC signals, right?
+
+Therefore, low frequency konrath will take the path of going to the doctor to ground.
+
+And now let's see how to build a high pass filter to build a high pass or a filter again, just like
+
+the RC circuit.
+
+We use a function generator, a register and the conductor for the circuit.
+
+We will use a 470 her daughter and a 10kg resistor.
+
+This circuit will form a high pass filter, passing through high frequency signals through to output
+
+while filtering low frequency signals through the inductor.
+
+Since the formula for a high pass filter, is this one here doing the math?
+
+We will get a cutoff frequency of approximately three point thirty nine kilohertz.
+
+This means all frequencies about three point thirty nine kilohertz will be passed through without attenuation,
+
+while frequencies below this value will begin to get attenuated.
+
+As you get lower and lower and further away from three point thirty nine kilohertz, there is a greater
+
+attenuation as the frequency goes down.
+
+Now, let's try to simulate this hype as our filter and see the output signal in comparison with the
+
+input signal.
+
+The cutoff frequency based on the value of the register and the inductor is 454 hertz.
+
+So this means that everything below this frequency will be attenuated and everything about this frequency
+
+will be passed.
+
+This function generator here will change its frequency, starting from 21 Hertz all the way up to one
+
+kilohertz.
+
+The simulation has started, and as you can see, low frequency input signal below four hundred fifty
+
+four hertz is ethanol weighted.
+
+How do we know it's ethanol weighted?
+
+Well, the input voltage is a constant firewalled, and the output voltage is less than five would.
+
+As a result, the output voltage is attenuated by a certain amount.
+
+US, the frequency increases, the output signals voltage is increasing as well.
+
+Now that we crossed the frequency of four hundred fifty four Hertz notice how the output signal starts
+
+increasing in voltage until it reaches nearly five volts.

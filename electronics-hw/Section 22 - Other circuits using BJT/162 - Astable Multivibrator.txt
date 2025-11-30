@@ -1,0 +1,195 @@
+Hello and welcome back to new chapter here.
+
+We will analyze some circuits that are highly dependent on transistors so that you guys will get a good
+
+handle on how transistors work.
+
+We will start by analyzing some circuits called us multi vibrators.
+
+Well, multi vibrators are widely used in electronics, and it is a circuit which is used to implement
+
+the two state devices like relaxation, oscillator timers and flipflops.
+
+Here, the two states refers to the two wattage levels of the output, like, for example, zero volts
+
+and five words.
+
+Many times the voltage levels are also represented as either logic high and logic low.
+
+The multi vibrators can be classified into three categories, namely stable, more stable and be stable.
+
+In this course, we will try to demystify how unstable multi vibrator works.
+
+So let's get started.
+
+On
+
+unstable circuit consists of two transistors, both switching their operational mode.
+
+Alternatively, from saturation to cut off, then from cut off to separation by definition, unstable
+
+circuits.
+
+That one that oscillates between two states high and low, over and over and over again indefinitely.
+
+It never holds one state.
+
+It consistently cycles from high to low, high to low repeatedly.
+
+Therefore, it produces a square waveform signal as output.
+
+So again, the stable multi vibrator does not remain stable in any of the two states, and the output
+
+of the multi vibrator continuously changes between the two states.
+
+So imagine how cool the circuit is.
+
+Your power, the circuit with DC and it produces a square wave using just a few components.
+
+Moreover, the square width can even be controlled by changing the value of the RC time constant.
+
+So let's start from the beginning and let's see how this works.
+
+First, let's try to understand how this works.
+
+Looking at the schematic of the circuit and at the end we will try to simulate it.
+
+Or if you feel like skip to the simulation part to see what's going on and then come back here.
+
+So where shall we start?
+
+Let's start by placing the DC power supply on top of it.
+
+Now, what happens?
+
+Well, what happens is that one transistor will be driven to saturation, meaning that it will be fully
+
+turned on right then a transistor is exaggeration of the creator of current is not equal anymore to
+
+be times based current.
+
+Right.
+
+And we already know this.
+
+So while this Q1 is fully turned on, Q2 will be in cutoff mode, so it won't conduct current at all
+
+during this time.
+
+Capacitor C2 is charging to VXI through resistor R Q2 is off due to the negative voltage from the discharging
+
+capacitor C one which was charged during the previous cycle.
+
+So basically the off time of Q2 is determined by R one and C one time constant after a time period determined
+
+by R one and C one time constant the capacitor c1 these completely and starts charging in reverse direction
+
+through R-1 when the capacitor C1 charges to voltage sufficient to provide base ammeter voltage of zero
+
+point seven words to the transistor q2 it the transistor will turn on and capacitor c2 starts these
+
+charging the negative voltage from the capacitor c two thirds of the transistor Q1 and the capacitor
+
+C one starts charging from VXI through resistor R and base meter of transistor Q2.
+
+As a result, the transistor Q2 remains in on state as in the previous state, when the capacity to
+
+discharge is completely, it starts charging towards opposite direction through R2.
+
+Then the voltage across the capacitor CO2 is sufficient to turn the transistor on, which is Q1.
+
+Q1 will turn on and capacitor C1 starts discharging.
+
+This process continues and produces rectangular waves, the collector of each transistor.
+
+So if you have noticed how this circuit works is through the RC network of the resistor and capacitor.
+
+They form an RC network that controls the timing of the charging and discharging of the capacitors.
+
+Let's go through the circuit again, but this time using our simulator.
+
+All right.
+
+So this is a circuit which, as you can see, generates a square wave signal.
+
+Let me hit reset and increase the simulation speed to a very low value so we will see everything in
+
+slow motion.
+
+As you can see, both researchers are conducting, which is possible only right at the beginning.
+
+Well, they both conduct because the base voltage of both transistors are around Adaiah drop.
+
+Now, let's increase the simulation speed a little bit until only one transistor conducts.
+
+And actually, there is no way to guess which one will stop conducting first scenes.
+
+Both sides are symmetric and equally values.
+
+All right.
+
+As you can see, Q1 is the first one.
+
+This is in cut off mode and the other one is in saturation mode.
+
+In this state.
+
+The base of Q2 is about one diode drop, about ground allowing base current to flow.
+
+And this keeps Q2 switched on in saturation mode, allowing a current to flow through the collector,
+
+keeping CLEETUS collector voltage low because here is ground right, which causes Setu to this charge.
+
+Well, C2 is discharging because its leg is on the ground right now and if you hower your appointer
+
+over situ, you can see that it's stored energy jobs.
+
+In other words, the voltage across the capacitor is decreasing.
+
+As you can see right now, Q One is switched off because its base voltage is not high enough to switch
+
+it on.
+
+In fact, the base voltage is negative.
+
+And why is that?
+
+Because C2 was charged previously from right to left, so it was charged to the power supply voltage,
+
+which is fireballs, but it was charged from right to left because is a 320 ohm resistor is much smaller
+
+than the 20 km resistor.
+
+So it's obvious that there is more current flowing here than here.
+
+And the voltage here before Kutya was conducting was a fireball, and the moment you started conducting
+
+C to reversed its polarity and it is firewall's that was present on the right became negative voltage
+
+on the left side of C2.
+
+This is just basic charging and discharging principles of capacitors.
+
+Now, as the quater current into Q2 flows through to the base, voltage of Q1 is going up there.
+
+The voltage across the capacitor C2 is sufficient to turn on the transistor Q1.
+
+Q1 will turn on and causing a Corot to flow through its connector, which will drop the greater voltage.
+
+The left side of AC one has dropped because now this Lexy's ground and not fireballs as before.
+
+Right.
+
+So, again, the left side of C one has dropped, but the voltage across it hasn't changed.
+
+So this causes acute to base voltage to drop below ground, switching it off.
+
+Then we get the other half of the cycle with current flowing through Q1 and this continues until Q2
+
+turns on and then the cycle repeats.
+
+In the next course, we will learn about monos table selkowitz, which is very similar to the circuit,
+
+and we will find out how to calculate the RC network to give you the desired square.
+
+We'd see you there.

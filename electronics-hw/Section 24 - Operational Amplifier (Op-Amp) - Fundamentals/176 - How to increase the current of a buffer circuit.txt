@@ -1,0 +1,135 @@
+Let's try to see a buffer Sirikit in action, as you mentioned previously, if we connect allowed to
+
+avert this divide a circuit, even though it outputs five, the moment we connect a law to the circuit,
+
+the five words drops to just 98 millivolts.
+
+And we saw in the previous course how to calculate the output voltage when a load is connected to the
+
+output of the voltage divider.
+
+This circuit is obviously not practical at all, and it cannot be used to power and loads thanks to
+
+the buffer zone with which comes in our rescue.
+
+The input impedance of the OP is so high that the output of the voltage divider does not drop at all.
+
+The output voltage is simply equal to the input due to the negative feedback configuration.
+
+And the advantage of the circuit is that the operator can provide current and power again.
+
+The operator draws almost no current from the input.
+
+So as you can see, the current is equal to zero.
+
+How cool is that?
+
+If it draws zero current from the source, it means that the source is not perpetrated by the upper
+
+EMP at all.
+
+So the source could be an AC source as well, or it could be a high impedance sensor that cannot provide
+
+any current due to its nature.
+
+No problem, because the upper buffer will be the one who drives the lower the current and not the input
+
+source.
+
+So it provides a low output impedance to any circuit using the output of the follower, meaning that
+
+the output will not drop on their load.
+
+So the load is a 100 or resistor in this case, but it could have almost any value.
+
+The OP amp provides all the current needed to drive the load without requiring any current from the
+
+input.
+
+Now, there is a little problem here.
+
+What if the album cannot provide enough current to the Lord?
+
+Because usually, as I have already mentioned, a typical UPM can be expected to continuously sing or
+
+source no more than 30 or 40 minutes, though some parts can handle closer to one hundred millions and
+
+others will struggle to give you 10 millions.
+
+What if we need at least 500 million to drive the load?
+
+So let's try to change the value to eight point five ohms and notice that based on Ohm's Law, the current
+
+is around 500 millions.
+
+Of course, in the simulator, the OP is able to provide this current because this is an idea of here.
+
+But in real world, the current will be limited to the maximum current.
+
+It can output check the UPS datasheet and the EMP might get destroyed in the end.
+
+So the Lord, who knows, it might be a martyr or whatever that is driven by a high impedance pvm signal.
+
+So how can we bypass this limitation of the EMP in case it cannot provide the necessary current for
+
+our load?
+
+Well, it's very easy.
+
+You can create a high current version of the voltage follower using a high powered transistor.
+
+The voltage on the collector is the same as the voltage that this option is powered with.
+
+So there is no need for another external power supply for the transistor.
+
+So the EMP will drive the transistor and the current that the load requires will be provided by this
+
+power supply through the high powered transistor.
+
+So if you need the high current I mean, if you need high current, you are better off with a high powered
+
+transistor to be able to handle those high currents.
+
+Now, there is a little problem here.
+
+I don't know if you noticed, but even though the input voltage is five words, the Lord receives only
+
+four point two words.
+
+But why is that?
+
+Well, the output of the EMP is indeed five words.
+
+But in order to turn on this and a transistor, there's a voltage drop of about zero point eight volts
+
+on the base meter of this transistor.
+
+So zero point eight, what is required to turn these transistors on?
+
+But you know this already, right?
+
+So what can we do?
+
+Should we increase the input voltage by zero point eight watts?
+
+Well, yeah, that could be a solution, but a very bad one.
+
+What can we do instead?
+
+We connected this feedback to the ammeter of the transistor and voila, now the Lord receives five words.
+
+So how does this work, you might ask?
+
+Well, rule number two, the APEP always tries to keep both its inputs of the same voltage, remember?
+
+So the EMP will do whatever it can to keep both its inputs are the same voltage.
+
+The voltage on the inverting pin is then, of course, five watts.
+
+But in order to be firewall's, the output has to rise at around five point eight void's because of
+
+the base ammeter voltage drop.
+
+This is not magic.
+
+This is on his rule number two.

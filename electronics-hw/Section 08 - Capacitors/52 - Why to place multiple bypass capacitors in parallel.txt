@@ -1,0 +1,209 @@
+All right, so why do we need to have multiple different values and different types of capacitors?
+
+Aha, trap for young players.
+
+This is where we have to actually get into what the capacitor does and it's impedance versus frequency.
+
+So an ideal capacitor would look like this.
+
+It's just a Cabaser.
+
+Unfortunately, nothing in this world is ideal.
+
+And so is capacitors, a real capacitor inside the capacitor.
+
+So a real capacitor has an equivalent series resistance, which you might be familiar before.
+
+So it's a constant resistance value essentially in series with the actual capacitor itself.
+
+But crucially, also inside the capacitor is a little tiny bit of inductance, which might come from
+
+the geothermal of the capacitor, plus the construction, inductors and various things.
+
+And that's called the Yes of the equivalent series inductance.
+
+So a real capacitor is far from an ideal capacitor.
+
+It's an RLC circuit.
+
+What happens with Oracy Circuit?
+
+I know we didn't cover RLC circuits yet, so this course might be difficult to understand at first,
+
+but bear with me.
+
+So again, what happens with Earth is circuit.
+
+Well, you get resonance and you get all sorts of funny things happening.
+
+And as you should know from your basic component theory, capacitors and inductors, they actually have
+
+an impedance or what's called a reactance or capacity reactants and inductive reactants.
+
+Now, I know we also did uncover inductors yet.
+
+So if you think that this is too difficult to understand, just kandak after you learned about oracy
+
+circuits and doctors.
+
+However, if you know what capacity reactance is, inductive reactance is a piece of cake to understand.
+
+And that's everything you need to know.
+
+So far about inductors, they have what is called an inductive reactance.
+
+The equation to calculate an inductors reactance is similar to the capacitors one.
+
+So they knocked not reactors is noted Excel and it's equal to duppy times frequency times inductance
+
+just like a capacitor, have a capacitance inductors have what's called inductance.
+
+So the point here is that both components have like an AC resistance, so to speak.
+
+And this resistance varies with the frequency of the AC signal passing through it.
+
+So capacity reactance is inverse with relation to frequency and inductive reactance goes up with frequency.
+
+And we're going to have a total impedance of the capacitor, which is equal to ESR plus capacity reactance
+
+plus inductive reactants.
+
+So this is the total resistance of the capacitor.
+
+Now, if you look at this graph here, we've got the impedance of the capacity of the bipeds capacitor,
+
+it's in terms of course, so the impedance in ohms versus the frequency here.
+
+And as you can see, we get these for a real bipeds capacitor or a real capacitor.
+
+We just happened to be using in a bypass situation, a real capacitor is going to have a response curve,
+
+something like this.
+
+And this is sort of like an industry standard way to show that actually it's not a straight line like
+
+this because, of course, the capacitor will actually have an infinite impedance.
+
+But down at DC here.
+
+Now, if the capacitor did not have any doctors in it at all, of course, this line would not be here
+
+and you would just get a slow going down like that, which changes with the frequency, which we already
+
+know this from the previous courses.
+
+Now, however, and this is crucially important since real capacitors also have that little inductor
+
+in there.
+
+It's tiny.
+
+It could be like picocuries or something like that.
+
+But at a particular frequency, it's going to start to matter.
+
+Now, the capacity reactance operates like this, but at some particular frequency here, which is the
+
+resonant frequency of this Oreste circuit using a standard resonance formula where the capacity and
+
+inductive reactants are equal.
+
+And that is going to be the resonance point at this point.
+
+The reactors of the inductor starts to dominate instead of the reactors of the capacitor.
+
+So starting from the original frequency, the aurora impedance with the capacitor starts to go back
+
+up, which, as you might have guessed, it's a very undesirable thing to happen.
+
+You don't want this thing to go up at higher frequencies.
+
+You want to be down like this.
+
+Why?
+
+Because as we talked about before, you want the energy to come directly from the capacitor with no
+
+effect whatsoever, with no impedance in the paths, no inductance in the paths, etc. and then you
+
+start adding this real inductance either inside the capacitor itself or outside of the capacitor.
+
+If your PCB traces with those little bonding wires, everything else, then this can be a real problem.
+
+Your impetus starts to rise and your bipeds capacitor won't act like a good bipeds capacitor to these
+
+higher frequencies.
+
+And of course, these higher frequencies in modern devices, say for an FPGA, for example, which have
+
+huge densities in a huge amount of switching, huge amount of logic, multiple areas, and they take
+
+huge amount of current and everything else.
+
+And they operate in very high frequencies like, you know, hundreds of megahertz at these high frequencies.
+
+You are going to be in serious trouble.
+
+And, you know, once you learn about four your series, you will be shocked that even if the operating
+
+frequencies, say, 50 megahertz square of signal, this signal can have AC sine wave components or
+
+frequencies much higher than 50 megahertz.
+
+Now, if it happens that your bypass capacitor sees AC signals low frequency higher than this resonant
+
+frequency, the bypass capacitor won't be able.
+
+Even if it's charged up, it won't be able to deliver that amount of energy that the AC needs that specific
+
+moment.
+
+It just can't.
+
+Now, I think I mentioned before, not only you have different values here, but you have different
+
+packages as well, because the package actually makes the difference.
+
+As a general rule of thumb, the smaller your package gets, the lower inductance it's going to have.
+
+So let's assume that is part of impedance versus frequency is four zero six zero three package.
+
+You know, somebody package and then if you've got zero eight zero five package, the curve will look
+
+like this and four zero four zero two package.
+
+The curve will look something like this.
+
+There's actually going to have different values for the different packages.
+
+So it's actually better for higher frequency stuff to use the smaller packages.
+
+But of course, the big question here is that why do we need to use different values?
+
+Well, as you can see on the graph, different values have remarkably different frequency characteristics,
+
+as you would expect.
+
+The bigger the value of the capacitor in this case, say one Microfit, for example, is going to have
+
+a resonant point at a much lower frequency.
+
+So it's going to cover the lower frequency range.
+
+So it's going to have a lower impedance at a lower frequency.
+
+And then you are going to have different values for assuming like this all have the same package.
+
+For example, zero point one micro Ferid is going to have a resonant point at a higher frequency and
+
+the ten and then third capacitor will have a resonant point at a higher frequency.
+
+So what do you get and to answer to the question, why do you use multiple bypass capacitors, it's
+
+so you get the lowest impedance across the largest frequency range possible.
+
+So if you've got all three of these values in here, your final curve is going to look like this.
+
+So you've got a much broader lower impedance, so you've got a more effective bipeds capacitance over
+
+a bigger frequency range, and so that's why you place multiple bypass capacitors like shown here.

@@ -1,0 +1,121 @@
+As well as constructing inserting something amplifiers, we can also use the wording input of the operation
+
+amplifier to produce non inverting something amplifier.
+
+We have seen that in inverting some in the amplifier produces the negative some of its input voltages.
+
+Right.
+
+Then it follows that the non-working something amplifier configuration, we produce the positive some
+
+of its input wattages.
+
+So as its name implies, the only something amplifier is based around the configuration of a non inverting
+
+operation amplifier circuit in that the input which can be either AC DC is applied to the wrong inverting,
+
+which is the plus, not while the required negative feedback and gain is achieved by feeding back some
+
+portion of the output signal to the inverting, which is the minus terminal as shown here.
+
+So what's the advantage of an inverted configuration compared to the inverting some in the amplifier
+
+configuration you might test?
+
+But besides the most obvious fact that the OP's output voltage is in phase if if it's input and the
+
+output voltage is the weighted sum of all its inputs, which themselves are determined by the resistance
+
+ratios, the biggest advantage of the non inverting something amplifier is that because there is no
+
+virtual ground condition across the input terminals, it's input impedance is much higher than that
+
+of the standard inverting amplifier configuration.
+
+Also, the input some part of the circuit is unaffected if the up close look voltage gain is changed.
+
+However, there is more maths involved in selecting the weighted gains for each individual input a disarming
+
+junction, especially if there are more than two inputs, each with a different weighted factor.
+
+Nevertheless, if all the inputs have the same resistive values, then the maths involved will be a
+
+lot less.
+
+If the closed loop gain of the nanny working operation amplifier is made equal to the number of assumingly
+
+inputs, then the output voltage will be exactly equal to the sum of all the input wattages.
+
+That is, for a two inputs non-reporting something amplifier.
+
+The UPM gain is equal to two for a three inputs summing amplifier.
+
+The upper amps gain is three and so on.
+
+This is because the currents which flow in each input resistor is a function of the voltage at all its
+
+inputs.
+
+So if the input resistances are made equal or one equal or two, then the circulating currents cancel
+
+out as they cannot flow into the high impedance inverting input of the up and the output voltage becomes
+
+the sum of its inputs.
+
+So for two inputs inverting something amplifier, the currents flowing into the input terminals can
+
+be defined as the following.
+
+So the current two are one plus the current through or two is equal to zero because the input impedance
+
+of the up is very high.
+
+Both currents can be rewritten as a function of water and resistance.
+
+Right?
+
+This is just basic onslaught.
+
+If we make that you input resistance is equal in value, then or one is equal to or two.
+
+And as a result, the voltage on that, on inverting input is equal to the B1 plus V2 or divided by
+
+two, we already know that the standard equation for the voltage gain of an inverting something amplifier
+
+circuit is given as follows.
+
+So the game is equal to one.
+
+Plus are a divided by Arby.
+
+And from this equation we can write that the output voltage is equal to one.
+
+Plus are a divide by Arby or multiplied by B one plus two divided by two.
+
+So the only working amplifiers close look voltage gain is given us one plus r a divided by Arbie.
+
+If we make this close look wordage gain equal to two by making or equal to Arbie than the voltage,
+
+I mean the output voltage becomes equal to the sum of all the input voltages as shown here.
+
+As a result for a three input Nunawading swimming amplifier configuration, setting the closed loop
+
+voltage gain to three will make the output voltage equal to the sum of the three input wattages.
+
+So we want a plus V2 and plus V three equal to we out.
+
+Likewise for a four input somewhere, the closed loop voltage gain would be four and five, four or
+
+five input somewhere.
+
+And so on note also that if the amplifier of the circuit is connected as a unit follower, we are equal
+
+to zero and or be equal to infinity.
+
+Then with no voltage gain, the output voltage will be exactly equal, the average value of all the
+
+input voltages.
+
+So that is if we have two inputs that the output voltage will be equal to one plus two or divided by
+
+two.

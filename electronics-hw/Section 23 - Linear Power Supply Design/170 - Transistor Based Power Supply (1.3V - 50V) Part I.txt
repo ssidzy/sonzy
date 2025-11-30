@@ -1,0 +1,281 @@
+Welcome back, guys, in this course, we will discuss about a fully functional power supply that is
+
+able to output the current from zero to 10 amps, and the output voltage can range from one point three
+
+volts, up to 50 void's or.
+
+Before we get into the simulation part by looking at the circuit, what do you think are the components
+
+that limit the total amount of current to 10 enters that first?
+
+The input power is provided by plugging the power supply into a wall socket that will provide you with
+
+220 volts depending on the country you live in.
+
+Then we have a fuse here of zero point five amps.
+
+A fuse is an electrical safety device that operates to provide over current protection of an electrical
+
+circuit.
+
+It is a sacrificial device, so once a fuse has operated, it is an open circuit and it must be replaced
+
+or rewired depending on the type.
+
+So short circuits overloading mismatched clothes or device failures are the prime or some of the reasons
+
+for fuse operation.
+
+Now, the moment there is more than zero point five amps flowing in this path, the fuse will break,
+
+creating an open secret.
+
+So no more current will flow in the hole.
+
+Silkwood basically.
+
+Right, but why is it only zero point five amps?
+
+You might ask when the circuit in fact can output up to 10 rampers.
+
+That's because of this transformer.
+
+This is a step down transformer, right?
+
+That will reduce the 220 volts to around fifty three voids.
+
+If this is an ideal transformer, the power on the primary is equal with the power on the secondary.
+
+Because power is not wasted.
+
+Power is equal to voltage times.
+
+Clarence.
+
+Right.
+
+So if the voltage on the secondary has been reduced, the current has to increase automatically in order
+
+to keep the two powers equal.
+
+The step up step down effect of Kolten ratios in the transformer is analogous to gear to ratios in mechanical
+
+gear, systems transforming values of speed and talk in much the same way.
+
+The primary of the transformer is analogous to the large gear, which has a high torque but low speed.
+
+The smaller gear has fewer teeth, so it has a low torque, but the speed is increased, which is analogous
+
+to current.
+
+So overall, a Saddam transformer will reduce the voltage, but will increase the current we have already
+
+talked about this, by the way, when we studied Transformers.
+
+Then we have a bridge rectifier that we convert the AC into pulsating DC, and then by using a large
+
+capacitor C1, this pulsating DC will be converted into a clean DC voltage.
+
+Make sure that the power dissipated on the diodes is lower than the maximum power allowed, which you
+
+can find in the datasheet of the specific diode.
+
+So this part is only to convert our AC signal provided by the electrical network to a clean DC signal.
+
+And in the simulator we will replace this with a single DC power supply.
+
+Then current will flow through these two transistors and then to the Lord connected to the circuit.
+
+So why is this circuit limited to teenyboppers?
+
+It's because of this transformer.
+
+If the current on the secondary passes that impasse, this means that the current on the primary has
+
+to increase, too, because the voltage on the primary is already fixed.
+
+But if the current on the primary increases and it passes a zero point five amps, the fuse will break
+
+and no current will flow in the circuit anymore.
+
+All right, let's move further.
+
+By the way, if you have any questions that, just leave it below.
+
+So what is the purpose of this diode here?
+
+Its purpose is to bring the base voltage of Q3 to a lower voltage than its collector or the transistor
+
+walking forward mode, which means that collective current is equal to current times.
+
+Better in order for a transistor to work in a forward active mode, the greater voltage must be higher
+
+than the base voltage and the base voltage must be higher than the ammeter voltage.
+
+So there will be a zero point seven volts voltage drop on this diode, which will make the base current
+
+of Q3 to be at a lower voltage than the collector or one or two are used to limit.
+
+The current Q1 is turned on, so we won't create a short between this point and this point.
+
+Could you is driving Q1, right?
+
+So there will be much more current flowing through Q1 than through to make sure that you choose the
+
+value of R2 so that when Q1 is fully turned on, then current passing through it will not exceed the
+
+maximum.
+
+Correct.
+
+Our current allowed.
+
+Otherwise you will destroy it.
+
+So what we see here is called us feedback.
+
+It's called feedback, because the output is brought back to the input, which in turn will control
+
+the output voltage.
+
+The output voltage is brought back through a variable resistor that will turn on or off Q2.
+
+Basically, this variable resistor is nothing else.
+
+But what is divider, right?
+
+The input voltage of the voltage divider is basically the output voltage of the circuit.
+
+And based on how the potential meter is positioned, it can control the amount of voltage present on
+
+Q3.
+
+If Q2 is fully turned on, Q1 will be fully turned on as well, which will bring Guthrie's bass to ground.
+
+If Guthrie's bass is at the ground or the power transistors will turn off, causing no current to flow
+
+to the load.
+
+So basically using this feedback network, which consists of a potential meter and dialing pair, we
+
+can increase or decrease the output voltage.
+
+We will see this tune in a simulator next.
+
+You are wondering what the purpose of this resistor actually was.
+
+The purpose of Citrix.
+
+It is connected across the output of the circuit in order to reduce the fluctuations in voltage that
+
+the load we receive, probably the lower connected to the output is another circuit.
+
+Right.
+
+And there might be some parts in the circuit that works in computation.
+
+So at the moment it needs high current and the other one lower one.
+
+These changes in current might happen very fast because of this Fidelities capacitor.
+
+The voltage on the output might show some fluctuations depending on the demand of current that the other
+
+circuit requires.
+
+So to further get rid of these fluctuations, then a capacitor of this is required.
+
+Now, if we don't have this resistor here, then then we unplug this power supply and no load is collected
+
+or the output.
+
+These capacitor will remain charged to the voltage.
+
+It was previously set probably 250 volts.
+
+Right.
+
+So without this resistor, there's nothing to this charge is capacitor, which is a problem, because
+
+if you connect a load that operates with a maximum voltage of ten volts, let's say because the capacitor
+
+was charged 250, 50, what the load will receive a sudden spike of 50 words that might destroy the
+
+other circuit or load.
+
+So in order to prevent the capacitor to being charged up where we disconnect the circuit resistor in
+
+parallel is required.
+
+Great.
+
+Now what about our four and our five?
+
+The purpose of these resistors may not be that obvious.
+
+I know these resistors are called us balancing resistors.
+
+You will often find these resistors in amplifier circuits as well.
+
+And these resistors are low in value that can handle high wattages since the output current is flowing
+
+through them.
+
+Q3 is driving Q4 and Q5, right?
+
+So the majority of the output current will pass through these two transistors.
+
+If Q3 is not capable to provide enough base current for both of the transistors, we could use one more
+
+transistors as shown here.
+
+So to control transistors will drive two high powered transistors.
+
+We will use only one control transistor, but it is highly recommended to add one more control transistor
+
+that will boost the current on the base of the two power transistors so they will be able to provide
+
+more current to the load for simplicity.
+
+We will use only one transistor.
+
+Alright, since the output current is the sum of the quieter current of Q4 and Q5, plenty of current
+
+will flow through them.
+
+The current has to be distributed evenly above current.
+
+Passing through the two transistors has to be equal.
+
+The problem that arises here is that even though we use the same output, transistors during the manufacturing
+
+process is not possible to create exactly similar transistors, which means that there can be more current
+
+flowing on one transistor than on the other one.
+
+And we don't want any nice matching current because this means that one transistor will dissipate more
+
+power than the other one.
+
+Right.
+
+So in order to even out the power dissipation, balancing resistors are used, which will set equal
+
+current on both of the collectors.
+
+These must be high powered resistors and very low in value.
+
+Why are they low in value?
+
+Because we don't want big voltage drops on these resistors, because then the circuit will not be able
+
+to output its maximum voltage that was designed for the what is drop across the resistor is current
+
+times resistance.
+
+So if the resistance is very small, the voltage drop will be very small as well, which is exactly
+
+what we want.
+
+Great.
+
+Now let's see how this circuit behaves in our simulator.

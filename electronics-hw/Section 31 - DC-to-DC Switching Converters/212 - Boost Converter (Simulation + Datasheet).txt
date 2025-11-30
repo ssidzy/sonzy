@@ -1,0 +1,195 @@
+So we already know that this helicopters is used to convert the input voltage to a higher voltage with
+
+quite a simple circuitry.
+
+You can see here that we have a five watts power supply and a circuit boost.
+
+The voltage up to around 14 would the heart of every DC to DC converter.
+
+There's a switching circuit that turns the transistor on and off rapidly.
+
+Now, what I want to do is actually to slow the simulation down and hit the reset button.
+
+So we are now starting at zero volts.
+
+And as you can see here, the output voltage climbs up very slowly.
+
+Remember, this voltage increase would climb almost instantly in real life.
+
+So what is happening here?
+
+Let me reset the simulator one more time and let's slow it down even more as it gives us more time to
+
+see what's happening.
+
+So as you already know, when you pass current training doctor, it creates a magnetic field when you
+
+change the voltage passing through after the inductors, magnetic field will start to collapse and thus
+
+inducing current through the doctor as it creates a high voltage spike as the magnetic field collapses.
+
+So this liquid takes advantage of that very property of any doctor to step up voltage.
+
+So here we have this and Channel MOSFET transistor.
+
+Just imagine this as a normal on off switch, but we can switch it on and off very, very fast.
+
+We can switch on and off hundreds of thousands of times a second.
+
+We use a squarer generator to turn this mosfet on and off.
+
+Then we turn to mosfet on current cash flow from the fireboats power supply through the inductor, through
+
+the Fed and back to the firewall's power supply.
+
+As we turn the mosfet on and these current flows through the inductor, a magnetic field builds up in
+
+the inductor.
+
+Now, when the Monteverdi's of current can no longer flow from the doctor through the Fed because the
+
+magnetic field in this inductor needs to collapse and it does current through the circuit, the current
+
+will flow through the diode and through the capacitor.
+
+So every time the magnetic field of the inductor collapses, this voltage gets pushed through the diode
+
+and gets stored into the capacitor.
+
+Because we have a diet here, this stops the current flowing backwards from the Cabaser through the
+
+Fed when it's on and back to the power supply.
+
+Every time we get a voltage spike from this inductor, this adds to the voltage of the capacitor and
+
+therefore it steps up the voltage.
+
+So the voltage that we see here is actually the voltage of the capacitor because the switch is turning
+
+on and off.
+
+So first, the inductors magnetic field never fully collapses, so then the Fed is off again.
+
+This causes a higher voltage on the adductor as it adds to the magnetic field.
+
+Now, just so you understand, as we supply voltage to this inductor, the inductors polarity on the
+
+left side is positive and on the right side is negative.
+
+However, when the threat is of the polarity of the inductor changes instead negative is on this side
+
+and positive on the right side, which then allows the current to flow to the rest of the circuit.
+
+So just to give you an overall view of how this works, let's start this one more time and just watch
+
+how it steps up the voltage from five volts and how it keeps climbing.
+
+As you can see, this happens very, very fast.
+
+And in real life, this would happen much, much faster.
+
+Now, as I mentioned in the previous course, you want really fine circuits that uses both converters
+
+in this form.
+
+The circuit is used just to give you an overview of how they work.
+
+But in real life, using a boost converter, I see is much more convenient, easier, cheaper, smaller
+
+and efficient.
+
+The boost converter, see, that we are looking at is the empty 36 zero eight one, which has a built
+
+in oscillator of one point two megahertz and can supply up to two members of continuous current to load
+
+the input voltage ranges from two worlds and 20 forwards and the output voltage goes up to 28 volts,
+
+which is actually adjustable.
+
+Let's see a typical application of this converter.
+
+So this figure shows the basic application circuit, as you can see, it's not complex at all.
+
+You have an input pin, a neighbor pin, which can turn off the AC so that no power is consumed around
+
+being a feedback pin and a switch pin.
+
+The feedback being, as you can see, is configured in the same way as in the previous about I see that
+
+we looked at, it takes the output voltage and it steps down using this voltage divider circuit.
+
+As far as the dial is concerned, you know, switching converter, its recovery time is important because
+
+that determines how long it needs to turn off.
+
+So you need a diode with low recovery time and low recovery charge shortly.
+
+Diodes are the fastest, so they are better suitable for high frequency applications.
+
+Plus they have lower voltage drop once again, improving the efficiency while a general-purpose diode
+
+can have a turn on voltage.
+
+In other words, a forward wattage, a drop of zero point six zero point seven words.
+
+A short video can have a turn on voltage of as low as zero point two worlds.
+
+If you now go lower, we can find somewhere the function block diagram of this integrated circuit,
+
+as you can see, it has a built in oscillator that outputs a sort to signal that is fed into the inverting
+
+pin of this computer, the voltage coming from the feed that is applied to the inverting input of this
+
+amplifier and the reference voltage of just zero point six volts is applied to the non inverting input.
+
+The purpose of an error amplifier is to see the deviation of the output voltage to this reference voltage.
+
+Basically, it amplifies the difference between the two wattages and the output.
+
+Voltage of this amplifier is fed into this computer.
+
+If the output voltage, which is stepdown using that voltage divider that is connected externally,
+
+tries to rise above the reference voltage, the computer will decrease the duty cycle of the PVM signal
+
+so that these two voltages on the inverting and non-reporting pin are equal.
+
+Remember, an upper amp will always try to keep both inputs at the same voltage.
+
+So this PVM competitor will always adjust the duty cycle of the PVA signal so that the voltages on these
+
+two input pins are kept equal.
+
+This is the technique used in order to maintain a fixed output voltage.
+
+If, let's say there wouldn't be a reference voltage, the integrated circuit wouldn't know if the output
+
+is rising or falling below the set output voltage.
+
+By comparing it to this reference voltage and amplifying the result, the PVM competitor will know how
+
+to adjust the duty cycle so that these two voltages are kept equal.
+
+At the end of the day, it all comes down to how much the output voltage is step down using the external
+
+voltage divider.
+
+Setting the output voltage is very easy.
+
+Here, it says that the internal reference is zero point six words, the output voltage is divided by
+
+a resistor, divider are one or two to the feedback pin and the output voltage can be calculated using
+
+this simple equation.
+
+This is always zero point six words, and the only thing you have to do is to play with the ratio of
+
+one and R2 in order to set the desired output voltage.
+
+In the following paragraphs, they explain how to choose the value of the external components, so the
+
+recommended value of the inductor are four point seven to twenty two microarray.
+
+For the input and output capacitor, they recommend you to use a ceramic 22 microworld one.
+
+And as far as the dial is concerned, Chutki diodes are a good choice for a better efficiency.

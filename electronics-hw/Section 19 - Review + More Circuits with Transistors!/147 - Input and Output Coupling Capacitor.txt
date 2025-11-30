@@ -1,0 +1,293 @@
+Welcome back.
+
+So you have probably noticed that there is a capacitor on either side of the amplifier, one is connected
+
+to the input and the other one is connected to the output.
+
+What are they and how to calculate their value?
+
+Well, that's what we'll find out in this course.
+
+Oh.
+
+These capacitors that are connected in a series of the signal and increase, as well as with the amplifier
+
+stage, are called US Coplin capacitors.
+
+So what is a coupling capacitor in electronics?
+
+A coupling capacity, the capacitor, which is used to copple or link together only the AC signal from
+
+one circuit element to another.
+
+The capacitor blocks the DC signal from entering the second element and as a result only passes the
+
+AC signal.
+
+Now let's see the use of Coplin capacitors.
+
+Copely capacitors are useful in many types of circuits where AC signals are the desired signals to the
+
+output, while these signals are just used for providing power to certain components in the circuit
+
+but should not appear in the output.
+
+For example, a copying capacitor normally is used in an audio circuit such as a microphone circuit.
+
+This power is used to give power to parts of the circuit, such as the microphone, which needs DC power
+
+to operate.
+
+So these signals must be present in the circuit for powering purposes.
+
+However, when a user talks into the microphone, the speech is an easy signal and this signal is the
+
+only signal.
+
+In the end, we want passed out when we pass the AC signals from the microphone onto the output device,
+
+says speakers to be played or a computer to be recorded.
+
+We don't want to pass the signal, right?
+
+Remember, the signal was only to power parts of the circuit.
+
+We don't want it showing up on the output, recording on the output.
+
+We only want the AC speech signal.
+
+So to make sure only the AC passes while the DC signal is blocked, we place a copying capacitor in
+
+the circuit.
+
+Another example is to copy the three stages of common ammeter amplifiers together.
+
+So Common Emitter amplifiers are used to amplify the input signal in voltage and current using more
+
+stages in a series like here, the input, which is a weak signal, is amplified once, twice and third
+
+time.
+
+So the overall bit of the circuit will be better one times better, two times better.
+
+Three.
+
+The advantages of the multi stage amplifier are flexibility within input and output, impedance and
+
+higher gain.
+
+It can be used to increase extremely weak signals to utilize above levels.
+
+The distortion can be reduced by changing the signal in stages.
+
+While it is possible to directly copple each stage to the next, we are a resistor rather than a capacitor.
+
+This makes the whole amplifier very sensitive to variations in the DC byas voltage of the first.
+
+It seems that high voltage will be amplified along with the AC signal until the last stage.
+
+In other words, the biasing of the first stage will affect the biasing of the second stage and so on.
+
+However, if the stages are competitively coupled as shown here, the biasing of one stage does not
+
+effect on the biasing of the next because a DC voltage is blocked from passing on to the next stage.
+
+Great.
+
+Now, in the context of an amateur follower, look at the Šemeta follower as a block diagram which is
+
+used to power amplification purposes.
+
+This amplifier stage is connected to another circuit that provides the AC signal that has to be amplified
+
+in current in order to make sure that there is no DC voltage coming from the previous circuit, we connect
+
+accompanying capacitor if, let's say we don't use a copying capacitor and the AC signal coming from
+
+the previous equities superimposed on a DC voltage, then what will happen?
+
+What will happen is that the bias point of the transistor will be messed up.
+
+This DC voltage from the previous circuit.
+
+We mess up the cube point of the transistor where key point is the crescent point or simply biased point.
+
+Let's try to visualize this behaviour using our simulator.
+
+All right, so we have our ED followers circuit, and my question to you is, why is this AC voltage
+
+superimposed on a DC voltage?
+
+So why is the AC voltage added on top of a DC voltage?
+
+That's because this signal is taken at this point to ground.
+
+If we remove the capacitor, you can see that the bass transistor is biased at two point three volts,
+
+the voltage divider halves the power supply voltage at 2.5 volts.
+
+Right.
+
+Because they have the same value and there's a zero point two.
+
+Voyles dropped on the transistors baize.
+
+So overall, the transistor is biased at two point three words.
+
+Now because of the capacitor, which is in series with the AC voltage, only the AC part of the signal
+
+will pass through and the DC voltage is blocked.
+
+Since the DC voltage is blocked, our bias voltage is not disturbed by external DC voltages, so it
+
+will sit nicely at two point three volts and the small AC voltage will be added on top of it.
+
+Of course the bias point is moving up and down, so you have to make sure to buy as the transistor appropriately.
+
+Depending on the input AC voltage sees our input voltage is five would signal a two point three volts.
+
+Biased point is a good value so that the transistor will always be in active mode, meaning that it
+
+will always conduct.
+
+You can actually add this input AC voltage on top of a DC voltage by giving a DC offset value.
+
+So let's give it a value of two words.
+
+Right.
+
+This means that the input voltage is a combination of two words, D.C. voltage and five words AC signal.
+
+And as we expected, the CPU point or in other words, the bias point didn't change at all because that
+
+two was D.C. couldn't pass through the Cabaser.
+
+Now, as you can see, the output voltage is added on top of a DC voltage because the midpoint of the
+
+signal is not on the ground as it should be.
+
+The whole signal is a positive signal if you want to connect the circuit to another circuit.
+
+Let's say to another amplifier stage or two, just a speaker.
+
+You don't want any DC voltage to be present on your speaker, right?
+
+Why would you want that?
+
+It will just keep heating up the speaker and it would be a total waste of energy.
+
+The music or whatever it is, should contain only AC components when you drive a speaker.
+
+So in order to get rid of the DC, we connect a copying capacitor in between.
+
+All right.
+
+Now the question is how to actually calculate the value of these Coplin capacitors.
+
+You can see the circuit is the same as the one we used in the previous course.
+
+In order to correctly choose an appropriate value of the capacitor, we had to take many things into
+
+account, which we will now these cores one and we have to decide the cut off frequency of the circuit.
+
+This is the frequency that we want filtered out the equation used to calculate the high pass filters.
+
+The frequency is the following from this equation.
+
+The capacitor value is equal to one over Tupi f r.
+
+This is the equation that we will use to calculate the input coupling capacitor.
+
+But the question is what is the cutoff frequency and what is the value of R?
+
+If you are dealing with sound signals, the frequency range that is audible to humans is 40 hertz to
+
+20 kilohertz.
+
+This means that we have to build our circuits so that all the audible signals will be passed through.
+
+So 40 hertz is a good cut off frequency to choose.
+
+This means that any frequency at that range or lower will be filtered out to ground.
+
+So we will choose 40 hertz as our cutoff frequency.
+
+The next thing we must consider is the value of the transistors that the capacitor sees.
+
+If you visualize current flowing into the circuit court and can go either one of three ways, Corren
+
+can go through the capacitor and through the R transistor and on the ground current can go through the
+
+capacitor and through the R one resistor or current can flow through the transistor airflow through
+
+the r e resistor down to around.
+
+It may seem strange that current can flow through the authorities there, but it ignores AC DC voltage
+
+levels underground as well.
+
+So even though it's up to the DC level of airballs to AC signals, it can also be a ground.
+
+And this is why this can be a path down to ground as well.
+
+So these are the three ways that currently are flow in the circuit.
+
+Even though current can take the path is ultimately what a capacitor sees that determines the real resistance
+
+that it encounters.
+
+So we talk about this now.
+
+Resistors or one or two are in parallel.
+
+Therefore, the capacitor sees the equivalent resistance of these two parallel resistors.
+
+So the capacitor sees the five point six km resistance in parallel with the six point eight km.
+
+So this is the resistance that the capacitor sees that one pathway.
+
+The other pathway is when the current goes through the transistor and through resistance, r e d resistance
+
+will be better times lethal r e plus the šemeta resistance combining the two pathways together.
+
+The overall resistance that the capacitor will see is one in parallel with our two in parallel with
+
+Beitar Times, the increasing resistance plus the Šemeta resistance.
+
+If you noticed this equation is nothing else but the input impedance of the circuit.
+
+So actually the capacitor sees the input, the impetus of the circuit.
+
+And not only are you, as many of you might think, since we already calculated the importance of the
+
+circuit, right.
+
+It was two point eight km that the value of the capacitor we compute to one point four micro ferret's.
+
+Now we move onto the second capacitor and it's chosen similarly to the first capacitor.
+
+We want the second capacitor to react similarly to the first in regard to the frequency that we are
+
+dealing with.
+
+This is because the same frequency signal that is input is output.
+
+So you want to match the frequency response for both capacitors to the same frequency.
+
+So for the output capacitor, we also calculate it according to its forty hertz frequency response.
+
+Now, what the output gap, Athersys, looking back into the capacitor, is overall output impedance.
+
+Unfortunately, we already know its value since it was calculated previously.
+
+It is around 50 ohms.
+
+Therefore, the value of CO2 will be equal to one or two P times 40 hertz times 50 OMERS, which gives
+
+us a value of seventy nine point six of.
+
+So this is how you calculate the value of the two copper capacitors connected to this Amytal follower.
+
+Now that we know how to calculate its values, it would be much easier to understand how to calculate
+
+the values of the capacitor in a common ammeter configuration.

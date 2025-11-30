@@ -1,0 +1,331 @@
+Hello, when we come back, we start talking about oscillators, and in this course we'll examine how
+
+a cold peats oscillator works, which is based on a bipolar junction transistor.
+
+It's a very interesting circuit and a way to show it to you.
+
+But first, what is an oscillator?
+
+The electronic circuit that produces periodically oscillating electronic signals, such as a sine wave,
+
+square wave or any other way is termed until 20 years later.
+
+Crusoe's and oscillators are the heartbeat of microcontrollers, processors and other devices.
+
+If there would be no heartbeat, it will remain in deep sleep nor power supply and other signals can
+
+read them up.
+
+Almost all the time, Chris, isolators are used in digital electronics, the difference between oscillators
+
+and crystals is that a crystal, which is a piece of plastic material, can generate an oscillating
+
+signal to the signal due to the mechanical vibration of a structure.
+
+However, an oscillator is an electronic circuit that generates a periodically oscillating electrical
+
+signal.
+
+Oscillators convert direct current from a power supply to an alternating current signal.
+
+Oscillators are a cheap and easy way to generate specific frequency of a signal.
+
+For example, an RC oscillator is used to generate a low frequency signal, an as oscillator is used
+
+to generate a high frequency signal and an operation amplifier based oscillator is used to generate
+
+a stable frequency for oscillations to exist.
+
+An oscillator circuit must contain a reactive, which is a frequency dependent component, either a
+
+doctor or a capacitor, as well as the power supply.
+
+These may be also classified as high frequency, very high frequency and ultra high frequency oscillators,
+
+etc. depending on the frequency.
+
+Typically the operating frequency of the call oscillators ranges from 30 kilohertz to 300 megahertz.
+
+And as a result, Corbitt oscillators can be used in high frequency sine wave generators.
+
+They are usually used in radio frequency applications as a local oscillator in radio receivers or for
+
+the development of mobile communications.
+
+But they are also used in many other commercial applications.
+
+The advantages of Corbetts oscillator are as follows.
+
+Corbetts oscillator can generate signals signals of a very high frequency, and soon we will see how
+
+to determine the generated output frequency.
+
+It can withstand high and low temperatures.
+
+The frequency stability is high frequency can be varied very easily.
+
+So how does a corporate oscillator work?
+
+Probably the main takeaway of this course is not to understand how Corbitt oscillator works, but understand
+
+what a positive feedback means since this oscillator is working based on what is called as positive
+
+feedback.
+
+All right.
+
+So in optronics, there can be negative or positive feedback.
+
+It will become more clear whilst we learn about operation amplifiers, though, because they extensively
+
+rely on these feedbacks, especially on the negative one.
+
+So what is meant by positive feedback?
+
+Electronics, where positive feedback is that a part of the output is given back to the input so that
+
+the output increases more?
+
+This is done to produce oscillations and the negative feedback is then a part of the output is given
+
+back to the inputs so that the output decreases more.
+
+This is generally used to stabilize the gain of an amplifier.
+
+So when a circuit uses a positive feedback, the output increases.
+
+But this can only be achieved if the output signal is brought back to the input with the condition that
+
+the output signal is in phase with the input signal.
+
+In other words, when the output signal, which happens to be in phase with the input signal is brought
+
+back, they add up.
+
+So generally this leads to increasing input to the system as time progresses with negative feedback,
+
+you have the same feedback as before, but instead the output is out of phase with the input.
+
+So it subtracts from the input or reduces the inputs to the system.
+
+Now these feedbacks can be either voltage or current or any quantity as much where input is converted
+
+to output.
+
+So let's say we have an NPR transistor and we feed the base, we facilitate.
+
+And my question to you right now is how can we create a positive feedback here?
+
+Should we take the output voltage of the collector or of the SM?
+
+That I hope we know this by now, that if we feed the transistor with a sine wave, the same signal
+
+will appear on the collector.
+
+That probably amplified.
+
+But the output signal has a 180 degree phase shift with regard to the input voltage signal.
+
+However, if we take the output of the ammeter, the Al Pacino will be exactly in phase with each other.
+
+Now, as we said, in order to create a positive feedback, the output signal must be in phase with
+
+the input signal so that if we bring back the output of the input, they will add up, sees Corbitt
+
+oscillator and any other oscillators is based on positive feedback.
+
+The output will be taken off the SM and not the collector.
+
+The positive feedback is taken off the ammeter and is fed between two capacitors that are in series.
+
+Indeed, this circuit also seems to have a negative feedback, but it just seems as such as soon this
+
+will be Spain as well.
+
+This as he's here that we can see here is the one that controls the frequency of isolation and it is
+
+often called the tank circuit because it contains circulating currents much greater than the currents
+
+supplying it.
+
+We already talked about sea and oracy circuits.
+
+Right.
+
+And we have seen that the circuit is nothing else but an oscillating circuit.
+
+Now, let's continue our discussion in the simulator.
+
+All right.
+
+So how does this rocket work?
+
+The output is taken off.
+
+The collector of the NBN transistor and a sine wave is generated by the elsea resonance circuit.
+
+As you can see, current moves back and forth as the capacitors charge and discharge through the doctor,
+
+the transistor.
+
+What it does is it amplifies the weak Sivir generated by the Ursy circuit.
+
+So if he right.
+
+Click on the base and click view in scope and let's zoom the signal that we can see that the circuit
+
+actually generates a 100 million words big to pick sine wave, and the signal is amplified by the transistor
+
+so that the output signal is around four point five words.
+
+Now, what do you think happens if we take out this one KMB resistor?
+
+As we can see, the AC oscillator is still oscillating with an ideal capacitor and ideal coil.
+
+The cycle would be repeated forever.
+
+However, real capacitors area doctors have serious resistances which, as we can see, reduces the
+
+strength, which is the amplitude of each cycle.
+
+So we can see that the transistor amplifies the input signal and the current through this one KMB resistor
+
+prevents the circuit from dying out.
+
+All right, so in order to understand how the circuit works.
+
+Let me slow down the simulation and I will hit reset.
+
+All right.
+
+As you can see, there's a current flowing through the one kilometer and these current charges are easy
+
+to remember that current takes the path of least resistance.
+
+So the reason why current doesn't go through the 10 million range, doctor, is because initially the
+
+inductor has very high resistance compared to the capacitor, which initially has zero resistance.
+
+Right.
+
+So inductors doesn't really like the sudden change in Corones.
+
+Right.
+
+And that's why it can be a perfect Lopez filter just by itself.
+
+In short amount of time, however, the resistance of the inductor, which in fact is called reactance,
+
+decreases, allowing more and more current to flow through it.
+
+And once the current goes through the inductor, the current again tries to seek for the path of least
+
+resistance.
+
+And that's one.
+
+The important thing that you must realize here is that C one is actually in parallel with the base ammeter
+
+diode.
+
+This means that the movement C one charges up to at least 700 millivolts.
+
+The transistor will turn on right.
+
+Parallel branches have always the same voltage.
+
+So as a capacitor charges up, the base meter voltage is increasing.
+
+When the transistor is off, the output is around four point five words.
+
+And why is it 4.5 watts?
+
+That's because this one hundred and one km resistor forms of voltage divider, which puts the output
+
+at around four point five, would.
+
+As we can see, until the transistor is in cut off mode, both capacitors are charging up now, what
+
+will happen when the transistor fully turns on?
+
+So let me pause the simulation and let's think about what's going to happen when the transistor turns
+
+on first.
+
+When the transistor turns on, it will bring the output low.
+
+Why?
+
+Because current always takes the path of least resistance.
+
+So instead of going through the one kilometer, it will go down through the towards ground.
+
+What else will happen?
+
+The positive feedback taken off the meter.
+
+So this huge amount of current that will flow on the meter, a current that is limited by this 100 is
+
+there.
+
+So this meter current will take this path as well, and then current will split in two.
+
+This time C2 will be charged from the opposite direction as well as C one.
+
+Or we can say that it basically discharges the previously charge capacitors because this time current
+
+will go through the capacitor in the opposite direction as previously waters will happen when the transistor
+
+is fully turned on.
+
+There will be almost no current flowing in this path which will let the inductor to this charge so the
+
+magnetic field will collapse, generating current in the opposite direction.
+
+And this relatively high current is generated by the doctor will charge opposite you and also will further
+
+discharge C one, which in turn will turn off the transistor.
+
+So let's see in slow motion all these things.
+
+All right.
+
+The transistor is now fully turned on because see, one got charged at around 700 millivolts, which
+
+caused 50 million amps to flow on the ammeter firewall's divided by 100 is 50 millions, from which
+
+a large amount is used to basically discharge of both capacitors.
+
+Now, I will resume the simulation and as we said, the magnetic field built around the doctor will
+
+collapse, generating a current in the opposite direction, which is charging up CO2 at the same time,
+
+discharging one that will cause a decrease of base ammeter voltage, which will turn off the transistor
+
+again.
+
+And then the cycle repeats all over again and again.
+
+One more thing, just to make it clear why this connection is a positive feedback, if we look attentively
+
+when the transistor turns on current that is taken from the SM is fed directly to the base.
+
+So basically because the ammeter voltage is in phase with the input voltage, the current end up.
+
+So if I take this out, you can see how little the input current is compared to how much it is when
+
+the positive feedback is connected.
+
+And I'm sorry about that.
+
+We didn't talk about the output frequency, which is, as you can see, two hundred seventeen hertz.
+
+Well, as we mentioned, the frequency set by this L.C resonance here with the equation to find out
+
+the output frequency is this one where city is a total capacitance since the capacitors are in series
+
+and both capacitors have the same value, the total capacitors is exactly half, which is 50 Microfit.
+
+So by pay with the value of inductor and all capacitors, we can increase or decrease the output signal
+
+frequency.

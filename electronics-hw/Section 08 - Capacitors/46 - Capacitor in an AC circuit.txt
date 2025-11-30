@@ -1,0 +1,149 @@
+All right, guys, so what happens when an alternating current is applied to a capacitor?
+
+We already know that when a capacitor is connected to a DC supply, then the capacitor starts to charge
+
+up to the supply voltage and then the voltage across the capacitor reaches the supply voltage.
+
+No more current flow through it, however.
+
+Then we apply an AC current.
+
+Well, things change in an AC circuit.
+
+The capacitor are constantly charging and discharging respectively in order to understand this.
+
+Let's look at the sinusoidal waveform for AC capacitance.
+
+So we had the circuit on the left and this diagram on the right.
+
+This diagram shows the voltage across the capacitor and the current through it that AC current is passing
+
+through it.
+
+As you can see, the capacitor allows AC current to pass through it.
+
+However, as you might have noticed, the car doesn't really follow the current or current doesn't follows
+
+the voltage.
+
+However, you want to see if we look for a second at a purely resistive circuit where we have only one
+
+resistor and we apply an AC voltage, you can see that current is directly proportional to voltage,
+
+meaning that the higher the voltage, the higher the current.
+
+The change in direction of current in AC supply does not effect resistor behavior.
+
+So the current in the resistor will rise and fall according to the voltage as it rises and force the
+
+voltage and current in AC raises the circuit reached maximum therefore to zero and reach a minimum.
+
+At the same time they are said to be in phase as they rise and fall at exactly the same time.
+
+So the voltage varies over time, of course, because it's AC.
+
+But if we take the voltage at a certain point, we can apply ohms law to calculate the current at that
+
+exact moment in time.
+
+However, in a purely capacity circuit, as you can see here, the voltage across the capacitor lags
+
+the current by 90 degree.
+
+Or we can say that current leads the voltage by 90 degree.
+
+So the voltage and current are not in phase anymore, like in a purely resistance's grid.
+
+Instead, there is a 90 degree fascias between voltage and current.
+
+Why is there a phase shift?
+
+Many people know that capacitor creates a phase shift of 90 degree.
+
+However, they don't understand why that happens.
+
+I will explain it in a minute.
+
+But now let's head to our simulator for a minute.
+
+This circuit shows the response of a capacitor when driven by alternating current current yellow and
+
+voltage in green across the capacitor, are shown in this scope here.
+
+Now, as you can see, capacitor doesn't have a problem passing current through it, however.
+
+And now let me stop the simulator for a minute.
+
+The current leads voltage so that current peaks, the capacitor is just starting to be charged and voltage
+
+zero, the voltage across the capacitor peaks the current stops and begins to flow in the opposite direction.
+
+All right.
+
+So in order to understand why is there a phase shift between voltage and current, or we need to know,
+
+is this equation that we have talked about in the previous course?
+
+In the previous course, we understood that the amount of current through a capacitor depends on both
+
+the capacitors and how quickly the voltage is rising or falling.
+
+If the voltage across the capacitor swiftly rises, a large positive current will be induced through
+
+the capacitor.
+
+A lower rise in voltage across a capacitor equates to a smaller current through it.
+
+If the voltage across the capacity is steady and changing, no current will go through it.
+
+So if you look at the Fazer diagram, we can see that the voltage is maximum, the current is zero and
+
+the voltage is zero.
+
+The current is maximum.
+
+The reason of it is because when the voltage is at maximum or better, say the voltage is around the
+
+voltage, there is no significant change in voltage across the capacitor.
+
+Right.
+
+So from here until here, the voltage doesn't really change.
+
+As a consequence of this, the current flowing through the capacitor will be zero.
+
+Remember that the charging current is directly proportional to the rate of change of the voltage across
+
+the capacitor.
+
+So let me explain this again.
+
+As Applied Voltage reaches its maximum peak value at ninety degrees for a brief instant in time, the
+
+supply voltage is neither increasing or decreasing.
+
+So there is no current flowing through the circuit.
+
+Now, the biggest variation of the voltage actually happens in this portion.
+
+So this is the portion when the voltage actually changes the fastest.
+
+As a result, the current will peak.
+
+Then the voltage is zero volts because this is the portion of the AC signal, then voltage is changing
+
+the fastest.
+
+So I'm sorry if my explanation was too raw.
+
+I'm more than happy to to your questions if you have any doubt.
+
+The big takeaway of this course is the capacitors block DC and allow AC Current to flow through it.
+
+Then we can say that in a purely capacity, a circuit, the alternating voltage lacks the current by
+
+90 degree.
+
+The next course will be very important for it, understand?
+
+So grab a coffee and I'll see you there.

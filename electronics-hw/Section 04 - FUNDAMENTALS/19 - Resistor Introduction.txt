@@ -1,0 +1,243 @@
+Up until this point, we have basically encountered two electrical components: batteries and resistors.
+
+A battery is usually regarded as a voltage source that is typically used to power a circuit, right?
+
+Your mobile phone, and laptop, all of them have a battery inside of them that will supply energy to your device
+
+in order to operate.
+
+But what about resistor?
+
+What is its purpose and what does it do?
+
+I'm not mistaken if I say that resistors are a critical piece in just about every circuit, and they
+
+also play a major role in our favorite equation, which is Ohm's law. All resistors have two terminals,
+
+one connection on each end of the resistor.
+
+Now when modeled on a schematic, resistor will show up as one of these two symbols.
+
+These are two common resistors schematic symbols.
+
+R1 is an american-style 1k ohm resistor and R2 is an international style 47k ohm resistor.
+
+:)
+
+So this is just a personal preference.
+
+If you are, let's say, American, you would be more inclined to use the American style resistor,
+
+right?
+
+But if you are not, you can go with the international style one.
+
+It really doesn't matter as long as you are consistent with the symbol.
+
+If you decide to use the American style, make sure that all the resistors are drawn in the same way
+
+on your schematic.
+
+Otherwise, it might be a little bit confusing. Here in the simulator,
+
+I have this circuit that I have just opened randomly, and we can see that all resistors are drawn using
+
+the American style.
+
+But if you prefer, navigate to the Options tab and click European resistors.
+
+Notice that all the resistors have been replaced with the international style.
+
+But remember, whichever style you prefer, the functionality of your circuit will not change at all.
+
+Awesome.
+
+Now the resistor circuit symbols are usually enhanced with both a resistance value and a name.
+
+The value displayed in ohms is obviously critical for both evaluating and actually constructing the circuit.
+
+:)
+
+The name of the resistor is usually an R preceding a number.
+
+Each resistor in a circuit should have a unique name number so that people can make a distinction between
+
+the multitude of resistors present in the circuit.
+
+All right, so resistors can be drawn in two different ways.
+
+And typically, when you build a circuit, you would give a name for each resistor as R1, R2 ...
+
+or whatever name you prefer to give to each resistor.
+
+It doesn't really matter how you name each resistor as long as you are consistent with it.
+
+But in 99% of cases, resistors are named as R1, R2, R3 etc..
+
+As I mentioned, along with the name, resistors also have a value.
+
+"Resistor", the word "resistor" is the name of the component.
+
+Resistance, on the other hand, is the intrinsic property of each resistor.
+
+The electrical resistance of the resistor is measured in ohms.
+
+The symbol for an Ohm is the Greek capital Omega.
+
+The definition of one ohm is the resistance between two points where one volt of applied potential energy
+
+will push one ampere of current.
+
+This is the definition of what an Ohm is.
+
+And this fact can be easily derived using Ohm's Law, which says that voltage is equal to current times resistance.
+
+As the international system of units go, larger or smaller values of ohms can be matched
+
+with a prefix like kilo, mega or giga to make larger values easier to read.
+
+It's very common to see resistors in the kilo-ohm and mega-ohm range much less common to see milli-ohm resistors.
+
+:)
+
+For example, a 4700-ohm resistor is equivalent to a 4.7k ohm resistor
+
+and a 5,600,000 ohm resistor
+
+can be written as 5,600k ohm or more commonly as 5.6M ohms.
+
+What's interesting about resisters is that in real world, if you look at them closely, you will see
+
+some color bands.
+
+These color bands are used to indicate the actual value of the resistor.
+
+Most of these resisters will have four bands of color, circling around the resistor, though you will
+
+also find five-band and six-band resistors. In the standard four bands resistors,
+
+the first two bands indicate the two most significant digits of the resistor's value.
+
+The third band is a weight value, which basically multiplies the two significant digits by a power of 10.
+
+:)
+
+The final band indicates the tolerance of the resistor.
+
+The tolerance explains how much more or less the actual resistance of the resistor can be compared to
+
+what its nominal value is.
+
+You see, no resistor is made to perfection, and different manufacturing processes will result in better
+
+or worse tolerances.
+
+For example, a 1k ohm resistor with a 5% tolerance could actually be anywhere between 0.95k ohm
+
+and 1.05k ohm.
+
+Normal resistors have color codes on them.
+
+If you don't know what they mean, that's OK.
+
+There are plenty of online calculators that are easy to use.
+
+If you navigate to this website, there's a beautiful interface you can play with to see how the different
+
+colors effect the value of the resistor.
+
+So the number of bands is set to four and let's say the colour of the first band is red.
+
+The second is green.
+
+Then let's say we use a multiplier of 10, which corresponds to the colour of brown.
+
+And finally, the tolerance, which let's say it's five percent.
+
+Notice that the resistor value based on the colours that we have chosen is 250 ohms with a tolerance
+
+of five percent.
+
+You see, the reason why there is a tolerance specified is because it is very difficult to manufacture
+
+or resistors to very precise value, especially in mass production.
+
+It takes time and effort.
+
+Even then, there will be a tolerance which is acceptable plus or minus 10 percent plus or minus one
+
+percent or plus or minus 0.1 percent.
+
+How accurate do you need it to be?
+
+Electronics generally works quite well with a 10 or 20 percent of tolerance of signals, except in highly
+
+accurate, highly demanding equipment where a much higher accuracy is required,
+
+plus or minus 10 percent is quite satisfactory.
+
+If you need higher accuracy, you or someone else must carefully control the manufacturing environment
+
+and measure components in a controlled environment to produce that consistently.
+
+That, unfortunately, takes time and money to do.
+
+So. highly accurate components cost more.
+
+So the colour bands indicate the value of the resistor.
+
+But does this mean that the only way to find the value of the resistor is by us trying to decode these
+
+colour bands?
+
+Of course not.
+
+The truth is, many engineers don't know how to read or how to decode these colour bands.
+
+Why?
+
+Well, because there's a relatively easier way to find the value of a resistor. By using a multimeter!
+
+If you are holding a resistor in your hand and you are wondering what its resistance might be instead
+
+of trying to decode it based on the colour bands, you would take a multimeter and measure its resistance.
+
+So pick out a random resistor and set the multimeter to the 20k ohm setting. Then hold the probes against
+
+the resistor legs with the same amount of pressure, and the meter will read one of the three things:
+
+Zero point zero zero one or the actual resistor value.
+
+In this case, as you can see, the meter reads 0.97, meaning that this resistor has a value of 970 ohm
+
+or about 1k ohm.
+
+If the multimeter reads one or displays OL, it's overloaded, you will need to try a higher mode,
+
+such as 20k ohm mode or 20M*ohm mode.
+
+There's no harm,
+
+If this happens, it simply means that the range knob needs to be adjusted. If the multimeter reads
+
+0.00 or nearly zero,
+
+then you need to lower the mode to 2k ohm or 200 ohms.
+
+Now, let's drop the meter down to the next lower setting, which is 2k ohm. What's gonna happen?
+
+Well, not a whole lot changed. Because this resistor is less than 2k ohm,
+
+It still shows up on the display.
+
+However, you will notice that there is one more digit after the decimal point, giving us a slightly
+
+higher resolution in our reading.
+
+What about the next lower setting?
+
+Now, since 1k ohm is greater than 200 ohm, we've maxed out at the meter, and it is telling you that
+
+it is overloaded and that you need to try a higher value setting. As a rule of thumb,
+
+it's rare to see a resistor less than 1 ohm.

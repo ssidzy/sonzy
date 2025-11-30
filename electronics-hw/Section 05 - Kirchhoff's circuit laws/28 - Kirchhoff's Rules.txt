@@ -1,0 +1,37 @@
+There are two important rules that you must absolutely know about when it comes to analyzing simple
+
+or complex air grids.
+
+The first one is called kickoffs current law, or some people like to call it the junk shot rule.
+
+And it states that the total current or charge entering a junction or node is exactly equal to the charge,
+
+leaving the node as it has no other place to go except leave or no charge is lost within the node.
+
+In other words, the algebraic sum of all the currents entering and leaving a node must be equal to
+
+zero.
+
+If you have basic math knowledge, you know that the symbol is called sigma and it's generally used
+
+to denote a sum of multiple elements.
+
+All right.
+
+So the currents entering a node must be equal to the currents exiting a node.
+
+And this is what we call kickoffs first law or more intuitively, kickoffs, current law.
+
+The second kickoffs law, also known as kickoffs, what its law states that in any closed loop network,
+
+the total voltage around the loop is equal to the sum of all the voltage drops within the same loop,
+
+which is also equal to zero.
+
+In other words, the algebraic sum of all the voltages within the loop must be equal to zero.
+
+And this idea by kickoff is known as the conservation of energy.
+
+I will now provide explanations of these two rules, followed by problem solving, hints for applying
+
+them and worked examples that use them.

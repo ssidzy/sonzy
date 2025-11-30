@@ -1,0 +1,293 @@
+All right.
+
+So the first class of amplifier is the class amplifier.
+
+This is nothing new.
+
+It's the common limiter amplifier where they put signal is amplified or, in other words, is multiplied
+
+with a value that is given roughly by the division between the collector and the meter reader.
+
+So tanky divided by one key is done, so the output voltage is equal to it with voltage times.
+
+Then this transistor is biased by these two resistors, which form of voltage divider so that the transmitter
+
+operates in active region.
+
+The reason why class the amplifier has very low efficiency is because it consumes power even when no
+
+empathy is present.
+
+So there's no conducting all the time 360 degree of input signal, so its efficiency is less than 30
+
+percent.
+
+When the transistor is used as a switch, it operates either in separation or cut off region where power
+
+consumption is minimum.
+
+He said the reason Koranda to transistor is maximum, but the voltage drop between the collector and
+
+then meter is minimum, as you can see it, around twenty three volts.
+
+So the growth of current isn't equal to better times.
+
+Bass current anymore.
+
+It only applies when the transistor works in active forward mode.
+
+The emitter current is still equal to Colletto current plus bass current.
+
+But as you mentioned, Colletto current is calculated differently.
+
+All right.
+
+But how well we already know by now, and it would be a shame, if not ohms law.
+
+Ohms Law says the declarant is equal to voltage divided by resistance than the transistor works in HATERATION
+
+Collector, and the meter is like two different entities.
+
+So we can just like drag a line here and concentrate on this part of the circuit.
+
+We can even take this out.
+
+Why not and draw Grant here?
+
+And the current will be the same.
+
+Now, using Second Law of Kirchhoff, you see kick off will be one of your best friend in electronics,
+
+along with Ohms Law.
+
+The current flowing in the circuit will be equal to power supply voltage minus the forward voltage drop
+
+of a typical LCD, which in this case is one point eight world or divided by this resistance.
+
+All right.
+
+This was on the point of the lecture anyway.
+
+I just wanted to make it clear the point that I wanted to make is that even when the transistor is used
+
+as a switch, the power consumption is minimum.
+
+Probably is not that evident right now, but transistors have a huge application range, and sometimes
+
+transistors are switched on and off thousands of thousands of times per second and switching to transistor
+
+on and off.
+
+Even though there is a switch, relatively high current fewer transistor will not burn out.
+
+So is the reason the current two transistor is maximum, but the voltage drop between the collector
+
+and limiter is minimum in cutoff mode.
+
+The voltage drop across transistor is maximum, but the current is near zero, resulting in low power
+
+consumption.
+
+Since the power is equal to voltage times current.
+
+All right, so one more thing when there is no input signal, the greater current sorry, the collector
+
+voltage stay between the power supply voltage and ground saw maximum excursion of the signal can be
+
+achieved.
+
+Not possible can speak nicely up to 20 volts and down to zero votes around.
+
+But how to put a question what exactly in the middle between power supply and ground?
+
+Explaining how the circuit works goes already beyond the scope of this course.
+
+But I prefer you to have a clear understanding of circuits that you are talking about.
+
+So back to the question how to put a quarter current to be at 10 volts in this case?
+
+Well, it's very easy.
+
+The base voltage is biased to 1.6 volts, right?
+
+This means that the emitter voltage is one day a drop less, so 1.6 was minus 0.6, while this is roughly
+
+one mode.
+
+Now that we know the emitter voltage, we can calculate the emitter current, which is one world divided
+
+by one kilogram.
+
+So the current is roughly one millionth.
+
+We know that the Colletto current is equal to emit a current right.
+
+So if the same current is flowing across the collector, we can calculate the voltage drop across these
+
+collector resistor.
+
+The wattage drop across the greater resistor is one millionth times then column, which is equal to
+
+turmoils Walla.
+
+So the remaining voltage after the connector is then because the other 10 is dropped across this resistor.
+
+So this is how we calculate the collector voltage.
+
+Now, let's move forward to Glasby.
+
+But before we do that, I want you to understand something.
+
+You have to understand that an NPR and translator cannot sink current, and the PMP translator cannot
+
+source current by thinking sourcing.
+
+We mean the direction of current flow between the input and output.
+
+So a PMP transistor, the direction of the current that is flowing in the bays is opposite to the one
+
+in an empty transistor.
+
+Even though we didn't work with BNP transistors too much, I hope you know by now how a PMP transistor
+
+works.
+
+The reason we didn't focus on PMP transistor is because once you fully method Holland B and transistor
+
+works, it would be very easy for you to understand how the PMP works.
+
+So let's just recap a PMP transistor will turn on.
+
+Then you have a small current running from emitter to base of the transistor where we say turn on.
+
+We mean that the transistor will open up a channel between emitter and collector, and this channel
+
+can carry a much larger current right.
+
+So to get current running from emitter to base, you need a voltage difference of about zero point seven
+
+worlds since the current goes from emitter to base.
+
+The base needs to be zero point seven volts lower than the emitter.
+
+So by setting the base voltage of a PB transistor to 0.7 watts lower than the emitter, you turn the
+
+transistor on and allow for current to flow from emitter to collector.
+
+Alright, so the point that I want to make here is that an NPR transistor cannot sync current, and
+
+the puppet result cannot source current.
+
+OK?
+
+The result is that the single ended follower operating between split supplies can drive a ground retard
+
+load only if a high gas on current is used.
+
+What is the U.S. and current is the current that flows in the circuit where no input signal is present.
+
+So the question I'm glad to correlate is one hundred sixty five millions and the Lord receives one hundred
+
+thirty nine millions from this.
+
+The problem here is that the question current must be at least as large as the maximum output current
+
+during peaks of the wave form, resulting in high crescent power dissipation.
+
+For example, this request shows a limited follower circuit that drives an eight ohm loudspeaker load,
+
+the purpose of the circuit is to drive this loudspeaker knowing that these eight umlaut speaker is a
+
+two watt speaker.
+
+So if you don't want to birdies out, the loudspeaker shouldn't exceed a continuous power consumption
+
+more than to what when you are researching the wattage of musical instrument or audio speaker drivers,
+
+you will often find two values for the power handling ratings.
+
+The first one is the Oremus, which comes from a root mean square and the second one is peak.
+
+It's important to know what each of these refers to in order to find the correct speaker for your amplifier.
+
+Mean power or root mean square power handling refers to how much continuous power the speaker can handle.
+
+The peak power handling, on the other hand, is the value that refers to the maximum power level that
+
+the speaker is capable of utilizing in short bursts.
+
+The Oremus power handling of this loud speaker is to what?
+
+So this power can continuously be dissipated without causing problems.
+
+So why don't we check the average power consumed by this lord right now?
+
+It's totally possible.
+
+If you go to viewing scope now, go to properties, show power consumed.
+
+And we are curious about the Oremus average value and not the peak value.
+
+All right.
+
+It's around 1.5 what so we are within the boundaries.
+
+Let me give you some explanations of the circuit, because you might have some concerns if you have
+
+any doubts, feel free to leave a question in the comment section because your question my head, not
+
+only you, but the others too.
+
+So the PM before the work you want is included to reduce dry requirements and to cancer couteux based
+
+amidor voltage offset.
+
+This means there's a firewall input signal out here gives approximately five words output.
+
+The reason why we use emitter followers is to amplify the current in order to be able to drive the load.
+
+So it presents a high input impedance and the low output impedance.
+
+The other reason is to match impedance is.
+
+But what I'm trying to say is that when they input signal is relatively low, they meet their work and
+
+cause problem because there's always a base meter voltage drop and sometimes you cannot afford to drop
+
+0.7 world from our input team anymore.
+
+So using these BMB transistor, we basically cancel the base meter voltage drop.
+
+Q one, of course, could be permitted for simplicity.
+
+You might be curious why are these current thoughts here?
+
+Well, there is nothing interesting here.
+
+The current sourcing Cubans emit a load is used to ensure that there is sufficient base drive to Q2
+
+at the top of the Cygnus wing.
+
+So the output of this example circuit can speak to Murli Plus minus 15 volts in both direction, giving
+
+the desired output power of Do you want everything is nice and beautiful until we take the input signal
+
+out without the input signal output resistor dissipates 35 watts with no signal, which means nothing
+
+to us.
+
+But we need urgently to put this transistor on a heatsink and diameter resistor dissipates.
+
+Another 190 words cure some participation.
+
+Many times greater than the maximum out of power is characteristics of these kind of classic circuit
+
+where the transistor is always in conduction.
+
+This obviously leaves a lot to be desired in applications in which any significant amount of power is
+
+involved.
+
+So in part two of this course, we will see how to fix these high participation.
+
+So stay with me and see you there.

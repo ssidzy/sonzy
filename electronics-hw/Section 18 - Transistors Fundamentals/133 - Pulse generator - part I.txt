@@ -1,0 +1,107 @@
+Hello and welcome back.
+
+Before we get into the explanation of this circuit, I want to tell you in advance that we are going
+
+to deal with ActionScript.
+
+Now, if you don't remember what our time constant is.
+
+Please go back to the chapter where we talked about all these circuits because otherwise it might be
+
+difficult for you to understand the circuit.
+
+I will try, though, to summarize it as shortly as possible.
+
+In case you don't have time to revise it.
+
+All right, here we are.
+
+So the time required to charge a capacitor to about 63 percent of the maximum voltage in an article
+
+which is called the time cost end of the circuit time constants can be defined using the following formula
+
+where time in seconds is equal to resistance in ohms times capacitance, which is in Ferrer's five time
+
+constant periods, are required to fully charge or discharge a capacitor.
+
+Let's take an example to understand it better.
+
+In this figure, a nasty circuit is drawn and a time constant is computed.
+
+The circuit has a time constant of one second.
+
+So which means that five seconds are required for these capacitor to become fully charged, right?
+
+So this means that this capacitor will charge to about 63 volts in one second.
+
+And at the end of five seconds, the capacitor will be charged to about 100 volts.
+
+All right.
+
+I hope this explanation will help you to understand the following circuit.
+
+The aim of this circuit is to generate applause, which is nothing but a rectangular signal in the circuit.
+
+There are two signals that we are interested in.
+
+The first one is the signal on the base of Q2, which can be seen here.
+
+And the second one is the output signal, which can be visualized here by including a simple RC.
+
+You can make a circuit that gives a pulse output from a step input.
+
+The time constant, which is RC, determines the with Q2 is normally held in adoration by three.
+
+So its output is close to ground.
+
+Note that all three is chosen small enough to ensure Q2 separation.
+
+With the circuits to the ground, Q1 is in cutoff mode, right?
+
+With its collector Earth five volts.
+
+The capacitor C1 is therefore charged with plus firewalls on its left terminal and APR plus zero point
+
+six volts on its right terminal.
+
+So this means that it has about four point forwards across it.
+
+Right now, the circuit is waiting for something to happen.
+
+A +5 all positive input step brings Q1 into saturation, forcing its collector to ground because of
+
+the voltage across C1.
+
+This brings the base of CU to momentarily negative to about minus 4.3 volts.
+
+Please note that the speed of the simulation is brought really low so that things slow down a little
+
+bit here and we are able to observe the values in the circuit now because the base voltage is negative.
+
+This transistor is in cut off mode, right?
+
+Which means that no current flows through our four and so its output jobs to five volts.
+
+This is just the beginning of the Aliquippa's.
+
+Now see, one can't hold these transistors base below ground forever, right?
+
+Because current is flowing down through all three trying to pull it up.
+
+So the right hand side of the capacitor charge is the word fireball's before time constant, which is
+
+equal two or three times.
+
+See one here, equal to 100 microseconds.
+
+The output with is said by this time constant, and to figure out the post with accurately, you have
+
+to look in detail at the secret operation.
+
+In this case, it's easy enough to see that the output transistor Q2 will turn on again, terminating
+
+the output pulse.
+
+Then the rising voltage on the base or transistor Q2 reaches the base emitter voltage drop off 0.6 volts,
+
+which is required for the transistor to turn on.

@@ -1,0 +1,133 @@
+All right, folks, on this course, we learn about an important concept called impedance and reactance
+
+of a capacitor.
+
+If you understand this understanding, doctors will be a piece of cake.
+
+So in an easy circuit in which the applied voltage signal is continually changing from a positive to
+
+a negative polarity at a rate determined by the frequency of the supply, as in the case of a Siiri
+
+voltage, for example, the capacitor is either being charged or discharged on a continuous basis at
+
+a rate determined by the supply frequency.
+
+As the capacitor charges discharges occur and flows through it, which you probably didn't know is restricted,
+
+or, in other words, is limited by the internal impedance of the capacitor.
+
+This internal impedance is commonly known as capacity reactance and is given the symbol EXI in ohms.
+
+So unlike resistance, which has a fixed value, for example, 100 on the one km, 10 km, etc. capacity
+
+reactance varies with the applied frequency.
+
+So any variation in supply frequency.
+
+We have a big effect on the capacitors capacitive reactance value.
+
+So Capacity Reactance has the ticker symbol X C and has units measured in almost the same as resistance.
+
+It is calculated using the following formula where XY is the capacity reactance measured in Ohmes P,
+
+as we know, is around three point one four two F is a frequency in Hertz and C is the capacitance in
+
+Farad's since capacity reactance.
+
+Just like resistance is measured in ohms, the higher the capacity reactance, the lower will be the
+
+current.
+
+But remember, we are talking about AC current here and not see the simplest definition of the capacity
+
+reactance would be this one.
+
+So capacity reactance is a measure of a capacitors opposition to AC current.
+
+So like resistance, it is measured in ohms.
+
+But reactance is more complex than resistance because its value depends on the frequency of the signal
+
+passing through the capacitor.
+
+Reactance is also inversely proportional to the value of capacitors, like, for example, the value
+
+of X C at any frequency will be less in larger capacitors than in smaller ones.
+
+All capacitors have infinitely high values of reactance of zero hertz, but in large capacitors, directors'
+
+force to a lower level at much lower frequencies than in smaller competitors has.
+
+Larger capacitors are preferred in low frequency applications.
+
+But once we get into analog filter designs, you will see how important capacity reactance is.
+
+But for now, what do you have to remember for is that the current flow through a capacitor is inversely
+
+proportional to the frequency.
+
+And you can see based on this graph that the higher the frequency of the AC signal, the lower the capacity
+
+of reactors.
+
+Moreover, we can present the effect of very low and very high frequencies on the reactors of a pure
+
+AC capacitors as follows.
+
+So if the frequency is zero, which basically means we are talking about DC, the capacitor acts as
+
+an open circuit since the reactants of the capacitor is infinite.
+
+So one or zero is infinite, right?
+
+This is just basic math.
+
+On the other hand, when the frequency is infinite.
+
+Of course, this is just pure theoretical.
+
+The capacitor acts as a simple wire and the current in this case is maximum.
+
+It's like the capacitor is not even there.
+
+Now let's do a simple exercise to solidify what we have learned so far.
+
+The exercise says that we should calculate the capacity of reactance value of two hundred twenty nine
+
+of hertz capacitor at the frequency of one kilohertz and again at the frequency of 20 kilohertz.
+
+The capacity reactants, as we know, is equal to one or two P FC.
+
+Right?
+
+So let's replace all the normal values and we get one or two P times one thousand.
+
+So one kilohertz is 1000 hertz, right?
+
+Times two hundred twenty nine of hertz, which is 220 times 10 at the power of minus nine.
+
+In this case, the reactance will be seven hundred twenty three point four ohms.
+
+Great.
+
+Now let's calculate again the returns when the frequency is 20 kilohertz.
+
+We apply the same equation and we get the returns of thirty six point two ohms.
+
+Therefore, it can be seen that as the frequency applied across the 220 nano capacitor increases from
+
+one kilohertz to 20 kilohertz, it's reactance value EXI decreases from approximately 723 on to just
+
+36 ohm.
+
+And this is always true as capacity reactance XY is inversely proportional to frequency.
+
+Or in the last course we will take a more practical approach where we will simulate three different
+
+circuits that has the same capacity.
+
+Not only the frequency of the power supply is changing and you will see how current differs.
+
+Any circuit.
+
+See you there.

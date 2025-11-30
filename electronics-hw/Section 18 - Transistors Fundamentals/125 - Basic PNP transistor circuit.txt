@@ -1,0 +1,177 @@
+Now that we have seen how an NPN transistor operates, let's take a quick look at how to rebuild the
+
+circuit using a PMP transistor.
+
+Before we get into that, I want to clarify a few things.
+
+As we already know, an NPN transistor is turned on when an off current is supplied from the transistors
+
+base to the emitter.
+
+And as a result, the NPN transistors base has to be connected to a positive voltage and the emitter
+
+to a negative voltage for the current flow into the base.
+
+The arrow also gives you a visual help on what direction the current should take.
+
+If we imagine that there is a diode between the base and emitter, then the anode of the diode is the
+
+base terminal.
+
+While the cathode is the emitter terminal.
+
+Current always flows from the anode to the cathode and never the opposite direction.
+
+So when an off current is flowing from the base into the emitter, the transistor switches on, allowing
+
+a much greater current to flow from the collector to the emitter.
+
+Now the PMP transistor works in the opposite.
+
+In a PMP transistor, current normally flows from the transistors emitter to the base, and when enough
+
+current flows from the emitter to the base, the transistor turns on, allowing a much greater color
+
+to flow from the emitter to the collector.
+
+Now to turn a PMP transistor on, there needs to be a voltage drop of about 0.6 volts across the emitter
+
+and base.
+
+In other words, if the emitter is 0.6 volts higher than the base terminal, the transistor will turn
+
+on.
+
+In this case, the anode of the diode is the emitter, while the cathode is the base.
+
+So current will flow from the emitter to the base and not from the base to the emitter as it was in
+
+the case for NPN transistors when current is passing through a diode.
+
+There will be a forward voltage drop across it and for common PMP transistors, this is usually around
+
+0.6 volts.
+
+Again, if around 0.6 volt is dropped across the emitter and base, the transistor will turn on.
+
+So let's see how this works out in our simulator.
+
+All right, here we are.
+
+Notice that I already connected the components except the base of the transistor.
+
+The LED and the resistor are still connected to the collector as it was in the case with the NPN transistor.
+
+But we had to rearrange things a little bit since current flows differently in a transistor.
+
+Now that the arrow is pointing into the base, it means that current will flow from the emitter into
+
+the base and never in the opposite direction.
+
+Question to you should we connect the base terminal to the nine volts power supply or to the ground?
+
+If we were to connect it to the nine volts line note is that nothing has changed and the PMP transistor
+
+is still off.
+
+And why is that?
+
+Well, that's because the emitter and the base are the same voltage.
+
+The ammeter is a nine volts and the bass is also at nine volts.
+
+Since there is no voltage drop across these ammeter based diode, the transistor is off.
+
+So what other options do we have?
+
+Well, we could connect the base directly to the ground.
+
+But if we do that, the simulator will complain that the maximum current is exceeded.
+
+And why is that?
+
+That's because we have just short circuited the battery.
+
+Right now, theoretically, an infinite amount of current would flow in this path.
+
+And if you were to physically build this circuit, the transistor would have blown up.
+
+So make sure to limit the current that is flowing from the base terminal to the ground by adding a resistor
+
+in Series V field.
+
+And as you can see, the transistor has turned on and it conducts current from the emitter to the collector
+
+powering up the led.
+
+If I now how were my mouse over the transistor, we can notice that the base emitter voltage is -0.6
+
+volts, so it's -0.6 volts.
+
+Actually, if we round it up, it would be -0.7 volts.
+
+And why is it negative?
+
+That's because, as the name implies, we were measuring the voltage from the base to emitter and not
+
+from the emitter to the base.
+
+In this scenario, the emitter is the one that is higher with 0.7 volts and not the base as it was in
+
+the case with NPN transistors.
+
+The voltage on the base terminal referenced to ground is 8.3 volts and the voltage on the emitter again
+
+referenced to ground is nine volts.
+
+Now you can clearly see that there is a diode drop of about 0.7 volts across the emitter and base.
+
+Now we could apply kickoffs voltage low in this loop and we choose a clockwise direction.
+
+So we start from the battery.
+
+Nine volts minus the voltage drop from ammeter to base, minus the voltage drop across this resistor
+
+is equal to zero.
+
+The voltage drop from ammeter to base is already known to be 0.7 volts.
+
+So 8.3 volts, which is the rest will be dropped across this resistor.
+
+And knowing that we can now calculate the current flowing from base to ground and that would be the
+
+voltage drop across this resistor divided by its resistance and that would give us a current of 8.3
+
+milliamps.
+
+Now, we could also add a switch in series with this resistor.
+
+And if you do so.
+
+We are able to toggle the LED on and off.
+
+You might be wondering why you would need or want to bother with a transistor in this circuit.
+
+After all, couldn't you just put the switch in the LED circuit and do away with the transistor and
+
+the second resistor?
+
+Of course you could.
+
+But that would defeat the principle that the circuit illustrates that a transistor allows you to use
+
+a small current to control a much larger one.
+
+If the entire purpose of the circuit is to turn an LCD on or off, by all means omit the transistor
+
+and the extra resistor.
+
+But in more advanced circuits, you will find plenty of cases than the output from one stage of a circuit
+
+is very small and you need that tiny amount of current to switch on a much larger current.
+
+In that case, this transistor circuit is just what you need, and we will see a couple of those examples
+
+in the next course.
+
+
